@@ -23,7 +23,7 @@ You want to plan your infrastructure before you provision it to make sure that y
 ## Infrastructure architecture
 {: #planning-3}
 
-Start with the [infrastructure architecture ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures/public-cloud){: new_window} to get a more in-depth overview of the three types of cloud environments. 
+Start with [IaaS (Infrastructure-as-a-Service) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/learn/iaas){: new_window} to get a more in-depth overview of the infrastructure-as-a-service platform and architecture. 
 
 ## {{site.data.keyword.cloud_notm}} Design Decision Tool
 {: #planning-4}
