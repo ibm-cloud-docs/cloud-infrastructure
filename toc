@@ -1,0 +1,48 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cloud-infrastructure" category="compute" audience="platform" href="/docs/cloud-infrastructure?topic=cloud-infrastructure-getting-started-tutorial" path="cloud-infrastructure"}
+Building infrastructure
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    [What is IBM Cloud Infrastructure as a Service?](https://www.ibm.com/cloud/infrastructure)
+    [What is VPC?](https://www.ibm.com/cloud/vpc)
+
+    {: .topicgroup}
+    Comparing infrastructure environments
+        compare-infra.md
+        compare-vpc.md
+
+    [IBM Cloud pricing](https://www.ibm.com/cloud/pricing)
+
+    {: .topicgroup}
+    Related links
+        [Service and infrastructure availability](/resources/resources-services_region)
+        [Getting started with IAM tutorial](/iam/iam-getstarted)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    planning-iaas.md
+
+    {: .topicgroup}
+    High availability and resiliency
+        ha-cloud-intro.md
+        /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
+
+    {: .topicgroup}
+    Building your infrastructure
+        compute-services.md
+        network-services.md
+        storage-services.md
+
+    {: .topicgroup}
+    Related links
+        [Terraform](/terraform/terraform-getting-started)
+        [Terraform for VPC](https://github.com/ibm-cloud-architecture/terraformer)
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [IBM Cloud Support](https://www.ibm.com/cloud/support)
+    [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure)
+    {: .navgroup-end}
