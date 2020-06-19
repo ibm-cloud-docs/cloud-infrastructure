@@ -36,6 +36,8 @@ Building infrastructure
         network-services.md
         storage-services.md
 
+    managing-iaas.md
+
     {: .topicgroup}
     Related links
         [Terraform](/terraform/terraform-getting-started)
