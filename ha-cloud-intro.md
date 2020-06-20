@@ -22,7 +22,7 @@ This topic is a high-level summary of high availability for stateless applicatio
 
 ## Data Centers, Regions, and Availability Zones
 
-As an IBM classic infrastructure (non-VPC) customers you can order bare metal or virtual server instances and can deploy to over 60 data centers that are located around the world in addition to several multi-zone regions with multiple availability zones.
+As an IBM classic infrastructure (non-VPC) customer, you can order bare metal or virtual server instances and can deploy to over 60 data centers that are located around the world in addition to several multi-zone regions with multiple availability zones.
 
 The data centers are in different geographies, countries, and regions. Whether the data centers are multi-zone (MZR) or not, all of them maintain multiple power feeds, fiber links, dedicated generators, and battery backup to avoid a single-point-of-failure (SPOF) between zones and regions. While all the data centers have multiple power feeds, several of the more mature sites such as AMS01, DAL05, 06, 08. FRA02. HKG02, MEX01, MIL01, PAR01,SJC01, SNG01, WDC01, and WDC03 have some 1U single socket server chassis that might not accommodate a dual power feed. If you have a 1U single socket server in one of these sites, you might want to consider a 2U chassis with redundant power supplies. For more information about availability zones, see [Locations for resource deployment](/docs/overview?topic=overview-locations).
 
