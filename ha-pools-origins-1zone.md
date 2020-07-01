@@ -18,6 +18,7 @@ subcollection: overview
 {:note: .note}
 {:external: target="_blank" .external}
 {:important: .important}
+{:pre: .pre}
 
 # Deploying server pools and origins in a single MZR
 {: #ha-pools-origins}
