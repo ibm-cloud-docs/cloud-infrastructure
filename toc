@@ -29,6 +29,7 @@ Building infrastructure
     High availability and resiliency
         ha-cloud-intro.md
         /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
+        ha-3-tier.md
         ha-pools-origins-1zone.md
 
     {: .topicgroup}
