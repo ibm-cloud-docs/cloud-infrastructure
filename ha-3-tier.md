@@ -36,7 +36,7 @@ This reference architecture describes 3 methods of deploying a 3-tier web applic
 
 ### Virtual Servers
 
-Servers in each of the 3-tiers have different requirements. When you provision your virtual servers, you have multiple options fir virtual server profiles: Balanced, Compute and Memory.  The vCPU to memory ratio varies across the different profiles, but within the profile the ratio is constant. Within a profile, the number of vCPU and memory increases along with the bandwidth performance. Use the following information when provisioning your servers.
+Servers in each of the 3-tiers have different requirements. When you provision your virtual servers, you have multiple options for virtual server profiles: Balanced, Compute and Memory.  The vCPU to memory ratio varies across the different profiles, but within the profile the ratio is constant. Within a profile, the number of vCPU and memory increases along with the bandwidth performance. Use the following information when provisioning your servers.
 
 |Tier|Server requirements|
 |---|---|
