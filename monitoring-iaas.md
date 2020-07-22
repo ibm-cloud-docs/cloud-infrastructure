@@ -53,5 +53,5 @@ The **Monitoring** tab is only visible if at least one monitor is configured.
 For more information about monitoring your infrastructure and environments, see the following information.
 
 * If you're ready to provision a Sysdig instance, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
-* If you're interested in {{site.data.keyword.mon_full_notm}} plans, see [{{site.data.keyword.mon_full_notm}} agents and plans](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-agents-and-plans)
-* If you're interested in {{site.data.keyword.mon_full_notm}} pricing information, see [Pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans)
+* If you're interested in {{site.data.keyword.mon_full_notm}} plans, see [{{site.data.keyword.mon_full_notm}} agents and plans](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-agents-and-plans).
+* If you're interested in {{site.data.keyword.mon_full_notm}} pricing information, see [Pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
