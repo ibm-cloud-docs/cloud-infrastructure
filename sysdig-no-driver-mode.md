@@ -39,7 +39,7 @@ To enable 'no driver mode' and monitor and manage metrics, you need to configure
 
 Use these steps to enable 'no driver mode'. 
 
-**1.** Provision a Graduated tier Sysdig instance by following the steps in [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision. )For more information about the Graduate tier, see [Service plans](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
+**1.** Provision a Graduated tier Sysdig instance by following the steps in [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision.). For more information about the Graduate tier, see [Service plans](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
 
 **2.** Enable {{site.data.keyword.mon_full_notm}} 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a Sysdig agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
 
