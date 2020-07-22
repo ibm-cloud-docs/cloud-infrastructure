@@ -154,6 +154,7 @@ Then restart the agent.
 Use the following table to see which troubleshooting metrics are available in 'no driver mode'.
 
 | Metric | Description |
+|-----|-----|
 | file.error.total.count | Number of errors caused by accessing files |
 | file.bytes.total | Total number of bytes written to, and read from, the file |
 | file.bytes.in | Number of bytes read from the file  |
