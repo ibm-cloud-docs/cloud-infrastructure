@@ -46,10 +46,10 @@ IBM Cloud is committed to providing you the highest quality of service and is ma
 
 Depending on which Advanced Monitoring by Nimsoft plan you are using, you might see an increase in your monthly resource monitoring cost. {{site.data.keyword.mon_full_notm}} offers different pricing plans. 
 
-* Lite plan 
+* Light plan 
 * Graduated Tier plan 
 
-For more information about plans and pricing, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans).
+For more information about plans and pricing, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
 
 ## How do I install {{site.data.keyword.mon_full_notm}}?
 {: #how-do-i-install-sysdig}
