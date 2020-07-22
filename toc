@@ -41,6 +41,14 @@ Building infrastructure
     managing-iaas.md
 
     {: .topicgroup}
+    Monitoring your infrastructure
+        monitoring-iaas.md
+        sysdig-monitoring-agents-and-plans.md
+        sysdig-no-driver-mode.md
+        sysdig-monitoring-metrics.md
+        sysdig-faq.md
+
+    {: .topicgroup}
     Related links
         [Terraform](/terraform/terraform-getting-started)
         [Terraform for VPC](https://github.com/ibm-cloud-architecture/terraformer)
