@@ -43,5 +43,5 @@ Before you provision an {{site.data.keyword.mon_full_notm}} instance, you need t
 Sysdig 'no driver mode' is offered at $9.99 per month. This price adjustment comes into effect after you enable the 'no driver mode'. For more information about enabling 'no driver mode', see [Enabling IBM Cloud Monitoring with Sysdig 'no driver mode'](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-sysdig-light-no-driver).
 {: note}
 
-Graduated tiers offer a tiered pricing structure that is based on your time-series usage and billed either hourly or monthly. For information about the graduated tier plan prices, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans#pricing_plans)
+Graduated tiers offer a tiered pricing structure that is based on your time-series usage and billed either hourly or monthly. For information about the graduated tier plan prices, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans#pricing_plans).
 {: note}
