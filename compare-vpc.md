@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-28"
 
 keywords: compute, virtual server, profile, vpc, vpc on classic, infrastructure, cloud environment
 
@@ -73,7 +73,7 @@ We are always adding new features and support. Over time, there will be fewer co
 |-----|-----|
 |Block Storage primary and secondary volumes|Supported in both generations |
 |Provider-managed block storage keys|Supported in both generations |
-|BYOK block storage keys| BYOK is supported for generation 1 profiles only. |
+|BYOK block storage keys| Supported in both generations  |
 {: table="table4"}
 {: tab-title="Storage"}
 {: tab-group="Features"}
