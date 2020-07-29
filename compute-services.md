@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-07-29"
 
 keywords: infrastructure
 
@@ -56,14 +56,6 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 | [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started) | Combines Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. |
 | [Project Coligo (Experimental)](/docs/knative?topic=knative-getting-started) | Provides a platform to unify the deployment of all of your container-based applications. | 
 {: caption="Table 4. Compute options - Containers" caption-side="top"}
-
-## Cloud Foundry
-{: #cloudfoundry}
-
-| Option | Description | 
-|--------|---------------|
-| [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started) | Instantiate multiple, isolated, enterprise-grade Cloud Foundry platforms on demand. |
-{: caption="Table 5. Compute options - Cloud Foundry" caption-side="top"}
 
 ## Serverless
 {: #serverless}
