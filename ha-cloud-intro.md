@@ -21,8 +21,9 @@ subcollection: overview
 This topic is a high-level summary of high availability for stateless applications, such as a front-end application that is deployed on {{site.data.keyword.Bluemix}} infrastructure layer (IaaS). Stateless applications don't store persistent data, but are still required to meet a service level for high availability.
 
 ## Data Centers, Regions, and Availability Zones
+{: #ha-data-centers}
 
-As an IBM classic infrastructure (non-VPC) customer, you can order bare metal or virtual server instances and can deploy to over 60 data centers that are located around the world in addition to several multi-zone regions with multiple availability zones.
+As an IBM classic infrastructure (non-VPC) customers you can order bare metal or virtual server instances and can deploy to over 60 data centers that are located around the world in addition to several multi-zone regions with multiple availability zones.
 
 The data centers are in different geographies, countries, and regions. Whether the data centers are multi-zone (MZR) or not, all of them maintain multiple power feeds, fiber links, dedicated generators, and battery backup to avoid a single-point-of-failure (SPOF) between zones and regions. While all the data centers have multiple power feeds, several of the more mature sites such as AMS01, DAL05, 06, 08. FRA02. HKG02, MEX01, MIL01, PAR01,SJC01, SNG01, WDC01, and WDC03 have some 1U single socket server chassis that might not accommodate a dual power feed. If you have a 1U single socket server in one of these sites, you might want to consider a 2U chassis with redundant power supplies. For more information about availability zones, see [Locations for resource deployment](/docs/overview?topic=overview-locations).
 
@@ -52,7 +53,7 @@ The network interface controller (NIC) provides the link that connects your bare
 2. Distribute traffic by using the operating system. This method provides switch-independent teaming.
 3. Allow the {{site.data.keyword.Bluemix_notm}} provisioning service create the NIC teaming by using LACP or opt to do the NIC teaming yourself through different NIC team modes such as active-passive, round-robin, adaptive transmit load-balancing, or adapter load-balancing.
 
-![Two different types of bare metal deployment.](images/HA-bmDeploymentTypes2x.png){:caption="Figure 1. Two different types of bare metal deployment. Option B with LACP nic bonding is recommended for higher availability." caption-side="bottom"}
+![Two different types of bare metal deployment.](images/HA-bmDeploymentTypes2x.svg){:caption="Figure 1. Two different types of bare metal deployment. Option B with LACP nic bonding is recommended for higher availability." caption-side="bottom"}
 
 Note: For VMware, LACP is not available, but other NIC teaming mode is allowed.
 
@@ -62,7 +63,7 @@ In the case of virtual server, you do not control which host and hypervisor the 
 
 It is also best practice to deploy the boot volume on SAN over a local disk. If of the host is experiencing a hard shutdown, IBM hypervisor manager evacuates and migrates the virtual server to a different host. This action is only available when the boot volume is on SAN.
 
-![The hypervisor with a redundant link connection with NIC bonding configured](images/HA-Hyper-with-redundancy075x.png){: caption="Figure 2. The hypervisor with a redundant link connection with NIC bonding configured." caption-side="bottom"}
+![The hypervisor with a redundant link connection with NIC bonding configured](images/HA-Hyper-with-redundancy075x.svg){: caption="Figure 2. The hypervisor with a redundant link connection with NIC bonding configured." caption-side="bottom"}
 
 ## Workload Placement for bare metal
 
@@ -72,7 +73,7 @@ For bare metal servers, you want to spread the server application across multipl
 
 While each POD supports multiple VLANs, you can order extra VLANs at the POD level rather than the data center level. As you order the bare metal server, you can assign the bare metal server to the VLANs to dictate server deployment across PODs within a data center.
 
-![Compute resources deployed in different zones/data centers.](images/HA-Compute-different-zones.png){: caption="Figure 3. Compute resources deployed in different zones/data centers." caption-side="bottom"}
+![Compute resources deployed in different zones/data centers.](images/HA-Compute-different-zones.svg){: caption="Figure 3. Compute resources deployed in different zones/data centers." caption-side="bottom"}
 
 ## Workload Placement for virtual servers
 
@@ -82,7 +83,7 @@ The default behavior for the IBM scheduler is to place the virtual servers in av
 1. Use a dedicated virtual server. This option allows you to own the entire hypervisor and control the placement of the virtual servers.
 2. Use Placement Groups. Placement Groups is an anti-affinity feature. If virtual servers are marked in the same placement group, then these virtual servers is instantiated across different hypervisors. By putting the virtual servers in placement groups, availability is improved. For more information about dedicated servers and placement groups, refer to the {{site.data.keyword.Bluemix_notm}} Documents, [Dedicated virtual server](https://cloud.ibm.com/docs/vsi?topic=virtual-servers-dedicated-virtual-servers) and [Placement Groups](https://cloud.ibm.com/docs/vsi?topic=virtual-servers-placement-groups).
 
-![virtual servers deployed with placement groups](images/HA-vsi-placement.png){: caption="Figure 4. virtual servers deployed with placement groups are instantiated on different hypervisors which will give a higher availability than with virtual servers without placement groups." caption-side="bottom"}
+![virtual servers deployed with placement groups](images/HA-vsi-placement.svg){: caption="Figure 4. virtual servers deployed with placement groups are instantiated on different hypervisors which will give a higher availability than with virtual servers without placement groups." caption-side="bottom"}
 
 ## Network Services
 
@@ -122,7 +123,7 @@ Other key load-balancing features of {{site.data.keyword.loadbalancer_short} inc
 
 Additionally, when the load balancer is deployed in a data center that is part of an MZR and your account has VLAN spanning or VRF enabled, then a second load balancer is instantiated in another data center that is part of the same MZR in an active-active fashion. This configuration is visible to you and provides an extra layer protection against failure, increasing reliability and availability of your application on {{site.data.keyword.Bluemix_notm}}.
 
-![{{site.data.keyword.Bluemix_notm}} Load Balancer supporting either or both public and private.](images/HA-load-balancer.png){: caption="Figure 5. {{site.data.keyword.Bluemix_notm}} Load Balancer supporting either or both public and private (internal) deployment." caption-side="bottom"}
+![{{site.data.keyword.Bluemix_notm}} Load Balancer supporting either or both public and private.](images/HA-load-balancer.svg){: caption="Figure 5. {{site.data.keyword.Bluemix_notm}} Load Balancer supporting either or both public and private (internal) deployment." caption-side="bottom"}
 
 #### {{site.data.keyword.cis_full_notm}}
 
@@ -138,7 +139,7 @@ Some of the other key load-balancing features of {{site.data.keyword.cis_short_n
 
 The following diagram illustrates a common three-tier web app use case that uses both {{site.data.keyword.Bluemix_notm}} Load Balancer offerings. {{site.data.keyword.cis_short_notm}} directs traffic based on user origin while also providing backup if there is a failure at the primary location, where US-East is backing up EU-GB and vice versa. While an {{site.data.keyword.Bluemix_notm}} Load Balancer can sit in between {{site.data.keyword.cis_short_notm}} and the web server, in this case, it is deployed as an internal load balancer between web and app tier.
 
-![Three tier web app with {{site.data.keyword.cis_short_notm}} and {{site.data.keyword.loadbalancer_short}}.](images/HA-tier-web-app.png){: caption="Figure 6. 3 tier web app with {{site.data.keyword.cis_short_notm}} and {{site.data.keyword.loadbalancer_short}}." caption-side="bottom"}
+![Three tier web app with {{site.data.keyword.cis_short_notm}} and {{site.data.keyword.loadbalancer_short}}.](images/HA-tier-web-app.svg){: caption="Figure 6. 3 tier web app with {{site.data.keyword.cis_short_notm}} and {{site.data.keyword.loadbalancer_short}}." caption-side="bottom"}
 
 ## Additional resources
 

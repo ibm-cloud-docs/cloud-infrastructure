@@ -21,7 +21,7 @@ subcollection: overview
 # Building a highly available 3-tier web application in VPC
 {: #ha-3-tier}
 
-This reference architecture describes 3 methods of deploying a 3-tier web applicable on {{site.data.keyword.vpc_full}}. This information applies to most 3-tier web applications that need to be resilient and highly available applications
+This reference architecture describes 3 methods of deploying a 3-tier web application on {{site.data.keyword.vpc_full}}. This information applies to most 3-tier web applications that need to be resilient and highly available applications
 
 |Tier|Description|
 |---|---|
@@ -73,14 +73,14 @@ When deploying in a single zone, deploy multiple virtual instances within a tier
 
 This deployment type has some risk. While you will deploy multiple virtual instances, the application is not protected against a failure within a data center. which becomes a single point of failure for the application.  
 
-![Single-zone deployment.](images/single-tier.png){:caption="Figure 1. Deploying in single zone" caption-side="bottom"}
+![Single-zone deployment.](images/single-tier.svg){:caption="Figure 1. Deploying in single zone" caption-side="bottom"}
 
 ## Scenario 2 - deploying in multiple zones with {{site.data.keyword.cis_full_notm}}
 {: #multi-zone-cis}
 
 You can deploy your application as active-active across multiple zones using a combination of {{site.data.keyword.cis_full_notm}} and {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}. This method enables replication across multiple zones, increasing the availability of the application.  Because of the active-active deployment, more devices are available for parallel processing, improving resiliency and performance. The likelihood of simultaneous failure across multiple zones is much less likely in comparison to a single zone. If a failure occurs in one of the zones, the failure is contained in that zone.  Even though the capacity is reduced during a failure, the application is still active in the other zone.
 
-![Multiple-zone deployment.](images/multi-zone-cis.png){:caption="Figure 2. Deploying in multiple zones with IBM Cloud Internet Services and IBM Cloud Load Balancer" caption-side="bottom"}
+![Multiple-zone deployment.](images/multi-zone-cis.svg){:caption="Figure 2. Deploying in multiple zones with IBM Cloud Internet Services and IBM Cloud Load Balancer" caption-side="bottom"}
 
 By deploying across multiple zones you can also take advantage of server pools and origins, which are part of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short}}. Server pools and origins allows DevOps to integrate, validate and deploy new software features. **More information is covered in a later section of this document.**
 
@@ -88,7 +88,7 @@ By deploying across multiple zones you can also take advantage of server pools a
 
 You can also deploy your application in multiple zones using only {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} rather than a combination of {{site.data.keyword.cis_full_notm}} and {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}. This deployment scenario is less ideal, but is more cost-effective. You should only consider this method for less critical and less sensitive applications, such as internal applications.
 
-![Multiple-zone deployment.](images/multi-zone-lb.png){:caption="Figure 3. Deploying in multiple zones with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} " caption-side="bottom"}
+![Multiple-zone deployment.](images/multi-zone-lb.svg){:caption="Figure 3. Deploying in multiple zones with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} " caption-side="bottom"}
 
 ## Reference
 For more {{site.data.keyword.Bluemix_notm}} high availability content , see:
