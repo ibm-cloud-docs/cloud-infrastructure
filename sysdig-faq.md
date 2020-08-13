@@ -26,7 +26,7 @@ subcollection: cloud-insfrastructure
 {: #why-transition-to-sysdig}
 {: faq}
 
-IBM Cloud is committed to providing you the highest quality of service and is making the transition to a new monitoring offering. {{site.data.keyword.mon_full_notm}} offers an improved customer experience, robust functionality, and customizable dashboards for your resource monitoring needs. For more information, see [{{site.data.keyword.mon_full_notm}}](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about).
+IBM Cloud is committed to providing you the highest quality of service and is making the transition to a new monitoring offering. {{site.data.keyword.mon_full_notm}} offers an improved customer experience, robust functionality, and customizable dashboards for your resource monitoring needs. For more information, see [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
 
 ## What benefits does {{site.data.keyword.mon_full_notm}} provide?
 {: #what-are-sysdig-benefits}
@@ -49,7 +49,7 @@ Depending on which Advanced Monitoring by Nimsoft plan you are using, you might 
 * Light plan 
 * Graduated Tier plan 
 
-For more information about plans and pricing, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
+For more information about plans and pricing, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans).
 
 ## How do I install {{site.data.keyword.mon_full_notm}}?
 {: #how-do-i-install-sysdig}
@@ -88,7 +88,7 @@ To simplify this transition, IBM Cloud will automatically remove the "Advanced M
 {: #how-do-i-get-transition-help}
 {: faq}
 
-If you need help transitioning to {{site.data.keyword.mon_full_notm}}, you can contact your CSM or see [Getting support](/docs/get-support?topic=get-support-getting-customer-support) to open a support ticket.
+If you need help transitioning to {{site.data.keyword.mon_full_notm}}, you can contact your CSM or see [Getting support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to open a support ticket.
 
 ## What are the important dates that are associated with Advanced Monitoring by Nimsoft EOS?
 {: #what-are-important-transition-dates}
