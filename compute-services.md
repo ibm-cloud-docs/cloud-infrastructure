@@ -54,7 +54,7 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 | Option | Description | 
 |--------|---------------|
 | [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started) | Combines Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. |
-| [Project Coligo (Experimental)](/docs/knative?topic=knative-getting-started) | Provides a platform to unify the deployment of all of your container-based applications. | 
+| [Project Coligo (Experimental)](/docs/codeengine?topic=codeengine-getting-started) | Provides a platform to unify the deployment of all of your container-based applications. | 
 {: caption="Table 4. Compute options - Containers" caption-side="top"}
 
 ## Serverless
