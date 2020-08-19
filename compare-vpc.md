@@ -5,7 +5,7 @@ lastupdated: "2020-07-28"
 
 keywords: compute, virtual server, profile, vpc, vpc on classic, infrastructure, cloud environment
 
-subcollection: overview
+subcollection: cloud-infrastructure
 
 ---
 

@@ -6,7 +6,7 @@ lastupdated: "2020-03-25"
 
 keywords: high availability, regions, zones, resiliency
 
-subcollection: overview
+subcollection: cloud-infrastructure
 
 ---
 

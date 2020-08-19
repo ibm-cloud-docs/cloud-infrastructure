@@ -6,7 +6,7 @@ lastupdated: "2020-05-19"
 
 keywords: infrastructure
 
-subcollection: cloud-insfrastructure
+subcollection: cloud-infrastructure
 
 ---
 

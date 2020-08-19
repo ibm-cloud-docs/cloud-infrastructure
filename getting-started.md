@@ -6,7 +6,7 @@ lastupdated: "2020-03-20"
 
 keywords: cloud environment, virtual server, virtual machine, vm, understanding infrastructure, IaaS model, IT ops admin, on-premises, data center
 
-subcollection: overview
+subcollection: cloud-infrastructure
 
 
 ---

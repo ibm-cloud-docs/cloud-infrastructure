@@ -5,7 +5,7 @@ lastupdated: "2020-04-14"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment
 
-subcollection: overview
+subcollection: cloud-infrastructure
 
 ---
 

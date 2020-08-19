@@ -6,7 +6,7 @@ lastupdated: "2020-06-23"
 
 keywords: Sysdig, IBM Cloud, sysdig light, sysdig no driver
 
-subcollection: cloud-insfrastructure
+subcollection: cloud-infrastructure
 
 ---
 

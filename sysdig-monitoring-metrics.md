@@ -6,7 +6,7 @@ lastupdated: "2020-07-07"
 
 keywords: Sysdig, IBM Cloud, monitoring, platform metrics, metrics
 
-subcollection: cloud-insfrastructure
+subcollection: cloud-infrastructure
 
 ---
 
