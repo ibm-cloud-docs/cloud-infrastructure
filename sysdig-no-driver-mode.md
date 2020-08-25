@@ -25,7 +25,7 @@ subcollection: cloud-infrastructure
 #  Enabling {{site.data.keyword.mon_full_notm}} 'no driver mode'
 {: #enabling-sysdig-light-no-driver}
 
-When you provision an {{site.data.keyword.mon_full_notm}} instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in Sysdig Monitor in the {{site.data.keyword.cloud_notm}} dashboards section. 
+When you provision an {{site.data.keyword.mon_full_notm}} instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in Sysdig Monitor in the {{site.data.keyword.cloud_notm}} dashboards section.
 {: shortdesc}
 
 Sysdig agent 9.9.0 or higher is required for 'no driver mode'.
@@ -34,10 +34,10 @@ Sysdig agent 9.9.0 or higher is required for 'no driver mode'.
 ## Configuring {{site.data.keyword.mon_full_notm}} 'no driver mode'
 {: #provision-sysdig-light}
 
-To enable 'no driver mode' and monitor and manage metrics, you need to configure a Sysdig agent in each environment that you want to use 'no driver mode'. 
+To enable 'no driver mode' and monitor and manage metrics, you need to configure a Sysdig agent in each environment that you want to use 'no driver mode'.
 {: shortdesc}
 
-Use these steps to enable 'no driver mode'. 
+Use these steps to enable 'no driver mode'.
 
 **1.** Provision a Graduated tier Sysdig instance by following the steps in [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision). For more information about the Graduate tier, see [Service plans](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
 
@@ -59,7 +59,7 @@ Alternativelty, you can use the following curl command:
 curl -sL https://ibm.biz/install-sysdig-agent | sudo bash -s -- -a SYSDIG_ACCESS_KEY -c COLLECTOR_ENDPOINT --collector_port 6443 --secure true -ac "feature:\n mode: monitor_light"
 ```
 
-Where 
+Where
 
 `SYSDIG_ACCESS_KEY` is the ingestion key for the instance.
 
@@ -78,7 +78,7 @@ After you provision your Sysdig agent and enable 'no driver mode', you need to c
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
 {: #sysdig-light-metrics}
 
-{{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with IBM and collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in Sysdig. If you have a Sysdig account, then metrics are displayed for that Sysdig instance. You can access metrics through the prebuilt dashboard. 
+{{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with IBM and collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in Sysdig. If you have a Sysdig account, then metrics are displayed for that Sysdig instance. You can access metrics through the prebuilt dashboard.
 {: shortdesc}
 
 Use the following table to see which metrics are available in 'no driver mode'.
@@ -87,17 +87,17 @@ Use the following table to see which metrics are available in 'no driver mode'.
 | ----------- | ----------- |
 | cpu.cores.used	| CPU core usage |
 | cpu.cores.used.percent | CPU core usage percent for each container |
-| cpu.idle.percent	| Percentage of time that the CPUs were idle and the system had no outstanding disk I/O requests. | 
-| cpu.iowait.percent | Percentage of time that the CPUs were idle and the system did an outstanding disk I/O requests | 
+| cpu.idle.percent	| Percentage of time that the CPUs were idle and the system had no outstanding disk I/O requests. |
+| cpu.iowait.percent | Percentage of time that the CPUs were idle and the system did an outstanding disk I/O requests |
 | cpu.nice.percent	| Percentage of user level CPU utilization with 'Nice' priority |
-| cpu.stolen.percent | 	Percentage of time that a virtual machine CPU is in a state of involuntary wait because the physical CPU is shared among virtual machines. | 
-| cpu.system.percent |  Percentage of system level CPU utilization  | 
-| cpu.used.percent	| Percentage of system level CPU utilization | 
+| cpu.stolen.percent | 	Percentage of time that a virtual machine CPU is in a state of involuntary wait because the physical CPU is shared among virtual machines. |
+| cpu.system.percent |  Percentage of system level CPU utilization  |
+| cpu.used.percent	| Percentage of system level CPU utilization |
 | cpu.user.percent	| Percentage of user level CPU utilization |
 | load.average.percpu.1m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 1 minute for all cores.  |
 | load.average.percpu.5m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 5 minutes for all cores.  |
 | load.average.percpu.15m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 15 minutes for all cores.  |
-| memory.bytes.available	| Available memory | 
+| memory.bytes.available	| Available memory |
 | memory.bytes.total	| Total memory of a host |
 | memory.bytes.used	| Total memory used |
 | memory.bytes.virtual	| Physical memory being used |
@@ -131,7 +131,7 @@ Use the following table to see which metrics are available in 'no driver mode'.
 |	net.bytes.in | Inbound network bytes |
 |	net.bytes.out | Outbound network bytes |
 |	net.bytes.total | Total network bytes |
-| proc.count	| Number of processors | 
+| proc.count	| Number of processors |
 | thread.count	| Number of CPU threads or virtual cores |  
 | container.count | Numbers of containers |
 | system.uptime	| Total system uptime |
@@ -164,6 +164,5 @@ Use the following table to see which troubleshooting metrics are available in 'n
 | host.count | Number of system calls |
 | host.error.count | The number of system call errors |
 | proc.count | Number of processes on host or container |
-| proc.start.count | umber of process starts on host or container |
+| proc.start.count | Number of process starts on host or container |
 {: caption="Table 2. Sysdig 'no driver mode' troubleshooting metrics" caption-side="top"}
-
