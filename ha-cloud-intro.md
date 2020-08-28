@@ -113,7 +113,7 @@ When you have multiple servers such as web servers or databases, incoming reques
 
 The {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} is an IaaS cloud load balancer that operates in a single data center. It supports both HTTP/HTTPS and TCP-based applications either as public, private load balancer, and public-to-public. It has on-demand scalability based on load: scaling up as load increases and down when load decreases.
 
-Other key load-balancing features of {{site.data.keyword.loadbalancer_short} include:
+Other key load-balancing features of {{site.data.keyword.loadbalancer_short}} include:
 
 * Public (internet-facing) load balancer
 * Internal (private) load balancer
