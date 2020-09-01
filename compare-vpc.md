@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-09-01"
 
 keywords: compute, virtual server, profile, vpc, vpc on classic, infrastructure, cloud environment
 
@@ -51,7 +51,7 @@ We are always adding new features and support. Over time, there will be fewer co
 
 | Key Features | Current Considerations |
 |-----|-----|
-|Multi-zone regions | Generation 2 profiles are available in Dallas, Washington DC, London, Tokyo, and Frankfurt only. |
+|Multi-zone regions | Supported in both generations |
 |Subnet| Supported in both generations  |
 |Floating IPv4|Supported in both generations  |
 |BYOIP (RFC-1918 based)|Supported in both generations  |
