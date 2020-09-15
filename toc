@@ -46,6 +46,8 @@ Building infrastructure
         sysdig-monitoring-agents-and-plans.md
         sysdig-no-driver-mode.md
         sysdig-monitoring-metrics.md
+        sysdig-classic-metrics.md
+        sysdig-vpc-metrics.md
         sysdig-faq.md
 
     {: .topicgroup}
