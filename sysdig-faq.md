@@ -36,7 +36,7 @@ IBM Cloud is committed to providing you the highest quality of service and is ma
 
 * Provides real-time operational visibility into the performance and health of your applications, IBM services and platforms.
 
-* A visual representation of your infrastructure. Sysdig automatically collects important metrics such as CPU usage, used and available memory, response times, network latency, and more. For more information about Sysdig metrics, see [Sysdig monitoring metrics](/docs/vsi?topic=virtual-servers-sysdig-monitoring-metrics).
+* A visual representation of your infrastructure. Sysdig automatically collects important metrics such as CPU usage, used and available memory, response times, network latency, and more. For more information about Sysdig metrics, see [Sysdig monitoring metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-monitoring-metrics).
 
 * Offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alters, and design custom dashboards. 
 
@@ -75,7 +75,7 @@ For information about provisioning, configuring your agent, managing data, and a
 {: #how-do-i-uninstall-nimsoft}
 {: faq}
 
-For information about uninstalling Advanced Monitoring by Nimsoft, see [Uninstalling Advanced Monitoring by Nimsoft](/docs/SLmonitoring?topic=slmonitoring-uninstall-nimsoft).
+For information about uninstalling Advanced Monitoring by Nimsoft, see [Uninstalling Advanced Monitoring by Nimsoft](/docs/cloud-infrastructure?topic=cloud-infrastructure-uninstall-nimsoft).
 
 ## What if I am using custom images with Advanced Monitoring by Nimsoft?
 {: what-if-i-use-custom-images-with-nimsoft}
