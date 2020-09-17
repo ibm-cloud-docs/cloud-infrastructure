@@ -18,8 +18,8 @@ Building infrastructure
 
     {: .topicgroup}
     Related links
-        [Service and infrastructure availability](/resources/resources-services_region)
-        [Getting started with IAM tutorial](/iam/iam-getstarted)
+        [Service and infrastructure availability](/overview/overview-services_region)
+        [Getting started with IAM tutorial](/account/account-iamoverview)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
