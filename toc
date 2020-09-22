@@ -31,6 +31,7 @@ Building infrastructure
         /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
         ha-3-tier.md
         ha-pools-origins-1zone.md
+        ha-autoscale-tutorial.md
 
     {: .topicgroup}
     Building your infrastructure
