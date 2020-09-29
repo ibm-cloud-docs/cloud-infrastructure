@@ -138,4 +138,6 @@ To create the Auto scale instance groups, complete the following steps:
 
 5.	Click **Create instance group**.
 
+## Related Content
 
+For a detailed example, watch the video [Don't let load be the reason for the 404 error](https://video.ibm.com/channel/23944579/video/mv8ajs){: external}
