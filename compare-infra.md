@@ -38,15 +38,13 @@ See the following table for the compute differences between classic and VPC.
 
 | Category   |  Classic Infrastructure   | VPC Infrastructure |
 | ---------- | ------------------------- | ------------------ |
-|  Services  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} instances only |
-| Performance and availability | | Better availability achievable through zone architecture |
-| Pricing | Hourly and monthly billing, plus suspend billing features | Hourly, suspend billing, and sustained usage discount |
-| Virtual server families | Public, dedicated, transient, reserved | Public only |
-| Profiles | All profiles, including the GPU profiles | Balanced, compute, memory profiles with higher RAM and vCPU options |
-| Supported images | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
-| Platform integration | | IAM and resource group integration for a unified experience |
-{: row-headers}
-{: class="comparison-table"}
+|  **Services**  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} instances only |
+| **Performance and availability** | | Better availability achievable through zone architecture |
+| **Pricing** | Hourly and monthly billing, plus suspend billing features | Hourly, suspend billing, and sustained usage discount |
+| **Virtual server families** | Public, dedicated, transient, reserved | Public only |
+| **Profiles** | All profiles, including the GPU profiles | Balanced, compute, memory profiles with higher RAM and vCPU options |
+| **Supported images** | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
+| **Platform integration** | | IAM and resource group integration for a unified experience |
 {: caption="Table 1. Compute comparison" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
 
@@ -57,17 +55,15 @@ See the following table for the networking differences between classic and VPC.
 
 | Category   |  Classic infrastructure   | VPC infrastructure |
 | ---------- | ------------------------- | ------------------ |
-| Location construct    | Data centers and PODs <br>(Might require VLAN spanning to connect two different pods or data centers, and purchasing gateways to control and route traffic) | Regional model that abstracts infrastructure so you don't need to worry about pod locations.|
-| Network functions and services |Physical and virtual appliances from multiple vendors | Cloud-native network functions (VPNs, LBaaS)<br>(VPC isolation, dedicated resources carved out of public cloud, with more options for VPNs, LBaaS, multiple vNIC instances, and larger subnet sizes) |
-| IP addresses | IPv6 addresses supported | IPv4 addresses only |
-| Gateway routing | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Traffic routing is handled by public gateway and floating IP services |
-| Network address translation (NAT) | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Supported by the Bring-your-own-IP (BYOIP) functionality  |
-| IPsec Virtual private network (VPN) | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Supported by the VPN-as-a-service offering |
-|  Elastic load balancing | Cloud Load Balancer  | Load Balancer for VPC |
-| Global load balancing| Cloud Internet Services, Citrix Netscaler MPX | Cloud Internet Services |
-|Hybrid connectivity | NAT solution to bridge between IBM Cloud and your IT environment | Bring your own private IP address without NAT or IPSec tunnels <br>Note: You can enable your VPC to access classic infrastructure resources. |
-{: row-headers}
-{: class="comparison-table"}
+| **Location construct**    | Data centers and PODs <br>(Might require VLAN spanning to connect two different pods or data centers, and purchasing gateways to control and route traffic) | Regional model that abstracts infrastructure so you don't need to worry about pod locations.|
+| **Network functions and services** |Physical and virtual appliances from multiple vendors | Cloud-native network functions (VPNs, LBaaS)<br>(VPC isolation, dedicated resources carved out of public cloud, with more options for VPNs, LBaaS, multiple vNIC instances, and larger subnet sizes) |
+| **IP addresses** | IPv6 addresses supported | IPv4 addresses only |
+| **Gateway routin**g | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Traffic routing is handled by public gateway and floating IP services |
+| **Network address translation (NAT)** | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Supported by the Bring-your-own-IP (BYOIP) functionality  |
+| **IPsec Virtual private network (VPN)** | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Supported by the VPN-as-a-service offering |
+|  **Elastic load balancing** | Cloud Load Balancer  | Load Balancer for VPC |
+| **Global load balancing**| Cloud Internet Services, Citrix Netscaler MPX | Cloud Internet Services |
+|**Hybrid connectivity** | NAT solution to bridge between IBM Cloud and your IT environment | Bring your own private IP address without NAT or IPSec tunnels <br>Note: You can enable your VPC to access classic infrastructure resources. |
 {: caption="Table 2. Network comparison" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers indentify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
 
