@@ -18,7 +18,7 @@ subcollection: cloud-infrastructure
 # Networking services
 {: #network}
 
-You automatically get connected to the {{site.data.keyword.vpn_full}} when your {{site.data.keyword.cloud_notm}} account is set up. By default, your server has a public IP address and a private IP address. If you want your server to be private, you can either turn off the public interface after your server is provisioned or order your server as private. For more information, see [Getting started with Virtual Private Networking](/docs/iaas-vpn?topic=VPN-getting-started) for more information.
+You automatically get connected to the {{site.data.keyword.vpn_full}} when your {{site.data.keyword.cloud_notm}} account is set up. By default, your server has a public IP address and a private IP address. If you want your server to be private, you can either turn off the public interface after your server is provisioned or order your server as private. For more information, see [Getting started with Virtual Private Networking](/docs/iaas-vpn?topic=iaas-vpn-getting-started) for more information.
 
 Check out the following tables for a summary of networking options.
 

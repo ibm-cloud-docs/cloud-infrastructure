@@ -42,7 +42,7 @@ To view configured monitors, follow these steps:
 platforms. Your administrators, DevOps teams, and developers have full stack telemetry with advanced features to help them 
 monitor and troubleshoot, define alerts, and design custom dashboards.
 
-For information about setting up an {{site.data.keyword.mon_full_notm}} monitoring agent, see [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
+For information about setting up an {{site.data.keyword.mon_full_notm}} monitoring agent, see [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
 
 The **Monitoring** tab is only visible if at least one monitor is configured.
 {:note}

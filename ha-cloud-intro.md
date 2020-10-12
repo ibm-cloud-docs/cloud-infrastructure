@@ -91,7 +91,7 @@ As part of the IaaS, it is not uncommon to deploy other types of network service
 
 ### Direct Link
 
-Direct link provides you with a way to connect to your on-premises resources to {{site.data.keyword.Bluemix_notm}} resources in classic infrastructure. There are different types of direct-link offerings that vary by pricing and capabilities. To read more about direct link, refer to the {{site.data.keyword.Bluemix_notm}} on [Direct Link](https://cloud.ibm.com/docs/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link#get-started-with-direct-link?cm_sp=Cloud-Product-_-OnPageNavCTA-IBMCloudPlatform_IBMCloudInternetServices-_-DirectLink_Browse_Documentation).
+Direct link provides you with a way to connect to your on-premises resources to {{site.data.keyword.Bluemix_notm}} resources in classic infrastructure. There are different types of direct-link offerings that vary by pricing and capabilities. To read more about direct link, refer to the {{site.data.keyword.Bluemix_notm}} on [Direct Link](https://cloud.ibm.com/docs/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link).
 
 Regardless of which offering is chosen, keep in mind that by design, direct link is a single link and presents as a SPOF. You can consider ordering two direct links for redundancy to protect against the SPOF. Direct links can provide diverse connections that enable you to achieve redundancy trough BGP. More information see [Models for diversity and redundancy in Direct Link on Classic](https://cloud.ibm.com/docs/direct-link?topic=direct-link-models-for-diversity-and-redundancy-in-direct-link).
 
