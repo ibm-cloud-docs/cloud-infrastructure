@@ -45,7 +45,7 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 |--------|---------------|
 | [{{site.data.keyword.baremetal_short}}](/docs/bare-metal?topic=bare-metal-about-bm#about-bm)  | Hourly or monthly, single-tenant servers that are dedicated to you and not shared in any part, including server resources, with other customers. |
 | [{{site.data.keyword.BluVirtServers_short}}](/docs/virtual-servers?topic=virtual-servers-getting-started-tutorial) | Scalable virtual servers that are purchased with cores and memory allocations. |
-| [{{site.data.keyword.vmwaresolutions_short}}](/docs/services/vmwaresolutions?topic=vmware-solutions-getting-started#getting-started) | Quickly and seamlessly integrate or migrate on-premises VMware workloads by using scalable, secure, and high-performance infrastructure and the industry-leading VMware hybrid virtualization technology. |
+| [{{site.data.keyword.vmwaresolutions_short}}](/docs/vmwaresolutions?topic=vmware-solutions-getting-started#getting-started) | Quickly and seamlessly integrate or migrate on-premises VMware workloads by using scalable, secure, and high-performance infrastructure and the industry-leading VMware hybrid virtualization technology. |
 {: caption="Table 3. Compute options - Classic" caption-side="top"}
 
 ## Containers

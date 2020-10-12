@@ -44,12 +44,12 @@ IBM Cloud is committed to providing you the highest quality of service and is ma
 {: #will-sysdig-cost-more}
 {: faq}
 
-Depending on which Advanced Monitoring by Nimsoft plan you are using, you might see an increase in your monthly resource monitoring cost. {{site.data.keyword.mon_full_notm}} offers different pricing plans. 
+Depending on which Advanced Monitoring by Nimsoft plan you are using, you might see an increase in your monthly resource monitoring cost. {{site.data.keyword.mon_full_notm}} offers different pricing plans.
 
-* Light plan 
-* Graduated Tier plan 
+* Light plan
+* Graduated Tier plan
 
-For more information about plans and pricing, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans).
+For more information about plans and pricing, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans).
 
 ## How do I install {{site.data.keyword.mon_full_notm}}?
 {: #how-do-i-install-sysdig}
@@ -61,21 +61,21 @@ You can install and configure an {{site.data.keyword.mon_full_notm}} agent for a
 * Mesos, Marathon, and DCOS
 * Linux installations
 
-In addition to the previously listed environments, you can see all of the IBM Cloud services that are Sysdig-enabled [here](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-cloud_services).
- 
-For information about installing {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
+In addition to the previously listed environments, you can see all of the IBM Cloud services that are Sysdig-enabled [here](/docs/Monitoring-with-Sysdig?topic=Sysdig-cloud_services).
+
+For information about installing {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
 
 ## How do I get started with {{site.data.keyword.mon_full_notm}}?
 {: #how-do-i-get-started-sysdig}
 {: faq}
 
-For information about provisioning, configuring your agent, managing data, and alerting, see {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
+For information about provisioning, configuring your agent, managing data, and alerting, see {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
 
 ## How do I uninstall Advanced Monitoring by Nimsoft?
 {: #how-do-i-uninstall-nimsoft}
 {: faq}
 
-For information about uninstalling Advanced Monitoring by Nimsoft, see [Uninstalling Advanced Monitoring by Nimsoft](/docs/cloud-infrastructure?topic=cloud-infrastructure-uninstall-nimsoft).
+For information about uninstalling Advanced Monitoring by Nimsoft, see [Uninstalling Advanced Monitoring by Nimsoft](/docs/cloud-infrastructure?topic=cloud-infrastructure-faq-sysdig-monitoring#how-do-i-uninstall-nimsoft).
 
 ## What if I am using custom images with Advanced Monitoring by Nimsoft?
 {: what-if-i-use-custom-images-with-nimsoft}

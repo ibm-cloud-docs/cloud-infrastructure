@@ -323,7 +323,7 @@ In this section, you will create two load balancers, one in each region. This lo
 7.  Click **Create load balancer** to provision a load balancer.
 8.  Repeat this procedure for the zone 2 load balancer.
 
-You can configure the load balancers for HTTPS, refer to [Secure with HTTPS](/docs/vpc-on-classic?topic=solution-tutorials-vpc-multi-region#secure-with-https) to configure an SSL certificate and enable HTTPS.
+You can configure the load balancers for HTTPS, refer to [Secure with HTTPS](https://cloud.ibm.com/docs/vpc-on-classic?topic=solution-tutorials-vpc-multi-region#vpc-multi-region-6) to configure an SSL certificate and enable HTTPS.
 
 ### Test the load balancers
 {: #lb-test}

@@ -30,7 +30,7 @@ If an echo isn't received in the allotted time frame (1 second for service pings
 
 To view configured monitors, follow these steps:
 
-1. Go to your console's device menu. For more information, see [Navigating to devices](/docs/vsi?topic=virtual-servers-navigating-devices).
+1. Go to your console's device menu. For more information, see [Navigating to devices](/docs/virtual-servers?topic=virtual-servers-navigating-devices).
 2. From the **Devices** menu, select **Device List** and select the device.
 3. Click the **Monitoring** tab. All current pings are viewable on the landing page. 
 
@@ -42,7 +42,7 @@ To view configured monitors, follow these steps:
 platforms. Your administrators, DevOps teams, and developers have full stack telemetry with advanced features to help them 
 monitor and troubleshoot, define alerts, and design custom dashboards.
 
-For information about setting up an {{site.data.keyword.mon_full_notm}} monitoring agent, see [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
+For information about setting up an {{site.data.keyword.mon_full_notm}} monitoring agent, see [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
 
 The **Monitoring** tab is only visible if at least one monitor is configured.
 {:note}
