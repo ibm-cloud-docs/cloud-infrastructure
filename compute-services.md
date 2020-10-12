@@ -23,7 +23,7 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 ## Virtual servers
 {: #compute-vsi}
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) | Scalable virtual servers for VPC that are purchased with cores and memory allocations. |
 | [{{site.data.keyword.hpvs}}](/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started) | Hyper Protect Virtual Servers is an IBM Cloud™ service that provides highly secure virtual servers that can run Linux applications and containerized workloads. |
@@ -33,7 +33,7 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 ## VPC infrastructure
 {: #compute-vpc}
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) | Scalable virtual servers for VPC that are purchased with cores and memory allocations. |
 {: caption="Table 2. Compute options - VPC" caption-side="top"}
@@ -41,7 +41,7 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 ## Classic infrastructure
 {: #compute-classic}
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.baremetal_short}}](/docs/bare-metal?topic=bare-metal-about-bm#about-bm)  | Hourly or monthly, single-tenant servers that are dedicated to you and not shared in any part, including server resources, with other customers. |
 | [{{site.data.keyword.BluVirtServers_short}}](/docs/virtual-servers?topic=virtual-servers-getting-started-tutorial) | Scalable virtual servers that are purchased with cores and memory allocations. |
@@ -51,21 +51,21 @@ Your server is the base of your infrastructure. Depending on your needs, you hav
 ## Containers
 {: #containers}
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started) | Combines Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. |
-| [Project Coligo (Experimental)](/docs/codeengine?topic=codeengine-getting-started) | Provides a platform to unify the deployment of all of your container-based applications. | 
+| [Project Coligo (Experimental)](/docs/codeengine?topic=codeengine-getting-started) | Provides a platform to unify the deployment of all of your container-based applications. |
 {: caption="Table 4. Compute options - Containers" caption-side="top"}
 
 ## Serverless
 {: #serverless}
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting-started) | A Functions-as-a-Service (FaaS) programming platform based on Apache OpenWhisk. |
 {: caption="Table 6. Compute options - Serverless" caption-side="top"}
 
 ## Next steps
-{: nextsteps3}
+{: #nextsteps3}
 
 To continue, see [Building your infrastructure](/docs/cloud-infrastructure?topic=cloud-infrastructure-network) with networking services.

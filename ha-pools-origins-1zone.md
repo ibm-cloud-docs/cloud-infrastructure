@@ -388,5 +388,6 @@ In this section, you configure a global load balancer (GLB) distributing the inc
 Wait until the Health check status changes to **Healthy**. Open the URL of the load balancer: `lb.mydomain.com`.
 
 ## Related Content
+{: #ha-pools-related-content}
 
 For a detailed example, watch the video [Patching, updating web servers with minimal downtime in a high available environment](https://www.youtube.com/watch?v=PdOjauL-SQI&feature=youtu.be){: external}.

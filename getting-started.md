@@ -80,6 +80,6 @@ A private cloud includes resources that are provisioned to allow access to a com
 A hybrid cloud includes resources that combine the aspects of both public and private clouds. It is hosted both onsite at a company's office (or across offices) and by a cloud provider. A hybrid cloud can be accessed from anywhere.
 
 ## Next steps
-{: nextsteps1}
+{: #nextsteps1}
 
 To continue, see [Planning your infrastructure](/docs/cloud-infrastructure?topic=cloud-infrastructure-planning-2).

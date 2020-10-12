@@ -44,6 +44,6 @@ You can buy extra storage based on your needs. See the following table for a sum
 {: caption="Table 2. Storage options - Classic" caption-side="top"}
 
 ## Next steps
-{: nextsteps4}
+{: #nextsteps4}
 
 To continue, see [Managing your infrastructure](/docs/cloud-infrastructure?topic=cloud-infrastructure-managing).

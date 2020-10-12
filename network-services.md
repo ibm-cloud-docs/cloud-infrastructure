@@ -27,7 +27,7 @@ Check out the following tables for a summary of networking options.
 
 Within the infrastructure layer, you can build a virtual private cloud, which is a virtual network that is tied to your {{site.data.keyword.cloud_notm}} account.
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [Getting started with {{site.data.keyword.vpc_full}}](/docs/vpc?topic=vpc-getting-started)| Provides cloud security and the ability to dynamically scale your virtual server instances.  |
 | [Load balancer for VPC](/docs/vpc?topic=vpc-load-balancers) | Distributes traffic among multiple server instances within the same region of your VPC. |
@@ -40,7 +40,7 @@ Within the infrastructure layer, you can build a virtual private cloud, which is
 ## Classic infrastructure
 {: #network-classic}
 
-| Option | Description | 
+| Option | Description |
 |--------|---------------|
 | [Content Delivery Network](/docs/CDN?topic=CDN-getting-started) | Used for various industry solutions, including media, entertainment, software, gaming, banking, and e-commerce, to meet the needs of your businesses. |
 | [Domain Name Service](/docs/cli?topic=cli-ibm-dev-tools-for-jetbrains) | Provides a central location to view and manage your domains through the basic DNS management interface, and also gives you the option to manage reverse and secondary DNS in the same location for free of charge. |
@@ -57,6 +57,6 @@ Within the infrastructure layer, you can build a virtual private cloud, which is
 {: caption="Table 2. Networking options - Classic" caption-side="top"}
 
 ## Next steps
-{: nextsteps5}
+{: #nextsteps5}
 
 To continue, see [Building your infrastructure](/docs/cloud-infrastructure?topic=cloud-infrastructure-storage) with storage services.

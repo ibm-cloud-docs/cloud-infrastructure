@@ -18,12 +18,12 @@ subcollection: cloud-infrastructure
 # Planning your infrastructure
 {: #planning-2}
 
-You want to plan your infrastructure before you provision it to make sure that you size it correctly for your workload. {{site.data.keyword.cloud_notm}} has several tools and sites to help you with designing and sizing your infrastructure. 
+You want to plan your infrastructure before you provision it to make sure that you size it correctly for your workload. {{site.data.keyword.cloud_notm}} has several tools and sites to help you with designing and sizing your infrastructure.
 
 ## Infrastructure architecture
 {: #planning-3}
 
-Start with [IaaS (Infrastructure-as-a-Service) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/learn/iaas){: new_window} to get a more in-depth overview of the infrastructure-as-a-service platform and architecture. 
+Start with [IaaS (Infrastructure-as-a-Service) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/learn/iaas){: new_window} to get a more in-depth overview of the infrastructure-as-a-service platform and architecture.
 
 ## {{site.data.keyword.cloud_notm}} Design Decision Tool
 {: #planning-4}
@@ -33,7 +33,7 @@ The [{{site.data.keyword.cloud_notm}} Design Decision Tool ![External link icon]
 ## {{site.data.keyword.cloud_notm}} Stencils
 {: #planning-5}
 
-[{{site.data.keyword.cloud_notm}} Stencils ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-architecture/ibm-cloud-stencils){: new_window} help you create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools. 
+[{{site.data.keyword.cloud_notm}} Stencils ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-architecture/ibm-cloud-stencils){: new_window} help you create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools.
 
 ## Bare metal server options
 {: #planning-6}
@@ -46,6 +46,6 @@ Use the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.baremetal_short}} 
 As with any architecture, consider the {{site.data.keyword.cloud_notm}} resources that you might add to your solution as you size your infrastructure. For more information, see [SaaS applications for business and IT ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/saas){: new_window} and search for a specific service. You also need to think about any regulations that you have to consider when you build your architecture. For example, is your workload considered sensitive or is it regulated? For more information, see [Compliance ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/compliance){: new_window}.
 
 ## Next steps
-{: nextsteps2}
+{: #nextsteps2}
 
 To continue, see [Building your infrastructure](/docs/cloud-infrastructure?topic=cloud-infrastructure-compute) with compute services.
