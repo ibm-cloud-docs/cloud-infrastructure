@@ -50,6 +50,7 @@ Building infrastructure
         sysdig-classic-metrics.md
         sysdig-vpc-metrics.md
         sysdig-faq.md
+        vulnerability-eos-faq.md
 
     {: .topicgroup}
     Related links
