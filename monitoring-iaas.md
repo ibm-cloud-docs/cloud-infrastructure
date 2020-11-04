@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-11-03"
 
 keywords: infrastructure, monitoring
 
@@ -18,21 +18,18 @@ subcollection: cloud-infrastructure
 # IBM Cloud monitoring services
 {: #monitoring}
 
-After you have your infrastructure and environments up and running, you are ready to set up your monitoring service. You can choose the free basic monitoring service, or an {{site.data.keyword.mon_full_notm}} plan that has different pricing options.
+After you have your infrastructure and environments up and running, you are ready to set up your monitoring service. You can choose an {{site.data.keyword.mon_full_notm}} plan that has different pricing options.
 {: shortdesc}
 
-## Basic monitoring with initiate service and slow pings
-{: #basic-monitoring}
+<!--## Basic monitoring with initiate service and slow pings
+{: #basic-monitoring}-->
 
-You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive.
-
+<!--You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive.
 If an echo isn't received in the allotted time frame (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
-
 To view configured monitors, follow these steps:
-
 1. Go to your console's device menu. For more information, see [Navigating to devices](/docs/virtual-servers?topic=virtual-servers-navigating-devices).
 2. From the **Devices** menu, select **Device List** and select the device.
-3. Click the **Monitoring** tab. All current pings are viewable on the landing page. 
+3. Click the **Monitoring** tab. All current pings are viewable on the landing page.-->
 
 ## Getting started with Sysdig
 {: #sysdig-monitoring}
