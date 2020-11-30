@@ -35,10 +35,7 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 {{site.data.keyword.cloud}} is here to support you 100% on your journey. The resources available to you include comprehensive documentation, planning tools, qualified support specialists, and an active user community. Let's get you started on your journey.
 
-
-<div class="embed-responsive embed-responsive-16by9" data-hd-video="video">
-  <iframe class="embed-responsive-item" id="youtubeplayer" title="Plan, build, and manage your cloud infrastructure with IBM" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/Kmt_odiCWvU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
-</div>
+![Plan, build, and manage your cloud infrastructure with IBM](https://www.youtube.com/embed/Kmt_odiCWvU){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Video transcript
 {: #video-transcript-it-ops-2}
