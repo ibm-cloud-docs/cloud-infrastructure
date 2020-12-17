@@ -30,18 +30,18 @@ This reference architecture describes three methods of deploying a 3-tier web ap
 |The data tier|The 3rd-tier stores the application data that can be in written form or query from. The storage varies across different storage technologies, such as block volumes or object storage, depending on the application requirements.
 
 ## Deployment Considerations
-{{site.data.keyword.vpc_short}} is only offered in multizone regions (MZR) which are made up of three more zones. Each zone is isolated from each other to contain failures within a zone. The zones are also interconnected with a high-speed connection for higher bandwidth and lower latency for intra-zone communications.
+{{site.data.keyword.vpc_short}} is only offered in multizone regions (MZR) which are made up of three or more zones. Each zone is isolated from each other to contain failures within a zone. The zones are also interconnected with a high-speed connection for higher bandwidth and lower latency for intra-zone communications.
 
 ## Component Considerations
 
 ### Virtual Servers
 
-Servers in each of the 3-tiers have different requirements. When you provision your virtual servers, you have multiple options for virtual server profiles: Balanced, Compute, and Memory. The vCPU to memory ratio varies across the different profiles, but within the profile the ratio is constant. Within a profile, the number of vCPU and memory increases along with the bandwidth performance. Use the following information when you are provisioning your servers.
+Servers in each of the 3-tiers have different requirements. When you provision your virtual servers, you have multiple options for virtual server profiles: Balanced, Compute, and Memory. The vCPU-to-memory ratio varies across the different profiles, but within the profile the ratio is constant. Within a profile, the number of vCPU and memory increases along with the bandwidth performance. Use the following information when you are provisioning your servers.
 
 |Tier|Server requirements|
 |---|---|
 |Front-end web tier|This tier tends to be higher in traffic workload. These workloads are more CPU-intensive than memory-intensive. So, you want to select a Compute profile that has a vCPU ratio to memory of 1:2. Within the Compute profile, select the appropriate type based your vCPU and memory requirements.|
-|Application tier|This tier tends to be more memory-intensive and involves more caching. For this workload, select a Memory profile where the ratio of vCPU to memory is more weighted to the memory, 1:8.|
+|Application tier|This tier tends to be more memory-intensive and involves more caching. For this workload, select a Memory profile where the ratio of vCPU-to-memory is more weighted to the memory, 1:8.|
 |Data tier|If you are using a virtual instance as the database, select a Balance profile that offers more balance between vCPU and memory, such as 1:4.|
 
 ### Load balancers
