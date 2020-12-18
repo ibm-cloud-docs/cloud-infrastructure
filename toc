@@ -53,6 +53,21 @@ Building infrastructure
         vulnerability-eos-faq.md
 
     {: .topicgroup}
+    Migrating your infrastructure
+        about-migration.md
+
+        {: .topicgroup}
+        Classic to Classic infrastructure
+            /virtual-servers/virtual-servers-migrating-vsi-new-datacenter
+            /bare-metal/bare-metal-getting-started-bm-custom-image-templates
+
+        {: .topicgroup}
+        Classic to VPC infrastructure
+            /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
+
+        /vpc-on-classic/vpc-on-classic-migrating-vpc
+        
+    {: .topicgroup}
     Related links
         [Terraform](/terraform/terraform-getting-started)
         [Terraform for VPC](https://github.com/ibm-cloud-architecture/terraformer)
