@@ -57,7 +57,7 @@ Building infrastructure
         about-migration.md
 
         {: .topicgroup}
-        Classic to Classic infrastructure
+        Classic to classic infrastructure
             /virtual-servers/virtual-servers-migrating-vsi-new-datacenter
             /bare-metal/bare-metal-getting-started-bm-custom-image-templates
 
