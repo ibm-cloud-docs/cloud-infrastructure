@@ -25,11 +25,11 @@ subcollection: cloud-infrastructure
 {: #classic-sysdig-metrics}
 
 The following metrics are available only if you use the {{site.data.keyword.mon_full_notm}} full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-sysdig-light-no-driver#sysdig-light-metrics).
-{:important} 
+{:important}
 
 The following tables define basic Classic virtual server instance metrics.
 
-### Average CPU usage percentage
+## Average CPU usage percentage
 {: #avg-cpu-usage-gen1}
 
 Average percentage of time that elapsed executing instructions across all CPUs
@@ -43,7 +43,7 @@ Average percentage of time that elapsed executing instructions across all CPUs
 
 {: caption="Table 1: Average CPU usage percentage metric metadata" caption-side="top"}
 
-### CPU usage
+## CPU usage
 {: #cpu-usage-cumulative-gen1}
 
 Cumulative elapsed time that a CPU is executing instructions since virtual server instance start
@@ -57,7 +57,7 @@ Cumulative elapsed time that a CPU is executing instructions since virtual serve
 
 {: caption="Table 2: Cumulative CPU usage metric metadata" caption-side="top"}
 
-### CPU usage percentage
+## CPU usage percentage
 {: #cpu-usage-percentage-gen1}
 
 Average percentage of time that a CPU is executing instructions
@@ -71,7 +71,7 @@ Average percentage of time that a CPU is executing instructions
 
 {: caption="Table 3: Average CPU usage metric metadata" caption-side="top"}
 
-### Free memory
+## Free memory
 {: #free-memory-gen1}
 
 Free memory of the virtual server instance in kibibytes (1024 bytes)
@@ -85,7 +85,7 @@ Free memory of the virtual server instance in kibibytes (1024 bytes)
 
 {: caption="Table 4: Free memory metric metadata" caption-side="top"}
 
-### I/O requests in flight
+## I/O requests in flight
 {: #IO-requests-in-flight-gen1}
 
 Number of I/O requests in flight
@@ -99,7 +99,7 @@ Number of I/O requests in flight
 
 {: caption="Table 5: I/O requests in flight metric metadata" caption-side="top"}
 
-### Memory usage percentage
+## Memory usage percentage
 {: #memory-usage-percentage-gen1}
 
 Percent of used memory of the virtual server instance
@@ -113,7 +113,7 @@ Percent of used memory of the virtual server instance
 
 {: caption="Table 6: Memory usage percentage metric metadata" caption-side="top"}
 
-### Network received in bytes per second
+## Network received in bytes per second
 {: #network-received-bps-gen1}
 
 Bytes per second received for a network interface
@@ -127,7 +127,7 @@ Bytes per second received for a network interface
 
 {: caption="Table 7: Network in bytes per second metric metadata" caption-side="top"}
 
-### Network out bytes per second
+## Network out bytes per second
 {: #network-out-bps-gen1}
 
 Bytes per second transmitted for a network interface
@@ -141,7 +141,7 @@ Bytes per second transmitted for a network interface
 
 {: caption="Table 8: Network out bytes per second metric metadata" caption-side="top"}
 
-### Total memory
+## Total memory
 {: #total-memory-kib-gen1}
 
 Total memory of the virtual server instance in kibibytes (1024 bytes)
@@ -155,7 +155,7 @@ Total memory of the virtual server instance in kibibytes (1024 bytes)
 
 {: caption="Table 9: Total memory in kibibytes metric metadata" caption-side="top"}
 
-### Volume I/O throughput read
+## Volume I/O throughput read
 {: #volume-io-throughput-read-gen1}
 
 Data read from the volume (MiB/s).
@@ -169,7 +169,7 @@ Data read from the volume (MiB/s).
 
 {: caption="Table 10: Volume I/O throughput read metric metadata" caption-side="top"}
 
-### Volume I/O throughput total
+## Volume I/O throughput total
 {: #volume-io-throughput-total-mib-gen1}
 
 All volume I/O, in MiB/s.
@@ -183,7 +183,7 @@ All volume I/O, in MiB/s.
 
 {: caption="Table 11: Volume I/O throughput total metric metadata" caption-side="top"}
 
-### Volume I/O throughput written
+## Volume I/O throughput written
 {: #volume-io-throughput-written-mib-gen1}
 
 Data written to the volume (MiB/s)
@@ -197,7 +197,7 @@ Data written to the volume (MiB/s)
 
 {: caption="Table 12: Volume I/O throughput written metric metadata" caption-side="top"}
 
-### Volume I/O wait time
+## Volume I/O wait time
 {: #volume-io-wait-gen1}
 
 Total I/O wait time (all requests) per second
@@ -211,7 +211,7 @@ Total I/O wait time (all requests) per second
 
 {: caption="Table 13: Volume I/O wait time metric metadata" caption-side="top"}
 
-### Volume read requests bytes per second
+## Volume read requests bytes per second
 {: #volume-read-requests-bps-gen1}
 
 Read requests in bytes per second.
@@ -225,7 +225,7 @@ Read requests in bytes per second.
 
 {: caption="Table 14: Volume read requests bytes per second metric metadata" caption-side="top"}
 
-### Volume read requests I/O operations per second
+## Volume read requests I/O operations per second
 {: #volume-read-iops-gen1}
 
 Volume read requests per second.
@@ -239,7 +239,7 @@ Volume read requests per second.
 
 {: caption="Table 15: Volume read I/O operations per second metric metadata" caption-side="top"}
 
-### Volume read latency
+## Volume read latency
 {: #volume-read-latency-microseconds-gen1}
 
 Read latency from volume, in microseconds
@@ -253,7 +253,7 @@ Read latency from volume, in microseconds
 
 {: caption="Table 16: Volume read latency metric metadata" caption-side="top"}
 
-### Volume total I/O operations per second
+## Volume total I/O operations per second
 {: #volume-total-iops-gen1}
 
 I/O requests per second.
@@ -267,7 +267,7 @@ I/O requests per second.
 
 {: caption="Table 17: Volume total I/O operations per second metric metadata" caption-side="top"}
 
-### Volume write bytes per second
+## Volume write bytes per second
 {: #volume-write-bps-gen1}
 
 Write requests in bytes per second.

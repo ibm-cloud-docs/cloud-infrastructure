@@ -25,11 +25,11 @@ subcollection: cloud-infrastructure
 {: #vpc-sysdig-metrics}
 
 The following metrics are available only if you use the {{site.data.keyword.mon_full_notm}} full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-sysdig-light-no-driver#sysdig-light-metrics).
-{:important} 
+{:important}
 
 The following tables define basic VPC virtual server instance metrics.
 
-### Average CPU usage percentage
+## Average CPU usage percentage
 {: #avg-cpu-usage-gen2}
 
 Average percentage of time that elapsed executing instructions across all CPUs
@@ -43,7 +43,7 @@ Average percentage of time that elapsed executing instructions across all CPUs
 
 {: caption="Table 23: Average CPU usage percentage metric metadata" caption-side="top"}
 
-### Bytes received for a network interface
+## Bytes received for a network interface
 {: #network-int-bytes-received-gen2}
 
 Cumulative number of bytes received for a network interface since virtual server instance start
@@ -57,7 +57,7 @@ Cumulative number of bytes received for a network interface since virtual server
 
 {: caption="Table 24: Average CPU usage percentage metric metadata" caption-side="top"}
 
-### Bytes sent for a network interface
+## Bytes sent for a network interface
 {: #network-bytes-sent}
 
 Cumulative number of bytes sent for a network interface since virtual server instance start
@@ -71,7 +71,7 @@ Cumulative number of bytes sent for a network interface since virtual server ins
 
 {: caption="Table 25: Bytes sent for a network interface metric metadata" caption-side="top"}
 
-### CPU usage
+## CPU usage
 {: #cpu-usage-cumulative-gen2}
 
 Cumulative elapsed time that a CPU is executing instructions since virtual server instance start
@@ -85,7 +85,7 @@ Cumulative elapsed time that a CPU is executing instructions since virtual serve
 
 {: caption="Table 26: Cumulative CPU usage metric metadata" caption-side="top"}
 
-### CPU usage percentage
+## CPU usage percentage
 {: #cpu-usage-percentage-gen2}
 
 Average percentage of time that a CPU is executing instructions
@@ -99,7 +99,7 @@ Average percentage of time that a CPU is executing instructions
 
 {: caption="Table 27: Average CPU usage metric metadata" caption-side="top"}
 
-### Free memory
+## Free memory
 {: #free-memory-gen2}
 
 Free memory of the virtual server instance in kibibytes (1024 bytes)
@@ -113,7 +113,7 @@ Free memory of the virtual server instance in kibibytes (1024 bytes)
 
 {: caption="Table 28: Free memory metric metadata" caption-side="top"}
 
-### Memory usage percentage
+## Memory usage percentage
 {: #memory-usage-percentage-gen2}
 
 Percent of used memory of the virtual server instance
@@ -127,7 +127,7 @@ Percent of used memory of the virtual server instance
 
 {: caption="Table 29: Memory usage percentage metric metadata" caption-side="top"}
 
-### Number of bytes read for a volume
+## Number of bytes read for a volume
 {: #bytes-read-for-volume-gen2}
 
 Cumulative number of bytes read for a volume since virtual server instance start
@@ -141,7 +141,7 @@ Cumulative number of bytes read for a volume since virtual server instance start
 
 {: caption="Table 30: Number of bytes read for a volume metric metadata" caption-side="top"}
 
-### Number of bytes written for a volume
+## Number of bytes written for a volume
 {: #bytes-written-for-volume-gen2}
 
 Cumulative number of bytes written for a volume since virtual server instance start
@@ -155,7 +155,7 @@ Cumulative number of bytes written for a volume since virtual server instance st
 
 {: caption="Table 31: Number of bytes written for a volume metric metadata" caption-side="top"}
 
-### Number of dropped incoming packets for a network interface
+## Number of dropped incoming packets for a network interface
 {: #dropped-incoming-packets-gen2}
 
 Cumulative number of dropped incoming packets for a network interface since virtual server instance start
@@ -169,7 +169,7 @@ Cumulative number of dropped incoming packets for a network interface since virt
 
 {: caption="Table 32: Number of dropped incoming packets for a network interface metric metadata" caption-side="top"}
 
-### Number of dropped outgoing packets for a network interface
+## Number of dropped outgoing packets for a network interface
 {: #dropped-outgoing-packets-gen2}
 
 Cumulative number of dropped outgoing packets for a network interface since virtual server instance start
@@ -183,7 +183,7 @@ Cumulative number of dropped outgoing packets for a network interface since virt
 
 {: caption="Table 33: Number of dropped outgoing packets for a network interface metric metadata" caption-side="top"}
 
-### Number of packets received for a network interface
+## Number of packets received for a network interface
 {: #network-packets-received-gen2}
 
 Cumulative number of packets received for a network interface since virtual server instance start
@@ -197,7 +197,7 @@ Cumulative number of packets received for a network interface since virtual serv
 
 {: caption="Table 34: Number of packets received for a network interface metric metadata" caption-side="top"}
 
-### Number of packets sent for a network interface
+## Number of packets sent for a network interface
 {: #network-packets-sent-gen2}
 
 Cumulative number of packets sent for a network interface since virtual server instance start
@@ -211,7 +211,7 @@ Cumulative number of packets sent for a network interface since virtual server i
 
 {: caption="Table 35: Number of packets sent for a network interface metric metadata" caption}
 
-### Number of read requests for a volume
+## Number of read requests for a volume
 {: #volume-read-requests-gen2}
 
 Cumulative number of read requests for a volume since virtual server instance start
@@ -225,7 +225,7 @@ Cumulative number of read requests for a volume since virtual server instance st
 
 {: caption="Table 36: Number of read requests for a volume metric metadata" caption}
 
-### Number of receiving errors for a network interface
+## Number of receiving errors for a network interface
 {: #network-errors-receiving-gen2}
 
 Cumulative number of receiving errors for a network interface since virtual server instance start
@@ -239,7 +239,7 @@ Cumulative number of receiving errors for a network interface since virtual serv
 
 {: caption="Table 37: Number of receiving errors for a network interface metric metadata" caption-side="top"}
 
-### Number of sending errors for a network interface
+## Number of sending errors for a network interface
 {: #network-errors-sending-gen2}
 
 Cumulative number of sending errors for a network interface since virtual server instance start
@@ -253,7 +253,7 @@ Cumulative number of sending errors for a network interface since virtual server
 
 {: caption="Table 38: Number of sending errors for a network interface metric metadata" caption-side="top"}
 
-### Number of write requests for a volume
+## Number of write requests for a volume
 {: #volume-write-requests-gen2}
 
 Cumulative number of write requests for a volume since virtual server instance start
@@ -267,7 +267,7 @@ Cumulative number of write requests for a volume since virtual server instance s
 
 {: caption="Table 39: Number of write requests for a volume metric metadata" caption-side="top"}
 
-### Total CPU usage
+## Total CPU usage
 {: #total-cpu-usage-nanoseconds-gen2}
 
 Cumulative time elapsed executing instructions across all CPUs since virtual server instance start
@@ -281,7 +281,7 @@ Cumulative time elapsed executing instructions across all CPUs since virtual ser
 
 {: caption="Table 40: Total CPU usage metric metadata" caption-side="top"}
 
-### Total number of CPUs
+## Total number of CPUs
 {: #total-cpus-gen2}
 
 Total Number of CPUs
@@ -295,7 +295,7 @@ Total Number of CPUs
 
 {: caption="Table 41: Total number of CPUs metric metadata" caption-side="top"}
 
-### Total memory
+## Total memory
 {: #total-memory-kib-gen2}
 
 Total memory of the virtual server instance in kibibytes (1024 bytes)
@@ -309,7 +309,7 @@ Total memory of the virtual server instance in kibibytes (1024 bytes)
 
 {: caption="Table 42: Total memory in kibibytes metric metadata" caption-side="top"}
 
-### Used memory
+## Used memory
 {: #used-memory-kib-gen2}
 
 Used memory of the virtual server instance in kibibytes (1024 bytes)
@@ -329,7 +329,7 @@ Used memory of the virtual server instance in kibibytes (1024 bytes)
 ### Global attributes
 {: #global-segmentation-attributes}
 
-The following attributes are available for segmenting all of the previously listed metrics. 
+The following attributes are available for segmenting all of the previously listed metrics.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
