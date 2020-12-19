@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="cloud-infrastructure" category="compute" audience="platform" href="/docs/cloud-infrastructure?topic=cloud-infrastructure-getting-started-tutorial" path="cloud-infrastructure"}
-Building infrastructure
+Building infrastructure 1
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -66,7 +66,7 @@ Building infrastructure
             /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
 
         /vpc-on-classic/vpc-on-classic-migrating-vpc
-        
+
     {: .topicgroup}
     Related links
         [Terraform](/terraform/terraform-getting-started)
@@ -77,4 +77,3 @@ Building infrastructure
     [IBM Cloud Support](https://www.ibm.com/cloud/support)
     [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure)
     {: .navgroup-end}
-
