@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="cloud-infrastructure" category="compute" audience="platform" href="/docs/cloud-infrastructure?topic=cloud-infrastructure-getting-started-tutorial" path="cloud-infrastructure"}
-Building infrastructure 1
+Building infrastructure
 
     {: .navgroup id="learn"}
     getting-started.md
