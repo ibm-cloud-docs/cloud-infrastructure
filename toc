@@ -32,6 +32,7 @@ Building infrastructure
         ha-3-tier.md
         ha-pools-origins-1zone.md
         ha-autoscale-tutorial.md
+        ha-resiliency-tutorial.md
 
     {: .topicgroup}
     Building your infrastructure
