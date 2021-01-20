@@ -49,6 +49,7 @@ Building infrastructure
         sysdig-monitoring-metrics.md
         sysdig-classic-metrics.md
         sysdig-vpc-metrics.md
+        lb-monitoring-metrics.md
         sysdig-no-driver-mode.md
         sysdig-faq.md
         vulnerability-eos-faq.md
