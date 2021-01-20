@@ -21,7 +21,7 @@ subcollection: vpc
 {:note: .note}
 {:important: .important}
 
-# Monitoring metrics using {{site.data.keyword.cloud_notm}} Application Load Balancer with Sysdig
+# Monitoring metrics by using {{site.data.keyword.cloud_notm}} Application Load Balancer with Sysdig
 {: #monitoring-metrics-sysdig}
 
 {{site.data.keyword.cloud}} {{site.data.keyword.alb_full}} (ALB) monitoring metrics are provided with {{site.data.keyword.cloud_notm}} Monitoring with Sysdig. <!--a third-party monitoring tool that specializes in data aggregation, usage alerts, and in-depth visualizations.--> For more information Sysdig, see [IBM Cloud Monitoring with Sysdig](/docs/Monitoring-with-Sysdig).
