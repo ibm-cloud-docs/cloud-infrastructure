@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-03-20"
+  years: 2018, 2021
+lastupdated: "2021-03-26"
 
 keywords: cloud environment, virtual server, virtual machine, vm, understanding infrastructure, IaaS model, IT ops admin, on-premises, data center
 
@@ -18,6 +18,7 @@ subcollection: cloud-infrastructure
 {:tip: .tip}
 {:note: .note}
 {:script: data-hd-video='script'}
+{:video: .video}
 
 # Understanding IaaS basics
 {: #getting-started-tutorial}
@@ -35,7 +36,7 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 {{site.data.keyword.cloud}} is here to support you 100% on your journey. The resources available to you include comprehensive documentation, planning tools, qualified support specialists, and an active user community. Let's get you started on your journey.
 
-![Plan, build, and manage your cloud infrastructure with IBM](https://www.youtube.com/embed/Kmt_odiCWvU){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+[Plan, build, and manage your cloud infrastructure with IBM](https://www.youtube.com/embed/Kmt_odiCWvU){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Video transcript
 {: #video-transcript-it-ops-2}
