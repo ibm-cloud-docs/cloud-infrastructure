@@ -64,6 +64,7 @@ Building infrastructure
             /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
             
         data-migration-diy.md
+        image-migration-diy.md
         /vpc-on-classic/vpc-on-classic-migrating-vpc
 
     {: .topicgroup}
