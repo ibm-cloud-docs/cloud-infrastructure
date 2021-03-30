@@ -28,8 +28,8 @@ subcollection: cloud-infrastructure
 When you provision an {{site.data.keyword.mon_full_notm}} instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in the {{site.data.keyword.cloud_notm}} dashboards section.
 {: shortdesc}
 
-Sysdig agent 9.9.0 or higher is required for 'no driver mode'.
-{: note}
+<!--Sysdig agent 9.9.0 or higher is required for 'no driver mode'.
+{: note}-->
 
 ## Configuring {{site.data.keyword.mon_full_notm}} 'no driver mode'
 {: #provision-sysdig-light}
@@ -73,12 +73,12 @@ After you complete the previous steps, limited funcationaity is implemented and 
 ### What's next
 {: #sysdig-light-whats-next}
 
-After you provision your {{site.data.keyword.mon_full_notm}} agent and enable 'no driver mode', you need to configire an {{site.data.keyword.mon_full_notm}} agent in each environment that you want to monitor. For information about configuring a Sysdig agent, see [Configuring an {{site.data.keyword.mon_full_notm}} agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
+After you provision your {{site.data.keyword.mon_full_notm}} agent and enable 'no driver mode', you need to configire an {{site.data.keyword.mon_full_notm}} agent in each environment that you want to monitor. For information about configuring a {{site.data.keyword.mon_full_notm}} agent, see [Configuring an {{site.data.keyword.mon_full_notm}} agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
 {: #sysdig-light-metrics}
 
-{{site.data.keyword.mon_full_notm}} collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance. You can access metrics through the prebuilt dashboard.
+{{site.data.keyword.mon_full_notm}} collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. <!--If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance.--> You can access metrics through the prebuilt dashboard.
 {: shortdesc}
 
 Use the following table to see which metrics are available in 'no driver mode'.
