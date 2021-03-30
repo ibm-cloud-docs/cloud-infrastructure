@@ -18,7 +18,7 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.mon_full_notm}}
 {: #monitoring-iaas}
 
-{{site.data.keyword.mon_full_notm}} collects basic Classic (Gen 1) and VPC (Gen 2) virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance. You can access metrics through the prebuilt dashboard.
+{{site.data.keyword.mon_full_notm}} collects basic Classic (Gen 1) and VPC (Gen 2) virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. <!--If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance. -->You can access metrics through the prebuilt dashboard.
 {:shortdesc}
 
 {{site.data.keyword.mon_full_notm}} metrics are available only if you use the {{site.data.keyword.mon_full_notm}} full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-sysdig-light-no-driver#sysdig-light-metrics).
@@ -55,7 +55,7 @@ You use basic monitoring to initiate service and slow pings to make sure that th
 
 <caption>Table 1: Basic monitoring service types</caption>
 
-If an echo isn't received in the allotted time frame (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
+If an echo isn't received in the allotted timeframe (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
 {: tip}
 
 ### Host ping and TCP service monitoring
@@ -100,6 +100,6 @@ The **Monitoring** tab is only visible if at least one monitor is configured.
 For more information about monitoring your infrastructure and environments, see the following information.
 
 * [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
-* If you're ready to provision a Sysdig instance, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
+* If you're ready to provision a {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
 * If you're interested in {{site.data.keyword.mon_full_notm}} plans, see [{{site.data.keyword.mon_full_notm}} agents and plans](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-agents-and-plans).
 * If you're interested in {{site.data.keyword.mon_full_notm}} pricing information, see [Pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
