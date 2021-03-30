@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-05-15"
+  years: 2020, 2021
+lastupdated: "2021-03-30"
 
-keywords:
+keywords: 
 
 subcollection: cloud-infrastructure
 
@@ -36,7 +36,7 @@ IBM Cloud is committed to providing you the highest quality of service and is ma
 
 * Provides real-time operational visibility into the performance and health of your applications, IBM services and platforms.
 
-* A visual representation of your infrastructure. Sysdig automatically collects important metrics such as CPU usage, used and available memory, response times, network latency, and more. For more information about Sysdig metrics, see [Sysdig monitoring metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-monitoring-metrics).
+* A visual representation of your infrastructure. {{site.data.keyword.mon_full_notm}} automatically collects important metrics such as CPU usage, used and available memory, response times, network latency, and more. <!--For more information about {{site.data.keyword.mon_full_notm}} metrics, see [{{site.data.keyword.mon_full_notm}} metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-monitoring-metrics).-->
 
 * Offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alters, and design custom dashboards. 
 
@@ -61,7 +61,7 @@ You can install and configure an {{site.data.keyword.mon_full_notm}} agent for a
 * Mesos, Marathon, and DCOS
 * Linux installations
 
-In addition to the previously listed environments, you can see all of the IBM Cloud services that are Sysdig-enabled [here](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services).
+In addition to the previously listed environments, you can see all of the IBM Cloud services that are {{site.data.keyword.mon_full_notm}}-enabled [here](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services).
 
 For information about installing {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
 
