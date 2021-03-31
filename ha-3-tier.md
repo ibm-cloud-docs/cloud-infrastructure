@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-03-25"
+  years: 2021
+lastupdated: "2021-02-12"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -45,7 +45,7 @@ Servers in each of the 3-tiers have different requirements. When you provision y
 |Data tier|If you are using a virtual instance as the database, select a Balance profile that offers more balance between vCPU and memory, such as 1:4.|
 
 ### Load balancers
-You can order two types of load balancers from IBM Cloud. While both load balancers can distribute both HTTP/HTTPS and TCP traffic, each provides different capabilities that might be more suited for different deployment types.
+You can order two types of load balancers from {{site.data.keyword.cloud}}. While both load balancers can distribute both HTTP/HTTPS and TCP traffic, each provides different capabilities that might be more suited for different deployment types.
 
 1. You can deploy {{site.data.keyword.loadbalancer_full}} either in public or private scenarios. For a public scenario, the load balancer has a public interface to take incoming traffic from the internet and distribute the traffic through its private interface connecting to the virtual servers as shown [Scenario 1 - deploying in single zone](#single-zone). For a private scenario, the incoming and distributed outgoing traffic goes through private subnets, such as the traffic between the application tier and the data tier.
 
@@ -54,6 +54,8 @@ You can order two types of load balancers from IBM Cloud. While both load balanc
   You can configure the {{site.data.keyword.loadbalancer_short}} back-end listener across multiple zones. When you do this configuration, a secondary load balancer is automatically provisioned and deployed in an active-active fashion for better availability. See [Scenario 2 - deploying in multiple zones with {{site.data.keyword.cis_full_notm}}](#multi-zone-cis).
 
 2. {{site.data.keyword.cis_full}} is a global load balancer that acts as a public load balancer only. Typically, it is deployed for global applications across multiple regions. {{site.data.keyword.cis_short}} is geo-aware and steers the traffic to the zone that is closest to the requester.
+
+3. {{site.data.keyword.dns_full}} is a global load balancer that acts as a private load balancer within {{site.data.keyword.cloud_notm}}. {{site.data.keyword.dns_full}} provides Virtual Private Cloud (VPC) users with private DNS zones that are resolvable only on {{site.data.keyword.cloud_notm}}. Only explicitly permitted networks can access the private DNS zones. 
 
 In [Scenario 2 - deploying in multiple zones with {{site.data.keyword.cis_full_notm}}](#multi-zone-cis), {{site.data.keyword.cis_short}} distributes traffic between zones. {{site.data.keyword.cis_short}} allows you to create multiple server pools and origins to allow 1:N type of deployment – one application to multiple server pools and origins. One application that is deployed across multiple server pools is helpful for DevOps management.
 
@@ -112,3 +114,5 @@ For more {{site.data.keyword.Bluemix_notm}} high availability content , see:
 * [Architecting highly available cloud solutions](https://www.ibm.com/garage/method/practices/run/cloud-platform-for-ha)
 * [Application-level high availability](https://www.ibm.com/garage/method/practices/run/application-level-ha)
 * [Deploying server pools and origins in a single MZR](/docs/cloud-infrastructure?topic=cloud-infrastructure-ha-pools-origins)
+* [Enabling Auto scale for better capacity and resiliency](/docs/cloud-infrastructure?topic=cloud-infrastructure-ha-auto-scale)
+* [Deploying critical applications with IBM Cloud MZR](/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency) using the {{site.data.keyword.Bluemix_notm}} console and [Setting up 3-tier stateless apps ](https://github.com/go-davidng/3-tier-stateless-web) using experimental terraform scripts. These scripts have minimal support.
