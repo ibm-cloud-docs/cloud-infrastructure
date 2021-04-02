@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-02"
 
 keywords: monitoring light, monitoring no driver, no driver monitor, monitoring lite
 
@@ -23,25 +23,25 @@ subcollection: cloud-infrastructure
 {:external: .external}
 
 #  Enabling {{site.data.keyword.mon_full_notm}} 'no driver mode'
-{: #enabling-sysdig-light-no-driver}
+{: #enabling-monitoring-light-no-driver}
 
-When you provision an {{site.data.keyword.mon_full_notm}} instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in the {{site.data.keyword.cloud_notm}} dashboards section.
+When you provision a monitoring instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in the {{site.data.keyword.cloud_notm}} dashboards section.
 {: shortdesc}
 
 <!--Sysdig agent 9.9.0 or higher is required for 'no driver mode'.
 {: note}-->
 
 ## Configuring {{site.data.keyword.mon_full_notm}} 'no driver mode'
-{: #provision-sysdig-light}
+{: #provision-monitoring-light}
 
-To enable 'no driver mode' and monitor and manage metrics, you need to configure a {{site.data.keyword.mon_full_notm}} agent in each environment that you want to use 'no driver mode'.
+To enable 'no driver mode' and monitor and manage metrics, you need to configure a monitoring agent in each environment that you want to use 'no driver mode'.
 {: shortdesc}
 
 Use these steps to enable 'no driver mode'.
 
-**1.** Provision a Graduated tier {{site.data.keyword.mon_full_notm}} instance by following the steps in [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision). For more information about the Graduate tier, see [Service plans](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
+**1.** Provision a Graduated tier monitoring instance by following the steps in [Provisioning a monitoring instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision). For more information about the Graduate tier, see [Monitoring service plans](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
 
-**2.** Enable {{site.data.keyword.mon_full_notm}} 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring an {{site.data.keyword.mon_full_notm}} agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
+**2.** Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
 
 **3.** Add the following configuration to the `dragent.yaml` file:
 
@@ -71,14 +71,14 @@ After you complete the previous steps, limited funcationaity is implemented and 
 {: note}
 
 ### What's next
-{: #sysdig-light-whats-next}
+{: #monitoring-light-whats-next}
 
-After you provision your {{site.data.keyword.mon_full_notm}} agent and enable 'no driver mode', you need to configire an {{site.data.keyword.mon_full_notm}} agent in each environment that you want to monitor. For information about configuring a {{site.data.keyword.mon_full_notm}} agent, see [Configuring an {{site.data.keyword.mon_full_notm}} agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
+After you provision your monitoring agent and enable 'no driver mode', you need to configire an monitoring agent in each environment that you want to monitor. For information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
-{: #sysdig-light-metrics}
+{: #monitoring-light-metrics}
 
-{{site.data.keyword.mon_full_notm}} collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. <!--If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance.--> You can access metrics through the prebuilt dashboard.
+{{site.data.keyword.mon_full_notm}} collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt monitoring dashboard.
 {: shortdesc}
 
 Use the following table to see which metrics are available in 'no driver mode'.
@@ -136,13 +136,13 @@ Use the following table to see which metrics are available in 'no driver mode'.
 | container.count | Numbers of containers |
 | system.uptime	| Total system uptime |
 | uptime	| Percentage of time the selected entity or entities was down over the defined time window. |
-{: caption="Table 1. {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics" caption-side="top"}
+{: caption="Table 1. Monitoring 'no driver mode' metrics" caption-side="top"}
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' troubleshooting metrics
-{: #sysdig-light-troubleshooting-metrics}
+{: #monitoring-light-troubleshooting-metrics}
 
 
-To switch to the Troubleshooting mode, add the following configuration to the `dragent.yaml` file:
+To switch to **Troubleshooting mode**, add the following configuration to the `dragent.yaml` file:
 
 ```
 feature:  
@@ -150,6 +150,9 @@ feature:
 ```
 
 Then restart the agent.
+
+### 'no driver mode' troubleshooting metrics
+{: #no-driver-mode-troubleshooting-metrics}
 
 Use the following table to see which troubleshooting metrics are available in 'no driver mode'.
 
@@ -165,4 +168,4 @@ Use the following table to see which troubleshooting metrics are available in 'n
 | host.error.count | The number of system call errors |
 | proc.count | Number of processes on host or container |
 | proc.start.count | Number of process starts on host or container |
-{: caption="Table 2. {{site.data.keyword.mon_full_notm}} 'no driver mode' troubleshooting metrics" caption-side="top"}
+{: caption="Table 2. 'no driver mode' troubleshooting metrics" caption-side="top"}
