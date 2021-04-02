@@ -45,9 +45,9 @@ Building infrastructure
     {: .topicgroup}
     Monitoring your infrastructure
         monitoring-iaas.md
-        sysdig-monitoring-agents-and-plans.md
-        sysdig-no-driver-mode.md
-        sysdig-faq.md
+        monitoring-agents-and-plans.md
+        monitoring-no-driver-mode.md
+        monitoring-faq.md
         vulnerability-eos-faq.md
 
     {: .topicgroup}
