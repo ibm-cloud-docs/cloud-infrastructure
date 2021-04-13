@@ -6,6 +6,10 @@ lastupdated: "2020-06-30"
 
 keywords: high availability, regions, zones, resiliency
 
+content-type: tutorial
+services: virtual-servers, vpc, loadbalancer-service, cis
+account-plan: paid
+completiion-time: 90m
 subcollection: cloud-infrastructure
 
 ---
@@ -19,11 +23,16 @@ subcollection: cloud-infrastructure
 {:external: target="_blank" .external}
 {:important: .important}
 {:pre: .pre}
+{:step: data-tutorial-type='step'}
 
 # Deploying server pools and origins in a single MZR
 {: #ha-pools-origins}
+{: toc-content-type="tutorial"} 
+{: toc-services="virtual-servers, vpc, loadbalancer-service, cis"} 
+{: toc-completion-time="90m"}
 
 Use this tutorial to deploy availability pools in a VPC for a single MZR. Creating server pools with origins provides your DevOps team with a staging environment so they can validate near-production ready code in parallel with an existing production environment.
+{: shortdesc}
 
 This tutorial provides two use cases:
 * Testing with new code in a production environment with minimal impact
@@ -35,13 +44,6 @@ This tutorial uses a web server, which can provide a full stack within a single 
 {: #objectives}
 * Create server pool and origins across availability zones
 * Understand {{site.data.keyword.cis_full}} Global Load Balancer distribution algorithm
-
-## Services used
-{: #services}
-* {{site.data.keyword.vpc_full}}
-* {{site.data.keyword.vsi_is_full}}
-* {{site.data.keyword.loadbalancer_full}}
-* {{site.data.keyword.cis_full_notm}}
 
 ## Architecture
 {: #architecture}
@@ -68,6 +70,7 @@ The following steps refer to the numbers in the diagram:
 * Generate SSH Keys from your workstation to connect bastion server
 
 ## Create VPC, subnets, security groups, and virtual servers
+{: step}
 {: #create-vpc}
 In this section, you create your own VPC in region 1 with subnets that are created in two different zones of region 1. You will then provision the virtual servers.
 
@@ -116,6 +119,7 @@ To confirm the creation of the subnets, click **Subnets** on the left pane and w
 To confirm the creation of the subnet, click **Subnets** on the left pane and wait until the status changes to **Available**.
 
 ## Create two security groups
+{: step}
 {: #security-groups}
 These security groups will allow only specific inbound traffic to the server and application.
 
@@ -292,6 +296,7 @@ Complete this procedure for each web server virtual server (vpc-region1-zone1-vs
     {: pre}
 
 ## Distribute traffic between zones with load balancers
+{: step}
 {: #lb}
 In this section, you will create two load balancers, one in each region. This load balancer distributes traffic among multiple server instances to subnets within different zones.
 
@@ -334,6 +339,7 @@ Complete this procedure for each load balancer.
 3.  Save the address for future reference.
 
 ## Provision a {{site.data.keyword.cis_full_notm}} instance and configure custom domain
+{: step}
 {: #provision-cis}
 In this section, you create an {{site.data.keyword.cis_full_notm}} instance, configure a custom domain by pointing it to {{site.data.keyword.cis_short_notm}} name servers and later configure a global load balancer.
 1.  Navigate to the [IBM Cloud Internet Services](https://cloud.ibm.com/catalog/services/internet-services){: external} in the {{site.data.keyword.Bluemix_notm}} catalog.
@@ -344,6 +350,7 @@ In this section, you create an {{site.data.keyword.cis_full_notm}} instance, con
 6. After the domain's status on the overview page changes from Pending to Active, use the `dig <mydomain.com> ns` command to verify that the new name servers have taken effect.
 
 ## Configure a global load balancer
+{: step}
 {: #config-glb}
 In this section, you configure a global load balancer (GLB) distributing the incoming traffic to the VPC load balancers configured in different {{site.data.keyword.Bluemix_notm}} regions.
 

@@ -1,11 +1,14 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-08-31"
+  years: 2021
+lastupdated: "2021-04-13"
 
 keywords: high availability, regions, zones, resiliency
-
+content-type: tutorial
+services: virtual-servers, vpc, loadbalancer-service
+account-plan: paid
+completion-time: 10m
 subcollection: cloud-infrastructure
 
 ---
@@ -17,11 +20,17 @@ subcollection: cloud-infrastructure
 {:tip: .tip}
 {:note: .note}
 {:external: target="_blank" .external}
+{:step: data-tutorial-type='step'}
+
 
 # Enabling Auto scale for better capacity and resiliency
 {: #ha-auto-scale}
+{: toc-content-type="tutorial"} 
+{: toc-services="virtual-servers, vpc, loadbalancer-service"} 
+{: toc-completion-time="10m"}
 
-This tutorial shows you how to set up compute (virtual server instance – VSI) Auto scale for horizontal scaling. The setup includes enabling the backend orchestration to add the newly created VSIs to the backend server pool for the cloud load balancer.
+This tutorial shows you how to set up compute (virtual server instance – VSI) Auto scale for horizontal scaling. You create an Auto scale instance template that defines the details of the virtual server instances that are created. After you define the template, you define instance groups to set the scaling policies that determine when and how many virtual server instances are added or removed. The instance group setup includes enabling the backend orchestration to add the newly created virtual server instances to the backend server pool for the cloud load balancer.
+{: shortdesc}
 
 
 ## Objectives
@@ -30,13 +39,6 @@ This tutorial shows you how to set up compute (virtual server instance – VSI) 
 * Learn how to create an Auto scale template and group for the VSI
 * Learn how to enable the backend orchestration to add newly created VSIs to the backend server pool for the cloud load balancer
 
-## Services Used
-{: #ha-auto-scale-serv}
-
-* IBM Cloud Virtual Private Cloud
-* IBM Cloud Virtual Servers for Virtual Private Cloud
-* IBM Cloud Load Balancers
-* Auto scale
 
 ## Architecture
 {: #ha-auto-scale-arch}
@@ -52,6 +54,7 @@ You must remove any virtual server instances from the back-end server pool befor
 
 ## Create Instance templates for VSI
 {: #ha-auto-scale-inst-temp}
+{: step}
 
 To create an Auto scale instance template for the VSI, complete the following steps:
 1.	From the VPC overview page, scroll down to **Auto scale** and click **Instance templates**.
@@ -82,6 +85,7 @@ To create an Auto scale instance template for the VSI, complete the following st
 
 ## Create Instance group
 {: #ha-auto-scale-inst-grp}
+{: step}
 
 To create the Auto scale instance groups, complete the following steps:
 
@@ -140,5 +144,7 @@ To create the Auto scale instance groups, complete the following steps:
 
 ## Related Content
 {: #ha-auto-scale-related-content}
+
+For more information on Auto scale, instance templates, and instance groups, see [Creating an instance group for auto scaling](/docs/vpc?topic=vpc-creating-auto-scale-instance-group).
 
 For a detailed example, watch the video [Don't let load be the reason for the 404 error](https://video.ibm.com/channel/23944579/video/mv8ajs){: external}
