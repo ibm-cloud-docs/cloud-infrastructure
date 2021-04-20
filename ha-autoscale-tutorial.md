@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-20"
 
 keywords: high availability, regions, zones, resiliency
 content-type: tutorial
@@ -29,15 +29,15 @@ subcollection: cloud-infrastructure
 {: toc-services="virtual-servers, vpc, loadbalancer-service"} 
 {: toc-completion-time="10m"}
 
-This tutorial shows you how to set up compute (virtual server instance – VSI) Auto scale for horizontal scaling. You create an Auto scale instance template that defines the details of the virtual server instances that are created. After you define the template, you define instance groups to set the scaling policies that determine when and how many virtual server instances are added or removed. The instance group setup includes enabling the backend orchestration to add the newly created virtual server instances to the backend server pool for the cloud load balancer.
+This tutorial shows you how to set up compute (virtual server instance) Auto scale for horizontal scaling. You create an Auto scale instance template that defines the details of the virtual server instances that are created. After you define the template, you define instance groups to set the scaling policies that determine when and how many virtual server instances are added or removed. The instance group setup includes enabling the backend orchestration to add the newly created virtual server instances to the backend server pool for the cloud load balancer.
 {: shortdesc}
 
 
 ## Objectives
 {: #ha-auto-scale-obj}
 
-* Learn how to create an Auto scale template and group for the VSI
-* Learn how to enable the backend orchestration to add newly created VSIs to the backend server pool for the cloud load balancer
+* Learn how to create an Auto scale template and group for the virtual server instance
+* Learn how to enable the backend orchestration to add newly created virtual server instances to the backend server pool for the cloud load balancer
 
 
 ## Architecture
@@ -52,11 +52,11 @@ This tutorial builds on the [Deploying server pools and origins in a single MZR]
 
 You must remove any virtual server instances from the back-end server pool before you start this task. Auto scale requires an empty back-end server pool; an empty back-end pool has no servers that are attached to it.  
 
-## Create Instance templates for VSI
+## Create Instance templates for virtual server instances
 {: #ha-auto-scale-inst-temp}
 {: step}
 
-To create an Auto scale instance template for the VSI, complete the following steps:
+To create an Auto scale instance template for the virtual server instance, complete the following steps:
 1.	From the VPC overview page, scroll down to **Auto scale** and click **Instance templates**.
 2.	Click **Create +**.
 3.	In the New instance template:
@@ -71,7 +71,7 @@ To create an Auto scale instance template for the VSI, complete the following st
 
  e. Select the appropriate image for **Image**.
 
-   If you select a stock image, you must do post-provisioning for the new VSIs to match the same functions as your current production web server. If you select a custom image (for example, snapshot of the web server), you might have minimal or no post-provisioning.
+   If you select a stock image, you must do post-provisioning for the new virtual server instances to match the same functions as your current production web server. If you select a custom image (for example, snapshot of the web server), you might have minimal or no post-provisioning.
    {: note}
 
   f. Select *jumphost-vsi* for the **SSH key**.
@@ -108,7 +108,7 @@ To create the Auto scale instance groups, complete the following steps:
   * Select *vpc-region1-zone1-subnet* for the **Subnet**.
   * Check **Use load balancer**.
 
-       Selecting the **Use load balancer** option, enables the backend orchestration to add newly created VSIs to the backend server pool. When enabled, the backend orchestration informs the load balancer about any virtual servers that are created by the Auto scale feature and adds any created virtual servers to the backend pool servers. This selection is optional.
+       Selecting the **Use load balancer** option, enables the backend orchestration to add newly created virtual server instances to the backend server pool. When enabled, the backend orchestration informs the load balancer about any virtual servers that are created by the Auto scale feature and adds any created virtual servers to the backend pool servers. This selection is optional.
        {: note}
 
       * Select *vpc-lb-region1-zone1* for **Load Balancer**.
@@ -124,10 +124,10 @@ To create the Auto scale instance groups, complete the following steps:
   *	Enter *90* for **Aggregation window**
   *	Enter *120* for **Cooldown period**
 
-   The minimum and maximum instance is the total of all instances (of current plus auto scaled instances). In our case, since we only started with 1, then the minimum is 1. Also, when you are choosing the maximum number, ensure that the subnet has enough spare IP addresses to accommodate any new provisioned VSIs that are created by the Auto scale feature.
+   The minimum and maximum instance is the total of all instances (of current plus auto scaled instances). In our case, since we only started with 1, then the minimum is 1. Also, when you are choosing the maximum number, make sure that the subnet has enough spare IP addresses to accommodate any new provisioned virtual server instances that are created by the Auto scale feature.
    {: tip}
 
-   The instance group size values are for demonstrative purpose. There is no exact formula to determine these values as it depends on your business and application requirements. More often than not, it takes several test iterations to find the right values.
+   The instance group size values are for demonstrative purpose. No exact formula is used to determine these values as it depends on your business and application requirements. More often than not, it takes several test iterations to find the right values.
    {: note}
 
   i. Click **Add a policy** under **Create scaling policies**:
@@ -135,7 +135,7 @@ To create the Auto scale instance groups, complete the following steps:
   * Select *Network out (Mbps)* for **Metric type**.
   * Enter *1* for **Average target utilization**.
 
-  Again, the resource and utilization values are target-based thresholds. The values that are used here are for demonstrative purpose only. Any values that you use should be based on your requirements and just like the instance group size, it might take a couple of test iterations to find the right values. If there are multiple scaling policies (for example, CPU and memory), then the membership calculation is done for each policy and the policy that has the higher membership wins.
+  Again, the resource and utilization values are target-based thresholds. The values that are used here are for demonstrative purpose only. Any values that you use must be based on your requirements and just like the instance group size, it might take a couple of test iterations to find the right values. If multiple scaling policies exist (for example, CPU and memory), then the membership calculation is done for each policy and the policy that has the higher membership wins.
   {: note}
 
 4.	Check that you agree that instances are created and reclaimed according to the instance group settings.
@@ -145,6 +145,6 @@ To create the Auto scale instance groups, complete the following steps:
 ## Related Content
 {: #ha-auto-scale-related-content}
 
-For more information on Auto scale, instance templates, and instance groups, see [Creating an instance group for auto scaling](/docs/vpc?topic=vpc-creating-auto-scale-instance-group).
+For more information about Auto scale, instance templates, and instance groups, see [Creating an instance group for auto scaling](/docs/vpc?topic=vpc-creating-auto-scale-instance-group).
 
 For a detailed example, watch the video [Don't let load be the reason for the 404 error](https://video.ibm.com/channel/23944579/video/mv8ajs){: external}
