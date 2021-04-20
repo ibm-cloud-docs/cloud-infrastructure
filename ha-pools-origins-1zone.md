@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020
+  years: 2020, 2021
 lastupdated: "2020-06-30"
 
 keywords: high availability, regions, zones, resiliency
