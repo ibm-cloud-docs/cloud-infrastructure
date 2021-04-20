@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-04-14"
+  years: 2019, 2021
+lastupdated: "2021-04-20"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment
 
@@ -84,7 +84,7 @@ See the following table for the security differences between classic and VPC.
 
 |  Classic infrastructure   | VPC infrastructure |
 | ---------- | ------------------------- |
-|Vyatta, Fortigate, Juniper vSRX, Security Groups for VSIs| Security groups, Network access control lists (ACLs)|
+|Vyatta, Fortigate, Juniper vSRX, Security Groups for virtual servers| Security groups, Network access control lists (ACLs)|
 {: caption="Table 4. Security comparison" caption-side="top"}
 
 ## API differentiators
