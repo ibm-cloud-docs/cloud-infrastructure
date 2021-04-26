@@ -65,7 +65,6 @@ Building infrastructure
             
         data-migration-diy.md
         image-migration-diy.md
-        /vpc-on-classic/vpc-on-classic-migrating-vpc
 
     {: .topicgroup}
     Related links
