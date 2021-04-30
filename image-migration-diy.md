@@ -2,9 +2,9 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-28"
 
-keywords: image migration, migrate image, vmdk
+keywords: image migration, migrate image, vmdk, vhd
 
 subcollection: cloud-infrastructure
 
@@ -21,10 +21,10 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 
-# Migrating VMware (VMDK) images to VPC
-{: #migrating-vmware-vmdk-images}
+# Migrating VMDK or VHD images to VPC
+{: #migrating-images-vpc}
 
-You can convert your VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instances to import your image to {{site.data.keyword.vpc_short}}, and then use a custom image to create new virtual server instances.
+You can convert your virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instances to import your image to {{site.data.keyword.vpc_short}}, and then use a custom image to create new virtual server instances.
 {: shortdesc}
 
 ## Before you begin
@@ -37,7 +37,7 @@ Before you begin migrating your image conversion, review the following requireme
     * Is in qcow2 format
     * The boot volume (primary vHDD) doesn't exceed 100 GB
     * Is cloud-init enabled
-    * Has Virtio drivers
+    * Has Virtio drivers enabled
     * The operating system is supported as a stock image. For a list of supported stock images, see [Images](/docs/vpc?topic=vpc-about-images#stock-images).
 3. Provision an instance of {{site.data.keyword.cos_full_notm}} if you don't have one. For more information, see [Granting access to {{site.data.keyword.cos_full_notm}} to import images](/docs/vpc?topic=vpc-object-storage-prereq).
 4. You need a server with a browser that has access to both the internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
@@ -45,10 +45,10 @@ Before you begin migrating your image conversion, review the following requireme
 ### Image conversion considerations
 {: #image-conversion-considerations}
 
-* VMware VM must be exported as VMDK.
+* VMs must be exported as VMDK or VHD.
 * VMs that have network attached storage (NAS) such as iSCSI or NFS are not automatically copied over. Data migration must be done as a separate process.
 * IP addresses are not preserved. 
-* VMware ESXi specifics are not preserved, such as port groups, ESXi teaming, etc.
+* Hypervisor specifics are not preserved, such as port groups, teaming, etc.
 
 ## Step 1: Prepare the image conversion server
 {: #step-1-prepare-image-conversion-server}
@@ -61,7 +61,7 @@ Before you begin migrating your image conversion, review the following requireme
     * [Linux plugin](https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/ibm-aspera-connect-3.11.1.58-linux-g2.12-64.tar.gz)
 5. Download and install QEMU. For details, see [Download QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU’s installed path in the system’s environment variable.
 
-## Step 2: Validate and prepare the VMware VMs
+## Step 2: Validate and prepare the VMs
 {: #step-2-validate-prepare-vms}
 
 Make sure that your VM meets the minimum requirements listed in the [Before you begin](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-vmware-vmdk-images-to-vpc#before-you-begin) section; however, for this step, the VM doesn't have to be in qcow2 format. The image conversion to qcow2 is covered in Step 3. 
@@ -84,9 +84,22 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 1. Back up the administrator user files and settings.
 2. Download and prepare cloud-init. 
 3. Download and install Virtio drivers.
-4. Reset network settings to default. Go to _Network Settings_ > _Network & Internet Status_ > _Reset Network_.
-    This step will disable network access to the VM.
-    {:note}
+4. Reset network settings to default. This step disables network access to the VM.
+  
+  For Windows 2012 and 2012R2, run the following commands:
+  
+  ```
+  netsh winsock reset
+  ```
+  {: pre}
+
+  ```
+  netsh int ip reset c:\resetlog.txt
+  ```
+  {: pre}
+  
+  For Windows 2016, go to _Network Settings_ > _Network & Internet Status_ > _Reset Network_.
+  
 5. Reboot the VM to activate the Virtio drivers.
 6. Run the `sysprep` command. The `sysprep` command generalizes and removes system-specific IDs from the operating system.
 
@@ -98,16 +111,25 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 ## Step 3: Convert image to qcow2
 {: #step-3-convert-image-to-qcow2}
 
-1. Export the VM in a VMDK image file format.
-2. Copy the VMDK image to the image conversion server.
-3. Run the following QEMU command to convert the image:
+1. Export the VM in a VMDK or VHD image file format.
+2. Copy the VMDK or VHD image to the image conversion server.
+3. Run the following QEMU command for your image file format to convert the image:
 
+  For VMDK images:
+  
   ```
   qemu-img convert -f vmdk -O qcow2 -o cluster_size=512k <vm_image_name.vmdk> <vsi_image_name.qcow2> 
   ```
   {: pre}
 
-If your VM has secondary vHDDs, there is a separate VMDK file for the VM. This does not need to be converted to qcow2. This file will be uploaded to {{site.data.keyword.cos_short}} in its native (VMDK) file format.
+  For VHD images:
+
+  ```
+  qemu-img convert -f vpc -O qcow2 -o cluster_size=512k <vm_image_name.vhd> <vsi_image_name.qcow2> 
+  ```
+  {: pre}
+
+If your VM has secondary vHDDs, there is a separate VMDK or VHD file for the VM. This does not need to be converted to qcow2. This file will be uploaded to {{site.data.keyword.cos_short}} in its native (VMDK or VHD) file format.
 {: note}
 
 You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} to help with the image conversion. 
@@ -138,12 +160,21 @@ The secondary volume should be equal to or greater than the secondary VMDK image
 {: #step-6-linux-systems}
 
 1. Create n+1 secondary volumes. If your VM has one secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
-2. Download the secondary (vHDD) VMDK file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
+2. Download the secondary (vHDD) VMDK or VHD file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
 3. Install QEMU. 
-4. Convert the (VMDK) image data to disk:
+4. Convert the (VMDK or VHD) image data to disk:
+
+  For VMDK images:
 
   ```
   qemu-img convert -f vmdk <data_image.vmdk> /dev/vde
+  ```
+  {: pre}
+
+  For VHD images:
+
+  ```
+  qemu-img convert -f vpc <data_image.vhd> /dev/vde
   ```
   {: pre}
 
@@ -175,5 +206,5 @@ The secondary volume should be equal to or greater than the secondary VMDK image
 {: #step-6-windows-systems}
 
 1. Create secondary volume.
-2. Copy the VMDK disk to Windows.
+2. Copy the VMDK or VHD disk to Windows.
 3. Mount the image as a disk.  
