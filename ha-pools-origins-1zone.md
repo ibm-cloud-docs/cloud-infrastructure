@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-06-30"
+lastupdated: "2021-05-14"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -75,7 +75,7 @@ The following steps refer to the numbers in the diagram:
 In this section, you create your own VPC in region 1 with subnets that are created in two different zones of region 1. You will then provision the virtual servers.
 
 To create your own {{site.data.keyword.vpc_short}} in region 1, complete the following steps:
-1.  From the [VPC overview page](https://cloud.ibm.com/vpc/overview), Navigate to VPC overview page and click **Create a VPC for Gen 2**.
+1.  From the [VPC overview page](https://cloud.ibm.com/vpc/overview), Navigate to the **VPCs** page and click **Create** to begin.
 2.  Under New virtual private cloud section:
   * Enter _vpc-region1_ as the name for your VPC.
   * Select a Resource group.
