@@ -8,12 +8,7 @@ Building infrastructure
     getting-started.md
     [What is IBM Cloud Infrastructure as a Service?](https://www.ibm.com/cloud/infrastructure)
     [What is VPC?](https://www.ibm.com/cloud/vpc)
-
-    {: .topicgroup}
-    Comparing infrastructure environments
-        compare-infra.md
-        compare-vpc.md
-
+    compare-infra.md
     [IBM Cloud pricing](https://www.ibm.com/cloud/pricing)
 
     {: .topicgroup}
@@ -68,7 +63,7 @@ Building infrastructure
 
     {: .topicgroup}
     Related links
-        [Terraform](/terraform/terraform-getting-started)
+        [Terraform](/ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started)
         [Terraform for VPC](https://github.com/ibm-cloud-architecture/terraformer)
     {: .navgroup-end}
 
