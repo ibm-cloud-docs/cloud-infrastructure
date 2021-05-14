@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-05-14"
 
 keywords: monitoring light, monitoring no driver, no driver monitor, monitoring lite
 
@@ -78,7 +78,7 @@ After you provision your monitoring agent and enable 'no driver mode', you need 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
 {: #monitoring-light-metrics}
 
-{{site.data.keyword.mon_full_notm}} collects basic Gen 1 and Gen 2 virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt monitoring dashboard.
+{{site.data.keyword.mon_full_notm}} collects basic virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt monitoring dashboard.
 {: shortdesc}
 
 Use the following table to see which metrics are available in 'no driver mode'.
