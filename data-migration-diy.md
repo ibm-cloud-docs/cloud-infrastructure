@@ -113,7 +113,7 @@ Complete the following steps to install `rsync` on your Windows 2012, 2012R2, or
 2. Install downloaded setup (https://cygwin.com/setup-x86_64.exe). 
 3. Follow through all of the steps until you see a list of all Linux packages. 
 4. Select `rsync` (in net category section). 
-5. Select OpenSSH (in shell category section). 
+5. Select OpenSSH (in net category section). 
 6. Click Continue and finish installation. 
 7. Open ‘Cygwin Terminal’, type `rsync` command, and press enter. 
 8. If the output shows `rsync` command details with options, then it is installed. 
@@ -152,8 +152,8 @@ To install OpenSSH on your Windows 2012 or 2012R2 system, review the following i
 {: #linux-systems-generate-ssh-keys}
 
 1. Generate the private-public key by using the command `ssh-keygen -t rsa` 
-2. Save the generated keys to `/home/{username}/.ssh` 
-3. Copy the public key to the destination machine by using the following path: `/home/{username}/.ssh/authorized_keys`
+2. Save the generated keys to `{User’s home directory}/.ssh` 
+3. Copy the public key to the destination machine by using the following path: `{user’s home directory}/.ssh/authorized_keys`
 
 ### Windows systems
 {: #windows-systems-generate-ssh-keys}
