@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-25"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -56,9 +56,7 @@ Before you begin migrating your image conversion, review the following requireme
 1. Install the {{site.data.keyword.cloud_notm}} CLI. For details, see [Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 2. Install the [{{site.data.keyword.cos_full_notm}} CLI plugin](/docs/cli?topic=cli-install-devtools-manually#installing-ibm-cloud-object-storage-cli-plug-in).
 3. Install the [{{site.data.keyword.vpc_short}} CLI plugin](/docs/cli?topic=vpc-infrastructure-cli-plugin-vpc-reference).
-4. Install the Aspera plugin for the browser. This helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
-    * [Windows plugin](https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/IBMAsperaConnectSetup-ML-3.11.1.58.exe)
-    * [Linux plugin](https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/ibm-aspera-connect-3.11.1.58-linux-g2.12-64.tar.gz)
+4. Install the [Aspera plugin](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
 5. Download and install QEMU. For details, see [Download QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU’s installed path in the system’s environment variable.
 
 ## Step 2: Validate and prepare the VMs
