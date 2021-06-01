@@ -40,7 +40,7 @@ Before you enable {{site.data.keyword.mon_full_notm}} on your platform, keep the
 ### Metrics available by virtual server generation
 {: #metrics-by-server-generation}
 
-* To view Classic virtual server monitoring metrics, see [Classic virtual server instance metrics definitions](/docs/virtual-servers?topic=virtual-servers-classic-monitoring-metrics).
+* To view Classic virtual server monitoring metrics, see [Classic virtual server instance metrics definitions](docs/virtual-servers?topic=virtual-servers-monitoring-classic-metrics).
 * To view VPC virtual server monitoring metrics, see [VPC virtual server instances metrics definitions](/docs/vpc?topic=vpc-vpc-monitoring-metrics)
 
 ## Basic monitoring
