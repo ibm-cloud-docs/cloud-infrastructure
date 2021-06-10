@@ -46,7 +46,7 @@ See the following table for the compute differences between classic and VPC.
 | **Supported images** | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
 | **Platform integration** | | IAM and resource group integration for a unified experience |
 {: caption="Table 1. Compute comparison" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
+{: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
 ## Network differentiators
 {: #compare-network}
@@ -65,7 +65,7 @@ See the following table for the networking differences between classic and VPC.
 | **Global load balancing**| Cloud Internet Services, Citrix Netscaler MPX | Cloud Internet Services |
 |**Hybrid connectivity** | NAT solution to bridge between IBM Cloud and your IT environment | Bring your own private IP address without NAT or IPSec tunnels <br>Note: You can enable your VPC to access classic infrastructure resources. |
 {: caption="Table 2. Network comparison" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify possible features. The column headers indentify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
+{: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
 
 ## Storage differentiators
 {: #compare-storage}
