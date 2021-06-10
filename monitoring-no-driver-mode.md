@@ -2,9 +2,9 @@
 
 copyright:
   years:  2020, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-10"
 
-keywords: monitoring light, monitoring no driver, no driver monitor, monitoring lite
+keywords: monitoring light, monitoring no driver, no driver monitor,
 
 subcollection: cloud-infrastructure
 
@@ -22,14 +22,11 @@ subcollection: cloud-infrastructure
 {:note: .note}
 {:external: .external}
 
-#  Enabling {{site.data.keyword.mon_full_notm}} 'no driver mode'
+# Enabling {{site.data.keyword.mon_full_notm}} 'no driver mode'
 {: #enabling-monitoring-light-no-driver}
 
 When you provision a monitoring instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in the {{site.data.keyword.cloud_notm}} dashboards section.
 {: shortdesc}
-
-<!--Sysdig agent 9.9.0 or higher is required for 'no driver mode'.
-{: note}-->
 
 ## Configuring {{site.data.keyword.mon_full_notm}} 'no driver mode'
 {: #provision-monitoring-light}
@@ -53,7 +50,7 @@ feature:
 
 **OR**
 
-Alternativelty, you can use the following curl command:
+Alternatively, you can use the following curl command:
 
 ```
 curl -sL https://ibm.biz/install-sysdig-agent | sudo bash -s -- -a SYSDIG_ACCESS_KEY -c COLLECTOR_ENDPOINT --collector_port 6443 --secure true -ac "feature:\n mode: monitor_light"
@@ -67,13 +64,13 @@ Where
 
 **4.** Restart the agent.
 
-After you complete the previous steps, limited funcationaity is implemented and you see the reduced pricing on your invoice.
+After you complete the previous steps, limited functionality is implemented and you see the reduced pricing on your invoice.
 {: note}
 
 ### What's next
 {: #monitoring-light-whats-next}
 
-After you provision your monitoring agent and enable 'no driver mode', you need to configire an monitoring agent in each environment that you want to monitor. For information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
+After you provision your monitoring agent and enable 'no driver mode', you need to configure a monitoring agent in each environment that you want to monitor. For more information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
 {: #monitoring-light-metrics}
@@ -87,22 +84,22 @@ Use the following table to see which metrics are available in 'no driver mode'.
 | ----------- | ----------- |
 | cpu.cores.used	| CPU core usage |
 | cpu.cores.used.percent | CPU core usage percent for each container |
-| cpu.idle.percent	| Percentage of time that the CPUs were idle and the system had no outstanding disk I/O requests. |
+| cpu.idle.percent	| Percentage of time that the CPUs were idle and the system had no outstanding disk I/O requests |
 | cpu.iowait.percent | Percentage of time that the CPUs were idle and the system did an outstanding disk I/O requests |
 | cpu.nice.percent	| Percentage of user level CPU utilization with 'Nice' priority |
 | cpu.stolen.percent | 	Percentage of time that a virtual machine CPU is in a state of involuntary wait because the physical CPU is shared among virtual machines. |
 | cpu.system.percent |  Percentage of system level CPU utilization  |
 | cpu.used.percent	| Percentage of system level CPU utilization |
 | cpu.user.percent	| Percentage of user level CPU utilization |
-| load.average.percpu.1m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 1 minute for all cores.  |
-| load.average.percpu.5m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 5 minutes for all cores.  |
-| load.average.percpu.15m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 15 minutes for all cores.  |
+| load.average.percpu.1m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 1 minute for all cores. |
+| load.average.percpu.5m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 5 minutes for all cores |
+| load.average.percpu.15m	| Average number of jobs in the CPU run queue or waiting for disk I/O averaged over 15 minutes for all cores |
 | memory.bytes.available	| Available memory |
 | memory.bytes.total	| Total memory of a host |
 | memory.bytes.used	| Total memory used |
-| memory.bytes.virtual	| Physical memory being used |
-| memory.pageFault.major	| Count of the condition that occurs when a program accesses a memory page that is mapped in the virtual address space, but not loaded in physical memory.  |
-| memory.pageFault.minor	| A count of the condition in which a memory page was loaded in memory at the time the page fault was generated, but was not marked in the memory management unit as being loaded in memory.  |
+| memory.bytes.virtual	| Physical memory in use |
+| memory.pageFault.major	| Count of the condition that occurs when a program accesses a memory page that is mapped in the virtual address space, but not loaded in physical memory |
+| memory.pageFault.minor	| A count of the condition in which a memory page was loaded in memory at the time the page fault was generated, but was not marked in the memory management unit as being loaded in memory. |
 | memory.swap.bytes.available	| The swap memory available. Determined by the sum of the free and cached swap memory. |
 | memory.swap.bytes.total	| Total amount of swap memory |
 | memory.swap.bytes.used	| Amount of swap memory used |
@@ -135,7 +132,7 @@ Use the following table to see which metrics are available in 'no driver mode'.
 | thread.count	| Number of CPU threads or virtual cores |  
 | container.count | Numbers of containers |
 | system.uptime	| Total system uptime |
-| uptime	| Percentage of time the selected entity or entities was down over the defined time window. |
+| uptime	| Percentage of time the selected entity or entities was down over the defined time window |
 {: caption="Table 1. Monitoring 'no driver mode' metrics" caption-side="top"}
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' troubleshooting metrics
@@ -149,7 +146,7 @@ feature:
       mode: troubleshooting
 ```
 
-Then restart the agent.
+Then, restart the agent.
 
 ### 'no driver mode' troubleshooting metrics
 {: #no-driver-mode-troubleshooting-metrics}
@@ -158,12 +155,12 @@ Use the following table to see which troubleshooting metrics are available in 'n
 
 | Metric | Description |
 |-----|-----|
-| file.error.total.count | Number of errors caused by accessing files |
+| file.error.total.count | Number of errors that are caused by accessing files |
 | file.bytes.total | Total number of bytes written to, and read from, the file |
 | file.bytes.in | Number of bytes read from the file  |
 | file.bytes.out | Number of bytes written from the file  |
 | file.open.count | Number of times the file was opened |
-| file.time.total | Time spent during file I/O |
+| file.time.total | Time that was spent during file I/O |
 | host.count | Number of system calls |
 | host.error.count | The number of system call errors |
 | proc.count | Number of processes on host or container |
