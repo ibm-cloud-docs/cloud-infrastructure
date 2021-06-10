@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-10"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -59,7 +59,7 @@ The following steps refer to the numbers in the diagram:
 1. DevOps provisions the virtual servers
   * Bastion server (jumphost) in mgmt subnet and generates an SSH Key
   * DevOps provisions the virtual server web servers in subnet-1 and subnet-2 with security groups
-1.  DevOps deploys 2 {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}, 1 in each AZs and pointing to the virtual server web servers in their respective zones.
+1.  DevOps deploys 2 {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}, 1 in each AZ and points to the virtual server web servers in their respective zones.
 1.  System admin enables HTTPS encryption by adding the domain SSL certificate to the certificate manager service.
 1.  DevOps deploys a {{site.data.keyword.cis_short_notm}} instance with associated domain and create a global load balancer that points to each load balancer in each zone.
 1.  Users can now make HTTP/HTTPS requests.
@@ -72,10 +72,10 @@ The following steps refer to the numbers in the diagram:
 ## Create VPC, subnets, security groups, and virtual servers
 {: step}
 {: #create-vpc}
-In this section, you create your own VPC in region 1 with subnets that are created in two different zones of region 1. You will then provision the virtual servers.
+In the following section, you create your own VPC in region 1 with subnets that are created in two different zones of region 1. You then provision the virtual servers.
 
 To create your own {{site.data.keyword.vpc_short}} in region 1, complete the following steps:
-1.  From the [VPC overview page](https://cloud.ibm.com/vpc/overview), Navigate to the **VPCs** page and click **Create** to begin.
+1.  From the [VPC overview page](https://cloud.ibm.com/vpc/overview), go to the **VPCs** page and click **Create** to begin.
 2.  Under New virtual private cloud section:
   * Enter _vpc-region1_ as the name for your VPC.
   * Select a Resource group.
@@ -86,33 +86,32 @@ To create your own {{site.data.keyword.vpc_short}} in region 1, complete the fol
 6.  Under **New subnet for VPC**:
   * Type _vpc1-region1-zone1-mgmt_ as your subnet's unique name.
   * Select a **Resource group**.
-  * Select a **Location** and zone **1**. For example, _Dallas_ and _Dallas 1_.
+  * Select a **Location** and zone **1**. For example, _London_ and _London 1_.
   * Select the number of IP addresses.
 7.  Set **Subnet access control list** to **Use VPC default**.
 8.  Set the **Public gateway** to **Detached**.
 9. Click **Create virtual private cloud**.
 
-### Create the other subnet for the web server in the same region
+### Create the subnet for the web server in the same region
 {: #other-subnets}
-1.  Click **Subnet > New Subnet** and type _vpc-region1-zone1-subnet1_ as a unique name for your subnet.
+1.  Click **Subnets > Create** and in the **New Subnet for VPC** window type _vpc-region1-zone1-subnet1_ as a unique name for your subnet.
 1.  Select **vpc-region1** as the VPC.
 1.  Select a **Resource group**.
-2.  Select a zone **1** location. For example, _Dallas 1_.
-3.  Select the numbered of IP addresses.
-7.  Set **Subnet access control list** to **Use VPC default**.
+2.  Select a zone **1** location. For example, _London 1_.
+3.  Select the number of IP addresses.
+7.  Set **Subnet access control list** to **VPC default**.
 8.  Set the **Public gateway** to **Detached**.
-9.  Click **Create subnet**.
+9.  Click **Create virtual private cloud**.
 
 To confirm the creation of the subnets, click **Subnets** on the left pane and wait until the status changes to **Available**.
 
 ### Create subnet in a different zone for the other web server
 {: #subnet-different-zone}
-1.  Click **Subnet > New Subnet** and type _vpc-region1-zone2-subnet1_ as a unique name for your subnet.
-1.  Select **vpc-region1** as the VPC.
+1.  Click **Subnets > Create** and in the **New Subnet for VPC** window type  _vpc-region1-zone2-subnet1_ as a unique name for your subnet.
 1.  Select a **Resource group**.
-2.  Select a zone **2** location. For example, _Dallas 2_.
-3.  Select the numbered of IP addresses.
-7.  Set **Subnet access control list** to **Use VPC default**.
+2.  Select a zone **2** location. For example, _London 2_.
+3.  Select the number of IP addresses.
+7.  Set **Virtual Private Cloud**.
 8.  Set the **Public gateway** to **Detached**.
 9.  Click **Create subnet**.
 
@@ -121,80 +120,47 @@ To confirm the creation of the subnet, click **Subnets** on the left pane and wa
 ## Create two security groups
 {: step}
 {: #security-groups}
-These security groups will allow only specific inbound traffic to the server and application.
+
+These security groups allow only specific inbound traffic to the server and application.
 
 To specify which traffic to allow to the application, you deploy the following rules, which are added to virtual servers in the later steps.
-1.  Navigate to **Security Groups**.
-2.  Verify **Regions** is correct. For example, _Dallas_.
-3.  Click **New security group**.
+1.  Navigate to **Security Groups** and click **Create**.
+2.  Verify **Regions** is correct. For example, _London_.
+3.  Click **Create** to create a new security group.
 4.  Type _vpc-region1-jumphost-sg_ for **Name**.
 5.  Create the following **Inbound** rules:
     * Protocol: TCP
     * Source Type: Any
-    * Source: Any (0.0.0.0/0)
-    * Value22
+    * Port: Any
 6. Create the **Outbound** rules as:
-    * Protocol: Any
-    * Destination: Any
-1.  Navigate back to **Security Groups**.
-2.  Verify **Regions** is correct. For example, _Dallas_.
-3.  Click **New security group**.
-4.  Type _vpc-region1-webserver-sg_ for **Name**.
-5.  Create the following **Inbound** rules:
+    * Protocol: TCP
+    * Destination Type: Any
+    * Port: Any
+1.  Verify that the **Region** is correct. For example, _London_.
 
-    <table>
-     <tr>
-       <th>Protocol</th>
-       <th>Source Type</th>
-       <th>Source</th>
-       <th>Value</th>
-     </tr>
-     <tr>
-       <td>TCP</td>
-       <td>Any</td>
-       <td>vpc-region1-jumphost-sg</td>
-       <td>22</td>
-     </tr>
-     <tr>
-       <td>TCP</td>
-       <td>Any</td>
-       <td>Any (0.0.0.0/0)</td>
-       <td>80</td>
-     </tr>
-     <tr>
-       <td>TCP</td>
-       <td>Any</td>
-       <td>Any (0.0.0.0/0)</td>
-       <td>443</td>
-     </tr>
-    </table>
-
-6.  Create the **Outbound** rules as:
-    * Protocol: Any
-    * Destination: Any
 
 ### Provision a bastion (jumphost) virtual server
 {: #jumphost}
-1.  Navigate to **Subnets**.
-2.  Verify that the status is **Available**, then click **vpc-region1-zone1-mgmt > Attached resources > New instance**.
+1.  Go to **Subnets**.
+2.  Verify that the status is **Available**, then click **vpc-region1-zone1-mgmt > Attached > Attached Instances** and click **Create** to create a new _Attached Instance_.
 1.  Enter _jumphost-vsi_ as your virtual server's unique name.
-2.  Select the VPC your created (_vpc-region1_), the **Resource group**, **Location**, and **Zone**.
-3.  Set the image to _Ubuntu Linux_ and pick any version of the image.
-4.  Select **Compute** with 2vCPUs and 4 GB RAM as your profile. To check other available profiles, click **All profiles**.
+2.  Select the VPC that you created (_vpc-region1_), the **Resource group**, and **Location**.
+3.  Set the Operating System image to _Ubuntu Linux_ and pick any version of the image.
+4.  Select **Compute** with 2vCPUs and 8 GB RAM as your profile. To check other available profiles, click **All profiles**.
 5.  Under **SSH keys** click **New key** to add the SSH key that you created in the [Before you begin](#before-you-begin) section.
 6.  Under **Network interfaces**, click the Edit icon next to the **Security Groups**.
     * Verify  _region1-zone1-mgmt_ is selected as the subnet.
     * Disable the preselected security group and select _vpc-region1-jumphost-sg_.
     * Click **Save**.
 7.  Click **Create virtual server instance**.
-8.  Navigate to the jumphost virtual server on the {{site.data.keyword.Bluemix_notm}} console and switch the public gateway to **Attached**.
+8.  Go to the jumphost virtual server on the {{site.data.keyword.Bluemix_notm}} console and switch the public gateway to **Attached**.
 9.  Connect to the jumphost server by using SSH.
 10. Create an SSH key on the jumphost server.
 10. Copy the SSH key of the jumphost server. You use this key when you configure the web server virtual servers.
 
 ### Provision web server virtual servers
 {: #webservers}
-1.  Navigate to **Subnets**.
+1.  Go to **Subnets**.
 2.  Verify that the status is **Available**, then click **vpc-region1-zone1-mgmt > Attached resources > New instance**.
 1.  Enter _vpc-region1-zone1-vsi_ as your virtual server's unique name.
 2.  Select the VPC your created (_vpc-region1_), the **Resource group**, **Location**, and **Zone**.
@@ -234,7 +200,7 @@ Complete this procedure for each web server virtual server (vpc-region1-zone1-vs
     ```
     {: pre}
 
-    The output should show you that the Nginx service is active and running.
+    The output shows you that the Nginx service is active and running.
 1.  Enable UFW.
 
     ```sh
@@ -266,12 +232,12 @@ Complete this procedure for each web server virtual server (vpc-region1-zone1-vs
 1.  Validate.
 
     ```sh
-    sudo ufw staus verbose
+    sudo ufw status verbose
     ```
     {: pre}
 
-1.  Verify that port 22, 80, and 443 are allowed.
-1.  Optionally verify that Nginx works as expected by using the command:
+1.  Verify that ports 22, 80, and 443 are allowed.
+1.  Optionally, verify that Nginx works as expected by using the following command:
 
     ```sh
     curl localhost
@@ -298,15 +264,15 @@ Complete this procedure for each web server virtual server (vpc-region1-zone1-vs
 ## Distribute traffic between zones with load balancers
 {: step}
 {: #lb}
-In this section, you will create two load balancers, one in each region. This load balancer distributes traffic among multiple server instances to subnets within different zones.
+In the following section, you create two load balancers, one in each region. This load balancer distributes traffic among multiple server instances to subnets within different zones.
 
 ### Configure load balancers
 {: #lb-config}
-1.  Navigate to [Load balancers](https://cloud.ibm.com/vpc/network/loadBalancers){: external} and click **New load balancer**.
+1.  Go to [Load balancers](https://cloud.ibm.com/vpc/network/loadBalancers){: external} and click **Create... New load balancer for VPC**.
 2.  Type _vpc-lb-region1-zone1_ as the unique name
 3.  Select _vpc-region1_ as your Virtual private cloud, select the **Resource group**, set **Region** as _region1_ and set **Type** to **Public**.
 3.  Select _vpc-region1-zone1-subnet1_ for **Subnets**.
-4.  Click **New pool** to create a new back-end pool of virtual servers that acts as equal peers to share the traffic routed to the pool. Set the parameters with the values below and click **Create**.
+4.  Click **New pool** to create a new back-end pool of virtual servers that acts as equal peers to share the traffic that is routed to the pool. Set the parameters with the following values and click **Create**.
   * Name: region1-zone1-pool
   * Protocol: HTTP
   * Method: Round robin
@@ -314,17 +280,17 @@ In this section, you will create two load balancers, one in each region. This lo
   * Health check path: /
   * Health protocol: HTTP
   * Health port: Leave blank
-  * Interval(sec): 15
-  * Timeout(sec): 5
+  * Interval (sec): 15
+  * Timeout (sec): 5
   * Max retries: 2
 5.  Click **Attach** to add server instances to the region1-pool.
   * Add the CIDR range that is associated with _vpc-region1-zone1-subnet_ and select the instance your created and set 80 as the port.
-  * Click **Attach** to complete the creation of a back-end pool.
+  * Click **Save** to complete the creation of a back-end pool.
 6.  Click **New listener** to create a new front-end listener. A listener is a process that checks for connection requests.
   * Protocol: HTTP
   * Port: 80
   * Back-end pool: region1-zone1-pool
-  * Maxconnections: Leave it empty and click **Create**.
+  * Max connections: Leave it empty and click **Create**.
 7.  Click **Create load balancer** to provision a load balancer.
 8.  Repeat this procedure for the zone 2 load balancer.
 
@@ -341,23 +307,23 @@ Complete this procedure for each load balancer.
 ## Provision a {{site.data.keyword.cis_full_notm}} instance and configure custom domain
 {: step}
 {: #provision-cis}
-In this section, you create an {{site.data.keyword.cis_full_notm}} instance, configure a custom domain by pointing it to {{site.data.keyword.cis_short_notm}} name servers and later configure a global load balancer.
+In the following section, you create an {{site.data.keyword.cis_full_notm}} instance, configure a custom domain by pointing it to {{site.data.keyword.cis_short_notm}} name servers and later configure a global load balancer.
 1.  Navigate to the [IBM Cloud Internet Services](https://cloud.ibm.com/catalog/services/internet-services){: external} in the {{site.data.keyword.Bluemix_notm}} catalog.
 2.  Enter a **Service name**, select a resource group, and click **Create** to provision an instance of the service. You can use any pricing plans for this tutorial.
-3.  After the service instance is provisioned, set your domain name by clicking **Let's get started**, enter your domain name and click **Connect and continue**.
+3.  After the service instance is provisioned, set your domain name by clicking **Let's get started**, enter your domain name, and click **Connect and continue**.
 4.  Click **Next step**. When the name servers are assigned, configure your registrar or domain name provider to use the name servers listed. If you are using the {{site.data.keyword.Bluemix_notm}} domain service, see [Getting started with Domain Name Registration](/docs/dns?topic=dns-getting-started).
-5.  After you've configured your registrar or the DNS provider, it might require up to 24 hours for the changes to take effect.
-6. After the domain's status on the overview page changes from Pending to Active, use the `dig <mydomain.com> ns` command to verify that the new name servers have taken effect.
+5.  After you configured your registrar or the DNS provider, it might require up to 24 hours for the changes to take effect.
+6. After the domain's status on the overview page changes from Pending to Active, use the `dig <mydomain.com> ns` command to verify that the new name for the servers took effect.
 
 ## Configure a global load balancer
 {: step}
 {: #config-glb}
-In this section, you configure a global load balancer (GLB) distributing the incoming traffic to the VPC load balancers configured in different {{site.data.keyword.Bluemix_notm}} regions.
+In the following section, you configure a global load balancer (GLB) distributing the incoming traffic to the VPC load balancers configured in different {{site.data.keyword.Bluemix_notm}} regions.
 
 ### Distribute traffic across regions with a global load balancer
 {: #distribute-glb}
 1.  From the {{site.data.keyword.Bluemix_notm}} console, select **Resource list**.
-1.  Expand **Services** and select the Internet Services you created.
+1.  Expand **Services** and select the Internet Services that you created.
 1.  With the Internet Services instance open, select **Reliability > Global Load Balancers**.
 1.  Click **Create load balancer**.
 1.  Add `lb` to the **Balancer hostname**. The resulting fully qualified name would be `lb.mydomain.com`.
