@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-06-10"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -37,7 +37,7 @@ Before you begin migrating your image conversion, review the following requireme
     * Is in qcow2 format
     * The boot volume (primary vHDD) doesn't exceed 100 GB
     * Is cloud-init enabled
-    * Has Virtio drivers enabled
+    * Virtio drivers enabled
     * The operating system is supported as a stock image. For a list of supported stock images, see [Images](/docs/vpc?topic=vpc-about-images#stock-images).
 3. Provision an instance of {{site.data.keyword.cos_full_notm}} if you don't have one. For more information, see [Granting access to {{site.data.keyword.cos_full_notm}} to import images](/docs/vpc?topic=vpc-object-storage-prereq).
 4. You need a server with a browser that has access to both the internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
@@ -46,23 +46,23 @@ Before you begin migrating your image conversion, review the following requireme
 {: #image-conversion-considerations}
 
 * VMs must be exported as VMDK or VHD.
-* VMs that have network attached storage (NAS) such as iSCSI or NFS are not automatically copied over. Data migration must be done as a separate process.
+* VMs with network attached storage (NAS) such as iSCSI or NFS are not automatically copied over. Data migration must be done as a separate process.
 * IP addresses are not preserved. 
-* Hypervisor specifics are not preserved, such as port groups, teaming, etc.
+* Hypervisor specifics are not preserved, such as port groups and teaming.
 
 ## Step 1: Prepare the image conversion server
 {: #step-1-prepare-image-conversion-server}
 
-1. Install the {{site.data.keyword.cloud_notm}} CLI. For details, see [Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
-2. Install the [{{site.data.keyword.cos_full_notm}} CLI plugin](/docs/cli?topic=cli-install-devtools-manually#installing-ibm-cloud-object-storage-cli-plug-in).
-3. Install the [{{site.data.keyword.vpc_short}} CLI plugin](/docs/cli?topic=vpc-infrastructure-cli-plugin-vpc-reference).
-4. Install the [Aspera plugin](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
-5. Download and install QEMU. For details, see [Download QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU’s installed path in the system’s environment variable.
+1. Install the {{site.data.keyword.cloud_notm}} CLI. For more information about installing the CLI, see [Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+2. Install the [{{site.data.keyword.cos_full_notm}} CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#installing-ibm-cloud-object-storage-cli-plug-in).
+3. Install the [{{site.data.keyword.vpc_short}} CLI plug-in](/docs/cli?topic=vpc-infrastructure-cli-plugin-vpc-reference).
+4. Install the [Aspera plug-in](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This plug-in helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
+5. Download and install QEMU. For more information about installing QEMU, see [Download QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU install path in the system’s environment variable.
 
 ## Step 2: Validate and prepare the VMs
 {: #step-2-validate-prepare-vms}
 
-Make sure that your VM meets the minimum requirements listed in the [Before you begin](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-vmware-vmdk-images-to-vpc#before-you-begin) section; however, for this step, the VM doesn't have to be in qcow2 format. The image conversion to qcow2 is covered in Step 3. 
+Make sure that your VM meets the minimum requirements that are listed in the [Before you begin](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-vmware-vmdk-images-to-vpc#before-you-begin) section; however, for this step, the VM doesn't need to be in qcow2 format. The image conversion to qcow2 is covered in Step 3. 
 
 As a best practice, take a snapshot or backup your VM before proceeding. 
 
@@ -78,7 +78,7 @@ You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tre
 ### Windows systems
 {: #step-2-windows-systems}
 
-See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-image) on how to prepare your Windows image, specific information regarding cloud-init, and the location for downloading Virtio drivers for Windows.
+See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-image) on how to prepare your Windows image, specific information about cloud-init, and the location for downloading Virtio drivers for Windows.
 1. Back up the administrator user files and settings.
 2. Download and prepare cloud-init. 
 3. Download and install Virtio drivers.
@@ -96,9 +96,9 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
   ```
   {: pre}
   
-  For Windows 2016, go to _Network Settings_ > _Network & Internet Status_ > _Reset Network_.
+  For Windows 2016, go to _Network settings_ > _Network and internet status_ > _Reset network_.
   
-5. Reboot the VM to activate the Virtio drivers.
+5. Restart the VM to activate the Virtio drivers.
 6. Run the `sysprep` command. The `sysprep` command generalizes and removes system-specific IDs from the operating system.
 
   ```
@@ -127,7 +127,7 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
   ```
   {: pre}
 
-If your VM has secondary vHDDs, there is a separate VMDK or VHD file for the VM. This does not need to be converted to qcow2. This file will be uploaded to {{site.data.keyword.cos_short}} in its native (VMDK or VHD) file format.
+If your VM has secondary vHDDs, a separate VMDK or VHD file is available for the VM. This secondary vHHD does not need to be converted to qcow2. This file is uploaded to {{site.data.keyword.cos_short}} in its native (VMDK or VHD) file format.
 {: note}
 
 You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} to help with the image conversion. 
@@ -136,14 +136,14 @@ You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tre
 ## Step 4: Upload to IBM Cloud Object Storage
 {: #step-4-upload-to-cos}
 
-For more information about uploading to {{site.data.keyword.cos_short}} using the console, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-console).
+For more information about uploading to {{site.data.keyword.cos_short}} by using the console, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-console).
 
 ## Step 5: Create virtual server instance
 {: #step-5-create-virtual-server-instance}
 
 1. Import your image to {{site.data.keyword.vpc_short}}. For more information, see [Importing and managing custom images](/docs/vpc?topic=vpc-managing-images).
 2. To create the virtual server instance, log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.  
-3. Navigate to **Menu icon ![Menu icon](../icons/icon_hamburger.svg) > VPC Infrastructure > Compute > Custom Images > Your Custom Image**. 
+3. Go to **Menu icon ![Menu icon](../icons/icon_hamburger.svg) > VPC Infrastructure > Compute > Custom images > Your custom image**. 
 4. From the _Action_ menu, select **New virtual server**.
 
 ## Step 6: (Optional) Create secondary volume and attach the virtual server instance
@@ -151,7 +151,7 @@ For more information about uploading to {{site.data.keyword.cos_short}} using th
 
 This step is for {{site.data.keyword.cloud_notm}} virtual server instances that have secondary vHDD or secondary volumes.
 
-The secondary volume should be equal to or greater than the secondary VMDK image size.
+The secondary volume needs to be equal to or greater than the secondary VMDK image size.
 {: note}
 
 ### Linux systems
@@ -206,3 +206,5 @@ The secondary volume should be equal to or greater than the secondary VMDK image
 1. Create secondary volume.
 2. Copy the VMDK or VHD disk to Windows.
 3. Mount the image as a disk.  
+
+
