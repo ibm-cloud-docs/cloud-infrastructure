@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-22"
+  years: 2020, 2021
+lastupdated: "2021-06-10"
 
 keywords: high availability, regions, zones, resiliency
 content-type: tutorial
@@ -29,7 +29,7 @@ subcollection: cloud-infrastructure
 {: toc-services="virtual-servers, vpc, loadbalancer-service"} 
 {: toc-completion-time="45m"}
 
-This tutorial walks you through setting up a resilient environment for a n-tier application in an {{site.data.keyword.cloud}} MZR. In this tutorial, you create your own VPC in region 1, then create subnets in two different zones of region 1, then you provision the virtual server instances. You create two availability zones and virtual server instances in each availability zone for UI, application, and db. 
+This tutorial walks you through setting up a resilient environment for an n-tier application in an {{site.data.keyword.cloud}} MZR. In this tutorial, you create your own VPC in region 1, then create subnets in two different zones of region 1, then you provision the virtual server instances. You create two availability zones and virtual server instances in each availability zone for UI, application, and db. 
 
 ## Objectives
 {: #objectives-mzr}
@@ -88,7 +88,7 @@ To create your own {{site.data.keyword.cloud_notm}} VPC in region 1, complete th
 ### Create subnets in availability zone 1
 {: #create-subnets-same-az}
 
-You create 3 additional subnets for your first availability zone (vcp-region1-zone1) and use the VPC you created in Step 1:
+You create three extra subnets for your first availability zone (vcp-region1-zone1) and use the VPC you created in Step 1:
 * vpc-region1-zone1-ui
 * vpc-region1-zone1-application
 * vpc-region1-zone1-db
@@ -101,13 +101,13 @@ To create the subnets:
 4.  Select ***vpc-region1*** as the VPC.
 5.  Select a Resource group.
 6.	Select a location zone 1 for example: **Dallas 1**.
-7.	Select the wanted numbered of IP addresses.
+7.	Select the wanted number of IP addresses.
 8.	Leave the subnet access control list to the default selection.
 9.	Leave the public gateway to **Detached**.
 10.	Click **Create subnet**.
 11.	Repeat steps 1-10 for the other two subnets and:
-    *	Create a subnet called ***vpc-region1-zone1-app*** for application
-    *	Create a subnet called ***vpc-region1-zone1-db1*** for db
+    *	Create a subnet that is called ***vpc-region1-zone1-app*** for application
+    *	Create a subnet that is called ***vpc-region1-zone1-db1*** for db
 
 ### Create subnets for availability zone 2 
 {: #create-subnets-other-az}
@@ -125,13 +125,13 @@ To create the subnets:
 3.  Select ***vpc-region1*** as the VPC, and 
 4.  Select a **Resource group**.
 5.	Select a location for zone two for example: Dallas 2
-6.	Select the wanted numbered of IP addresses.
+6.	Select the wanted number of IP addresses.
 7.	Leave the subnet access control list set to the default selection.
 8.	Leave the public gateway set to **Detached**.
 9.	Click **Create subnet**.
 10.	Repeat steps 1-9 for availability zone 2:
-    * Create a subnet called ***vpc-region1-zone2-app*** 
-    * Create a subnet called ***vpc-region1-zone2-db1***
+    * Create a subnet that is called ***vpc-region1-zone2-app*** 
+    * Create a subnet that is called ***vpc-region1-zone2-db1***
 
 To confirm that the subnets are created, click **Subnets** on the left pane and wait until the status changes to **Available**.
   
@@ -141,7 +141,7 @@ To confirm that the subnets are created, click **Subnets** on the left pane and 
 
 To specify which traffic to allow to the application, you deploy rules, which you add to the virtual server instances in the later steps.
 *	Enable an inbound rule for SSH traffic to jumphost
-*	Enable specific ports for the corresponding application of each tier. For example, if the front-end server needs HTTP and HTTPs, then security group is needed to allow for port 80 and 443. 
+*	Enable specific ports for the corresponding application of each tier. For example, if the front-end server needs HTTP and HTTPs, then a security group is needed to allow for port 80 and 443. 
 
 To create the security groups:
 
@@ -309,8 +309,8 @@ You create two load balancers for ui and application. {{site.data.keyword.cloud_
     *  region1 as the region. 
     *  Load balancer Type: **Public**.
 
-3.	In **Subnets** select **vpc-region1-zone1-ui** and **vpc-region1-zone2-ui**.
-4.	Click **New pool** to create a new back-end pool of virtual server instances that act as equal peers to share the traffic that is routed to the pool. Set the parameters with these values. 
+3.	In **Subnets**, select **vpc-region1-zone1-ui** and **vpc-region1-zone2-ui**.
+4.	Click **New pool** to create a new back-end pool of virtual server instances that act as equal peers to share the traffic that is routed to the pool. Set the parameters with these values: 
     *	**Name**: region1-zone1-pool
     *	**Protocol**: HTTP
     *	**Session stickiness**: Source IP
@@ -324,8 +324,8 @@ You create two load balancers for ui and application. {{site.data.keyword.cloud_
     *	**Max retries**: 2
 5.  Click **Save**.
 6.	Create a back-end pool:
-    1. Click **Attach** to add server instances to the region1-pool:
-    2. Add the CIDR range that is associated with **vpc-region1-zone1-ui** select the virtual server instance (vpc-region1-zone1-ui1) that you created and set 80 as the port. Repeat for the other virtual server instance, vpc-region1-zone1-ui2.
+    1. Click **Attach** to add server instances to the region1-pool.
+    2. Add the CIDR range that is associated with **vpc-region1-zone1-ui**, select the virtual server instance (vpc-region1-zone1-ui1) that you created and set 80 as the port. Repeat for the other virtual server instance, vpc-region1-zone1-ui2.
     3.	Click **Save** to complete the creation of a back-end pool.
 7.	Click **New listener** and create a Front-end listener process that checks for connection requests: 
 
@@ -334,7 +334,7 @@ You create two load balancers for ui and application. {{site.data.keyword.cloud_
         *	**Protocol**: HTTP
         *	**Port**: 80
         *	**Back-end pool**: region1-zone1-pool
-        *	**Maxconnections**: Leave it empty 
+        *	**Max connections**: Leave it empty 
         
     2.  Click **Save**.
 8.  Click **Create load balancer**.
