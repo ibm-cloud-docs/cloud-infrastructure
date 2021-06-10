@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-09-01"
+  years: 2019, 2021
+lastupdated: "2021-06-10"
 
-keywords: compute, virtual server, profile, vpc, vpc on classic, infrastructure, cloud environment
+keywords: compute, virtual server, profile, vpc on classic, infrastructure, cloud environment
 
 subcollection: cloud-infrastructure
 
@@ -29,9 +29,9 @@ Compare the key differences between generations of virtual server profiles to de
 ## Considerations across generations of virtual server profiles
 {: #compare-feature-vpc-vpcoc}
 
-See the following table for more information about generational differences.
+For more information about generational differences, see the following table.
 
-We are always adding new features and support. Over time, there will be fewer considerations between generations of compute resources.
+We are always adding new features and support. Over time, fewer considerations will be taken between generations of compute resources.
 {:note}
 
 | Key Features | Current Considerations |
@@ -67,24 +67,24 @@ We are always adding new features and support. Over time, there will be fewer co
 {: class="comparison-tab-table"}
 {: row-headers}
 {: caption="Table 2. VPC network infrastructure feature availability" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify characteristics features. The column headers identify whether the feature is included in generation 1 or generation 2 infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
+{: summary="This table has row and column headers. The row headers identify characteristics features. The column headers identify whether the feature is included in generation 1 or generation 2 infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
 | Key Features | Current Considerations |
 |-----|-----|
 |Block Storage primary and secondary volumes|Supported in both generations |
 |Provider-managed block storage keys|Supported in both generations |
-|BYOK block storage keys| Supported in both generations  |
+|BYOK block storage keys| Supported in both generations |
 {: table="table4"}
 {: tab-title="Storage"}
 {: tab-group="Features"}
 {: class="comparison-tab-table"}
 {: row-headers}
 {: caption="Table 3. VPC storage infrastructure feature availability" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify characteristics features. The column headers identify whether the feature is included in generation 1 or generation 2 infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
+{: summary="This table has row and column headers. The row headers identify characteristics features. The column headers identify whether the feature is included in generation 1 or generation 2 infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
 ## Same developer-friendly API and experience
 
-Both generations of compute resources have the same developer-friendly API and user experience. You can migrate your virtual server instances from the classic infrastructure to VPC using the IBM Cloud console, or modify your existing API script to recreate your environment.  
+Both generations of compute resources have the same developer-friendly API and user experience. You can migrate your virtual server instances from the classic infrastructure to VPC by using the IBM Cloud console, or modify your existing API script to re-create your environment.  
 
 Generation 1 and generation 2 resources are not compatible and must be created in separate VPCs.
 {:tip}
@@ -93,7 +93,7 @@ For more information about migrating virtual server instances from our classic i
 * [Migrating classic virtual server instances to a VPC for generation 1 compute](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-migrate-vsi-from-classic-infra-to-vpc-on-classic)
 * [Migrating classic virtual server instances to a VPC for generation 2 compute](/docs/vpc?topic=vpc-migrate-vsi-to-vpc)
 
-For information about the VPC API considerations when migrating to generation 1 or generation 2 compute resources, see [API application migration considerations](/docs/vpc?topic=vpc-api-integration-migration).
+For more information about the VPC API considerations when you migrate to generation 1 or generation 2 compute resources, see [API application migration considerations](/docs/vpc?topic=vpc-api-integration-migration).
 
 ## Next steps
 {: #compare-nextsteps-vpc-vpcoc}
