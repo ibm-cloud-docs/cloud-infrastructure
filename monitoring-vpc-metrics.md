@@ -32,7 +32,7 @@ The following tables define basic VPC virtual server instance metrics.
 ## Average CPU usage percentage
 {: #avg-cpu-usage-gen2}
 
-Average percentage of time that elapsed executing instructions across all CPUs
+Average percentage of time that elapsed running instructions across all CPUs
 
 | Metadata | Description |
 |----------|-------------|
@@ -74,7 +74,7 @@ Cumulative number of bytes sent for a network interface since virtual server ins
 ## CPU usage
 {: #cpu-usage-cumulative-gen2}
 
-Cumulative elapsed time that a CPU is executing instructions since virtual server instance start
+Cumulative elapsed time that a CPU is running instructions since virtual server instance start
 
 | Metadata | Description |
 |----------|-------------|
@@ -88,7 +88,7 @@ Cumulative elapsed time that a CPU is executing instructions since virtual serve
 ## CPU usage percentage
 {: #cpu-usage-percentage-gen2}
 
-Average percentage of time that a CPU is executing instructions
+Average percentage of time that a CPU is running instructions
 
 | Metadata | Description |
 |----------|-------------|
@@ -186,7 +186,7 @@ Cumulative number of dropped outgoing packets for a network interface since virt
 ## Number of packets received for a network interface
 {: #network-packets-received-gen2}
 
-Cumulative number of packets received for a network interface since virtual server instance start
+Cumulative number of packets that were received for a network interface since virtual server instance start
 
 | Metadata | Description |
 |----------|-------------|
@@ -200,7 +200,7 @@ Cumulative number of packets received for a network interface since virtual serv
 ## Number of packets sent for a network interface
 {: #network-packets-sent-gen2}
 
-Cumulative number of packets sent for a network interface since virtual server instance start
+Cumulative number of packets that were sent for a network interface since virtual server instance start
 
 | Metadata | Description |
 |----------|-------------|
@@ -270,7 +270,7 @@ Cumulative number of write requests for a volume since virtual server instance s
 ## Total CPU usage
 {: #total-cpu-usage-nanoseconds-gen2}
 
-Cumulative time elapsed executing instructions across all CPUs since virtual server instance start
+Cumulative time that elapsed running instructions across all CPUs since virtual server instance start
 
 | Metadata | Description |
 |----------|-------------|
