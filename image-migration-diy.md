@@ -138,6 +138,8 @@ You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tre
 
 For more information about uploading to {{site.data.keyword.cos_short}} by using the console, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-console).
 
+**Tip:** Can also be uploaded with the help DIY script if “y”is chosen while the migration script is running.
+
 ## Step 5: Create virtual server instance
 {: #step-5-create-virtual-server-instance}
 
@@ -157,29 +159,51 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 ### Linux systems
 {: #step-6-linux-systems}
 
-1. Create n+1 secondary volumes. If your VM has one secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
-2. Download the secondary (vHDD) VMDK or VHD file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
-3. Install QEMU. 
-4. Convert the (VMDK or VHD) image data to disk:
+1. Create secondary volumes. If your VM has secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
+2. Copy the VMDK or VHD image file to the migrated VSI 
+(Make sure you have enough space to copy the image file. If necessary attach a temporary volume with space for copying.)
+3. Install guestfs library
 
-  For VMDK images:
+   Centos/Redhat
+
+   - yum update -y
+
+   - yum install libguestfs-tools
+
+   - systemctl enable libvirtd
+
+   - systemctl start libvirtd
+
+   - systemctl status libvirtd
+
+   Ubuntu/Debian
+   
+   - apt-get update -y
+   
+   - apt-get install -y libguestfs-tools
+
+    **Tip:** Installation will be done as part of pre-check script if provided ‘y’ to `guestfs` installation prompt
+
+4. Convert the (VMDK or VHD) image data to `qcow2`:
+
+  For VMDK images (to `qcow2`):
 
   ```
-  qemu-img convert -f vmdk <data_image.vmdk> /dev/vde
+  qemu-img convert -p -f vmdk -O qcow2 -o cluster_size=512k secondary_volume.vmdk secondary_volume.qcow2
   ```
   {: pre}
 
-  For VHD images:
+  For VHD images (to `qcow2`):
 
   ```
-  qemu-img convert -f vpc <data_image.vhd> /dev/vde
+  qemu-img convert -p -f vpc -O qcow2 -o cluster_size=512k secondary_volume.vhd secondary_volume.qcow2
   ```
   {: pre}
 
 5. Mount the volume:
 
   ```
-  mount /dev/vde1/mnt
+ guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
   ```
   {: pre}
 
@@ -190,14 +214,17 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
   ```
   {: pre}
 
-7. Copy data over from the temporary volume (vde) to the target volume (vdd):
+7. Copy data over from the ``/mnt`` to the target volume (vdd):
 
   ```
   "cp – avf /mnt/data" 
   ```
   {: pre}
 
-8. Unmount and delete the volume.
+8. After copy completed unmount and delete the image file, if no longer needed.
+  ```  
+  guestunmount /mnt
+  ```
 9. Edit the `fstab` file to automount and be persistent across reboot.
 
 ### Windows systems
