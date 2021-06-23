@@ -27,7 +27,7 @@ subcollection: cloud-infrastructure
 ## Platform metrics overview
 {: #platform-metrics-overview}
 
-You can view platform metrics when you enable monitoring services on your {{site.data.keyword.cloud_notm}} platform. A monitoring instance must be configured in a region to monitor these metrics. For more information about enabling Platform metrics, see [Enabling platform metrics](https://test.cloud.ibm.com/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
+You can view platform metrics when you enable monitoring services on your {{site.data.keyword.cloud_notm}} platform. A monitoring instance must be configured in a region to monitor these metrics. For more information about enabling Platform metrics, see [Enabling platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
 
 Before you enable {{site.data.keyword.mon_full_notm}} on your platform, keep the following information in mind:
 
