@@ -28,6 +28,8 @@ Building infrastructure
         ha-pools-origins-1zone.md
         ha-autoscale-tutorial.md
         ha-resiliency-tutorial.md
+        ha-components-in-a-3-tier-highly-available-architecture-on-an-IBM-Cloud-VPC.md
+        ha-3-tier-tutorial.md
 
     {: .topicgroup}
     Building your infrastructure
