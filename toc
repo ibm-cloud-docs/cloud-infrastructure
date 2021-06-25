@@ -23,13 +23,21 @@ Building infrastructure
     {: .topicgroup}
     High availability and resiliency
         ha-cloud-intro.md
-        /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
-        ha-3-tier.md
-        ha-pools-origins-1zone.md
+        /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application   
         ha-autoscale-tutorial.md
-        ha-resiliency-tutorial.md
-        ha-components-in-a-3-tier-highly-available-architecture-on-an-IBM-Cloud-VPC.md
-        ha-3-tier-tutorial.md
+
+        {: .topicgroup}
+        Highly Available applictions in VPC
+            ha-3-tier.md
+            ha-pools-origins-1zone.md
+            ha-resiliency-tutorial.md
+
+        ha-block-storage-snapshots.md
+        
+        {: .topicgroup}
+        Highly Available 3-tier architecture on IBM Cloud VPC 
+            ha-components-in-a-3-tier-highly-available-architecture-on-an-IBM-Cloud-VPC.md
+            ha-3-tier-tutorial.md
 
     {: .topicgroup}
     Building your infrastructure
@@ -46,7 +54,7 @@ Building infrastructure
         monitoring-no-driver-mode.md
         monitoring-faq.md
         vulnerability-eos-faq.md
-
+    
     {: .topicgroup}
     Migrating your infrastructure
         about-migration.md
@@ -59,9 +67,14 @@ Building infrastructure
         {: .topicgroup}
         Classic to VPC infrastructure
             /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
-            
+
+        {: .topicgroup}
+        Physical to virtual migration
+            pv-migration-overview.md
+            pv-migration-private-ip.md
+
         data-migration-diy.md
-        image-migration-diy.md
+        image-migration-diy.md    
 
     {: .topicgroup}
     Related links
