@@ -25,7 +25,7 @@ subcollection: cloud-infrastructure
 # Regional snapshots in 3-tier architecture
 {: #regional-snapshots-3-tier-arch}
 
-Block storage snapshots can be created in {{site.data.keyword.Cloud}} VPC Gen2. You can use this feature for a backup and restore of a 3-tier application. Block storage snapshots can also be used to scale out a 3-tier system with minimal changes to your application. 
+Block storage snapshots can be created in {{site.data.keyword.cloud}} VPC Gen2. You can use this feature for a backup and restore of a 3-tier application. Block storage snapshots can also be used to scale out a 3-tier system with minimal changes to your application. 
 
  ![Block storage.](images/ha-block-storage-arch.png){:caption="Figure 1. Regional snapshots in 3-tier architectures" caption-side="bottom"}
 
