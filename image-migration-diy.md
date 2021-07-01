@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-07-01"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -20,6 +20,7 @@ subcollection: cloud-infrastructure
 {:download: .download}
 {:important: .important}
 {:note: .note}
+
 
 # Migrating VMDK or VHD images to VPC
 {: #migrating-images-vpc}
@@ -66,7 +67,7 @@ Make sure that your VM meets the minimum requirements that are listed in the [Be
 
 As a best practice, take a snapshot or backup your VM before proceeding. 
 
-You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} for your system to help validate if the VMs meet the requirements.
+You can run a [migration bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} for your system to help validate if the VMs meet the requirements.
 {: tip}
 
 ### Linux systems
@@ -130,13 +131,16 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 If your VM has secondary vHDDs, a separate VMDK or VHD file is available for the VM. This secondary vHHD does not need to be converted to qcow2. This file is uploaded to {{site.data.keyword.cos_short}} in its native (VMDK or VHD) file format.
 {: note}
 
-You can run a [bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} to help with the image conversion. 
+You can run a [migration bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} to help with the image conversion. 
 {: tip}
 
 ## Step 4: Upload to IBM Cloud Object Storage
 {: #step-4-upload-to-cos}
 
 For more information about uploading to {{site.data.keyword.cos_short}} by using the console, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-console).
+
+The converted boot image can be uploaded through the migration script by opting 'y' when prompted to upload.
+{: tip}
 
 ## Step 5: Create virtual server instance
 {: #step-5-create-virtual-server-instance}
@@ -154,8 +158,11 @@ This step is for {{site.data.keyword.cloud_notm}} virtual server instances that 
 The secondary volume needs to be equal to or greater than the secondary VMDK image size.
 {: note}
 
-### Linux systems
+### **Linux systems**
 {: #step-6-linux-systems}
+
+
+***For Centos/Redhat 7 and Ubuntu 16:***
 
 1. Create n+1 secondary volumes. If your VM has one secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
 2. Download the secondary (vHDD) VMDK or VHD file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
@@ -165,39 +172,117 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
   For VMDK images:
 
   ```
-  qemu-img convert -f vmdk <data_image.vmdk> /dev/vde
+  qemu-img convert -p -f vmdk <data_image.vmdk> /dev/vde
   ```
   {: pre}
 
   For VHD images:
 
   ```
-  qemu-img convert -f vpc <data_image.vhd> /dev/vde
+  qemu-img convert -p -f vpc <data_image.vhd> /dev/vde
   ```
   {: pre}
 
 5. Mount the volume:
 
   ```
-  mount /dev/vde1/mnt
+  mount /dev/vde1 /mnt
   ```
   {: pre}
 
 6. Format and mount the other empty secondary volume
 
   ```
-  mount /dev/vdd1/data
+  mount /dev/vdd1 /data
   ```
   {: pre}
 
 7. Copy data over from the temporary volume (vde) to the target volume (vdd):
 
   ```
-  "cp – avf /mnt/data" 
+  cp –avf /mnt /data 
   ```
   {: pre}
 
 8. Unmount and delete the volume.
+9. Edit the `fstab` file to automount and be persistent across reboot.  
+  
+
+
+***For Centos/Redhat 8 , Ubuntu 18.04 and 20.04 , Debian 9 and 10:***
+
+1. Create secondary volumes, if your VM has secondary vHDD. 
+2. Copy the VMDK or VHD image file to the migrated VSI 
+(Make sure you have enough space to copy the image file. If necessary attach a temporary volume with space for copying.)
+
+  Skip step 3 if you opted ‘y’ to guestfs installation prompt when executing pre-check script.
+  {: note}
+
+3. Install guestfs library
+
+   Centos/Redhat
+
+   ```
+   $ yum update -y
+
+   $ yum install libguestfs-tools
+
+   $ systemctl enable libvirtd
+
+   $ systemctl start libvirtd
+
+   $ systemctl status libvirtd
+   ```
+
+   Ubuntu/Debian
+   
+   ```
+   $ apt-get update -y
+   
+   $ apt-get install -y libguestfs-tools
+   ```
+
+4. Convert the (VMDK or VHD) image data to `qcow2`:
+
+  For VMDK images (to `qcow2`):
+
+  ```
+  qemu-img convert -p -f vmdk -O qcow2 -o cluster_size=512k secondary_volume.vmdk secondary_volume.qcow2
+  ```
+  {: pre}
+
+  For VHD images (to `qcow2`):
+
+  ```
+  qemu-img convert -p -f vpc -O qcow2 -o cluster_size=512k secondary_volume.vhd secondary_volume.qcow2
+  ```
+  {: pre}
+
+5. Mount the volume:
+
+  ```
+ guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
+  ```
+  {: pre}
+
+6. Format and mount the empty secondary volume
+
+  ```
+  mount /dev/vdd1 /data
+  ```
+  {: pre}
+
+7. Copy data over from the ``/mnt`` to the target volume (vdd):
+
+  ```
+  cp –avf /mnt /data 
+  ```
+  {: pre}
+
+8. After copy completed unmount and delete the image file, if no longer needed.
+  ```  
+  $ guestunmount /mnt
+  ```
 9. Edit the `fstab` file to automount and be persistent across reboot.
 
 ### Windows systems
