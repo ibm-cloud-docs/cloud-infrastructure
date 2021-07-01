@@ -25,7 +25,7 @@ subcollection: cloud-infrastructure
 {:pre: .pre}
 {:step: data-tutorial-type='step'}
 
-# Deploying server pools and origins in a single MZR
+# Deploying server pools and origins in a single region
 {: #ha-pools-origins}
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers, vpc, loadbalancer-service, cis"} 
