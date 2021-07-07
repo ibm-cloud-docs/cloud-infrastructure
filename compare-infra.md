@@ -41,7 +41,7 @@ See the following table for the compute differences between classic and VPC.
 |  **Services**  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} instances only |
 | **Performance and availability** | | Better availability achievable through zone architecture |
 | **Pricing** | Hourly and monthly billing, plus suspend billing features | Hourly, suspend billing, and sustained usage discount |
-| **Virtual server families** | Public, dedicated, transient, reserved | Public only |
+| **Virtual server families** | Public, dedicated, transient, reserved | Public, Dedicated |
 | **Profiles** | All profiles, including the GPU profiles | Balanced, compute, memory profiles with higher RAM and vCPU options |
 | **Supported images** | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
 | **Platform integration** | | IAM and resource group integration for a unified experience |
