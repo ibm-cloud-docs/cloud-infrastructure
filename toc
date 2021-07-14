@@ -76,7 +76,8 @@ Building infrastructure
         {: .topicgroup}
         Script-based migration
             data-migration-diy.md
-            image-migration-diy.md  
+            image-migration-diy.md
+            getting-help-diy-image-data-migration.md
 
     {: .topicgroup}
     Related links
