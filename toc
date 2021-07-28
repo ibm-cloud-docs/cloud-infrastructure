@@ -74,6 +74,12 @@ Building infrastructure
             /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
         
         {: .topicgroup}
+        Bare metal to virtual server migration
+            pv-migration-overview.md
+            pv-migration-private-ip.md
+            pv-faqs.md
+        
+        {: .topicgroup}
         Script-based migration
             data-migration-diy.md
             image-migration-diy.md
