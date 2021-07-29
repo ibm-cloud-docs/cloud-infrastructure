@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021
-lastupdated: "2021-07-28"
+lastupdated: "2021-07-29"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
