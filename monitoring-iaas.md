@@ -18,7 +18,7 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.mon_full_notm}}
 {: #monitoring-iaas}
 
-{{site.data.keyword.mon_full_notm}} collects basic classic infrastructure and VPC virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. <!--If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance. -->You can access metrics through the prebuilt dashboard.
+{{site.data.keyword.mon_full_notm}} collects basic classic infrastructure and VPC virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt dashboard.
 {:shortdesc}
 
 {{site.data.keyword.mon_full_notm}} metrics are available only if you use the monitoring full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
@@ -40,7 +40,7 @@ Before you enable {{site.data.keyword.mon_full_notm}} on your platform, keep the
 ### Metrics available by virtual server generation
 {: #metrics-by-server-generation}
 
-* To view Classic virtual server monitoring metrics, see [Classic virtual server instance metrics definitions](docs/virtual-servers?topic=virtual-servers-monitoring-classic-metrics).
+* To view Classic virtual server monitoring metrics, see [Classic virtual server instance metrics definitions](/docs/virtual-servers?topic=virtual-servers-monitoring-classic-metrics).
 * To view VPC virtual server monitoring metrics, see [VPC virtual server instances metrics definitions](/docs/vpc?topic=vpc-vpc-monitoring-metrics)
 
 ## Basic monitoring
