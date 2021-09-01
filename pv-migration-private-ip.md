@@ -154,7 +154,7 @@ route ADD <destination_network> MASK <subnet_mask> <gateway_ip> <metric_cost>
 {: #set-up-rackware-rmm-p2v-migration}
 {: step}
 
-You can migrate the machines over one by one or do simultaneous migrations. If you are doing multiple, simultaneous migrations, download the CVS template from the RMM server and complete the appropriate fields.
+You can migrate the machines over one by one or do simultaneous migrations. If you are doing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
 2. Create a _Wave_ and define _Wave_ name.
