@@ -85,6 +85,7 @@ Building infrastructure
         Bare metal to virtual server migration
             pv-migration-overview.md
             pv-migration-private-ip.md
+            p-p-migration-bare-metal.md
             pv-faqs.md
         
         {: .topicgroup}
