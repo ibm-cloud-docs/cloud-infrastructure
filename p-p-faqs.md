@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-02"
 
 keywords: 
 
@@ -63,7 +63,7 @@ For more information on supported operating systems, see [Bare Metal to Bare Met
 The RMM migration tool does not support migration over the bonded interface. NIC bonding must be removed first before starting the migration. See how to [Remove NIC bonding](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-removing-nic-bond) for more details.
 
 
-## Is RMM a free service?? 
+## Is RMM a free service? 
 {: #is-rmm-server-license-free}
 {: faq}
 
