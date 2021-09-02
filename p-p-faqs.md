@@ -48,26 +48,26 @@ This software is available in the IBM Cloud catalog in the Migration Tools categ
 {: #bare-metal-to-bare-metal-limitations}
 {: faq}
 
-For more information on limitations of the Bare Metal to Bare Metal migration, see [Bare Metal to Bare Metal migration limitations](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-limitations).
+For more information on limitations of the Bare Metal to Bare Metal migration, see [Bare Metal to Bare Metal migration limitations](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-limitations).
 
 ## What are supported operating systems for Bare Metal to Bare Metal migration?
 {: #bare-metal-supported-operating-systems}
 {: faq}
 
-For more information on supported operating systems, see [Bare Metal to Bare Metal migration supported operating systems](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
+For more information on supported operating systems, see [Bare Metal to Bare Metal migration supported operating systems](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
 
 ## Is NIC bonding supported?
 {: #nic-bonding-supported}
 {: faq}
 
-The RMM migration tool does not support migration over the bonded interface. NIC bonding must be removed first before starting the migration. See how to [Remove NIC bonding](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-removing-nic-bond) for more details.
+The RMM migration tool does not support migration over the bonded interface. NIC bonding must be removed first before starting the migration. See how to [Remove NIC bonding](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-removing-nic-bond) for more details.
 
 
 ## Is RMM a free service? 
 {: #is-rmm-server-license-free}
 {: faq}
 
-Rackware RMM is a bring your own license (BYOL) subscription-based service. Contact the [Rackware sales team ](sales@rackwareinc.com)or see [Order a license](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
+Rackware RMM is a bring your own license (BYOL) subscription-based service. Contact the [Rackware sales team ](sales@rackwareinc.com)or see [Order a license](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
 
 ## Mounted filesystem / storage did not show up on target automatically?
 {: #mounted-filesystem-storage-no-show}
