@@ -67,7 +67,7 @@ The RMM migration tool does not support migration over the bonded interface. NIC
 {: #is-rmm-server-license-free}
 {: faq}
 
-Rackware RMM is a bring your own license (BYOL) subscription-based service. Contact the [Rackware sales team ](mailto:sales@rackwareinc.com)or see [Order a license](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
+RackWare RMM is a bring your own license (BYOL) subscription-based service. Contact the [RackWare sales team ](mailto:sales@rackwareinc.com)or see [Order a license](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
 
 ## Mounted filesystem / storage did not show up on target automatically?
 {: #mounted-filesystem-storage-no-show}
