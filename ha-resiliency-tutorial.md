@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-09-03"
 
 keywords: high availability, regions, zones, resiliency
 content-type: tutorial
@@ -45,12 +45,14 @@ This tutorial walks you through setting up a resilient environment for an n-tier
     1.  AZ-1: Mgmt, UI, application, and db 
     2.  AZ-2: UI, application, and db
 
-2.  Provision virtual server instances
+2.  Provision Placement groups for ui application.
+
+3.  Provision virtual server instances
 
     1.  Bastion server (jumphost) in mgmt subnet and generate an SSH Key
     2.  Provision virtual server instances in the corresponding tiers with security groups
 
-3.  Deploy a public load balancer and a private load balancer between tiers in each of availability zones.
+4.  Deploy a public load balancer and a private load balancer between tiers in each of availability zones.
 
 ## Before you begin
 
@@ -88,7 +90,7 @@ To create your own {{site.data.keyword.cloud_notm}} VPC in region 1, complete th
 ### Create subnets in availability zone 1
 {: #create-subnets-same-az}
 
-You create three extra subnets for your first availability zone (vcp-region1-zone1) and use the VPC you created in Step 1:
+You create three extra subnets for your first availability zone (VPC-region1-zone1) and use the VPC you created in Step 1:
 * vpc-region1-zone1-ui
 * vpc-region1-zone1-application
 * vpc-region1-zone1-db
@@ -120,16 +122,16 @@ Use this task to create subnets for availability zones two and three. You repeat
 
 To create the subnets: 
 
-1.	Click **Create**. 
-2.  Enter ***vpc-region1-zone2-ui*** as a unique name for your subnet.
-3.  Select ***vpc-region1*** as the VPC, and 
-4.  Select a **Resource group**.
-5.	Select a location for zone two for example: Dallas 2
-6.	Select the wanted number of IP addresses.
-7.	Leave the subnet access control list set to the default selection.
-8.	Leave the public gateway set to **Detached**.
-9.	Click **Create subnet**.
-10.	Repeat steps 1-9 for availability zone 2:
+
+1.  Enter ***vpc-region1-zone2-ui*** as a unique name for your subnet.
+2.  Select ***vpc-region1*** as the VPC, and 
+3.  Select a **Resource group**.
+4.	Select a location for zone two for example: Dallas 2
+5.	Select the wanted number of IP addresses.
+6.	Leave the subnet access control list set to the default selection.
+7.	Leave the public gateway set to **Detached**.
+8.	Click **Create subnet**.
+9.	Repeat steps 1-8 for availability zone 2:
     * Create a subnet that is called ***vpc-region1-zone2-app*** 
     * Create a subnet that is called ***vpc-region1-zone2-db1***
 
@@ -150,7 +152,7 @@ To create the security groups:
 3.  Click **Create**.
 4.	Create the security group ***vpc-region1-jumphost-sg***: 
 
-    1. Set the VCP to ***vpc-region1***
+    1. Set the VPC to ***vpc-region1***
         
     2. Select your **Resource Group**
 
@@ -177,6 +179,21 @@ To create the security groups:
     * Use access control lists for subnet level (that is, application subnet to allow ui and db).
     * Use security groups for specific host level security rules.
 
+## Create placement groups
+{: #create-placement-groups}
+{: step}
+
+There are different approaches and strategies when it comes with placement groups.  You can create a placement group per zone, per tier, per stack and so forth.  For this example, create 2 placement groups, one placement group each for ui and application. The placement group spans the availability zones.
+
+1. Go to **Placement groups**.
+2. Click **Create**.
+3. Enter ***web-group1*** as the placement group unique name.
+4. Select your **Resource Group**.
+5. Select your **Region**.
+6. Select ***Host spread*** as your **Placement strategy**.
+7. Click **Create placement group**.
+8. Repeat steps 2-7 for app-group1.
+
 ## Create virtual server instances
 {: #create-vsis-mzr}
 {: step}
@@ -189,7 +206,7 @@ You create multiple virtual server instances in different availability zones for
 Use this task to provision the Bastion virtual server instance:
 
 1.	Go to **Subnets**.
-2.	Verify that the vpc-region1-zone1-mgmt status is available.
+2.	Verify that the ***vpc-region1-zone1-mgmt*** status is available.
 3.  Click **vpc-region1-zone1-mgmt**.
 4.  Click **Attached resources**
 5.  In **Attached instances**, click **Create**. 
@@ -199,74 +216,77 @@ Use this task to provision the Bastion virtual server instance:
 7.	Set the image to ***Ubuntu Linux*** and pick any version of the image.
 8.	Select ***Memory with 2vCPUs*** and ***16 GB RAM*** as your profile. To check other available profiles, click **View all profiles**.
 9.	Under **SSH keys**, click the SSH key that you created earlier. 
-10.	Under **Network interfaces**, click the **Edit** icon next to the **Security Groups**. 
-    1.	Verify region1-zone1-mgmt is selected as the subnet.
+10.  Under **Networking** select the VPC that you created.
+11.	Under **Network interfaces**, click the **Edit** icon next to the **Security Groups**. 
+    1.	Verify ***region1-zone1-mgmt*** is selected as the subnet.
     2.	Clear the preselected security group and choose ***vpc-region1-jumphost-sg***.
     3.	Click **Save**.
-11.	Click **Create virtual server instance**.
-12.	Go to the jumphost virtual server instance on the {{site.data.keyword.cloud_notm}} portal and switch the public gateway to attached.
-13.	SSH to the jumphost and create an ssh key.
-14.	Upload the ssh key to the **SSH keys for VPC** to use later for ui, application, and db virtual server instances.
+12.	Click **Create virtual server instance**.
+13.	Go to the jumphost virtual server instance on the {{site.data.keyword.cloud_notm}} portal and switch the public gateway to attached.
+14.	SSH to the jumphost and create an ssh key.
+15.	Upload the ssh key to the **SSH keys for VPC** to use later for ui, application, and db virtual server instances.
 
 ### Provision virtual server instances for ui and application
 {: #other-vsi-mzr}
 
 Use this task to provision virtual server instances for all of the availability zones. You repeat this task multiple times to provision virtual server instances for ui, application, and db:
 
-|Type|Use Subnet|Create Virtual server instance|
-|----|----|----|
-|ui|vpc-region1-zone1-ui|vpc-region1-zone1-ui1<br>vpc-region1-zone1-ui2|
-||vpc-region1-zone2-ui|vpc-region1-zone2-ui1<br>vpc-region1-zone2-ui2|
-|application|vpc-region1-zone1-app|vpc-region1-zone1-app1<br>vpc-region1-zone1-app2|
-||vpc-region1-zone2-app|vpc-region1-zone2-app1<br>vpc-region1-zone2-app2|
+|Type|Use Subnet|Create Virtual server instance|Placement group|
+|----|----|----|----|
+|ui|vpc-region1-zone1-ui|vpc-region1-zone1-ui1<br>vpc-region1-zone1-ui2|web-group1|
+||vpc-region1-zone2-ui|vpc-region1-zone2-ui1<br>vpc-region1-zone2-ui2|web-group1|
+|application|vpc-region1-zone1-app|vpc-region1-zone1-app1<br>vpc-region1-zone1-app2|app-group1|
+||vpc-region1-zone2-app|vpc-region1-zone2-app1<br>vpc-region1-zone2-app2|app-group1|
 |db|vpc-region1-zone1-db|vpc-region1-zone1-db1|
 ||vpc-region1-zone2-db|vpc-region1-zone2-db2|
 
+**Virtual server instance for ui**
+
 Use this task to provision virtual server instances for ui:
 
-1.	Go to **Subnets**.
-2.	Verify that the vpc-region1-zone1-ui status is available.
-3.  Click **vpc-region1-zone1-ui**.
-4.  Click **Attached resources** 
-5.  In **Attached instances**, click **Create**. 
-6.  On the **New virtual server for VPC** page:   
-    1.	Enter ***vpc-region1-zone1-ui1*** as your virtual server's unique name.
-    2.	Verify the VPC your created earlier, resource group and the Location, and the zone.
-7.	Set the image to ***Ubuntu Linux*** and pick any version of the image.
-8.	Select ***Compute with 2vCPUs*** and ***4 GB RAM*** as your profile. To check other available profiles, click **View all profiles**.
-9.	Under **SSH keys**, select the SSH key that you created earlier. 
-10.	Under Network interfaces, click the **Edit** icon for **Security Groups**. 
-    1.	Select ***vpc-region1-zone1-ui*** as the subnet.
-    2.	Clear the default security group and check ***vpc-region1-ui-sg***.
-    3.	Click **Save**.
-11.	Click **Create virtual server instance**.
-12.	Repeat steps 1-11 to provision a virtual server instance in the other availability zones:
-    1. Create another virtual server instance for the second ui (vpc-region1-zone2-ui2). 
-    2. Create two virtual server instances for zone 2 (vpc-region1-zone2-ui1 and vpc-region1-zone2-ui2).
-13.	Install necessary packages to support your front-end server such as php, node.js.
+1. Go to **Placement groups**.
+2. Click the actions button for ***web-group1*** and select **New** instance.
+3. On the **New virtual server for VPC** page:
+    1. Enter ***vpc-region1-zone1-ui1*** as your virtual server's unique name.
+    2. Verify the VPC your created earlier, resource groups and the Location, and the zone.
+4. Set the image to ***Ubuntu Linux*** and pick any version of the image.
+5. Select ***Compute with 2vCPUs*** and ***4 GB RAM*** as your profile. To check other available profiles, click View all profiles.
+6. Under **SSH keys**, select the SSH key that you created earlier.
+7.  Under **Networking** select the VPC that you created.
+8. Under **Network interfaces**, click the **Edit** icon for Security Groups.
+    1. Select ***vpc-region1-zone1-ui*** as the subnet.
+    2. Clear the default security group and check ***vpc-region1-ui-sg***. 
+    3. Click **Save**.
+9.  Click **Create virtual server instance**. 
+10.  Repeat steps 1-8 to provision a second virtual server instance and for the other availability zones:
+     1. Create another virtual server instance for the second ui (vpc-region1-zone1-ui2).
+     2. Create two virtual server instances for zone 2 (vpc-region1-zone2-ui1 and vpc-region1-zone2-ui2).
+11. Install necessary packages to support your front-end server such as php, node.js.
+
+
+**Virtual server instance for app**
 
 Use this task to provision virtual server instances for application:
 
-1.	Go to **Subnets**.
-2.	Verify that the vpc-region1-zone1-app status is available.
-3.  Click **vpc-region1-zone1-app**.
-4.  Click **Attached resources** 
-5.  In **Attached instances**, click **Create**. 
-6.  On the **New virtual server for VPC** page:   
-    1.	Enter ***vpc-region1-zone1-app1*** as your virtual server's unique name.
-    2.	Verify the VPC your created earlier, resource group and the Location, and the zone.
-7.	Set the image to ***Ubuntu Linux*** and pick any version of the image.
-8.	Select ***Compute with 2vCPUs*** and ***4 GB RAM*** as your profile. To check other available profiles, click **View all profiles**.
-9.	Under **SSH keys**, select the (bastion) SSH key that you created earlier. 
-10.	Under Network interfaces, click the **Edit** icon for **Security Groups**. 
-    1.	Select ***vpc-region1-zone1-app*** as the subnet.
-    2.	Clear the default security group and check ***vpc-region1-app-sg***.
-    3.	Click **Save**.
-11.	Click **Create virtual server instance**.
-12.	Repeat steps 1-11 to provision a virtual server instance for availability zone1 and zone2:
-    1. Create another virtual server instance for the second app (vpc-region1-zone2-app2). 
+1. Go to **Placement groups**.
+2. Click the actions button for ***app-group1*** and select **New instance**.
+3. On the **New virtual server for VPC** page:
+    1. Enter ***vpc-region1-zone1-app1*** as your virtual server's unique name.
+    2. Verify the VPC your created earlier, resource groups and the Location, and the zone.
+4. Set the image to ***Ubuntu Linux*** and pick any version of the image.
+18. Select ***Memory with 2vCPUs*** and ***16 GB RAM*** as your profile. To check other available profiles, click **View all profiles**.
+5. Under **SSH keys**, select the SSH key that you created earlier.
+6. Under **Networking** select the VPC that you created.
+7. Under **Network interfaces**, click the **Edit** icon for **Security Groups**.
+    1. Select ***vpc-region1-zone1-app1*** as the subnet.
+    2. Clear the default security group and check ***vpc-region1-app-sgc***.
+    3. Click **Save**.
+
+8. Click **Create virtual server instance**.
+9. Repeat steps 1-7 to provision a second virtual server instance and for the other availability zones:
+    1. Create another virtual server instance for the second app (vpc-region1-zone1-app2).
     2. Create two virtual server instances for zone 2 (vpc-region1-zone2-app1 and vpc-region1-zone2-app2).
-13.	Install necessary packages to support your application server.
+10. Install the necessary packages to support your application server such as tomcat.
 
 Use this task to provision virtual server instances for db:
 
@@ -280,18 +300,17 @@ Use this task to provision virtual server instances for db:
 6.	Set the image to ***Ubuntu Linux*** and pick any version of the image.
 7.	Select ***Balanced*** with ***4vCPUs*** and ***16 GB RAM*** as your profile or change to a different balanced profile that is more suitable for your application.
 8.	Under **SSH keys**, select the (bastion) SSH key that was created on jumphost-vsi.
-9.	Under **Data Volumes**, click **Create** to add more volumes.
+9.  Under **Networking** select the VPC that you created.
+10.	Under **Data Volumes**, click **Create** to add more volumes.
     1.	These volumes are block volumes, so choose the appropriate size and IOPs that meet your db requirements.
     2.	Create as many volumes as needed.
-10.	Under Network interfaces, click the **Edit** icon next to the **Security Groups**. 
+11.	Under **Network interfaces**, click the **Edit** icon next to the **Security Groups**. 
     1.	Select ***vpc-region1-zone1-db*** as the subnet.
     2.	Clear the default security group and check ***vpc-region1-db-sg***.
     3.	Click **Save**.
-11.	Click **Create virtual server instance**.
-
-12. Repeat steps 1-11 to create a virtual server instance for db for availability zone 2, and call the VPC ***vpc-region1-zone2-db2***.
-
-13.	Install db applications such as NoSQL and tools. Enable the database vendor-provided data replication tool so the database is periodically replicated between the two.
+12.	Click **Create virtual server instance**.
+13. Repeat steps 1-11 to create a virtual server instance for db for availability zone 2, and call the VPC ***vpc-region1-zone2-db2***.
+14.	Install db applications such as NoSQL and tools. Enable the database vendor-provided data replication tool so the database is periodically replicated between the two.
 
 ## Distribute traffic between zones with load balancers
 {: #load-balancers-mrz}
