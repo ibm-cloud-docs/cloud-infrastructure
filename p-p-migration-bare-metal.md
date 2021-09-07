@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-07"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -279,7 +279,6 @@ You can migrate machines over one-by-one or perform simultaneous migrations. If 
     a. [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
 
     b. [RackWare RMM Users Guide for IBM Cloud](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
-
 
 2.  FAQs about baremetal to metal
 
