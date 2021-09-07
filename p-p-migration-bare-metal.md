@@ -282,7 +282,7 @@ You can migrate machines over one-by-one or perform simultaneous migrations. If 
 
 2.  FAQs about baremetal to metal
 
-    [FAQS for bare metal to bare metal](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
+    [FAQS for bare metal to bare metal](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
 
 
 
