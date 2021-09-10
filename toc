@@ -22,7 +22,7 @@ Building infrastructure
 
     {: .topicgroup}
     High availability and resiliency
-        ha-landing-page-all.md
+        ha-landing-page-all.md 
         ha-cloud-intro.md
         /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application   
         ha-autoscale-tutorial.md
