@@ -41,10 +41,12 @@ Building infrastructure
             ha-3-tier-tutorial.md
 
         {: .topicgroup}
-        Highly Available architecture in SZR 
+        Highly Available architecture in a Single Zone
+            ha-arch-szr.md
+            ha-deploy-n-tier-app-szr.md 
             ha-snapshot-backups-szr.md
 
-        {: .topicgroup}
+         {: .topicgroup}
         Automating and Deploying Highly Available Resilient Architectures with Terraform
             ha-3-tier-resilient-terraform.md
             ha-3-tier-resilient-autoscale-terraform.md
