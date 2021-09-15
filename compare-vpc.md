@@ -32,7 +32,7 @@ Compare the key differences between generations of virtual server profiles to de
 For more information about generational differences, see the following table.
 
 We are always adding new features and support. Over time, fewer considerations will be taken between generations of compute resources.
-{:note}
+{: note}
 
 | Key Features | Current Considerations |
 |-----|-----|
@@ -87,7 +87,7 @@ We are always adding new features and support. Over time, fewer considerations w
 Both generations of compute resources have the same developer-friendly API and user experience. You can migrate your virtual server instances from the classic infrastructure to VPC by using the IBM Cloud console, or modify your existing API script to re-create your environment.  
 
 Generation 1 and generation 2 resources are not compatible and must be created in separate VPCs.
-{:tip}
+{: tip}
 
 For more information about migrating virtual server instances from our classic infrastructure, see the following information.
 * [Migrating classic virtual server instances to a VPC for generation 1 compute](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-migrate-vsi-from-classic-infra-to-vpc-on-classic)

@@ -53,7 +53,7 @@ The network interface controller (NIC) provides the link that connects your bare
 2. Distribute traffic by using the operating system. This method provides switch-independent teaming.
 3. Allow the {{site.data.keyword.Bluemix_notm}} provisioning service create the NIC teaming by using LACP or opt to do the NIC teaming yourself through different NIC team modes such as active-passive, round-robin, adaptive transmit load-balancing, or adapter load-balancing.
 
-![Two different types of bare metal deployment.](images/HA-bmDeploymentTypes2x.svg){:caption="Figure 1. Two different types of bare metal deployment. Option B with LACP nic bonding is recommended for higher availability." caption-side="bottom"}
+![Two different types of bare metal deployment.](images/HA-bmDeploymentTypes2x.svg){: caption="Figure 1. Two different types of bare metal deployment. Option B with LACP nic bonding is recommended for higher availability." caption-side="bottom"}
 
 Note: For VMware, LACP is not available, but other NIC teaming mode is allowed.
 

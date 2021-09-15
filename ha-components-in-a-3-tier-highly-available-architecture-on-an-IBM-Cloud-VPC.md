@@ -56,7 +56,7 @@ You might need to design your HA strategy based on your RPO and RTO objectives. 
 
 This diagram shows the 3-tier architecture that you create with the tutorial. 
 
-![Two different types of bare metal deployment.](images/3_tier_tut.png){:caption="Architectural Diagram"}
+![Two different types of bare metal deployment.](images/3_tier_tut.png){: caption="Architectural Diagram"}
 
 ## Components
 {: #components-three-tier-2}

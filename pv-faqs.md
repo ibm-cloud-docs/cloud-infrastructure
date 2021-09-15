@@ -16,7 +16,7 @@ subcollection: cloud-infrastructure
 {:external: target="_blank" .external}
 {:pre: .pre}
 {:tip: .tip}
-{:note .note}
+{:note: .note}
 {:important: .important}
 {:faq: data-hd-content-type='faq'}
 

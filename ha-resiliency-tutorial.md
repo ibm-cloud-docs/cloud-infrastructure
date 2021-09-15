@@ -38,7 +38,7 @@ This tutorial walks you through setting up a resilient environment for an n-tier
 ## Architecture
 {: #architecture-mzr}
 
-![Architecture](images/Deploying-critical-apps-with-IBM-Cloud-MZR.svg){:caption="Figure 1. Resiliency across multiple zones in a region" caption-side="bottom"}
+![Architecture](images/Deploying-critical-apps-with-IBM-Cloud-MZR.svg){: caption="Figure 1. Resiliency across multiple zones in a region" caption-side="bottom"}
 
 1.  Provision multiple subnets (UI, application, and db) in each availability zone
 

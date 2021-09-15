@@ -43,7 +43,7 @@ This tutorial shows you how to set up compute (virtual server instance) Auto sca
 ## Architecture
 {: #ha-auto-scale-arch}
 
-![Autoscale.](images/ha-pools-origins-1zone-tut.svg){:caption="Figure 1. Deploying server pools and origins in single MZR" caption-side="bottom"}
+![Autoscale.](images/ha-pools-origins-1zone-tut.svg){: caption="Figure 1. Deploying server pools and origins in single MZR" caption-side="bottom"}
 
 ## Before you begin
 {: #ha-auto-scale-before}

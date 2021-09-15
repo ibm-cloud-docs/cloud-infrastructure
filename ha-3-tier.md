@@ -90,7 +90,7 @@ To avoid placing VSIs on the same hypervisor, placement groups come into play. P
 
 Of the 2 options, the second option provides a better resiliency over the first option. 
 
-![Placement Groups.](images/placement_groups.svg){:caption="Figure 1. Placement group algorithms " caption-side="bottom"}
+![Placement Groups.](images/placement_groups.svg){: caption="Figure 1. Placement group algorithms " caption-side="bottom"}
 
 
 If you have several VSIs, such as the web or applications, then hypervisor spread is sufficient. If you have a smaller set of VSIs, such as a database, where there are multiple masters or read replicas in the same zone, then power spread a better choice.
@@ -113,11 +113,11 @@ Auto scale adjusts resources in an automated and orchestrated fashion and is ava
 
 * Compute – Scaling the virtual server instances is determined by the average target load utilization across all of the virtual server instances in the Auto scale group. Target load utilization can be based on CPU, memory, network, or a combination of these resources. If the virtual server instances load is not at the wanted target load, then instances automatically scale - up or down - to meet the average target load utilization. The number of virtual server instances that are being added or deleted will exceed the minimum or maximum virtual server instances for an Auto scale group. More information on Auto scale can be found [here](/docs/vpc?topic=vpc-creating-auto-scale-instance-group). 
 
-![Autoscale.](images/autoscale-compute.svg){:caption="Figure 1. Auto scale Compute adds virtual servers based on load" caption-side="bottom"}
+![Autoscale.](images/autoscale-compute.svg){: caption="Figure 1. Auto scale Compute adds virtual servers based on load" caption-side="bottom"}
 
 * Cloud load balancers – Auto scale for the cloud load balancer has two parts. The first part is the horizontal scaling of the cloud load balancer. The cloud load balancer scales depending on load so that it does not become the bottleneck. This process is managed by the IBM cloud controller. The second part is making the cloud load balancer aware of membership changes to the backend server pool. In a non-Auto scale environment, this adjustment is made by the customer manually; the customer must add or remove virtual instances from the backend server pool. With Auto scale, this adjustment is an automated process and removes the need for customer intervention. 
 
-![Autoscale.](images/autoscale-cloud-load-balancer.svg){:caption="Figure 2. Auto scale Cloud Load Balancer distributes load to Auto scaled virtual servers" caption-side="bottom"}
+![Autoscale.](images/autoscale-cloud-load-balancer.svg){: caption="Figure 2. Auto scale Cloud Load Balancer distributes load to Auto scaled virtual servers" caption-side="bottom"}
 
 ## Scenario 1 - deploying in single zone
 {: #single-zone}
@@ -128,14 +128,14 @@ When deploying in a single zone, deploy multiple virtual instances within a tier
 
 This deployment type has some risk. While you deploy multiple virtual instances, the application is not protected against a failure within a data center. This becomes a single point of failure for the application. 
 
-![Single-zone deployment.](images/single-tier.svg){:caption="Figure 3. Deploying in single zone" caption-side="bottom"}
+![Single-zone deployment.](images/single-tier.svg){: caption="Figure 3. Deploying in single zone" caption-side="bottom"}
 
 ## Scenario 2 - deploying in multiple zones with {{site.data.keyword.cis_full_notm}}
 {: #multi-zone-cis}
 
 You can deploy your application as active-active across multiple zones by using a combination of {{site.data.keyword.cis_full_notm}} and {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}. This method enables replication across multiple zones, increasing the availability of the application. Because of the active-active deployment, more devices are available for parallel processing, improving resiliency and performance. The likelihood of simultaneous failure across multiple zones is much less likely in comparison to a single zone. If a failure occurs in one of the zones, the failure is contained in that zone. Even though the capacity is reduced during a failure, the application is still active in the other zone.
 
-![Multiple-zone deployment.](images/multi-zone-cis.svg){:caption="Figure 4. Deploying in multiple zones with IBM Cloud Internet Services and IBM Cloud Load Balancer" caption-side="bottom"}
+![Multiple-zone deployment.](images/multi-zone-cis.svg){: caption="Figure 4. Deploying in multiple zones with IBM Cloud Internet Services and IBM Cloud Load Balancer" caption-side="bottom"}
 
 By deploying across multiple zones you can also take advantage of server pools and origins, which are part of {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.cis_short}}. allow DevOps to integrate, validate, and deploy new software features. **More information is covered in a later section of this document.**
 
@@ -143,7 +143,7 @@ By deploying across multiple zones you can also take advantage of server pools a
 
 You can also deploy your application in multiple zones by using only {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} rather than a combination of {{site.data.keyword.cis_full_notm}} and {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}. This deployment scenario is less ideal, but is more cost-effective. You should consider this method only for less critical and less sensitive applications, such as internal applications.
 
-![Multiple-zone deployment.](images/multi-zone-lb.svg){:caption="Figure 5. Deploying in multiple zones with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} " caption-side="bottom"}
+![Multiple-zone deployment.](images/multi-zone-lb.svg){: caption="Figure 5. Deploying in multiple zones with {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} " caption-side="bottom"}
 
 ## Reference
 For more {{site.data.keyword.Bluemix_notm}} high availability content, see:

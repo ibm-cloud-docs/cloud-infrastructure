@@ -19,10 +19,10 @@ subcollection: cloud-infrastructure
 {: #monitoring-iaas}
 
 {{site.data.keyword.mon_full_notm}} collects basic classic infrastructure and VPC virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt dashboard.
-{:shortdesc}
+{: shortdesc}
 
 {{site.data.keyword.mon_full_notm}} metrics are available only if you use the monitoring full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
-{:important} 
+{: important} 
 
 ## Platform metrics overview
 {: #platform-metrics-overview}
@@ -92,7 +92,7 @@ To view configured monitors, follow these steps:
 3. Click the **Monitoring** tab. All current pings are viewable on the landing page.
 
 The **Monitoring** tab is only visible if at least one monitor is configured.
-{:note}
+{: note}
 
 ## Next steps
 {: #monitoring-next-steps}
