@@ -105,7 +105,7 @@ See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-
 {: #p-p-migration-bare-metal-removing-nic-bond}
 {: step}
 
-To accomplish successful migration using RackWare’s RMM solution, you have to remove NIC bonding from either or both of the source and target machines.  Depending on the type of port redundancy selected at the time of order, this may require a case to be opened with IBM support to remove the bonding configuration on both the network and OS.  See [port redundancy](https://cloud.ibm.com/docs/bare-metal?topic=bare-metal-network-options#network-port-redundancy) for more information.
+To accomplish successful migration using RackWare’s RMM solution, you have to remove NIC bonding from both of the source and target machines.  Depending on the type of port redundancy selected at the time of order, this may require a case to be opened with IBM support to remove the bonding configuration on both the network and OS.  See [port redundancy](https://cloud.ibm.com/docs/bare-metal?topic=bare-metal-network-options#network-port-redundancy) for more information.
 
 | Network interface - Port redundancy type | Comments | IBM case needed? |
 | ---------- | ---------- | ---------- |
