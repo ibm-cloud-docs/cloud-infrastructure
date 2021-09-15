@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-15"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -106,7 +106,8 @@ See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-
 {: step}
 
 To accomplish successful migration using RackWare’s RMM solution, you have to remove NIC bonding from either or both of the source and target machines.  Depending on the type of port redundancy selected at the time of order, this may require a case to be opened with IBM support to remove the bonding configuration on both the network and OS.  See [port redundancy](https://cloud.ibm.com/docs/bare-metal?topic=bare-metal-network-options#network-port-redundancy) for more information.
-| Network interface </br> Port redundancy type | Comments | IBM case needed? |
+
+| Network interface - Port redundancy type | Comments | IBM case needed? |
 | ---------- | ---------- | ---------- |
 | Automatic | Both OS and switch needs to be reconfigured. | Yes. Follow the steps below. |
 | User managed | Reconfigure the OS interface. | No, self managed. |
@@ -280,9 +281,10 @@ You can migrate machines over one-by-one or perform simultaneous migrations. If 
 
     b. [RackWare RMM Users Guide for IBM Cloud](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
 
+
 2.  FAQs about baremetal to metal
 
-    [FAQS for bare metal to bare metal](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
+    [FAQS for bare metal to bare metal](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
 
 
 
