@@ -37,7 +37,7 @@ The RackWare’s RMM solution simplifies the overall migration process of moving
 ## Limitations
 {: #p-p-migration-bare-metal-limitations}
 
-1.	NIC bonding is not supported. Before migration, NIC bonding must be unconfigured at hardware and OS levels for any server that has nic bonding or teaming configured.
+1.	NIC bonding is not supported. Before migration, NIC bonding must be unconfigured at hardware and OS levels for any server that has NIC bonding or teaming configured.
 2.	Encrypted volumes are not supported.
 3.	Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
 4.	The RackWare’s RMM solution handles only the OS, application, and data movement. So anything else needs to be setup by you (e.g. security groups, subnets etc.).
