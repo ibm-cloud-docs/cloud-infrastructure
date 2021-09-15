@@ -46,7 +46,7 @@ This tutorial walks you through setting up a resilient environment for an n-tier
 
 ## Architecture
 
-![Architecture diagram.](images/HA-deploying-critical-apps-SZR.png){:caption="Architecture Diagram"}
+![Architecture diagram.](images/HA-deploying-critical-apps-SZR.png){: caption="Architecture Diagram"}
 
 
 1.	Provision 4 subnets (mgmt, web, app, and db)

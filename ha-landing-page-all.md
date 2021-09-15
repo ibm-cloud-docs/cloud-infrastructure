@@ -44,7 +44,7 @@ Resiliency enables your cloud solution to run at acceptable levels even if one o
 
 ## Regions and zones
 
-![Levels of Resiliency](images/ha-resiliency-infographic.png){:caption="Figure 1. Levels of Resiliency" caption-side="bottom"}
+![Levels of Resiliency](images/ha-resiliency-infographic.png){: caption="Figure 1. Levels of Resiliency" caption-side="bottom"}
 
 The data centers are in different geographies, countries, and regions. Each region has one or more availability zones, which are specific physical locations. Whether the data centers are multi-zone (MZR) or not, all of them maintain multiple power feeds, fiber links, dedicated generators, and battery backup to avoid a single-point-of-failure (SPOF) between zones and regions. While all the data centers have multiple power feeds, several of the more mature sites such as AMS01, DAL05, 06, 08. FRA02. HKG02, MEX01, MIL01, PAR01, SJC01, SNG01, WDC01, and WDC03 have some 1U single socket server chassis that might not accommodate a dual power feed. If you have a 1U single socket server in one of these sites, you might want to consider a 2U chassis with redundant power supplies. For more information about availability zones, see [Locations for resource deployment](/docs/overview?topic=overview-locations).
 

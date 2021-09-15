@@ -25,10 +25,10 @@ subcollection: cloud-infrastructure
 {: #monitoring-metrics}
 
 {{site.data.keyword.mon_full_notm}} collects basic Classic (Gen 1) and VPC (Gen 2) virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. You can access metrics through the prebuilt {{site.data.keyword.mon_full_notm}} dashboard.
-{:shortdesc}
+{: shortdesc}
 
 Monitoring metrics are available only if you use the monitoring full agent. If you provisioned a 'no driver mode' instance, see [Monitoring 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
-{:important} 
+{: important} 
 
 ## Platform metrics overview
 {: #platform-metrics-overview}

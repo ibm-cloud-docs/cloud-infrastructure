@@ -27,7 +27,7 @@ subcollection: cloud-infrastructure
 
 Block storage snapshots can be created in {{site.data.keyword.cloud}} VPC Gen2. You can use this feature for a backup and restore of a 3-tier application. Block storage snapshots can also be used to scale out a 3-tier system with minimal changes to your application. 
 
- ![Block storage.](images/ha-block-storage-arch.png){:caption="Figure 1. Regional snapshots in 3-tier architectures" caption-side="bottom"}
+ ![Block storage.](images/ha-block-storage-arch.png){: caption="Figure 1. Regional snapshots in 3-tier architectures" caption-side="bottom"}
 
 This architecture diagram shows a single zone 3-tier application that is spread across three different subnets. The same architecture can be extended to multiple zones (MZRs) as well.
 

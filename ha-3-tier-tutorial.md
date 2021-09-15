@@ -44,7 +44,7 @@ This tutorial describes the three-tiered architecture of an application that is 
 
 This diagram shows the 3-tier architecture that you create with the tutorial. 
 
-![Two different types of bare metal deployment.](images/3_tier_tut.png){:caption="Architecture Diagram"}
+![Two different types of bare metal deployment.](images/3_tier_tut.png){: caption="Architecture Diagram"}
 
 You must have full administrative privileges for managing the VPC resources.
 For more information about user permissions in a VPC, see [[Getting user permissions for VPC resources](https://cloud.ibm.com/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).

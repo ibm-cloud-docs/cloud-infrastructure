@@ -49,7 +49,7 @@ This tutorial uses a web server, which can provide a full stack within a single 
 {: #architecture}
 The following diagram depicts the architecture of this solution.
 
-![Deploying server pools and origins in a single MZR.](images/ha-pools-origins-1zone.svg){:caption="Figure 1. Deploying server pools and origins in a single MZR" caption-side="bottom"}
+![Deploying server pools and origins in a single MZR.](images/ha-pools-origins-1zone.svg){: caption="Figure 1. Deploying server pools and origins in a single MZR" caption-side="bottom"}
 
 The following steps refer to the numbers in the diagram:
 1. DevOps provision 3 subnets:
