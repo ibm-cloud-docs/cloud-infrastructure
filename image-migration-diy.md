@@ -215,32 +215,32 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 2. Copy the VMDK or VHD image file to the migrated VSI 
 (Make sure you have enough space to copy the image file. If necessary attach a temporary volume with space for copying.)
 
-  Skip step 3 if you opted ‘y’ to guestfs installation prompt when executing pre-check script.
-  {: note}
+    Skip step 3 if you opted ‘y’ to guestfs installation prompt when executing pre-check script.
+    {: note}
 
 3. Install guestfs library
 
-     Centos/Redhat
+    Centos/Redhat
     
-     ```
-     $ yum update -y
+    ```
+    $ yum update -y
     
-     $ yum install libguestfs-tools
+    $ yum install libguestfs-tools
     
-     $ systemctl enable libvirtd
+    $ systemctl enable libvirtd
     
-     $ systemctl start libvirtd
+    $ systemctl start libvirtd
     
-     $ systemctl status libvirtd
-     ```
+    $ systemctl status libvirtd
+    ```
     
-     Ubuntu/Debian
-     
-     ```
-     $ apt-get update -y
-     
-     $ apt-get install -y libguestfs-tools
-     ```
+    Ubuntu/Debian
+    
+    ```
+    $ apt-get update -y
+    
+    $ apt-get install -y libguestfs-tools
+    ```
 
 4. Convert the (VMDK or VHD) image data to `qcow2`:
 
