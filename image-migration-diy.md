@@ -85,27 +85,27 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 3. Download and install Virtio drivers.
 4. Reset network settings to default. This step disables network access to the VM.
   
-  For Windows 2012 and 2012R2, run the following commands:
+    For Windows 2012 and 2012R2, run the following commands:
+    
+    ```
+    netsh winsock reset
+    ```
+    {: pre}
   
-  ```
-  netsh winsock reset
-  ```
-  {: pre}
-
-  ```
-  netsh int ip reset c:\resetlog.txt
-  ```
-  {: pre}
-  
-  For Windows 2016, go to _Network settings_ > _Network and internet status_ > _Reset network_.
+    ```
+    netsh int ip reset c:\resetlog.txt
+    ```
+    {: pre}
+    
+    For Windows 2016, go to _Network settings_ > _Network and internet   status_ > _Reset network_.
   
 5. Restart the VM to activate the Virtio drivers.
 6. Run the `sysprep` command. The `sysprep` command generalizes and removes system-specific IDs from the operating system.
 
-  ```
-  C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown "/unattend:C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
-  ```
-  {: pre}
+    ```
+    C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown "/  unattend:C:\Program Files\Cloudbase   Solutions\Cloudbase-Init\conf\Unattend.xml"
+    ```
+    {: pre}
 
 ## Step 3: Convert image to qcow2
 {: #step-3-convert-image-to-qcow2}
@@ -114,19 +114,19 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 2. Copy the VMDK or VHD image to the image conversion server.
 3. Run the following QEMU command for your image file format to convert the image:
 
-  For VMDK images:
-  
-  ```
-  qemu-img convert -f vmdk -O qcow2 -o cluster_size=512k <vm_image_name.vmdk> <vsi_image_name.qcow2> 
-  ```
-  {: pre}
-
-  For VHD images:
-
-  ```
-  qemu-img convert -f vpc -O qcow2 -o cluster_size=512k <vm_image_name.vhd> <vsi_image_name.qcow2> 
-  ```
-  {: pre}
+    For VMDK images:
+    
+    ```
+    qemu-img convert -f vmdk -O qcow2 -o cluster_size=512k <vm_image_name.  vmdk> <vsi_image_name.qcow2> 
+    ```
+    {: pre}
+    
+    For VHD images:
+    
+    ```
+    qemu-img convert -f vpc -O qcow2 -o cluster_size=512k <vm_image_name.  vhd> <vsi_image_name.qcow2> 
+    ```
+    {: pre}
 
 If your VM has secondary vHDDs, a separate VMDK or VHD file is available for the VM. This secondary vHHD does not need to be converted to qcow2. This file is uploaded to {{site.data.keyword.cos_short}} in its native (VMDK or VHD) file format.
 {: note}
@@ -169,40 +169,40 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 3. Install QEMU. 
 4. Convert the (VMDK or VHD) image data to disk:
 
-  For VMDK images:
-
-  ```
-  qemu-img convert -p -f vmdk <data_image.vmdk> /dev/vde
-  ```
-  {: pre}
-
-  For VHD images:
-
-  ```
-  qemu-img convert -p -f vpc <data_image.vhd> /dev/vde
-  ```
-  {: pre}
+    For VMDK images:
+    
+    ```
+    qemu-img convert -p -f vmdk <data_image.vmdk> /dev/vde
+    ```
+    {: pre}
+    
+    For VHD images:
+    
+    ```
+    qemu-img convert -p -f vpc <data_image.vhd> /dev/vde
+    ```
+    {: pre}
 
 5. Mount the volume:
 
-  ```
-  mount /dev/vde1 /mnt
-  ```
-  {: pre}
+    ```
+    mount /dev/vde1 /mnt
+    ```
+    {: pre}
 
 6. Format and mount the other empty secondary volume
 
-  ```
-  mount /dev/vdd1 /data
-  ```
-  {: pre}
+    ```
+    mount /dev/vdd1 /data
+    ```
+    {: pre}
 
 7. Copy data over from the temporary volume (vde) to the target volume (vdd):
 
-  ```
-  cp –avf /mnt /data 
-  ```
-  {: pre}
+    ```
+    cp –avf /mnt /data 
+    ```
+    {: pre}
 
 8. Unmount and delete the volume.
 9. Edit the `fstab` file to automount and be persistent across reboot.  
@@ -215,74 +215,76 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 2. Copy the VMDK or VHD image file to the migrated VSI 
 (Make sure you have enough space to copy the image file. If necessary attach a temporary volume with space for copying.)
 
-  Skip step 3 if you opted ‘y’ to guestfs installation prompt when executing pre-check script.
-  {: note}
+    Skip step 3 if you opted ‘y’ to guestfs installation prompt when executing pre-check script.
+    {: note}
 
 3. Install guestfs library
 
-   Centos/Redhat
-
-   ```
-   $ yum update -y
-
-   $ yum install libguestfs-tools
-
-   $ systemctl enable libvirtd
-
-   $ systemctl start libvirtd
-
-   $ systemctl status libvirtd
-   ```
-
-   Ubuntu/Debian
-   
-   ```
-   $ apt-get update -y
-   
-   $ apt-get install -y libguestfs-tools
-   ```
+    Centos/Redhat
+    
+    ```
+    $ yum update -y
+    
+    $ yum install libguestfs-tools
+    
+    $ systemctl enable libvirtd
+    
+    $ systemctl start libvirtd
+    
+    $ systemctl status libvirtd
+    ```
+    
+    Ubuntu/Debian
+    
+    ```
+    $ apt-get update -y
+    
+    $ apt-get install -y libguestfs-tools
+    ```
 
 4. Convert the (VMDK or VHD) image data to `qcow2`:
 
-  For VMDK images (to `qcow2`):
-
-  ```
-  qemu-img convert -p -f vmdk -O qcow2 -o cluster_size=512k secondary_volume.vmdk secondary_volume.qcow2
-  ```
-  {: pre}
-
-  For VHD images (to `qcow2`):
-
-  ```
-  qemu-img convert -p -f vpc -O qcow2 -o cluster_size=512k secondary_volume.vhd secondary_volume.qcow2
-  ```
-  {: pre}
+    For VMDK images (to `qcow2`):
+    
+    ```
+    qemu-img convert -p -f vmdk -O qcow2 -o cluster_size=512k   secondary_volume.vmdk secondary_volume.qcow2
+    ```
+    {: pre}
+    
+    For VHD images (to `qcow2`):
+    
+    ```
+    qemu-img convert -p -f vpc -O qcow2 -o cluster_size=512k   secondary_volume.vhd secondary_volume.qcow2
+    ```
+    {: pre}
 
 5. Mount the volume:
 
-  ```
- guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
-  ```
-  {: pre}
+    ```
+    guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
+    ```
+    {: pre}
 
 6. Format and mount the empty secondary volume
 
-  ```
-  mount /dev/vdd1 /data
-  ```
-  {: pre}
+    ```
+    mount /dev/vdd1 /data
+    ```
+    {: pre}
 
 7. Copy data over from the ``/mnt`` to the target volume (vdd):
 
-  ```
-  cp –avf /mnt /data 
-  ```
-  {: pre}
+    ```
+    cp –avf /mnt /data 
+    ```
+    {: pre}
 
 8. After copy completed unmount and delete the image file, if no longer needed.
-  ```  
-  $ guestunmount /mnt
-  ```
+  
+    ```  
+    $ guestunmount /mnt
+    ```
+
 9. Edit the `fstab` file to automount and be persistent across reboot.
 
 ### Windows systems

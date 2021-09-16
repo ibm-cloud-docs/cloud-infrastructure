@@ -49,9 +49,9 @@ You can order two types of load balancers from {{site.data.keyword.cloud}}. Whil
 
 1. You can deploy {{site.data.keyword.loadbalancer_full}} either in public or private scenarios. For a public scenario, the load balancer has a public interface to take incoming traffic from the internet and distribute the traffic through its private interface connecting to the virtual servers as shown in [Scenario 1 - deploying in single zone](#single-zone). For a private scenario, the incoming and distributed outgoing traffic goes through private subnets, such as the traffic between the application tier and the data tier.
 
-  {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} also provides horizontal scaling to better handle increased traffic load. 
+    {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}} also provides horizontal scaling to better handle increased traffic load. 
 
-  You can configure the {{site.data.keyword.loadbalancer_short}} back-end listener across multiple zones. When you use this configuration, a secondary load balancer is automatically provisioned and deployed in an active-active fashion for better availability. See [Scenario 2 - deploying in multiple zones with {{site.data.keyword.cis_full_notm}}](#multi-zone-cis).
+    You can configure the {{site.data.keyword.loadbalancer_short}} back-end listener across multiple zones. When you use this configuration, a secondary load balancer is automatically provisioned and deployed in an active-active fashion for better availability. See [Scenario 2 - deploying in multiple zones with {{site.data.keyword.cis_full_notm}}](#multi-zone-cis).
 
 2. {{site.data.keyword.cis_full}} is a global load balancer that acts as a public load balancer only. Typically, it is deployed for global applications across multiple regions. {{site.data.keyword.cis_short}} is geo-aware and steers the traffic to the zone that is closest to the requester.
 
