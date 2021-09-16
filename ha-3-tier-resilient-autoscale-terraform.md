@@ -31,7 +31,7 @@ subcollection: cloud-infrastructure
 {:new_window: target="_blank"}
 {:step: data-tutorial-type='step'}
 
-# Creating a resilient three-tier highly available infrastructure VPC with Autoscale by using Terraform
+# Creating a resilient three-tier highly available infrastructure VPC with Auto scale by using Terraform
 {: #create-three-tier-resilient-vpc-autoscale} 
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers, vpc, loadbalancer"} 
