@@ -68,17 +68,17 @@ To create your own {{site.data.keyword.cloud_notm}} VPC in region 1, complete th
 1.	Go to the VPC overview page and click **Get Started**.
 2.	Select **Create**.
 3.	Under New virtual private cloud section: 
-  *	Enter ***vpc-region1*** as the name for your VPC.
-  *	Select a **Resource group**.
-  *	Optionally, add **Tags** to organize your resources.
+    *	Enter ***vpc-region1*** as the name for your VPC.
+    *	Select a **Resource group**.
+    *	Optionally, add **Tags** to organize your resources.
 4.	The default access control list (ACL) (Allow all) is appropriate for your VPC.
 5.	Clear **Allow SSH** and **Allow ping** from the Default security group and leave classic access cleared. You add SSH access to the maintenance security group later. The maintenance security group must be added to an instance to allow SSH access from the bastion server. Ping access is not required for this tutorial.
 6.	Leave **Create a default prefix for each zone checked**.
 7.	Under **New subnet for VPC**: 
-  *	Enter ***vpc1-region1-zone1-mgmt*** as your subnet's unique name.
-  *	Select a **Resource group**.
-  *	Select a location and zone 1 for example: Dallas and Dallas 1.
-  *	Select the wanted number of IP addresses.
+    *	Enter ***vpc1-region1-zone1-mgmt*** as your subnet's unique name.
+    *	Select a **Resource group**.
+    *	Select a location and zone 1 for example: Dallas and Dallas 1.
+    *	Select the wanted number of IP addresses.
 8.	Leave the access control list set to **Use VPC default**.
 9.	Leave the public gateway set to **Detached**. 
 10.	Click **Create virtual private cloud**.
