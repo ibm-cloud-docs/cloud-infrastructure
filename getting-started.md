@@ -28,11 +28,11 @@ As many organizations move to a cloud environment, either on-premises or hosted 
 
 Before you moved to the cloud, you worked with an inherently secure environment with systems that are connected to your private LAN or intranet. In a cloud environment, you're now expected to perform the following tasks:
 
-  * Procure your system components from "somewhere."
-  * Understand network implications and security challenges.
-  * Work with different technologies.  
-  * Integrate the new environment with tools that are not natively part of the cloud stack.
-  * Continue to support your internal customers as if you still have an on-premises data center.
+* Procure your system components from "somewhere."
+* Understand network implications and security challenges.
+* Work with different technologies.  
+* Integrate the new environment with tools that are not natively part of the cloud stack.
+* Continue to support your internal customers as if you still have an on-premises data center.
 
 {{site.data.keyword.cloud}} is here to support you 100% on your journey. The resources available to you include comprehensive documentation, planning tools, qualified support specialists, and an active user community. Let's get you started on your journey.
 

@@ -53,12 +53,12 @@ The following diagram depicts the architecture of this solution.
 
 The following steps refer to the numbers in the diagram:
 1. DevOps provision 3 subnets:
-  * Management (mgmt) subnet in AZ-1
-  * Server subnet-1 in AZ-1
-  * Server subnet-2 in AZ-2
+    * Management (mgmt) subnet in AZ-1
+    * Server subnet-1 in AZ-1
+    * Server subnet-2 in AZ-2
 1. DevOps provisions the virtual servers
-  * Bastion server (jumphost) in mgmt subnet and generates an SSH Key
-  * DevOps provisions the virtual server web servers in subnet-1 and subnet-2 with security groups
+    * Bastion server (jumphost) in mgmt subnet and generates an SSH Key
+    * DevOps provisions the virtual server web servers in subnet-1 and subnet-2 with security groups
 1.  DevOps deploys 2 {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.loadbalancer_short}}, 1 in each AZ and points to the virtual server web servers in their respective zones.
 1.  System admin enables HTTPS encryption by adding the domain SSL certificate to the certificate manager service.
 1.  DevOps deploys a {{site.data.keyword.cis_short_notm}} instance with associated domain and create a global load balancer that points to each load balancer in each zone.
@@ -77,17 +77,17 @@ In the following section, you create your own VPC in region 1 with subnets that 
 To create your own {{site.data.keyword.vpc_short}} in region 1, complete the following steps:
 1.  From the [VPC overview page](https://cloud.ibm.com/vpc/overview), go to the **VPCs** page and click **Create** to begin.
 2.  Under New virtual private cloud section:
-  * Enter _vpc-region1_ as the name for your VPC.
-  * Select a Resource group.
-  * Optionally, add Tags to organize your resources.
+    * Enter _vpc-region1_ as the name for your VPC.
+    * Select a Resource group.
+    * Optionally, add Tags to organize your resources.
 3.  Use the default access control list (**Allow all**).
 4.  Disable **Allow SSH** and **Allow ping** from the Default security group. Enable **Enable access to classic resource**.
 5.  Enable **Create a default prefix for each zone**.
 6.  Under **New subnet for VPC**:
-  * Type _vpc1-region1-zone1-mgmt_ as your subnet's unique name.
-  * Select a **Resource group**.
-  * Select a **Location** and zone **1**. For example, _London_ and _London 1_.
-  * Select the number of IP addresses.
+    * Type _vpc1-region1-zone1-mgmt_ as your subnet's unique name.
+    * Select a **Resource group**.
+    * Select a **Location** and zone **1**. For example, _London_ and _London 1_.
+    * Select the number of IP addresses.
 7.  Set **Subnet access control list** to **Use VPC default**.
 8.  Set the **Public gateway** to **Detached**.
 9. Click **Create virtual private cloud**.
@@ -273,24 +273,24 @@ In the following section, you create two load balancers, one in each region. Thi
 3.  Select _vpc-region1_ as your Virtual private cloud, select the **Resource group**, set **Region** as _region1_ and set **Type** to **Public**.
 3.  Select _vpc-region1-zone1-subnet1_ for **Subnets**.
 4.  Click **New pool** to create a new back-end pool of virtual servers that acts as equal peers to share the traffic that is routed to the pool. Set the parameters with the following values and click **Create**.
-  * Name: region1-zone1-pool
-  * Protocol: HTTP
-  * Method: Round robin
-  * Session stickiness: None
-  * Health check path: /
-  * Health protocol: HTTP
-  * Health port: Leave blank
-  * Interval (sec): 15
-  * Timeout (sec): 5
-  * Max retries: 2
+    * Name: region1-zone1-pool
+    * Protocol: HTTP
+    * Method: Round robin
+    * Session stickiness: None
+    * Health check path: /
+    * Health protocol: HTTP
+    * Health port: Leave blank
+    * Interval (sec): 15
+    * Timeout (sec): 5
+    * Max retries: 2
 5.  Click **Attach** to add server instances to the region1-pool.
-  * Add the CIDR range that is associated with _vpc-region1-zone1-subnet_ and select the instance your created and set 80 as the port.
-  * Click **Save** to complete the creation of a back-end pool.
+    * Add the CIDR range that is associated with _vpc-region1-zone1-subnet_ and select the instance your created and set 80 as the port.
+    * Click **Save** to complete the creation of a back-end pool.
 6.  Click **New listener** to create a new front-end listener. A listener is a process that checks for connection requests.
-  * Protocol: HTTP
-  * Port: 80
-  * Back-end pool: region1-zone1-pool
-  * Max connections: Leave it empty and click **Create**.
+    * Protocol: HTTP
+    * Port: 80
+    * Back-end pool: region1-zone1-pool
+    * Max connections: Leave it empty and click **Create**.
 7.  Click **Create load balancer** to provision a load balancer.
 8.  Repeat this procedure for the zone 2 load balancer.
 
