@@ -300,7 +300,7 @@ You create two load balancers for ui and application. {{site.data.keyword.cloud_
 5.	Click **Save**.
 6.	Create a back-end pool: 
     1.	Click **Attach** to add server instances to the ***region1-pool***.
-    2.	Add the **CIDR** range that is associated with ***subnet-web***, select the virtual server instance (***web-vsi1***) that you created and set **443** as the port. Repeat for the other virtual server instances. (kt note: it didn't ask for cidr range specifically, it did ask for subnet though.)
+    2.	Add the **CIDR** range that is associated with ***subnet-web***, select the virtual server instance (***web-vsi1***) that you created and set **443** as the port. Repeat for the other virtual server instances. 
     3.	Click **Save** to complete the creation of a back-end pool.
 7.	Click **New listener** and create a Front-end listener process that checks for connection requests: 
     *	Set the listener values:
