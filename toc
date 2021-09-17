@@ -50,7 +50,6 @@ Building infrastructure
         Automating and Deploying Highly Available Resilient Architectures with Terraform
             ha-3-tier-resilient-terraform.md
             ha-3-tier-resilient-autoscale-terraform.md
-            ha-3-tier-mzr-terraform.md
 
     {: .topicgroup}
     Building your infrastructure
