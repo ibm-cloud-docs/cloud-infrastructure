@@ -61,25 +61,24 @@ To create an Auto scale instance template for the virtual server instance, compl
 2.	Click **Create +**.
 3.	In the New instance template:
 
- a. Enter *vpc-region1-zone1-template* for the instance template **Name**.
+    a. Enter *vpc-region1-zone1-template* for the instance template **Name**.
 
- b. Select *vpc-region1* as the name for your VPC.
+    b. Select *vpc-region1* as the name for your VPC.
 
- c. Select a **Resource group**.
+    c. Select a **Resource group**.
 
- d. Select *Dallas 1* for the **Location**.
+    d. Select *Dallas 1* for the **Location**.
 
- e. Select the appropriate image for **Image**.
+    e. Select the appropriate image for **Image**.
 
-   If you select a stock image, you must do post-provisioning for the new virtual server instances to match the same functions as your current production web server. If you select a custom image (for example, snapshot of the web server), you might have minimal or no post-provisioning.
-   {: note}
+    If you select a stock image, you must do post-provisioning for the new virtual server instances to match the same functions as your current production web        server. If you select a custom image (for example, snapshot of the web server), you might have minimal or no post-provisioning.
+    {: note}
 
-  f. Select *jumphost-vsi* for the **SSH key**.
+    f. Select *jumphost-vsi* for the **SSH key**.
+    g. For **Network interface**:
 
-  g. For **Network interface**:
-
-   * Select *vpc-region1-zone1-subnet* as the **Subnet**.
-   * Ensure *vpc-region1-webserver-sg* is the only item that is selected in **Security Groups**.
+    * Select *vpc-region1-zone1-subnet* as the **Subnet**.
+    * Ensure *vpc-region1-webserver-sg* is the only item that is selected in **Security Groups**.
 
 4.	Click **Create instance template**.
 
@@ -93,50 +92,50 @@ To create the Auto scale instance groups, complete the following steps:
 2.	Click **Create +**.
 3.	Under **New instance group for VPC**:
 
-  a. Enter *vpc-region1-zone1-group* for the instance group **Name**.
+    a. Enter *vpc-region1-zone1-group* for the instance group **Name**.
 
-  b. Select a **Resource group**.
+    b. Select a **Resource group**.
 
-  c. Optionally, add **Tags** to organize your resources.
+    c. Optionally, add **Tags** to organize your resources.
 
-  d. Select *Dallas* for your **Region**.
+    d. Select *Dallas* for your **Region**.
 
-  e. Select *vpc-region1-zone1-template* for **Select instance template**.
+    e. Select *vpc-region1-zone1-template* for **Select instance template**.
 
-  f. For **Select subnets and load balancer**:
+    f. For **Select subnets and load balancer**:
 
-  * Select *vpc-region1-zone1-subnet* for the **Subnet**.
-  * Check **Use load balancer**.
+    * Select *vpc-region1-zone1-subnet* for the **Subnet**.
+    * Check **Use load balancer**.
 
-       Selecting the **Use load balancer** option, enables the backend orchestration to add newly created virtual server instances to the backend server pool. When enabled, the backend orchestration informs the load balancer about any virtual servers that are created by the Auto scale feature and adds any created virtual servers to the backend pool servers. This selection is optional.
+        Selecting the **Use load balancer** option, enables the backend orchestration to add newly created virtual server instances to the backend server pool. When enabled, the backend orchestration informs the load balancer about any virtual servers that are created by the Auto scale feature and adds any created virtual servers to the backend pool servers. This selection is optional.
+        {: note}
+
+    * Select *vpc-lb-region1-zone1* for **Load Balancer**.
+    * Select *region1-zone1-pool* for **Pool**.
+    *	Enter the appropriate network port for **Application port**, *80* for HTTP or *443* for HTTPs.
+
+    g. Select *Dynamic* for **Choose scaling method**.
+
+    h. For **Set instance group size**:
+
+    *	Enter *1* for **Minimum instances**
+    *	Enter *3* for **Maximum instances**
+    *	Enter *90* for **Aggregation window**
+    *	Enter *120* for **Cooldown period**
+
+        The minimum and maximum instance is the total of all instances (of current plus Auto scaled instances). In our case, since we only started with 1, then the minimum is 1. Also, when you are choosing the maximum number, make sure that the subnet has enough spare IP addresses to accommodate any new provisioned virtual server instances that are created by the Auto scale feature.
+        {: tip}
+
+        The instance group size values are for demonstrative purpose. No exact formula is used to determine these values as it depends on your business and application requirements. More often than not, it takes several test iterations to find the right values.
+        {: note}
+
+    i. Click **Add a policy** under **Create scaling policies**:
+
+    * Select *Network out (Mbps)* for **Metric type**.
+    * Enter *1* for **Average target utilization**.
+
+        Again, the resource and utilization values are target-based thresholds. The values that are used here are for demonstrative purpose only. Any values that you use must be based on your requirements and just like the instance group size, it might take a couple of test iterations to find the right values. If multiple scaling policies exist (for example, CPU and memory), then the membership calculation is done for each policy and the policy that has the higher membership wins.
        {: note}
-
-      * Select *vpc-lb-region1-zone1* for **Load Balancer**.
-      * Select *region1-zone1-pool* for **Pool**.
-      *	Enter the appropriate network port for **Application port**, *80* for HTTP or *443* for HTTPs.
-
-  g. Select *Dynamic* for **Choose scaling method**.
-
-  h. For **Set instance group size**:
-
-  *	Enter *1* for **Minimum instances**
-  *	Enter *3* for **Maximum instances**
-  *	Enter *90* for **Aggregation window**
-  *	Enter *120* for **Cooldown period**
-
-   The minimum and maximum instance is the total of all instances (of current plus auto scaled instances). In our case, since we only started with 1, then the minimum is 1. Also, when you are choosing the maximum number, make sure that the subnet has enough spare IP addresses to accommodate any new provisioned virtual server instances that are created by the Auto scale feature.
-   {: tip}
-
-   The instance group size values are for demonstrative purpose. No exact formula is used to determine these values as it depends on your business and application requirements. More often than not, it takes several test iterations to find the right values.
-   {: note}
-
-  i. Click **Add a policy** under **Create scaling policies**:
-
-  * Select *Network out (Mbps)* for **Metric type**.
-  * Enter *1* for **Average target utilization**.
-
-  Again, the resource and utilization values are target-based thresholds. The values that are used here are for demonstrative purpose only. Any values that you use must be based on your requirements and just like the instance group size, it might take a couple of test iterations to find the right values. If multiple scaling policies exist (for example, CPU and memory), then the membership calculation is done for each policy and the policy that has the higher membership wins.
-  {: note}
 
 4.	Check that you agree that instances are created and reclaimed according to the instance group settings.
 
