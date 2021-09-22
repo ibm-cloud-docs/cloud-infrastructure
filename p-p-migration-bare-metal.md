@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-09-19"
+lastupdated: "2021-09-22"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -50,7 +50,7 @@ The RackWare’s RMM solution simplifies the overall migration process of moving
 
 • RHEL 7.2, 7.3, 7.4, 8.1
 
-• Ubuntu 18.04
+• Ubuntu 18.04, 20.04
 
 • Debian 9, 10
 
