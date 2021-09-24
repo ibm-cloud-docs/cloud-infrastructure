@@ -75,18 +75,18 @@ Some occurrences or events can put your business continuity at risk such as rans
 
 For more information about High Availability Reference Architecture solutions, see:
 *  [High Availability infrastructure on IBM Classic](/docs/cloud-infrastructure?topic=cloud-infrastructure-ha-introduction)
-*  [Building a highly available 3-tier web application in VPC](docs/cloud-infrastructure?topic=cloud-infrastructure-components-three-tier-architecture)
-*  [Building a highly available 3-tier infrastructure in VPC](docs/cloud-infrastructure?topic=cloud-infrastructure-ha-3-tier)
+*  [Building a highly available 3-tier web application in VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-components-three-tier-architecture)
+*  [Building a highly available 3-tier infrastructure in VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-ha-3-tier)
 
 For more information about High Availability how-to solutions, see: 
 * [Building highly available and scale wep application in classic](/docs/cloud-infrastructure?topic=solution-tutorials-highly-available-and-scalable-web-application)
 * [Enabling Auto Scale for better capacity and resiliency](/docs/cloud-infrastructure?topic=cloud-infrastructure-ha-auto-scale)
-* [Building blue green (A/B) deployment in VPC](docs/cloud-infrastructure?topic=cloud-infrastructure-ha-pools-origins)
-* [Deploying critical application in an MZR](docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency)
+* [Building blue green (A/B) deployment in VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-ha-pools-origins)
+* [Deploying critical application in an MZR](/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency)
 
 For more information about Backup, see:
-* [Backup reference architecture for 3-tier web application in VPC](docs/cloud-infrastructure?topic=cloud-infrastructure-regional-snapshots-3-tier-arch)
-* [How-to guide for setting up snapshots for a 3-tier application in VPC](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-create-three-tier-architecture)
+* [Backup reference architecture for 3-tier web application in VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-regional-snapshots-3-tier-arch)
+* [How-to guide for setting up snapshots for a 3-tier application in VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-create-three-tier-architecture)
 
 For more information about automating your resilient High Availability solution with Terraform scripts, see:
 *  [Creating a resilient three-tier highly available infrastructure VPC with Terraform](/docs/cloud-infrastructure?topic=cloud-infrastructure-create-three-tier-resilient-vpc)
