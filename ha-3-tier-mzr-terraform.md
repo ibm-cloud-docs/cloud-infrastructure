@@ -58,8 +58,8 @@ A VPC is a private space in IBM Cloud where you can run an isolated environment 
 | Security Groups    |              05    |     05        |  10|
 | Subnets      |                    10    |     10        |  20|
 | Bastion VSI        |              01    |     01        |  02|
-| App VSI            |              
-| web VSI           |         
+| App VSI            |              05    |     05        |  10|
+| Web VSI           |               05    |     05        |  10|
 | Database VSI    |                 06    |     06        |  12|
 | Floating IP     |                 01    |     01        |  02|
 
@@ -102,9 +102,7 @@ Though the materials provided here are not supported by the IBM Service organiza
 ## Limitations
 {: #limitations-ha-resilient-mzr}
 
-**KT Question:  is this tru for this set of scripts?**
-
-*	Windows image is not supported by these scripts.
+*	Windows image supported by these scripts is "Windows Server 2019 Standard Edition (amd64)".  If you are using Windows, the {{site.data.keyword.cloud}} CLI path (C:\Program Files\IBM\Cloud\bin) should be added to environment variables.
 *	The bastion server is important to access other VSI. To prevent the accidental deletion of that server we added a lifecycle block with `prevent_destroy=true` flag to protect this server. If you want to delete the server, before you run `terraform destroy`, update `prevent_destroy=false` in `compute.tf` of the Bastion module.
 
 Don’t delete the bastion server or update its OS image after creation (`terraform apply`) because the bastion server is used to access other servers. If the Bastion server is removed, you lose access to your infrastructure. You should get a snapshot of the bastion server for backup and recovery.
