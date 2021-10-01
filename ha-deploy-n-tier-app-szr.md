@@ -2,7 +2,7 @@
 
 copyright: 
   years:  2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-10-1"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -31,17 +31,17 @@ subcollection: cloud-infrastructure
 {:new_window: target="_blank"}
 {:step: data-tutorial-type='step'}
 
-# Deploying n-tier application with IBM Cloud single availability zone or single zone
+# Deploying n-tier application with IBM Cloud single availability zone
 {: #deploy-n-tier-app-szr}
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers, vpc, load balancer"} 
 {: toc-completion-time="60m"}
 
-This tutorial walks you through setting up a resilient environment for an n-tier application in an {{site.data.keyword.cloud}} for either a single availability zone or single zone region (SZR). In this tutorial, you create your own VPC, then create subnets in one zone of the region, then you provision the virtual server instances.
+This tutorial walks you through setting up a resilient environment for an n-tier application in an {{site.data.keyword.cloud}} for a single availability zone. In this tutorial, you create your own VPC, then create subnets in one zone of the region, then you provision the virtual server instances.
 
 ## Objectives
 
-*	Setting up resilient VPC environment for the application
+*	Setting up resilient single availability zone VPC environment for the application
 *	Setting up scheduling script for regular backups
 
 ## Architecture
@@ -87,7 +87,7 @@ To create your own IBM Cloud VPC in region 1, complete these steps:
     6.	Leave the access control list set to ***VPC default***. 
     7.	Leave the public gateway set to **Detached**. 
     8.  Select **Save**.
-10.	Click **Create virtual private cloud**.
+8.	Click **Create virtual private cloud**.
 
 ## Create subnets 
 {: #deploy-n-tier-szr-subnets}
@@ -141,11 +141,11 @@ To create the security groups:
     1.	Set the VPC to ***vpc-some-application***
     2.	Select your **Resource group**
     3.	Add two Inbound rules:
-       *	Set **Protocol** to ***TCP***, **Port Min** and **Max** to ***22***, and **Source Type** to ***Any***.
-       *	Set **Protocol** to ***TCP***, **Port Min** and **Max** to ***443***, and **Source Type** to ***Any***.
+        *	Set **Protocol** to ***TCP***, **Port Min** and **Max** to ***22***, and **Source Type** to ***Any***.
+        *	Set **Protocol** to ***TCP***, **Port Min** and **Max** to ***443***, and **Source Type** to ***Any***.
     4.	Add one Outbound rule: set the **Protocol** to ***All*** and **Destination type** to ***Any***. 
     5.  Click **Create security group**.
-6.	Create security groups for ***app*** and ***db***. Use these guidelines:
+7.	Create security groups for ***app*** and ***db***. Use these guidelines:
     *  Allow SSH (port 22) for bastion access.
     *  If web access is required, then use HTTPS (port 443) for secure communication.
     *  Add any additional specific ports required for the respective tiers.
@@ -204,8 +204,8 @@ Use this task to provision virtual server instances. You repeat this task multip
 
 |Type|Use Subnet|Create Virtual server instance	|Placement Groups|
 |----|----|----|----|
-|web|subnet-web	|web-vsi1<br>web-vsi2<br>web-vsi3|web-group1|
-|app|subnet-app	|app-vsi1<br>app-vsi2<br>app-vsi3|app-group1
+|web|subnet-web	|web-vsi1  /n web-vsi2  /n web-vsi3|web-group1|
+|app|subnet-app	|app-vsi1  /n app-vsi2  /n app-vsi3|app-group1
 |db	|subnet-db	|db-vsi1||
 
 Use this task to provision virtual server instances for web: 
@@ -238,13 +238,13 @@ Use this task to provision virtual server instances for application:
 5.	Select **Memory** with ***2vCPUs*** and ***16 GB RAM*** as your profile. To check other available profiles, click **View all profiles**.
 6.	Under **SSH keys**, select the SSH key that you created earlier.
 7.  Under **Networking**, select the VPC you created. 
-7.	Under **Network interfaces**, click the Edit icon for Security Groups.
+8.	Under **Network interfaces**, click the Edit icon for Security Groups.
     1.	Select ***subnet-app*** as the subnet.
     2.	Clear the default security group and check ***app-sg***. 
     3.	Click **Save**.
-8.	Click **Create virtual server instance.**
-9.	Repeat steps 1-8 to provision the others virtual server instances.
-10.	Install the necessary packages to support your application server such as tomcat.
+9.	Click **Create virtual server instance.**
+10.	Repeat steps 1-8 to provision the others virtual server instances.
+11.	Install the necessary packages to support your application server such as tomcat.
 
 Use this task to provision virtual server instances for db:
 
@@ -274,15 +274,15 @@ Use this task to provision virtual server instances for db:
 {: #deploy-n-tier-szr-lbs}
 {: step}
 
-You create two load balancers for ui and application. {{site.data.keyword.cloud_notm}} load balancers can service across multiple zones. The load balancers are resilient to avoid a single point of failure and can scale horizontally due to load.
+You create two load balancers, one for ui and the other for application. {{site.data.keyword.cloud_notm}} load balancers. In this guide, we will use application load balancers.  The load balancers are resilient to avoid a single point of failure and can scale horizontally.
 
 ### Configure load balancers
 1.	Go to **Load balancers** and click **Create**.
 2.	Enter ***vpc-lb-web*** as the unique name, and select:
     1. 	**Application load balancer** as the load balancer. 
     2. 	The resource group. 
-    4.	Select the Region, for example Sydney. 
-    5.  Select the VPC that you created. 
+    3.	Select the Region, for example Sydney. 
+    4.  Select the VPC that you created. 
     5.	Load balancer Type: Public.
 3.	In Subnets, select ***subnet-web***.
 4.	Click **New pool** to create a new back-end pool of virtual server instances that act as equal peers to share the traffic that is routed to the pool. Set the parameters with these values: 
