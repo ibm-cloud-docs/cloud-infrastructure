@@ -63,7 +63,7 @@ A VPC is a private space in IBM Cloud where you can run an isolated environment 
 | Floating IP     |                 01    |     01        |  02|
 
 
-The scripts use variables to specify your information, OS, Auto scale, and Cloud Object Storage (Cloud Object Storage):
+The scripts use variables to specify your information, OS, Auto scale, and Cloud Object Storage:
 
 * API and ssh key
 * OS type and image
