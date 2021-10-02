@@ -27,7 +27,7 @@ subcollection: cloud-infrastructure
 {:new_window: target="_blank"}
 {:step: data-tutorial-type='step'}
 
-# About High Availability
+# About High Availability and Resiliency
 {: #landing-about-ha-dr-backup}
 
 With {{site.data.keyword.cloud}}, you can protect your critical workloads by building highly available infrastructure. In doing so, you can safeguard your classic or VPC application against a single point of failure, providing the highest level of uptime. The {{site.data.keyword.cloud_notm}} standardized user interface makes building resilient infrastructure as simple as provisioning a server. To further assist users with their deployment, Terraform scripts are provided to automate your deployment consistently across different projects or locations. Protect your critical workloads against outages by building resilient infrastructure on IBM cloud.
