@@ -67,10 +67,11 @@ Building infrastructure
         monitoring-no-driver-mode.md
         monitoring-faq.md
         vulnerability-eos-faq.md
-    
+     
     {: .topicgroup}
     Migrating your infrastructure
         about-migration.md
+        one-stop-migration.md
 
         {: .topicgroup}
         Classic to classic infrastructure
@@ -79,24 +80,24 @@ Building infrastructure
             p-p-migration-bare-metal.md
             p-p-faqs.md
 
-
         {: .topicgroup}
         Classic to VPC infrastructure
             /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
-
-        {: .topicgroup}
-        Bare metal to virtual server migration
             pv-migration-overview.md
             pv-migration-private-ip.md
-            p-p-migration-bare-metal.md
             pv-faqs.md
-        
+
+        {: .topicgroup}
+        VMWare to VPC infrastructure
+            vmware-on-prem-to-v2v.md
+            the-classic-to-v2v.md 
+            faqs-for-VMWare-to-VPC-migrations.md   
+
         {: .topicgroup}
         Script-based migration
             data-migration-diy.md
             image-migration-diy.md
             getting-help-diy-image-data-migration.md   
-
     {: .topicgroup}
     Related links
         [Terraform](/ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started)
