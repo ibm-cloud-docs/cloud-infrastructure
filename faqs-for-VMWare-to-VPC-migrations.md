@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-07"
 
 keywords: infrastructure
 
@@ -28,7 +28,7 @@ RMM server is a software appliance that is offered by RackWare that replatforms 
 {: #where-rmm-server-info}
 {: faq}
 
-For RMM server overview information, see RackWare's Cloud Migration documentation. For RMM server usage guide information, see the [RackWare RMM User's Guide for IBM Cloud](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware#where-rmm-server-info){: external}. 
+For RMM server overview information, see RackWare's Cloud Migration documentation. For RMM server usage guide information, see the [RackWare RMM User's Guide for IBM Cloud](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc). 
  
 ## How do I install the RMM server? 
 {: #how-rmm-server-install}
@@ -47,7 +47,7 @@ For more information on limitations of the VMWare to VPC migration, see VMWare t
 {: #how-procure-rmm-server-license}
 {: faq}
 
-See Order License for VMWare to VPC migration. 
+See [Order License for VMWare to VPC migration](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#byol-bring-your-own-license-from-rackware). 
  
 ## Is it necessary to add an RMM SSH key to the source and target machine? 
 {: #necessary-add-rmm-ssh-key}
@@ -60,7 +60,7 @@ Yes, RMM uses SSH for communication between source, target and the RMM server ma
 {: #where-vmware-doc-info}
 {: faq}
 
-See RackWare Cloud Migration 
+See [RackWare Cloud Migration Documentation](https://www.rackwareinc.com/cloud-migration)
  
 ## Who do I reach out to for support? 
 {: #where-support-info}
