@@ -202,7 +202,7 @@ Post Install steps on Bastion host
 *   Create user and sudo access to the new user if you want to avoid root user for operations.
 *   Run **apt upgrade –y** to bring the most recent patches to your kernel. Make sure that the public gateway is enabled on the subnet-hosting bastion server that is acting as NAT GW to download the necessary packages. Restart the host as soobnn as the upgrade is complete.
 *   Create private and public keys on the bastion host.
-Refer to this [link](https://cloud.ibm.com/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys) for details on how to generate your ssh keys on your Mac or Linux&reg; clients. If you are using Windows&reg;, generate the keys with [PuTTYgen](https://www.ssh.com/academy/ssh/putty/windows/puttygen#running-puttygen). Use the private and public keys for generating the ssh keys for your region.
+Refer to this [SSH keys](/docs/vpc?topic=vpc-ssh-keys) for details on how to generate your ssh keys on your Mac or Linux&reg; clients. If you are using Windows&reg;, generate the keys with [PuTTYgen](https://www.ssh.com/academy/ssh/putty/windows/puttygen#running-puttygen). Use the private and public keys for generating the ssh keys for your region.
 
 *   Create a set of SSH keys for access to Virtual Server Instances from the bastion host. Follow the same steps that you used earlier to **Create SSH Keys**. You can name the new keys as _infrakeys_. The public key that was generated on the bastion host in bullet(4) is used in creating these keys. You use this SSH key (infrakeys) while you are creating the Virtual Server Instances for web, app, and database tiers. Creating the ssh key allows logging in to these Virtual Server Instances from the bastion host.
 
