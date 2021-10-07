@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-10-03"
+lastupdated: "2021-10-07"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -21,10 +21,10 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 
-# VMWare VM On-Prem to IBM Cloud VPC VSI migration with Rackware RMM 
+# VMWare VM On-Prem to IBM Cloud VPC VSI migration with RackWare RMM 
 {: #migrating-images-vmware-vpc} 
 
-When embarking on a data center transformation, Rackware RMM migration solution provides a seamless virtual-to-virtual re-platforming for VMWare virtual machine (VM) to IBM Cloud virtual server instance (VSI) migration that allows you to adopt the native capabilities of IBM Cloud.  Its intuitive GUI allows you to move the OS, Application, and data from VMware ESXI to IBM VPC VSI.  
+When embarking on a data center transformation, RackWare RMM migration solution provides a seamless virtual-to-virtual re-platforming for VMWare virtual machine (VM) to IBM Cloud virtual server instance (VSI) migration that allows you to adopt the native capabilities of IBM Cloud.  Its intuitive GUI allows you to move the OS, Application, and data from VMware ESXI to IBM VPC VSI.  
  
 In this guide, we will show you how to complete a V2V migration from Vmware in On-Prem to IBM Cloud VPC. It supports migrating Windows Server 2012, 2012R2, 2016, and 2019, Red Hat Enterprise Linux (RHEL), CentOS, Ubuntu, and Debian Linux operating systems. 
 
@@ -34,7 +34,7 @@ In this guide, we will show you how to complete a V2V migration from Vmware in O
 {: #services-used-vmware}
 
 - IBM Cloud VPC VSI 
-- Rackware RMM 
+- RackWare RMM 
 
 ## Before you begin
 {: #before-begin-vmware}
@@ -47,9 +47,9 @@ In this guide, we will show you how to complete a V2V migration from Vmware in O
 
 ## General steps
 
-1.  Order Rackware RMM (IBM Catalog Tile) 
+1.  Order RackWare RMM (IBM Catalog Tile) 
 
-2. BYOL (Bring Your Own License) from Rackware 
+2. BYOL (Bring Your Own License) from RackWare 
 
 3. Setup and provision IBM Cloud VPC and VSI
 
@@ -61,16 +61,16 @@ In this guide, we will show you how to complete a V2V migration from Vmware in O
 
 7. Validation 
 
-## Order Rackware RMM
+## Order RackWare RMM
 {: #order-rackware-rmm-vmware}
 {: step}
 
-Rackware RMM tool is available on the IBM Catalog Marketplace. 
+RackWare RMM tool is available on the IBM Catalog Marketplace. 
 
-A VSI with the Rackware RMM software will be installed into the VPC which was provided while ordering on the Catalog page.
+A VSI with the RackWare RMM software will be installed into the VPC which was provided while ordering on the Catalog page.
 The RMM server will have a public IP address for reachability and for default login post provisioning the VSI.
 
-1. Order Rackware RMM server from the IBM Cloud Marketplace.
+1. Order RackWare RMM server from the IBM Cloud Marketplace.
 
     a. Select your Resource Group.
 
@@ -84,7 +84,7 @@ The RMM server will have a public IP address for reachability and for default lo
 
     f. Provide the Region and Zone.
 
-2. Login into the Rackware RMM Server.
+2. Login into the RackWare RMM Server.
 
     a. Change the default password.
 
@@ -102,7 +102,7 @@ The RMM server will have a public IP address for reachability and for default lo
 
         $ rwadm relicense 
  
-    You will need to purchase the license from Rackware by mailing the generated license file to licensing@rackwareinc.com or sales@rackwareinc.com. 
+    You will need to purchase the license from RackWare by mailing the generated license file to licensing@rackwareinc.com or sales@rackwareinc.com. 
 
 2. Once the valid license is received, download the license file and place it under `/etc/rackware`. Then restart the services to apply the license using this command:
  
@@ -149,19 +149,19 @@ This document does not provide the details for setting up the VPC infrastructure
 {: #source-target-compute-prep-vmware}
 {: step}
 
-Before starting the migration, Rackware RMM server needs to SSH into the machines.Thus, the RMM public SSH keys needs to be copied on both the source and target machines.
+Before starting the migration, RackWare RMM server needs to SSH into the machines.Thus, the RMM public SSH keys needs to be copied on both the source and target machines.
  
-For Windows OS, you will need to download the SSH key utility.  You can download it from Rackware RMM server. 
+For Windows OS, you will need to download the SSH key utility.  You can download it from RackWare RMM server. 
 {:note: .note}
  
 For Windows OS, the user will be SYSTEM and you have to key in the RMM SSH Key here to authenticate for both Source and Target machines.
 {:note: .note}
 
-## Rackware RMM V2V Migration
+## RackWare RMM V2V Migration
 {: #rackware-rmm-v2v-migration}
 {: step}
 
-You can migrate the machines one-by-one or opt to perform multiple simultaneous migrations. If you are performing multiple simultaneous migrations, then download the CVS template from the RMM server and fill in the appropriate fields.
+You can migrate the machines one-by-one or opt to perform multiple simultaneous migrations. If you are performing multiple simultaneous migrations, then download the CSV template from the RMM server and fill in the appropriate fields.
 
 1. Login into the RMM server.
 
@@ -222,4 +222,4 @@ Prior to decommissioning the source server, it is imperative to validate the tar
 
 1.  [Discovery Tool](https://urldefense.proofpoint.com/v2/url?u=https-3A__github.com_IBM-2DCloud_vpc-2Dmigration-2Dtools_blob_RMM-2DV2V-2DdiscoveryTool_v2v-2Ddiscovery-2Dtool-2Drmm_README.md&d=DwMCAg&c=jf_iaSHvJObTbx-siA1ZOg&r=buNlWvddeDJ52m-AvV33xV7udsrogOmLrgBayljc3Hk&m=ZMoYgXTZ4LsxwGHDjT78mEU4mjP0PW9n0T8PvasBsLE&s=_8ltU9eIWBRoEY5Hdz6ZCJVG-7mtKGkvJ5Gx3ABpqu8&e=)
 2. [FAQs](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)  
-3. [Rackware usage guide](https://www.rackwareinc.com/cloud-migration) 
+3. [RackWare usage guide](https://www.rackwareinc.com/cloud-migration) 
