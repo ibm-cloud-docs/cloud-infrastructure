@@ -47,13 +47,13 @@ This diagram shows the 3-tier architecture that you create with the tutorial.
 ![Two different types of bare metal deployment.](images/3_tier_tut.png){: caption="Architecture Diagram"}
 
 You must have full administrative privileges for managing the VPC resources.
-For more information about user permissions in a VPC, see [[Getting user permissions for VPC resources](https://cloud.ibm.com/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
+For more information about user permissions in a VPC, see [Getting user permissions for VPC resources](https://cloud.ibm.com/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
 
 ## Create VPC
 {: #create-VPC-mzr}
 {: step}
 
-Create a VPC named vpcname-region1. For more information, see [Deploying critical applications with IBM Cloud MZR - Step 1: Create a VPC](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-vpc-mzr)
+Create a VPC named vpcname-region1. For more information, see [Deploying critical applications with IBM Cloud MZR - Step 1: Create a VPC](/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-vpc-mzr)
 
 ## Create Subnets
 {: #create-Subnets-mzr}
@@ -71,13 +71,13 @@ Create the following subnets:
 Make note of the CIDR blocks for the subnets you created.
 {: note}
 
-For detailed steps, see [Deploying critical applications with IBM Cloud MZR - Step 2 Create Subnets](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-subnets-mzr)
+For detailed steps, see [Deploying critical applications with IBM Cloud MZR - Step 2 Create Subnets](/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-subnets-mzr)
 
 ## Create SSH Keys
 {: #create-SSH-Keys-mzr}
 {: step}
 
-Create SSH keys for the bastion host. You need to be able to log in to the bastion host with the private and public keys (asymmetric pair) from your client computer. For more information, see [Getting started with Virtual Private Cloud](https://cloud.ibm.com/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys) for details on how to generate your ssh keys on your Mac or Linux&reg; clients. If you are using Windows&reg;, generate the keys with [PuTTYgen](https://www.ssh.com/academy/ssh/putty/windows/puttygen#running-puttygen). Use the private and public keys for generating the ssh keys for your region.
+Create SSH keys for the bastion host. You need to be able to log in to the bastion host with the private and public keys (asymmetric pair) from your client computer. For more information, see [SSH keys](/docs/vpc?topic=vpc-ssh-keys) for details on how to generate your ssh keys on your Mac or Linux&reg; clients. If you are using Windows&reg;, generate the keys with [PuTTYgen](https://www.ssh.com/academy/ssh/putty/windows/puttygen#running-puttygen). Use the private and public keys for generating the ssh keys for your region.
 
 1.  Log in to the [{{site.data.keyword.cloud}} console](https://cloud.ibm.com/login){: external}.
 2.  Select **Menu icon ![Menu icon](../../icons/icon_hamburger.svg) > Menu > VPC Infrastructure > SSH keys**.
@@ -111,13 +111,13 @@ Outbound rules for bastion-sg
 
 These rules allow ssh access to the bastion host from the outside world. You can also set up a VPN to the bastion host.
 
-For more information, see [Deploying critical applications with IBM Cloud MZR - Step 3 Create two security groups](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-subnets-mzr).
+For more information, see [Deploying critical applications with IBM Cloud MZR - Step 3 Create two security groups](/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-subnets-mzr).
 
 ### Maintenance security groups for virtual server instances
 
 Because you need to log in to the web, app, and database tiers from the bastion host you must create a maintenance security group. The maintenance security groups allow SSH access from the Bastion host to all of the Virtual Server Instances. The maintenance security group is used for administrative tasks only. It can be enabled on the Virtual Server Instances for routine maintenance work such as patching, viewing logs, and troubleshooting, and can be disabled when these tasks are complete.
 
-For detailed steps, see [Deploying critical applications with IBM Cloud MZR - Step 3 Create two security groups](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-subnets-mzr).
+For detailed steps, see [Deploying critical applications with IBM Cloud MZR - Step 3 Create two security groups](/docs/cloud-infrastructure?topic=cloud-infrastructure-multi-zone-resiliency#create-subnets-mzr).
     
 Create the inbound and outbound rules for vpc-secure-bastion-sg with these attributes:
 
