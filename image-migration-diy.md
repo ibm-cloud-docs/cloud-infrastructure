@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-10-07"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -21,7 +21,6 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 
-
 # Migrating VMDK or VHD images to VPC
 {: #migrating-images-vpc}
 
@@ -33,15 +32,17 @@ You can convert your virtual machine (VM) to {{site.data.keyword.cloud}} virtual
 
 Before you begin migrating your image conversion, review the following requirements:
 
-1. You need an existing {{site.data.keyword.vpc_short}} environment. 
-2. Understand {{site.data.keyword.vpc_short}} custom image requirements:
+1. Backup your source virtual machine that you intend to migrate.
+2. You need an existing {{site.data.keyword.vpc_short}} environment. 
+3. VMware virtual machine should be created with BIOS firmware type
+4. Understand {{site.data.keyword.vpc_short}} custom image requirements:
     * Is in qcow2 format
-    * The boot volume (primary vHDD) doesn't exceed 100 GB
-    * Is cloud-init enabled
-    * Virtio drivers enabled
+    * The boot volume (primary vHDD) doesn't exceed 99 GB
+    * If cloud-init is enabled, then remove all custom config files
+    * Virtio drivers should be enabled
     * The operating system is supported as a stock image. For a list of supported stock images, see [Images](/docs/vpc?topic=vpc-about-images#stock-images).
-3. Provision an instance of {{site.data.keyword.cos_full_notm}} if you don't have one. For more information, see [Granting access to {{site.data.keyword.cos_full_notm}} to import images](/docs/vpc?topic=vpc-object-storage-prereq).
-4. You need a server with a browser that has access to both the internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
+5. Provision an instance of {{site.data.keyword.cos_full_notm}} if you don't have one. For more information, see [Granting access to {{site.data.keyword.cos_full_notm}} to import images](/docs/vpc?topic=vpc-object-storage-prereq).
+6. You need a server with a browser that has access to both the internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
 
 ### Image conversion considerations
 {: #image-conversion-considerations}
@@ -97,13 +98,16 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
     ```
     {: pre}
     
-    For Windows 2016, go to _Network settings_ > _Network and internet   status_ > _Reset network_.
-  
+    For Windows 2016 and Windows 2019, go to _Network settings_ > _Network and internet status_ > _Reset network_.
+    
+    Network reset is not required for classic vsi migration.
+    {:tip: .tip}
+
 5. Restart the VM to activate the Virtio drivers.
 6. Run the `sysprep` command. The `sysprep` command generalizes and removes system-specific IDs from the operating system.
 
     ```
-    C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown "/  unattend:C:\Program Files\Cloudbase   Solutions\Cloudbase-Init\conf\Unattend.xml"
+    C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown "/unattend:C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
     ```
     {: pre}
 
@@ -120,9 +124,9 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
     qemu-img convert -f vmdk -O qcow2 -o cluster_size=512k <vm_image_name.  vmdk> <vsi_image_name.qcow2> 
     ```
     {: pre}
-    
+  
     For VHD images:
-    
+  
     ```
     qemu-img convert -f vpc -O qcow2 -o cluster_size=512k <vm_image_name.  vhd> <vsi_image_name.qcow2> 
     ```
@@ -162,7 +166,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 {: #step-6-linux-systems}
 
 
-***For Centos/Redhat 7 and Ubuntu 16:***
+***For Centos/Redhat 7:***
 
 1. Create n+1 secondary volumes. If your VM has one secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
 2. Download the secondary (vHDD) VMDK or VHD file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
@@ -220,27 +224,27 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 
 3. Install guestfs library
 
-    Centos/Redhat
-    
-    ```
-    $ yum update -y
-    
-    $ yum install libguestfs-tools
-    
-    $ systemctl enable libvirtd
-    
-    $ systemctl start libvirtd
-    
-    $ systemctl status libvirtd
-    ```
-    
-    Ubuntu/Debian
-    
-    ```
-    $ apt-get update -y
-    
-    $ apt-get install -y libguestfs-tools
-    ```
+   Centos/Redhat
+
+   ```
+   $ yum update -y
+
+   $ yum install libguestfs-tools
+
+   $ systemctl enable libvirtd
+
+   $ systemctl start libvirtd
+
+   $ systemctl status libvirtd
+   ```
+
+   Ubuntu/Debian
+   
+   ```
+   $ apt-get update -y
+   
+   $ apt-get install -y libguestfs-tools
+   ```
 
 4. Convert the (VMDK or VHD) image data to `qcow2`:
 
@@ -260,30 +264,30 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 
 5. Mount the volume:
 
-    ```
-    guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
-    ```
-    {: pre}
+   ```
+   guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
+   ```
+   {: pre}
 
 6. Format and mount the empty secondary volume
 
-    ```
-    mount /dev/vdd1 /data
-    ```
-    {: pre}
+   ```
+   mount /dev/vdd1 /data
+   ```
+   {: pre}
 
 7. Copy data over from the ``/mnt`` to the target volume (vdd):
 
-    ```
-    cp –avf /mnt /data 
-    ```
-    {: pre}
+   ```
+   cp –avf /mnt /data 
+   ```
+   {: pre}
 
 8. After copy completed unmount and delete the image file, if no longer needed.
   
-    ```  
-    $ guestunmount /mnt
-    ```
+   ```  
+   $ guestunmount /mnt
+   ```
 
 9. Edit the `fstab` file to automount and be persistent across reboot.
 
