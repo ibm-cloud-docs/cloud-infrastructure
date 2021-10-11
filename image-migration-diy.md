@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-11"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -24,7 +24,7 @@ subcollection: cloud-infrastructure
 # Migrating VMDK or VHD images to VPC
 {: #migrating-images-vpc}
 
-You can convert your virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instances to import your image to {{site.data.keyword.vpc_short}}, and then use a custom image to create new virtual server instances.
+You can convert your Intel x86-based virtual machine (VM) in VMDK or VHD format to {{site.data.keyword.cloud}} virtual server instances to import your image to {{site.data.keyword.vpc_short}}, and then use a custom image to create new virtual server instances.
 {: shortdesc}
 
 ## Before you begin
