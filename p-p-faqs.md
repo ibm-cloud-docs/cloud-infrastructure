@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-10-14"
 
 keywords: 
 
@@ -112,8 +112,7 @@ No, this tool is only for classic Bare Metal to classic Bare Metal.
 {: #is-data-migration-supported}
 {: faq}
 
-No, RMM currently only supports local storage migration. For block or file performance and endurance volumes, consider using a 3rd party tool such as ``rsync``. A sample script using ``rsync`` can be found [here](https://github.com/IBM-Cloud/vpc-migration-tools).
-
+No, RMM currently supports local storage migration for Windows as well as Linux. RMM supports block performance and endurance volumes only in Linux. It's not supported in Windows. File performance and endurance volumes are not supported in Linux as well as Windows. For block or file performance and endurance volumes, consider using a third party tool such as `rsync`. A sample script using rsync can be found [here](https://github.com/IBM-Cloud/vpc-migration-tools).
 
 
 
