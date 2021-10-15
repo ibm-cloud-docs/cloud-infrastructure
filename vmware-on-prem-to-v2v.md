@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-15"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -21,10 +21,10 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 
-# VMWare VM On-Prem to IBM Cloud VPC VSI migration with RackWare RMM 
+# VMware VM On-Prem to IBM Cloud VPC VSI migration with RackWare RMM 
 {: #migrating-images-vmware-vpc} 
 
-When embarking on a data center transformation, RackWare RMM migration solution provides a seamless virtual-to-virtual re-platforming for VMWare virtual machine (VM) to IBM Cloud virtual server instance (VSI) migration that allows you to adopt the native capabilities of IBM Cloud.  Its intuitive GUI allows you to move the OS, Application, and data from VMware ESXI to IBM VPC VSI.  
+When embarking on a data center transformation, RackWare RMM migration solution provides a seamless virtual-to-virtual re-platforming for VMware virtual machine (VM) to IBM Cloud virtual server instance (VSI) migration that allows you to adopt the native capabilities of IBM Cloud.  Its intuitive GUI allows you to move the OS, Application, and data from VMware ESXI to IBM VPC VSI.  
  
 In this guide, we will show you how to complete a V2V migration from Vmware in On-Prem to IBM Cloud VPC. It supports migrating Windows Server 2012, 2012R2, 2016, and 2019, Red Hat Enterprise Linux (RHEL), CentOS, Ubuntu, and Debian Linux operating systems. 
 
@@ -40,7 +40,7 @@ In this guide, we will show you how to complete a V2V migration from Vmware in O
 {: #before-begin-vmware}
 
 - Check for correct permissions for IBM Cloud VPC. 
-- While this is not an exhaustive list, understand the capability differences between VMWare and VPC such as: 
+- While this is not an exhaustive list, understand the capability differences between VMware and VPC such as: 
     - VPC does not support shared volumes or file-based volumes 
     - No GPU supports are allowed
     - Encrypted volumes are not supported
