@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-09-22"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -41,7 +41,7 @@ The RackWare’s RMM solution simplifies the overall migration process of moving
 2.	Encrypted volumes are not supported.
 3.	Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
 4.	The RackWare’s RMM solution handles only the OS, application, and data movement. So anything else needs to be setup by you (e.g. security groups, subnets etc.).
-5. For Windows, data migration for block and file performance and endurance storage is not supported. Consider using third party tools such as `rsync` for data migration on block and file. For Linux it is supported.
+5. Data migration for block and file performance and endurance storage is not supported. Consider using third party tools such as `rsync` for data migration on block and file.
 
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
