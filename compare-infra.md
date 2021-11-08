@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-11-08"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment
 
@@ -47,6 +47,9 @@ See the following table for the compute differences between classic and VPC.
 | **Platform integration** | | IAM and resource group integration for a unified experience |
 {: caption="Table 1. Compute comparison" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
+
+Suspend billing supports only hourly, SAN instances that are provisioned with a public profile from one of the Balanced, Compute, Memory, or Variable compute families.
+{: note}
 
 ## Network differentiators
 {: #compare-network}
