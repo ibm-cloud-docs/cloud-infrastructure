@@ -2,7 +2,7 @@
 
 copyright: 
   years:  2021
-lastupdated: "2021-10-1"
+lastupdated: "2021-11-04"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -314,5 +314,9 @@ You create two load balancers, one for ui and the other for application. {{site.
 
 ## Next steps
 
-After you set up your single zone application, configure snapshot backups for your application for SZR. For more information, see 
-[Taking snapshot backups for your 3-Tier applications for SZR](/docs/cloud-infrastructure?topic=cloud-infrastructure-taking-snapshot-backups-for-your-3-tier-applications-for-szr)
+After you set up your single zone application:
+
+*  Configure snapshot backups for your application for SZR. For more information, see 
+[Taking snapshot backups for your 3-Tier applications for SZR](/docs/cloud-infrastructure?topic=cloud-infrastructure-taking-snapshot-backups-for-your-3-tier-applications-for-szr).
+*  Install the software packages that you want on your virtual server instances. The packages vary based on your solution. 
+
