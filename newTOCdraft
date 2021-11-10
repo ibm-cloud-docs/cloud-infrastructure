@@ -1,0 +1,141 @@
+---
+toc:
+  properties:
+    subcollection: cloud-infrastructure
+    version: 2
+    category: platform_services
+    audience: platform
+    href: /docs/cloud-infrastructure
+    console-page: "/classic"
+    product-page: "https://www.ibm.com/cloud/cloud-infrastructure"
+    path: cloud-infrastructure
+    label: Building infrastructure
+#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+       - getting-started.md
+       - link:
+           label: What is IBM Cloud Infrastructure as a Service?
+           href: https://www.ibm.com/cloud/infrastructure
+       - link:
+           label: What is VPC?
+           href: https://www.ibm.com/cloud/vpc
+       - compare-infra.md
+       - link:
+           label: IBM Cloud pricing
+           href: https://www.ibm.com/cloud/pricing
+       - topicgroup: 
+           label: Related links
+           links: 
+           - link:
+               label: What is IBM Cloud Infrastructure as a Service?
+               href: https://www.ibm.com/cloud/infrastructure 
+           - link:
+               label: What is IBM Cloud Infrastructure as a Service?
+               href: https://www.ibm.com/cloud/infrastructure 
+          
+  - navgroup: 
+      id: howto
+      topics:
+      - planning-iaas.md
+      - topicgroup: 
+          label: High availability and resiliency
+          topics: 
+          - ha-landing-page-all.md
+          - ha-cloud-intro.md
+          - /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application   
+          - ha-autoscale-tutorial.md
+          - topicgroup: 
+              label: Create Highly Available applictions in VPC
+              topics: 
+              - ha-3-tier.md
+              - ha-pools-origins-1zone.md
+              - ha-resiliency-tutorial.md
+          - ha-block-storage-snapshots.md
+          - topicgroup: 
+              label: Highly Available 3-tier architecture on IBM Cloud VPC 
+              topics: 
+              - ha-components-in-a-3-tier-highly-available-architecture-on-an-IBM-Cloud-VPC.md
+              - ha-3-tier-tutorial.md
+          - topicgroup: 
+              label: Highly Available architecture in a Single Zone
+              topics: 
+              - ha-arch-szr.md
+              - ha-deploy-n-tier-app-szr.md 
+              - ha-snapshot-backups-szr.md
+          - topicgroup: 
+              label: Automating and Deploying Highly Available Resilient Architectures with Terraform
+              topics: 
+              - ha-3-tier-resilient-terraform.md
+              - ha-3-tier-resilient-autoscale-terraform.md
+              - ha-3-tier-mzr-terraform.md
+              - ha-3-tier-szr-terraform.md
+      - topicgroup: 
+          label: Building your infrastructure
+          topics: 
+          - compute-services.md
+          - network-services.md
+          - storage-services.md 
+      -  managing-iaas.md      
+      - topicgroup: 
+          label: Monitoring your infrastructure
+          topics: 
+          - rmonitoring-iaas.md
+          - monitoring-agents-and-plans.md
+          - monitoring-no-driver-mode.md
+          - monitoring-faq.md
+          - vulnerability-eos-faq.md
+      - topicgroup: 
+          label: Migrating your infrastructure
+          topics: 
+          - about-migration.md
+          - one-stop-migration.md
+          - topicgroup: 
+              label: Classic to classic infrastructure
+              topics: 
+              - /virtual-servers/virtual-servers-migrating-vsi-new-datacenter
+              - /bare-metal/bare-metal-getting-started-bm-custom-image-templates
+              - p-p-migration-bare-metal.md
+              - p-p-faqs.md
+          - topicgroup: 
+              label: Classic to VPC infrastructure
+              topics: 
+              - /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
+              - pv-migration-overview.md
+              - pv-migration-private-ip.md
+              - pv-faqs.md
+          - topicgroup: 
+              label: VMWare to VPC infrastructure
+              topics: 
+              - vmware-on-prem-to-v2v.md
+              - the-classic-to-v2v.md 
+              - hyper-v-to-IBM-Cloud-VPC-VSI.md
+              - faqs-for-VMWare-to-VPC-migrations.md   
+          - topicgroup: 
+              label: Script-based migration
+              topics: 
+              - data-migration-diy.md
+              - image-migration-diy.md
+              - getting-help-diy-image-data-migration.md   
+      - topicgroup: 
+              label: Related links
+              links:
+              - link:
+                  label: Terraform
+                  href: /ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started
+              - link:
+                  label: Terraform for VPC
+                  href: https://github.com/ibm-cloud-architecture/terraformer
+
+  - navgroup:
+      id: help
+      topics: 
+      - link:
+          label: IBM Cloud Support
+          href: https://www.ibm.com/cloud/support
+      - link:
+          label: Stack Overflow
+          href: https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure
+      - ntp-service-overview.md
