@@ -30,11 +30,11 @@ toc:
            label: Related links
            links: 
            - link:
-               label: What is IBM Cloud Infrastructure as a Service?
-               href: https://www.ibm.com/cloud/infrastructure 
+               label: Service and infrastructure availability?
+               href: /overview/overview-services_region
            - link:
-               label: What is IBM Cloud Infrastructure as a Service?
-               href: https://www.ibm.com/cloud/infrastructure 
+               label: Getting started with IAM tutorial
+               href: /account/account-iamoverview
           
   - navgroup: 
       id: howto
@@ -71,7 +71,6 @@ toc:
               - ha-3-tier-resilient-terraform.md
               - ha-3-tier-resilient-autoscale-terraform.md
               - ha-3-tier-mzr-terraform.md
-              - ha-3-tier-szr-terraform.md
       - topicgroup: 
           label: Building your infrastructure
           topics: 
