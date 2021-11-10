@@ -107,4 +107,5 @@ Building infrastructure
     {: .navgroup id="reference"}
     [IBM Cloud Support](https://www.ibm.com/cloud/support)
     [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure)
+    ntp-service-overview.md
     {: .navgroup-end}
