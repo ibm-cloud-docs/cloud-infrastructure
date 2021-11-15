@@ -81,7 +81,7 @@ toc:
       - topicgroup: 
           label: Monitoring your infrastructure
           topics: 
-          - rmonitoring-iaas.md
+          - monitoring-iaas.md
           - monitoring-agents-and-plans.md
           - monitoring-no-driver-mode.md
           - monitoring-faq.md
