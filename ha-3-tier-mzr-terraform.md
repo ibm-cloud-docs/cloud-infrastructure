@@ -2,7 +2,7 @@
 
 copyright: 
   years:  2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-18"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -72,6 +72,14 @@ The scripts use variables to specify your information, OS, Auto scale, and Cloud
 * Minimum and maximum virtual server instances that are configured for the instance group and the CPU threshold for adding virtual server instances to the pool
 * Global load balancer domain name and region code
 * Cloud Object Storage plan and region information
+
+The scripts automatically install these software packages:
+
+*  PHP
+*  Apache
+*  Maria DB
+*  Word Press Application
+
 
 ## Script Files
 {: #script-files-resilient-mzr}
