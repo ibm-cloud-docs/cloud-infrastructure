@@ -85,7 +85,7 @@ Yes, as long there is connectivity establish from the on-prem to the RMM server 
 {: #is-data-migration-supported}
 {: faq}
 
-No, currently only local storage data migration is supported. If you still want to migrate data from File or Block storage, then please use a third party tool such as `RSync`. [Here](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware#is-data-migration-supported) is a sample script that uses `RSync` to help with the data migration for the file and block volumes.
+No, currently only local storage data migration is supported. If you still want to migrate data from File or Block storage, then please use a third party tool such as `RSync`. [Here](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware#is-data-migration-supported) is a sample script that uses `RSync` to help with the data migration for the file and block volumes.
  
 ## Is the migration intrusive?  
 {: #is-migration-intrusive}
@@ -109,6 +109,6 @@ Supports migrating Windows Server 2012, 2012R2, 2016, and 2019; Red Hat Enterpri
 {: #does-migration-support-auto-provisioning}
 {: faq}
 
-Yes. With Rackware's RMM **Auto Provision** feature. See "Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup)
+Yes. With Rackware's RMM **Auto Provision** feature. See "Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup)
  
  

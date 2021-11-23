@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-11-16"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -37,11 +37,11 @@ The RackWare’s RMM solution simplifies the overall migration process of moving
 ## Limitations
 {: #p-p-migration-bare-metal-limitations}
 
-1.	NIC bonding is not supported. Before migration, NIC bonding must be unconfigured at hardware and OS levels for any server that has NIC bonding or teaming configured.
+1.	NIC bonding is not supported in the Windows operating system. Before migration, NIC bonding must be unconfigured at hardware and OS levels for any server that has NIC bonding or teaming configured. In the case of Linux operating systems you do not need to make any changes.
 2.	Encrypted volumes are not supported.
 3.	Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
 4.	The RackWare’s RMM solution handles only the OS, application, and data movement. So anything else needs to be setup by you (e.g. security groups, subnets etc.).
-5. Data migration for block and file performance and endurance storage is not supported. Consider using third party tools such as `rsync` for data migration on block and file.
+5. For Windows, data migration for block and file performance and endurance storage is not supported. Consider using third party tools such as `rsync` for data migration on block and file. For Linux it is supported.
 
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
@@ -105,7 +105,7 @@ See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-
 {: #p-p-migration-bare-metal-removing-nic-bond}
 {: step}
 
-To accomplish successful migration using RackWare’s RMM solution, you have to remove NIC bonding from both of the source and target machines.  Depending on the type of port redundancy selected at the time of order, this may require a case to be opened with IBM support to remove the bonding configuration on both the network and OS.  See [port redundancy](https://cloud.ibm.com/docs/bare-metal?topic=bare-metal-network-options#network-port-redundancy) for more information.
+To accomplish successful migration using RackWare’s RMM solution, you have to remove NIC bonding from both of the source and target machines, when using the Windows operating system. Depending on the type of port redundancy selected at the time of order, this may require a case to be opened with IBM support to remove the bonding configuration on both the network and OS.  See [port redundancy](https://cloud.ibm.com/docs/bare-metal?topic=bare-metal-network-options#network-port-redundancy) for more information.
 
 | Network interface - Port redundancy type | Comments | IBM case needed? |
 | ---------- | ---------- | ---------- |
@@ -144,9 +144,10 @@ To accomplish successful migration using RackWare’s RMM solution, you have to 
 
 2. After you have been notified that the changes have been completed, go back in to verify the bonding interface has been removed:
 
-    a. For Linux&reg;, the ``ip link show`` command can be used to see the status of bonding.
+    a. For Windows&reg;, the PowerShell command ``Get-NetLbfoTeam`` can be used.
 
-    b. For Windows&reg;, the PowerShell command ``Get-NetLbfoTeam`` can be used.
+NIC bonding is supported for Linux operating system. No need to make any changes to source and target machines that run the Linux operating system.
+{:note: .note}
 
 ## Order a license
 {: #p-p-migration-bare-metal-ordering-license}
@@ -284,7 +285,7 @@ You can migrate machines over one-by-one or perform simultaneous migrations. If 
 
 2.  FAQs about baremetal to metal
 
-    [FAQS for bare metal to bare metal](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
+    [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
 
 
 
