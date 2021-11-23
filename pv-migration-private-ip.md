@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-11-23"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -60,6 +60,10 @@ For more detail, see [Comparing {{site.data.keyword.cloud_notm}} classic and VPC
 {: #set-up-provision-vpc-vsi}
 {: step}
 
+There are 2 different methods for setting up target the VSI, manual or with Rackware RMM auto provision feature as described below:
+
+**Option 1: Manual**
+
 The RackWare RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side; therefore, you need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and virtual server instances. This tutorial won't go through all of the details of setting up the VPC infrastructure. See the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started) for further details.
 
 1. Create a VPC. 
@@ -71,6 +75,54 @@ The RackWare RMM solution handles only the OS, application, and data movement. I
     * Secondary volume (optional) 
 
 Encrypted volumes are not supported.
+{: note}
+
+**Option 2: Auto-provision**
+
+1. Click on **Clouduser** menu under **Configuration** main menu on left-hand side.
+2. Click on **Add** button, and the  **Add Cloud** form will pop up. Enter appropriate details for the following fields:
+    - Name
+    - Select ‘IBM Gen2’ as Cloud Provider
+    - Select desired Region where you want to auto provision VSI
+    - Enter valid API key for your IBM cloud account
+    - Once all details are filled, click on the **Add** button
+3. Open wave where operation needs to be performed
+4. Click on text ’Not Configured’, next to ‘Autoprovision’ label, a pop up will open
+    - Select added clouduser as **Environment**
+    - Select region where VSI needs to be provisioned
+    - Subnet name and VPC name are optional. If entered, these would be default names for VPC and Subnet during provision of VSI
+    - Click on **Add Host**, (plus icon on left top panel)
+    - Select **Target Type** as **Autoprovision**
+    - Enter source details:
+
+        - IP address
+        - Friendly name
+        - Select OS
+        - Username
+    - Enter Target details:
+        - Only **Friendly Name** is required on target side
+        - Use **Right Sizing** from **Advanced Options** if the source has a boot volume greater than 100GB, as VPC does not support boot volume greater than 100 GB
+    - Once you close this form, RMM will show a warning to enter **IBM Gen2 Options**
+    - Edit host and you will see **IBM Gen2 Options** as an additional tab at the top
+        - The VPC name is mandatory. It will create VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields then RMM will find relevant resource.
+        - Select Region
+        - Resource Group
+        - Subnet
+        - Security Group
+        - Zone
+        - VSI Profile Name
+        - Permit Resources Creation – Check this option if the given VPC name or subnet is not present. This is a simple permission flag for RMM to create resources.
+        - Image Name
+        - Image username (This field is optional as Linux has key-based authentication, so even if any value is entered, it would be ignored)
+        - Image password (This field is optional as Linux has key-based authentication so even if any value is entered, it would be ignored)
+        - SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created VSI 
+    - Click on Modify
+    - Finally, run replication
+    
+Target VSI boot volume cannot be greater than 100GB, so if source machine’s boot volume is greater than 100GB, use right sizing option of RMM.
+{: note}
+
+If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
 {: note}
 
 ## Order IBM Cloud Transit Gateway
@@ -149,6 +201,9 @@ ip route add <destination_network> via <Gateway_address> dev <private_ethernet_i
 route ADD <destination_network> MASK <subnet_mask> <gateway_ip> <metric_cost>
 ```
 {: pre}
+
+In the case of a user using the **Auto Provision** feature, there is no need to set up a target. Only the friendly name for the target machine is required. 
+{: note}
 
 ## Set up RackWare RMM waves for P2V migration
 {: #set-up-rackware-rmm-p2v-migration}
