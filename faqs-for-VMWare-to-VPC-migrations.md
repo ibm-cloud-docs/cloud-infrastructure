@@ -109,6 +109,6 @@ Supports migrating Windows Server 2012, 2012R2, 2016, and 2019; Red Hat Enterpri
 {: #does-migration-support-auto-provisioning}
 {: faq}
 
-Yes. With Rackware's RMM **Auto Provision** feature. See "Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup)
+Yes. With Rackware's RMM **Auto Provision** feature. See "Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup)
  
  
