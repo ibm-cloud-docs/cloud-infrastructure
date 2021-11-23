@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-11-23"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -126,24 +126,70 @@ The RMM server will have a public IP address for reachability and for default lo
 {: #cloud-vpc-vsi-setup}
 {: step}
 
-The RackWare RMM solution only handles the OS, application, and data movement. It does not to set up a VPC target side; you need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you will need to set up a VPC, subnets, and the corresponding VSIs that you are planning to migrate. The new target VSI profile (`vCPU` and `vMemory`) does not need to match the source.  However, as for the storage, it will need to be the same or greater in size. 
+**Option 1: Manual**
+
+The RackWare RMM solution only handles the OS, application, and data movement. It does not need to set up a VPC target side; you need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you will need to set up a VPC, subnets, and the corresponding VSIs that you are planning to migrate. The new target VSI profile (vCPU and vMemory) does not need to match the source. However, as for the storage, it will need to be the same or greater in size.
 
 This document does not provide the details for setting up the VPC infrastructure as this is well described in each of the relevant VPC product document pages.
-{:note: .note}
+{: note}
 
-1. Create a VPC.
+1. Create a VPC. 
+2. Create Subnet(s). 
+3. Order the virtual server instance. 
+    * SSH key (RMM SSH keys need to be added in addition to bastion SSH key)
+    * Operating system name (Linux/Windows and their respective version) 
+    * Security groups 
+    * Secondary volume (optional) 
 
-2. Create Subnet(s).
+**Option 2: Auto-provision**
 
-3. Order the VSI:
+RMM has the capability to automatically provision a virtual server instance of VPC. To use this capability you need to enable the wave level setting **Autoprovision** and configure RMM with the necessary details. Use these steps to use the auto-provision feature 
 
-    a. SSH Key (RMM SSH keys need to be added in addition to bastion SSH key)
+1. Click on **Clouduser** menu under **Configuration** main menu on left-hand side.
+2. Click on **Add** button, and the  **Add Cloud** form will pop up. Enter appropriate details for the following fields:
+    - Name
+    - Select ‘IBM Gen2’ as Cloud Provider
+    - Select desired Region where you want to auto provision VSI
+    - Enter valid API key for your IBM cloud account
+    - Once all details are filled, click on the **Add** button
+3. Open wave where operation needs to be performed
+4. Click on text ’Not Configured’, next to ‘Autoprovision’ label, a pop up will open
+    - Select added clouduser as **Environment**
+    - Select region where VSI needs to be provisioned
+    - Subnet name and VPC name are optional. If entered, these would be default names for VPC and Subnet during provision of VSI
+    - Click on **Add Host**, (plus icon on left top panel)
+    - Select **Target Type** as **Autoprovision**
+    - Enter source details:
 
-    b. OS name (same major version as the source)
+        - IP address
+        - Friendly name
+        - Select OS
+        - Username
+    - Enter Target details:
+        - Only **Friendly Name** is required on target side
+        - Use **Right Sizing** from **Advanced Options** if the source has a boot volume greater than 100GB, as VPC does not support boot volume greater than 100 GB
+    - Once you close this form, RMM will show a warning to enter **IBM Gen2 Options**
+    - Edit host and you will see **IBM Gen2 Options** as an additional tab at the top
+        - The VPC name is mandatory. It will create VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields then RMM will find relevant resource.
+        - Select Region
+        - Resource Group
+        - Subnet
+        - Security Group
+        - Zone
+        - VSI Profile Name
+        - Permit Resources Creation – Check this option if the given VPC name or subnet is not present. This is a simple permission flag for RMM to create resources.
+        - Image Name
+        - Image username (This field is optional as Linux has key-based authentication, so even if any value is entered, it would be ignored)
+        - Image password (This field is optional as Linux has key-based authentication so even if any value is entered, it would be ignored)
+        - SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created VSI 
+    - Click on Modify
+    - Finally, run replication
+    
+Target VSI boot volume cannot be greater than 100GB, so if source machine’s boot volume is greater than 100GB, use right sizing option of RMM.
+{: note}
 
-    c. Security Group(s) 
-
-    d. Secondary Volume (optional) 
+If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
+{: note}
 
 ## Source and Target compute preparation
 {: #source-target-compute-prep-vmware}
@@ -155,6 +201,9 @@ For Windows OS, you will need to download the SSH key utility.  You can download
 {:note: .note}
  
 For Windows OS, the user will be SYSTEM and you have to key in the RMM SSH Key here to authenticate for both Source and Target machines.
+{:note: .note}
+
+In case, if user is using 'Auto Provision' feature, no need to setup target. Only friendly name for target machine is required.
 {:note: .note}
 
 ## RackWare RMM V2V Migration
