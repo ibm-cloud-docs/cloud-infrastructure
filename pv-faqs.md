@@ -83,4 +83,4 @@ In most cases, the migration is not intrusive. The migration can be done when th
 {: #create-target-vsi}
 {: faq}
 
-Yes. With Rackware's RMM **Auto Provision** feature. See ["Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: Set up and provision VPC and virtual server instance](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network#set-up-provision-vpc-vsi)
+Yes. With Rackware's RMM **Auto Provision** feature. See ["Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: Set up and provision VPC and virtual server instance](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network#set-up-provision-vpc-vsi)
