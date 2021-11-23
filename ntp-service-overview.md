@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-23"
 
 keywords: NTP, NTP server, network time protocol
 
@@ -57,3 +57,7 @@ NTP services provide a complete implementation of the Network Time Protocol (NTP
 
 Only NTP time packets are allowed to transfer between the customer-accessible NTP servers (customer mirrors) and end users ({{site.data.keyword.cloud_notm}} VPC and {{site.data.keyword.cloud_notm}} Classic Infrastructure servers). It is important to note that the majority of attacks against an NTP server can be mitigated with proper configuration of the NTP server itself to limit functionality to only the required responses.  NTP servers are restricted from public access, and only allowed networks are able to connect to the master time source in each environment. At each level, the information that NTP clients are allowed to receive from the NTP server is restricted.
 
+## High availability 
+{: #ntp-high-availability} 
+
+The NTP service for customer workloads is backed by a highly available architecture. There are multiple GNSS devices deployed across {{site.data.keyword.cloud_notm}} that rely on multiple satellites available on the GPS network. Each appliance, aside from the GPS source, has a local atomic clock device connected to it. Every NTP server providing services to customer workloads is configured to use any of the available Stratum 1 sources in case the closest one fails.
