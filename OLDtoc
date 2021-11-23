@@ -91,6 +91,7 @@ Building infrastructure
         VMWare to VPC infrastructure
             vmware-on-prem-to-v2v.md
             the-classic-to-v2v.md 
+            hyper-v-to-IBM-Cloud-VPC-VSI.md
             faqs-for-VMWare-to-VPC-migrations.md   
 
         {: .topicgroup}
