@@ -2,7 +2,7 @@
 
 copyright: 
   years:  2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-12-14"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -37,7 +37,7 @@ subcollection: cloud-infrastructure
 {: toc-services="virtual-servers, vpc, load balancer"} 
 {: toc-completion-time="60m"}
 
-This tutorial walks you through setting up a resilient environment for an n-tier application in an {{site.data.keyword.cloud}} for a single availability zone. In this tutorial, you create your own VPC, then create subnets in one zone of the region, then you provision the virtual server instances.
+This tutorial walks you through setting up a resilient environment for an n-tier application in an {{site.data.keyword.cloud}} for a single availability zone. The {{site.data.keyword.cloud_notm}} VPC infrastructure that is created uses Intel Xeon CPUs and additional Intel technologies. In this tutorial, you create your own VPC, then create subnets in one zone of the region, then you provision the virtual server instances.
 
 ## Objectives
 
