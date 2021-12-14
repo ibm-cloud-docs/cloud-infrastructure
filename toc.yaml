@@ -72,6 +72,7 @@ toc:
               - ha-3-tier-resilient-autoscale-terraform.md
               - ha-3-tier-mzr-terraform.md
               - ha-3-tier-szr-terraform.md
+              - ha-3-tier-cross-mzr-terraform.md
 
       - topicgroup: 
           label: Building your infrastructure
