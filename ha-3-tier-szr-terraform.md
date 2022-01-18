@@ -1,18 +1,12 @@
 ---
 
 copyright: 
-  years:  2021
-lastupdated: "2021-11-18"
+  years:  2021, 2022
+lastupdated: "2022-01-18"
 
 keywords: high availability, regions, zones, resiliency
 
-content-type: tutorial
-
 services: virtual-servers, vpc, loadbalancer-service
-
-account-plan: paid
-
-completion-time: 30m
 
 subcollection: cloud-infrastructure
 
@@ -29,13 +23,9 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 {:new_window: target="_blank"}
-{:step: data-tutorial-type='step'}
 
 # Creating a resilient three-tier highly available infrastructure VPC in a single availability zone with Terraform
 {: #create-three-tier-resilient-vpc-szr} 
-{: toc-content-type="tutorial"} 
-{: toc-services="virtual-servers, vpc, loadbalancer-service"} 
-{: toc-completion-time="30m"}
 
 Terraform on {{site.data.keyword.cloud}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} VPC infrastructure resources so that you can rapidly build complex, cloud environments. The {{site.data.keyword.cloud_notm}} VPC infrastructure that is created uses Intel Xeon CPUs and additional Intel technologies. For more information about Terraform on {{site.data.keyword.cloud_notm}}, see [Terraform on {{site.data.keyword.cloud_notm}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started).
 {: shortdesc}
@@ -45,7 +35,7 @@ To create resources with Terraform, you use Terraform configuration files that d
 ## What is created
 {: #created-vpc-ha-resilient-szr}
 
-A VPC is a private space in IBM Cloud where you can run an isolated environment with custom network policies. The variables that you define are used by the scripts to provision the virtual private cloud infrastructure resources for you. The devault values in the scripts are used to create these resources in a single region: 
+A VPC is a private space in IBM Cloud where you can run an isolated environment with custom network policies. The variables that you define are used by the scripts to provision the virtual private cloud infrastructure resources for you. The default values in the scripts are used to create these resources in a single region: 
 
 |Resource Name      |             Quantity  | 
 |-------------------|-----------------------|  
@@ -56,7 +46,8 @@ A VPC is a private space in IBM Cloud where you can run an isolated environment 
 | App VSI            |              05    |     
 | web VSI           |               05    |     
 | Database VSI    |                 06    |     
-| Floating IP     |                 01    |     
+| Floating IP     |                 01    |  
+| Placement Groups   |              03    |   
 
 The scripts automatically install these software packages:
 
@@ -116,6 +107,11 @@ The scripts prompt you for information that is needed to create the VPC and othe
     * The minimum number of servers to have in the App Instance Group
     * The maximum nuber of server to have in the App Instance Group
     * The bandwith per second in GB. 
+4.  Information for Anti-affinity:
+    * The VSI spread strategy for the db server (host or power spread)
+    * The VSI spread strategy for the web server (host or power spread)
+    * The VSI spread strategy for the app server (host or power spread)
+
 
 ## Procedure
 {: #procedure-ha-resilient-szr}
@@ -133,7 +129,7 @@ Use these steps to configure the {{site.data.keyword.cloud_notm}} Provider plug-
 4.  Enter your solution specific information in the `sample.userinput.auto.tfvars` file.  Follow the instructions in the file comments. When you are done, remove the `#` at the beginning of each line and save the file as `userinput.auto.tfvars`.   If you do not modify and save the `userinput.auto.tfvars`, the script prompts you for the information during the `terraform plan` command.
 
     You update the information that you collected in the Before you begin section. 
-    * Your {{site.data.keyword.cloud_notm}} .
+    * Your {{site.data.keyword.cloud_notm}}.
     * Your 40-digit resource group ID.
     * Your SSH for the region where you are creating resources.
     * Your public IP address. 
@@ -144,9 +140,11 @@ Use these steps to configure the {{site.data.keyword.cloud_notm}} Provider plug-
         * Custom image ID for the server. 
         * OS image to use, Windows or Linux.
         * The CPU percentage for the App Instance Group
-        * The minimum number of servers to have in the App Instance Group
-        * The maximum nuber of server to have in the App Instance Group
+        * The minimum number of servers to have in the App Instance Group for Auto scale.
+        * The maximum nuber of server to have in the App Instance Group for Auto scale.
         * The bandwith per second in GB. 
+        * The VSI spread strategy for the db server (host or power spread) for anti-affinity. Power spread is recommended here.
+        * The VSI spread strategy for the web and app servers (host or power spread) for anti-affinity. Host spread is recommended here if more than 4 are created for each server type.
 
 5.	Initialize the Terraform CLI. 
 
