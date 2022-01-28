@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-08"
+  years: 2019, 2022
+lastupdated: "2022-01-28"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment
 
@@ -20,7 +20,7 @@ subcollection: cloud-infrastructure
 # Comparing {{site.data.keyword.cloud_notm}} Classic and VPC infrastructure environments
 {: #compare-infrastructure}
 
-Compare the key differences between {{site.data.keyword.cloud}} infrastructure environments to decide which one is best for your workloads and applications.
+Compare the key differences between {{site.data.keyword.cloud}} infrastructure environments to decide which one is best for your workloads and applications.  Check out this [video](https://mediacenter.ibm.com/media/IBM%20Bare%20Metal%20Servers%20-%20Classic%20vs.%20VPC%20Infrastructure%20Explainer%20Video/1_hn1d69nn){: external} to learn more about the differences between the Classic and VPC infrastructures.
 {: shortdesc}
 
 If you aren't familiar with the environment types, review the following descriptions.
