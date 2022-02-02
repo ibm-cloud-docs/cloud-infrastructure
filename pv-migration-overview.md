@@ -57,7 +57,7 @@ VPC does not have support for snapshot, replication, and shared volume. You can
 * New IP address (original IP is not preserved)
 * Classic add-ons are not carried over and will be lost
 * File-based storage migration is not supported
-* Hardware configuration is not brought over (RAID configuration, nic teaming)
+* Hardware configuration is not brought over (RAID configuration)
 * Bare metal with GPU is not supported due to no GPU support on VPC
 * Not an OS re-platforming (Windows to Linux or vice versa, changing linux distribution, or major software upgrade). Software upgrades should be handled through the normal process.
 
