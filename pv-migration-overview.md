@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-07-28"
+lastupdated: "2022-02-02"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -60,7 +60,6 @@ VPC does not have support for snapshot, replication, and shared volume. You can
 * Hardware configuration is not brought over (RAID configuration, nic teaming)
 * Bare metal with GPU is not supported due to no GPU support on VPC
 * Not an OS re-platforming (Windows to Linux or vice versa, changing linux distribution, or major software upgrade). Software upgrades should be handled through the normal process.
-* VMware or virtual-to-virtual migration is not supported (ESXi/Hyper-V/classic virtual server instance to classic virtual server instance/VPC) 
 
 ## Validating your migration 
 {: #pv-validating-migration}
