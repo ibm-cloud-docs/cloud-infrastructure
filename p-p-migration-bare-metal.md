@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-01-02"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -46,7 +46,7 @@ The RackWare’s RMM solution simplifies the overall migration process of moving
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
 
-• CentOS 7.8, 7.9, 8.1, 8.2
+• CentOS 7.8, 7.9
 
 • RHEL 7.2, 7.3, 7.4, 8.1
 
