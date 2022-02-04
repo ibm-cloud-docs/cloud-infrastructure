@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-11-24"
+lastupdated: "2022-02-04"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -189,9 +189,6 @@ Target VSI boot volume cannot be greater than 100GB, so if source machine’s bo
 {: note}
 
 If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
-{: note}
-
-Currently Windows operating systems are not supported for the auto provisioning feature.
 {: note}
 
 ## Source and Target compute preparation
