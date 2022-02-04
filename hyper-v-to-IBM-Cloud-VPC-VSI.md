@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-11-23"
+lastupdated: "2022-02-04"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -38,7 +38,6 @@ In this guide, we will show you how to complete a migration from Microsoft Hyper
 ## Supported operating systems
 {: #supported-operating-systems-vmware-virtual}
 
-- CentOS 7.x, 8.x (CentOS 8 is scheduled for End of Life (EOL) on 31 December 2021) 
 - RHEL 7.x, 8.x 
 - Ubuntu 18.04.x, 20.04.x 
 - Debian 9.x, 10.x 
@@ -169,7 +168,8 @@ There are a few things that you need to do on the source and target machine for 
 
         a. Copy the RackWare RMM SSH public key to both the source and target machines.
 
-        b. You need to download the SSH key utility. This can be done from the RackWare RMM server, (e.g. https://<RMM IP>/windows/RWSSHDService_x64.msi) 
+        b. You need to download the SSH key utility. This can be done from the RackWare RMM server, 
+        (e.g. https://<rmm IP>/windows/RWSSHDService_x64.msi) 
 
         c. You are SYSTEM, and you need to enter the RMM SSH key to authenticate for both the source and target machines. 
 
@@ -240,4 +240,3 @@ Prior to decommissioning the source server, it is imperative to validate the tar
     
     b. RackWare RMM Users Guide for IBM Cloud 
 2. FAQs  
-3. [RackWare usage guide](https://www.rackwareinc.com/cloud-migration) 
