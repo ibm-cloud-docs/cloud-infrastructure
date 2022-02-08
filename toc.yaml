@@ -130,6 +130,11 @@ toc:
               - link:
                   label: Terraform for VPC
                   href: https://github.com/ibm-cloud-architecture/terraformer
+ 
+  - navgroup: 
+      id: reference
+      topics:
+      - ips.md
 
   - navgroup:
       id: help
