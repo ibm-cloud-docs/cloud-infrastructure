@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-17"
+  years: 2017, 2022
+lastupdated: "2022-02-08"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -27,8 +27,9 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * Hardware Firewall (Shared)
 
 ## Front-end (public) network
+{: #front-end-network}
 
-|Data Center|City|State|Country|IP Range|
+|Data center|City|State|Country|IP range|
 |---|---|---|---|---|
 |ams01|Amsterdam|-|NLD|159.253.158.0/23|
 |ams03|Amsterdam|-|NLD|159.8.198.0/23|
@@ -82,8 +83,9 @@ Ports to allow:
 - ICMP – ping (for support troubleshooting and monitoring)
 
 ## Load balancer IPs
+{: #load-balancer-ips}
 
-|Data Center|City|State|Country|IP Range|
+|Data center|City|State|Country|IP range|
 |---|---|---|---|---|
 |ams01|Amsterdam|-|NLD|159.253.157.0/24|
 |ams03|Amsterdam|-|NLD|159.8.197.0/24|
@@ -125,8 +127,9 @@ Ports to allow:
 |wdc07|Washington D.C.|-|USA|169.61.117.0/24|
 
 ## DOS mitigation systems
+{: #dos-mitigation-systems}
 
-|Data Center|City|State|Country|IP Range|
+|Data center|City|State|Country|IP range|
 |---|---|---|---|---|
 |AMS|Amsterdam|-|NLD|159.253.156.0/24, 159.8.196.0/24|
 |CHE|Chennai|-|IND|169.38.116.0/24|
@@ -155,6 +158,7 @@ Ports to allow:
 - All TCP/UDP ports
 
 ## Back-end (private) network
+{: #back-end-network}
 
 IP block: your private IP block for server to server communications (`10.X.X.X/X`)
 
@@ -162,18 +166,161 @@ Ports to allow:
 - ICMP – ping (for support troubleshooting)
 - All TCP/UDP ports
 
+### Customer private network space
+{: #customer-private-network-space}
+
+| Data center | IP range |
+|---|---|
+| ams01 | 10.104.0.0/15 |
+| ams01 | 10.251.10.0/23 |
+| ams01 | 10.251.88.0/23 |
+| ams01 | 10.68.0.0/14 |
+| ams03 | 10.136.0.0/15 |
+| ams03 | 10.175.0.0/16 |
+| ams03 | 10.214.0.0/16 |
+| che01 | 10.162.0.0/15 |
+| dal00 | 10.92.0.0/16 |
+| dal00 | 10.96.0.0/15 |
+| dal00 | 10.98.0.0/15 |
+| dal05 | 10.251.0.0/23 |
+| dal05 | 10.251.4.0/23 |
+| dal05 | 10.251.64.0/23 |
+| dal05 | 10.251.68.0/23 |
+| dal05 | 10.251.70.0/23 |
+| dal05 | 10.40.0.0/14 |
+| dal05 | 10.60.0.0/15 |
+| dal05 | 10.62.0.0/16 |
+| dal05 | 10.80.0.0/14 |
+| dal05 | 10.84.0.0/16 |
+| dal05 | 10.86.0.0/16 |
+| dal06 | 10.106.0.0/15 |
+| dal06 | 10.146.0.0/15 |
+| dal06 | 10.252.0.0/16 |
+| dal06 | 10.253.0.0/16 |
+| dal08 | 10.156.0.0/15 | 
+| dal08 | 100.108.0.0/15 |
+| dal09 | 10.120.0.0/15 |
+| dal09 | 10.142.0.0/15 |
+| dal09 | 10.152.0.0/15 |
+| dal09 | 10.154.0.0/15 |
+| dal09 | 10.172.0.0/16 |
+| dal09 | 10.173.0.0/16 |
+| dal10 | 10.171.0.0/16 |
+| dal10 | 10.176.0.0/15 |
+| dal10 | 10.221.0.0/16 |
+| dal10 | 10.23.0.0/16 |
+| dal10 | 10.38.0.0/16 |
+| dal10 | 10.5.0.0/16 |
+| dal10 | 10.93.0.0/16 |
+| dal10 | 10.94.0.0/15 |
+| dal12 | 10.184.0.0/15 |
+| dal12 | 10.241.0.0/16 |
+| dal12 | 10.48.0.0/16 |
+| dal12 | 10.74.0.0/16 |
+| dal13 | 10.186.0.0/15 |
+| dal13 | 10.208.0.0/16 |
+| dal13 | 10.209.0.0/16 |
+| dal13 | 10.220.0.0/16 |
+| dal13 | 10.36.0.0/16 |
+| dal13 | 10.37.0.0/16 |
+| dal13 | 10.73.0.0/16 |
+| fra02 | 10.134.0.0/15 |
+| fra02 | 10.194.0.0/16 |
+| fra02 | 10.20.0.0/16 |
+| fra02 | 10.215.0.0/16 |
+| fra02 | 10.85.0.0/16 |
+| fra04 | 10.21.0.0/16 |
+| fra04 | 10.240.0.0/16 |
+| fra04 | 10.75.0.0/16 |
+| fra05 | 10.123.0.0/16 |
+| fra05 | 10.13.0.0/16 |
+| hkg02 | 10.110.0.0/15 |
+| hkg02 | 10.174.0.0/16 |
+| lon02 | 10.112.0.0/15 |
+| lon02 | 10.164.0.0/15 |
+| lon04 | 10.222.0.0/16 |
+| lon04 | 10.45.0.0/16 |
+| lon05 | 10.196.0.0/15 |
+| lon06 | 10.242.0.0/16 |
+| lon06 | 10.248.0.0/16 |
+| lon06 | 10.72.0.0/16 |
+| mex01 | 10.130.0.0/15 |
+| mil01 | 10.144.0.0/15 |
+| mon01 | 10.140.0.0/15 |
+| mon01 | 10.182.0.0/16 |
+| osa21 | 10.8.0.0/16 |
+| osa22 | 10.9.0.0/16 |
+| osa23 | 10.10.0.0/16 |
+| osl01 | 10.180.0.0/15 |
+| par01 | 10.126.0.0/15 |
+| par04 | 10.217.0.0/16 |
+| par05 | 10.218.0.0/16 |
+| par06 | 10.219.0.0/16 |
+| sao01 | 10.150.0.0/15 |
+| sao01 | 10.17.0.0/16 |
+| sao04 | 10.14.0.0/16 |
+| sao05 | 10.15.0.0/16 |
+| seo01 | 10.178.0.0/15 |
+| sjc01 | 10.122.0.0/16 |
+| sjc01 | 10.224.0.0/12 |
+| sjc01 | 10.251.6.0/23 |
+| sjc01 | 10.251.72.0/23 |
+| sjc01 | 10.251.74.0/23 |
+| sjc01 | 10.52.0.0/14 |
+| sjc01 | 10.88.0.0/14 |
+| sjc03 | 10.160.0.0/15 |
+| sjc03 | 10.168.0.0/15 |
+| sjc04 | 10.87.0.0/16 |
+| sng01 | 10.116.0.0/15 |
+| sng01 | 10.251.12.0/23 |
+| sng01 | 10.251.86.0/23 |
+| sng01 | 10.64.0.0/16 |
+| sng01 | 10.66.0.0/15 |
+| syd01 | 10.138.0.0/15 |
+| syd01 | 10.210.0.0/16 |
+| syd04 | 10.63.0.0/16 |
+| syd05 | 10.195.0.0/16 |
+| tok02 | 10.129.0.0/16 |
+| tok02 | 10.132.0.0/15 |
+| tok02 | 10.212.0.0/16 |
+| tok04 | 10.192.0.0/16 |
+| tok05 | 10.193.0.0/16 |
+| tor01 | 10.114.0.0/15 |
+| tor01 | 10.166.0.0/15 |
+| tor04 | 10.11.0.0/16 |
+| tor05 | 10.243.0.0/16 |
+| wdc01 | 10.108.0.0/15 |
+| wdc01 | 10.124.0.0/15 |
+| wdc01 | 10.128.0.0/16 |
+| wdc01 | 10.24.0.0/14 |
+| wdc01 | 10.251.80.0/23 |
+| wdc01 | 10.251.82.0/23 |
+| wdc01 | 10.32.0.0/14 |
+| wdc03 | 10.158.0.0/15 |
+| wdc04 | 10.148.0.0/15 |
+| wdc04 | 10.170.0.0/16 |
+| wdc04 | 10.183.0.0/16 |
+| wdc04 | 10.211.0.0/16 |
+| wdc04 | 10.213.0.0/16 |
+| wdc04 | 10.216.0.0/16 |
+| wdc04 | 10.65.0.0/16 |
+| wdc06 | 10.188.0.0/15 |
+| wdc07 | 10.190.0.0/15 |
+| wdc07 | 10.39.0.0/16 |
+
 ## Service network (on back-end/private network)
+{: #service-network}
 
-Be sure to configure rules and verify routes for DAL10, WDC04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from DAL10, WDC04, and AMS01 to your server. The traffic must be able to travel between the service networks and your server. By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Backend Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
+Be sure to configure rules and verify routes for DAL10, WDC04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from DAL10, WDC04, and AMS01 to your server. The traffic must be able to travel between the service networks and your server. By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
 
-|Data Center|City|State|Country|IP Range|
+|Data center|City|State|Country|IP range|
 |---|---|---|---|---|
 |All|-|-|-|166.8.0.0/14|
 |All|-|-|-|161.26.0.0/16|
 |ams01|Amsterdam|-|NLD|10.2.64.0/20|
 |ams03|Amsterdam|-|NLD|10.3.128.0/20|
 |che01|Chennai|-|IND|10.200.16.0/20|
-|dal05|Dallas|Texas|USA|10.1.128.0/19 * |
+|dal05|Dallas|Texas|USA|10.1.128.0/19[^fn1] |
 |dal06|Dallas|Texas|USA|10.2.128.0/20|
 |dal07|Dallas|Texas|USA|10.1.176.0/20|
 |dal08|Dallas|Texas|USA|100.100.0.0/20|
@@ -220,13 +367,12 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 |wdc06|Washington D.C.|-|USA|10.200.160.0/20|
 |wdc07|Washington D.C.|-|USA|10.200.176.0/20|
 
-`*` - The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in DAL05.
-{: note}
+[^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in DAL05. 
 
 ### Service by data center
 {: #service-by-data-center}
 
-| Data Center | IP Range |
+| Data center | IP range |
 |-----|-----|
 | **Required Flows**:  \n * Outbound TCP 8086 and TCP 8087 from your private  \n VLANs to IP ranges documented in DAL09 and DAL10 only. `*`  \n * Outbound TCP 2546 from your private VLANs to IP ranges  \n documented for each DC where you need to access your vault. `*` | |
 | AMS01 | 10.2.70.0/24  \n 10.200.54.0/24 |   
@@ -280,7 +426,7 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 {: tab-title="eVault"}
 {: tab-group="IAM-simple"}
 
-| Data Center | IP Range |
+| Data center | IP range |
 |-----|-----|
 | **Required Flows**:  \n NFS File Storage:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049  \n Block Storage:  \n * TCP & UDP 65200 (iscsi) | |
 | AMS01 | 10.2.78.0/24  \n 10.200.62.0/24 |
@@ -334,7 +480,7 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 {: tab-group="IAM-simple"}
 {: class="simple-tab-table"}
 
-| Data Center | IP Range |
+| Data center | IP range |
 |-----|-----|
 | **Required Flows**:  \n * Inbound: TCP and UDP, 48000. `*`  \n * Outbound: TCP and UDP, 48000-48020. `*` | |
 | AMS01 | 10.2.67.0/24 |
@@ -386,9 +532,9 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 {: tab-group="IAM-simple"}
 {: class="simple-tab-table"}
 
-| Data Center | IP Range |
+| Data center | IP range |
 |-----|-----|
-| **Required Flows**:  \n Outbound: TCP 80, 443. `*` | |
+| **Required Flows**:  \n Outbound: TCP 80, 443.[^fn2] | |
 | AMS01 | 10.2.66.0/24  \n 10.200.50.0/24 |
 | AMS03 | 10.3.130.0/24 |
 | CHE01 | 10.200.18.0/24 |
@@ -441,17 +587,19 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 {: tab-group="IAM-simple"}
 {: class="simple-tab-table"}
 
-`*` - Directionality is from the customer compute perspective. Outbound means leaving your account towards the service. Inbound means service reaching out to compute.
+[^fn2]: Directionality is from the customer compute perspective. Outbound means leaving your account towards the service. Inbound means service reaching out to compute.
 {: note}
 
-## SSL VPN network (on backend/private network)
+## SSL VPN network (on back-end/private network)
+{: # ssl-vpn-network}
+
 ICMP – ping (for support troubleshooting)
 
 All TCP/UDP ports (for access from your local workstation)
 
 ## SSL VPN data centers
 
-|Data Center|City|State|Country|IP Range|
+|Data center|City|State|Country|IP range|
 |---|---|---|---|---|
 |ams01|Amsterdam|-|NLD|10.2.200.0/23|
 |ams03|Amsterdam|-|NLD|10.3.220.0/24|
@@ -497,9 +645,10 @@ All TCP/UDP ports (for access from your local workstation)
 |wdc06|Washington D.C.|-|USA|10.200.208.0/24|
 |wdc07|Washington D.C.|-|USA|10.200.204.0/24|
 
-## SSL VPN POPs
+## SSL VPN PoPs
+{: #ssl-vpn-pops}
 
-|POP|City|State|Country|IP Range|
+|POP|City|State|Country|IP range|
 |---|---|---|---|---|
 |atl01|Atlanta|Georgia|USA|10.1.41.0/24|
 |chi01|Chicago|Illinois|USA|10.1.49.0/24|
@@ -509,8 +658,9 @@ All TCP/UDP ports (for access from your local workstation)
 |nyc01|New York|New York|USA|10.1.45.0/24|
 
 ## Legacy networks
+{: #legacy-networks}
 
-|IP Range|
+|IP range|
 |---|
 |12.96.160.0/24|
 |66.98.240.192/26|
@@ -525,10 +675,11 @@ All TCP/UDP ports (for access from your local workstation)
 |216.234.234.0/24|
 
 ## Red Hat Enterprise Linux server requirements
+{: #red-hat-enterprise-linux-server}
 
 If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site.data.keyword.cloud_notm}} infrastructure, you must also allow access to the service network as follows; otherwise, updates and licensing do not function properly.
 
-|Server Location|Allow Private Service Network for this data center|
+|Server location|Allow private service network for this data center|
 |---|---|
 |Amsterdam (AMS01, AMS03)|FRA02|
 |Chennai (CHE01)|TOK02|
@@ -548,4 +699,4 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 |Tokyo (TOK02, TOK04, TOK05)|TOK02|
 |Toronto (TOR01)|MON01|
 |Washington DC (WDC01, WDC04, WDC06, WDC07)|MON01|
-|Any DC Not Listed Above|DAL09|
+|Any DC Not Listed|DAL09|
