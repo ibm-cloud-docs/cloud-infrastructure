@@ -121,20 +121,18 @@ toc:
               - data-migration-diy.md
               - image-migration-diy.md
               - getting-help-diy-image-data-migration.md   
-      - topicgroup: 
-              label: Related links
-              links:
-              - link:
-                  label: Terraform
-                  href: /ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started
-              - link:
-                  label: Terraform for VPC
-                  href: https://github.com/ibm-cloud-architecture/terraformer
  
-  - navgroup: 
+  - navgroup:
       id: reference
       topics:
       - ips.md
+      - ntp-service-overview.md
+      - link:
+         label: Terraform reference
+         href: /ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started
+      - link:
+         label: Terraform for VPC
+         href: https://github.com/ibm-cloud-architecture/terraformer
 
   - navgroup:
       id: help
