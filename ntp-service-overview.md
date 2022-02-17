@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021
-lastupdated: "2021-11-23"
+  years: 2021, 2022
+lastupdated: "2022-02-17"
 
 keywords: NTP, NTP server, network time protocol
 
@@ -18,7 +18,7 @@ subcollection: cloud-infrastructure
 {:note: .note}
 {:external: target="_blank" .external}
 
-# IBM Cloud NTP service overview
+# Synchronizing app time to the IBM Cloud NTP service
 {: #ntp-service-overview}
 
 {{site.data.keyword.cloud}} hosts are synchronized to internal IBM Network Time Protocol (NTP) servers that take their time from Stratum 1 devices, with GNSS appliances that are owned by IBM connected to them.
