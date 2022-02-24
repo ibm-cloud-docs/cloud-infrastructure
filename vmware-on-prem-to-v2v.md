@@ -45,6 +45,9 @@ In this guide, we will show you how to complete a V2V migration from Vmware in O
     - No GPU supports are allowed
     - Encrypted volumes are not supported
 
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+{:note: .note}
+
 ## General steps
 
 1.  Order RackWare RMM (IBM Catalog Tile) 
