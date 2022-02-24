@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-02-02"
+lastupdated: "2022-02-24"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -246,6 +246,9 @@ You can migrate machines over one-by-one or perform simultaneous migrations. If 
 3. Whether the operation is successful or whether it failed, you can see the job history in the replication record.
 
 4. In case of failure, you can retrieve the log and review detailed information.
+
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui)
+{:note: .note}
 
 ## Validate and perform post-migration activities
 {: #p-p-migration-bare-metal-post-migration}
