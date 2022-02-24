@@ -56,6 +56,8 @@ The migration can occur either over the public or private interface of the compu
     * GPU is not supported in VPC
 For more detail, see [Comparing {{site.data.keyword.cloud_notm}} classic and VPC infrastructure environments](/docs/cloud-infrastructure?topic=cloud-infrastructure-compare-infrastructure).
 
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui)
+
 ## Set up and provision VPC and virtual server instance
 {: #set-up-provision-vpc-vsi}
 {: step}
