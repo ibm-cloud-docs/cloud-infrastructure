@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-24"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -101,7 +101,7 @@ Encrypted volumes are not supported.
         - Username
     - Enter Target details:
         - Only **Friendly Name** is required on target side
-        - Use **Right Sizing** from **Advanced Options** if the source has a boot volume greater than 100GB, as VPC does not support boot volume greater than 100 GB
+        - Use **Right Sizing** from **Advanced Options** if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB
     - Once you close this form, RMM will show a warning to enter **IBM Gen2 Options**
     - Edit host and you will see **IBM Gen2 Options** as an additional tab at the top
         - The VPC name is mandatory. It will create VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields then RMM will find relevant resource.
@@ -119,7 +119,7 @@ Encrypted volumes are not supported.
     - Click on Modify
     - Finally, run replication
     
-Target VSI boot volume cannot be greater than 100GB, so if source machine’s boot volume is greater than 100GB, use right sizing option of RMM.
+Target VSI boot volume cannot be greater than 100GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
 {: note}
 
 If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.

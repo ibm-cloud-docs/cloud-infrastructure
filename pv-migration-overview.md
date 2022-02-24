@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-24"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -34,7 +34,7 @@ Before you begin migrating your physical bare metal server to a virtual server, 
 
 1. You need an existing VPC environment.
 2. You need to install an RMM SSH key on both the source and target environments. Windows will need to install SSH Daemon provided by the RMM server.
-3. Your bare metal server boot volume needs to be less than 100 GB.
+3. Your bare metal server boot volume needs to be less than 250 GB.
 4. Your bare metal server needs to be on a supported operating system. For a list of supported operating systems, see [Images](/docs/vpc?topic=vpc-about-images). 
 5. Your source and target need to be able to reach other and the RMM. You can do this over the public internet with public IPs, or if you have a private-only environment, then you must set up either a VPN or transit gateway (links to solution guides).
 
