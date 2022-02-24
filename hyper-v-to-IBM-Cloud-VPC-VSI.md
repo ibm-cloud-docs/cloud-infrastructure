@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2022-02-04"
+lastupdated: "2022-02-24"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -53,6 +53,9 @@ In this guide, we will show you how to complete a migration from Microsoft Hyper
     - Update the name server or DNS 
 - The order of the target server, the CPU, and memory does not need to match, but the volumes should be equal to or greater than the source. 
 - Make sure to have /etc/fstab entry for automatic mounting of any file system on the target machine. 
+
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+{:note: .note}
 
 ## General steps
 {: #general-steps-vmware-virtual}
