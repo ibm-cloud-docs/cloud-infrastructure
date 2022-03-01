@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-03-01"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -125,37 +125,6 @@ Ports to allow:
 |wdc04|Washington D.C.|-|USA|169.55.117.0/24|
 |wdc06|Washington D.C.|-|USA|169.60.117.0/24|
 |wdc07|Washington D.C.|-|USA|169.61.117.0/24|
-
-## DOS mitigation systems
-{: #dos-mitigation-systems}
-
-|Data center|City|State|Country|IP range|
-|---|---|---|---|---|
-|AMS|Amsterdam|-|NLD|159.253.156.0/24, 159.8.196.0/24|
-|CHE|Chennai|-|IND|169.38.116.0/24|
-|DAL|Dallas|Texas|USA|75.126.61.0/24|
-|FRA|Frankfurt|-|DEU|159.122.116.0/24|
-|HKG|Hong Kong|-|CHN|119.81.136.0/24|
-|HOU|Houston|Texas|USA|173.193.116.0/24|
-|KOR|Seoul|-|South Korea|169.56.116.0/24|
-|LON|London|-|ENG|5.10.116.0/24|
-|MEL|Melbourne|-|AUS|168.1.116.0/24|
-|MEX|Mexico City|-|MEX|169.57.116.0/24|
-|MIL|Milan|-|ITA|159.122.136.0/24|
-|MON|Montreal|-|CAN|169.54.116.0/24|
-|NOR|Oslo|-|Norway|169.56.116.0/24|
-|PAR|Paris|-|FRA|159.8.116.0/24|
-|SAO|São Paulo|-|BRA|169.57.136.0/24|
-|SEA|Seattle|Washington|USA|50.23.167.0/24|
-|SJC|San Jose|California|USA|50.23.116.0/24|
-|SNG|Jurong East|-|SGP|174.133.116.0/24|
-|SYD|Sydney|-|AUS|168.1.16.0/24|
-|TOK|Tokyo|-|JPN|161.202.116.0/24|
-|TOR|Toronto|-|CAN|158.85.116.0/24, 163.66.116.0/24, 163.74.116.0/24, 163.75.116.0/24|
-|WDC|Washington D.C.|-|USA|50.22.255.0/24|
-
-Ports to allow:
-- All TCP/UDP ports
 
 ## Back-end (private) network
 {: #back-end-network}
