@@ -36,36 +36,38 @@ To enable 'no driver mode' and monitor and manage metrics, you need to configure
 
 Use these steps to enable 'no driver mode'.
 
-**1.** Provision a Graduated tier monitoring instance by following the steps in [Provisioning a monitoring instance](docs/monitoring?topic=monitoring-provision). For more information about the Graduate tier, see [Monitoring service plans](/docs/monitoring?topic=monitoring-pricing_plans).
+1. Provision a Graduated tier monitoring instance by following the steps in [Provisioning a monitoring instance](/docs/monitoring?topic=monitoring-provision). For more information about the Graduate tier, see [Monitoring service plans](/docs/monitoring?topic=monitoring-pricing_plans).
 
-**2.** Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-config_agent).
+2. Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-config_agent).
 
-**3.** Add the following configuration to the `dragent.yaml` file:
+3. Add the following configuration to the `dragent.yaml` file:
 
-```
-feature:
-  mode: `monitor_light`
-  Available options for the feature mode are: `monitor_light | monitor | none`.
-```
+   ```
+   feature:
+     mode: `monitor_light`
+     Available options for the feature mode are: `monitor_light | monitor | none`.
+   ```
+   {: codeblock}
 
-**OR**
+   **OR**
 
-Alternatively, you can use the following curl command:
+   Alternatively, you can use the following curl command:
 
-```
-curl -sL https://ibm.biz/install-sysdig-agent | sudo bash -s -- -a SYSDIG_ACCESS_KEY -c COLLECTOR_ENDPOINT --collector_port 6443 --secure true -ac "feature:\n mode: monitor_light"
-```
+   ```
+   curl -sL https://ibm.biz/install-sysdig-agent | sudo bash -s -- -a SYSDIG_ACCESS_KEY -c COLLECTOR_ENDPOINT --collector_port 6443 --secure true -ac "feature:\n mode: monitor_light"
+   ```
+   {: codeblock}
 
-Where
+   Where
+   
+   `SYSDIG_ACCESS_KEY` is the ingestion key for the instance.
+   
+   `COLLECTOR_ENDPOINT` is the ingestion URL for the region where the monitoring instance is available.
 
-`SYSDIG_ACCESS_KEY` is the ingestion key for the instance.
+4. Restart the agent.
 
-`COLLECTOR_ENDPOINT` is the ingestion URL for the region where the monitoring instance is available.
-
-**4.** Restart the agent.
-
-After you complete the previous steps, limited functionality is implemented and you see the reduced pricing on your invoice.
-{: note}
+   After you complete the previous steps, limited functionality is implemented and you see the reduced pricing on your invoice.
+   {: note}
 
 ### What's next
 {: #monitoring-light-whats-next}
