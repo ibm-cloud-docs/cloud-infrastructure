@@ -70,7 +70,7 @@ After you complete the previous steps, limited functionality is implemented and 
 ### What's next
 {: #monitoring-light-whats-next}
 
-After you provision your monitoring agent and enable 'no driver mode', you need to configure a monitoring agent in each environment that you want to monitor. For more information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
+After you provision your monitoring agent and enable 'no driver mode', you need to configure a monitoring agent in each environment that you want to monitor. For more information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-config_agent).
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
 {: #monitoring-light-metrics}

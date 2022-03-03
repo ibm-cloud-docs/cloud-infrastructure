@@ -46,5 +46,5 @@ Before you provision an {{site.data.keyword.mon_full_notm}} instance, you need t
 {{site.data.keyword.mon_full_notm}} 'no driver mode' is offered at a lower cost per month. This price adjustment comes into effect after you enable the 'no driver mode'. For more information about enabling 'no driver mode', see [Enabling IBM Cloud Monitoring 'no driver mode'](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver).
 {: note}
 
-Graduated tiers offer a tiered pricing structure that is based on your time-series usage and billed either hourly or monthly. For information about the graduated tier plan prices, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans#pricing_plans)
+Graduated tiers offer a tiered pricing structure that is based on your time-series usage and billed either hourly or monthly. For information about the graduated tier plan prices, see [{{site.data.keyword.mon_full_notm}} pricing](/docs/monitoring?topic=monitoring-pricing_plans#pricing_plans)
 {: note}

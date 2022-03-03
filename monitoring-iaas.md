@@ -27,7 +27,7 @@ subcollection: cloud-infrastructure
 ## Platform metrics overview
 {: #platform-metrics-overview}
 
-You can view platform metrics when you enable monitoring services on your {{site.data.keyword.cloud_notm}} platform. A monitoring instance must be configured in a region to monitor these metrics. For more information about enabling Platform metrics, see [Enabling platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
+You can view platform metrics when you enable monitoring services on your {{site.data.keyword.cloud_notm}} platform. A monitoring instance must be configured in a region to monitor these metrics. For more information about enabling Platform metrics, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
 
 Before you enable {{site.data.keyword.mon_full_notm}} on your platform, keep the following information in mind:
 
@@ -99,7 +99,7 @@ The **Monitoring** tab is only visible if at least one monitor is configured.
 
 For more information about monitoring your infrastructure and environments, see the following information.
 
-* [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
-* If you're ready to provision a monitoring instance, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
+* [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
+* If you're ready to provision a monitoring instance, see [Provisioning an instance](/docs/monitoring?topic=monitoring-provision).
 * If you're interested in monitoring plans, see [{{site.data.keyword.mon_full_notm}} agents and plans](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-agents-and-plans).
-* If you're interested in monitoring pricing information, see [Pricing](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
+* If you're interested in monitoring pricing information, see [Pricing](/docs/monitoring?topic=monitoring-pricing_plans).
