@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2020, 2021
-lastupdated: "2021-06-10"
+  years:  2020, 2022
+lastupdated: "2022-03-03"
 
 keywords: monitoring light, monitoring no driver, no driver monitor,
 
@@ -36,9 +36,9 @@ To enable 'no driver mode' and monitor and manage metrics, you need to configure
 
 Use these steps to enable 'no driver mode'.
 
-**1.** Provision a Graduated tier monitoring instance by following the steps in [Provisioning a monitoring instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision). For more information about the Graduate tier, see [Monitoring service plans](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-pricing_plans).
+**1.** Provision a Graduated tier monitoring instance by following the steps in [Provisioning a monitoring instance](docs/monitoring?topic=monitoring-provision). For more information about the Graduate tier, see [Monitoring service plans](/docs/monitoring?topic=monitoring-pricing_plans).
 
-**2.** Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-config_agent).
+**2.** Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-config_agent).
 
 **3.** Add the following configuration to the `dragent.yaml` file:
 
