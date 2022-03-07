@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-03-07"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment
 
@@ -38,7 +38,7 @@ See the following table for the compute differences between classic and VPC.
 
 | Category   |  Classic Infrastructure   | VPC Infrastructure |
 | ---------- | ------------------------- | ------------------ |
-|  **Services**  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} instances only |
+|  **Services**  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} and Bare Metal Servers |
 | **Performance and availability** | | Better availability achievable through zone architecture |
 | **Pricing** | Hourly and monthly billing, plus suspend billing features | Hourly, suspend billing, and sustained usage discount |
 | **Virtual server families** | Public, dedicated, transient, reserved | Public, dedicated |
