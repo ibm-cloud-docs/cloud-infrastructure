@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2021
-lastupdated: "2022-02-24"
+   years: 2021, 2022
+lastupdated: "2022-03-08"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -22,7 +22,7 @@ subcollection: cloud-infrastructure
 {:external: target="_blank" .external}
 {:step: data-tutorial-type='step'}
 
-# Bare metal to virtual server migration on a private network using RackWare RMM 
+# Bare metal to virtual server migration on a private network that uses RackWare RMM 
 {: #pv-migration-private-network} 
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers, vpc, transit-gateway"} 
@@ -31,7 +31,7 @@ subcollection: cloud-infrastructure
 Bare metal to virtual server migration is the process of migrating from a physical bare metal server to a virtual server instance. The RackWare RMM solution simplifies the overall migration process of moving the operating system, applications, and data from the bare metal environment to an {{site.data.keyword.cloud}} virtual server instance.
 {: shortdesc}
 
-The migration can occur either over the public or private interface of the compute resource. The only requirement is all three components are reachable from one and another. In this tutorial, this document focuses over the private path as this is a bit more involved, which requires setting up a transit gateway for a communication channel between classic and VPC over the private interface.
+The migration can occur either over the public or private interface of the compute resource. The only requirement is that the three components are reachable from each other. This document focuses on the private path as it is more involved, and requires setting up a transit gateway for a communication channel between classic and VPC over the private interface.
 
 ## Objectives
 {: #pv-migration-private-network-objectives}
@@ -56,18 +56,18 @@ The migration can occur either over the public or private interface of the compu
     * GPU is not supported in VPC
 For more detail, see [Comparing {{site.data.keyword.cloud_notm}} classic and VPC infrastructure environments](/docs/cloud-infrastructure?topic=cloud-infrastructure-compare-infrastructure).
 
-To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation that uses the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {:note: .note}
 
 ## Set up and provision VPC and virtual server instance
 {: #set-up-provision-vpc-vsi}
 {: step}
 
-There are 2 different methods for setting up target the VSI, manual or with Rackware RMM auto provision feature as described below:
+There are two different methods for setting up target the VSI, manual or with RackWare RMM auto provision feature:
 
 **Option 1: Manual**
 
-The RackWare RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side; therefore, you need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and virtual server instances. This tutorial won't go through all of the details of setting up the VPC infrastructure. See the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started) for further details.
+The RackWare RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side; therefore, you need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and virtual server instances. This tutorial doesn't go through all of the details of setting up the VPC infrastructure. See the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started) for further details.
 
 1. Create a VPC. 
 2. Create subnets. 
@@ -82,19 +82,19 @@ Encrypted volumes are not supported.
 
 **Option 2: Auto-provision**
 
-1. Click on **Clouduser** menu under **Configuration** main menu on left-hand side.
-2. Click on **Add** button, and the  **Add Cloud** form will pop up. Enter appropriate details for the following fields:
+1. Click **Cloud user** menu under **Configuration** main menu on left side.
+2. Click **Add** button, and the Add Cloud** form will pop up. Enter appropriate details for the following fields:
     - Name
     - Select ‘IBM Gen2’ as Cloud Provider
-    - Select desired Region where you want to auto provision VSI
+    - Select wanted Region where you want to auto provision VSI
     - Enter valid API key for your IBM cloud account
-    - Once all details are filled, click on the **Add** button
+    - Once all details are filled, click the **Add** button
 3. Open wave where operation needs to be performed
-4. Click on text ’Not Configured’, next to ‘Autoprovision’ label, a pop up will open
+4. Click text ’Not Configured’, next to ‘Autoprovision’ label, a pop-up opens
     - Select added clouduser as **Environment**
     - Select region where VSI needs to be provisioned
     - Subnet name and VPC name are optional. If entered, these would be default names for VPC and Subnet during provision of VSI
-    - Click on **Add Host**, (plus icon on left top panel)
+    - Click **Add Host**, (plus icon on left top window)
     - Select **Target Type** as **Autoprovision**
     - Enter source details:
 
@@ -105,9 +105,9 @@ Encrypted volumes are not supported.
     - Enter Target details:
         - Only **Friendly Name** is required on target side
         - Use **Right Sizing** from **Advanced Options** if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB
-    - Once you close this form, RMM will show a warning to enter **IBM Gen2 Options**
-    - Edit host and you will see **IBM Gen2 Options** as an additional tab at the top
-        - The VPC name is mandatory. It will create VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields then RMM will find relevant resource.
+    - Once you close this form, RMM shows a warning to enter **IBM Gen2 Options**
+    - Edit host and you see **IBM Gen2 Options** as an extra tab at the top
+        - The VPC name is mandatory. It creates VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields, then RMM finds relevant resource.
         - Select Region
         - Resource Group
         - Subnet
@@ -119,10 +119,10 @@ Encrypted volumes are not supported.
         - Image username (This field is optional as Linux has key-based authentication, so even if any value is entered, it would be ignored)
         - Image password (This field is optional as Linux has key-based authentication so even if any value is entered, it would be ignored)
         - SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created VSI 
-    - Click on Modify
+    - Click Modify
     - Finally, run replication
     
-Target VSI boot volume cannot be greater than 100GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
+Target VSI boot volume cannot be greater than 100 GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
 {: note}
 
 If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
