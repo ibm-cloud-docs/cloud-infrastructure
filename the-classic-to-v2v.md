@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2021
-lastupdated: "2022-02-24"
+  years:  2021, 2022
+lastupdated: "2022-03-08"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -24,9 +24,9 @@ subcollection: cloud-infrastructure
 # VMWare VM (classic) to IBM Cloud VPC VSI migration with RackWare RMM  
 {: #migrating-images-vmware-vpc-classic}
 
-When embarking on a complete data center transformation, RackWare RMM migration solution provides a seamless virtual-to-virtual re-platforming for VMWare virtual machine (VM) to IBM Cloud virtual server instance (VSI) migration that allows you to adopt the native capabilities of IBM Cloud.  Its intuitive GUI allows you to move the OS, Application, and data from VMware ESXI Classic to IBM VSI.  
+When initiating a complete data center transformation, RackWare RMM migration solution provides a seamless virtual-to-virtual replatforming for VMWare virtual machine (VM) to IBM Cloud virtual server instance (VSI) migrations. You can adopt the capabilities of IBM Cloud. Its intuitive GUI permits you to move the OS, Application, and data from VMware ESXI Classic to IBM VSI.  
  
-In this guide, we will show you how to complete a V2V migration from Vmware IBM Classic to IBM Cloud VPC. It supports migrating Windows Server 2012, 2012R2, 2016, and 2019, Red Hat Enterprise Linux (RHEL), CentOS, Ubuntu, and Debian Linux operating systems. 
+We show you how to complete a V2V migration from VMware IBM Classic to IBM Cloud VPC. It supports migrating Windows Server 2012, 2012R2, 2016, and 2019, Red Hat Enterprise Linux (RHEL), CentOS, Ubuntu, and Debian Linux operating systems. 
 
 ![Topology](images/Classic.png){: caption="Architecture Diagram"}
  
@@ -35,7 +35,7 @@ In this guide, we will show you how to complete a V2V migration from Vmware IBM 
 
 - IBM Cloud VPC VSI 
 - RackWare RMM 
-- IBM Cloud Transiit Gateway
+- IBM Cloud Transit Gateway
 
 ## Before you begin
 {: #before-begin-classic}
@@ -46,7 +46,7 @@ In this guide, we will show you how to complete a V2V migration from Vmware IBM 
     - No GPU supports are allowed
     - Encrypted volumes are not supported
 
-To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation that uses the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {:note: .note}
 
 ## General steps
@@ -57,7 +57,7 @@ To improve data transfer rate, adjust bandwidth allocation of RMM server. To kno
 
 3. (Optional) Order IBM Cloud Transit Gateway if you want to migrate over the private interface or if there is no internet connectivity/public interface. 
 
-4. Setup and provision IBM Cloud VPC and VSI
+4. Set up and provision IBM Cloud VPC and VSI
 
 5. Source and target preparation 
 
@@ -71,8 +71,8 @@ To improve data transfer rate, adjust bandwidth allocation of RMM server. To kno
 
 RackWare RMM tool is available on the IBM Catalog Marketplace. 
 
-A VSI with the RackWare RMM software will be installed into the VPC which was provided while ordering on the Catalog page.
-The RMM server will have a public IP address for reachability and for default login post provisioning the VSI.
+A VSI with the RackWare RMM software will be installed into the VPC, which was provided while ordering on the Catalog page.
+The RMM server has a public IP address for reachability and for default login post provisioning the VSI.
 
 1. Order RackWare RMM server from the IBM Cloud Marketplace.
 
@@ -106,9 +106,9 @@ The RMM server will have a public IP address for reachability and for default lo
 
         $ rwadm relicense 
  
-    You will need to purchase the license from RackWare by mailing the generated license file to licensing@rackwareinc.com or sales@rackwareinc.com. 
+    You need to purchase the license from RackWare by mailing the generated license file to licensing@rackwareinc.com or sales@rackwareinc.com. 
 
-2. Once the valid license is received, download the license file and place it under `/etc/rackware`. Then restart the services to apply the license using this command:
+2. Once the valid license is received, download the license file and place it under `/etc/rackware`. Then, restart the services to apply the license that uses this command:
  
         $ rwadm restart 
  
@@ -120,7 +120,7 @@ The RMM server will have a public IP address for reachability and for default lo
 {: #connectivity-private-vpc}
 {: step}
 
-The IBM Cloud Transit Gateway provides connectivity between Vmware IBM Classic and your VPC infrastructure. When connecting to the two entities, be aware that the Vmware Classic infrastructure is on the 10.0.0.0 network and thus the VPC network needs to reside on a different network.  Otherwise, the network will overlap and there will be a communication connectivity issue. 
+The IBM Cloud Transit Gateway provides connectivity between VMware IBM Classic and your VPC infrastructure. When connecting to the two entities, be aware that the VMware Classic infrastructure is on the 10.0.0.0 network and thus the VPC network needs to reside on a different network.  Otherwise, the network overlaps and there will be a communication connectivity issue. 
  
 1. Order IBM Transit Gateway.
 
@@ -138,14 +138,14 @@ The IBM Cloud Transit Gateway provides connectivity between Vmware IBM Classic a
 {: #cloud-vpc-vsi-setup}
 {: step}
 
-The RackWare RMM solution only handles the OS, application, and data movement. It does not to set up a VPC target side; you need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you will need to set up a VPC, subnets, and the corresponding VSIs that you are planning to migrate. The new target VSI profile (`vCPU` and `vMemory`) does not need to match the source.  However, as for the storage, it will need to be the same or greater in size. 
+The RackWare RMM solution only handles the OS, application, and data movement. It does not to set up a VPC target side; you need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and the corresponding VSIs that you are planning to migrate. The new target VSI profile (`vCPU` and `vMemory`) does not need to match the source.  However, as for the storage, it needs to be the same or greater in size. 
 
 This document does not provide the details for setting up the VPC infrastructure as this is well described in each of the relevant VPC product document pages.
 {:note: .note}
 
 1. Create a VPC.
 
-2. Create Subnet(s).
+2. Create Subnets.
 
 3. Order the VSI:
 
@@ -153,7 +153,7 @@ This document does not provide the details for setting up the VPC infrastructure
 
     b. OS name (Same major version as the source)
 
-    c. Security Group(s) 
+    c. Security Groups 
 
     d. Secondary Volume (optional) 
 
@@ -161,19 +161,19 @@ This document does not provide the details for setting up the VPC infrastructure
 {: #source-target-compute-prep-vmware}
 {: step}
 
-Before starting the migration, RackWare RMM server needs to SSH into the machines.Thus, the RMM public SSH keys needs to be copied on both the source and target machines. 
+Before starting the migration, RackWare RMM server needs to SSH into the machines. Thus, the RMM public SSH keys need to be copied on both the source and target machines. 
  
-For Windows OS, you will need to download the SSH key utility.  You can download it from RackWare RMM server. 
+For Windows OS, you need to download the SSH key utility.  You can download it from RackWare RMM server. 
 {:note: .note}
  
-For Windows OS, the user will be SYSTEM and you have to key in the RMM SSH Key here to authenticate for both Source and Target machines.
+For Windows OS, the user is SYSTEM and you must key in the RMM SSH Key here to authenticate for both Source and Target machines.
 {:note: .note}
 
 ## RackWare RMM V2V Migration
 {: #rackware-rmm-migration-classic}
 {: step}
 
-You can migrate the machines one-by-one or opt to perform multiple simultaneous migrations. If you are performing multiple simultaneous migrations, then download the CSV template from the RMM server and fill in the appropriate fields.
+You can migrate the machines one-by-one or opt to perform multiple simultaneous migrations. If you are performing multiple simultaneous migrations, then download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Login into the RMM server.
 
@@ -183,10 +183,10 @@ You can migrate the machines one-by-one or opt to perform multiple simultaneous 
 
     b. If multiple hosts, then download the template.
 
-    - Fill in the fields.
+    - Complete the fields.
     - Upload the template.
  
-3. Click on the wave name to enter the source and target information:
+3. Click the wave name to enter the source and target information:
 
     a. Click the plus sign.
 
@@ -200,7 +200,7 @@ You can migrate the machines one-by-one or opt to perform multiple simultaneous 
     
     f. Add the Target IP address or FQDN.
 
-    g. Add the Target friendly name.
+    g. Add the Target-friendly name.
 
     h. Add the Target Username.
 
@@ -217,19 +217,19 @@ Example:
 
  `$ ./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local`   
  
-[For more information about discovering the VMware guest VMs using discoveryTool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/RMM-V2V-discoveryTool/v2v-discovery-tool-rmm/README.md)
+[For more information about discovering the VMware guest VMs that use discoveryTool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/RMM-V2V-discoveryTool/v2v-discovery-tool-rmm/README.md)
 
 ## Validation
 {: #rackware-rmm-validation-classic}
 
-Prior to decommissioning the source server, it is imperative to validate the target server. This is not an exhaustive list but some of the items to validate are:
+Before decommissioning the source server, it is imperative to validate the target server. This is not an exhaustive list but some of the items to validate are:
 
 - Application 
 - Licensing 
 - Reachability (host level configuration changes) 
 - Remove RMM SSH key after migration successful 
  
-## Additional resources
+## More resources
 {: #rackware-rmm-resources-classic}
 
 1.  [Discovery Tool](https://urldefense.proofpoint.com/v2/url?u=https-3A__github.com_IBM-2DCloud_vpc-2Dmigration-2Dtools_blob_RMM-2DV2V-2DdiscoveryTool_v2v-2Ddiscovery-2Dtool-2Drmm_README.md&d=DwMCAg&c=jf_iaSHvJObTbx-siA1ZOg&r=buNlWvddeDJ52m-AvV33xV7udsrogOmLrgBayljc3Hk&m=ZMoYgXTZ4LsxwGHDjT78mEU4mjP0PW9n0T8PvasBsLE&s=_8ltU9eIWBRoEY5Hdz6ZCJVG-7mtKGkvJ5Gx3ABpqu8&e=)
