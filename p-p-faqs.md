@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-09-02"
+  years: 2021, 2022
+lastupdated: "2022-03-08"
 
 keywords: 
 
@@ -42,7 +42,7 @@ For RMM server usage guide information, see [RackWare RMM User's Guide for IBM C
 {: #how-to-install-rmm-server}
 {: faq}
 
-This software is available in the IBM Cloud catalog in the Migration Tools category. After you fill out the appropriate information, a virtual server instance is installed in a new VPC with the RMM already installed.
+This software is available in the IBM Cloud catalog in the Migration Tools category. After you complete the appropriate information, a virtual server instance is installed in a new VPC with the RMM already installed.
 
 ## What are the limitations for the Bare Metal to Bare Metal migration?
 {: #bare-metal-to-bare-metal-limitations}
@@ -54,7 +54,7 @@ For more information on limitations of the Bare Metal to Bare Metal migration, s
 {: #bare-metal-supported-operating-systems}
 {: faq}
 
-For more information on supported operating systems, see [Bare Metal to Bare Metal migration supported operating systems](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
+For more information on supported operating systems, see that Bare Metal to Bare Metal migration supported operating systems](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
 
 ## Is NIC bonding supported?
 {: #nic-bonding-supported}
@@ -69,7 +69,7 @@ The RMM migration tool does not support migration over the bonded interface. NIC
 
 RackWare RMM is a bring your own license (BYOL) subscription-based service. Contact the [RackWare sales team ](mailto:sales@rackwareinc.com)or see [Order a license](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
 
-## Mounted filesystem / storage did not show up on target automatically?
+## Mounted file system / storage did not show up on target automatically?
 {: #mounted-filesystem-storage-no-show}
 {: faq}
 
@@ -112,7 +112,7 @@ No, this tool is only for classic Bare Metal to classic Bare Metal.
 {: #is-data-migration-supported}
 {: faq}
 
-No, RMM currently only supports local storage migration. For block or file performance and endurance volumes, consider using a 3rd party tool such as ``rsync``. A sample script using ``rsync`` can be found [here](https://github.com/IBM-Cloud/vpc-migration-tools).
+No, RMM currently only supports local storage migration. For block or file performance and endurance volumes, consider that uses a 3rd party tool such as ``rsync``. A sample script that uses ``rsync`` can be found [here](https://github.com/IBM-Cloud/vpc-migration-tools).
 
 
 
