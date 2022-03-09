@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-23"
+  years: 2021, 2022
+lastupdated: "2021-03-08"
 
 keywords: infrastructure
 
@@ -53,7 +53,7 @@ See [Order License for VMware to VPC migration](https://cloud.ibm.com/docs/cloud
 {: #necessary-add-rmm-ssh-key}
 {: faq}
 
-Yes, RMM uses SSH for communication between source, target and the RMM server machine. So it is necessary to add RMM server’s public key to the source and target server.  
+Yes, RMM uses SSH for communication between source, target, and the RMM server machine. So it is necessary to add RMM server’s public key to the source and target server.  
  
  
 ## Where can I find IBM cloud documentation about VMware VM(On-Prem/Classic) to IBM VPC migration? 
@@ -85,19 +85,19 @@ Yes, as long there is connectivity establish from the on-prem to the RMM server 
 {: #is-data-migration-supported}
 {: faq}
 
-No, currently only local storage data migration is supported. If you still want to migrate data from File or Block storage, then please use a third party tool such as `RSync`. [Here](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware#is-data-migration-supported) is a sample script that uses `RSync` to help with the data migration for the file and block volumes.
+No, currently only local storage data migration is supported. If you still want to migrate data from File or Block storage, then please use a third-party tool such as `RSync`. [Here](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware#is-data-migration-supported) is a sample script that uses `RSync` to help with the data migration for the file and block volumes.
  
 ## Is the migration intrusive?  
 {: #is-migration-intrusive}
 {: faq}
 
- In most cases the migration is non-intrusive.  It can be done while the server is up and running.  However, the source server does need some free space to do the image capture of the machine.  In addition, RMM does require SSH (port 22) to be open on both the server and target in order to perform the migration.  The CPU consumption for image capture and copying to the target should be minimal. 
+ In most cases the migration is nonintrusive.  It can be done while the server is up and running.  However, the source server does need some free space to do the image capture of the machine.  In addition, RMM does require SSH (port 22) to be open on both the server and target in order to perform the migration.  The CPU consumption for image capture and copying to the target should be minimal. 
  
 ## What data does the Discovery tool identifies from VMware vCenter? 
 {: #what-data-does-discovery-identify}
 {: faq}
 
-The discovery tool discovers guest VMs from VMware and it uploads into RMM as the source for migrating in a given wave. Each wave is named by ESXI host IP Address from which guest VMs are discovered.   
+The discovery tool discovers guest VMs from VMware and it uploads into RMM as the source for migrating in a given wave. Each wave is named by ESXI host IP address from which guest VMs are discovered.   
  
 ## What operating systems does support the migration?
 {: #what-os-support-migration}
@@ -109,6 +109,6 @@ Supports migrating Windows Server 2012, 2012R2, 2016, and 2019; Red Hat Enterpri
 {: #does-migration-support-auto-provisioning}
 {: faq}
 
-Yes. With Rackware's RMM **Auto Provision** feature. See "Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup)
+Yes. With Rackware's RMM **Auto Provision** feature. See "Bare metal to virtual server migration on a private network that uses RackWare RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup)
  
  
