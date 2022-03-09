@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years:  2021
+  years:  2021, 2022
 lastupdated: "2022-03-08"
 
 keywords: image migration, migrate image, vmdk, vhd
@@ -138,14 +138,14 @@ Once the valid license is received, download the license file and place it under
 {: #cloud-vpc-vsi-rackware-setup}
 {: step}
 
-The RackWare RMM solution handles the OS, application, and data movement. It does not set up a VPC target side; you will need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you will need to set up a VPC, subnets, and the corresponding VSIs that you are planning to migrate. The new target VSI profile (`vCPU` and `vMemory`) does not need to match the source.  However, as for the storage, it will need to be the same or greater in size. 
+The RackWare RMM solution handles the OS, application, and data movement. It does not set up a VPC target side; you need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and the corresponding VSIs that you are planning to migrate. The new target VSI profile (`vCPU` and `vMemory`) does not need to match the source.  However, as for the storage, it needs to be the same or greater in size. 
 
 This document does not provide the details for setting up the VPC infrastructure as this is well described in each of the relevant VPC product document pages.
 {:note: .note}
 
 1. Create a VPC.
 
-2. Create Subnet(s).
+2. Create Subnets.
 
 3. Order the VSI:
 
@@ -153,7 +153,7 @@ This document does not provide the details for setting up the VPC infrastructure
 
     b. OS name (same major version as the source)
 
-    c. Security Group(s) 
+    c. Security Groups 
 
     d. Secondary Volume (optional) 
 
@@ -172,7 +172,7 @@ There are a few things that you need to do on the source and target device for t
         a. Copy the RackWare RMM SSH public key to both the source and target devices.
 
         b. You need to download the SSH key utility. This can be done from the RackWare RMM server, 
-        (e.g. https://<rmm IP>/windows/RWSSHDService_x64.msi) 
+        (for example https://<rmm IP>/windows/RWSSHDService_x64.msi) 
 
         c. You are SYSTEM, and you need to enter the RMM SSH key to authenticate for both the source and target devices. 
 
@@ -180,7 +180,7 @@ There are a few things that you need to do on the source and target device for t
 {: #rackware-rmm-v2v-vpc-migration}
 {: step}
 
-You can migrate the devices one-by-one or opt to perform multiple simultaneous migrations. If you are running multiple simultaneous migrations, download the CSV template from the RMM server and fill in the appropriate fields.
+You can migrate the devices one-by-one or opt to perform multiple simultaneous migrations. If you are running multiple simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Login into the RMM server.
 
@@ -190,7 +190,7 @@ You can migrate the devices one-by-one or opt to perform multiple simultaneous m
 
     b. If multiple hosts, download the CSV template.
 
-    - Fill in the fields.
+    - Complete the fields.
     - Upload the template.
  
 3. click the wave name to enter the source and target information:
@@ -199,7 +199,7 @@ You can migrate the devices one-by-one or opt to perform multiple simultaneous m
 
     b. Add the source IP address or FQDN.
 
-    c. Add the source Username (adding friendly name is optional).
+    c. Add the source username (adding friendly name is optional).
 
     d. Target Type = Existing System 
 
@@ -207,7 +207,7 @@ You can migrate the devices one-by-one or opt to perform multiple simultaneous m
     
     f. Add the Target IP address or FQDN.
 
-    g. Add the Target friendly name (optional).
+    g. Add the Target-friendly name (optional).
 
     h. Add the Target Username. The username field for Linux environments is root. The username field for Windows environments is SYSTEM. 
 
@@ -215,8 +215,8 @@ You can migrate the devices one-by-one or opt to perform multiple simultaneous m
 {: #rackware-rmm-perform-migration}
 {: step}
 
-1. Once the source and target host are added in the wave and replication record, click the **Sync Options** tab in the right top region of the pop-up screen, select the **No Transfer** option and click **Modify**. Next click the play or arrow head icon to start the replication. This will perform a dry run by checking the connection between the RMM and source or target devices. This dry run does not migrate data. If the operation is successful, remove the No Transfer option that uses the same process.
-2. Whenever you are ready, go ahead and click start replication (the play/arrow head icon on the left at the extreme top of the screen). This will start the actual migration. If you expand the replication record, it displays the actual steps that are being run summarized with the necessary information. 
+1. Once the source and target host are added in the wave and replication record, click the **Sync Options** tab in the right top region of the pop-up screen, select the **No Transfer** option and click **Modify**. Next, click the play or arrow head icon to start the replication. This performs a dry run by checking the connection between the RMM and source or target devices. This dry run does not migrate data. If the operation is successful, remove the No Transfer option that uses the same process.
+2. Whenever you are ready, go ahead and click start replication (the play/arrow head icon on the left at the extreme top of the screen). This starts the actual migration. If you expand the replication record, it displays the actual steps that are being run summarized with the necessary information. 
 3. Whether the operation is successful or whether it failed, you can see the job history in the replication record. 
 4. In an instance of failure, you can retrieve the log and review detailed information. 
  
