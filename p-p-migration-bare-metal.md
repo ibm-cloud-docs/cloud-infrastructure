@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-10"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -31,17 +31,15 @@ RackWare’s RMM solution simplifies the overall migration process of moving the
 
 - Prepare the source and target devices
 - Learn what is needed for the supported network topology
-- If bonding is configured, then learn how to work around it
 - Learn how to use the RackWare RMM solution
 
 ## Limitations
 {: #p-p-migration-bare-metal-limitations}
 
-1.	NIC bonding is not supported in the Windows operating system. Before migration, NIC bonding must be unconfigured at hardware and OS levels for any server that has NIC bonding or teaming configured. With Linux operating systems, you do not need to make any changes.
-2.	Encrypted volumes are not supported.
-3.	Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
-4.	The RackWare’s RMM solution handles only the OS, application, and data movement. So anything else needs to be set up by you (for example security groups, subnets, and so on).
-5. For Windows, data migration for block and file performance and endurance storage is not supported. Consider that uses third-party tools such as `rsync` for data migration on block and file. For Linux it is supported.
+1. Encrypted volumes are not supported.
+2.	Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
+3.	The RackWare’s RMM solution handles only the OS, application, and data movement. So anything else needs to be set up by you (for example security groups, subnets, and so on).
+4. For data migration file performance and endurance storage is not supported. Consider that uses third-party tools such as `rsync` for data migration on block and file. For Linux it is supported.
 
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
@@ -101,54 +99,6 @@ See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-
 
 5. In case a pre-defined multipath is being used, block all devices that are not going to part of the multipath. These are typically disks for local use by the server, like the root disks and any other disks that are not from SAN Storage.
 
-## Remove NIC bonding
-{: #p-p-migration-bare-metal-removing-nic-bond}
-{: step}
-
-To accomplish successful migration that uses RackWare’s RMM solution, you must remove NIC bonding from both of the source and target devices, when employing the Windows operating system. Depending on the type of port redundancy selected at order time, it requires that a case is opened with IBM support to remove bonding configuration on both network and OS. See [port redundancy](https://cloud.ibm.com/docs/bare-metal?topic=bare-metal-network-options#network-port-redundancy) for additional information.
-
-| Network interface - Port redundancy type | Comments | IBM case needed? |
-| ---------- | ---------- | ---------- |
-| Automatic | Both OS and switch needs to be reconfigured. | Yes. Follow the steps below. |
-| User managed | Reconfigure the OS interface. | No, self-managed. |
-| None | Depends, check OS if bonding is configured. | Yes only if bonding is configured on the OS.  Follow the steps below. |
-
-1. Create a ticket with IBM support.
-
-    a. Open the [Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter).
-
-    b. Click **Create a Case**.
-
-    c. Complete or select the necessary details:
-
-    * For **More categories**, select **Compute**
-
-    * For **Topic** select, **Bare Metal Server**
-
-    * For **Subtopic** select **Other**
-    
-    * Click **Next**
-
-    d. For **Details** add the following information:
-    
-    * For **Subject** enter "RackWare bare metal migration unbonding interface"
-
-    * For **Description** add the following details:
-      * Remove bonding on both OS and network switches.
-      * Time and date when to perform the changes.
-      * Written permission to permit access the bare metal server to reconfigure the OS interface and rebooting the bare metal server.
-      
-    * For **Add resources**, select that the bare metal servers that this request must be performed on.
-    
-    * For **Data center settings**, select the data center location.
-
-2. After you have been notified that the changes have been completed, go back in to verify that the bonding interface is removed:
-
-    a. For Windows&reg;, the PowerShell command ``Get-NetLbfoTeam`` can be used.
-
-NIC bonding is supported for Linux operating system. No need to make changes on source and target devices that run the Linux operating system.
-{:note: .note}
-
 ## Order a license
 {: #p-p-migration-bare-metal-ordering-license}
 {: step}
@@ -191,7 +141,7 @@ There are a few things that you need to do on the source and target device for t
 
 1. The RackWare RMM server needs to connect with devices that use SSH; thus the RMM public SSH keys need to be copied on both the source and target devices. 
 
-2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target devices. This done over the transit gateway path. Complete the following steps to prepare customer relevant devices:
+2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target devices. This is done over the transit gateway path. Complete the following steps to prepare customer relevant devices:
 
     **Linux systems**
 
@@ -267,14 +217,6 @@ To improve data transfer rate, adjust bandwidth allocation of RMM server. To kno
 •	Application or operating system licenses
 
 •	Remove RMM SSH key
-
-•	After last data synch, reapply NIC bonding configuration if necessary, raise ticket to IBM support as described in [Remove NIC bonding](#p-p-migration-bare-metal-removing-nic-bond) with the only changes to the following areas:
-   * **Subject** enter "RackWare bare metal migration bonding interface"
-   * **Description** add the following details:
-      * Bond both OS and network switches.
-      * Type of bonding: Automatic or None
-      * Time and date when to perform the changes.
-      * Written permission to permit access the bare metal server to reconfigure the OS interface and rebooting the bare metal server.
 
 ## Help
 {: #p-p-migration-bare-metal-help}
