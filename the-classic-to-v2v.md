@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-11"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -232,6 +232,6 @@ Before decommissioning the source server, it is imperative to validate the targe
 ## More resources
 {: #rackware-rmm-resources-classic}
 
-1.  [Discovery Tool](https://urldefense.proofpoint.com/v2/url?u=https-3A__github.com_IBM-2DCloud_vpc-2Dmigration-2Dtools_blob_RMM-2DV2V-2DdiscoveryTool_v2v-2Ddiscovery-2Dtool-2Drmm_README.md&d=DwMCAg&c=jf_iaSHvJObTbx-siA1ZOg&r=buNlWvddeDJ52m-AvV33xV7udsrogOmLrgBayljc3Hk&m=ZMoYgXTZ4LsxwGHDjT78mEU4mjP0PW9n0T8PvasBsLE&s=_8ltU9eIWBRoEY5Hdz6ZCJVG-7mtKGkvJ5Gx3ABpqu8&e=)
+1.  [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/README.md)
 2. [FAQs](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)  
 3. [RackWare usage guide](https://www.rackwareinc.com/cloud-migration) 
