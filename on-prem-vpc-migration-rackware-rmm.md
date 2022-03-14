@@ -25,7 +25,7 @@ subcollection: cloud-infrastructure
 {:note: .note}
 {:step: data-tutorial-type='step'}
 
-# Physical (On-premises) workloads to IBM Cloud VPC VSI migration that use Rackware RMM
+# On-premises to IBM Cloud VPC migration with RackWare RMM
 {: #migrating-on-prem-cloud-vpc}
 {: toc-content-type="tutorial"} 
 {: toc-services="vpc, virtual-servers"} 
