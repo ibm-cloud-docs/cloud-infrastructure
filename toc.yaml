@@ -105,6 +105,7 @@ toc:
               label: Classic to VPC infrastructure
               topics: 
               - /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
+              - on-prem-vpc-migration-rackware-rmm.md
               - pv-migration-overview.md
               - pv-migration-private-ip.md
               - pv-faqs.md
