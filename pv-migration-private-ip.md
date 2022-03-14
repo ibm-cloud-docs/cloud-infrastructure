@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-14"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -31,7 +31,7 @@ subcollection: cloud-infrastructure
 Bare metal to virtual server migration is the process of migrating from a physical bare metal server to a virtual server instance. The RackWare RMM solution simplifies the overall migration process of moving the operating system, applications, and data from the bare metal environment to an {{site.data.keyword.cloud}} virtual server instance.
 {: shortdesc}
 
-The migration can occur either over the public or private interface of the compute resource. The only requirement is that the three components are reachable from each other. This document focuses on the private path as it is more involved, and requires setting up a transit gateway for a communication channel between classic and VPC over the private interface.
+The migration can occur either over the public or private interface of the compute resource. The only requirement is all three components are reachable from one and another. In this tutorial, this document focuses over the private path as this is a bit more involved, which requires setting up a transit gateway for a communication channel between classic and VPC over the private interface.
 
 ## Objectives
 {: #pv-migration-private-network-objectives}
@@ -59,15 +59,16 @@ For more detail, see [Comparing {{site.data.keyword.cloud_notm}} classic and VPC
 To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation that uses the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {:note: .note}
 
+
 ## Set up and provision VPC and virtual server instance
 {: #set-up-provision-vpc-vsi}
 {: step}
 
-There are two different methods for setting up target the VSI, manual or with RackWare RMM auto provision feature:
+There are two different methods for setting up target the VSI, manual or with Rackware RMM auto provision feature as described below:
 
 **Option 1: Manual**
 
-The RackWare RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side; therefore, you need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and virtual server instances. This tutorial doesn't go through all of the details of setting up the VPC infrastructure. See the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started) for further details.
+The RackWare RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side; therefore, you need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and virtual server instances. This tutorial won't go through all of the details of setting up the VPC infrastructure. See the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started) for further details.
 
 1. Create a VPC. 
 2. Create subnets. 
@@ -82,15 +83,15 @@ Encrypted volumes are not supported.
 
 **Option 2: Auto-provision**
 
-1. Click **Cloud user** menu under **Configuration** main menu on left side.
+1. Click **Clouduser** menu under **Configuration** main menu on left side.
 2. Click **Add** button, and the Add Cloud** form will pop up. Enter appropriate details for the following fields:
     - Name
-    - Select ‘IBM Gen2’ as Cloud Provider
+    - Select ‘IBM Cloud VPC’ as Cloud Provider
     - Select wanted Region where you want to auto provision VSI
-    - Enter valid API key for your IBM cloud account
+    - Enter valid API key for your IBM Cloud account
     - Once all details are filled, click the **Add** button
 3. Open wave where operation needs to be performed
-4. Click text ’Not Configured’, next to ‘Autoprovision’ label, a pop-up opens
+4. Click text ’Not Configured’, next to ‘Autoprovision’ label, a pop-up will open
     - Select added clouduser as **Environment**
     - Select region where VSI needs to be provisioned
     - Subnet name and VPC name are optional. If entered, these would be default names for VPC and Subnet during provision of VSI
@@ -104,7 +105,7 @@ Encrypted volumes are not supported.
         - Username
     - Enter Target details:
         - Only **Friendly Name** is required on target side
-        - Use **Right Sizing** from **Advanced Options** if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB
+        - Use **right Sizing** from **Advanced Options** if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB
     - Once you close this form, RMM shows a warning to enter **IBM Gen2 Options**
     - Edit host and you see **IBM Gen2 Options** as an extra tab at the top
         - The VPC name is mandatory. It creates VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields, then RMM finds relevant resource.
@@ -126,6 +127,9 @@ Target VSI boot volume cannot be greater than 250 GB, so if source machine’s b
 {: note}
 
 If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
+{: note}
+
+Ensure that your VPC, subnet, and other necessary cloud components are setup before adding cloud user in RMM.
 {: note}
 
 ## Order IBM Cloud Transit Gateway
@@ -178,7 +182,7 @@ After three months, you will need to purchase the license from RackWare by email
 {: #prepare-source-target-machines}
 {: step}
 
-There are a few things that need to be done on the source and target machine for the migration to work. The RackWare RMM server needs to SSH into the machines; thus, the RMM public SSH keys need to be copied onto both the source and target machines. In addition, if the source machine has both public and private interfaces, host routes need to be added to ensure the communication between the source and target machines occurs over the transit gateway path. Complete the following steps to prepare your relevant machines.
+There are a few things that need to be done on the source and target device for the migration to work. The RackWare RMM server needs to SSH into the machines; thus, the RMM public SSH keys need to be copied onto both the source and target machines. In addition, if the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target machines occurs over the transit gateway path. Complete the following steps to prepare your relevant machines.
 
 ### Linux systems
 {: #linux-systems}
@@ -205,7 +209,7 @@ route ADD <destination_network> MASK <subnet_mask> <gateway_ip> <metric_cost>
 ```
 {: pre}
 
-In the case of a user using the **Auto Provision** feature, there is no need to set up a target. Only the friendly name for the target machine is required. 
+In the case of a user that uses the **Auto Provision** feature, there is no need to set up a target. Only the friendly name for the target device is required. 
 {: note}
 
 ## Set up RackWare RMM waves for P2V migration
@@ -216,12 +220,12 @@ You can migrate the machines over one by one or do simultaneous migrations. If y
 
 1. Log in to the RMM server.
 2. Create a _Wave_ and define _Wave_ name.
-3. If there are multiple hosts, download the template, fill in the appropriate fields, and then upload the template.
+3. If there are multiple hosts, download the template, complete the appropriate fields, and then upload the template.
 4. Select the _Wave_ name to enter source and target information.
 5. Select the "+" sign.
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing System
-8. Sync Type = Direct Sync
+8. Sync Type = Direct sync
 9. Add target IP address or FQDN.
 10. Add a target-friendly name, and add target username.
 11. Start the migration.
