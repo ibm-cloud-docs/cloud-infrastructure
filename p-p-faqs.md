@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2021, 2022
+  years: 2021
 lastupdated: "2022-03-14"
 
 keywords: 
@@ -66,7 +66,7 @@ The RMM migration tool does support migration over the bonded interface for clas
 {: #is-rmm-server-license-free}
 {: faq}
 
-RackWare RMM is a bring your own license (BYOL) subscription-based service. Contact the [RackWare sales team ](mailto:sales@rackwareinc.com)or see [Order a license](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
+RackWare RMM is a bring your own license (BYOL) subscription-based service. Contact the [RackWare sales team or see [Order a license](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for Bare Metal to Bare Metal migration.
 
 ## Mounted file system / storage did not show up on target automatically?
 {: #mounted-filesystem-storage-no-show}
@@ -91,9 +91,9 @@ See [RackWare Cloud Migration](https://www.rackwareinc.com/rackware-rmm-users-gu
 {: #where-for-support}
 {: faq}
 
-1. Please open any issues directly with RackWare support team. The support team is available 365x24x7.
+1. Open any issues directly with RackWare support team. The support team is available 365x24x7.
 
-2. Please open a case via following options:
+2. Open a case via following options:
 
     a. Email: support@rackwareinc.com
   
@@ -105,7 +105,7 @@ See [RackWare Cloud Migration](https://www.rackwareinc.com/rackware-rmm-users-gu
 {: #is-data-migration-supported}
 {: faq}
 
-No, RMM currently only supports local storage migration. For block or file performance and endurance volumes, consider that uses a 3rd party tool such as ``rsync``. A sample script that uses ``rsync`` can be found [here](https://github.com/IBM-Cloud/vpc-migration-tools).
+Only local storage and Block performance endurance storage is supported in IBM Cloud Classic. File performance and endurance volume’s data migration is not supported, for this, consider using a 3rd party tool such as ``rsync``. A sample script using ``rsync`` can be found [here](https://github.com/IBM-Cloud/vpc-migration-tools)
 
 
 
