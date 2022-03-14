@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-14"
 
 keywords: 
 
@@ -81,7 +81,7 @@ Make sure to have ``/etc/fstab/entry`` for automatic mounting of any file system
 
 Yes, RMM uses SSH to communicate to both the source and target servers. 
 
-## Where can I find IBM cloud documentation about Bare Metal to Bare Metal migration?
+## Where can I find IBM cloud documentation about classic Bare Metal to classic Bare Metal migration?
 {: #where-migration-doc}
 {: faq}
 
