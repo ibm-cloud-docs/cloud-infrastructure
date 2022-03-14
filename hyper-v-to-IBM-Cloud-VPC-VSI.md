@@ -243,4 +243,4 @@ Before you decommission the source server, it is imperative to validate the targ
     
     b. [RackWare RMM Users Guide for IBM Cloud](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud)
 
-2. [FAQ] (https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)
+2. [FAQ](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)
