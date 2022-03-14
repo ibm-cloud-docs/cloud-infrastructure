@@ -172,7 +172,7 @@ There are a few things that you need to do on the source and target device for t
         a. Copy the RackWare RMM SSH public key to both the source and target devices.
 
         b. You need to download the SSH key utility. This can be done from the RackWare RMM server, 
-        (for example https://<rmm IP>/windows/RWSSHDService_x64.msi) 
+        (for example <https://<RMM_IP>/windows/RWSSHDService_x64.msi>)
 
         c. You are SYSTEM, and you need to enter the RMM SSH key to authenticate for both the source and target devices. 
 
