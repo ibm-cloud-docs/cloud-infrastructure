@@ -101,12 +101,6 @@ See [RackWare Cloud Migration](https://www.rackwareinc.com/rackware-rmm-users-gu
     b. Phone: +1 (844) 797-8776
   
     c. In all cases, please add 'RackWare RMM -IBM Cloud’ in the subject line. The RackWare support is based in the United States and India.
-  
-## Can I migrate on-prem to IBM cloud classic?
-{: #can-you-migrate-on-prem}
-{: faq}
-
-No, this tool is only for classic Bare Metal to classic Bare Metal.
 
 ## Is data migration supported for File or Block performance endurance storage?
 {: #is-data-migration-supported}
