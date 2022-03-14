@@ -122,7 +122,7 @@ Encrypted volumes are not supported.
     - Click Modify
     - Finally, run replication
     
-Target VSI boot volume cannot be greater than 100 GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
+Target VSI boot volume cannot be greater than 250 GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
 {: note}
 
 If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
