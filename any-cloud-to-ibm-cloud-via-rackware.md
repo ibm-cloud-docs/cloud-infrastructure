@@ -119,8 +119,7 @@ Your source and target need to be able to reach other and also the RMM. You can 
 - Public interface 
 
 ## Set up and provision VPC and virtual server instance
-
-{: #prepare-source}
+{: #set-up-provision-source}
 {: step}
 
 There are two different methods for setting up target the VSI, manual or with Rackware RMM auto provision feature as described below:
