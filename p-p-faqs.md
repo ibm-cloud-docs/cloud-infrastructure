@@ -56,12 +56,11 @@ For more information on limitations of the Bare Metal to Bare Metal migration, s
 
 For more information on supported operating systems, see that Bare Metal to Bare Metal migration supported operating systems](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
 
-## Is NIC bonding supported?
+## How does RackWare handle bare metal servers with NIC bonding?
 {: #nic-bonding-supported}
 {: faq}
 
-The RMM migration tool does not support migration over the bonded interface. NIC bonding must be removed first before starting the migration. See how to [Remove NIC bonding](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-removing-nic-bond) for more details.
-
+The RMM migration tool does support migration over the bonded interface for classic to classic migration as well as on-premises to VPC migration. User intervention is not needed for migration with bonded interface.
 
 ## Is RMM a free service? 
 {: #is-rmm-server-license-free}
