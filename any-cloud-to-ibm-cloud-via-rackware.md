@@ -54,7 +54,7 @@ This guide shows you how to complete a migration from AWS, Azure, GCP, and OCI t
 
 This diagram shows the architecture that you create with the guide.
 
-![Architecture](images/anycloud.png){: caption="Architecture Diagram"}
+![Architecture](images/anycloud.jpg){: caption="Architecture Diagram"}
 
 ### General steps
 {: #any-cloud-architecture}
