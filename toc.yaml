@@ -111,6 +111,7 @@ toc:
           - topicgroup: 
               label: VMWare to VPC infrastructure
               topics: 
+              - any-cloud-to-ibm-cloud-via-rackware.md
               - vmware-on-prem-to-v2v.md
               - the-classic-to-v2v.md 
               - hyper-v-to-IBM-Cloud-VPC-VSI.md
