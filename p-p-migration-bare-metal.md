@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -96,8 +96,6 @@ See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-
 3. The order of target server, the CPU, and memory does not need to match, but the volumes must be equal or greater than the source.
 
 4. Make sure to have ``/etc/fstab`` entry for automatic mounting of any file system on the target device.
-
-5. In case a pre-defined multipath is being used, block all devices that are not going to part of the multipath. These are typically disks for local use by the server, like the root disks and any other disks that are not from SAN Storage.
 
 ## Order a license
 {: #p-p-migration-bare-metal-ordering-license}
