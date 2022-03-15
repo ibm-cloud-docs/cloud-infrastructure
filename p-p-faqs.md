@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-15"
 
 keywords: 
 
@@ -84,7 +84,7 @@ Yes, RMM uses SSH to communicate to both the source and target servers.
 {: #where-migration-doc}
 {: faq}
 
-See [RackWare Cloud Migration](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
+See [IBM classic bare metal to bare metal migration overview](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview)
 
 
 ## Who do I reach out for support?
