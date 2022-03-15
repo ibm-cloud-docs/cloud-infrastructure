@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-15"
 
 keywords: image migration, migrate image, vmdk, vhd
 content-type: tutorial
@@ -159,7 +159,7 @@ RMM can automatically provision a virtual server instance of VPC. Enable the wav
 1. Click **Clouduser** menu under **Configuration** main menu on left side.
 2. Click **Add** button, and the Add Cloud** form will pop up. Enter appropriate details for the following fields:
     - Name
-    - Select ‘IBM cloud VPC’ as Cloud Provider
+    - Select ‘IBM Cloud VPC’ as Cloud Provider
     - Select wanted Region where you want to auto provision VSI
     - Enter valid API key for your IBM cloud account
     - Once all details are filled, click **Add** button
