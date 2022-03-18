@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-18"
 
 keywords: 
 
@@ -27,7 +27,7 @@ subcollection: cloud-infrastructure
 {: #what-is-rmm-server}
 {: faq}
 
-RMM server is a software appliance that is offered by RackWare that replatforms your server from an IBM Cloud classic physical bare metal server to am IBM Cloud VPC virtual server instance.
+RMM server is a software appliance that is offered by RackWare that replatforms your server from an {{site.data.keyword.cloud_notm}} classic physical bare metal server to am {{site.data.keyword.vpc_short}} virtual server instance.
 
 ## Where can I find more information about RackWare RMM server?
 {: #where-to-find-more-information}
@@ -39,13 +39,13 @@ For RMM server overview information, see [RackWare's Cloud Migration documentati
 {: #how-to-install}
 {: faq}
 
-This software is available in the IBM Cloud catalog in the **Migration Tools** category. After you fill out the appropriate information, a virtual server instance is installed in a new VPC with the RMM already installed.
+This software is available in the {{site.data.keyword.cloud_notm}} catalog in the **Migration Tools** category. After you fill out the appropriate information, a virtual server instance is installed in a new VPC with the RMM already installed.
 
 ## Is this service free?
 {: #how-much-is-service}
 {: faq}
 
-You need to bring your own license (BYOL), which you must purchase directly from RackWare. For more information or inquiries, contact [sales@rackwareinc.com](mailto:sales@rackwareinc.com). However, IBM is offering promotional licensing at no cost for three months for three reusable concurrent migration licenses.
+You need to "Bring Your Own License (BYOL)", which you must purchase directly from RackWare. For more information or inquiries, contact [sales@rackwareinc.com](mailto:sales@rackwareinc.com). However, {{site.data.keyword.IBM_notm}} is offering promotional licensing at no cost for three months for three reusable concurrent migration licenses.
 
 ## What is the promotional license?
 {: #promotional-license}
@@ -57,7 +57,7 @@ The promotional license is valid only for per-account and first-time users of Ra
 {: #reusable-concurrent-license}
 {: faq}
 
-IBM and RackWare have put together a special license model. Typically, a license is a one-time use for each server migration. Whereas for IBM purposes, after a completed migration, the license can be reused for a different server migration. The original host that the license was assigned to just needs to be deleted from the RMM server database. 
+{{site.data.keyword.IBM_notm}} and RackWare have put together a special license model. Typically, a license is a one-time use for each server migration. Whereas for {{site.data.keyword.IBM_notm}} purposes, after a completed migration, the license can be reused for a different server migration. The original host that the license was assigned to just needs to be deleted from the RMM server database. 
 
 The number of concurrent migrations that can occur is limited up to the number of licenses procured.
 
