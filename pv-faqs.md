@@ -79,8 +79,8 @@ For more information on considerations and limitations of the physical to virtua
 
 In most cases, the migration is not intrusive. The migration can be done when the server is up and running. The source server does need some free space to do an image capture of the machine. In addition, RMM does require SSH (port 22) reachability to both server and target to perform the migration. The CPU consumption for image capture and copying to the target is minimal.
 
-## Can Rackware RMM create the target VSI?
+## Can RackWare RMM create the target VSI?
 {: #create-target-vsi}
 {: faq}
 
-Yes. With Rackware's RMM **Auto Provision** feature. See ["Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network#set-up-provision-vpc-vsi)
+Yes. With RackWare's RMM **Auto Provision** feature. See ["Bare metal to virtual server migration on a private network using RackWare RMM": option 2 of Step 1: Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network#set-up-provision-vpc-vsi)
