@@ -2,14 +2,13 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-18"
 
 keywords: image migration, migrate image, vmdk, vhd
 
 subcollection: cloud-infrastructure
 
 ---
-xs
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -24,7 +23,7 @@ xs
 # Migrating VMDK or VHD images to VPC
 {: #migrating-images-vpc}
 
-You can convert your Intel x86-based virtual machine (VM) in VMDK or VHD format to {{site.data.keyword.cloud}} virtual server instances to import your image to {{site.data.keyword.vpc_short}}. , use a custom image to create new virtual server instances.
+You can convert your Intel x86-based virtual machine (VM) in VMDK or VHD format to {{site.data.keyword.cloud}} virtual server instances to import your image to {{site.data.keyword.vpc_short}}. You can use a custom image to create new virtual server instances.
 {: shortdesc}
 
 ## Before you begin
@@ -33,7 +32,7 @@ You can convert your Intel x86-based virtual machine (VM) in VMDK or VHD format 
 Before you begin migrating your image conversion, review the following requirements:
 
 1. Back up your source virtual machine that you intend to migrate.
-2. You need an existing {{site.data.keyword.vpc_short}} environment. 
+2. You need an existing {{site.data.keyword.vpc_short}} environment.
 3. VMware virtual machine must be created with BIOS firmware type
 4. Understand {{site.data.keyword.vpc_short}} custom image requirements:
     * Is in qcow2 format
@@ -48,25 +47,25 @@ Before you begin migrating your image conversion, review the following requireme
 {: #image-conversion-considerations}
 
 * VMs must be exported as VMDK or VHD.
-* VMs with network attached storage (NAS) such as iSCSI or NFS are not automatically copied over. Data migration must be done as a separate process.
+* VMs with network-attached storage (NAS) such as iSCSI or NFS are not automatically copied over. Data migration must be done as a separate process.
 * IP addresses are not preserved. 
 * Hypervisor specifics are not preserved, such as port groups and teaming.
 
 ## Step 1: Prepare the image conversion server
 {: #step-1-prepare-image-conversion-server}
 
-1. Install the {{site.data.keyword.cloud_notm}} CLI. For more information about installing the CLI, see [Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
-2. Install the [{{site.data.keyword.cos_full_notm}} CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#installing-ibm-cloud-object-storage-cli-plug-in).
-3. Install the [{{site.data.keyword.vpc_short}} CLI plug-in](/docs/cli?topic=vpc-infrastructure-cli-plugin-vpc-reference).
-4. Install the [Aspera plug-in](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This plug-in helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
-5. Download and install QEMU. For more information about installing QEMU, see [Download QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU installation path in the system’s environment variable.
+1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+2. [Install the {{site.data.keyword.cos_full_notm}} CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#installing-ibm-cloud-object-storage-cli-plug-in).
+3. [Install the {{site.data.keyword.vpc_short}} CLI plug-in](/docs/cli?topic=vpc-infrastructure-cli-plugin-vpc-reference).
+4. [Install the Aspera plug-in](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This plug-in helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
+5. [Download and install QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU installation path in the system’s environment variable.
 
 ## Step 2: Validate and prepare the VMs
 {: #step-2-validate-prepare-vms}
 
-Make sure that your VM meets the minimum requirements that are listed in the [Before you begin](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-vmware-vmdk-images-to-vpc#before-you-begin) section; however, for this step, the VM doesn't need to be in qcow2 format. The image conversion to qcow2 is covered in Step 3. 
+Make sure that your VM meets the minimum requirements that are listed in the [Before you begin](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-vmware-vmdk-images-to-vpc#before-you-begin) section. However, for this step, the VM doesn't need to be in qcow2 format. The image conversion to qcow2 is covered in Step 3.
 
-For best performance, take a snapshot or backup your VM before proceeding. 
+As a best practice, take a snapshot or back up your VM before proceeding.
 
 You can run a [migration bash script](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/image-conversion){: external} for your system to help validate if the VMs meet the requirements.
 {: tip}
@@ -165,7 +164,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 ### Linux systems
 {: #step-6-linux-systems}
 
-#### For Centos or Redhat 7:
+#### For Centos or Red Hat 7:
 
 1. Create n+1 secondary volumes. If your VM has one secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
 2. Download the secondary (vHDD) VMDK or VHD file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
@@ -212,7 +211,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
   
 
 
-***For Centos/Redhat 8, Ubuntu 18.04 and 20.04, Debian 9 and 10:***
+***For Centos or Red Hat 8, Ubuntu 18.04 and 20.04, Debian 9 and 10:***
 
 1. Create secondary volumes, if your VM has secondary vHDD. 
 2. Copy the VMDK or VHD image file to the migrated VSI 
@@ -226,24 +225,42 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
    Centos/Redhat
 
    ```
-   $ yum update -y
-
-   $ yum install libguestfs-tools
-
-   $ systemctl enable libvirtd
-
-   $ systemctl start libvirtd
-
-   $ systemctl status libvirtd
+   yum update -y
    ```
+   {: pre}
+
+   ```
+   yum install libguestfs-tools
+   ```
+   {: pre}
+
+
+   ```
+   systemctl enable libvirtd
+   ```
+   {: pre}
+
+   ```
+   systemctl start libvirtd
+   ```
+   {: pre}
+
+   ```
+   systemctl status libvirtd
+   ```
+   {: pre}
 
    Ubuntu/Debian
    
    ```
-   $ apt-get update -y
-   
-   $ apt-get install -y libguestfs-tools
+   apt-get update -y
    ```
+   {: pre}
+   
+   ```
+   apt-get install -y libguestfs-tools
+   ```
+   {: pre}
 
 4. Convert the (VMDK or VHD) image data to `qcow2`:
 
@@ -275,7 +292,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
    ```
    {: pre}
 
-7. Copy data over from the ``/mnt`` to the target volume (vdd):
+7. Copy data over from the `/mnt` to the target volume (vdd):
 
    ```
    cp –avf /mnt /data 
@@ -295,6 +312,6 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 
 1. Create secondary volume.
 2. Copy the VMDK or VHD disk to Windows.
-3. Mount the image as a disk.  
+3. Mount the image as a disk.
 
 
