@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022
-lastupdated: "2022-03-14"
+  years: 2021, 2022
+lastupdated: "2022-03-21"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
@@ -43,7 +43,7 @@ This guide shows you how to complete a migration from on-premises to {{site.data
 
 • Ubuntu 18.04, 20.04
 
-• Debian 9, 10
+• Debian 9.x, 10.x
 
 • Windows 2012, 2012R2, 2016, 2019
 
@@ -84,7 +84,7 @@ Complete the following steps to get a license:
 1. Order your license from RackWare.
 2. Run the `rwadm relicense` command on the RMM CLI to generate a preinstall file.
 3. After generating a preinstall file, send a license generation request to the RackWare licensing team with the following information:
-    * RackWare RMM License (subject line)
+    * RackWare RMM license (subject line)
     * Company name
     * License count
     * Preinstall file (attached)
@@ -108,9 +108,9 @@ Complete the following steps to get a license:
 {: #connectivity-between-source-and-cloud}
 {: step}
 
-Your source and target need to be able to reach other and the RMM. You can do this over the public internet with public IPs, or if you have a private-only environment, then you must set up either a VPN or Direct Link 2.0, use the following links:
+Your source and target server should communicate with each other and the RMM. You can do with the public internet with public IPs, or if you have a private-only environment, then you must setup either a VPN or Direct Link 2.0, use the following links:
 
-- Use [Direct Link 2.0 connection](https://test.cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) to IBM Cloud
+- Use [Direct Link 2.0 connection](https://test.cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) to {{site.data.keyword.cloud_notm}}
 
 - Should have port 22 open with SSH accessible to RMM server
 
@@ -135,7 +135,7 @@ The RackWare RMM solution handles only the OS, application, and data movement. I
 
     - SSH key
 
-    - Operating system name (Linux/Windows and their respective versions)
+    - Operating system name (Linux or Windows and their respective versions)
 
     - Security groups
 
@@ -154,7 +154,7 @@ The RackWare RMM solution handles only the OS, application, and data movement. I
 
     - Select ‘{{site.data.keyword.cloud}} VPC’ as Cloud Provider
 
-    - Select the Region where you want to auto-provision VSI
+    - Select the Region where you want to auto-provision virtual server instance
 
     - Enter the valid API key for your {{site.data.keyword.cloud}} account
 
@@ -166,9 +166,9 @@ The RackWare RMM solution handles only the OS, application, and data movement. I
 
     -  Select **added clouduser** as the Environment
 
-    - Select the region where the VSI must be provisioned
+    - Select the region where the virtual server instance must be provisioned
 
-    - Subnet name and VPC name are optional. If entered, these would be default names for the VPC and Subnet during the provision of the VSI
+    - Subnet name and VPC name are optional. If entered, these would be default names for the VPC and Subnet during the provision of the virtual server instance
 
     - Click **Add Host**, (the plus icon in left top corner of the window)
 
@@ -189,13 +189,13 @@ The RackWare RMM solution handles only the OS, application, and data movement. I
     - Only a Friendly Name is required on the target side
 
     Use right Sizing from Advanced Options if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB
-    {:note: .note}
+    {: note}
 
-    Once you close this form, RMM shows a warning to enter IBM Gen2 Options
-    {:note: .note}
+    Once you close this form, RMM shows a warning to enter {{site.data.keyword.IBM_notm}} Gen2 Options
+    {: note}
 
 
-- Edit host and you see the IBM Gen2 Options as an extra tab at the top
+- Edit host and you see the {{site.data.keyword.IBM_notm}} Gen2 Options as an extra tab at the top
 
     - The VPC name is mandatory. It creates VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields, then RMM finds relevant resource.
     - Select Region
@@ -208,15 +208,15 @@ The RackWare RMM solution handles only the OS, application, and data movement. I
     - Image Name
     - Image username (This field is optional, as Linux has key-based authentication, so even if any value is entered, it would be ignored)
     - Image password (This field is optional as Linux has key-based authentication so even if any value is entered, it would be ignored)
-- SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created VSI
+- SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created virtual server instance
 - Click Modify
 - Finally, run replication
 
-The target VSI boot volume cannot be greater than 250 GB, so if the source machine’s boot volume is greater than 250 GB, use the right-sizing option of RMM.
+The target virtual server instance boot volume cannot be greater than 250 GB, so if the source machine’s boot volume is greater than 250 GB, use the right-sizing option of RMM.
 
 If the **No Transfer** option is selected in **Sync Option**, it does an auto provision of the target but actual data and applications are not migrated.
 
-Ensure that your VPC, subnet, and other necessary cloud components are setup before adding cloud user in RMM.
+Ensure that your VPC, subnet, and other necessary cloud components are set up before adding cloud user in RMM.
 
 There are a few things that need to be done on the source and target server for the migration to work. The RackWare RMM server needs to SSH into the servers; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
 
@@ -285,4 +285,3 @@ After your server migration, validate your compute resources, such as applicatio
 6. Check or update your `yum` repos, application settings, and configuration file.
 7. Check or update application or operating system licenses.
 8. Remove the RMM SSH key.
-
