@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
