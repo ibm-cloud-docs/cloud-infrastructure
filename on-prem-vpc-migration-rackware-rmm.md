@@ -33,7 +33,7 @@ subcollection: cloud-infrastructure
 
 The RackWare RMM migration solution provides a seamless means for replatforming on-premises workloads to {{site.data.keyword.cloud}} virtual server instances, and allows the adoption of the native capabilities of {{site.data.keyword.cloud_notm}}. Its intuitive GUI allows you to move the OS, applications, and data from on-premises to {{site.data.keyword.vpc_short}} instances.
 
-This guide shows you how to complete a migration from on-premises to {{site.data.keyword.vpc_short}}. 
+This guide shows you how to complete a migration from on-premises to your {{site.data.keyword.vpc_short}}. 
 
 ## Supported operating systems
 
