@@ -52,7 +52,7 @@ This guide shows you how to complete a migration from on-premises to your {{site
 
 This diagram shows the architecture that you create with the guide.
 
-![Architecture](images/on_prem_final.jpg){: caption="Architecture Diagram"}
+![Architecture](images/any-cloud-1.png){: caption="Architecture Diagram"}
 
 General steps:
 1. Order RackWare RMM ({{site.data.keyword.cloud_notm}} [catalog tile](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global)) 
