@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-24"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -21,15 +21,15 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 
-# IBM classic bare metal to bare metal migration overview
+# IBM Cloud classic bare metal to bare metal migration overview
 {: #p-p-migration-bare-metal-overview}
 
-RackWare’s RMM solution simplifies the overall migration process of moving the operating system, applications, and data from one bare metal server to another in the IBM cloud classic environment. The migration can occur either over the public or private interface of the compute resource. The only requirement is that RMM must be able to access both source and target server over SSH.
+RackWare’s RMM solution simplifies the overall migration process of moving the operating system, applications, and data from one bare metal server to another in the {{site.data.keyword.cloud}} classic environment. The migration can occur either over the public or private interface of the compute resource. The only requirement is that RMM must be able to access both source and target server over SSH.
 
 ## Objective
 {: #p-p-migration-bare-metal-objective}
 
-- Prepare the source and target devices
+- Prepare the source and target servers
 - Learn what is needed for the supported network topology
 - Learn how to use the RackWare RMM solution
 
@@ -37,9 +37,9 @@ RackWare’s RMM solution simplifies the overall migration process of moving the
 {: #p-p-migration-bare-metal-limitations}
 
 1. Encrypted volumes are not supported.
-2.	Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
-3.	The RackWare’s RMM solution handles only the OS, application, and data movement. So anything else needs to be set up by you (for example security groups, subnets, and so on).
-4. For data migration file performance and endurance storage is not supported. Consider that uses third-party tools such as `rsync` for data migration on block and file. For Linux it is supported.
+2. Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
+3. The RackWare’s RMM solution handles only the OS, application, and data movement, so anything else needs to be set up by you (for example, security groups, subnets, etc.).
+4. For data migration, file performance and endurance storage are not supported. You can use third-party tools such as `rsync` for data migration on block and file. For Linux it is supported.
 
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
@@ -57,27 +57,24 @@ RackWare’s RMM solution simplifies the overall migration process of moving the
 ## Supported topology
 {: #p-p-migration-bare-metal-supported-topology}
 
-Migration can be done over either the public or the private interface. While RMM uses SSH to communicate with the servers, migrate that uses the private address. In addition, you get to use IBM's backbone network during migration over the private interface.
+Migration can be done either over the public or the private interface. While RMM uses SSH to communicate with the servers, migrate by using the private address. In addition, you get to use {{site.data.keyword.IBM_notm}}'s network during migration over the private interface.
 
-Because RMM is deployed in IBM Cloud VPC, it requires a transit gateway for the RMM to communicate with the source and the target over the private interface. The source and target also need to be able to communicate with one another.
+Because RMM is deployed in {{site.data.keyword.vpc_short}}, it requires a transit gateway for the RMM to communicate with the source and the target server over the private interface. The source and target server also need to be able to communicate with one another.
 
-If the source and target does not have direct communication, then consider that uses pass-through with the RMM server. The RMM server acts as a proxy, and migration flows through the RMM server. For more information, search for pass-through in the [RMM user guide](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud). The pass-through migration time increases.
-{:note: .note}
+If the source and target server do not have direct communication, then consider using pass-through with the RMM server. The RMM server acts as a proxy, and migration flows through the RMM server. For more information, search for pass-through in the [RMM user guide](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}. The pass-through migration time increases.
+{: note}
 
-To create an IBM Cloud Transit Gateway and establish connection between classic and VPC, review the following information:
+To create an {{site.data.keyword.tg_full_notm}} and establish connection between classic and VPC, review the following information:
 
-[Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-helpful-tips)
+- [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips)
 
-[Ordering IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
-
+- [Ordering {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
 
 For transit gateway and classic, you need to follow two steps:
 
-1. Enable vlan spanning to allow communication between subnets and DCs in classic.
-See [VLAN spanning](https://cloud.ibm.com/docs/vlans?topic=vlans-vlan-spanning).
+1. Enable VLAN spanning to allow communication between subnets and data centers in classic. For more information, see [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning).
 
-2. To allow communication between VPC and classic, both transit gateway and enabling VRF in classic are necessary.
-See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-helpful-tips#general-considerations).
+2. To allow communication between VPC and classic, both transit gateway and enabling VRF in classic are necessary. For more information, see [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips#general-considerations).
 
 ![Topology](images/p-p_classic_private_ip_routing2.png "Diagram showing the cloud service models"){: caption="Figure 1. Network topology of RMM and bare metal migration" caption-side="bottom"}
 
@@ -85,81 +82,104 @@ See [Planning for IBM Cloud Transit Gateway](https://cloud.ibm.com/docs/transit-
 {: #p-p-migration-bare-metal-supported-topology}
 {: step}
 
-1. For each volume on the source server 20% of the unused space must be available to store the snapshot that created by RMM. 
+1. For each volume on the source server, 20 percent of the unused space must be available to store the snapshot that is created by RMM. 
 
 2. Copy the RMM SSH public key to both the source and target.
 
     a. This process can require modifying the servers' host route table or security rules.
 
-    b. Update the name server or DNS
+    b. Update the name server or DNS.
 
 3. The order of target server, the CPU, and memory does not need to match, but the volumes must be equal or greater than the source.
 
-4. Make sure to have ``/etc/fstab`` entry for automatic mounting of any file system on the target device.
+4. Make sure to have `/etc/fstab` entry for automatic mounting of any file system on the target server.
+
+## Order Rackware RMM
+{: #p-p-migration-bare-metal-order-rackware}
+{: step}
+
+The RackWare RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RackWare RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
+
+1. Order the RackWare RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
+
+2. After you order, log in to the RackWare RMM server.
+
+3. In the RMM server, change the default password, create users, and create an SSH key.
+
+4. Upload the SSH key to {{site.data.keyword.vpc_short}}.
 
 ## Order a license
 {: #p-p-migration-bare-metal-ordering-license}
 {: step}
 
-The Licenses required for migration to IBM Cloud are "bring your own license (BYOL)" . The license is a subscription-based license, paid monthly, that permits you to migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
+The license required for migration to {{site.data.keyword.cloud_notm}} is "bring your own license" (BYOL). The license is a subscription-based license, paid monthly, where you can migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
 
 Follow these steps to get a license:
 
-1. Order your license from [RackWare](mailto:sales@rackwareinc){: external}.
+1. Order your license from [RackWare](mailto:sales@rackwareinc).
 
-2. Run the ``rwadm relicense`` command on RMM CLI to generate a preinstall file.
+2. Run the following command on the RMM CLI to generate a preinstall file:
 
-3. After generating a preinstall file that uses the above method, send a license generation request to the [RackWare licensing team](mailto:sales@rackwareinc){: external} with the following information:
+    ```
+    rwadm relicense
+    ```
+    {: pre}
 
-    a. RackWare RMM License (Subject line )
+3. After generating a preinstall file, send a license generation request to the [RackWare licensing team](mailto:sales@rackwareinc) with the following information:
 
-    b. CompanyName
+    a. RackWare RMM license (subject line)
+
+    b. Company name
     
-    c. LicenseCount
+    c. License count
 
-    d. PreinstallFile (attached)
+    d. Preinstall file (attached)
 
-    e PurchaseOrder (attached)
+    e. Purchase order (attached)
 
 4. Install the license.
 
-    a. Once the valid license is received, download the license file and place it under ``/etc/rackware``, and restart the services to apply the license.
+    a. After the valid license is received, download the license file and place it in `/etc/rackware`. Restart the services to apply the license by running the following command:
+    
+    ```
+    rwadm restart
+    ```
+    {: pre}
 
-    ``$ rwadm restart``
+    b. Verify the license by running the following command:
 
-    b. Verify the validity of the license.
+    ```
+    rw rmm show
+    ```
+    {: pre}
 
-    ``$ rw rmm show``
-
-## Prepare source and target devices
+## Prepare source and target servers
 {: #p-p-migration-bare-metal-source-target}
 {: step}   
 
 There are a few things that you need to do on the source and target device for the migration:
 
-1. The RackWare RMM server needs to connect with devices that use SSH; thus the RMM public SSH keys need to be copied on both the source and target devices. 
+1. The RackWare RMM server needs to connect with servers that use SSH; thus the RMM public SSH keys need to be copied on both the source and target servers. 
 
-2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target devices. This is done over the transit gateway path. Complete the following steps to prepare customer relevant devices:
+2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. This is done over the transit gateway path. Complete the following steps to prepare your relevant servers:
 
-    **Linux systems**
+### Linux systems
+{: #linux-systems}
 
-    Copy RackWare’s RMM SSH public key to both the source and target devices.
+Copy RackWare’s RMM SSH public key to both the source and target servers.
 
-    **Windows systems**
+### Windows systems
+{: #windows-systems}
 
-    a. Copy the RackWare RMM SSH public key to both the source and target devices.
+1. Copy the RackWare RMM SSH public key to both the source and target servers.
+2. You need to download the SSH key utility. You can download it from the RackWare RMM server: `https://<RMM IP>/windows/RWSSHDService_x64.msi`
+3. You are `SYSTEM`, and you need to key in the RMM SSH key to authenticate for both the source and target servers.
 
-    b. You need to download the SSH key utility. You can download it from the RackWare RMM server, 
-
-    (For example ``https://<RMM IP>/windows/RWSSHDService_x64.msi``)
-
-    c. You are SYSTEM, and you need to key in the RMM SSH key to authenticate for both the source and target devices.
-
-## Set up RackWare’s RMM waves for P-P migration (BareMetal to BareMetal)
+## Set up RackWare’s RMM waves
 {: #p-p-migration-bare-metal-setup-waves}
 {: step}  
 
-You can migrate devices over one-by-one or perform simultaneous migrations. If you are performing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
+You can migrate servers over one-by-one or perform simultaneous migrations. If you are performing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
 
@@ -171,23 +191,23 @@ You can migrate devices over one-by-one or perform simultaneous migrations. If y
 
 5. Select the "***+***" sign.
 
-6. Add the source IP address or FQDN and add source username, (adding friendly name is optional).
+6. Add the source IP address or FQDN and add source username. Adding a friendly name is optional.
 
-7. Target Type = Existing System
+7. Target Type = Existing system
 
-8. Sync Type = Direct Sync
+8. Sync Type = Direct sync
 
 9. Add target IP address or FQDN.
 
-10. Add a target-friendly name, and add the target username, (adding friendly name is optional).
+10. Add a target-friendly name, and add the target username. Adding a friendly name is optional.
 
-11. The username field for Linux environments is ***root***. The username field for Windows environments is ***SYSTEM***.
+11. The username field for Linux environments is `root`. The username field for Windows environments is `SYSTEM`.
 
-## Perform migration
+## Migrate
 {: #p-p-migration-bare-metal-perform-migration}
 {: step}  
 
-1. Once the source and target host are added in wave and replication record, click the **Sync Options** tab on right top of pop up screen,  select the **No Transfer** option and click **Modify**. Then click the play/arrow head icon to start replication. This will perform a dry run by checking the connection between the RMM and source/target devices. This will not migrate data. If the operation is successful then remove the **No Transfer** option that uses the same process.
+1. After the source and target host are added in wave and replication record, click the **Sync Options** tab on right top of pop up screen,  select the **No Transfer** option and click **Modify**. Then click the play/arrow head icon to start replication. This will perform a dry run by checking the connection between the RMM and source/target servers. This will not migrate data. If the operation is successful then remove the **No Transfer** option that uses the same process.
 
 2. Whenever you are ready, go ahead and click **start replication** (the play/arrow head icon on the left top). This will start the actual migration. If you expand the replication record, it displays actual steps being executed in summary with necessary information.
 
@@ -196,39 +216,30 @@ You can migrate devices over one-by-one or perform simultaneous migrations. If y
 4. In case of failure, you can retrieve the log and review detailed information.
 
 To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation that uses the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
-{:note: .note}
+{: note}
 
-## Validate and perform post-migration activities
+## Validate your migration
 {: #p-p-migration-bare-metal-post-migration}
 {: step}  
 
-•	Access target device
+After your migration, validate or update the following:
 
-•	Check partitions / volumes
+1. Access the target device.
+2. Check partitions and volumes.
+3. Check applications.
+4. Install any test application in the target device.
+5. Check networking routes.
+6. Check or update application or operating system licenses.
+7. Remove RMM SSH key.
 
-•	Check applications
-
-•	Install any test application in target device
-
-•	Check networking routes
-
-•	Application or operating system licenses
-
-•	Remove RMM SSH key
-
-## Help
+## Help and support
 {: #p-p-migration-bare-metal-help}
 
-1. RackWare documentation
-
-    a. [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
-
-    b. [RackWare RMM Users Guide for IBM Cloud](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
+* [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
+* [RackWare RMM user guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
+* [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
 
 
-2.  FAQs about baremetal to metal
-
-    [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
 
 
 
