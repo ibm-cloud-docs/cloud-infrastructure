@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-24"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
@@ -52,10 +52,10 @@ This guide shows you how to complete a migration from on-premises to your {{site
 
 This diagram shows the architecture that you create with the guide.
 
-![Architecture](images/any-cloud-1.png){: caption="Architecture Diagram"}
+![Architecture](images/any-cloud-1.png){: caption="Architecture diagram"}
 
 General steps:
-1. Order RackWare RMM ({{site.data.keyword.cloud_notm}} [catalog tile](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global)) 
+1. Order RackWare RMM ({{site.data.keyword.cloud_notm}} [catalog tile](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global)){: external}
 2. BYOL (Bring Your Own License) from RackWare
 3. Establish connectivity between source server and {{site.data.keyword.vpc_short}} 
 4. Set up and provision VPC and virtual server instances
@@ -68,7 +68,7 @@ General steps:
 
 The RackWare RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RackWare RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
 
-1. Order the RackWare RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global).
+1. Order the RackWare RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}
 2. After you order, log in to the RackWare RMM server.
 3. In the RMM server, change the default password, create users, and create an SSH key.
 4. Upload the SSH key to {{site.data.keyword.vpc_short}}.
@@ -108,19 +108,19 @@ Complete the following steps to get a license:
 {: #connectivity-between-source-and-cloud}
 {: step}
 
-Your source and target server should communicate with each other and the RMM. You can do with the public internet with public IPs, or if you have a private-only environment, then you must setup either a VPN or Direct Link 2.0, use the following links:
+Your source and target server should communicate with each other and the RMM. You can do with the public internet with public IPs, or if you have a private-only environment, then you must setup either a VPN or Direct Link 2.0:
 
-- Use [Direct Link 2.0 connection](https://test.cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) to {{site.data.keyword.cloud_notm}}
+- Use [Direct Link 2.0 connection](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) to {{site.data.keyword.cloud_notm}}
 
 - Should have port 22 open with SSH accessible to RMM server
 
-- Public interface (least recommended due to security concerned)
+- Public interface (least recommended due to security concerns)
 
 ## Set up and provision VPC and virtual server instances
 {: #prepare-source-and-target}
 {: step}
 
-There are two different methods for setting up target the VSI, manual or with Rackware RMM auto provision feature as described below:
+There are two different methods for setting up target server: manual or with the RackWare RMM auto provision feature:
 
 ### Option 1: Manual
 {: #option-manual}
