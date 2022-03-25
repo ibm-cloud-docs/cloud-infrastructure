@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-25"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -44,7 +44,7 @@ The migration can occur either over the public or private interface of the compu
 ## Architecture
 {: #pv-migration-private-network-architecture}
 
-![Physical to virtual migration private IP diagram.](images/P2V-Private-1.svg){: caption="Figure 1. Migrating over private interface" caption-side="bottom"}
+![Physical to virtual migration private IP diagram.](images/P2V-Private-1.png){: caption="Figure 1. Migrating over private interface" caption-side="bottom"}
 
 ## Before you begin
 {: #pv-migration-private-network-prereqs}
