@@ -112,7 +112,7 @@ The RackWare RMM tool is available in the {{site.data.keyword.cloud_notm}} catal
 {: #p-p-migration-bare-metal-ordering-license}
 {: step}
 
-The license required for migration to {{site.data.keyword.cloud_notm}} is "bring your own license" (BYOL). The license is a subscription-based license, paid monthly, where you can migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
+The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). The license is a subscription-based license, paid monthly, where you can migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
 
 Follow these steps to get a license:
 
