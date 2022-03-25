@@ -25,8 +25,9 @@ subcollection: cloud-infrastructure
 {: #p-p-migration-bare-metal-overview}
 
 RackWare’s RMM solution simplifies the overall migration process of moving the operating system, applications, and data from one bare metal server to another in the {{site.data.keyword.cloud}} classic environment. The migration can occur either over the public or private interface of the compute resource. The only requirement is that RMM must be able to access both source and target server over SSH.
+{: shortdesc}
 
-## Objective
+## Objectives
 {: #p-p-migration-bare-metal-objective}
 
 - Prepare the source and target servers
@@ -224,10 +225,10 @@ To improve data transfer rate, adjust bandwidth allocation of RMM server. To kno
 
 After your migration, validate or update the following:
 
-1. Access the target device.
+1. Access the target server.
 2. Check partitions and volumes.
 3. Check applications.
-4. Install any test application in the target device.
+4. Install any test application in the target server.
 5. Check networking routes.
 6. Check or update application or operating system licenses.
 7. Remove RMM SSH key.
@@ -238,10 +239,6 @@ After your migration, validate or update the following:
 * [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
 * [RackWare RMM user guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
 * [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
-
-
-
-
 
 
 
