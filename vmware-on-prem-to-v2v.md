@@ -157,7 +157,7 @@ This document does not provide the details for setting up the VPC infrastructure
 2. Create Subnets. 
 3. Order the virtual server instance. 
     * SSH key (RMM SSH keys need to be added in addition to bastion SSH key)
-    * Operating system name (Linux/Windows and their respective version) 
+    * Operating system name (Linux or Windows and their respective version) 
     * Security groups 
     * Secondary volume 
 
@@ -166,14 +166,14 @@ This document does not provide the details for setting up the VPC infrastructure
 RMM can automatically provision a virtual server instance of VPC. Enable the wave level setting `Autoprovision` and then configure RMM with necessary details. Use these steps to use the auto-provision feature:
 
 1. Click **Clouduser** menu under **Configuration** main menu on left side.
-2. Click **Add**, and the Add Cloud** form will pop up. Enter appropriate details for the following fields:
+2. Click **Add**, and the Add Cloud** form will open. Enter appropriate details for the following fields:
     - Name
     - Select {{site.data.keyword.vpc_short}} as Cloud Provider
     - Select required Region where you want to auto provision virtual server instance
     - Enter valid API key for your {{site.data.keyword.cloud_notm}} account
     - Once all details are filled, click **Add**
 3. Open wave where operation needs to be performed
-4. Click text ’Not Configured’, next to ‘Autoprovision’ label, a pop up opens:
+4. Click text ’Not Configured’, next to ‘Autoprovision’ label, a pop-up opens:
     - Select added clouduser as **Environment**
     - Select region where virtual server instance needs to be provisioned
     - Subnet name and VPC name are optional. If entered, these would be default names for VPC and Subnet during provision of virtual server instance
@@ -205,7 +205,7 @@ RMM can automatically provision a virtual server instance of VPC. Enable the wav
     - Click **Modify**
     - Finally, run replication
     
-Target virtual server instance boot volume cannot be greater than 250 GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
+Target virtual server instance boot volume cannot be greater than 250 GB, so if source servers boot volume is greater than 250 GB, use right sizing option of RMM.
 {: note}
 
 If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
@@ -226,14 +226,14 @@ For Windows OS, you need to download the SSH key utility.  You can download it f
 For Windows OS, the user is SYSTEM and you must key in the RMM SSH Key here to authenticate for both source and target servers.
 {: note}
 
-In case, if user is using 'Auto Provision' feature, no need to setup target. Only friendly name for target machine is required.
+In case, if user is using 'Auto Provision' feature, no need to set up target. Only friendly name for target server is required.
 {: note}
 
 ## RackWare RMM V2V Migration
 {: #rackware-rmm-v2v-migration}
 {: step}
 
-You can migrate the machines one-by-one or opt to run multiple simultaneous migrations. If you are running multiple simultaneous migrations, then download the CSV template from the RMM server and populate the appropriate fields.
+You can migrate the servers one-by-one or opt to run multiple simultaneous migrations. If you are running multiple simultaneous migrations, then download the CSV template from the RMM server and populate the appropriate fields.
 
 1. Login into the RMM server.
 
