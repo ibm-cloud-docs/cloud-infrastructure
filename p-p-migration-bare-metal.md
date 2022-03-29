@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-29"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -40,7 +40,7 @@ RackWare’s RMM solution simplifies the overall migration process of moving the
 1. Encrypted volumes are not supported.
 2. Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
 3. The RackWare’s RMM solution handles only the OS, application, and data movement, so anything else needs to be set up by you (for example, security groups, subnets, etc.).
-4. For data migration, file performance and endurance storage are not supported. You can use third-party tools such as `rsync` for data migration on block and file. For Linux it is supported.
+4. For data migration, file performance and endurance storage are not supported. You can use third-party tools such as `rsync` for data migration on block and file.
 
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
@@ -238,7 +238,14 @@ After your migration, validate or update the following:
 
 * [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
 * [RackWare RMM user guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
-* [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-for-bare-metal-to-bare-metal)
+* [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs)
+
+
+
+
+
+
+
 
 
 
