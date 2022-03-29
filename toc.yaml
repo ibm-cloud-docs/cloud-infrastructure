@@ -45,6 +45,7 @@ toc:
           topics: 
           - ha-landing-page-all.md
           - ha-cloud-intro.md
+          - ha-dr-ref-arch.md
           - /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application   
           - ha-autoscale-tutorial.md
           - topicgroup: 
@@ -71,6 +72,7 @@ toc:
               - ha-3-tier-resilient-terraform.md
               - ha-3-tier-resilient-autoscale-terraform.md
               - ha-3-tier-mzr-terraform.md
+              - ha-3-tier-mzr-schematics.md
               - ha-3-tier-szr-terraform.md
               - ha-3-tier-cross-mzr-terraform.md
 
