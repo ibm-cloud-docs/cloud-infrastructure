@@ -1,10 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-05-14"
-
-keywords: infrastructure, monitoring, ibm cloud monitoring, iaas monitoring
+  years: 2020, 2022
+lastupdated: "2022-03-30"
 
 subcollection: cloud-infrastructure
 
@@ -18,7 +16,7 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.mon_full_notm}}
 {: #monitoring-iaas}
 
-{{site.data.keyword.mon_full_notm}} collects basic classic infrastructure and VPC virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt dashboard.
+{{site.data.keyword.mon_full_notm}} collects basic Classic infrastructure and VPC virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. <!--If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance. -->You can access metrics through the prebuilt dashboard.
 {: shortdesc}
 
 {{site.data.keyword.mon_full_notm}} metrics are available only if you use the monitoring full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
@@ -52,8 +50,7 @@ You use basic monitoring to initiate service and slow pings to make sure that th
 | ----- | ----- |
 | SERVICE PING | Test ping to address |
 | SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load |
-
-<caption>Table 1: Basic monitoring service types</caption>
+{: caption="Table 1. Basic monitoring service types" caption-side="bottom"} 	
 
 If an echo isn't received in the allotted timeframe (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
 {: tip}
@@ -80,8 +77,7 @@ If an echo isn't received in the allotted timeframe (1 second for service pings,
 | TCP CUSTOM | Test for TCP connection to specified port on address |
 | TELNET | Test for telnet connection to port 23 on address |
 | UDP SIP | Test for UDP connection to specified port on address |
-
-<caption>Table 2: Add-on monitoring service types</caption>
+{: caption="Table 2. Add-on monitoring service types" caption-side="bottom"}
 
 ## Viewing configured monitors
 {: #view-configured-monitors}
@@ -101,5 +97,4 @@ For more information about monitoring your infrastructure and environments, see 
 
 * [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
 * If you're ready to provision a monitoring instance, see [Provisioning an instance](/docs/monitoring?topic=monitoring-provision).
-* If you're interested in monitoring plans, see [{{site.data.keyword.mon_full_notm}} agents and plans](/docs/cloud-infrastructure?topic=cloud-infrastructure-sysdig-agents-and-plans).
-* If you're interested in monitoring pricing information, see [Pricing](/docs/monitoring?topic=monitoring-pricing_plans).
+* If you're interested in monitoring plans and pricing, see [Pricing](/docs/monitoring?topic=monitoring-pricing_plans).
