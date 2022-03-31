@@ -30,7 +30,7 @@ subcollection: cloud-infrastructure
 ## What is created
 {: #created-vpc-ha-resilient-mzr-schematics}
 
-A VPC is a private space in IBM Cloud where you can run an isolated environment with custom network policies. The variables that you define are used by the scripts to provision the virtual private cloud infrastructure resources for you. The devault values in the scripts are used to create these resources in two regions: 
+A VPC is a private space in IBM Cloud where you can run an isolated environment with custom network policies. The variables that you define are used by the scripts to provision the virtual private cloud infrastructure resources for you. The default values in the scripts are used to create these resources in two regions: 
 
 |RESOURCE NAME      |             REGION1  |  REGION2  |   TOTAL        |
 |-------------------|-----------------------|----------|------------------|
