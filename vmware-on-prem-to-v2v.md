@@ -294,6 +294,6 @@ Before decommissioning the source server, it is imperative to validate the targe
 {: #rackware-rmm-v2v-resources}
 
 
-1.  [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/README.md){: external}
+1.  [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/VMware/README.md){: external}
 2. [FAQs](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)  
 3. [RackWare usage guide](https://www.rackwareinc.com/cloud-migration){: external}
