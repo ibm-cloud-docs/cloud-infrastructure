@@ -24,7 +24,7 @@ subcollection: cloud-infrastructure
 {:download: .download}
 {:important: .important}
 {:note: .note}
-{:new_window: target="_blank"}
+{:new_window: target="_blank"} 
 {:step: data-tutorial-type='step'}
 
 # High Availability and Resiliency on {{site.data.keyword.cloud_notm}}
