@@ -2,7 +2,7 @@
 
 copyright: 
   years:  2021, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-12"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -30,10 +30,10 @@ subcollection: cloud-infrastructure
 # High Availability and Resiliency on {{site.data.keyword.cloud_notm}}
 {: #landing-about-ha-dr-backup}
 
-With {{site.data.keyword.cloud}}, you can protect your critical workloads by building highly available infrastructures. Using the backup and disaster recovery features, you can minimize your downtime if a severe failure condition happens. You can safeguard your classic or VPC application against a single point of failure, and provide the highest level of uptime. By creating infrastructures that are protected against a single point of failure and backing up your data, you keep your workloads highly available. 
+With {{site.data.keyword.cloud}}, you can protect your critical workloads by building resilient highly available infrastructures. Using the backup, disaster recovery, and hhigh availability features, you can minimize your downtime if a severe failure condition happens. You can safeguard your classic or VPC application with multiple availability zones or regions. By creating cloud infrastructures that are protected against a single point of failure, and backing up your data, you keep your workloads and web applications highly available. 
 {: shortdesc} 
 
-## What makes an infrastructure resilient?
+## What makes a cloud computing infrastructure resilient?
 {: #landing-what-is-resilient}
 
 In {{site.data.keyword.cloud_notm}}, a resilient infrastructure keeps your cloud solution running at acceptable levels, even if one or more areas of the infrastructure experiences a minor or major problem:
