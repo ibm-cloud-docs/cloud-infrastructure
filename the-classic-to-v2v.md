@@ -217,7 +217,7 @@ Example:
 
  `$ ./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local`   
  
-[For more information about discovering the VMware guest VMs that use discoveryTool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/RMM-V2V-discoveryTool/v2v-discovery-tool-rmm/README.md)
+For more information about discovering the VMware guest VMs that use [DiscoveryTool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/VMware/README.md).{: external}
 
 ## Validation
 {: #rackware-rmm-validation-classic}
