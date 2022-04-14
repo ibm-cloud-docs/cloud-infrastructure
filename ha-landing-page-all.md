@@ -34,7 +34,7 @@ With {{site.data.keyword.cloud}}, you can protect your critical workloads by bui
 {: shortdesc} 
 
 ## What makes a cloud computing infrastructure resilient?
-{: #landing-what-is-resilient}
+{: #landing-what-is-resilient}  
 
 In {{site.data.keyword.cloud_notm}}, a resilient infrastructure keeps your cloud solution running at acceptable levels, even if one or more areas of the infrastructure experiences a minor or major problem:
 
