@@ -2,7 +2,7 @@
 
 copyright: 
   years:  2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-04-20"
 
 keywords: high availability, regions, zones, resiliency
 
@@ -32,19 +32,16 @@ subcollection: cloud-infrastructure
 
 A VPC is a private space in IBM Cloud where you can run an isolated environment with custom network policies. The variables that you define are used by the scripts to provision the virtual private cloud infrastructure resources for you. The default values in the scripts are used to create these resources in two regions: 
 
-|RESOURCE NAME      |             REGION1  |  REGION2  |   TOTAL        |
-|-------------------|-----------------------|----------|------------------|
-| Cloud Object Storage Instance    |                 01    |     -         |  01|
-| Cloud Object Storage Bucket      |                 01    |     -         |  01|
-| Cloud Object Storage Object      |                 01    |     -         |  01|
-| VPC             |                 01    |     01        |  02|
-| Security Groups    |              05    |     05        |  10|
-| Subnets      |                    10    |     10        |  20|
-| Bastion VSI        |              01    |     01        |  02|
-| App VSI            |              05    |     05        |  10|
-| web VSI           |               05    |     05        |  10|
-| Database VSI    |                 06    |     06        |  12|
-| Floating IP     |                 01    |     01        |  02|
+|Resource type    |  Number of resources created  |  
+|-------------------|-----------------------|
+| VPC             |                 01    | 
+| Security Groups    |              05    |
+| Subnets      |                    10    | 
+| Bastion VSI        |              01    | 
+| App VSI            |              05    |
+| web VSI           |               05    |  
+| Database VSI    |                 06    |  
+| Floating IP     |                 01    |  
 
 
 The scripts use variables to specify your account information, VSI server information, Load Balancer information, Auto scale, and Anti-Affinity
@@ -119,7 +116,7 @@ To use the files in the GitHub repo in Schematics, you need a personal access to
 
     |Component type   | Parameter values needed |
     |-----------------|--------------------|
-    |User specific information  | - API key  \n - SSH key name.  If you need to enter multiple SSH keys, enter them in square brackets and quotes.  For example, ["ibmcloud_ssh_key_name1,ibmcloud_ssh_key_name2,..."]  \n - Resource Group  \n - IP address. Enter the IP address in the format: ["public_ip_address1/32,public_ip_address2/32,..."]. For example ["103.42.91.78/32"]  \n - You local machine OS  \n - Prefix to add to resource names |
+    |User-specific information  | - API key  \n - SSH key name. If you need to enter multiple SSH keys, enter them in square brackets and quotation marks. For example, ["ibmcloud_ssh_key_name1,ibmcloud_ssh_key_name2,..."]  \n - Resource Group  \n - IP address. Enter the IP address in the format: ["public_ip_address1/32,public_ip_address2/32,..."]. For example, ["103.42.91.78/32"]  \n - Your local machine OS  \n - Prefix to add to resource names |
     |Region  | Regions where resources are deployed  |
     |OS type for each server  | -Bastion Server  \n - App Server  \n - Web Server  \n - Db Server  |
     |Image to use for region 1 VSIs |  -Bastion Server  \n - App Server  \n - Web Server  \n - Db Server  |
