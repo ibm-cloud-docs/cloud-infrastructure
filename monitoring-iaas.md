@@ -2,16 +2,13 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-25"
 
 subcollection: cloud-infrastructure
 
 ---
 
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:note: .note}
-{:new_window: target="_blank"}
+{{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.mon_full_notm}}
 {: #monitoring-iaas}
@@ -44,13 +41,15 @@ Before you enable {{site.data.keyword.mon_full_notm}} on your platform, keep the
 ## Basic monitoring
 {: #basic-monitoring}
 
-You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive.
+You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive. 
 
 | Basic monitoring service types | Description |
 | ----- | ----- |
 | SERVICE PING | Test ping to address |
 | SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load |
 {: caption="Table 1. Basic monitoring service types" caption-side="bottom"} 	
+
+The source of service ping and slow ping monitoring depends on the data center where the server is located. To use public IP monitoring, you need to allow ICMP from the server's data center [public service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#front-end-network). For private IP monitoring, you need to allow ICMP from the server's data center [private service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
 
 If an echo isn't received in the allotted timeframe (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
 {: tip}
