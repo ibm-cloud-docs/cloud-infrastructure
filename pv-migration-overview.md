@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-27"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -42,7 +42,7 @@ Before you begin migrating your physical bare metal server to a virtual server, 
   - [VPNs](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-overview)
   - [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
 
-To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation that uses the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {:note: .note}
 
 ## Migration considerations
