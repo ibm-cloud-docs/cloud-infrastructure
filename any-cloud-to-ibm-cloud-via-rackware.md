@@ -54,7 +54,7 @@ This guide shows you how to complete a migration from AWS, Azure, GCP, and OCI t
 
 This diagram shows the architecture that you create with the guide.
 
-![Architecture](images/AnyCloud_final.svg){: caption=" Figure 1. Architecture diagram"}
+![Architecture](images/AnyCloud_final.svg){: caption=" Figure 1. Architecture diagram" caption-side="bottom"}
 
 ## Order RMM
 {: #order-rackware}
