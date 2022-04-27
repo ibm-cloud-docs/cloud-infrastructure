@@ -108,7 +108,7 @@ toc:
               - pv-migration-overview.md
               - pv-migration-private-ip.md
           - topicgroup: 
-              label: VMWare to VPC infrastructure
+              label: Virtualized workloads to VPC infrastructure
               topics: 
               - any-cloud-to-ibm-cloud-via-rackware.md
               - vmware-on-prem-to-v2v.md
