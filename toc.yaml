@@ -100,7 +100,6 @@ toc:
               - /virtual-servers/virtual-servers-migrating-vsi-new-datacenter
               - /bare-metal/bare-metal-getting-started-bm-custom-image-templates
               - p-p-migration-bare-metal.md
-              - p-p-faqs.md
           - topicgroup: 
               label: Classic to VPC infrastructure
               topics: 
@@ -108,7 +107,6 @@ toc:
               - on-prem-vpc-migration-rackware-rmm.md
               - pv-migration-overview.md
               - pv-migration-private-ip.md
-              - pv-faqs.md
           - topicgroup: 
               label: VMWare to VPC infrastructure
               topics: 
@@ -116,13 +114,11 @@ toc:
               - vmware-on-prem-to-v2v.md
               - the-classic-to-v2v.md 
               - hyper-v-to-IBM-Cloud-VPC-VSI.md
-              - faqs-for-VMWare-to-VPC-migrations.md   
           - topicgroup: 
               label: Script-based migration
               topics: 
               - data-migration-diy.md
-              - image-migration-diy.md
-              - getting-help-diy-image-data-migration.md   
+              - image-migration-diy.md 
  
   - navgroup:
       id: reference
@@ -138,7 +134,14 @@ toc:
 
   - navgroup:
       id: help
-      topics: 
+      topics:
+      - topicgroup:
+          label: FAQs for migration
+          topics:
+          - p-p-faqs.md
+          - pv-faqs.md
+          - faqs-for-VMWare-to-VPC-migrations.md
+      - getting-help-diy-image-data-migration.md
       - link:
           label: IBM Cloud Support
           href: https://www.ibm.com/cloud/support
