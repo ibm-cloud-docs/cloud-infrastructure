@@ -59,6 +59,26 @@ The migration can occur either over the public or private interface of the compu
 To improve data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {: note}
 
+## Order RMM
+{: #order-rackware-rmm}
+{: step}
+
+The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
+
+1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog tile](https://cloud.ibm.com/catalog/content/Rackware-Golden-Template-1.11-06545490-596b-4133-8516-8425a11b3265-global){: external}.
+2. After you order, log in to the RMM server.
+3. In the RMM server, change the default password, create users, and create an SSH key with the correct name.
+4. Use the `setup` script to request a three-month promotional license.
+
+    ```
+    /opt/IBM/discoverTool -p
+    ```
+    {: pre}
+   
+    After three months, you need to purchase the license from RackWare by emailing [sales@rackwareinc.com](mailto:sales@rackwareinc.com). 
+    {: important}
+   
+
 ## Set up and provision VPC and virtual server instance
 {: #set-up-provision-vpc-vsi}
 {: step}
@@ -133,39 +153,6 @@ If "No Transfer" option is selected in "Sync Options", it does auto provision of
 Ensure that your VPC, subnet, and other necessary cloud components are setup before adding cloud user in RMM.
 {: note}
 
-## Order IBM Cloud Transit Gateway
-{: #order-transit-gateway}
-{: step}
-
-{{site.data.keyword.tg_full_notm}} provides connectivity between classic and your VPC infrastructure. When you connect the two entities, be aware that the classic infrastructure is on the `10.0.0.0` network, which means that the VPC network needs to be a on different network; otherwise, the networks overlap and cause communication issues. 
-
-1. Order {{site.data.keyword.tg_full_notm}}
-    * Use local routing option 
-2. Add connections 
-    * Classic infrastructure 
-    * VPC 
-     * Select region 
-     * Select VPC 
-
-## Order RMM
-{: #order-rackware-rmm}
-{: step}
-
-The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
-
-1. Order the RMM server from the {{site.data.keyword.cloud_notm}} catalog.
-2. After you order, log in to the RMM server.
-3. In the RMM server, change the default password, create users, and create an SSH key.
-4. Use the `setup` script to request a three-month promotional license.
-
-    ```
-    /opt/IBM/discoverTool -p
-    ```
-    {: pre}
-   
-    After three months, you need to purchase the license from RackWare by emailing [sales@rackwareinc.com](mailto:sales@rackwareinc.com). 
-    {: important}
-   
 ## Prepare source and target servers
 {: #prepare-source-target-machines}
 {: step}
@@ -227,6 +214,22 @@ Within the discovery script, a helper script is provided to help with the discov
 /opt/IBM/discoverTool -d
 ```
 {: pre}
+
+For more information on the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm).
+
+## Order IBM Cloud Transit Gateway
+{: #order-transit-gateway}
+{: step}
+
+{{site.data.keyword.tg_full_notm}} provides connectivity between classic and your VPC infrastructure. When you connect the two entities, be aware that the classic infrastructure is on the `10.0.0.0` network, which means that the VPC network needs to be a on different network; otherwise, the networks overlap and cause communication issues. 
+
+1. Order {{site.data.keyword.tg_full_notm}}
+    * Use local routing option 
+2. Add connections 
+    * Classic infrastructure 
+    * VPC 
+     * Select region 
+     * Select VPC 
 
 ## Validate your migration
 {: #validate-pv-migration}
