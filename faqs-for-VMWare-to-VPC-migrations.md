@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-10"
 
 keywords: infrastructure
 
@@ -37,12 +37,6 @@ For RMM server overview information, see [RackWare's Cloud Migration](https://ww
 
 This software is available in the {{site.data.keyword.cloud_notm}} catalog in the Migration Tools category. After you provide the appropriate information, a virtual server instance is installed in a new VPC with the RMM already installed.
  
-## What are the limitations for the VMware to VPC migration? 
-{: #limitations-vmware-migration}
-{: faq}
-
-For more information about limitations of the VMware to VPC migration, see VMware to VPC migration limitation.
- 
 ## How do I get an RMM server license?  
 {: #how-procure-rmm-server-license}
 {: faq}
@@ -60,7 +54,9 @@ Yes, RMM uses SSH for communication between source, target, and the RMM server. 
 {: #where-vmware-doc-info}
 {: faq}
 
-For more information, see [RackWare Cloud Migration Documentation](https://www.rackwareinc.com/cloud-migration).
+For On-premises VMware VM to IBM Cloud VPC migration with RMM documentation, click [here](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
+
+For Classic VMware VM to IBM Cloud VPC migration with RMM documentation, click [here](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic).
  
 ## Who do I contact for support? 
 {: #where-support-info}
@@ -98,12 +94,6 @@ Usually the migration is nonintrusive. It can be done while the server is up and
 {: faq}
 
 The discovery tool discovers guest VMs from VMware and it uploads into RMM as the source for migrating in a typical wave. Each wave is named by ESXi host IP address from which guest VMs are discovered.
- 
-## What operating systems support the migration?
-{: #what-os-support-migration}
-{: faq} 
-
-Supports migrating Windows Server 2012, 2012R2, 2016, and 2019; Red Hat Enterprise Linux (RHEL), CentOS, Ubuntu, and Debian Linux operating systems.
  
 ## Does the migration solution support auto-provisioning of the target server?
 {: #does-migration-support-auto-provisioning}
