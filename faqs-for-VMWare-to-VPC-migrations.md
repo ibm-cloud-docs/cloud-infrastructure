@@ -54,9 +54,9 @@ Yes, RMM uses SSH for communication between source, target, and the RMM server. 
 {: #where-vmware-doc-info}
 {: faq}
 
-For On-premises VMware VM to IBM Cloud VPC migration with RMM documentation, click [here](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
+For On-premises VMware VM to IBM Cloud VPC migration with RMM documentation, click [here](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
 
-For Classic VMware VM to IBM Cloud VPC migration with RMM documentation, click [here](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic).
+For Classic VMware VM to IBM Cloud VPC migration with RMM documentation, click [here](https://cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic).
  
 ## Who do I contact for support? 
 {: #where-support-info}
