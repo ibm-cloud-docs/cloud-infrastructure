@@ -560,13 +560,14 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 {: note}
 
 ## SSL VPN network (on back-end/private network)
-{: # ssl-vpn-network}
+{: #ssl-vpn-network}
 
 ICMP – ping (for support troubleshooting)
 
 All TCP/UDP ports (for access from your local workstation)
 
 ## SSL VPN data centers
+{: #ssl-vpn-data-centers}
 
 |Data center|City|State|Country|IP range|
 |---|---|---|---|---|
