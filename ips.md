@@ -589,9 +589,9 @@ All TCP/UDP ports (for access from your local workstation)
 |mex01|Mexico City|-|MEX|10.3.232.0/24|
 |mil01|Milan|-|ITA|10.3.216.0/24|
 |mon01|Montreal|-|CAN|10.3.224.0/24|
-|osa21|Osaka|10.202.128.0/24|
-|osa22|Osaka|10.202.132.0/24|
-|osa23|Osaka|10.202.136.0/24|
+|osa21|Osaka|-|JPN|10.202.128.0/24|
+|osa22|Osaka|-|JPN|10.202.132.0/24|
+|osa23|Osaka|-|JPN|10.202.136.0/24|
 |par01|Paris|-|FRA|10.3.236.0/24|
 |sao01|São Paulo|-|BRA|10.200.236.0/24|
 |seo01|Seoul|-|KOR|10.200.224.0/22|
