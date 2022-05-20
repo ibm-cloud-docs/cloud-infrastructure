@@ -65,7 +65,6 @@ To improve the data transfer rate, adjust the bandwidth allocation of the RMM se
 You can order RMM-BYOL from the {{site.data.keyword.cloud_notm}} catalog. A virtual server with the RMM software is installed into the VPC that you provide when you order. The RMM server has a public IP address for reachability.
 
 If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
-
 {: note}
 
 1. Order RMM-BYOL from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
