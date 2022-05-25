@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2022
-lastupdated: "2022-05-225"
+lastupdated: "2022-05-25"
 
 keywords: encryption, storage encryption, customer managed encryption, Classic Infrastructure encryption
 
