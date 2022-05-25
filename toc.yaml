@@ -125,6 +125,7 @@ toc:
       topics:
       - ips.md
       - ntp-service-overview.md
+      - encryption-classic-infra.md
       - link:
          label: Terraform reference
          href: /ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started
