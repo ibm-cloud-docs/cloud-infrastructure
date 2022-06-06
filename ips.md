@@ -280,7 +280,7 @@ Ports to allow:
 ## Service network (on back-end/private network)
 {: #service-network}
 
-Be sure to configure rules and verify routes for DAL10, WDC04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from DAL10, WDC04, and AMS01 to your server. The traffic must be able to travel between the service networks and your server. By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
+Be sure to configure rules and verify routes for DAL10, WDC04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from DAL10, WDC04, and AMS01 to your server. The traffic must be able to travel between the service networks and your server in both directions. By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
 
 |Data center|City|State|Country|IP range|
 |---|---|---|---|---|
@@ -294,7 +294,7 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 |dal06|Dallas|Texas|USA|10.2.128.0/20|
 |dal07|Dallas|Texas|USA|10.1.176.0/20|
 |dal08|Dallas|Texas|USA|100.100.0.0/20|
-|dal09|Dallas|Texas|USA|10.2.112.0/20 and 10.3.192.0/24|
+|dal09|Dallas|Texas|USA|10.2.112.0/20  \n 10.3.192.0/24|
 |dal10|Dallas|Texas|USA|10.200.80.0/20|
 |dal12|Dallas|Texas|USA|10.200.112.0/20|
 |dal13|Dallas|Texas|USA|10.200.128.0/20|
@@ -321,7 +321,7 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 |sjc03|San Jose|California|USA|10.3.176.0/20|
 |sjc04|San Jose|California|USA|10.201.80.0/20|
 |sng01|Jurong East|-|SGP|10.2.32.0/20|
-|syd01|Sydney|-|AUS|10.3.96.0/20 and 10.202.32.0/20|
+|syd01|Sydney|-|AUS|10.3.96.0/20  \n 10.202.32.0/20|
 |syd04|Sydney|-|AUS|10.201.16.0/20|
 |syd05|Sydney|-|AUS|10.202.16.0/20|
 |tok02|Tokyo|-|JPN|10.201.160.0/20|
@@ -333,7 +333,7 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 |tor05|Toronto|-|CAN|10.202.192.0/20|
 |wdc01|Washington D.C.|-|USA|10.1.96.0/19|
 |wdc03|Washington D.C.|-|USA|100.100.32.0/20|
-|wdc04|Washington D.C.|-|USA|10.3.160.0/20 and 10.201.0.0/20|
+|wdc04|Washington D.C.|-|USA|10.3.160.0/20  \n 10.201.0.0/20|
 |wdc06|Washington D.C.|-|USA|10.200.160.0/20|
 |wdc07|Washington D.C.|-|USA|10.200.176.0/20|
 
@@ -345,51 +345,51 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 | Data center | IP range |
 |-----|-----|
 | **Required Flows**:  \n * Outbound TCP 8086 and TCP 8087 from your private  \n VLANs to IP ranges documented in DAL09 and DAL10 only. `*`  \n * Outbound TCP 2546 from your private VLANs to IP ranges  \n documented for each DC where you need to access your vault. `*` | |
-| AMS01 | 10.2.70.0/24  \n 10.200.54.0/24 |   
-| AMS03 | 10.3.134.0/24 |  
-| CHE01 | 10.200.22.0/24 |  
-| DAL05 | 10.1.146.0/24 |     
-| DAL06 | 10.2.134.0/24 |   
-| DAL08 | 100.100.6.0/24 |  
-| DAL09 | 10.2.118.0/24 |
-| DAL09 | 10.2.126.0/24
-| DAL10 | 10.200.86.0/24 |  
-| DAL12 | 10.200.118.0/24 |  
-| DAL13 | 10.200.134.0/24 |  
-| FRA02 | 10.3.86.0/24 |  
-| FRA02AZ | 10.201.150.0/24 |  
-| FRA04 | 10.201.118.0/24 |  
-| FRA05 | 10.201.134.0/24 |
-| HKG02 | 10.2.166.0/24 |  
-| LON02 | 10.1.214.0/24 |
-| LON02AZ | 10.201.102.0/24 |  
-| LON04 | 10.201.38.0/24 |  
-| LON05 | 10.201.54.0/24 |   
-| LON06 | 10.201.70.0/24 |   
-| MEX01 | 10.2.182.0/24 |   
-| MIL01 | 10.3.150.0/24 |  
-| MON01 | 10.3.118.0/24 |
-| OSA21 | 10.202.118.0/24 |
-| OSA22 | 10.202.150.0/24 |
-| OSA23 | 10.202.166.0/24 |
-| PAR01 | 10.2.150.0/24 |  
-| SAO01 | 10.200.6.0/24 |  
-| SEO01 | 10.200.86.0/24 |  
-| SJC01 | 10.1.198.0/24  \n 10.200.38.0/24 |
-| SJC03 | 10.3.182.0/24 |
-| SJC04 | 10.201.86.0/24 |
-| SNG01 | 10.2.38.0/24  \n 10.200.150.0/24 |  
-| SYD01 | 10.3.102.0/24 |  
-| SYD04 | 10.201.22.0/24 |  
-| TOK02AZ | 10.201.166.0/24 |  
-| TOK04 | 10.201.182.0/24 |   
-| TOK05 | 10.201.198.0/24 |
-| TOR01 | 10.2.54.0/24 |
-| WDC01 | 10.1.114.0/24 |
-| WDC03 | 100.100.38.0/24 |
-| WDC04 | 10.3.166.0/24  \n 10.201.6.0/24 |
-| WDC06 | 10.200.166.0/24 |
-| WDC07 | 10.200.182.0/24 |
+| ams01 | 10.2.70.0/24  \n 10.200.54.0/24 |   
+| ams03 | 10.3.134.0/24 |  
+| che01 | 10.200.22.0/24 |  
+| dal05 | 10.1.146.0/24 |     
+| dal06 | 10.2.134.0/24 |   
+| dal08 | 100.100.6.0/24 |  
+| dal09 | 10.2.118.0/24 |
+| dal09 | 10.2.126.0/24
+| dal10 | 10.200.86.0/24 |  
+| dal12 | 10.200.118.0/24 |  
+| dal13 | 10.200.134.0/24 |  
+| fra02 | 10.3.86.0/24 |  
+| fra02AZ | 10.201.150.0/24 |  
+| fra04 | 10.201.118.0/24 |  
+| fra05 | 10.201.134.0/24 |
+| hkg02 | 10.2.166.0/24 |  
+| lon02 | 10.1.214.0/24 |
+| lon02AZ | 10.201.102.0/24 |  
+| lon04 | 10.201.38.0/24 |  
+| lon05 | 10.201.54.0/24 |   
+| lon06 | 10.201.70.0/24 |   
+| mex01 | 10.2.182.0/24 |   
+| mil01 | 10.3.150.0/24 |  
+| mon01 | 10.3.118.0/24 |
+| osa21 | 10.202.118.0/24 |
+| osa22 | 10.202.150.0/24 |
+| osa23 | 10.202.166.0/24 |
+| par01 | 10.2.150.0/24 |  
+| sao01 | 10.200.6.0/24 |  
+| seo01 | 10.200.86.0/24 |  
+| sjc01 | 10.1.198.0/24  \n 10.200.38.0/24 |
+| sjc03 | 10.3.182.0/24 |
+| sjc04 | 10.201.86.0/24 |
+| sng01 | 10.2.38.0/24  \n 10.200.150.0/24 |  
+| syd01 | 10.3.102.0/24 |  
+| syd04 | 10.201.22.0/24 |  
+| tok02AZ | 10.201.166.0/24 |  
+| tok04 | 10.201.182.0/24 |   
+| tok05 | 10.201.198.0/24 |
+| tor01 | 10.2.54.0/24 |
+| wdc01 | 10.1.114.0/24 |
+| wdc03 | 100.100.38.0/24 |
+| wdc04 | 10.3.166.0/24  \n 10.201.6.0/24 |
+| wdc06 | 10.200.166.0/24 |
+| wdc07 | 10.200.182.0/24 |
 {: class="simple-tab-table"}
 {: caption="Table 1. eVault by Data Center" caption-side="left"}
 {: #simpletabtable1}
