@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-28"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -29,54 +29,54 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 ## Front-end (public) network
 {: #front-end-network}
 
-|Data center|City|State|Country|IP range|
-|---|---|---|---|---|
-|ams01|Amsterdam|-|NLD|159.253.158.0/23|
-|ams03|Amsterdam|-|NLD|159.8.198.0/23|
-|che01|Chennai|-|IND|169.38.118.0/23|
-|dal05|Dallas|Texas|USA|173.192.118.0/23|
-|dal06|Dallas|Texas|USA|184.172.118.0/23|
-|dal07|Dallas|Texas|USA|50.22.118.0/23|
-|dal08|Dallas|Texas|USA|192.255.18.0/24|
-|dal09|Dallas|Texas|USA|198.23.118.0/23|
-|dal10|Dallas|Texas|USA|169.46.118.0/23|
-|dal12|Dallas|Texas|USA|169.47.118.0/23|
-|dal13|Dallas|Texas|USA|169.48.118.0/24|
-|fra02|Frankfurt|-|DEU|159.122.118.0/23|
-|fra04|Frankfurt|-|DEU|161.156.118.0/24|
-|fra05|Frankfurt|-|DEU|149.81.118.0/23|
-|hkg02|Hong Kong|-|CHN|119.81.138.0/23|
-|lon02|London|-|ENG|5.10.118.0/23|
-|lon04|London|-|ENG|158.175.127.0/24|
-|lon05|London|-|ENG|141.125.118.0/23|
-|lon06|London|-|ENG|158.176.118.0/23|
-|mex01|Mexico City|-|MEX|169.57.118.0/23|
-|mil01|Milan|-|ITA|159.122.138.0/23|
-|mon01|Montreal|-|CAN|169.54.118.0/23|
-|osa21|Osaka|-|JPN|163.68.118.0/24|
-|osa22|Osaka|-|JPN|163.69.118.0/24|
-|osa23|Osaka|-|JPN|163.73.118.0/24|
-|par01|Paris|-|FRA|159.8.118.0/23|
-|sao01|São Paulo|-|BRA|169.57.138.0/23|
-|seo01|Seoul|-|KOR|169.56.118.0/24|
-|sjc01|San Jose|California|USA|50.23.118.0/23|
-|sjc03|San Jose|California|USA|169.45.118.0/23|
-|sjc04|San Jose|California|USA|169.62.118.0/24|
-|sng01|Jurong East|-|SGP|174.133.118.0/23|
-|syd01|Sydney|-|AUS|168.1.18.0/23|
-|syd04|Sydney|-|AUS|130.198.118.0/23|
-|syd05|Sydney|-|AUS|135.90.118.0/23|
-|tok02|Tokyo|-|JPN|161.202.118.0/23|
-|tok04|Tokyo|-|JPN|128.168.118.0/23|
-|tok05|Tokyo|-|JPN|165.192.118.0/23|
-|tor01|Toronto|-|CAN|158.85.118.0/23|
-|tor04|Toronto|-|CAN|163.74.118.0/23|
-|tor05|Toronto|-|CAN|163.75.118.0/23|
-|wdc01|Washington D.C.|-|USA|208.43.118.0/23|
-|wdc03|Washington D.C.|-|USA|192.255.38.0/24|
-|wdc04|Washington D.C.|-|USA|169.55.118.0/23|
-|wdc06|Washington D.C.|-|USA|169.60.118.0/23|
-|wdc07|Washington D.C.|-|USA|169.61.118.0/23|
+|Data center|City |IP range|
+|---|---|---|
+|ams01|Amsterdam |159.253.158.0/23|
+|ams03|Amsterdam |159.8.198.0/23|
+|che01|Chennai |169.38.118.0/23|
+|dal05|Dallas |173.192.118.0/23|
+|dal06|Dallas |184.172.118.0/23|
+|dal07|Dallas |50.22.118.0/23|
+|dal08|Dallas |192.255.18.0/24|
+|dal09|Dallas |198.23.118.0/23|
+|dal10|Dallas |169.46.118.0/23|
+|dal12|Dallas |169.47.118.0/23|
+|dal13|Dallas |169.48.118.0/24|
+|fra02|Frankfurt |159.122.118.0/23|
+|fra04|Frankfurt |161.156.118.0/24|
+|fra05|Frankfurt |149.81.118.0/23|
+|hkg02|Hong Kong |119.81.138.0/23|
+|lon02|London |5.10.118.0/23|
+|lon04|London |158.175.127.0/24|
+|lon05|London |141.125.118.0/23|
+|lon06|London |158.176.118.0/23|
+|mex01|Mexico City |169.57.118.0/23|
+|mil01|Milan |159.122.138.0/23|
+|mon01|Montreal |169.54.118.0/23|
+|osa21|Osaka |163.68.118.0/24|
+|osa22|Osaka |163.69.118.0/24|
+|osa23|Osaka |163.73.118.0/24|
+|par01|Paris |159.8.118.0/23|
+|sao01|São Paulo |169.57.138.0/23|
+|seo01|Seoul |169.56.118.0/24|
+|sjc01|San Jose |50.23.118.0/23|
+|sjc03|San Jose |169.45.118.0/23|
+|sjc04|San Jose |169.62.118.0/24|
+|sng01|Jurong East |174.133.118.0/23|
+|syd01|Sydney |168.1.18.0/23|
+|syd04|Sydney |130.198.118.0/23|
+|syd05|Sydney |135.90.118.0/23|
+|tok02|Tokyo |161.202.118.0/23|
+|tok04|Tokyo |128.168.118.0/23|
+|tok05|Tokyo |165.192.118.0/23|
+|tor01|Toronto |158.85.118.0/23|
+|tor04|Toronto |163.74.118.0/23|
+|tor05|Toronto |163.75.118.0/23|
+|wdc01|Washington D.C. |208.43.118.0/23|
+|wdc03|Washington D.C. |192.255.38.0/24|
+|wdc04|Washington D.C. |169.55.118.0/23|
+|wdc06|Washington D.C. |169.60.118.0/23|
+|wdc07|Washington D.C. |169.61.118.0/23|
 
 Ports to allow:
 - All TCP/UDP ports
@@ -85,46 +85,46 @@ Ports to allow:
 ## Load balancer IPs
 {: #load-balancer-ips}
 
-|Data center|City|State|Country|IP range|
-|---|---|---|---|---|
-|ams01|Amsterdam|-|NLD|159.253.157.0/24|
-|ams03|Amsterdam|-|NLD|159.8.197.0/24|
-|che01|Chennai|-|IND|169.38.117.0/24|
-|dal05|Dallas|Texas|USA|50.23.203.0/24, 108.168.157.0/24 173.192.117.0/24, 192.155.205.0/24|
-|dal06|Dallas|Texas|USA|184.172.117.0/24|
-|dal07|Dallas|Texas|USA|50.22.117.0/24|
-|dal09|Dallas|Texas|USA|169.46.187.0/24, 198.23.117.0/24|
-|dal10|Dallas|Texas|USA|169.46.117.0/24|
-|dal12|Dallas|Texas|USA|169.47.117.0/24|
-|dal13|Dallas|Texas|USA|169.48.117.0/24|
-|fra02|Frankfurt|-|DEU|159.122.117.0/24|
-|fra04|Frankfurt|-|DEU|161.156.117.0/24|
-|fra05|Frankfurt|-|DEU|149.81.117.0/24|
-|hkg02|Hong Kong|-|CHN|119.81.137.0/24|
-|lon02|London|-|ENG|5.10.117.0/24|
-|lon04|London|-|ENG|158.175.117.0/24|
-|lon05|London|-|ENG|141.125.117.0/24|
-|lon06|London|-|ENG|158.176.117.0/24|
-|mex01|Mexico City|-|MEX|169.57.117.0/24|
-|mil01|Milan|-|ITA|159.122.137.0/24|
-|mon01|Montreal|-|CAN|169.54.117.0/24|
-|par01|Paris|-|FRA|159.8.117.0/24|
-|sao01|São Paulo|-|BRA|169.57.137.0/24|
-|seo01|Seoul|-|KOR|169.56.117.0/24|
-|sjc01|San Jose|California|USA|50.23.117.0/24|
-|sjc03|San Jose|California|USA|169.45.117.0/24|
-|sng01|Jurong East|-|SGP|174.133.117.0/24|
-|syd01|Sydney|-|AUS|168.1.17.0/24|
-|syd04|Sydney|-|AUS|130.198.117.0/24|
-|syd05|Sydney|-|AUS|135.90.117.0/24|
-|tok02|Tokyo|-|JPN|161.202.117.0/24|
-|tok04|Tokyo|-|JPN|128.168.117.0/24|
-|tok05|Tokyo|-|JPN|165.192.117.0/24|
-|tor01|Toronto|-|CAN|158.85.117.0/24|
-|wdc01|Washington D.C.|-|USA|50.22.248.0/25, 169.54.27.0/24, 198.11.250.0/24, 208.43.117.0/24|
-|wdc04|Washington D.C.|-|USA|169.55.117.0/24|
-|wdc06|Washington D.C.|-|USA|169.60.117.0/24|
-|wdc07|Washington D.C.|-|USA|169.61.117.0/24|
+|Data center|City|IP range|
+|---|---|---|
+|ams01|Amsterdam |159.253.157.0/24|
+|ams03|Amsterdam|159.8.197.0/24|
+|che01|Chennai |169.38.117.0/24|
+|dal05|Dallas |50.23.203.0/24  \n 108.168.157.0/24  \n 173.192.117.0/24  \n 192.155.205.0/24|
+|dal06|Dallas |184.172.117.0/24|
+|dal07|Dallas |50.22.117.0/24|
+|dal09|Dallas |169.46.187.0/24  \n 198.23.117.0/24|
+|dal10|Dallas |169.46.117.0/24|
+|dal12|Dallas |169.47.117.0/24|
+|dal13|Dallas |169.48.117.0/24|
+|fra02|Frankfurt |159.122.117.0/24|
+|fra04|Frankfurt |161.156.117.0/24|
+|fra05|Frankfurt |149.81.117.0/24|
+|hkg02|Hong Kong |119.81.137.0/24|
+|lon02|London |5.10.117.0/24|
+|lon04|London |158.175.117.0/24|
+|lon05|London |141.125.117.0/24|
+|lon06|London |158.176.117.0/24|
+|mex01|Mexico City |169.57.117.0/24|
+|mil01|Milan |159.122.137.0/24|
+|mon01|Montreal |169.54.117.0/24|
+|par01|Paris |159.8.117.0/24|
+|sao01|São Paulo |169.57.137.0/24|
+|seo01|Seoul |169.56.117.0/24|
+|sjc01|San Jose |50.23.117.0/24|
+|sjc03|San Jose |169.45.117.0/24|
+|sng01|Jurong East |174.133.117.0/24|
+|syd01|Sydney |168.1.17.0/24|
+|syd04|Sydney |130.198.117.0/24|
+|syd05|Sydney |135.90.117.0/24|
+|tok02|Tokyo |161.202.117.0/24|
+|tok04|Tokyo |128.168.117.0/24|
+|tok05|Tokyo |165.192.117.0/24|
+|tor01|Toronto |158.85.117.0/24|
+|wdc01|Washington D.C. |50.22.248.0/25  \n 169.54.27.0/24  \n 198.11.250.0/24  \n 208.43.117.0/24|
+|wdc04|Washington D.C. |169.55.117.0/24|
+|wdc06|Washington D.C. |169.60.117.0/24|
+|wdc07|Washington D.C. |169.61.117.0/24|
 
 ## Back-end (private) network
 {: #back-end-network}
@@ -138,204 +138,151 @@ Ports to allow:
 ### Customer private network space
 {: #customer-private-network-space}
 
-| Data center | IP range |
-|---|---|
-| ams01 | 10.104.0.0/15 |
-| ams01 | 10.251.10.0/23 |
-| ams01 | 10.251.88.0/23 |
-| ams01 | 10.68.0.0/14 |
-| ams03 | 10.136.0.0/15 |
-| ams03 | 10.175.0.0/16 |
-| ams03 | 10.214.0.0/16 |
-| che01 | 10.162.0.0/15 |
-| dal00 | 10.92.0.0/16 |
-| dal00 | 10.96.0.0/15 |
-| dal00 | 10.98.0.0/15 |
-| dal05 | 10.251.0.0/23 |
-| dal05 | 10.251.4.0/23 |
-| dal05 | 10.251.64.0/23 |
-| dal05 | 10.251.68.0/23 |
-| dal05 | 10.251.70.0/23 |
-| dal05 | 10.40.0.0/14 |
-| dal05 | 10.60.0.0/15 |
-| dal05 | 10.62.0.0/16 |
-| dal05 | 10.80.0.0/14 |
-| dal05 | 10.84.0.0/16 |
-| dal05 | 10.86.0.0/16 |
-| dal06 | 10.106.0.0/15 |
-| dal06 | 10.146.0.0/15 |
-| dal06 | 10.252.0.0/16 |
-| dal06 | 10.253.0.0/16 |
-| dal08 | 10.156.0.0/15 | 
-| dal08 | 100.108.0.0/15 |
-| dal09 | 10.120.0.0/15 |
-| dal09 | 10.142.0.0/15 |
-| dal09 | 10.152.0.0/15 |
-| dal09 | 10.154.0.0/15 |
-| dal09 | 10.172.0.0/16 |
-| dal09 | 10.173.0.0/16 |
-| dal10 | 10.171.0.0/16 |
-| dal10 | 10.176.0.0/15 |
-| dal10 | 10.221.0.0/16 |
-| dal10 | 10.23.0.0/16 |
-| dal10 | 10.38.0.0/16 |
-| dal10 | 10.5.0.0/16 |
-| dal10 | 10.93.0.0/16 |
-| dal10 | 10.94.0.0/15 |
-| dal12 | 10.184.0.0/15 |
-| dal12 | 10.241.0.0/16 |
-| dal12 | 10.48.0.0/16 |
-| dal12 | 10.74.0.0/16 |
-| dal13 | 10.186.0.0/15 |
-| dal13 | 10.208.0.0/16 |
-| dal13 | 10.209.0.0/16 |
-| dal13 | 10.220.0.0/16 |
-| dal13 | 10.36.0.0/16 |
-| dal13 | 10.37.0.0/16 |
-| dal13 | 10.73.0.0/16 |
-| fra02 | 10.134.0.0/15 |
-| fra02 | 10.194.0.0/16 |
-| fra02 | 10.20.0.0/16 |
-| fra02 | 10.215.0.0/16 |
-| fra02 | 10.85.0.0/16 |
-| fra04 | 10.21.0.0/16 |
-| fra04 | 10.240.0.0/16 |
-| fra04 | 10.75.0.0/16 |
-| fra05 | 10.123.0.0/16 |
-| fra05 | 10.13.0.0/16 |
-| hkg02 | 10.110.0.0/15 |
-| hkg02 | 10.174.0.0/16 |
-| lon02 | 10.112.0.0/15 |
-| lon02 | 10.164.0.0/15 |
-| lon04 | 10.222.0.0/16 |
-| lon04 | 10.45.0.0/16 |
-| lon05 | 10.196.0.0/15 |
-| lon06 | 10.242.0.0/16 |
-| lon06 | 10.248.0.0/16 |
-| lon06 | 10.72.0.0/16 |
-| mex01 | 10.130.0.0/15 |
-| mil01 | 10.144.0.0/15 |
-| mon01 | 10.140.0.0/15 |
-| mon01 | 10.182.0.0/16 |
-| osa21 | 10.8.0.0/16 |
-| osa22 | 10.9.0.0/16 |
-| osa23 | 10.10.0.0/16 |
-| osl01 | 10.180.0.0/15 |
-| par01 | 10.126.0.0/15 |
-| par04 | 10.217.0.0/16 |
-| par05 | 10.218.0.0/16 |
-| par06 | 10.219.0.0/16 |
-| sao01 | 10.150.0.0/15 |
-| sao01 | 10.17.0.0/16 |
-| sao04 | 10.14.0.0/16 |
-| sao05 | 10.15.0.0/16 |
-| seo01 | 10.178.0.0/15 |
-| sjc01 | 10.122.0.0/16 |
-| sjc01 | 10.224.0.0/12 |
-| sjc01 | 10.251.6.0/23 |
-| sjc01 | 10.251.72.0/23 |
-| sjc01 | 10.251.74.0/23 |
-| sjc01 | 10.52.0.0/14 |
-| sjc01 | 10.88.0.0/14 |
-| sjc03 | 10.160.0.0/15 |
-| sjc03 | 10.168.0.0/15 |
-| sjc04 | 10.87.0.0/16 |
-| sng01 | 10.116.0.0/15 |
-| sng01 | 10.251.12.0/23 |
-| sng01 | 10.251.86.0/23 |
-| sng01 | 10.64.0.0/16 |
-| sng01 | 10.66.0.0/15 |
-| syd01 | 10.138.0.0/15 |
-| syd01 | 10.210.0.0/16 |
-| syd04 | 10.63.0.0/16 |
-| syd05 | 10.195.0.0/16 |
-| tok02 | 10.129.0.0/16 |
-| tok02 | 10.132.0.0/15 |
-| tok02 | 10.212.0.0/16 |
-| tok04 | 10.192.0.0/16 |
-| tok05 | 10.193.0.0/16 |
-| tor01 | 10.114.0.0/15 |
-| tor01 | 10.166.0.0/15 |
-| tor04 | 10.11.0.0/16 |
-| tor05 | 10.243.0.0/16 |
-| wdc01 | 10.108.0.0/15 |
-| wdc01 | 10.124.0.0/15 |
-| wdc01 | 10.128.0.0/16 |
-| wdc01 | 10.24.0.0/14 |
-| wdc01 | 10.251.80.0/23 |
-| wdc01 | 10.251.82.0/23 |
-| wdc01 | 10.32.0.0/14 |
-| wdc03 | 10.158.0.0/15 |
-| wdc04 | 10.148.0.0/15 |
-| wdc04 | 10.170.0.0/16 |
-| wdc04 | 10.183.0.0/16 |
-| wdc04 | 10.211.0.0/16 |
-| wdc04 | 10.213.0.0/16 |
-| wdc04 | 10.216.0.0/16 |
-| wdc04 | 10.65.0.0/16 |
-| wdc06 | 10.188.0.0/15 |
-| wdc07 | 10.190.0.0/15 |
-| wdc07 | 10.39.0.0/16 |
+| City| Data center | Pod | IP range |
+|---|---|---|---|
+| Amsterdam| ams01 | BCR01 | 10.2.75.0/24  \n 10.3.22.0/24  \n 10.68.0.0/15  \n 10.70.0.0/15  \n 10.251.10.0/23  \n 10.251.88.0/23 |
+| | ams01 | BCR02 | 10.70.0.0/15  \n 10.104.0.0/15 |
+| | ams03 | BCR01 | 10.1.243.0/24  \n  10.3.48.0/24  \n 10.3.139.0/24  \n 10.136.0.0/15 | 
+| | ams03 | BCR02 | 10.175.0.0/16  \n 10.214.0.0/16 |
+| Chennai | che01 | BCR01 | 10.3.58.0/24  \n 10.162.0.0/15  \n 10.200.27.0/24 |
+| Dallas| dal05 | BCR01 | 10.0.40.0/22  \n 10.1.151.0/24  \n 10.3.60.0/24  \n 10.40.0.0/14  \n 10.251.0.0/23  \n 10.251.64.0/23 | 
+| | dal05 | BCR02 | 10.60.0.0/15  \n 10.62.0.0/16 |
+| | dal05 | BCR03 | 10.80.0.0/14  \n 10.251.4.0/23  \n 10.251.68.0/23 | 
+| | dal05 | BCR04 | 10.84.0.0/16  \n 10.86.0.0/16  \n 10.251.70.0/23 | 
+| | dal06 | BCR01 | 10.2.139.0/24  \n 10.3.61.0/24  \n 10.106.0.0/15  \n 10.253.0.0/16 | 
+| | dal06 | BCR02 | 10.146.0.0/15 |
+| | dal09 | BRC01 | 10.2.123.0/24  \n 10.2.244.0/24  \n 10.3.16.0/24  \n 10.120.0.0/15 |
+| | dal09 | BCR02 | 10.142.0.0/15 |
+| | dal09 | BCR03 | 10.98.0.0/15  \n 10.152.0.0/15 |
+| | dal09 | BCR04 | 10.154.0.0/15 |
+| | dal09 | BCR05 | 10.172.0.0/16 | 
+| | dal09 | BCR06 | 10.173.0.0/16 |
+| | dal10 | BCR01 | 10.0.192.0/26  \n 10.3.62.0/24  \n 10.3.247.0/24  \n 10.176.0.0/15  \n 10.200.91.0/24 |
+| | dal10 | BCR02 | 10.0.192.64/26  \n 10.171.0.0/16 | 
+| | dal10 | BCR03 | 10.93.0.0/16 |
+| | dal10 | BCR04 | 10.5.0.0/16  \n 10.23.0.0/16  \n 10.38.0.0/16  \n 10.94.0.0/15  \n 10.221.0.0/16 |
+| | dal12 | BCR01 | 10.3.2.0/24  \n 10.184.0.0/15  \n 10.200.123.0/24  \n 10.241.0.0/16 |
+| | dal12 | BCR02 | 10.48.0.0/16  \n 10.74.0.0/16 |
+| | da113 | BCR01 | 10.3.3.0/24  \n 10.186.0.0/15  \n 10.200.139.0/24  \n 10.208.0.0/16 |
+| | da113 | BCR02 | 10.36.0.0/16  \n 10.73.0.0/16  \n 10.209.0.0/16  \n 10.220.0.0/16 |
+| | da113 | BCR03 | 10.37.0.0/16 |
+| Frankfurt | fra02 | BCR01 | 10.2.240.0/24  \n 10.3.38.0/24  \n 10.3.91.0/24  \n 10.134.0.0/15  \n 10.201.155.0/24 |
+| | fra02 | BCR02 | 10.85.0.0/16  \n 10.194.0.0/16 | 
+| | fra02 | BCR03 | 10.20.0.0/16  \n 10.215.0.0/16 | 
+| | fra04 | BCR01 | 10.3.13.0/24  \n 10.21.0.0/16  \n 10.75.0.0/16  \n 10.201.123.0/24  \n 10.240.0.0/16 |
+| | fra05 | BCR01 | 10.3.15.0/24  \n 10.13.0.0/16  \n 10.123.0.0/16  \n 10.201.139.0/24 | 
+| Hong Kong| hkg02 | BCR01 | 10.2.171.0/24  \n 10.3.36.0/24  \n 10.110.0.0/15 | 
+| | fra05  | BCR02 | 10.174.0.0/16 |
+| London| lon02 | BCR01 | 10.1.219.0/24  \n 10.3.40.8/29  \n 10.3.40.16/28  \n 10.3.40.32/27  \n 10.3.40.64/26  \n 10.3.40.128/25  \n 10.112.0.0/15  \n 10.201.107.0/24 | 
+| | lon02 | BCR02 | 10.164.0.0/15 |
+| | lon04 | BCR01 | 10.3.7.0/24  \n 10.45.0.0/16  \n 10.201.43.0/24  \n 10.222.0.0/16 | 
+| | lon05 | BCR01 | 10.3.21.0/24  \n 10.196.0.0/15  \n 10.201.59.0/24 | 
+| | lon06 | BCR01 | 10.3.11.0/24  \n 10.72.0.0/16  \n 10.201.75.0/24  \n 10.242.0.0/16 |
+| Mexico City | mex01 | BCR01 | 10.2.187.0/24  \n 10.2.242.0/24  \n 10.3.28.8/29  \n 10.3.28.16/28  \n 10.3.28.32/27  \n 10.3.28.64/26  \n 10.3.28.128/25  \n 10.130.0.0/15 |
+| Milan | mil01 | BCR01 | 10.1.241.0/24  \n 10.3.50.8/29  \n 10.3.50.16/28  \n 10.3.50.32/27  \n 10.3.50.64/26  \n 10.3.50.128/25  \n 10.3.155.0/24  \n 10.144.0.0/15 | 
+| Montreal| mon01 | BCR01 | 10.3.46.8/29  \n 10.3.46.16/28  \n 10.3.46.32/27  \n 10.3.46.64/26  \n 10.3.46.128/25  \n 10.3.123.0/24  \n 10.140.0.0/15 | 
+| | mon01 | BCR02 | 10.182.0.0/16 |
+| Osaka | osa21 | BCR01 | 10.3.59.0/24  \n 10.8.0.0/16  \n 10.201.246.0/24 |
+| | osa22 | BCR01 | 10.3.57.0/24  \n 10.9.0.0/16  \n 10.201.247.0/24 |
+| | osa23 | BCR01 | 10.3.55.0/24  \n 10.10.0.0/16  \n 10.201.248.0/24 |
+| Oslo | osl01 | BCR01 | 10.3.0.0/24  \n 10.180.0.0/15  \n 10.200.107.0/24 |
+| Paris | par01 | BCR01 | 10.2.155.0/24  \n 10.2.243.0/24  \n 10.3.26.8/29  \n 10.3.26.16/28  \n 10.3.26.32/27  \n 10.3.26.64/26  \n 10.3.26.128/25  \n 10.126.0.0/15 |
+| | par04 | BCR01 | 10.3.27.0/24  \n 10.217.0.0/16 |
+| | par05 | BCR01 | 10.3.25.0/24  \n 10.218.0.0/16 |
+| | par06 | BCR01 | 10.3.24.0/24  \n 10.219.0.0/16 |
+| São Paulo | sao01 | BCR01 | 10.3.54.0/29  \n 10.3.54.8/29  \n 10.3.54.16/28  \n 10.3.54.32/27  \n 10.3.54.64/26  \n 10.3.54.128/25  \n 10.150.0.0/15  \n 10.200.11.0/24 | 
+| | sao04 | BCR01 | 10.3.49.0/24  \n 10.14.0.0/16  \n 10.201.251.0/24 | 
+| | sao05 | BCR01 | 10.3.47.0/24  \n 10.15.0.0/16  \n 10.201.252.0/24 | 
+| Seoul | seo01 | BCR01 | 10.3.63.0/24  \n 10.178.0.0/15  \n 10.200.75.0/24 |
+| San Jose | sjc01 | BCR01 | 10.1.203.0/24  \n 10.3.14.0/24  \n 10.52.0.0/14  \n 10.251.6.0/23  \n 10.251.72.0/23 |
+| | sjc01 | BCR02 | 110.88.0.0/14  \n 10.251.74.0/23 |
+| | sjc01 | BCR03 | 10.122.0.0/16 |
+| | sjc03 | BCR01 | 10.3.56.0/24  \n 10.3.187.0/24  \n 10.168.0.0/15 |
+| | sjc04 | BCR01 | 10.3.9.0/24  \n 10.87.0.0/16  \n 10.201.91.0/24 | 
+| Jurong East | sng01 | BCR01 | 10.2.43.0/24  \n 10.3.20.0/24  \n 10.64.0.0/16  \n 10.66.0.0/15  \n 10.251.12.0/23  \n 10.251.86.0/23 |
+| | sng01| BCR02 | 10.116.0.0/15 |
+| Sydney | syd01 | BCR01 | 10.3.44.0/24  \n 10.3.107.0/24  \n 10.138.0.0/15  \n 10.202.43.0/24 |
+| | syd01 | BCR02 | 10.210.0.0/16 |
+| | syd04 | BCR01 | 10.3.6.0/24  \n 10.63.0.0/16  \n 10.201.27.0/24 | 
+| | syd05 | BCR01 | 10.3.23.0/24  \n 10.195.0.0/16  \n 10.207.27.0/24 |
+| Tokyo | tok02 | BCR01 | 10.2.241.0/24  \n 10.3.30.0/24  \n 10.3.75.0/24  \n 10.3.242.0/24  \n 10.129.0.0/16  \n 10.132.0.0/15  \n 10.201.171.0/24 |
+| | tok02 | BCR02 | 10.212.0.0/16 |
+| | tok04 | BCR01 | 10.3.17.0/24  \n 10.192.0.0/16  \n 10.201.187.0/24 |
+| | tok05 | BCR01 | 10.3.19.0/24  \n 10.193.0.0/16  \n 10.201.203.0/24 | 
+| | tor01 | BCR01 | 10.2.59.0/24  \n 10.3.42.0/24  \n 10.114.0.0/15  \n 10.202.107.0/24 |
+| | tor01 | BCR02 | 10.166.0.0/15 |
+| | tor04 | BCR01 | 10.1.2.0/24  \n 10.3.53.0/24  \n 10.11.0.0/16 | 
+| | tor05 | BCR01 | 10.1.6.0/24  \n 10.3.51.0/24  \n 10.243.0.0/16 | 
+| Washington D.C. | wdc01 | BCR03 | 10.1.119.0/24  \n 10.3.10.0/24  \n 10.58.0.0/16  \n 10.251.8.0/23  \n 10.251.84.0/23 |
+| | wdc01 | BCR05 | 10.108.0.0/15 |
+| | wdc01 | BCR06 | 10.14.0.0/15 |
+| | wdc04 | BCR01 | 10.3.10.0/29  \n 10.3.52.0/24  \n 10.3.171.0/24  \n 10.3.240.0/24  \n 10.148.0.0/15 | 
+| | wdc04 | BCR02 | 10.0.192.128/26  \n 10.170.0.0/16 | 
+| | wdc04 | BCR03 | 10.183.0.0/16  \n 10.216.0.0/16 | 
+| | wdc04 | BCR04 | 10.65.0.0/16  \n 10.201.11.0/24  \n 10.211.0.0/16 |
+| | wdc04 | BCR05 | 10.213.0.0/16 |
+| | wdc06 | BCR01 | 10.3.4.0/24  \n 10.188.0.0/15  \n 10.200.171.0/24 |
+| | wdc07 | BCR01 | 10.3.5.0/24  \n 10.39.0.0/16  \n 10.190.0.0/15  \n 10.200.187.0/24 |
 
 ## Service network (on back-end/private network)
 {: #service-network}
 
 Be sure to configure rules and verify routes for DAL10, WDC04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from DAL10, WDC04, and AMS01 to your server. The traffic must be able to travel between the service networks and your server in both directions. By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
 
-|Data center|City|State|Country|IP range|
-|---|---|---|---|---|
-|All|-|-|-|166.8.0.0/14|
-|All|-|-|-|161.26.0.0/16|
-|All|-|-|-|10.0.64.0/19|
-|ams01|Amsterdam|-|NLD|10.2.64.0/20|
-|ams03|Amsterdam|-|NLD|10.3.128.0/20|
-|che01|Chennai|-|IND|10.200.16.0/20|
-|dal05|Dallas|Texas|USA|10.1.128.0/19[^fn1] |
-|dal06|Dallas|Texas|USA|10.2.128.0/20|
-|dal07|Dallas|Texas|USA|10.1.176.0/20|
-|dal08|Dallas|Texas|USA|100.100.0.0/20|
-|dal09|Dallas|Texas|USA|10.2.112.0/20  \n 10.3.192.0/24|
-|dal10|Dallas|Texas|USA|10.200.80.0/20|
-|dal12|Dallas|Texas|USA|10.200.112.0/20|
-|dal13|Dallas|Texas|USA|10.200.128.0/20|
-|fra02|Frankfurt|-|DEU|10.3.80.0/20|
-|fra04|Frankfurt|-|DEU|10.201.112.0/20|
-|fra05|Frankfurt|-|DEU|10.201.128.0/20|
-|hkg02|Hong Kong|-|CHN|10.2.160.0/20|
-|lon02|London|-|ENG|10.1.208.0/20|
-|lon04|London|-|ENG|10.201.32.0/20|
-|lon05|London|-|ENG|10.201.48.0/20|
-|lon06|London|-|ENG|10.201.64.0/20|
-|mex01|Mexico City|-|MEX|10.2.176.0/20|
-|mil01|Milan|-|ITA|10.3.144.0/20|
-|mon01|Montreal|-|CAN|10.3.112.0/20|
-|osa21|Osaka|-|JPN|10.202.112.0/20|
-|osa22|Osaka|-|JPN|10.202.144.0/20|
-|osa23|Osaka|-|JPN|10.202.160.0/20|
-|par01|Paris|-|FRA|10.2.144.0/20|
-|sao01|São Paulo|-|BRA|10.200.0.0/20|
-|sao04|São Paulo|-|BRA|10.202.208.0/20|
-|sao05|São Paulo|-|BRA|10.202.240.0/20|
-|seo01|Seoul|-|KOR|10.200.64.0/20|
-|sjc01|San Jose|California|USA|10.1.192.0/20|
-|sjc03|San Jose|California|USA|10.3.176.0/20|
-|sjc04|San Jose|California|USA|10.201.80.0/20|
-|sng01|Jurong East|-|SGP|10.2.32.0/20|
-|syd01|Sydney|-|AUS|10.3.96.0/20  \n 10.202.32.0/20|
-|syd04|Sydney|-|AUS|10.201.16.0/20|
-|syd05|Sydney|-|AUS|10.202.16.0/20|
-|tok02|Tokyo|-|JPN|10.201.160.0/20|
-|tok02|Tokyo|-|JPN|10.3.64.0/20|
-|tok04|Tokyo|-|JPN|10.201.176.0/20|
-|tok05|Tokyo|-|JPN|10.201.192.0/20|
-|tor01|Toronto|-|CAN|10.2.48.0/20|
-|tor04|Toronto|-|CAN|10.202.176.0/20|
-|tor05|Toronto|-|CAN|10.202.192.0/20|
-|wdc01|Washington D.C.|-|USA|10.1.96.0/19|
-|wdc03|Washington D.C.|-|USA|100.100.32.0/20|
-|wdc04|Washington D.C.|-|USA|10.3.160.0/20  \n 10.201.0.0/20|
-|wdc06|Washington D.C.|-|USA|10.200.160.0/20|
-|wdc07|Washington D.C.|-|USA|10.200.176.0/20|
+|Data center|City|IP range|
+|---|---|---|
+|All| - |166.8.0.0/14|
+|All| - |161.26.0.0/16|
+|All| - |10.0.64.0/19|
+|ams01|Amsterdam|10.2.64.0/20|
+|ams03|Amsterdam|10.3.128.0/20|
+|che01|Chennai|10.200.16.0/20|
+|dal05|Dallas|10.1.128.0/19[^fn1] |
+|dal06|Dallas|10.2.128.0/20|
+|dal07|Dallas|10.1.176.0/20|
+|dal08|Dallas|100.100.0.0/20|
+|dal09|Dallas|10.2.112.0/20  \n 10.3.192.0/24|
+|dal10|Dallas|10.200.80.0/20|
+|dal12|Dallas|10.200.112.0/20|
+|dal13|Dallas|10.200.128.0/20|
+|fra02|Frankfurt|10.3.80.0/20|
+|fra04|Frankfurt|10.201.112.0/20|
+|fra05|Frankfurt|10.201.128.0/20|
+|hkg02|Hong Kong|10.2.160.0/20|
+|lon02|London|10.1.208.0/20|
+|lon04|London|10.201.32.0/20|
+|lon05|London|10.201.48.0/20|
+|lon06|London|10.201.64.0/20|
+|mex01|Mexico City|10.2.176.0/20|
+|mil01|Milan|10.3.144.0/20|
+|mon01|Montreal|10.3.112.0/20|
+|osa21|Osaka|10.202.112.0/20|
+|osa22|Osaka|10.202.144.0/20|
+|osa23|Osaka|10.202.160.0/20|
+|par01|Paris|10.2.144.0/20|
+|sao01|São Paulo|10.200.0.0/20|
+|sao04|São Paulo|10.202.208.0/20|
+|sao05|São Paulo|10.202.240.0/20|
+|seo01|Seoul|10.200.64.0/20|
+|sjc01|San Jose|10.1.192.0/20|
+|sjc03|San Jose|10.3.176.0/20|
+|sjc04|San Jose|10.201.80.0/20|
+|sng01|Jurong East|10.2.32.0/20|
+|syd01|Sydney|10.3.96.0/20  \n 10.202.32.0/20|
+|syd04|Sydney|10.201.16.0/20|
+|syd05|Sydney|10.202.16.0/20|
+|tok02|Tokyo|10.201.160.0/20|
+|tok02|Tokyo|10.3.64.0/20|
+|tok04|Tokyo|10.201.176.0/20|
+|tok05|Tokyo|10.201.192.0/20|
+|tor01|Toronto|10.2.48.0/20|
+|tor04|Toronto|10.202.176.0/20|
+|tor05|Toronto|10.202.192.0/20|
+|wdc01|Washington D.C.|10.1.96.0/19|
+|wdc03|Washington D.C.|100.100.32.0/20|
+|wdc04|Washington D.C.|10.3.160.0/20  \n 10.201.0.0/20|
+|wdc06|Washington D.C.|10.200.160.0/20|
+|wdc07|Washington D.C.|10.200.176.0/20|
 
 [^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in DAL05. 
 
@@ -399,51 +346,51 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 | Data center | IP range |
 |-----|-----|
 | **Required Flows**:  \n NFS File Storage:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049  \n Block Storage:  \n * TCP & UDP 65200 (iscsi) | |
-| AMS01 | 10.2.78.0/24  \n 10.200.62.0/24 |
-| AMS03 | 10.3.142.0/24 |
-| CHE01 | 10.200.30.0/24 |
-| DAL05 | 10.1.154.0/24  \n 10.1.159.0/24 |
-| DAL06 | 10.2.142.0/24 |
-| DAL08 | 100.100.14.0/24 |
-| DAL10 | 10.200.94.0/24 |
-| DAL12 | 10.200.126.0/24 |
-| DAL13 | 10.200.142.0/24 |
-| FRA02 | 10.3.94.0/24 |
-| FRA02AZ | 10.201.158.0/24 |
-| FRA04 | 10.201.110.0/24 |
-| FRA05 | 10.201.142.0/24 |
-| HKG02 | 10.2.174.0/24 |
-| LON02 | 10.1.222.0/24 |
-| LON02AZ | 10.201.110.0/24 |
-| LON04 | 10.201.46.0/24 |
-| LON05 | 10.201.62.0/24 |
-| LON06 | 10.201.78.0/24 |
-| MEX01 | 10.2.190.0/24 |
-| MIL01 | 10.3.158.0/24 |
-| MON01 | 10.3.126.0/24 |
-| OSA21 | 10.202.126.0/24 |
-| OSA22 | 10.202.158.0/24 |
-| OSA23 | 10.202.174.0/24 |
-| PAR01 | 10.2.158.0/24 |
-| SAO01 | 10.200.14.0/24 |
-| SEO01 | 10.200.78.0/24 |
-| SJC01 | 10.1.206.0/24  \n 10.200.46.0/24 |
-| SJC03 | 10.3.190.0/24 |
-| SJC04 | 10.201.94.0/24 |
-| SNG01 | 10.2.46.0/24  \n 10.200.158.0/24 |
-| SYD01 | 10.3.110.0/24 |
-| SYD04 | 10.201.30.0/24 |
-| TOK02 | 10.3.78.0/24 |
-| TOK02AZ | 10.201.174.0/24 |
-| TOK04 | 10.201.190.0/24 |
-| TOK05 | 10.201.206.0/24 |
-| TOR01 | 10.2.62.0/24 |
-| WDC01 | 10.1.122.0/24  \n 10.1.127.0/24  \n 10.1.104.0/24 |
-| WDC03 | 100.100.46.0/24 |
-| WDC04 | 10.201.14.0/24 |
-| WDC04 | 10.3.174.0/24 |
-| WDC06 | 10.200.174.0/24 |
-| WDC07 | 10.200.90.0/24 |
+| ams01 | 10.2.78.0/24  \n 10.200.62.0/24 |
+| ams03 | 10.3.142.0/24 |
+| che01 | 10.200.30.0/24 |
+| dal05 | 10.1.154.0/24  \n 10.1.159.0/24 |
+| dal06 | 10.2.142.0/24 |
+| dal08 | 100.100.14.0/24 |
+| dal10 | 10.200.94.0/24 |
+| dal12 | 10.200.126.0/24 |
+| dal13 | 10.200.142.0/24 |
+| fra02 | 10.3.94.0/24 |
+| fra02AZ | 10.201.158.0/24 |
+| fra04 | 10.201.110.0/24 |
+| fra05 | 10.201.142.0/24 |
+| hkg02 | 10.2.174.0/24 |
+| lon02 | 10.1.222.0/24 |
+| lon02AZ | 10.201.110.0/24 |
+| lon04 | 10.201.46.0/24 |
+| lon05 | 10.201.62.0/24 |
+| lon06 | 10.201.78.0/24 |
+| mex01 | 10.2.190.0/24 |
+| mil01 | 10.3.158.0/24 |
+| mon01 | 10.3.126.0/24 |
+| osa21 | 10.202.126.0/24 |
+| osa22 | 10.202.158.0/24 |
+| osa23 | 10.202.174.0/24 |
+| par01 | 10.2.158.0/24 |
+| sao01 | 10.200.14.0/24 |
+| seo01 | 10.200.78.0/24 |
+| sjc01 | 10.1.206.0/24  \n 10.200.46.0/24 |
+| sjc03 | 10.3.190.0/24 |
+| sjc04 | 10.201.94.0/24 |
+| sng01 | 10.2.46.0/24  \n 10.200.158.0/24 |
+| syd01 | 10.3.110.0/24 |
+| syd4 | 10.201.30.0/24 |
+| tok02 | 10.3.78.0/24 |
+| tok02AZ | 10.201.174.0/24 |
+| tok04 | 10.201.190.0/24 |
+| tok05 | 10.201.206.0/24 |
+| tor01 | 10.2.62.0/24 |
+| wdc01 | 10.1.122.0/24  \n 10.1.127.0/24  \n 10.1.104.0/24 |
+| wdc03 | 100.100.46.0/24 |
+| wdc04 | 10.201.14.0/24 |
+| wdc04 | 10.3.174.0/24 |
+| wdc06 | 10.200.174.0/24 |
+| wdc07 | 10.200.90.0/24 |
 {: caption="Table 2. File and Block by Data Center" caption-side="left"}
 {: #simpletabtable2}
 {: tab-title="File & Block"}
@@ -570,63 +517,63 @@ All TCP/UDP ports (for access from your local workstation)
 ## SSL VPN data centers
 {: #ssl-vpn-data-centers}
 
-|Data center|City|State|Country|IP range|
-|---|---|---|---|---|
-|ams01|Amsterdam|-|NLD|10.2.200.0/23|
-|ams03|Amsterdam|-|NLD|10.3.220.0/24|
-|che01|Chennai|-|IND|10.200.232.0/24|
-|dal05|Dallas|Texas|USA|10.1.24.0/23|
-|dal06|Dallas|Texas|USA|10.2.208.0/23|
-|dal07|Dallas|Texas|USA|10.1.236.0/24|
-|dal09|Dallas|Texas|USA|10.2.232.0/24|
-|dal10|Dallas|Texas|USA|10.200.228.0/24|
-|dal12|Dallas|Texas|USA|10.200.216.0/22|
-|dal13|Dallas|Texas|USA|10.200.212.0/22|
-|fra02|Frankfurt|-|DEU|10.2.236.0/24|
-|hkg02|Hong Kong|-|CHN|10.2.216.0/24|
-|lon02|London|-|ENG|10.2.220.0/24|
-|lon04|London|-|ENG|10.200.196.0/24|
-|lon05|London|-|ENG|10.201.208.0/24|
-|lon06|London|-|ENG|10.3.200.0/24|
-|mex01|Mexico City|-|MEX|10.3.232.0/24|
-|mil01|Milan|-|ITA|10.3.216.0/24|
-|mon01|Montreal|-|CAN|10.3.224.0/24|
-|osa21|Osaka|-|JPN|10.202.128.0/24|
-|osa22|Osaka|-|JPN |10.202.132.0/24|
-|osa23|Osaka|-|JPN |10.202.136.0/24|
-|par01|Paris|-|FRA|10.3.236.0/24|
-|sao01|São Paulo|-|BRA|10.200.236.0/24|
-|seo01|Seoul|-|KOR|10.200.224.0/22|
-|sjc01|San Jose|California|USA|10.1.224.0/23|
-|sjc03|San Jose|California|USA|10.3.204.0/24|
-|sjc04|San Jose|California|USA|10.200.192.0/24|
-|sng01|Jurong East|-|SGP|10.2.192.0/23|
-|syd01|Sydney|-|AUS|10.3.228.0/24|
-|syd04|Sydney|-|AUS|10.200.200.0/24|
-|syd05|Sydney|-|AUS|10.201.212.0/24|
-|tok02|Tokyo|-|JPN|10.2.224.0/24|
-|tok04|Tokyo|-|JPN|10.201.228.0/24|
-|tok05|Tokyo|-|JPN|10.201.224.0/24|
-|tor01|Toronto|-|CAN|10.1.232.0/24  \n 10.1.233.0/24|
-|tor04|Toronto|-|CAN|10.1.0.0/24|
-|tor05|Toronto|-|CAN|10.1.4.0/24|
-|wdc01|Washington D.C.|-|USA|10.1.16.0/23|
-|wdc04|Washington D.C.|-|USA|10.3.212.0/24|
-|wdc03|Washington D.C.|-|USA|100.101.132.0/24|
-|wdc06|Washington D.C.|-|USA|10.200.208.0/24|
-|wdc07|Washington D.C.|-|USA|10.200.204.0/24|
+|Data center|City|IP range|
+|---|---|---| 
+|ams01|Amsterdam|10.2.200.0/23|
+|ams03|Amsterdam|10.3.220.0/24|
+|che01|Chennai|10.200.232.0/24|
+|dal05|Dallas|10.1.24.0/23|
+|dal06|Dallas|10.2.208.0/23|
+|dal07|Dallas|10.1.236.0/24|
+|dal09|Dallas|10.2.232.0/24|
+|dal10|Dallas|10.200.228.0/24|
+|dal12|Dallas|10.200.216.0/22|
+|dal13|Dallas|10.200.212.0/22|
+|fra02|Frankfurt|10.2.236.0/24|
+|hkg02|Hong Kong|10.2.216.0/24|
+|lon02|London|10.2.220.0/24|
+|lon04|London|10.200.196.0/24|
+|lon05|London|10.201.208.0/24|
+|lon06|London|10.3.200.0/24|
+|mex01|Mexico City|10.3.232.0/24|
+|mil01|Milan|10.3.216.0/24|
+|mon01|Montreal|10.3.224.0/24|
+|osa21|Osaka|10.202.128.0/24|
+|osa22|Osaka|10.202.132.0/24|
+|osa23|Osaka|10.202.136.0/24|
+|par01|Paris|10.3.236.0/24|
+|sao01|São Paulo|10.200.236.0/24|
+|seo01|Seoul|10.200.224.0/22|
+|sjc01|San Jose|10.1.224.0/23|
+|sjc03|San Jose|10.3.204.0/24|
+|sjc04|San Jose|10.200.192.0/24|
+|sng01|Jurong East|10.2.192.0/23|
+|syd01|Sydney|10.3.228.0/24|
+|syd04|Sydney|10.200.200.0/24|
+|syd05|Sydney|10.201.212.0/24|
+|tok02|Tokyo|10.2.224.0/24|
+|tok04|Tokyo|10.201.228.0/24|
+|tok05|Tokyo|10.201.224.0/24|
+|tor01|Toronto|10.1.232.0/24  \n 10.1.233.0/24|
+|tor04|Toronto|10.1.0.0/24|
+|tor05|Toronto|10.1.4.0/24|
+|wdc01|Washington D.C.|10.1.16.0/23|
+|wdc04|Washington D.C.|10.3.212.0/24|
+|wdc03|Washington D.C.|100.101.132.0/24|
+|wdc06|Washington D.C.|10.200.208.0/24|
+|wdc07|Washington D.C.|10.200.204.0/24|
 
 ## SSL VPN PoPs
 {: #ssl-vpn-pops}
 
-|POP|City|State|Country|IP range|
-|---|---|---|---|---|
-|atl01|Atlanta|Georgia|USA|10.1.41.0/24|
-|chi01|Chicago|Illinois|USA|10.1.49.0/24|
-|den01|Denver|Colorado|USA|10.1.53.0/24|
-|lax01|Los Angeles|California|USA|10.1.33.0/24|
-|mia01|Miami|Florida|USA|10.1.37.0/24|
-|nyc01|New York|New York|USA|10.1.45.0/24|
+|POP|City|IP range|
+|---|---|---|
+|atl01|Atlanta|10.1.41.0/24|
+|chi01|Chicago|10.1.49.0/24|
+|den01|Denver|10.1.53.0/24|
+|lax01|Los Angeles|10.1.33.0/24|
+|mia01|Miami|10.1.37.0/24|
+|nyc01|New York|10.1.45.0/24|
 
 ## Legacy networks
 {: #legacy-networks}
@@ -652,22 +599,22 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 
 |Server location|Allow private service network for this data center|
 |---|---|
-|Amsterdam (AMS01, AMS03)|FRA02|
-|Chennai (CHE01)|TOK02|
-|Dallas (DAL05, DAL06, DAL09, DAL10, DAL12, DAL13)|DAL09|
-|Frankfurt (FRA02, FRA04, FRA05)|FRA02|
-|Hong Kong (HKG02)|TOK02|
-|London (LON02, LON04, LON05, LON06)|LON02|
-|Mexico (MEX01)|DAL09|
-|Milan (MIL01)|FRA02|
-|Montreal (MON01)|MON01|
-|Paris (PAR01)|FRA02|
-|San Jose (SJC01, SJC03, SJC04)|DAL09|
-|Sao Paulo (SAO01)|DAL09|
-|Seoul (SEO01)|TOK02|
-|Singapore (SNG01)|SYD01|
-|Sydney (SYD01, SYD04, SYD05)|SYD01|
-|Tokyo (TOK02, TOK04, TOK05)|TOK02|
-|Toronto (TOR01)|MON01|
-|Washington DC (WDC01, WDC04, WDC06, WDC07)|MON01|
-|Any DC Not Listed|DAL09|
+|Amsterdam (ams01, ams03)|fra02|
+|Chennai (che01)|tok02|
+|Dallas (dal05, dal06, dal09, dal10, dal12, dal13)|dal09|
+|Frankfurt (fra02, fra04, fra05)|fra02|
+|Hong Kong (hkg02)|tok02|
+|London (lon02, lon04, lon05, lon06)|lon02|
+|Mexico City (mex01)|dal09|
+|Milan (mil01)|fra02|
+|Montreal (mon01)|mon01|
+|Paris (par01)|fra02|
+|San Jose (sjc01, sjc3, sjc04)|dal09|
+|Sao Paulo (sao01)|dal09|
+|Seoul (Seo01)|tok02|
+|Singapore (sng01)|syd01|
+|Sydney (syd01, syd04, syd05)|syd01|
+|Tokyo (tok02, tok04, tok05)|tok02|
+|Toronto (tor01)|mon01|
+|Washington DC (wdc1, wdc4, wdc06, wdc07)|mon01|
+|Any DC Not Listed|dal09|
