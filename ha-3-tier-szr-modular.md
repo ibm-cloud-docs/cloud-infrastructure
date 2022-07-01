@@ -30,14 +30,14 @@ subcollection: cloud-infrastructure
 # Customizing a three-tier highly available infrastructure VPC in a single availability zone with automation
 {: #create-three-tier-resilient-vpc-saz-modular} 
 
-Highly available and resilient infrastructures for a single availability zone include multiple components and connections. The individual pieces can be created manually with the {{site.data.keyword.cloud}} dashboard, but it is a time-intensive process. To streamline the process, {{site.data.keyword.cloud_notm}} provides several methods to automate deployment by using Terraform as a base. You can run the Terraform scripts yourself, or use the catalog tile or Schematics user interface to run the scripts. The {{site.data.keyword.cloud_notm}} VPC infrastructure that is created uses Intel Xeon CPUs and additional Intel technologies.
+Highly available and resilient infrastructures for a single availability zone include multiple components and connections. The individual pieces can be created manually with the {{site.data.keyword.cloud}} dashboard, but it is a time-intensive process. To streamline the process, {{site.data.keyword.cloud_notm}} provides several methods to automate deployment by using Terraform as a base. You can run the Terraform scripts yourself, or use the Schematics user interface to run the scripts. The {{site.data.keyword.cloud_notm}} VPC infrastructure that is created uses Intel Xeon CPUs and additional Intel technologies.
 
 All infrastructures have a core set of features that are used. You can customize your infrastructure by adding the features that you want.  
 
 ## Core and Feature modules
 {: #saz-core-feature-modules}
 
-For Terraform and Schematics deployments, the components in a single availability zone 3-tier infrastructure are divided into modules so that you can customize your infrastructure to your needs. You receive all of the core components and can turn features components on or off as needed. Modules are not available for the catalog tile deployment.
+For Terraform and Schematics deployments, the components in a single availability zone 3-tier infrastructure are divided into modules so that you can customize your infrastructure to your needs. You receive all of the core components and can turn features components on or off as needed. 
 
 |Module    |   Resources   |
 |-----------|-------------|
@@ -107,37 +107,6 @@ Don’t delete the bastion server or update its OS image after creation (**Apply
     It is not possible to connect to a VPN gateway through a VPC, so creating an on-premises-VPN helps in connecting to the VPN gateway which we create using the code.
     {: note}
     {: terraform}
-
-## Customizing a three-tier highly available infrastructure VPC in a single availability zone with the catalog tile
-{: #create-vpc-saz-catalogtile-modular}
-{: ui}
-
-1.	From the IBM Cloud catalog, select **HA Infrastructure Deployment for 3-tier SAZ**. 
-2.  Configure your workspace:
-    * Enter a name for the workspace.
-    * Select a **Resource group**.
-    * Select a **Location** for your workspace. The workspace location does not have to match the resource location.
-3.  Set the required deployment variables. Review the input parameters and provide values that match your solution. Some parameters have default values. The values that you must specify include:
-
-    |Component type   | Parameter values needed |
-    |-----------------|--------------------|
-    |User-specific information  | - API key  \n - SSH key name. For example, "ibmcloud_ssh_key_name1,ibmcloud_ssh_key_name2,..."  \n - Resource Group  \n - IP address. Enter the IP address in the format: "public_ip_address1/32,public_ip_address2/32,...". For example, "103.42.91.78/32"  \n - Your local machine OS  \n - Prefix to add to resource names |
-    |Zone  | The zone where resources are deployed  |
-    |Image ID to use for region VSIs |  -Bastion Server  \n - App Server  \n - Web Server  \n - Db Server  \n Images are region-specific. To find the image IDs for your region, open the {{site.data.keyword.cloud_notm}} shell and enter `ibmcloud target -r < region_name >` to set your region, then `ibmcloud is images` to see a list of images for that region. |
-
-4.  Set the optional deployment variables. These include parameters for optional features.
-
-    |Component type    | Parameter values needed   |
-    |------------------|-------------------------|
-    |Auto scale App VSI parameters | - Min server  \n - Max servers  \n - CPU threshold  |
-    |Auto scale web VSI parameters | - Min server  \n - Max servers  \n - CPU threshold  |
-    |VSI spread strategy (host or power spread) | - App spread strategy  \n - web spread strategy  \n - Db spread strategy |
-
-5.  Accept the license agreement and select **Install**.
-
-    During installation you are redirected to the **Jobs** tab of the Schematics page.  
-
-If you need to adjust any of your parameters, go to the **Settings** tab of the Schematics page to see all of the parameters that you can modify. After you modify a parameter, select **Apply plan**.
 
 ## Customizing a three-tier highly available infrastructure VPC in a single availability zone with Schematics
 {: #create-vpc-saz-schematics-modular}
