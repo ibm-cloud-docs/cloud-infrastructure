@@ -610,12 +610,12 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 |Milan (mil01)|fra02|
 |Montreal (mon01)|mon01|
 |Paris (par01)|fra02|
-|San Jose (sjc01, sjc3, sjc04)|dal09|
+|San Jose (sjc01, sjc03, sjc04)|dal09|
 |Sao Paulo (sao01)|dal09|
-|Seoul (Seo01)|tok02|
+|Seoul (seo01)|tok02|
 |Singapore (sng01)|syd01|
 |Sydney (syd01, syd04, syd05)|syd01|
 |Tokyo (tok02, tok04, tok05)|tok02|
 |Toronto (tor01)|mon01|
-|Washington DC (wdc1, wdc4, wdc06, wdc07)|mon01|
+|Washington DC (wdc01, wdc04, wdc06, wdc07)|mon01|
 |Any DC Not Listed|dal09|
