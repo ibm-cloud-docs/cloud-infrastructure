@@ -2,12 +2,12 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-07-29"
 
 keywords: ip, range, firewall, network, traffic, security
 
 subcollection: cloud-infrastructure
-
+ 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -23,13 +23,16 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * Fortigate Security Appliance 10 Gbps
 * Fortigate Security Appliance 1 Gbps
 * IBM Security Groups
-* Hardware Firewall (Dedicated)
-* Hardware Firewall (Shared)
+* Hardware Firewall
 
 ## Front-end (public) network
 {: #front-end-network}
 
-|Data center|City |IP range|
+Ports to allow:
+- All TCP/UDP ports
+- ICMP – ping (for support troubleshooting and monitoring)
+
+|Data center|City|IP range|
 |---|---|---|
 |ams01|Amsterdam |159.253.158.0/23|
 |ams03|Amsterdam |159.8.198.0/23|
@@ -77,10 +80,7 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 |wdc04|Washington D.C. |169.55.118.0/23|
 |wdc06|Washington D.C. |169.60.118.0/23|
 |wdc07|Washington D.C. |169.61.118.0/23|
-
-Ports to allow:
-- All TCP/UDP ports
-- ICMP – ping (for support troubleshooting and monitoring)
+{: caption="Table 1: Front-end (public) network" caption-side="bottom"}   
 
 ## Load balancer IPs
 {: #load-balancer-ips}
@@ -125,11 +125,12 @@ Ports to allow:
 |wdc04|Washington D.C. |169.55.117.0/24|
 |wdc06|Washington D.C. |169.60.117.0/24|
 |wdc07|Washington D.C. |169.61.117.0/24|
+{: caption="Table 2: Load balancer IPs" caption-side="bottom"}   
 
 ## Back-end (private) network
 {: #back-end-network}
 
-IP block: your private IP block for server to server communications (`10.X.X.X/X`)
+IP block: Your private IP block for server-to-server communications (`10.X.X.X/X`)
 
 Ports to allow:
 - ICMP – ping (for support troubleshooting)
@@ -224,75 +225,79 @@ Ports to allow:
 | | wdc04 | BCR05 | 10.213.0.0/16 |
 | | wdc06 | BCR01 | 10.3.4.0/24  \n 10.188.0.0/15  \n 10.200.171.0/24 |
 | | wdc07 | BCR01 | 10.3.5.0/24  \n 10.39.0.0/16  \n 10.190.0.0/15  \n 10.200.187.0/24 |
+{: caption="Table 3: Customer private network space" caption-side="bottom"}   
 
 ## Service network (on back-end/private network)
 {: #service-network}
 
-Be sure to configure rules and verify routes for DAL10, WDC04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from DAL10, WDC04, and AMS01 to your server. The traffic must be able to travel between the service networks and your server in both directions. By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
+[CHANGE LOG](#cloud-infrastructure-jul2522)
+
+* Be sure to configure rules and verify routes for dal10, wdc04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from dal10, wdc04, and ams01 to your server. 
+* Traffic must be able to travel between the service networks and your server in both directions. 
+* By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
 
 |Data center|City|IP range|
 |---|---|---|
-|All| - |166.8.0.0/14|
-|All| - |161.26.0.0/16|
-|All| - |10.0.64.0/19|
-|ams01|Amsterdam|10.2.64.0/20|
-|ams03|Amsterdam|10.3.128.0/20|
-|che01|Chennai|10.200.16.0/20|
-|dal05|Dallas|10.1.128.0/19[^fn1] |
+|ams01|Amsterdam|10.2.64.0/20  \n 10.200.48.0/20|
+|ams03|Amsterdam|10.3.128.0/20  \n 161.26.28.0/22|
+|che01|Chennai|10.200.16.0/20  \n 161.26.32.0/22  \n 166.9.60.0/24|
+|dal05|Dallas|10.1.128.0/19[^fn1]  \n 161.26.12.0/24 |
 |dal06|Dallas|10.2.128.0/20|
 |dal07|Dallas|10.1.176.0/20|
 |dal08|Dallas|100.100.0.0/20|
-|dal09|Dallas|10.2.112.0/20  \n 10.3.192.0/24|
-|dal10|Dallas|10.200.80.0/20|
-|dal12|Dallas|10.200.112.0/20|
-|dal13|Dallas|10.200.128.0/20|
-|fra02|Frankfurt|10.3.80.0/20|
-|fra04|Frankfurt|10.201.112.0/20|
-|fra05|Frankfurt|10.201.128.0/20|
-|hkg02|Hong Kong|10.2.160.0/20|
-|lon02|London|10.1.208.0/20|
-|lon04|London|10.201.32.0/20|
-|lon05|London|10.201.48.0/20|
-|lon06|London|10.201.64.0/20|
-|mex01|Mexico City|10.2.176.0/20|
-|mil01|Milan|10.3.144.0/20|
-|mon01|Montreal|10.3.112.0/20|
-|osa21|Osaka|10.202.112.0/20|
-|osa22|Osaka|10.202.144.0/20|
-|osa23|Osaka|10.202.160.0/20|
-|par01|Paris|10.2.144.0/20|
-|sao01|São Paulo|10.200.0.0/20|
-|sao04|São Paulo|10.202.208.0/20|
-|sao05|São Paulo|10.202.240.0/20|
-|seo01|Seoul|10.200.64.0/20|
-|sjc01|San Jose|10.1.192.0/20|
-|sjc03|San Jose|10.3.176.0/20|
-|sjc04|San Jose|10.201.80.0/20|
-|sng01|Jurong East|10.2.32.0/20|
-|syd01|Sydney|10.3.96.0/20  \n 10.202.32.0/20|
-|syd04|Sydney|10.201.16.0/20|
-|syd05|Sydney|10.202.16.0/20|
-|tok02|Tokyo|10.201.160.0/20|
-|tok02|Tokyo|10.3.64.0/20|
-|tok04|Tokyo|10.201.176.0/20|
-|tok05|Tokyo|10.201.192.0/20|
-|tor01|Toronto|10.2.48.0/20|
-|tor04|Toronto|10.202.176.0/20|
-|tor05|Toronto|10.202.192.0/20|
-|wdc01|Washington D.C.|10.1.96.0/19|
-|wdc03|Washington D.C.|100.100.32.0/20|
-|wdc04|Washington D.C.|10.3.160.0/20  \n 10.201.0.0/20|
-|wdc06|Washington D.C.|10.200.160.0/20|
-|wdc07|Washington D.C.|10.200.176.0/20|
+|dal09|Dallas|10.2.112.0/20  \n 10.3.192.0/24 \n 161.26.4.0/22|
+|dal10|Dallas|10.200.80.0/20 \n 161.26.13.0/24 \n 161.26.96.0/22  \n 166.9.12.0/23  \n 166.9.48.0/24  \n 166.9.50.0/24  \n 166.9.228.0/24  \n 166.9.250.192/27|
+|dal12|Dallas|10.200.112.0/20  \n 161.26.108.0/22  \n 166.9.14.0/23  \n 166.9.51.0/24  \n 166.9.229.0/24  \n 166.9.250.224/27|
+|dal13|Dallas|10.200.128.0/20  \n 161.26.112.0/22  \n 166.9.16.0/23  \n 166.9.58.0/24  \n 166.9.230.0/24  \n 166.9.251.0/27|
+|fra02|Frankfurt|10.3.80.0/20  \n 161.26.36.0/22  \n 166.9.28.0/23|
+|fra04|Frankfurt|10.201.112.0/20  \n 161.26.144.0/22  \n 166.9.30.0/23|
+|fra05|Frankfurt|10.201.128.0/20  \n 161.26.148.0/22  \n 166.0.32.0/23|
+|hkg02|Hong Kong|10.2.160.0/20  \n 161.26.40.0/22|
+|lon02|London|10.1.208.0/20  \n 161.26.8.0/22|
+|lon04|London|10.201.32.0/20  \n 161.26.128.0/22  \n 166.9.36.0/23|
+|lon05|London|10.201.48.0/20  \n 161.26.140.0/22  \n 166.9.34.0/23|
+|lon06|London|10.201.64.0/20  \n 161.26.160.0/22  \n 166.9.38.0/23|
+|mex01|Mexico City|10.2.176.0/20  \n 161.26.48.0/22|
+|mil01|Milan|10.3.144.0/20   \n 161.26.52.0/22|
+|mon01|Montreal|10.3.112.0/20  \n 161.26.56.0/22|
+|osa21|Osaka|10.202.112.0/20  \n 161.26.184.0/22  \n 166.9.70.0/24|
+|osa22|Osaka|10.202.144.0/20  \n 161.26.188.0/22  \n 166.9.71.0/24|
+|osa23|Osaka|10.202.160.0/20  \n 161.26.192.0/22  \n 166.9.72.0/24|
+|par01|Paris|10.2.144.0/20  \n 161.26.60.0/22  \n 166.9.79.0/24  \n 166.9.245.128/27|
+|sao01|São Paulo|10.200.0.0/20  \n 161.26.64.0/22  \n 166.9.82.0/24|
+|sao04|São Paulo|10.202.208.0/20  \n 161.26.204.0/22  \n 166.9.83.0/24|
+|sao05|São Paulo|10.202.240.0/20  \n 161.26.208.0/22  \n 166.9 84.0/24|
+|seo01|Seoul|10.200.64.0/20  \n 161.26.100.0/22  \n 166.9.46.0/23|
+|sjc01|San Jose|10.1.192.0/20  \n 10.200.32.0/20|
+|sjc03|San Jose|10.3.176.0/20  \n 161.26.72.0/22|
+|sjc04|San Jose|10.201.80.0/20  \n 161.26.136.0/22|
+|sng01|Jurong East|10.2.32.0/20  \n 10.200.144.0/20  \n 161.26.76.0/22|
+|syd01|Sydney|10.3.96.0/20  \n 10.202.32.0/20  \n 161.26.80.0/22  \n 161.26.168.0/22  \n 166.9.52.0/23|
+|syd04|Sydney|10.201.16.0/20  \n 161.26.124.0/22  \n 166.9.54.0/23|
+|syd05|Sydney|10.202.16.0/20  \n 161.26.164.0/22  \n 166.9.56.0/23|
+|tok02|Tokyo|10.3.64.0/20  \n 10.201.160.0/20  \n 161.26.84.0/22  \n 166.9.40.0/23|
+|tok04|Tokyo|10.201.176.0/20  \n 161.26.152.0/22  \n 166.9.42.0/23|
+|tok05|Tokyo|10.201.192.0/20  \n 161.26.156.0/22  \n 166.9.44.0/23|
+|tor01|Toronto|10.2.48.0/20  \n 10.202.96.0/20  \n 161.26.88.0/22  \n 166.9.76.0/24|
+|tor04|Toronto|10.202.176.0/20  \n 161.26.196.0/22  \n 166.9.77.0/24|
+|tor05|Toronto|10.202.192.0/20  \n 161.26.200.0/22  \n 166.9.78.0/24|
+|wdc01|Washington D.C.|10.1.96.0/19  \n 161.26.16.0/22|
+|wdc04|Washington D.C.|10.3.160.0/20  \n 10.201.0.0/20  \n 161.26.92.0/22  \n 161.26.132.0/22  \n 166.9.20.0/23  \n 166.9.231.0/24|
+|wdc06|Washington D.C.|10.200.160.0/20  \n 161.26.120.0/22  \n 166.9.22.0/23  \n 166.9.232.0/24  \n 166.9.251.64/27|
+|wdc07|Washington D.C.|10.200.176.0/20  \n 161.26.132.0/22  \n 166.9.24.0/23  \n 166.9.233.0/24  \n 166.9.251.96/27|
+{: caption="Table 4: Service network" caption-side="bottom"}   
 
-[^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in DAL05. 
+[^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in dal05. 
 
 ### Service by data center
 {: #service-by-data-center}
 
+As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service are deprecated and are no longer supported. For more information, see [FAQs](/docs/virtual-servers?topic=virtual-servers-faq-monitoring#what-are-important-transition-dates).
+{: deprecated}
+
 | Data center | IP range |
 |-----|-----|
-| **Required Flows**:  \n * Outbound TCP 8086 and TCP 8087 from your private  \n VLANs to IP ranges documented in DAL09 and DAL10 only. `*`  \n * Outbound TCP 2546 from your private VLANs to IP ranges  \n documented for each DC where you need to access your vault. `*` | |
+| **Required Flows**:  \n * Outbound TCP 8086 and TCP 8087 from your private  \n VLANs to IP ranges documented in dal09 and dal10 only.  \n * Outbound TCP 2546 from your private VLANs to IP ranges  \n documented for each DC where you need to access your vault. | |
 | ams01 | 10.2.70.0/24  \n 10.200.54.0/24 |   
 | ams03 | 10.3.134.0/24 |  
 | che01 | 10.200.22.0/24 |  
@@ -339,7 +344,7 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 | wdc06 | 10.200.166.0/24 |
 | wdc07 | 10.200.182.0/24 |
 {: class="simple-tab-table"}
-{: caption="Table 1. eVault by Data Center" caption-side="left"}
+{: caption="Table 5. eVault by Data Center" caption-side="left"}
 {: #simpletabtable1}
 {: tab-title="eVault"}
 {: tab-group="IAM-simple"}
@@ -348,51 +353,60 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 |-----|-----|
 | **Required Flows**:  \n NFS File Storage:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049  \n Block Storage:  \n * TCP & UDP 65200 (iscsi) | |
 | ams01 | 10.2.78.0/24  \n 10.200.62.0/24 |
-| ams03 | 10.3.142.0/24 |
-| che01 | 10.200.30.0/24 |
-| dal05 | 10.1.154.0/24  \n 10.1.159.0/24 |
+| ams03 | 10.3.142.0/24  \n 161.26.30.0/24 |
+| che01 | 10.200.30.0/24  \n 161.26.34.0/24 |
+| dal01 | 10.0.90.0/24 |
+| dal05 | 10.1.154.0/24  \n 10.2.110.0/24 |
 | dal06 | 10.2.142.0/24 |
 | dal08 | 100.100.14.0/24 |
-| dal10 | 10.200.94.0/24 |
-| dal12 | 10.200.126.0/24 |
-| dal13 | 10.200.142.0/24 |
-| fra02 | 10.3.94.0/24 |
-| fra02AZ | 10.201.158.0/24 |
-| fra04 | 10.201.110.0/24 |
-| fra05 | 10.201.142.0/24 |
+| dal09 | 10.2.126.0/24 |
+| dal10 | 10.200.94.0/24  \n 10.202.239.0/24  \n 161.26.13.0/24  \n 161.26.98.0/24  \n 161.26.99.0/24 |
+| dal12 | 10.200.126.0/24  \n 161.26.110.0/24  \n 161.26.111.0/24 |
+| dal13 | 10.200.142.0/24  \n 10.200.142.0/24  \n 10.200.143.128/25  \n 161.26.114.0/24  \n 161.26.115.0/24
+| fra02 | 10.3.94.0/24  \n 10.201.154.0/24  \n 161.26.38.0/24  \n 161.26.39.0/24 |
+| fra04 | 10.201.110.0/24  \n 161.26.146.0/24 |
+| fra05 | 10.201.142.0/24  \n 161.26.150.0/24 |
 | hkg02 | 10.2.174.0/24 |
-| lon02 | 10.1.222.0/24 |
-| lon02AZ | 10.201.110.0/24 |
-| lon04 | 10.201.46.0/24 |
-| lon05 | 10.201.62.0/24 |
-| lon06 | 10.201.78.0/24 |
-| mex01 | 10.2.190.0/24 |
-| mil01 | 10.3.158.0/24 |
-| mon01 | 10.3.126.0/24 |
-| osa21 | 10.202.126.0/24 |
-| osa22 | 10.202.158.0/24 |
-| osa23 | 10.202.174.0/24 |
-| par01 | 10.2.158.0/24 |
-| sao01 | 10.200.14.0/24 |
-| seo01 | 10.200.78.0/24 |
-| sjc01 | 10.1.206.0/24  \n 10.200.46.0/24 |
-| sjc03 | 10.3.190.0/24 |
-| sjc04 | 10.201.94.0/24 |
-| sng01 | 10.2.46.0/24  \n 10.200.158.0/24 |
-| syd01 | 10.3.110.0/24 |
-| syd4 | 10.201.30.0/24 |
-| tok02 | 10.3.78.0/24 |
-| tok02AZ | 10.201.174.0/24 |
-| tok04 | 10.201.190.0/24 |
-| tok05 | 10.201.206.0/24 |
-| tor01 | 10.2.62.0/24 |
-| wdc01 | 10.1.122.0/24  \n 10.1.127.0/24  \n 10.1.104.0/24 |
+| hou02 | 10.1.174.0/24 |
+| lon02 | 10.1.222.0/24  \n 10.201.110.0/24  \n 161.26.10.0/24
+| lon04 | 10.201.46.0/24  \n 161.26.130.0/24 |
+| lon05 | 10.201.62.0/24  \n 161.26.162.0/24 |
+| lon06 | 10.201.78.0/24  \n 161.26.142.0/24 | 
+| mel01 | 10.2.94.0/24  \n 161.26.46.0/24 |
+| mex01 | 10.2.190.0/24  \n 161.26.50.0/24 |
+| mil01 | 10.3.158.0/24  \n 161.26.54.0/24 |
+| mon01 | 10.3.126.0/24  \n 161.26.58.0/24 |
+| osa21 | 10.202.126.0/24  \n 161.26.186.0/24 |
+| osa22 | 10.202.158.0/24  \n 161.26.190.0/24 |
+| osa23 | 10.202.174.0/24  \n 161.26.194.0/24 |
+| osl01 | 10.200.110.0/24  \n 161.26.106.0/24 | 
+| par01 | 10.2.158.0/24  \n 10.2.159.0/24  \n 161.26.62.0/24 |
+| par04 | 10.202.94.0/24  \n 161.26.174.0/24 |
+| par05 | 10.202.78.0/24  \n 161.26.178.0/24 |
+| par06 | 10.202.62.0/24  \n 161.26.182.0/24 |
+| sao01 | 10.200.14.0/24  \n 10.200.15.0/25  \n 10.203.78.0/24  \n 161.26.66.0/24  \n 161.26.67.0/24 |
+| sao04 | 10.202.221.0/24  \n 161.26.206.0/24 |
+| sao05 | 10.202.253.0/24  \n 161.26.210.0/24 |
+| seo01 | 10.200.78.0/24  \n 161.26.102.0/24 | 
+| sjc01 | 10.1.206.0/24 |
+| sjc03 | 10.3.190.0/24  \n 161.26.74.0/24 |
+| sjc04 | 10.201.94.0/24  \n 161.26.138.0/24 |
+| sng01 | 10.2.46.0/24  \n 10.200.158.0/24  \n 161.26.78.0/24 |
+| syd01 | 10.3.110.0/24  \n 10.202.46.0/24  \n 161.26.170.0/24  \n 161.26.82.0/24 |
+| syd04 | 10.201.30.0/24  \n 130.198.64.0/18  \n 161.26.126.0/24 |
+| syd05 | 10.202.30.0/24  \n 161.26.166.0/24 |
+| tok02 | 10.3.78.0/24  \n 10.3.79.0/24  \n 10.201.174.0/24  \n 161.26.86.0/24  \n 161.26.87.0/24 |
+| tok04 | 10.201.190.0/24  \n 161.26.154.0/24 |
+| tok05 | 10.201.206.0/24  \n 161.26.158.0/24 |
+| tor01 | 10.2.62.0/24  \n 10.202.110.0/24  \n 161.26.90.0/24  \n 161.26.91.0/24 |
+| tor04 | 10.202.189.0/24  \n 161.26.198.0/24 |
+| tor05 | 10.202.205.0/24  \n 161.26.202.0/24 |
+| wdc01 | 10.1.122.0/24  \n 10.1.104.0/24 |
 | wdc03 | 100.100.46.0/24 |
-| wdc04 | 10.201.14.0/24 |
-| wdc04 | 10.3.174.0/24 |
-| wdc06 | 10.200.174.0/24 |
-| wdc07 | 10.200.90.0/24 |
-{: caption="Table 2. File and Block by Data Center" caption-side="left"}
+| wdc04 | 10.201.10.0/24  \n 10.201.14.0/24  \n 10.3.174.0/24  \n 10.3.175.0/25  \n 161.26.134.0/24  \n 161.26.94.0/24 |
+| wdc06 | 10.200.174.0/24  \n 161.26.118.0/24 |
+| wdc07 | 10.200.90.0/24  \n 161.26.122.0/24 |
+{: caption="Table 6. File and Block by Data Center" caption-side="left"}
 {: #simpletabtable2}
 {: tab-title="File & Block"}
 {: tab-group="IAM-simple"}
@@ -400,51 +414,51 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 
 | Data center | IP range |
 |-----|-----|
-| **Required Flows**:  \n * Inbound: TCP and UDP, 48000. `*`  \n * Outbound: TCP and UDP, 48000-48020. `*` | |
-| AMS01 | 10.2.67.0/24 |
-| AMS03 | 10.3.131.0/24 |
-| CHE01 | 10.200.19.0/24 |
-| DAL05 | 10.1.143/139.0/24 |
-| DAL06 | 10.2.131.0/24 |
-| DAL08 | 100.100.3.0/24 |
-| DAL09 | 10.2.115.0/24 |
-| DAL10 | 10.200.83.0/24 |
-| DAL12 | 10.200.115.0/24 |
-| DAL13 | 10.200.131.0/24 |
-| FRA02 | 10.3.83.0/24 |
-| FRA02AZ | 10.201.147.0/24 |
-| FRA04 | 10.201.115.0/24 |
-| FRA05 | 10.201.131.0/24 |
-| HKG02 | 10.2.163.0/24 |
-| LON02 | 10.1.211.0/24 |
-| LON02AZ | 10.201.99.0/24 |
-| LON04 | 10.201.35.0/24 |
-| LON05 | 10.201.51.0/24 |
-| LON06 | 10.201.67.0/24 |
-| MEX01 | 10.2.179.0/24 |
-| MIL01 | 10.3.147.0/24 |
-| MON01 | 10.3.115.0/24 |
-| PAR01 | 10.2.147.0/24 |
-| SAO01 | 10.200.3.0/24 |
-| SEO01 | 10.200.67.0/24 |
-| SJC01 | 10.1.195.0/24 |
-| SJC03 | 10.3.179.0/24 |
-| SJC04 | 10.201.83.0/24 |
-| SNG01 | 10.2.35.0/24 |
-| SYD01 | 10.3.99.0/24 |
-| SYD04 | 10.201.19.0/24 |
-| TOK02 | 10.3.67.0/24 |
-| TOK02AZ | 10.201.163.0/24 |
-| TOK04 | 10.201.179.0/24 |
-| TOK05 | 10.201.195.0/24 |
-| TOR01 | 10.2.51.0/24 |
-| WDC01 | 10.1.111.0/24 |
-| WDC03 | 100.100.35.0/24 |
-| WDC04 | 10.3.163.0/24 |
-| WDC04 | 10.201.3.0/24 |
-| WDC06 | 10.200.163.0/24 |
-| WDC07 | 10.200.179.0/24 |
-{: caption="Table 3. AdvMon (Nimsoft) by Data Center" caption-side="left"}
+| **Required Flows**:  \n * Inbound: TCP and UDP, 48000.  \n * Outbound: TCP and UDP, 48000-48020. | |
+| ams01 | 10.2.67.0/24 |
+| ams03 | 10.3.131.0/24 |
+| che01 | 10.200.19.0/24 |
+| dal05 | 10.1.143.0/24  \n 10.1.139.0/24|
+| dal06 | 10.2.131.0/24 |
+| dal08 | 100.100.3.0/24 |
+| dal09 | 10.2.115.0/24 |
+| dal10 | 10.200.83.0/24 |
+| dal12 | 10.200.115.0/24 |
+| dal13 | 10.200.131.0/24 |
+| fra02 | 10.3.83.0/24 |
+| fra02AZ | 10.201.147.0/24 |
+| fra04 | 10.201.115.0/24 |
+| fra05 | 10.201.131.0/24 |
+| hkg02 | 10.2.163.0/24 |
+| lon02 | 10.1.211.0/24 |
+| lon02AZ | 10.201.99.0/24 |
+| lon04 | 10.201.35.0/24 |
+| lon05 | 10.201.51.0/24 |
+| lon06 | 10.201.67.0/24 |
+| mex01 | 10.2.179.0/24 |
+| mil01 | 10.3.147.0/24 |
+| mon01 | 10.3.115.0/24 |
+| par01 | 10.2.147.0/24 |
+| sao01 | 10.200.3.0/24 |
+| seo01 | 10.200.67.0/24 |
+| sjc01 | 10.1.195.0/24 |
+| sjc03 | 10.3.179.0/24 |
+| sjc04 | 10.201.83.0/24 |
+| sng01 | 10.2.35.0/24 |
+| syd01 | 10.3.99.0/24 |
+| syd04 | 10.201.19.0/24 |
+| tok02 | 10.3.67.0/24 |
+| tok02AZ | 10.201.163.0/24 |
+| tok04 | 10.201.179.0/24 |
+| tok05 | 10.201.195.0/24 |
+| tor01 | 10.2.51.0/24 |
+| wdc01 | 10.1.111.0/24 |
+| wdc03 | 100.100.35.0/24 |
+| wdc04 | 10.3.163.0/24 |
+| wdc04 | 10.201.3.0/24 |
+| wdc06 | 10.200.163.0/24 |
+| wdc07 | 10.200.179.0/24 |
+{: caption="Table 7. AdvMon (Nimsoft) by Data Center" caption-side="left"}
 {: #simpletabtable3}
 {: tab-title="AdvMon (Nimsoft)"}
 {: tab-group="IAM-simple"}
@@ -453,53 +467,53 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 | Data center | IP range |
 |-----|-----|
 | **Required Flows**:  \n Outbound: TCP 80, 443.[^fn2] | |
-| AMS01 | 10.2.66.0/24  \n 10.200.50.0/24 |
-| AMS03 | 10.3.130.0/24 |
-| CHE01 | 10.200.18.0/24 |
-| DAL05 | 10.1.142.0/24  \n 10.1.138.0/24 |
-| DAL06 | 10.2.130.0/24 |
-| DAL08 | 100.100.2.0/24 |
-| DAL09 | 10.2.114.0/24 |
-| DAL10 | 10.200.82.0/24 |
-| DAL12 | 10.200.114.0/24 |
-| DAL13 | 10.200.130.0/24 |
-| FRA02 | 10.3.82.0/24 |
-| FRA02AZ | 10.201.146.0/24 |
-| FRA04 | 10.201.114.0/24 |
-| FRA05 | 10.201.130.0/24 |
-| HKG02 | 10.2.162.0/24 |
-| LON02 | 10.1.210.0/24 |
-| LON02AZ | 10.201.98.0/24 |
-| LON04 | 10.201.34.0/24 |
-| LON05 | 10.201.50.0/24 |
-| LON06 | 10.201.66.0/24 |
-| MEX01 | 10.2.178.0/24 |
-| MIL01 | 10.3.146.0/24 |
-| MON01 | 10.3.114.0/24 |
-| OSA21 | 10.202.114.0/24 |
-| OSA22 | 10.202.146.0/24 |
-| OSA23 | 10.202.162.0/24 |
-| PAR01 | 10.2.146.0/24 |
-| SAO01 | 10.200.2.0/24 |
-| SEO01 | 10.200.66.0/24 |
-| SJC01 | 10.1.194.0/24  \n 10.200.34.0/24 |
-| SJC03 | 10.3.178.0/24 |
-| SJC04 | 10.201.82.0/24 |
-| SNG01 | 10.2.34.0/24  \n 10.200.146.0/24 |
-| SYD01 | 10.3.98.0/24 |
-| SYD04 | 10.201.18.0/24 |
-| TOK02 | 10.3.66.0/24 |
-| TOK02AZ | 10.201.162.0/24 |
-| TOK04 | 10.201.178.0/24 |
-| TOK05 | 10.201.194.0/24 |
-| TOR01 | 10.2.50.0/24 |
-| WDC01 | 10.1.110.0/24  \n 10.1.106.0/24|
-| WDC03 | 100.100.34.0/24 |
-| WDC04 | 10.3.162.0/24 |
-| WDC04 | 10.201.2.0/24 |
-| WDC06 | 10.200.162.0/24 |
-| WDC07 | 10.200.178.0/24 |
-{: caption="Table 4. ICOS by Data Center" caption-side="left"}
+| ams01 | 10.2.66.0/24  \n 10.200.50.0/24 |
+| ams03 | 10.3.130.0/24 |
+| che01 | 10.200.18.0/24 |
+| dal05 | 10.1.142.0/24  \n 10.1.138.0/24 |
+| dal06 | 10.2.130.0/24 |
+| dal08 | 100.100.2.0/24 |
+| dal09 | 10.2.114.0/24 |
+| dal10 | 10.200.82.0/24 |
+| dal12 | 10.200.114.0/24 |
+| dal13 | 10.200.130.0/24 |
+| fra02 | 10.3.82.0/24 |
+| fra02AZ | 10.201.146.0/24 |
+| fra04 | 10.201.114.0/24 |
+| fra05 | 10.201.130.0/24 |
+| hkg02 | 10.2.162.0/24 |
+| lon02 | 10.1.210.0/24 |
+| lon02AZ | 10.201.98.0/24 |
+| lon04 | 10.201.34.0/24 |
+| lon05 | 10.201.50.0/24 |
+| lon06 | 10.201.66.0/24 |
+| mex01 | 10.2.178.0/24 |
+| mil01 | 10.3.146.0/24 |
+| mon01 | 10.3.114.0/24 |
+| osa21 | 10.202.114.0/24 |
+| osa22 | 10.202.146.0/24 |
+| osa23 | 10.202.162.0/24 |
+| par01 | 10.2.146.0/24 |
+| sao01 | 10.200.2.0/24 |
+| seo01 | 10.200.66.0/24 |
+| sjc01 | 10.1.194.0/24  \n 10.200.34.0/24 |
+| sjc03 | 10.3.178.0/24 |
+| sjc04 | 10.201.82.0/24 |
+| sng01 | 10.2.34.0/24  \n 10.200.146.0/24 |
+| syd01 | 10.3.98.0/24 |
+| syd04 | 10.201.18.0/24 |
+| tok02 | 10.3.66.0/24 |
+| tok02AZ | 10.201.162.0/24 |
+| tok04 | 10.201.178.0/24 |
+| tok05 | 10.201.194.0/24 |
+| tor01 | 10.2.50.0/24 |
+| wdc01 | 10.1.110.0/24  \n 10.1.106.0/24|
+| wdc03 | 100.100.34.0/24 |
+| wdc04 | 10.3.162.0/24 |
+| wdc04 | 10.201.2.0/24 |
+| wdc06 | 10.200.162.0/24 |
+| wdc07 | 10.200.178.0/24 |
+{: caption="Table 8. ICOS by Data Center" caption-side="left"}
 {: #simpletabtable4}
 {: tab-title="ICOS"}
 {: tab-group="IAM-simple"}
@@ -507,6 +521,202 @@ Be sure to configure rules and verify routes for DAL10, WDC04, and the location 
 
 [^fn2]: Directionality is from the customer compute perspective. Outbound means leaving your account towards the service. Inbound means service reaching out to compute.
 {: note}
+
+### Change log for service network IP ranges (25 July 2022)
+{: #cloud-infrastructure-jul2522} 
+
+
+#### Removed
+* All address 10.0.64.0/19
+* All address 166.8.0.0/14
+* dal05 address 10.1.143/139.0/24
+* dal05 address 10.1.159.0/24
+* fra02AZ address 10.201.158.0/24
+* lon02AZ address 10.201.110.0/24
+* sjc01 address 10.200.46.0/24
+* tok02AZ address 10.201.174.0/24
+* wdc01 address 10.1.127.0/24
+* wdc03 address 100.100.32.0/20
+
+#### Added
+* ams01 address 10.200.48.0/20
+* ams03 address 161.26.28.0/22
+* ams03 address 161.26.30.0/24
+* che01 address 161.26.32.0/22
+* che01 address 161.26.34.0/24
+* che01 address 166.9.60.0/24
+* dal01 address 10.0.90.0/24
+* dal05 address 10.1.139.0/24
+* dal05 address 10.1.143.0/24
+* dal05 address 10.2.110.0/24
+* dal05 address 161.26.12.0/24
+* dal09 address 10.2.126.0/24
+* dal09 address 161.26.4.0/22
+* dal10 address 10.202.239.0/24
+* dal10 address 161.26.13.0/24
+* dal10 address 161.26.96.0/22
+* dal10 address 161.26.98.0/24
+* dal10 address 161.26.99.0/24
+* dal10 address 166.9.12.0/23
+* dal10 address 166.9.48.0/24
+* dal10 address 166.9.50.0/24
+* dal10 address 166.9.228.0/24
+* dal10 address 166.9.250.192/27
+* dal12 address 161.26.108.0/22
+* dal12 address 161.26.110.0/24
+* dal12 address 161.26.111.0/24
+* dal12 address 166.9.14.0/23
+* dal12 address 166.9.51.0/24
+* dal12 address 166.9.229.0/24
+* dal12 address 166.9.250.224/27
+* dal13 address 161.26.112.0/22
+* dal13 address 166.9.16.0/23
+* dal13 address 166.9.58.0/24
+* dal13 address 166.9.230.0/24
+* dal13 address 166.9.251.0/27
+* dal13 address 10.200.142.0/24
+* dal13 address 10.200.143.128/25
+* dal13 address 161.26.114.0/24
+* dal13 address 161.26.115.0/24
+* fra02 address 10.201.154.0/24
+* fra02 address 161.26.36.0/22
+* fra02 address 161.26.38.0/24
+* fra02 address 161.26.39.0/24
+* fra02 address 166.9.28.0/23
+* fra04 address 161.26.144.0/22
+* fra04 address 161.26.146.0/24
+* fra04 address 166.9.30.0/23
+* fra05 address 161.26.148.0/22
+* fra05 address 161.26.150.0/24
+* fra05 address 166.0.32.0/23
+* hkg02 address 161.26.40.0/22
+* hou02 address 10.1.174.0/24
+* lon02 address 161.26.8.0/22
+* lon02 address 161.26.10.0/24
+* lon02 address 10.201.110.0/24
+* lon04 address 161.26.128.0/22
+* lon04 address 161.26.130.0/24
+* lon04 address 166.9.36.0/23
+* lon05 address 161.26.140.0/22
+* lon05 address 161.26.162.0/24
+* lon05 address 166.9.34.0/23
+* lon06 address 161.26.142.0/24
+* lon06 address 161.26.160.0/22
+* lon06 address 166.9.38.0/23
+* mel01 address 10.2.94.0/24
+* mel01 address 161.26.46.0/24
+* mex01 address 161.26.48.0/22
+* mex01 address 161.26.50.0/24
+* mil01 address 161.26.52.0/22 
+* mil01 address 161.26.54.0/24
+* mon01 address 161.26.56.0/22 
+* mon01 address 161.26.58.0/24
+* osa21 address 161.26.184.0/22 
+* osa21 address 161.26.186.0/24
+* osa21 address 166.9.70.0/24 
+* osa22 address 161.26.188.0/22 
+* osa22 address 161.26.190.0/24
+* osa22 address 166.9.71.0/24 
+* osa23 address 161.26.192.0/22 
+* osa23 address 161.26.194.0/24
+* osa23 address 166.9.72.0/24 
+* osl01 address 10.200.110.0/24
+* osl01 address 161.26.106.0/24
+* par01 address 10.2.159.0/24
+* par01 address 161.26.62.0/24
+* par01 address 161.26.60.0/22 
+* par01 address 166.9.79.0/24 
+* par01 address 166.9.245.128/27 
+* par04 address 10.202.94.0/24
+* par04 address 161.26.174.0/24
+* par05 address 10.202.78.0/24
+* par05 address 161.26.178.0/24
+* par06 address 10.202.62.0/24
+* par06 address 161.26.182.0/24
+* sao01 address 10.200.15.0/25
+* sao01 address 10.203.78.0/24
+* sao01 address 161.26.64.0/22 
+* sao01 address 161.26.66.0/24
+* sao01 address 161.26.67.0/24
+* sao01 address 166.9.82.0/24 
+* sao04 address 10.202.221.0/24
+* sao04 address 161.26.204.0/22 
+* sao04 address 161.26.206.0/24
+* sao04 address 166.9.83.0/24 
+* sao05 address 10.202.253.0/24
+* sao05 address 161.26.208.0/22 
+* sao05 address 161.26.210.0/24
+* sao05 address 166.9 84.0/24 
+* seo01 address 161.26.100.0/22
+* seo01 address 161.26.102.0/24
+* seo01 address 166.9.46.0/23
+* sjc01 address 10.200.32.0/20
+* sjc03 address 161.26.72.0/22
+* sjc03 address 161.26.74.0/24
+* sjc04 address 161.26.136.0/22 
+* sjc04  address 161.26.138.0/24
+* sng01 address 10.200.144.0/20 
+* sng01 address 161.26.76.0/22 
+* sng01 address 161.26.78.0/24
+* syd01 address 10.202.46.0/24
+* syd01 address 161.26.80.0/22 
+* syd01 address 161.26.82.0/24
+* syd01 address 161.26.168.0/22 
+* syd01 address 161.26.170.0/24
+* syd01 address 166.9.52.0/23 
+* syd04 address 130.198.64.0/18
+* syd04 address 161.26.124.0/22 
+* syd04 address 161.26.126.0/24
+* syd04 address 166.9.54.0/23 
+* syd05 address 10.202.30.0/24
+* syd05 address 161.26.164.0/22 
+* syd05 address 161.26.166.0/24
+* syd05 address 166.9.56.0/23 
+* tok02 address 10.201.174.0/24
+* tok02 address 10.3.79.0/24
+* tok02 address 161.26.84.0/22 
+* tok02 address 161.26.86.0/24
+* tok02 address 161.26.87.0/24
+* tok02 address 166.9.40.0/23 
+* tok04 address 161.26.152.0/22 
+* tok04 address 161.26.154.0/24
+* tok04 address 166.9.42.0/23
+* tok05 address 161.26.156.0/22
+* tok05  address 161.26.158.0/24 
+* tok05 address 166.9.44.0/23 
+* tor01 address 10.202.96.0/20 
+* tor01 address 10.202.110.0/24
+* tor01 address 161.26.88.0/22 
+* tor01 address 161.26.90.0/24
+* tor01 address 161.26.91.0/24
+* tor01 address 166.9.76.0/24 
+* tor04 address 10.202.189.0/24
+* tor04 address 161.26.196.0/22
+* tor04 address 161.26.198.0/24
+* tor04 address 166.9.77.0/24 
+* tor05 address 10.202.205.0/24
+* tor05 address 161.26.200.0/22 
+* tor05 address 161.26.202.0/24
+* tor05 address 166.9.78.0/24 
+* wdc01 address 161.26.16.0/22 
+* wdc04 address 10.201.10.0/24 
+* wdc04 address 10.3.175.0/25  
+* wdc04 address 161.26.92.0/22 
+* wdc04 address 161.26.94.0/24
+* wdc04 address 161.26.132.0/22 
+* wdc04 address 161.26.134.0/24 
+* wdc04 address 166.9.20.0/23 
+* wdc04 address 166.9.231.0/24 
+* wdc06 address 161.26.118.0/24
+* wdc06 address 161.26.120.0/22 
+* wdc06 address 166.9.22.0/23 
+* wdc06 address 166.9.232.0/24 
+* wdc06 address 166.9.251.64/27  
+* wdc07 address 161.26.122.0/24 
+* wdc07 address 161.26.132.0/22  
+* wdc07 address 166.9.24.0/23  
+* wdc07 address 166.9.233.0/24  
+* wdc07 address 166.9.251.96/27 
 
 ## SSL VPN network (on back-end/private network)
 {: #ssl-vpn-network}
@@ -563,11 +773,12 @@ All TCP/UDP ports (for access from your local workstation)
 |wdc03|Washington D.C.|100.101.132.0/24|
 |wdc06|Washington D.C.|10.200.208.0/24|
 |wdc07|Washington D.C.|10.200.204.0/24|
+{: caption="Table 9: SSL VPN data centers" caption-side="bottom"}   
 
 ## SSL VPN PoPs
 {: #ssl-vpn-pops}
 
-|POP|City|IP range|
+|PoP|City|IP range|
 |---|---|---|
 |atl01|Atlanta|10.1.41.0/24|
 |chi01|Chicago|10.1.49.0/24|
@@ -575,6 +786,7 @@ All TCP/UDP ports (for access from your local workstation)
 |lax01|Los Angeles|10.1.33.0/24|
 |mia01|Miami|10.1.37.0/24|
 |nyc01|New York|10.1.45.0/24|
+{: caption="Table 10: SSL VPN PoPs" caption-side="bottom"}   
 
 ## Legacy networks
 {: #legacy-networks}
@@ -592,6 +804,7 @@ All TCP/UDP ports (for access from your local workstation)
 |216.12.193.9|
 |216.40.193.0/24|
 |216.234.234.0/24|
+{: caption="Table 11: Legacy networks" caption-side="bottom"}   
 
 ## Red Hat Enterprise Linux server requirements
 {: #red-hat-enterprise-linux-server}
@@ -618,4 +831,5 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 |Tokyo (tok02, tok04, tok05)|tok02|
 |Toronto (tor01)|mon01|
 |Washington DC (wdc01, wdc04, wdc06, wdc07)|mon01|
-|Any DC Not Listed|dal09|
+|Any data center not listed|dal09|
+{: caption="Table 12: Red Hat Enterprise Linux server requirements" caption-side="bottom"}   
