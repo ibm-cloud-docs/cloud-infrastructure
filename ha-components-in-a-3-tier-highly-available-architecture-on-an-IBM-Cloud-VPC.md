@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021
-lastupdated: "2021-06-25"
+lastupdated: "2021-06-21"
 
 keywords: migration, migrate, migrating, migrate data, data migration
 
@@ -54,9 +54,11 @@ You might need to design your HA strategy based on your RPO and RTO objectives. 
 ## Architecture diagram
 {: #three-tier-arch-diagram}
 
-This diagram shows the 3-tier architecture that you create with the tutorial. 
+This diagram shows the 3-tier architecture that you create with the tutorial[^master]. 
 
 ![Two different types of bare metal deployment.](images/3_tier_tut.png){: caption="Architectural Diagram"}
+
+[^master]: While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM will continue to update the documentation to reflect those changes.
 
 ## Components
 {: #components-three-tier-2}
@@ -99,6 +101,8 @@ The following software is used in setting up the infrastructure.
 
 1.  An Nginx web server with a public load balancer.
 2.  Apache Tomcat server with a private load balancer.
-3.  MySQL server with a Multi-Master replication, and a private load balancer.
+3.  MySQL server with a Multi-Master[^master2] replication, and a private load balancer.
+
+[^master2]:While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM will continue to update the documentation to reflect those changes.
 
 A multi master MySQL database is configured and is replicated between the zones. Refer to the diagram for details.

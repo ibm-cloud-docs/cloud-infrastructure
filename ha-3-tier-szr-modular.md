@@ -158,6 +158,37 @@ After you have your access token, use Schematics to create your infrastructure.
 11.	Apply your Terraform template by clicking **Apply plan**. It can take 10 - 20 minutes for the apply to complete.
 12.	Review the log file to ensure that no errors occurred during the provisioning, modification, or deletion process.
 
+## Customizing a three-tier highly available infrastructure VPC in a single availability zone with the catalog tile
+{: #create-vpc-saz-catalogtile-modular}
+{: ui}
+
+1.	From the IBM Cloud catalog, select **HA Infrastructure Deployment for 3-tier SAZ**. 
+2.  Configure your workspace:
+    * Enter a name for the workspace.
+    * Select a **Resource group**.
+    * Select a **Location** for your workspace. The workspace location does not have to match the resource location.
+3.  Set the required deployment variables. Review the input parameters and provide values that match your solution. Some parameters have default values. The values that you must specify include:
+
+    |Component type   | Parameter values needed |
+    |-----------------|--------------------|
+    |User-specific information  | - API key  \n - SSH key name. For example, "ibmcloud_ssh_key_name1,ibmcloud_ssh_key_name2,..."  \n - Resource Group  \n - IP address. Enter the IP address in the format: "public_ip_address1/32,public_ip_address2/32,...". For example, "103.42.91.78/32"  \n - Your local machine OS  \n - Prefix to add to resource names |
+    |Zone  | The zone where resources are deployed  |
+    |Image ID to use for region VSIs |  -Bastion Server  \n - App Server  \n - Web Server  \n - Db Server  \n Images are region-specific. To find the image IDs for your region, open the {{site.data.keyword.cloud_notm}} shell and enter `ibmcloud target -r < region_name >` to set your region, then `ibmcloud is images` to see a list of images for that region. |
+
+4.  Set the optional deployment variables. These include parameters for optional features.
+
+    |Component type    | Parameter values needed   |
+    |------------------|-------------------------|
+    |Auto scale App VSI parameters | - Min server  \n - Max servers  \n - CPU threshold  |
+    |Auto scale web VSI parameters | - Min server  \n - Max servers  \n - CPU threshold  |
+    |VSI spread strategy (host or power spread) | - App spread strategy  \n - web spread strategy  \n - Db spread strategy |
+
+5.  Accept the license agreement and select **Install**.
+
+    During installation you are redirected to the **Jobs** tab of the Schematics page.  
+
+If you need to adjust any of your parameters, go to the **Settings** tab of the Schematics page to see all of the parameters that you can modify. After you modify a parameter, select **Apply plan**.
+
 ## Customizing a three-tier highly available infrastructure VPC in a single availability zone with Terraform
 {: #procedure-ha-resilient-saz-terraform-modular}
 {: terraform}
