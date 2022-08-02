@@ -238,6 +238,7 @@ Ports to allow:
 
 |Data center|City|IP range|
 |---|---|---|
+|All| - |10.0.64.0/19|
 |ams01|Amsterdam|10.2.64.0/20  \n 10.200.48.0/20|
 |ams03|Amsterdam|10.3.128.0/20  \n 161.26.28.0/22|
 |che01|Chennai|10.200.16.0/20  \n 161.26.32.0/22  \n 166.9.60.0/24|
@@ -527,7 +528,6 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 
 
 #### Removed
-* All address 10.0.64.0/19
 * All address 166.8.0.0/14
 * dal05 address 10.1.143/139.0/24
 * dal05 address 10.1.159.0/24
