@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-04"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -24,6 +24,9 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * Fortigate Security Appliance 1 Gbps
 * IBM Security Groups
 * Hardware Firewall
+
+To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/BdPjsH). Disclaimer: This is a community tool that is updated based on support availability. 
+{: important} 
 
 ## Front-end (public) network
 {: #front-end-network}
@@ -310,13 +313,11 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | dal10 | 10.200.86.0/24 |  
 | dal12 | 10.200.118.0/24 |  
 | dal13 | 10.200.134.0/24 |  
-| fra02 | 10.3.86.0/24 |  
-| fra02AZ | 10.201.150.0/24 |  
+| fra02 | 10.3.86.0/24 \n 10.201.150.0/24 |  
 | fra04 | 10.201.118.0/24 |  
 | fra05 | 10.201.134.0/24 |
 | hkg02 | 10.2.166.0/24 |  
-| lon02 | 10.1.214.0/24 |
-| lon02AZ | 10.201.102.0/24 |  
+| lon02 | 10.1.214.0/24 \n 10.201.102.0/24 |  
 | lon04 | 10.201.38.0/24 |  
 | lon05 | 10.201.54.0/24 |   
 | lon06 | 10.201.70.0/24 |   
@@ -335,7 +336,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | sng01 | 10.2.38.0/24  \n 10.200.150.0/24 |  
 | syd01 | 10.3.102.0/24 |  
 | syd04 | 10.201.22.0/24 |  
-| tok02AZ | 10.201.166.0/24 |  
+| tok02 | 10.201.166.0/24 |  
 | tok04 | 10.201.182.0/24 |   
 | tok05 | 10.201.198.0/24 |
 | tor01 | 10.2.54.0/24 |
@@ -426,13 +427,11 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | dal10 | 10.200.83.0/24 |
 | dal12 | 10.200.115.0/24 |
 | dal13 | 10.200.131.0/24 |
-| fra02 | 10.3.83.0/24 |
-| fra02AZ | 10.201.147.0/24 |
+| fra02 | 10.3.83.0/24 \n 10.201.147.0/24 |
 | fra04 | 10.201.115.0/24 |
 | fra05 | 10.201.131.0/24 |
 | hkg02 | 10.2.163.0/24 |
-| lon02 | 10.1.211.0/24 |
-| lon02AZ | 10.201.99.0/24 |
+| lon02 | 10.1.211.0/24 \n 10.201.99.0/24 |
 | lon04 | 10.201.35.0/24 |
 | lon05 | 10.201.51.0/24 |
 | lon06 | 10.201.67.0/24 |
@@ -448,8 +447,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | sng01 | 10.2.35.0/24 |
 | syd01 | 10.3.99.0/24 |
 | syd04 | 10.201.19.0/24 |
-| tok02 | 10.3.67.0/24 |
-| tok02AZ | 10.201.163.0/24 |
+| tok02 | 10.3.67.0/24 \n 10.201.163.0/24 |
 | tok04 | 10.201.179.0/24 |
 | tok05 | 10.201.195.0/24 |
 | tor01 | 10.2.51.0/24 |
@@ -478,13 +476,11 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | dal10 | 10.200.82.0/24 |
 | dal12 | 10.200.114.0/24 |
 | dal13 | 10.200.130.0/24 |
-| fra02 | 10.3.82.0/24 |
-| fra02AZ | 10.201.146.0/24 |
+| fra02 | 10.3.82.0/24 \n 10.201.146.0/24 |
 | fra04 | 10.201.114.0/24 |
 | fra05 | 10.201.130.0/24 |
 | hkg02 | 10.2.162.0/24 |
-| lon02 | 10.1.210.0/24 |
-| lon02AZ | 10.201.98.0/24 |
+| lon02 | 10.1.210.0/24 \n 10.201.98.0/24 |
 | lon04 | 10.201.34.0/24 |
 | lon05 | 10.201.50.0/24 |
 | lon06 | 10.201.66.0/24 |
@@ -503,8 +499,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | sng01 | 10.2.34.0/24  \n 10.200.146.0/24 |
 | syd01 | 10.3.98.0/24 |
 | syd04 | 10.201.18.0/24 |
-| tok02 | 10.3.66.0/24 |
-| tok02AZ | 10.201.162.0/24 |
+| tok02 | 10.3.66.0/24 \n 10.201.162.0/24 |
 | tok04 | 10.201.178.0/24 |
 | tok05 | 10.201.194.0/24 |
 | tor01 | 10.2.50.0/24 |
