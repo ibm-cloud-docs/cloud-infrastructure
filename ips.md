@@ -25,6 +25,9 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * IBM Security Groups
 * Hardware Firewall
 
+To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). Disclaimer: This is a community tool that is updated based on support availability. 
+{: important} 
+
 ## Front-end (public) network
 {: #front-end-network}
 
