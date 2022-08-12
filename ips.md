@@ -136,8 +136,8 @@ Ports to allow:
 IP block: Your private IP block for server-to-server communications (`10.X.X.X/X`)
 
 Ports to allow:
-- ICMP – ping (for support troubleshooting)
 - All TCP/UDP ports
+- ICMP – ping (for support troubleshooting and monitoring)
 
 ### Customer private network space
 {: #customer-private-network-space}
@@ -238,6 +238,10 @@ Ports to allow:
 * Be sure to configure rules and verify routes for dal10, wdc04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from dal10, wdc04, and ams01 to your server. 
 * Traffic must be able to travel between the service networks and your server in both directions. 
 * By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
+
+Ports to allow:
+- All TCP/UDP ports
+- ICMP – ping (for support troubleshooting and monitoring)
 
 |Data center|City|IP range|
 |---|---|---|
@@ -361,7 +365,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | dal05 | 10.1.154.0/24  \n 10.2.110.0/24 |
 | dal06 | 10.2.142.0/24 |
 | dal08 | 100.100.14.0/24 |
-| dal09 | 10.2.126.0/24 |
+| dal09 | 10.2.125.0/24 \n 10.2.126.0/24 |
 | dal10 | 10.200.94.0/24  \n 10.202.239.0/24  \n 161.26.13.0/24  \n 161.26.98.0/24  \n 161.26.99.0/24 |
 | dal12 | 10.200.126.0/24  \n 161.26.110.0/24  \n 161.26.111.0/24 |
 | dal13 | 10.200.142.0/24  \n 10.200.142.0/24  \n 10.200.143.128/25  \n 161.26.114.0/24  \n 161.26.115.0/24
