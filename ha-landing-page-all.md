@@ -30,13 +30,13 @@ subcollection: cloud-infrastructure
 # High Availability and Resiliency on {{site.data.keyword.cloud_notm}}
 {: #landing-about-ha-dr-backup}
 
-With {{site.data.keyword.cloud}}, you can protect your critical workloads by building resilient highly available infrastructures. Using the backup, disaster recovery, and hhigh availability features, you can minimize your downtime if a severe failure condition happens. You can safeguard your classic or VPC application with multiple availability zones or regions. By creating cloud infrastructures that are protected against a single point of failure, and backing up your data, you keep your workloads and web applications highly available. 
+With {{site.data.keyword.cloud}}, you can protect your critical workloads by building resilient highly available infrastructures. Using the backup, disaster recovery, and high availability features, you can minimize your downtime if a severe failure condition happens. You can safeguard your classic or VPC application with multiple availability zones or regions. By creating cloud infrastructures that are protected against a single point of failure, and backing up your data, you keep your workloads and web applications highly available. 
 {: shortdesc} 
 
 ## What makes a cloud computing infrastructure resilient?
 {: #landing-what-is-resilient}  
 
-In {{site.data.keyword.cloud_notm}}, a resilient infrastructure keeps your cloud solution running at acceptable levels, even if one or more areas of the infrastructure experiences a minor or major problem:
+In {{site.data.keyword.cloud_notm}}, a resilient infrastructure keeps your cloud solution running at acceptable levels, even if one or more areas of the infrastructure experience a minor or major problem, such as:
 
 * Power loss
 * Planned or unplanned maintenance
@@ -125,7 +125,7 @@ While all the data centers have multiple power feeds, several of the more mature
 At a minimum, deploying more than one virtual server instance helps make your solution highly available. {{site.data.keyword.cloud_notm}} has more features that you can add to your solution:
 
 * Placement groups that distribute your VSIs on different hypervisors or on different hypervisors with different power sources.
-* Auto scale that aoutmtically scales your number of VSIs up and down based on capacity.
+* Auto scale that automatically scales your number of VSIs up and down based on capacity.
 
 ### Placement groups
 {: #landing-placement-groups}
@@ -149,14 +149,14 @@ You can use [Auto scale](/docs/vpc?topic=vpc-creating-auto-scale-instance-group&
 ## Using LBaaS to help increase resiliency
 {: #landing-lbaas}
 
-{{site.data.keyword.cloud_notm}} load balancer as a service (LBaaS) is a network offering that you can use to increase resiliency within a region. {{site.data.keyword.cloud_notm}} provides multiple network devices and connections to ensure that your servers and data storage components are always in contact with each other. When you spread your workload across multiple machines, consider using a load balancer. A load balancer provides a well-known destination to your application. It also provides redundancy and scaling.
+{{site.data.keyword.cloud_notm}} Load Balancer as a Service (LBaaS) is a network offering that you can use to increase resiliency within a region. {{site.data.keyword.cloud_notm}} provides multiple network devices and connections to ensure that your servers and data storage components are always in contact with each other. When you spread your workload across multiple machines, consider using a load balancer. A load balancer provides a well-known destination to your application. It also provides redundancy and scaling.
 
 For more information about the different types of LBaaS and capabilities, see [Load balancers for VPC overview](/docs/vpc?topic=vpc-nlb-vs-elb). To increase resiliency across regions, you can use the global load-balancing functions of [Cloud Internet Services (CIS)](/docs/cis?topic=cis-configure-glb).
 
 ## Using snapshot for backups
 {: #landing-snapshot}
 
-Some occurrences or events can put your business continuity at risk such as ransomware, data loss or corruption, accidental deletion, or catastrophic events. Make backup a part of your data resiliency plan to recover from these types of events. Backup is a point-in-time copy of your data from either your boot or data volumes. For more information about using {{site.data.keyword.cloud_notm}} snapshot backup capabilities, see [Creating Snapshots](/docs/vpc?topic=vpc-snapshots-vpc-create#snapshots-vpc-create).
+Some occurrences or events can put your business continuity at risk, such as ransomware, data loss or corruption, accidental deletion, or catastrophic events. Make backups a part of your data resiliency plan to recover from these types of events. A Backup is a point-in-time copy of your data from either your boot or data volumes. For more information about using {{site.data.keyword.cloud_notm}} snapshot backup capabilities, see [Creating Snapshots](/docs/vpc?topic=vpc-snapshots-vpc-create#snapshots-vpc-create).
 
 ## High Availability components and tutorials
 
