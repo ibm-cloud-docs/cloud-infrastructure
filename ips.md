@@ -7,7 +7,7 @@ lastupdated: "2022-08-04"
 keywords: ip, range, firewall, network, traffic, security
 
 subcollection: cloud-infrastructure
- 
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -25,8 +25,8 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * IBM Security Groups
 * Hardware Firewall
 
-To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). Disclaimer: This is a community tool that is updated based on support availability. 
-{: important} 
+To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). Disclaimer: This is a community tool that is updated based on support availability.
+{: important}
 
 ## Front-end (public) network
 {: #front-end-network}
@@ -146,23 +146,23 @@ Ports to allow:
 |---|---|---|---|
 | Amsterdam| ams01 | BCR01 | 10.2.75.0/24  \n 10.3.22.0/24  \n 10.68.0.0/15  \n 10.70.0.0/15  \n 10.251.10.0/23  \n 10.251.88.0/23 |
 | | ams01 | BCR02 | 10.70.0.0/15  \n 10.104.0.0/15 |
-| | ams03 | BCR01 | 10.1.243.0/24  \n  10.3.48.0/24  \n 10.3.139.0/24  \n 10.136.0.0/15 | 
+| | ams03 | BCR01 | 10.1.243.0/24  \n  10.3.48.0/24  \n 10.3.139.0/24  \n 10.136.0.0/15 |
 | | ams03 | BCR02 | 10.175.0.0/16  \n 10.214.0.0/16 |
 | Chennai | che01 | BCR01 | 10.3.58.0/24  \n 10.162.0.0/15  \n 10.200.27.0/24 |
-| Dallas| dal05 | BCR01 | 10.0.40.0/22  \n 10.1.151.0/24  \n 10.3.60.0/24  \n 10.40.0.0/14  \n 10.251.0.0/23  \n 10.251.64.0/23 | 
+| Dallas| dal05 | BCR01 | 10.0.40.0/22  \n 10.1.151.0/24  \n 10.3.60.0/24  \n 10.40.0.0/14  \n 10.251.0.0/23  \n 10.251.64.0/23 |
 | | dal05 | BCR02 | 10.60.0.0/15  \n 10.62.0.0/16 |
-| | dal05 | BCR03 | 10.80.0.0/14  \n 10.251.4.0/23  \n 10.251.68.0/23 | 
-| | dal05 | BCR04 | 10.84.0.0/16  \n 10.86.0.0/16  \n 10.251.70.0/23 | 
-| | dal06 | BCR01 | 10.2.139.0/24  \n 10.3.61.0/24  \n 10.106.0.0/15  \n 10.253.0.0/16 | 
+| | dal05 | BCR03 | 10.80.0.0/14  \n 10.251.4.0/23  \n 10.251.68.0/23 |
+| | dal05 | BCR04 | 10.84.0.0/16  \n 10.86.0.0/16  \n 10.251.70.0/23 |
+| | dal06 | BCR01 | 10.2.139.0/24  \n 10.3.61.0/24  \n 10.106.0.0/15  \n 10.253.0.0/16 |
 | | dal06 | BCR02 | 10.146.0.0/15 |
 | | dal09 | BRC01 | 10.2.123.0/24  \n 10.2.244.0/24  \n 10.3.16.0/24  \n 10.120.0.0/15 |
 | | dal09 | BCR02 | 10.142.0.0/15 |
 | | dal09 | BCR03 | 10.98.0.0/15  \n 10.152.0.0/15 |
 | | dal09 | BCR04 | 10.154.0.0/15 |
-| | dal09 | BCR05 | 10.172.0.0/16 | 
+| | dal09 | BCR05 | 10.172.0.0/16 |
 | | dal09 | BCR06 | 10.173.0.0/16 |
 | | dal10 | BCR01 | 10.0.192.0/26  \n 10.3.62.0/24  \n 10.3.247.0/24  \n 10.176.0.0/15  \n 10.200.91.0/24 |
-| | dal10 | BCR02 | 10.0.192.64/26  \n 10.171.0.0/16 | 
+| | dal10 | BCR02 | 10.0.192.64/26  \n 10.171.0.0/16 |
 | | dal10 | BCR03 | 10.93.0.0/16 |
 | | dal10 | BCR04 | 10.5.0.0/16  \n 10.23.0.0/16  \n 10.38.0.0/16  \n 10.94.0.0/15  \n 10.221.0.0/16 |
 | | dal12 | BCR01 | 10.3.2.0/24  \n 10.184.0.0/15  \n 10.200.123.0/24  \n 10.241.0.0/16 |
@@ -170,21 +170,21 @@ Ports to allow:
 | | dal13 | BCR01 | 10.3.3.0/24  \n 10.186.0.0/15  \n 10.200.139.0/24  \n 10.208.0.0/16 |
 | | dal13 | BCR02 | 10.36.0.0/16  \n 10.73.0.0/16  \n 10.209.0.0/16  \n 10.220.0.0/16 |
 | | dal13 | BCR03 | 10.37.0.0/16 |
-| Frankfurt | fra02 | BCR01 | 10.2.240.0/24  \n 10.3.38.0/24  \n 10.3.91.0/24  \n 10.134.0.0/15  \n 10.201.155.0/24 |
-| | fra02 | BCR02 | 10.85.0.0/16  \n 10.194.0.0/16 | 
-| | fra02 | BCR03 | 10.20.0.0/16  \n 10.215.0.0/16 | 
+| Frankfurt | fra02 | BCR01 | 10.2.240.0/24  \n 10.3.38.0/24  \n 10.3.91.0/24  \n 10.134.0.0/15  \n 10.201.155.0/24  \n 10.201.155.0/24 |
+| | fra02 | BCR02 | 10.85.0.0/16  \n 10.194.0.0/16 |
+| | fra02 | BCR03 | 10.20.0.0/16  \n 10.215.0.0/16 |
 | | fra04 | BCR01 | 10.3.13.0/24  \n 10.21.0.0/16  \n 10.75.0.0/16  \n 10.201.123.0/24  \n 10.240.0.0/16 |
-| | fra05 | BCR01 | 10.3.15.0/24  \n 10.13.0.0/16  \n 10.123.0.0/16  \n 10.201.139.0/24 | 
-| Hong Kong| hkg02 | BCR01 | 10.2.171.0/24  \n 10.3.36.0/24  \n 10.110.0.0/15 | 
+| | fra05 | BCR01 | 10.3.15.0/24  \n 10.13.0.0/16  \n 10.123.0.0/16  \n 10.201.139.0/24 |
+| Hong Kong| hkg02 | BCR01 | 10.2.171.0/24  \n 10.3.36.0/24  \n 10.110.0.0/15 |
 | | fra05  | BCR02 | 10.174.0.0/16 |
-| London| lon02 | BCR01 | 10.1.219.0/24  \n 10.3.40.8/29  \n 10.3.40.16/28  \n 10.3.40.32/27  \n 10.3.40.64/26  \n 10.3.40.128/25  \n 10.112.0.0/15  \n 10.201.107.0/24 | 
+| London| lon02 | BCR01 | 10.1.219.0/24  \n 10.3.40.8/29  \n 10.3.40.16/28  \n 10.3.40.32/27  \n 10.3.40.64/26  \n 10.3.40.128/25  \n 10.112.0.0/15  \n 10.201.107.0/24 |
 | | lon02 | BCR02 | 10.164.0.0/15 |
-| | lon04 | BCR01 | 10.3.7.0/24  \n 10.45.0.0/16  \n 10.201.43.0/24  \n 10.222.0.0/16 | 
-| | lon05 | BCR01 | 10.3.21.0/24  \n 10.196.0.0/15  \n 10.201.59.0/24 | 
+| | lon04 | BCR01 | 10.3.7.0/24  \n 10.45.0.0/16  \n 10.201.43.0/24  \n 10.222.0.0/16 |
+| | lon05 | BCR01 | 10.3.21.0/24  \n 10.196.0.0/15  \n 10.201.59.0/24 |
 | | lon06 | BCR01 | 10.3.11.0/24  \n 10.72.0.0/16  \n 10.201.75.0/24  \n 10.242.0.0/16 |
 | Mexico City | mex01 | BCR01 | 10.2.187.0/24  \n 10.2.242.0/24  \n 10.3.28.8/29  \n 10.3.28.16/28  \n 10.3.28.32/27  \n 10.3.28.64/26  \n 10.3.28.128/25  \n 10.130.0.0/15 |
-| Milan | mil01 | BCR01 | 10.1.241.0/24  \n 10.3.50.8/29  \n 10.3.50.16/28  \n 10.3.50.32/27  \n 10.3.50.64/26  \n 10.3.50.128/25  \n 10.3.155.0/24  \n 10.144.0.0/15 | 
-| Montreal| mon01 | BCR01 | 10.3.46.8/29  \n 10.3.46.16/28  \n 10.3.46.32/27  \n 10.3.46.64/26  \n 10.3.46.128/25  \n 10.3.123.0/24  \n 10.140.0.0/15 | 
+| Milan | mil01 | BCR01 | 10.1.241.0/24  \n 10.3.50.8/29  \n 10.3.50.16/28  \n 10.3.50.32/27  \n 10.3.50.64/26  \n 10.3.50.128/25  \n 10.3.155.0/24  \n 10.144.0.0/15 |
+| Montreal| mon01 | BCR01 | 10.3.46.8/29  \n 10.3.46.16/28  \n 10.3.46.32/27  \n 10.3.46.64/26  \n 10.3.46.128/25  \n 10.3.123.0/24  \n 10.140.0.0/15 |
 | | mon01 | BCR02 | 10.182.0.0/16 |
 | Osaka | osa21 | BCR01 | 10.3.59.0/24  \n 10.8.0.0/16  \n 10.201.246.0/24 |
 | | osa22 | BCR01 | 10.3.57.0/24  \n 10.9.0.0/16  \n 10.201.247.0/24 |
@@ -194,36 +194,36 @@ Ports to allow:
 | | par04 | BCR01 | 10.3.27.0/24  \n 10.217.0.0/16 |
 | | par05 | BCR01 | 10.3.25.0/24  \n 10.218.0.0/16 |
 | | par06 | BCR01 | 10.3.24.0/24  \n 10.219.0.0/16 |
-| São Paulo | sao01 | BCR01 | 10.3.54.0/29  \n 10.3.54.8/29  \n 10.3.54.16/28  \n 10.3.54.32/27  \n 10.3.54.64/26  \n 10.3.54.128/25  \n 10.150.0.0/15  \n 10.200.11.0/24 | 
-| | sao04 | BCR01 | 10.3.49.0/24  \n 10.14.0.0/16  \n 10.201.251.0/24 | 
-| | sao05 | BCR01 | 10.3.47.0/24  \n 10.15.0.0/16  \n 10.201.252.0/24 | 
+| São Paulo | sao01 | BCR01 | 10.3.54.0/29  \n 10.3.54.8/29  \n 10.3.54.16/28  \n 10.3.54.32/27  \n 10.3.54.64/26  \n 10.3.54.128/25  \n 10.150.0.0/15  \n 10.200.11.0/24 |
+| | sao04 | BCR01 | 10.3.49.0/24  \n 10.14.0.0/16  \n 10.201.251.0/24 |
+| | sao05 | BCR01 | 10.3.47.0/24  \n 10.15.0.0/16  \n 10.201.252.0/24 |
 | Seoul | seo01 | BCR01 | 10.3.63.0/24  \n 10.178.0.0/15  \n 10.200.75.0/24 |
 | San Jose | sjc01 | BCR01 | 10.1.203.0/24  \n 10.3.14.0/24  \n 10.52.0.0/14  \n 10.251.6.0/23  \n 10.251.72.0/23 |
 | | sjc01 | BCR02 | 10.88.0.0/14  \n 10.251.74.0/23 |
 | | sjc01 | BCR03 | 10.122.0.0/16 |
-| | sjc03 | BCR01 | 10.3.56.0/24  \n 10.3.187.0/24  \n 10.160.0.0/15 | 
+| | sjc03 | BCR01 | 10.3.56.0/24  \n 10.3.187.0/24  \n 10.160.0.0/15 |
 | | sjc03 | BCR02 | 10.168.0.0/15 |
-| | sjc04 | BCR01 | 10.3.9.0/24  \n 10.87.0.0/16  \n 10.201.91.0/24 | 
+| | sjc04 | BCR01 | 10.3.9.0/24  \n 10.87.0.0/16  \n 10.201.91.0/24 |
 | Jurong East | sng01 | BCR01 | 10.2.43.0/24  \n 10.3.20.0/24  \n 10.64.0.0/16  \n 10.66.0.0/15  \n 10.251.12.0/23  \n 10.251.86.0/23 |
 | | sng01| BCR02 | 10.116.0.0/15 |
 | Sydney | syd01 | BCR01 | 10.3.44.0/24  \n 10.3.107.0/24  \n 10.138.0.0/15  \n 10.202.43.0/24 |
 | | syd01 | BCR02 | 10.210.0.0/16 |
-| | syd04 | BCR01 | 10.3.6.0/24  \n 10.63.0.0/16  \n 10.201.27.0/24 | 
+| | syd04 | BCR01 | 10.3.6.0/24  \n 10.63.0.0/16  \n 10.201.27.0/24 |
 | | syd05 | BCR01 | 10.3.23.0/24  \n 10.195.0.0/16  \n 10.207.27.0/24 |
 | Tokyo | tok02 | BCR01 | 10.2.241.0/24  \n 10.3.30.0/24  \n 10.3.75.0/24  \n 10.3.242.0/24  \n 10.129.0.0/16  \n 10.132.0.0/15  \n 10.201.171.0/24 |
 | | tok02 | BCR02 | 10.212.0.0/16 |
 | | tok04 | BCR01 | 10.3.17.0/24  \n 10.192.0.0/16  \n 10.201.187.0/24 |
-| | tok05 | BCR01 | 10.3.19.0/24  \n 10.193.0.0/16  \n 10.201.203.0/24 | 
+| | tok05 | BCR01 | 10.3.19.0/24  \n 10.193.0.0/16  \n 10.201.203.0/24 |
 | | tor01 | BCR01 | 10.2.59.0/24  \n 10.3.42.0/24  \n 10.114.0.0/15  \n 10.202.107.0/24 |
 | | tor01 | BCR02 | 10.166.0.0/15 |
-| | tor04 | BCR01 | 10.1.2.0/24  \n 10.3.53.0/24  \n 10.11.0.0/16 | 
-| | tor05 | BCR01 | 10.1.6.0/24  \n 10.3.51.0/24  \n 10.243.0.0/16 | 
+| | tor04 | BCR01 | 10.1.2.0/24  \n 10.3.53.0/24  \n 10.11.0.0/16 |
+| | tor05 | BCR01 | 10.1.6.0/24  \n 10.3.51.0/24  \n 10.243.0.0/16 |
 | Washington D.C. | wdc01 | BCR03 | 10.1.119.0/24  \n 10.3.10.0/24  \n 10.58.0.0/16  \n 10.251.8.0/23  \n 10.251.84.0/23 |
 | | wdc01 | BCR05 | 10.108.0.0/15 |
 | | wdc01 | BCR06 | 10.124.0.0/15 |
-| | wdc04 | BCR01 | 10.3.10.0/29  \n 10.3.52.0/24  \n 10.3.171.0/24  \n 10.3.240.0/24  \n 10.148.0.0/15 | 
-| | wdc04 | BCR02 | 10.0.192.128/26  \n 10.170.0.0/16 | 
-| | wdc04 | BCR03 | 10.183.0.0/16  \n 10.216.0.0/16 | 
+| | wdc04 | BCR01 | 10.3.10.0/29  \n 10.3.52.0/24  \n 10.3.171.0/24  \n 10.3.240.0/24  \n 10.148.0.0/15 |
+| | wdc04 | BCR02 | 10.0.192.128/26  \n 10.170.0.0/16 |
+| | wdc04 | BCR03 | 10.183.0.0/16  \n 10.216.0.0/16 |
 | | wdc04 | BCR04 | 10.65.0.0/16  \n 10.201.11.0/24  \n 10.211.0.0/16 |
 | | wdc04 | BCR05 | 10.213.0.0/16 |
 | | wdc06 | BCR01 | 10.3.4.0/24  \n 10.188.0.0/15  \n 10.200.171.0/24 |
@@ -235,8 +235,8 @@ Ports to allow:
 
 [CHANGE LOG](#cloud-infrastructure-jul2522)
 
-* Be sure to configure rules and verify routes for dal10, wdc04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from dal10, wdc04, and ams01 to your server. 
-* Traffic must be able to travel between the service networks and your server in both directions. 
+* Be sure to configure rules and verify routes for dal10, wdc04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from dal10, wdc04, and ams01 to your server.
+* Traffic must be able to travel between the service networks and your server in both directions.
 * By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
 
 Ports to allow:
@@ -295,7 +295,7 @@ Ports to allow:
 |wdc07|Washington D.C.|10.200.176.0/20  \n 161.26.132.0/22  \n 166.9.24.0/23  \n 166.9.233.0/24  \n 166.9.251.96/27|
 {: caption="Table 4: Service network" caption-side="bottom"}   
 
-[^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in dal05. 
+[^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in dal05.
 
 ### Service by data center
 {: #service-by-data-center}
@@ -377,7 +377,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | lon02 | 10.1.222.0/24  \n 10.201.110.0/24  \n 161.26.10.0/24
 | lon04 | 10.201.46.0/24  \n 161.26.130.0/24 |
 | lon05 | 10.201.62.0/24  \n 161.26.162.0/24 |
-| lon06 | 10.201.78.0/24  \n 161.26.142.0/24 | 
+| lon06 | 10.201.78.0/24  \n 161.26.142.0/24 |
 | mel01 | 10.2.94.0/24  \n 161.26.46.0/24 |
 | mex01 | 10.2.190.0/24  \n 161.26.50.0/24 |
 | mil01 | 10.3.158.0/24  \n 161.26.54.0/24 |
@@ -385,7 +385,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | osa21 | 10.202.126.0/24  \n 161.26.186.0/24 |
 | osa22 | 10.202.158.0/24  \n 161.26.190.0/24 |
 | osa23 | 10.202.174.0/24  \n 161.26.194.0/24 |
-| osl01 | 10.200.110.0/24  \n 161.26.106.0/24 | 
+| osl01 | 10.200.110.0/24  \n 161.26.106.0/24 |
 | par01 | 10.2.158.0/24  \n 10.2.159.0/24  \n 161.26.62.0/24 |
 | par04 | 10.202.94.0/24  \n 161.26.174.0/24 |
 | par05 | 10.202.78.0/24  \n 161.26.178.0/24 |
@@ -393,7 +393,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | sao01 | 10.200.14.0/24  \n 10.200.15.0/25  \n 10.203.78.0/24  \n 161.26.66.0/24  \n 161.26.67.0/24 |
 | sao04 | 10.202.221.0/24  \n 161.26.206.0/24 |
 | sao05 | 10.202.253.0/24  \n 161.26.210.0/24 |
-| seo01 | 10.200.78.0/24  \n 161.26.102.0/24 | 
+| seo01 | 10.200.78.0/24  \n 161.26.102.0/24 |
 | sjc01 | 10.1.206.0/24 |
 | sjc03 | 10.3.190.0/24  \n 161.26.74.0/24 |
 | sjc04 | 10.201.94.0/24  \n 161.26.138.0/24 |
@@ -523,7 +523,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 {: note}
 
 ### Change log for service network IP ranges (25 July 2022)
-{: #cloud-infrastructure-jul2522} 
+{: #cloud-infrastructure-jul2522}
 
 
 #### Removed
@@ -710,11 +710,11 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 * wdc06 address 161.26.120.0/22 
 * wdc06 address 166.9.22.0/23 
 * wdc06 address 166.9.232.0/24 
-* wdc06 address 166.9.251.64/27  
-* wdc07 address 161.26.122.0/24 
-* wdc07 address 161.26.132.0/22  
-* wdc07 address 166.9.24.0/23  
-* wdc07 address 166.9.233.0/24  
+* wdc06 address 166.9.251.64/27 
+* wdc07 address 161.26.122.0/24
+* wdc07 address 161.26.132.0/22 
+* wdc07 address 166.9.24.0/23 
+* wdc07 address 166.9.233.0/24 
 * wdc07 address 166.9.251.96/27 
 
 ## SSL VPN network (on back-end/private network)
@@ -728,7 +728,7 @@ All TCP/UDP ports (for access from your local workstation)
 {: #ssl-vpn-data-centers}
 
 |Data center|City|IP range|
-|---|---|---| 
+|---|---|---|
 |ams01|Amsterdam|10.2.200.0/23|
 |ams03|Amsterdam|10.3.220.0/24|
 |che01|Chennai|10.200.232.0/24|
