@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-09-20"
 
 subcollection: cloud-infrastructure
 
@@ -81,13 +81,35 @@ If an echo isn't received in the allotted timeframe (1 second for service pings,
 ## Viewing configured monitors
 {: #view-configured-monitors}
 
-To view configured monitors, follow these steps:
+To view configured monitors, use the following steps:
 1. Go to your console's device menu. For more information, see [Navigating to devices](/docs/virtual-servers?topic=virtual-servers-navigating-devices).
 2. From the **Devices** menu, select **Device List** and select the device.
 3. Click the **Monitoring** tab. All current pings are viewable on the landing page.
 
 The **Monitoring** tab is only visible if at least one monitor is configured.
 {: note}
+
+## Health dashboard for Classic infrastructure
+{: #health-dashboard}
+
+With the health monitoring dashboard, you can see important stats about your environment that might need attention. From the health dashboard, you can quickly see the following information:
+
+* All your devices and their associated monitoring statuses
+* Quickly see any servers that might require firmware updates
+* See whether any operating systems are no longer supported and if an OS reload is required 
+
+### Viewing the health dashboard for Classic infrastructure
+{: #viewing-health-dashboard}
+
+To view your health dashboard, use the following steps.
+
+1. Go to your [Classic infrastructure](https://cloud.ibm.com/classic){: external}.
+2. Click **Devices** > **Device list** > **Health dashboard**.
+
+Alternatively, you can go directly to your health dashboard by clicking [here](https://cloud.ibm.com/gen1/infrastructure/health-dashboard).{: externa}
+
+For more information about operating system support cycles, see [Lifecycle for operating systems and add-ons](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic).
+{: tip}
 
 ## Next steps
 {: #monitoring-next-steps}
