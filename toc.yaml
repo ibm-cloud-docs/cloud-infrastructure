@@ -43,37 +43,7 @@ toc:
       - topicgroup: 
           label: High availability and resiliency
           topics: 
-          - ha-landing-page-all.md
-          - ha-cloud-intro.md
-          - ha-dr-ref-arch.md
-          - /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application   
-          - ha-autoscale-tutorial.md
-          - topicgroup: 
-              label: Create Highly Available applictions in VPC
-              topics: 
-              - ha-3-tier.md
-              - ha-pools-origins-1zone.md
-              - ha-resiliency-tutorial.md
-          - ha-block-storage-snapshots.md
-          - topicgroup: 
-              label: Highly Available 3-tier architecture on IBM Cloud VPC 
-              topics: 
-              - ha-components-in-a-3-tier-highly-available-architecture-on-an-IBM-Cloud-VPC.md
-              - ha-3-tier-tutorial.md
-          - topicgroup: 
-              label: Highly Available architecture in a Single Zone
-              topics: 
-              - ha-arch-szr.md
-              - ha-deploy-n-tier-app-szr.md 
-              - ha-snapshot-backups-szr.md
-          - topicgroup: 
-              label: Automating and Deploying Highly Available Resilient Architectures with Automation
-              topics: 
-              - ha-3-tier-resilient-terraform.md
-              - ha-3-tier-resilient-autoscale-terraform.md
-              - ha-3-tier-szr-modular.md
-              - ha-3-tier-mzr-modular.md
-              - ha-3-tier-cross-mzr-terraform.md
+          - /ha-infrastructure/ha-infrastructure-landing-about-ha-dr-backup
 
       - topicgroup: 
           label: Building your infrastructure
