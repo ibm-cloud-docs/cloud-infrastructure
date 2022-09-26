@@ -87,7 +87,11 @@ toc:
               label: Script-based migration
               topics: 
               - data-migration-diy.md
-              - image-migration-diy.md 
+              - image-migration-diy.md
+          - topicgroup:
+              label: Database migration
+              topics:
+              - mssql-db-migration.md
  
   - navgroup:
       id: reference
