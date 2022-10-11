@@ -149,77 +149,40 @@ The RMM solution handles only the OS, application, and data movement. It does no
 ### Option 2: Auto-provision
 {: #option-auto}
 
-1. Click **Cloud user** menu under the Configuration main menu on the left side.
+#### Setting up a cloud user
+{: #setting-up-cloud-user}
 
-2. Click Add button, and the **Add Cloud** form will be displayed. Enter the appropriate details for the following fields:
+1. Log in to the RackWare web console.
+2. In the RackWare web console, navigate to **Configuration > Clouduser**.
+3. When you add a cloud user, enter a name and select _{{site.data.keyword.vpc_short}}_ for the **Cloud Provider**. Select the region where you want to auto-provision the virtual server instance, and enter your {{site.data.keyword.cloud_notm}} API key.
+4. Click **Add**.
 
-    - Name
+#### Creating a wave and replication
+{: #creating-wave}
 
-    - Select ‘{{site.data.keyword.cloud}} VPC’ as Cloud Provider
+A wave contains a single host or multiple hosts that will be migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
 
-    - Select the Region where you want to auto-provision VSI
+1. In the RackWare web console, nagivate to **Replication > Waves**.
+2. When you create a wave, select **Target Type** as **Autoprovision**.
+3. Enter source and target details. If the source has a boot volume greater than 250 GB, select **Right Sizing** from **Advanced Options** since {{site.data.keyword.vpc_short}} does not support a boot volume greater than 250 GB.
+4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
+5. From the edit option in **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevent information, and click **Modify**.
+6. Run the replication.
+    
+Ensure that your VPC, subnet, and other necessary cloud components are set up before you add a cloud user in RMM.
+{: note}
 
-    - Enter the valid API key for your {{site.data.keyword.cloud}} account
+#### Assigning environment to wave
+{: #assigning-wave}
 
-    - Once all the details are completed, click the **Add** button
+1. In the RackWare web console, nagivate to **Replication > Waves**.
+2. Select the wave that needs to be migrated.
+3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
+4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
-3. Open the wave where the operation needs to be run
-
-4. Click text **Not Configured**, next to the **Autoprovision** label, and a display window opens
-
-    -  Select **added cloud user** as the Environment
-
-    - Select the region where the VSI must be provisioned
-
-    - Subnet name and VPC name are optional. If entered, these would be default names for the VPC and Subnet during the provision of the VSI
-
-    - Click **Add Host**, (the plus icon in left top corner of the window)
-
-    - Select the Target Type as Autoprovision
-
-- Enter source details:
-
-    - IP address
-
-    - Friendly name
-
-    - Select OS
-
-    - Username
-
-- Enter Target details:
-
-    - Only a Friendly Name is required on the target side
-
-    Use right Sizing from Advanced Options if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB
-    {:note: .note}
-
-    Once you close this form, RMM shows a warning to enter IBM Gen2 Options
-    {:note: .note}
-
-
-- Edit host and you see the IBM Gen2 Options as an extra tab at the top
-
-    - The VPC name is mandatory. It creates VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields, then RMM finds relevant resource.
-    - Select Region
-    - Resource Group
-    - Subnet
-    - Security Group
-    - Zone
-    - VSI Profile Name
-    - Permit Resources Creation – Check this option if the given VPC name or subnet is not present. This is a simple permission flag for RMM to create resources.
-    - Image Name
-    - Image username (This field is optional, as Linux has key-based authentication, so even if any value is entered, it would be ignored)
-    - Image password (This field is optional as Linux has key-based authentication so even if any value is entered, it would be ignored)
-- SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created VSI
-- Click Modify
-- Finally, run replication
-
-The target VSI boot volume cannot be greater than 250 GB, so if the source machine’s boot volume is greater than 250 GB, use the right-sizing option of RMM.
-
-If the **No Transfer** option is selected in **Sync Option**, it does an auto provision of the target but actual data and applications are not migrated.
-
-Ensure that your VPC, subnet, and other necessary cloud components are setup before adding cloud user in RMM.
+## Prepare source and target servers
+{: #prep-source-target-servers}
+{: step}
 
 There are a few things that need to be done on the source and target server for the migration to work. The RMM server needs to SSH into the servers; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
 

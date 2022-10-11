@@ -120,7 +120,10 @@ Your source and target server should communicate with each other and the RMM. Th
 {: #cloud-vpc-vsi-setup}
 {: step}
 
-**Option 1: Manual**
+There are two different methods for setting up the target virtual server: manual or the RMM auto-provision feature.
+
+### Option 1: Manual
+{: #option1-manual}
 
 The RMM solution handles the OS, application, and data movement. It does not need to set up a VPC target side; you need to handle the setup. You first set up the VPC infrastructure. At a bare minimum, you must set up a VPC, subnets, and the corresponding virtual server instances that you are planning to migrate. The new target virtual server instance profile (vCPU and vMemory) does not need to match the source. However, as for the storage, it needs to be the same or greater in size.
 
@@ -137,56 +140,39 @@ This document does not provide the details for setting up the VPC infrastructure
 
 **Option 2: Auto-provision**
 
-RMM can automatically provision a virtual server instance of VPC. Enable the wave level setting **Autoprovision** and then configure RMM with necessary details. Use these steps to use the auto-provision feature:
+### Option 2: Auto-provision
+{: #option2-auto-provision}
 
-1. Click **Clouduser** menu under **Configuration** main menu on left side.
-2. Click **Add**, and the Add Cloud** form will opens. Enter appropriate details for the following fields:
-    - Name
-    - Select ‘{{site.data.keyword.vpc_short}}’ as Cloud Provider
-    - Select appropriate Region where you want to auto provision virtual server instance
-    - Enter valid API key for your {{site.data.keyword.cloud_notm}} account
-    - Once all details are filled, click **Add**
-3. Open wave where operation needs to be performed
-4. Click text ’Not Configured’, next to ‘Autoprovision’ label, a pop up opens:
-    - Select added clouduser as **Environment**
-    - Select region where virtual server instance needs to be provisioned
-    - Subnet name and VPC name are optional. If entered, these would be default names for VPC and Subnet during provision of virtual server instance
-    - Click **Add Host**, (plus icon on left top window)
-    - Select **Target Type** as **Autoprovision**
-    - Enter source details:
+#### Setting up a cloud user
+{: #setting-up-cloud-user}
 
-        - IP address
-        - Friendly name
-        - Select OS
-        - Username
-    - Enter Target details:
-        - Only **Friendly Name** is required on target side
-        - Use **right Sizing** from **Advanced Options** if the source has a boot volume greater than 250 GB, as VPC does not support boot volume greater than 250 GB.
-    - Once you close this form, RMM shows a warning to enter **{{site.data.keyword.vpc_short}} Options**
-    - Edit host and you see **{{site.data.keyword.vpc_short}} Options** as an extra tab at the top
-        - The VPC name is mandatory. It creates VPC with given name if not present in that region. All other fields are optional. If no value is entered in optional fields, then RMM finds relevant resource.
-        - Select Region
-        - Resource Group
-        - Subnet
-        - Security Group
-        - Zone
-        - VSI Profile Name
-        - Permit Resources Creation – Check this option if the given VPC name or subnet is not present. This is a simple permission flag for RMM to create resources.
-        - Image Name
-        - Image username (This field is optional as Linux has key-based authentication, so even if any value is entered, it would be ignored)
-        - Image password (This field is optional as Linux has key-based authentication so even if any value is entered, it would be ignored)
-        - SSH Keys: Enter either the name of the ssh key or the content of the public key to be present on the newly created virtual server instance 
-    - Click **Modify**
-    - Finally, run replication
+1. Log in to the RackWare web console.
+2. In the RackWare web console, navigate to **Configuration > Clouduser**.
+3. When you add a cloud user, enter a name and select _{{site.data.keyword.vpc_short}}_ for the **Cloud Provider**. Select the region where you want to auto-provision the virtual server instance, and enter your {{site.data.keyword.cloud_notm}} API key.
+4. Click **Add**.
+
+#### Creating a wave and replication
+{: #creating-wave}
+
+A wave contains a single host or multiple hosts that will be migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
+
+1. In the RackWare web console, nagivate to **Replication > Waves**.
+2. When you create a wave, select **Target Type** as **Autoprovision**.
+3. Enter source and target details. If the source has a boot volume greater than 250 GB, select **Right Sizing** from **Advanced Options** since {{site.data.keyword.vpc_short}} does not support a boot volume greater than 250 GB.
+4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
+5. From the edit option in **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevent information, and click **Modify**.
+6. Run the replication.
     
-Target virtual server instance boot volume cannot be greater than 250 GB, so if source machine’s boot volume is greater than 250 GB, use right sizing option of RMM.
+Ensure that your VPC, subnet, and other necessary cloud components are set up before you add a cloud user in RMM.
 {: note}
 
-If "No Transfer" option is selected in "Sync Options", it does auto provision of target but actual data/applications are not migrated.
-{: note}
+#### Assigning environment to wave
+{: #assigning-wave}
 
-Ensure that your VPC, subnet, and other necessary cloud components are set up before adding cloud user in RMM.
-{: note}
+1. In the RackWare web console, nagivate to **Replication > Waves**.
+2. Select the wave that needs to be migrated.
+3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
+4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
 ## Source and target compute preparation
 {: #source-target-compute-prep-vmware}
