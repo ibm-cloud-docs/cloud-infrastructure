@@ -138,8 +138,6 @@ This document does not provide the details for setting up the VPC infrastructure
     * Security groups 
     * Secondary volume 
 
-**Option 2: Auto-provision**
-
 ### Option 2: Auto-provision
 {: #option2-auto-provision}
 
