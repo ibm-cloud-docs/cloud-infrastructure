@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-10-26"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -472,8 +472,8 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 [^fn2]: Directionality is from the customer compute perspective. Outbound means leaving your account towards the service. Inbound means service reaching out to compute.
 {: note}
 
-### Change log for service network IP ranges (19 October 2022)
-{: #cloud-infrastructure-oct1922}
+### Change log for service network IP ranges (26 October 2022)
+{: #cloud-infrastructure-oct2622}
 
 
 #### Removed
