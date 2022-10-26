@@ -589,8 +589,6 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 * lon06 address 161.26.142.0/24
 * lon06 address 161.26.160.0/22
 * lon06 address 166.9.38.0/23
-* mex01 address 161.26.48.0/22
-* mex01 address 161.26.50.0/24
 * mil01 address 161.26.52.0/22
 * mil01 address 161.26.54.0/24
 * mon01 address 161.26.56.0/22
@@ -712,7 +710,6 @@ All TCP/UDP ports (for access from your local workstation)
 |ams03|Amsterdam|10.3.220.0/24|
 |che01|Chennai|10.200.232.0/24|
 |dal05|Dallas|10.1.24.0/23|
-|dal07|Dallas|10.1.236.0/24|
 |dal09|Dallas|10.2.232.0/24|
 |dal10|Dallas|10.200.228.0/24|
 |dal12|Dallas|10.200.216.0/22|
@@ -722,7 +719,6 @@ All TCP/UDP ports (for access from your local workstation)
 |lon04|London|10.200.196.0/24|
 |lon05|London|10.201.208.0/24|
 |lon06|London|10.3.200.0/24|
-|mex01|Mexico City|10.3.232.0/24|
 |mil01|Milan|10.3.216.0/24|
 |mon01|Montreal|10.3.224.0/24|
 |osa21|Osaka|10.202.128.0/24|
@@ -793,7 +789,6 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 |Dallas (dal05, dal09, dal10, dal12, dal13)|dal09|
 |Frankfurt (fra02, fra04, fra05)|fra02|
 |London (lon02, lon04, lon05, lon06)|lon02|
-|Mexico City (mex01)|dal09|
 |Milan (mil01)|fra02|
 |Montreal (mon01)|mon01|
 |Paris (par01)|fra02|
