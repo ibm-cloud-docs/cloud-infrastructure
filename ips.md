@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-11-1"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -21,7 +21,6 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * IBM Cloud Juniper vSRX Standard
 * IBM Virtual Router Appliance
 * Fortigate Security Appliance 10 Gbps
-* Fortigate Security Appliance 1 Gbps
 * IBM Security Groups
 * Hardware Firewall
 
