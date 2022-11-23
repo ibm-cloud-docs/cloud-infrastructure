@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-11-23"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
@@ -49,6 +49,9 @@ This guide shows you how to complete a migration from on-premises to {{site.data
 
 - Windows 2012, 2012R2, 2016, 2019
 
+The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
+{: note}
+
 ## Architecture diagram
 {: #any-cloud-architecture}
 
@@ -56,13 +59,16 @@ This diagram shows the architecture that you create with this guide.
 
 ![Architecture](images/On-prem_to_VPC.svg){: caption="Figure 1. Architecture diagram" caption-side="bottom"}
 
+This architecture diagram is applicable for bare metal to bare metal, bare metal to virtual server, and virtual server to virtual server scenario in On-premises to {{site.data.keyword.vpc_short}} migration.
+{: note}
+
 ## Order RMM
 {: #order-rackware}
 {: step}
 
 The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
 
-If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
+If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
 1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
@@ -74,7 +80,7 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
 {: #byol-rackware-on-prem}
 {: step}
 
-The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). The license is a subscription-based license (paid monthly) that asks you to migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
+The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). You need to purchase the license directly from RackWare.
 
 Complete the following steps to get a license:
 
@@ -166,7 +172,11 @@ A wave contains a single host or multiple hosts that will be migrated. For this 
 
 1. In the RackWare web console, nagivate to **Replication > Waves**.
 2. When you create a wave, select **Target Type** as **Autoprovision**.
-3. Enter source and target details. If the source has a boot volume greater than 250 GB, select **Right Sizing** from **Advanced Options** since {{site.data.keyword.vpc_short}} does not support a boot volume greater than 250 GB.
+3. Enter source and target details.
+
+If source machine has Linux operating system and it has a boot volume greater than 100 GB then leave ‘Provision disk’ textbox empty and select ‘**Convert to LVM**’ option. This will create additional disk of required size and will convert all eligible volumes to LVM on the target.’ In case of Windows no action is required. It will be taken care automatically by RMM.
+{: note}
+
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
 5. From the edit option in **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevent information, and click **Modify**.
 6. Run the replication.
@@ -183,7 +193,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
 ## Prepare source and target servers
-{: #prep-source-target-servers}
+{: #prepare-source-target-servers}
 {: step}
 
 There are a few things that need to be done on the source and target server for the migration to work. The RackWare RMM server needs to SSH into the servers; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
@@ -253,3 +263,4 @@ After your server migration, validate your compute resources, such as applicatio
 6. Check or update your `yum` repos, application settings, and configuration file.
 7. Check or update application or operating system licenses.
 8. Remove the RMM SSH key.
+
