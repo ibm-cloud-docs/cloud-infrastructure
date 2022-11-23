@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-11-23"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -26,7 +26,7 @@ subcollection: cloud-infrastructure
 {:note: .note}
 {:step: data-tutorial-type='step'}
 
-# IBM Cloud classic bare metal to bare metal migration
+# IBM Cloud classic bare metal to classic bare metal migration
 {: #p-p-migration-bare-metal-overview}
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers"} 
@@ -87,6 +87,9 @@ For transit gateway and classic, you need to follow two steps:
 
 ![Topology](images/p-p_classic_private_ip_routing2.png "Diagram showing the cloud service models"){: caption="Figure 1. Network topology of RMM and bare metal migration" caption-side="bottom"}
 
+This architecture diagram is applicable for bare metal to virtual server and virtual server to virtual server scenarios.
+{: note}
+
 ## Before you begin
 {: #p-p-migration-bare-metal-supported-topology}
 
@@ -123,7 +126,7 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
 {: #p-p-migration-bare-metal-ordering-license}
 {: step}
 
-The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). The license is a subscription-based license, paid monthly, where you can migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
+The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). You need to purchase the license directly from RackWare.
 
 Follow these steps to get a license:
 
@@ -241,14 +244,4 @@ After your migration, validate or update the following:
 
 * [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
 * [RackWare RMM user guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
-* [FAQS for bare metal to bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs)
-
-
-
-
-
-
-
-
-
-
+* [FAQS for classic bare metal to classic bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs)
