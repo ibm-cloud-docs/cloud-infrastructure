@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-11-23"
 
 keywords: migration, migrate, migrating, migrate infrastructure, cloud migration
 
@@ -50,7 +50,7 @@ Review the following table to identify the migration solution that best fits you
 | Solution | Bare metal to bare metal | Bare metal to virtual server | Virtual server to virtual server | Block/File* storage | Network |
 | ---- | --- | --- | --- | --- | --- |
 | [VPC+ Cloud Migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#vpc-cloud-migration) |  |  |  |  |  |
-| [RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#rackware-migration) | ![Checkmark icon](../icons/checkmark-icon.svg) |  | ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
+| [RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#rackware-migration) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [DIY automation](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#DIY-automation) |  |  |  | ![Checkmark icon](../icons/checkmark-icon.svg) |  |
 | [Custom image templates](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#custom-image-templates) | ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |  |  |
 {: caption="Table 2. Classic to classic infrastructure migration" caption-side="bottom"}
@@ -64,7 +64,7 @@ Review the following table to identify the migration solution that best fits you
 | Solution | Bare metal to bare metal | Bare metal to virtual server | Virtual server to virtual server | Block/File* storage | Network |
 | ---- | --- | --- | --- | --- | --- |
 | [VPC+ Cloud Migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#vpc-cloud-migration) |  |  | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
-| [RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#rackware-migration) |  | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
+| [RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#rackware-migration) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [DIY automation](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#DIY-automation) |  |  | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |  |
 | [Custom image templates](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#custom-image-templates) |  |  |  |  |  |
 {: caption="Table 3. Classic to VPC infrastructure migration" caption-side="bottom"}
@@ -78,7 +78,7 @@ Review the following table to identify the migration solution that best fits you
 | Solution | Bare metal to bare metal | Bare metal to virtual server | Virtual server to virtual server | Storage | Network |
 | ---- | --- | --- | --- | --- | --- |
 | [VPC+ Cloud Migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#vpc-cloud-migration) |  |  |  |  |  |
-| [RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#rackware-migration) |  | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
+| [RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#rackware-migration) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |  |
 | [DIY automation](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#DIY-automation) |  |  | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |  |
 | [Custom image templates](/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra#custom-image-templates) |  |  |  |  |  |
 {: caption="Table 4. On-premises to VPC infrastructure migration" caption-side="bottom"}
@@ -89,7 +89,10 @@ Review the following table to identify the migration solution that best fits you
 {: class="comparison-tab-table"}
 {: row-headers}
 
-*File storage is available in limited MZRs.
+RMM supports only block storage migration and not file storage.
+{: note}
+
+File storage is available in limited MZRs.
 {: note}
 
 ## VPC+ Cloud Migration
@@ -124,6 +127,9 @@ You can use RMM solution to simplify the overall bare metal to bare metal migrat
 
 ![Topology](images/p-p_classic_private_ip_routing2.svg "Bare metal migration by using RMM"){: caption="Figure 2. Network topology of RMM and bare metal migration" caption-side="bottom"}
 
+Similar architecture diagram is applicable for 'Bare metal to virtual server' and 'Virtual server to virtual server' use cases within classic infrastructure migration.
+{: note}
+
 Review the following migration considerations and limitations:
 
 * The RMM server is installed on a virtual server instance and is a GUI-based tool.
@@ -132,16 +138,19 @@ Review the following migration considerations and limitations:
 * Only compute resources are migrated, along with secondary volume and secondary block volumes.
 * The RMM tool keeps track of data changes on the source server until cutover and performs delta syncs to the target server.
 
-For more a detailed step-by-step guide, see [{{site.data.keyword.cloud_notm}} classic bare metal to bare metal migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview).
+For more a detailed step-by-step guide, see [{{site.data.keyword.cloud_notm}} classic bare metal to classic bare metal migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview).
 
-For frequently asked questions and answers, see [FAQs for bare metal to bare metal migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs).
+For frequently asked questions and answers, see [FAQs for classic bare metal to classic bare metal migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs).
 
 ### Classic to VPC infrastructure migration
 {: #classic-vpc-migration-rmm}
 
-You can use RMM solution to migrate your classic bare metal server to an {{site.data.keyword.vpc_short}} virtual server instance. Migrating from bare metal servers to virtual servers allows you to modernize your environment and adopt virtualization.
+You can use RMM solution to migrate your classic bare metal server to an {{site.data.keyword.vpc_short}} virtual server instance or bare metal. Migrating from bare metal servers to virtual servers or bare metal allows you to modernize your environment and adopt virtualization.
 
 ![Physical to virtual migration private IP diagram.](images/P2V-Private-1.svg){: caption="Figure 3. Migrating over private interface" caption-side="bottom"}
+
+Similar architecture diagram is applicable for 'Bare metal to bare metal' and 'Virtual server to virtual server' use cases for classic to VPC infrastructure migration.
+{: note}
 
 Review the following migration considerations and limitations:
 
@@ -155,7 +164,7 @@ Review the following migration considerations and limitations:
 VPC does not have support for snapshot, replication, and shared volume. You can manage these solutions through the native OS capabilities, tools, or third party of your choice.
 {: note}
 
-For more information, see [Bare metal to virtual server migration overview](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-overview).
+For more information, see [Bare metal to bare metal or virtual server migration overview](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-overview).
 
 For a detailed step-by-step guide on moving your {{site.data.keyword.cloud_notm}} classic bare metal servers to VPC, see [Bare metal to virtual server migration on a private network using RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network).
 
@@ -167,6 +176,9 @@ For frequently asked questions and answers, see [FAQs for RackWare](/cloud-infra
 You can use RMM solution to migrate your on-premises workloads to {{site.data.keyword.vpc_short}}.
 
 ![Topology](images/On-Prem-1.svg){: caption="Figure 4. On-premises to VPC migration" caption-side="bottom"}
+
+This architecture diagram is applicable for bare metal to bare metal, bare metal to virtual server, and virtual server to virtual server scenarios.
+{: note}
 
 For a detailed step-by-step guide, see [VMware VM on-premises to {{site.data.keyword.vpc_short}} with RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
 
@@ -210,13 +222,15 @@ There are three available sets of DIY automation scripts for you to use:
 
 By using a custom image template, you can capture a classic bare metal image to replicate its configuration to order more classic bare metal servers with the same configurations, and you can deploy as many as needed. 
 
-With this type of bare metal to bare metal migration in {{site.data.keyword.cloud_notm}} classic infrastructure, you need to review the following considerations and limitations:
+With this type of classic bare metal to classic bare metal migration in {{site.data.keyword.cloud_notm}} classic infrastructure, you need to review the following considerations and limitations:
 
 * Only compute resources and secondary volumes are migrated
 * Not meant for backup 
 * Can be used for disaster recovery
 
-Classic bare metal to bare metal migration is disruptive to your workloads, so be sure to plan accordingly.
+Classic bare metal to classic bare metal migration is disruptive to your workloads, so be sure to plan accordingly.
 {: important}
 
 For more information, see [About bare metal custom image templates](/docs/bare-metal?topic=bare-metal-getting-started-bm-custom-image-templates).
+
+
