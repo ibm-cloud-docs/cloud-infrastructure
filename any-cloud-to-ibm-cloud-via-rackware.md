@@ -2,9 +2,9 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-11-23"
 
-keywords: rackware, vpc, migration 
+keywords: rackware, migration 
 content-type: tutorial
 services: vpc, virtual-servers
 account-plan: paid
@@ -49,12 +49,18 @@ This guide shows you how to complete a migration from AWS, Azure, GCP, and OCI t
 
 - Windows 2012, 2012R2, 2016, 2019
 
+The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
+{: note}
+
 ## Architecture diagram
 {: #any-cloud-architecture}
 
 This diagram shows the architecture that you create with the guide.
 
 ![Architecture](images/AnyCloud_final.svg){: caption=" Figure 1. Architecture diagram" caption-side="bottom"}
+
+This diagram is applicable for bare metal to bare metal, bare metal to virtual server, and virtual server to virtual server in AWS, Azure, GCP, and OCI workloads to {{site.data.keyword.vpc_short}} migration.
+{: note}
 
 ## Order RMM
 {: #order-rackware}
@@ -74,7 +80,7 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
 {: #byol-rackware}
 {: step}
 
-The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). The license is a subscription-based license (paid monthly) that asks you to migrate one or more servers during the subscription period. You need to purchase the license directly from RackWare.
+The license required for migration to {{site.data.keyword.cloud_notm}} is Bring Your Own License (BYOL). You need to purchase the license directly from RackWare.
 
 Complete the following steps to get a license:
 
@@ -164,7 +170,11 @@ A wave contains a single host or multiple hosts that will be migrated. For this 
 
 1. In the RackWare web console, nagivate to **Replication > Waves**.
 2. When you create a wave, select **Target Type** as **Autoprovision**.
-3. Enter source and target details. If the source has a boot volume greater than 250 GB, select **Right Sizing** from **Advanced Options** since {{site.data.keyword.vpc_short}} does not support a boot volume greater than 250 GB.
+3. Enter source and target details.
+
+If source machine has Linux operating system and it has a boot volume greater than 100 GB then leave ‘Provision disk’ textbox empty and select **Convert to LVM** option. This will create additional disk of required size and will convert all eligible volumes to LVM on the target. In case of Windows, no action is required. It will be taken care automatically by RMM.
+{: note}
+
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
 5. From the edit option in **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevent information, and click **Modify**.
 6. Run the replication.
@@ -180,8 +190,11 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
+Auto-provision feature is not available if target is VPC bare metal. User needs to select **Existing System** as target type in this case.
+{: note}
+
 ## Prepare source and target servers
-{: #prep-source-target-servers}
+{: #prepare-source-target-servers}
 {: step}
 
 There are a few things that need to be done on the source and target server for the migration to work. The RMM server needs to SSH into the servers; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
