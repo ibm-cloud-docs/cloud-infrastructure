@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-11-23"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -21,10 +21,10 @@ subcollection: cloud-infrastructure
 {:important: .important}
 {:note: .note}
 
-# Bare metal to virtual server migration overview
+# Bare metal to bare metal or virtual server migration overview
 {: #pv-migration-overview}
 
-Bare metal to virtual server migration is the process of migrating from a physical bare metal server to a virtual server instance. The RMM tool simplifies the overall migration process of moving the OS, applications, and data from the bare metal environment to a virtual server. You might want to move away from bare metal servers due to their hardware life cycle (qualifying new hardware, OS certification, and EOL support) or due to data center closures. Migrating from bare metal servers to virtual servers allows you to modernize your environment and adopt virtualization. Virtual servers also offer portability and resiliency. For example, if the host (underlying hardware fails), the virtual server can then be moved to a different host with ease. 
+In this migration process, migrating happens from a physical bare metal server to a bare metal or virtual server instance. The RMM tool simplifies the overall migration process of moving the OS, applications, and data from the bare metal environment to a bare metal or virtual server. You might want to move away from bare metal servers due to their hardware life cycle (qualifying new hardware, OS certification, and EOL support) or due to data center closures. Migrating from bare metal servers to bare metal or virtual servers allows you to modernize your environment and adopt virtualization.
 {: shortdesc}
 
 ## Planning for your migration
@@ -61,11 +61,11 @@ VPC does not have support for snapshot, replication, and shared volume. You can
 ### Limitations
 {: #pv-limitations}
 
-* New IP address (original IP is not preserved)
-* Classic add-ons are not carried over and will be lost
-* File-based storage migration is not supported
-* Hardware configuration is not brought over (RAID configuration)
-* Bare metal with GPU is not supported due to no GPU support on VPC
+* New IP address (original IP is not preserved).
+* Classic add-ons are not carried over and will be lost.
+* File-based storage migration is not supported.
+* Hardware configuration is not brought over (RAID configuration).
+* Bare metal with GPU is not supported due to no GPU support on VPC.
 * Not an OS replatforming (Windows to Linux or vice versa, changing linux distribution, or major software upgrade). Software upgrades should be handled through the normal process.
 
 ## Validating your migration 
@@ -74,6 +74,6 @@ VPC does not have support for snapshot, replication, and shared volume. You can
 After your server migration, you will want to validate your compute resources, such as applications and data, and update or validate the following:
 
 * Validate or update your FQDN/Hostname.
-* Update your `yum` repos, application settings, and configuration file
+* Update your `yum` repos, application settings, and configuration file.
 * Update licensing where applicable.
 * Remove RMM SSH key from target after final validation.
