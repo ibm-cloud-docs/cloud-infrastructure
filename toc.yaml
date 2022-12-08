@@ -88,10 +88,12 @@ toc:
               topics: 
               - data-migration-diy.md
               - image-migration-diy.md
+              - mysql-db-migration-script-python.md
           - topicgroup:
               label: Database migration
               topics:
               - mssql-db-migration.md
+              - mysql-db-server-migration.md
  
   - navgroup:
       id: reference
