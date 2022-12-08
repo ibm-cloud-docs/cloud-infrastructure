@@ -90,5 +90,5 @@ Using Python as a source, you can migrate the database from any server to {{site
 
 The new server runs in latest versions of MySQL, since this migration focuses on the database alone. This is consistent and secure and can be performed from any system.
 
-For more information, see [MySQL database migration using Python](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-db-migration-script-python).
+For more information, see [MySQL database migration using Python](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-python).
 
