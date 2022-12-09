@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-1"
+lastupdated: "2022-12-09"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -24,7 +24,7 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * IBM Security Groups
 * Hardware Firewall
 
-To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). Disclaimer: This is a community tool that is updated based on support availability.
+To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). The tool allows you to also download the IP ranges below in JSON format. Disclaimer: This is a community tool that is updated based on support availability.
 {: important}
 
 ## Front-end (public) network
@@ -135,7 +135,6 @@ Ports to allow:
 | | ams03 | BCR02 | 10.175.0.0/16  \n 10.214.0.0/16 |
 | Chennai | che01 | BCR01 | 10.3.58.0/24  \n 10.162.0.0/15  \n 10.200.27.0/24 |
 | Dallas| dal05 | BCR01 | 10.0.40.0/22  \n 10.1.151.0/24  \n 10.3.60.0/24  \n 10.40.0.0/14  \n 10.251.0.0/23  \n 10.251.64.0/23 |
-| | dal05 | BCR02 | 10.60.0.0/15  \n 10.62.0.0/16 |
 | | dal05 | BCR03 | 10.80.0.0/14  \n 10.251.4.0/23  \n 10.251.68.0/23 |
 | | dal05 | BCR04 | 10.84.0.0/16  \n 10.86.0.0/16  \n 10.251.70.0/23 |
 | | dal09 | BRC01 | 10.2.123.0/24  \n 10.2.244.0/24  \n 10.3.16.0/24  \n 10.120.0.0/15 |
@@ -166,7 +165,6 @@ Ports to allow:
 | | lon06 | BCR01 | 10.3.11.0/24  \n 10.72.0.0/16  \n 10.201.75.0/24  \n 10.242.0.0/16 |
 | Milan | mil01 | BCR01 | 10.1.241.0/24  \n 10.3.50.8/29  \n 10.3.50.16/28  \n 10.3.50.32/27  \n 10.3.50.64/26  \n 10.3.50.128/25  \n 10.3.155.0/24  \n 10.144.0.0/15 |
 | Montreal| mon01 | BCR01 | 10.3.46.8/29  \n 10.3.46.16/28  \n 10.3.46.32/27  \n 10.3.46.64/26  \n 10.3.46.128/25  \n 10.3.123.0/24  \n 10.140.0.0/15 |
-| | mon01 | BCR02 | 10.182.0.0/16 |
 | Osaka | osa21 | BCR01 | 10.3.59.0/24  \n 10.8.0.0/16  \n 10.201.246.0/24 |
 | | osa22 | BCR01 | 10.3.57.0/24  \n 10.9.0.0/16  \n 10.201.247.0/24 |
 | | osa23 | BCR01 | 10.3.55.0/24  \n 10.10.0.0/16  \n 10.201.248.0/24 |
@@ -178,7 +176,6 @@ Ports to allow:
 | | sao04 | BCR01 | 10.3.49.0/24  \n 10.14.0.0/16  \n 10.201.251.0/24 |
 | | sao05 | BCR01 | 10.3.47.0/24  \n 10.15.0.0/16  \n 10.201.252.0/24 |
 | San Jose | sjc01 | BCR01 | 10.1.203.0/24  \n 10.3.14.0/24  \n 10.52.0.0/14  \n 10.251.6.0/23  \n 10.251.72.0/23 |
-| | sjc01 | BCR02 | 10.88.0.0/14  \n 10.251.74.0/23 |
 | | sjc01 | BCR03 | 10.122.0.0/16 |
 | | sjc03 | BCR01 | 10.3.56.0/24  \n 10.3.187.0/24  \n 10.160.0.0/15 |
 | | sjc03 | BCR02 | 10.168.0.0/15 |
@@ -197,8 +194,7 @@ Ports to allow:
 | | tor01 | BCR02 | 10.166.0.0/15 |
 | | tor04 | BCR01 | 10.1.2.0/24  \n 10.3.53.0/24  \n 10.11.0.0/16 |
 | | tor05 | BCR01 | 10.1.6.0/24  \n 10.3.51.0/24  \n 10.243.0.0/16 |
-| Washington D.C. | wdc01 | BCR03 | 10.1.119.0/24  \n 10.3.10.0/24  \n 10.58.0.0/16  \n 10.251.8.0/23  \n 10.251.84.0/23 |
-| | wdc01 | BCR05 | 10.108.0.0/15 |
+| Washington D.C. | wdc01 | BCR05 | 10.108.0.0/15 |
 | | wdc01 | BCR06 | 10.124.0.0/15 |
 | | wdc04 | BCR01 | 10.3.10.0/29  \n 10.3.52.0/24  \n 10.3.171.0/24  \n 10.3.240.0/24  \n 10.148.0.0/15 |
 | | wdc04 | BCR02 | 10.0.192.128/26  \n 10.170.0.0/16 |
@@ -219,7 +215,7 @@ Ports to allow:
 * By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
 
 Ports to allow:
-- All TCP/UDP ports
+- All TCP/UDP ports (for access from your local workstation)
 - ICMP – ping (for support troubleshooting and monitoring)
 
 |Data center|City|IP range|
@@ -779,7 +775,11 @@ All TCP/UDP ports (for access from your local workstation)
 ## Red Hat Enterprise Linux server requirements
 {: #red-hat-enterprise-linux-server}
 
-If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site.data.keyword.cloud_notm}} infrastructure, you must also allow access to the service network as follows; otherwise, updates and licensing do not function properly.
+If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site.data.keyword.cloud_notm}} infrastructure, provisioning is dependent on completing the following actions:
+
+* Complete the SSL VPN requirements listed in [Service network (on back-end/private network)](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
+* Open the RHEL endpoint rhha01.updates.us-south.iaas.service.networklayer.com. This requires adding the IP 161.26.112.28 to the firewall rules. Since DNS round robin is involved, this endpoint is not a single endpoint and could be moved as needed.
+* Allow access to the service network as follows. Otherwise, updates and licensing do not function properly. 
 
 |Server location|Allow private service network for this data center|
 |---|---|
@@ -800,3 +800,22 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 |Washington DC (wdc01, wdc04, wdc06, wdc07)|mon01|
 |Any data center not listed|dal09|
 {: caption="Table 12: Red Hat Enterprise Linux server requirements" caption-side="bottom"}
+
+To resolve common provisioning issues, permit access to the entire service network by allowing the IP 161.26.0.0/16. 
+{: important}
+
+## Windows VSI server requirements
+{: #windows-vsi-server}
+
+If you have a firewall, you must allow your Windows VSI to access to WSUS server IP address ranges as follows; otherwise, updates and licensing do not function properly.
+
+* wsustok0401.service.softlayer.com is 10.201.177.200
+* wsustok0201.service.softlayer.com is 10.3.65.50
+* wsustok0501.service.softlayer.com is 10.201.193.200
+
+|Data Center|City|BCR IP Range|
+|---|---|---|
+|tok04|Tokyo|10.3.17.0/24 /n 10.192.0.0/16 /n 10.201.187.0/24|
+{: caption="Table 13: Windows VSI server requirements" caption-side="bottom"}
+
+For more information about locating your WSUS server in the Windows registry by using a regisration key, see [Configuring Automatic Updates by editing the registry](https://learn.microsoft.com/en-us/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry){: external} or [Configure Clients in a Non–Active Directory Environment](https://learn.microsoft.com/de-de/security-updates/windowsupdateservices/21669493){: external}.
