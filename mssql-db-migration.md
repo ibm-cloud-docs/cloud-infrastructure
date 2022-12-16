@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-09-26"
+lastupdated: "2022-12-16"
 
 subcollection: cloud-infrastructure
 
@@ -61,7 +61,7 @@ Before you begin your Microsoft&reg; SQL Server database migration, review and c
 ## Migration considerations
 {: #mssql-db-migration-consideration}
 
-* Migrating a server during non-peak times.
+* Migrating a server during nonpeak times.
 * Choosing the right migration strategy.
 * Reducing complexity by migrating the database in a phased approach instead of a single step.
 
@@ -73,7 +73,7 @@ For more information, see [Migration considerations](/docs/microsoft?topic=micro
 | Migration tools and solutions | Use cases |
 | ----------------- | -------- |
 | [{{site.data.keyword.mdms_short}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#mass-data-migration) | Large data migration |
-| [Rackware Management Module (RMM)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#rackware-management-module) | Database on a single server |
+| [RackWare Management Module (RMM)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#rackware-management-module) | Database on single server or clustered database on multiple servers. In case of Microsoft SQL server clustered database migration, user needs to take care of licenses, shared disk configuration, updating correct IP address in DNS records of DNS / active directory server, setting up DNS server for all node machines {: note} |
 | [Backup and restore with Windows&reg; {{site.data.keyword.backup_notm}} Agent](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#backup-and-restore-backup-agent) | Large data migration, full database backup, moving database data to another drive, moving database data between different versions of SQL server. |
 | [Detach and attach](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#detach-and-attach) | Full database backup, moving database data to another drive, moving database data between different versions of SQL server. |
 | [Import and export data from SQL Server](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#import-and-export) | Large data migration, full database backup |
@@ -96,7 +96,18 @@ For more information, see [Migration considerations](/docs/microsoft?topic=micro
 ### RackWare Management Module (RMM)
 {: #rackware-management-module}
 
-RackWare Management Module (RMM) is a simple workload migration solution provided by IBM’s partner RackWare that provides an automated, easy, and convenient process to migrate existing compute workloads to {{site.data.keyword.cloud_notm}}. It keeps track of data changes on the source server until cutover and performs delta syncs to the target server in {{site.data.keyword.cloud_notm}}. This tool migrates a server with everything on it including the operating system, along with its install database application and data (lift and shift migration). RMM can do database migration if it is a platform-based database (for example, it can access database workloads with a public IP address). For more information, see [On-premises VMware VM to {{site.data.keyword.vpc_short}} migration with RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
+RackWare Management Module (RMM) is a simple workload migration solution provided by IBM’s partner RackWare that provides an automated, easy, and convenient process to migrate existing compute workloads to {{site.data.keyword.cloud_notm}}. It keeps track of data changes on the source server until cutover and performs delta syncs to the target server in {{site.data.keyword.cloud_notm}}. This tool migrates a server with everything on it including the operating system, along with its installed database application and data (lift and shift migration). RMM can do database migration if it is a platform-based database (for example, it can access database workloads with a public IP address). For more information, see [On-premises VMware VM to {{site.data.keyword.vpc_short}} migration with RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
+
+RMM can migrate single MSSQL database or clustered databases. The following things must be considered after migration:
+
+* Licenses for database applications on target machines.
+* Update DNS records with correct IP addresses on/for target machines.
+* Configured shared disk on target side.
+* Ensure all the configuration regarding cluster is correct and all services are up and running correctly.
+* **Known issue:**
+  When migration is performed for machines with clustered node "the trust relationship between this workstation and the primary domain failed". So even if you enter the correct domain credentials post migration, it does not allow to user to login.
+* **Workaround:**
+  Simple solution to this problem is to login to the node machine using local admin account and explicitly unjoin node machine from domain and rejoin domain. Once this is done login to the target machine using domain credentials. This process is automated in the form of script. To download and use this script, see this [public GitHub repository](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/db-migration/mssql/post-migration/){: external}.
 
 The RMM tool does not support migration of AWS RDS or similar databases.
 {: note}
@@ -126,7 +137,7 @@ The Copy Database Wizard moves or copies databases and certain server objects ea
 ### Generate script
 {: #generate-script}
 
-The generate script wizard generates a script of all the objects in a database or a subset of the objects selected, and you can decide if you want to include permissions, collation, constraints, and so on. The generated scripts can be run on another instance of the database engine or the SQL Server database. This method is used to copy schema as well as data. This is not ideal if you are copying data for large databases. For more information, see [Generate Scripts (SQL Server Management Studio)](https://docs.microsoft.com/en-us/sql/ssms/scripting/generate-scripts-sql-server-management-studio?view=sql-server-ver15){: external}.
+The generate script wizard generates a script of all the objects in a database or a subset of the objects that are selected, and you can decide whether you want to include permissions, collation, constraints, and so on. The generated scripts can be run on another instance of the database engine or the SQL Server database. This method is used to copy schema as well as data. This is not ideal if you are copying data for large databases. For more information, see [Generate Scripts (SQL Server Management Studio)](https://docs.microsoft.com/en-us/sql/ssms/scripting/generate-scripts-sql-server-management-studio?view=sql-server-ver15){: external}.
 
 ### Backup and restore with SQL Server Management Studio
 {: #backup-and-restore-management-studio}
@@ -153,7 +164,7 @@ SQL Server Always On availability groups provide high availability and disaster 
 ### Always On distributed availability groups
 {: #always-on-distributed-availability-groups}
 
-A SQL Server Always On distributed availability group spans two distinct availability groups. Each availability group is configured on two different Windows® Server Failover Clusters (WSFC), one at the source location and one in {{site.data.keyword.vpc_short}}. The operating systems and SQL Server versions do not have to be the same version if they are able to support WSFC and availability groups. This migration method is suited to rehost mission-critical SQL Server databases. For more information, see [Always On distributed availability groups](/docs/microsoft?topic=microsoft-mssql-migration#mssql-migration-dag).
+An SQL Server Always On distributed availability group spans two distinct availability groups. Each availability group is configured on two different Windows® Server Failover Clusters (WSFC), one at the source location and one in {{site.data.keyword.vpc_short}}. The operating systems and SQL Server versions do not have to be the same version if they are able to support WSFC and availability groups. This migration method is suited to rehost mission-critical SQL Server databases. For more information, see [Always On distributed availability groups](/docs/microsoft?topic=microsoft-mssql-migration#mssql-migration-dag).
 
 ### Data Migration Assistant (DMA)
 {: #data-migration-assistant}
@@ -179,5 +190,5 @@ Review the following post-migration tasks:
 * Sample test for table data.
 * Sample test for indexes or column constraints.
 * Sample test for triggers, stored procedures, views.
-* Make sure application configuration is updated to consume new database and test the application.
+* Make sure that the application configuration is updated to consume new database and test the application.
 * Apply licenses to SQL Server databases.
