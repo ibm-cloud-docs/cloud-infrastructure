@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-1-11"
+lastupdated: "2023-1-27"
 
 keywords: ip, range, firewall, network, traffic, security
 
