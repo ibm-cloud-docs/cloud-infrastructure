@@ -210,9 +210,11 @@ Ports to allow:
 
 [CHANGE LOG](#cloud-infrastructure-jul2522)
 
-* Be sure to configure rules and verify routes for dal10, wdc04, and the location of your server. If your server is in an EU location, you must add rules allowing traffic from dal10, and wdc04 to your server.
-* Traffic must be able to travel between the service networks and your server in both directions.
-* By default, all servers and gateway/firewall devices are configured with a static route for the `10.0.0.0/8` network to the Back-end Customer Router (BCR). If you change that configuration such that the entire `10.0.0.0/8` network is pointed elsewhere, you must also configure static routes for the service networks to ensure they are pointed to the BCR. Failing to do so will result in the static routes being pointed to whichever IP address you replaced the original with. If you do not change the default static route for `10.0.0.0/8`, then the service networks are already routed correctly.
+To provision and reload classic Virtual Servers and classic Bare Metal Servers, the following private service networks must be allowed through your gateway appliances and firewalls. Be sure to configure rules and verify routes for the service networks listed in the table below for dal10, wdc04, and the location of your server. Additionally, complete the following steps:
+* Allow and route the following service networks to the BCR on your gateway appliance or firewall for all Bare Metal and Virtual Server provisions and reloads: 10.0.64.0/19, 10.200.80.0/20, 161.26.13.0/24, 161.26.96.0/22, 166.9.12.0/23, 166.9.48.0/24, 166.9.50.0/24, 166.9.228.0/24, 166.9.250.192/27, 10.3.160.0/20, 10.201.0.0/20, 161.26.92.0/22, 161.26.132.0/22, 166.9.20.0/23, 166.9.231.0/24. 
+* For RHEL servers, ensure the entire 161.26.0.0/16 is allowed and routed properly to the BCR. Add any additional datacenter service networks that are mentioned in the RHEL section near the bottom of the page.
+* Allow traffic between the service networks and your server in both directions.
+* By default, all classic servers and classic gateway and firewall devices are configured with a static route for the `10.0.0.0/8`, `161.26.0.0/16` and `166.8.0.0/14` networks to the Back-end Customer Router (BCR). If you configure overlapping routes with those subnets, validate that you have also configured PBR or a similar service. Otherwise, consider using different IP space that doesn't overlap with our service networks for your VPNs or tunnels. Failing to do so can result in the failure to provision your Virtual Servers and Bare Metal Servers. 
 
 Ports to allow:
 - All TCP/UDP ports (for access from your local workstation)
@@ -720,7 +722,7 @@ All TCP/UDP ports (for access from your local workstation)
 |osa22|Osaka|10.202.132.0/24|
 |osa23|Osaka|10.202.136.0/24|
 |par01|Paris|10.3.236.0/24|
-|sao01|São Paulo|10.200.236.0/24|
+|sao|São Paulo|10.202.8.0/24  \n 10.202.12.0/24|
 |sjc01|San Jose|10.1.224.0/23|
 |sjc03|San Jose|10.3.204.0/24|
 |sjc04|San Jose|10.200.192.0/24|
