@@ -40,11 +40,7 @@ toc:
       id: howto
       topics:
       - planning-iaas.md
-      - topicgroup: 
-          label: High availability and resiliency
-          topics: 
-          - /ha-infrastructure/ha-infrastructure-landing-about-ha-dr-backup
-
+      - include: ../ha-infrastructure/ha-landing-page-all.md
       - topicgroup: 
           label: Building your infrastructure
           topics: 
@@ -66,13 +62,15 @@ toc:
           - topicgroup: 
               label: Classic to classic infrastructure
               topics: 
-              - /virtual-servers/virtual-servers-migrating-vsi-new-datacenter
-              - /bare-metal/bare-metal-getting-started-bm-custom-image-templates
+              - include: ../virtual-servers/vsi_migrate_classic_dctodc.md
+              - include: ../bare-metal/bm-about-custom-image-templates.md
               - p-p-migration-bare-metal.md
           - topicgroup: 
               label: Classic to VPC infrastructure
               topics: 
-              - /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
+              - link:
+                  label: Getting started with VPC+ Cloud Migration
+                  href: /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
               - on-prem-vpc-migration-rackware-rmm.md
               - pv-migration-overview.md
               - pv-migration-private-ip.md
