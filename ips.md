@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-1-27"
+lastupdated: "2023-5-12"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -210,7 +210,12 @@ Ports to allow:
 
 [CHANGE LOG](#cloud-infrastructure-jul2522)
 
-To provision and reload classic Virtual Servers and classic Bare Metal Servers, the following private service networks must be allowed through your gateway appliances and firewalls. Be sure to configure rules and verify routes for the service networks listed in the table below for dal10, wdc04, and the location of your server. Additionally, complete the following steps:
+To provision and reload classic Virtual Servers and classic Bare Metal Servers, the following private service networks must be allowed through your gateway appliances and firewalls. 
+
+Be sure to configure rules and verify routes for the service networks listed in the table below for dal10, wdc04, and the location of your server. 
+{: important}
+
+Additionally, complete the following steps:
 * Allow and route the following service networks to the BCR on your gateway appliance or firewall for all Bare Metal and Virtual Server provisions and reloads: 10.0.64.0/19, 10.200.80.0/20, 161.26.13.0/24, 161.26.96.0/22, 166.9.12.0/23, 166.9.48.0/24, 166.9.50.0/24, 166.9.228.0/24, 166.9.250.192/27, 10.3.160.0/20, 10.201.0.0/20, 161.26.92.0/22, 161.26.132.0/22, 166.9.20.0/23, 166.9.231.0/24. 
 * For RHEL servers, ensure the entire 161.26.0.0/16 is allowed and routed properly to the BCR. Add any additional datacenter service networks that are mentioned in the RHEL section near the bottom of the page.
 * Allow traffic between the service networks and your server in both directions.
