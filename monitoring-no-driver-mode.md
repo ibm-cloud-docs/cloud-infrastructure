@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2023-09-28"
 
 keywords: monitoring light, monitoring no driver, no driver monitor,
 
@@ -22,23 +22,23 @@ subcollection: cloud-infrastructure
 {:note: .note}
 {:external: .external}
 
-# Enabling {{site.data.keyword.mon_full_notm}} 'no driver mode'
+# Enabling {{site.data.keyword.mon_full_notm}} agent for non-orchestrated environments
 {: #enabling-monitoring-light-no-driver}
 
-When you provision a monitoring instance, you can enable the 'no driver mode' (Light). You can access metrics through the pre-built dashboards that are available in the {{site.data.keyword.cloud_notm}} dashboards section.
+When you provision a monitoring instance, you can enable the agent for non-orchestrated environments. You can access metrics through the pre-built dashboards that are available in the {{site.data.keyword.cloud_notm}} dashboards section.
 {: shortdesc}
 
-## Configuring {{site.data.keyword.mon_full_notm}} 'no driver mode'
+## Configuring {{site.data.keyword.mon_full_notm}} agent for non-orchestrated environments
 {: #provision-monitoring-light}
 
-To enable 'no driver mode' and monitor and manage metrics, you need to configure a monitoring agent in each environment that you want to use 'no driver mode'.
+To enable 'no driver mode' and monitor and manage metrics, you need to configure a monitoring agent for non-orchestrated environments in each environment that you want to use 'no driver mode'.
 {: shortdesc}
 
 Use these steps to enable 'no driver mode'.
 
 1. Provision a Graduated tier monitoring instance by following the steps in [Provisioning a monitoring instance](/docs/monitoring?topic=monitoring-provision). For more information about the Graduate tier, see [Monitoring service plans](/docs/monitoring?topic=monitoring-pricing_plans).
 
-2. Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-config_agent).
+2. Enable monitoring 'no driver mode' by following the steps that correspond to your provisioned environment by following the steps in [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-agent_linux).
 
 3. Add the following configuration to the `dragent.yaml` file:
 
