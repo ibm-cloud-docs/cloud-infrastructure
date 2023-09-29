@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-20"
+lastupdated: "2023-09-28"
 
 subcollection: cloud-infrastructure
 
@@ -13,30 +13,11 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.mon_full_notm}}
 {: #monitoring-iaas}
 
-{{site.data.keyword.mon_full_notm}} collects basic Classic infrastructure and VPC virtual server instance metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. <!--If you have a Sysdig account, then metrics are displayed for that {{site.data.keyword.mon_full_notm}} instance. -->You can access metrics through the prebuilt dashboard.
+You can use {{site.data.keyword.mon_full_notm}} to monitor Classic infrastructure metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt dashboards.
 {: shortdesc}
 
-{{site.data.keyword.mon_full_notm}} metrics are available only if you use the monitoring full agent. If you provisioned a 'no driver mode' instance, see [{{site.data.keyword.mon_full_notm}} 'no driver mode' metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
+{{site.data.keyword.mon_full_notm}} metrics are available if you deploy the monitoring agent for non-orchestrated environments. For more information, see [{{site.data.keyword.mon_full_notm}} agent for non-orchestrated environments metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
 {: important} 
-
-## Platform metrics overview
-{: #platform-metrics-overview}
-
-You can view platform metrics when you enable monitoring services on your {{site.data.keyword.cloud_notm}} platform. A monitoring instance must be configured in a region to monitor these metrics. For more information about enabling Platform metrics, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
-
-Before you enable {{site.data.keyword.mon_full_notm}} on your platform, keep the following information in mind:
-
-* You can configure only one instance of the {{site.data.keyword.mon_full_notm}} service per region to collect platform metrics.
-
-* Platform metrics are regional. Metrics are monitored only from {{site.data.keyword.mon_full_notm}} services that are in the same region of the instance that you want to monitor. 
-
-* Metrics are collected automatically and are available for monitoring through the {{site.data.keyword.mon_full_notm}}-enabled instance. 
-
-### Metrics available by virtual server generation
-{: #metrics-by-server-generation}
-
-* To view Classic virtual server monitoring metrics, see [Classic virtual server instance metrics definitions](/docs/virtual-servers?topic=virtual-servers-monitoring-classic-metrics).
-* To view VPC virtual server monitoring metrics, see [VPC virtual server instances metrics definitions](/docs/vpc?topic=vpc-vpc-monitoring-metrics)
 
 ## Basic monitoring
 {: #basic-monitoring}
