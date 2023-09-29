@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2022
+  years: 2020, 2023
 lastupdated: "2023-09-28"
 
 subcollection: cloud-infrastructure
@@ -24,7 +24,7 @@ You can use {{site.data.keyword.mon_full_notm}} to monitor Classic infrastructur
 
 You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive. 
 
-| Basic monitoring service types | Description |
+| Basic monitoring service type | Description |
 | ----- | ----- |
 | SERVICE PING | Test ping to address |
 | SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load |
@@ -40,7 +40,7 @@ If an echo isn't received in the allotted timeframe (1 second for service pings,
 
 **Host ping** is the default basic monitoring option. If you want more basic monitoring options, you need to select **Host ping and TCP service monitoring**. This selection gives you access to the following add-on monitoring services.
 
-| Add-on monitoring service types | Description |
+| Add-on monitoring service type | Description |
 | ----- | ----- |
 | DNS | Test generic `nslookup` on address |
 | DNS CUSTOM | Test `nslookup` for specified domain on address |
