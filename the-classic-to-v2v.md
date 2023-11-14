@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2021, 2022
-lastupdated: "2022-04-28"
+  years:  2021, 2023
+lastupdated: "2023-11-14"
 
 keywords: 
 content-type: tutorial
@@ -13,19 +13,9 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
-# Classic VMware VM to IBM Cloud VPC migration with RMM  
+# Classic VMware VM to {{site.data.keyword.vpc_short}} migration with RMM  
 {: #migrating-images-vmware-vpc-classic}
 {: toc-content-type="tutorial"} 
 {: toc-services="vpc, virtual-servers"} 
@@ -82,7 +72,7 @@ The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After
 
 1. Generate a license file in `/etc/rackware` by running the following command:                    
 
-   ```
+   ```sh
    rwadm relicense 
    ```
    {: pre}
@@ -91,14 +81,14 @@ The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After
 
 3. After you receive a valid license, download the license file and place it in `/etc/rackware`. Restart the services to apply the license by running the following command:
  
-   ```
+   ```sh
    rwadm restart 
    ```
    {: pre}
  
 4. Verify the license by running the following command:
    
-   ```
+   ```sh
    rw rmm show 
    ```
    {: pre}
@@ -182,15 +172,15 @@ The username field for the Linux environment is `root`. The username field for t
  
 Alternatively, you can use the discovery helper script, which helps with the discovery of virtual machines on the VMware ESXI Host and also creates corresponding waves on the RMM server. The script asks for your vSphere host username and for the IP address of the vSphere to connect to and the API where you discover your on-premises classic VMware ESXi Host VMs. 
  
-```
+```sh
 ./discoveryTool -s <vSphere> -u <username of the Vspherehost>
 ```
 {: pre}
 
 Example:
 
-```
-$ ./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local
+```sh
+./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local
 ```
 {: screen}  
  
@@ -212,3 +202,4 @@ Before you decommission the source server, it is imperative to validate the targ
 1. [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/VMware/README.md){: external}
 2. [FAQs](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)  
 3. [RackWare usage guide](https://www.rackwareinc.com/cloud-migration){: external}
+

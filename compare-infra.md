@@ -9,13 +9,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Comparing {{site.data.keyword.cloud_notm}} Classic and VPC infrastructure environments
 {: #compare-infrastructure}

@@ -10,18 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:row-headers: .row-headers}
+{{site.data.keyword.attribute-definition-list}}
 
 # About migration
 {: #about-migration-infra}

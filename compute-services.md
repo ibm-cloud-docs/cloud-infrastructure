@@ -10,10 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:note: .note}
-{:new_window: target="_blank"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Compute services
 {: #compute}

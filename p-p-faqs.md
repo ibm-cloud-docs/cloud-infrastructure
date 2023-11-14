@@ -10,15 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:faq: data-hd-content-type='faq'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs for bare metal to bare metal migration
 {: #bare-metal-faqs}

@@ -14,17 +14,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
 # IBM Cloud classic bare metal to classic bare metal migration
 {: #p-p-migration-bare-metal-overview}

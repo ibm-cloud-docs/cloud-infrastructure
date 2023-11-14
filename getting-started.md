@@ -8,17 +8,9 @@ keywords: cloud environment, virtual server, virtual machine, vm, understanding 
 
 subcollection: cloud-infrastructure
 
-
 ---
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:script: data-hd-video='script'}
-{:video: .video}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding IaaS basics
 {: #getting-started-tutorial}

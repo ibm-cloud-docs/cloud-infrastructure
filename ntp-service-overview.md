@@ -9,14 +9,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Synchronizing app time to the IBM Cloud NTP service
 {: #ntp-service-overview}

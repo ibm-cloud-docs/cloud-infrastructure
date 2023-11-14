@@ -12,17 +12,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:new_window: target="_blank"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Resiliency and High Availability Troubleshooting
 {: #ha-troubleshooting}

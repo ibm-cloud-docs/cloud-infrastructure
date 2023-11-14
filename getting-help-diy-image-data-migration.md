@@ -10,16 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting help and support for image and data migration
 {: #getting-help-support-image-data-migration}

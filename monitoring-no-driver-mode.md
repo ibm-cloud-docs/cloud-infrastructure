@@ -10,17 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Enabling {{site.data.keyword.mon_full_notm}} agent for non-orchestrated environments
 {: #enabling-monitoring-light-no-driver}

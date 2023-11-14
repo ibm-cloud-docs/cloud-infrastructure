@@ -10,11 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:note: .note}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs for VMware (on-premises or classic) to IBM Cloud VPC migration
 {: #faqs-vmware}

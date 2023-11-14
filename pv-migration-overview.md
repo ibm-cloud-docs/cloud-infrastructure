@@ -10,17 +10,7 @@ subcollection: cloud-infrastructure
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-
+{{site.data.keyword.attribute-definition-list}}
 # Bare metal to bare metal or virtual server migration overview
 {: #pv-migration-overview}
 
