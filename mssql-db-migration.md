@@ -63,7 +63,6 @@ For more information, see [Migration considerations](/docs/microsoft?topic=micro
 
 | Migration tools and solutions | Use cases |
 | ----------------- | -------- |
-| [{{site.data.keyword.mdms_short}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#mass-data-migration) | Large data migration |
 | [RackWare Management Module (RMM)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#rackware-management-module) | Database on single server or clustered database on multiple servers. In case of Microsoft SQL server clustered database migration, user needs to take care of licenses, shared disk configuration, updating correct IP address in DNS records of DNS / active directory server, setting up DNS server for all node machines {: note} |
 | [Backup and restore with Windows&reg; {{site.data.keyword.backup_notm}} Agent](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#backup-and-restore-backup-agent) | Large data migration, full database backup, moving database data to another drive, moving database data between different versions of SQL server. |
 | [Detach and attach](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#detach-and-attach) | Full database backup, moving database data to another drive, moving database data between different versions of SQL server. |
@@ -78,11 +77,6 @@ For more information, see [Migration considerations](/docs/microsoft?topic=micro
 | [Data Migration Assistant (DMA)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#data-migration-assistant) | Large data migration, migration assessment, server upgrade |
 | [Smart Bulk Copy](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#smart-bulk-copy) | Large data migration, other cloud service providers to {{site.data.keyword.vpc_short}}, on-premises to {{site.data.keyword.vpc_short}}. |
 {: caption="Table 1. Migration methods and use cases" caption-side="bottom"}
-
-### Mass Data Migration (MDM)
-{: #mass-data-migration}
-
-{{site.data.keyword.mdms_full_notm}} (MDM) helps you move terabytes to petabytes of data into {{site.data.keyword.cloud_notm}} in a fast, simple, and secure way. For more information, see [Getting started tutorial for import](/docs/mass-data-migration).
 
 ### RackWare Management Module (RMM)
 {: #rackware-management-module}

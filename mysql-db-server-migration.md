@@ -59,15 +59,9 @@ Before you begin your MySQL database migration, review and complete the followin
 
 | Migration tools and solutions | Use cases |
 | ----------------- | -------- |
-| [{{site.data.keyword.mdms_short}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-db-overview#mass-data-migration) | Large data migration |
 | [RackWare Management Module (RMM)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-db-overview#rackware-management-module) | Database on single server or multiple server |
 | [Database Migration script](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-db-overview#database-migration-script-python)| Small data migration or schema-only migration. |
 {: caption="Table 1. MySQL migration methods" caption-side="bottom"}
-
-### Mass Data Migration (MDM)
-{: #mass-data-migration}
-
-{{site.data.keyword.mdms_full_notm}} (MDM) helps you move terabytes to petabytes of data into {{site.data.keyword.cloud_notm}} in a fast, simple, and secure way. For more information, see [Getting started tutorial for import](/docs/mass-data-migration).
 
 ### RackWare Management Module (RMM)
 {: #rackware-management-module}
