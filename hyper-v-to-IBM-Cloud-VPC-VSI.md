@@ -71,7 +71,7 @@ Complete the following steps to get a license:
 
 1. Generate a license file in `/etc/rackware` by running the following command:
 
-    ```
+    ```sh
     rwadm relicense 
     ```
     {: pre}
@@ -88,14 +88,14 @@ Complete the following steps to get a license:
 4. Install the license.
     a. After you receive a valid license, download the license file and place it in `/etc/rackware`. Restart the services and apply the license by running the following command:
  
-    ```
+    ```sh
     rwadm restart 
     ```
     {: pre}
  
     b. Verify the license by running the following command:
 
-    ```
+    ```sh
     rw rmm show 
     ```
     {: pre}
@@ -168,15 +168,15 @@ The username field for the Linux environment is `root`. The username field for t
 
 Alternatively, you can use the discovery tool script, which helps with the discovery of virtual machines on the "System Center Virtual Machine Manager" (SCVMM) or Hyper-V host. The script also creates corresponding waves on the RMM server. The script asks for your SCVMM host username, the IP address of the SCVMM host to connect to, and the API where you discover your on-premises Hyper-V cluster virtual machines.
 
-```
+```sh
 ./discoveryTool -s SCVMM -u USERNAME -c CLUSTERNAME -d DOMAIN
 ```
 {: pre}
 
 Example:
 
-```
-$ ./discoveryTool -s 10.10.10.1 -u administrator -c vCLUSTER -d DISCOVERY.LOCAL
+```sh
+./discoveryTool -s 10.10.10.1 -u administrator -c vCLUSTER -d DISCOVERY.LOCAL
 ```
 {: screen}
 

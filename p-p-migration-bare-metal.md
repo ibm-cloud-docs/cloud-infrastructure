@@ -124,7 +124,7 @@ Follow these steps to get a license:
 
 2. Run the following command on the RMM CLI to generate a preinstall file:
 
-    ```
+    ```sh
     rwadm relicense
     ```
     {: pre}
@@ -145,14 +145,14 @@ Follow these steps to get a license:
 
     a. After the valid license is received, download the license file and place it in `/etc/rackware`. Restart the services to apply the license by running the following command:
     
-    ```
+    ```sh
     rwadm restart
     ```
     {: pre}
 
     b. Verify the license by running the following command:
 
-    ```
+    ```sh
     rw rmm show
     ```
     {: pre}

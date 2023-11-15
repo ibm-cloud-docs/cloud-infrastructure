@@ -81,7 +81,7 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
 
 1. Generate a license file in `/etc/rackware` by running the following command:
 
-   ```
+   ```sh
    rwadm relicense 
    ```
    {: pre}
@@ -90,14 +90,14 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
 
 3. After you receive a valid license, download the license file and place it in `/etc/rackware`. Restart the services to apply the license by running the following command:
 
-   ```
+   ```sh
    rwadm restart
    ```
    {: pre}
  
 4. Verify the license by running the following command:
 
-   ```
+   ```sh
    rw rmm show 
    ```
    {: pre}
@@ -213,14 +213,14 @@ The username field for the Linux environment is `root`. The username field for t
  
 Alternatively, you can use the discovery helper script, which helps with the discovery of virtual machines on the VMware ESXi Host and also creates corresponding waves on the RMM server. The script asks for your vSphere host username, for the IP address of the vSphere to connect to, and the API where you discover your on-premises or classic VMware ESXi Host VMs.
  
-```
+```sh
 ./discoveryTool -s <vSphere> -u <username of the Vspherehost>
 ```
 {: pre}
 
 Example:
 
-```
+```sh
 $ ./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local
 ```
 {: screen}

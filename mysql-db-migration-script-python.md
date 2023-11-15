@@ -43,24 +43,24 @@ Complete the following steps to clone and run the database migration script:
 
 1. Run the following commands to clone the public GitHub repository:
 
-    ```
+    ```sh
     git clone https://github.com/IBM-Cloud/vpc-migration-tools.git
     ```
     {: pre}
 
-    ```
+    ```sh
     cd vpc-migration-tools/db-migration/mysql
     ```
     {: pre}
 
 2. Install the prerequisites modules for Python by running the following commands:
 
-    ```
+    ```sh
     pip3 install -U pip setuptools
     ```
     {: codeblock}
 
-    ```
+    ```sh
     pip3 install -r requirements.txt
     ```
     {: codeblock}
@@ -70,7 +70,7 @@ Complete the following steps to clone and run the database migration script:
     
 3. Run the following database migration script:
 
-    ```
+    ```sh
     python3 db_migration.py
     ```
     {: pre}

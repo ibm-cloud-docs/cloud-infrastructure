@@ -79,12 +79,12 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
   
     For Windows 2012 and 2012R2, run the following commands:
     
-    ```
+    ```sh
     netsh winsock reset
     ```
     {: pre}
   
-    ```
+    ```sh
     netsh int ip reset c:\resetlog.txt
     ```
     {: pre}
@@ -97,7 +97,7 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 5. Restart the VM to activate the Virtio drivers.
 6. Run the `sysprep` command. The `sysprep` command generalizes and removes system-specific IDs from the operating system.
 
-    ```
+    ```sh
     C:\Windows\System32\Sysprep\Sysprep.exe /oobe /generalize /shutdown "/unattend:C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
     ```
     {: pre}
@@ -111,14 +111,14 @@ See [Creating a Windows custom image](/docs/vpc?topic=vpc-create-windows-custom-
 
     For VMDK images:
     
-    ```
+    ```sh
     qemu-img convert -f vmdk -O qcow2 -o cluster_size=512k <vm_image_name.  vmdk> <vsi_image_name.qcow2> 
     ```
     {: pre}
   
     For VHD images:
   
-    ```
+    ```sh
     qemu-img convert -f vpc -O qcow2 -o cluster_size=512k <vm_image_name.  vhd> <vsi_image_name.qcow2> 
     ```
     {: pre}
@@ -157,6 +157,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 {: #step-6-linux-systems}
 
 #### For Centos or Red Hat 7:
+{: #step-6-RHEL7}
 
 1. Create n+1 secondary volumes. If your VM has one secondary vHDD, then you need to create two secondary volumes for the instance. The extra volume is temporary. 
 2. Download the secondary (vHDD) VMDK or VHD file from {{site.data.keyword.cos_short}} to one of the empty secondary volumes. 
@@ -165,35 +166,35 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 
     For VMDK images:
     
-    ```
+    ```sh
     qemu-img convert -p -f vmdk <data_image.vmdk> /dev/vde
     ```
     {: pre}
     
     For VHD images:
     
-    ```
+    ```sh
     qemu-img convert -p -f vpc <data_image.vhd> /dev/vde
     ```
     {: pre}
 
 5. Mount the volume:
 
-    ```
+    ```sh
     mount /dev/vde1 /mnt
     ```
     {: pre}
 
 6. Format and mount the other empty secondary volume
 
-    ```
+    ```sh
     mount /dev/vdd1 /data
     ```
     {: pre}
 
 7. Copy data over from the temporary volume (vde) to the target volume (vdd):
 
-    ```
+    ```sh
     cp –avf /mnt /data 
     ```
     {: pre}
@@ -201,13 +202,10 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 8. Unmount and delete the volume.
 9. Edit the `fstab` file to automount and be persistent across restart.  
   
-
-
 ***For Centos or Red Hat 8, Ubuntu 18.04 and 20.04, Debian 9 and 10:***
 
 1. Create secondary volumes, if your VM has secondary vHDD. 
-2. Copy the VMDK or VHD image file to the migrated VSI 
-(Make sure you have enough space to copy the image file. , attach a temporary volume with space for copying.)
+2. Copy the VMDK or VHD image file to the migrated VSI. Make sure that you have enough space to copy the image file. Attach a temporary volume with space for copying.
 
     Skip step 3 if you opted ‘y’ to `guestfs` installation prompt when running a pre-check script.
     {: note}
@@ -216,40 +214,39 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 
    Centos/Redhat
 
-   ```
+   ```sh
    yum update -y
    ```
    {: pre}
 
-   ```
+   ```sh
    yum install libguestfs-tools
    ```
    {: pre}
 
-
-   ```
+   ```sh
    systemctl enable libvirtd
    ```
    {: pre}
 
-   ```
+   ```sh
    systemctl start libvirtd
    ```
    {: pre}
 
-   ```
+   ```sh
    systemctl status libvirtd
    ```
    {: pre}
 
    Ubuntu/Debian
    
-   ```
+   ```sh
    apt-get update -y
    ```
    {: pre}
    
-   ```
+   ```sh
    apt-get install -y libguestfs-tools
    ```
    {: pre}
@@ -258,44 +255,45 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 
     For VMDK images (to `qcow2`):
     
-    ```
+    ```sh
     qemu-img convert -p -f vmdk -O qcow2 -o cluster_size=512k   secondary_volume.vmdk secondary_volume.qcow2
     ```
     {: pre}
     
     For VHD images (to `qcow2`):
     
-    ```
+    ```sh
     qemu-img convert -p -f vpc -O qcow2 -o cluster_size=512k   secondary_volume.vhd secondary_volume.qcow2
     ```
     {: pre}
 
 5. Mount the volume:
 
-   ```
+   ```sh
    guestmount -a secondary_volume.qcow2 -m /dev/sda1 --ro /mnt
    ```
    {: pre}
 
 6. Format and mount the empty secondary volume
 
-   ```
+   ```sh
    mount /dev/vdd1 /data
    ```
    {: pre}
 
 7. Copy data over from the `/mnt` to the target volume (vdd):
 
-   ```
+   ```sh
    cp –avf /mnt /data 
    ```
    {: pre}
 
-8. After copy completed unmount and delete the image file, if no longer needed.
+8. After copy is completed, unmount and delete the image file, if no longer needed.
   
-   ```  
-   $ guestunmount /mnt
+   ``` sh
+   guestunmount /mnt
    ```
+   {: pre}
 
 9. Edit the `fstab` file to automount and be persistent across restart.
 
@@ -305,5 +303,3 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 1. Create secondary volume.
 2. Copy the VMDK or VHD disk to Windows.
 3. Mount the image as a disk.
-
-

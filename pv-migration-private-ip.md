@@ -164,7 +164,7 @@ There are a few things that need to be done on the source and target server for 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. If your compute resource has both public and private IP addresses, the host level route needs to be added for it to work properly. Run the following command on your classic compute resources for your operating system:
 
-```
+```sh
 ip route add <destination_network> via <Gateway_address> dev <private_ethernet_interface>
 ```
 {: pre}
@@ -177,7 +177,7 @@ ip route add <destination_network> via <Gateway_address> dev <private_ethernet_i
 3. The user is `SYSTEM`, and you need to key in the RMM SSH key to authenticate for both the source and target servers.
 4. If your compute resource has both public and private IP addresses, the host level route needs to be added for it to work properly. Run the following command on your classic compute resources for your operating system:
 
-```
+```sh
 route ADD <destination_network> MASK <subnet_mask> <gateway_ip> <metric_cost>
 ```
 {: pre}
@@ -208,7 +208,7 @@ The username field for Linux environments is `root`. The username field for Wind
 
 Within the discovery script, a helper script is provided to help with the discovery of the classic bare metals and creating the waves for steps 2 and 3. The script asks for your classic username and API to discover your classic bare metals.
 
-```
+```sh
 /opt/IBM/discoverTool -d
 ```
 {: pre}
@@ -226,8 +226,8 @@ For more information on the discovery tool, click [here](https://github.com/IBM-
 2. Add connections 
     * Classic infrastructure 
     * VPC 
-     * Select region 
-     * Select VPC 
+       * Select region 
+       * Select VPC 
 
 ## Validate your migration
 {: #validate-pv-migration}

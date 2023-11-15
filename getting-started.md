@@ -32,7 +32,6 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 ## Video transcript
 {: #video-transcript-it-ops-2}
-{: script}
 {: notoc}
 
 Welcome to {{site.data.keyword.cloud_notm}}! As an IT operations administrator, you had your choice of any number of cloud providers. You chose {{site.data.keyword.cloud_notm}} because it's a leader in cloud as a service. We offer superior levels of security, functionality, integration, interoperability, and usability. 

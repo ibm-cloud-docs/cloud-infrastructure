@@ -11,6 +11,7 @@ subcollection: cloud-infrastructure
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 # Bare metal to bare metal or virtual server migration overview
 {: #pv-migration-overview}
 
@@ -27,10 +28,9 @@ Before you begin migrating your physical bare metal server to a virtual server, 
 3. Your bare metal server boot volume needs to be less than 250 GB.
 4. Your bare metal server needs to be on a supported operating system. For a list of supported operating systems, see [Virtual server images](/docs/vpc?topic=vpc-about-images). 
 5. Your source and target need to be able to reach other and the RMM. You can do this over the public internet with public IPs, or if you have a private-only environment, then you must set up either a VPN or transit gateway, use the following links:
-
-  - [Direct link (2.0)](https://cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) 
-  - [VPNs](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-overview)
-  - [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
+   - [Direct link (2.0)](https://cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) 
+   - [VPNs](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-overview)
+   - [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
 
 To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {:note: .note}

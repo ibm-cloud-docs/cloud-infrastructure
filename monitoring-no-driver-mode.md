@@ -32,7 +32,7 @@ Use these steps to enable 'no driver mode'.
 
 3. Add the following configuration to the `dragent.yaml` file:
 
-   ```
+   ```yaml
    feature:
      mode: `monitor_light`
      Available options for the feature mode are: `monitor_light | monitor | none`.
@@ -43,7 +43,7 @@ Use these steps to enable 'no driver mode'.
 
    Alternatively, you can use the following curl command:
 
-   ```
+   ```sh
    curl -sL https://ibm.biz/install-sysdig-agent | sudo bash -s -- -a SYSDIG_ACCESS_KEY -c COLLECTOR_ENDPOINT --collector_port 6443 --secure true -ac "feature:\n mode: monitor_light"
    ```
    {: codeblock}
@@ -133,7 +133,7 @@ Use the following table to see which metrics are available in 'no driver mode'.
 
 To switch to **Troubleshooting mode**, add the following configuration to the `dragent.yaml` file:
 
-```
+```yaml
 feature:  
       mode: troubleshooting
 ```

@@ -96,9 +96,9 @@ RMM can migrate single MSSQL database or clustered databases. The following thin
 * Configured shared disk on target side.
 * Ensure all the configuration regarding cluster is correct and all services are up and running correctly.
 * **Known issue:**
-  When migration is performed for machines with clustered node "the trust relationship between this workstation and the primary domain failed". So even if you enter the correct domain credentials post migration, it does not allow to user to login.
+   When migration is performed for machines with clustered node "the trust relationship between this workstation and the primary domain failed". So even if you enter the correct domain credentials post migration, it does not allow to user to login.
 * **Workaround:**
-  Simple solution to this problem is to login to the node machine using local admin account and explicitly unjoin node machine from domain and rejoin domain. Once this is done login to the target machine using domain credentials. This process is automated in the form of script. To download and use this script, see this [public GitHub repository](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/db-migration/mssql/post-migration/){: external}.
+   Simple solution to this problem is to login to the node machine using local admin account and explicitly unjoin node machine from domain and rejoin domain. Once this is done login to the target machine using domain credentials. This process is automated in the form of script. To download and use this script, see this [public GitHub repository](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/db-migration/mssql/post-migration/){: external}.
 
 The RMM tool does not support migration of AWS RDS or similar databases.
 {: note}

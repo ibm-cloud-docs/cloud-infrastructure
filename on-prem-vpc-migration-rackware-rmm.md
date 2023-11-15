@@ -77,7 +77,7 @@ Complete the following steps to get a license:
 1. Order your license from RackWare.
 2. Run the following command on the RMM CLI to generate a preinstall file:
 
-    ```
+    ```sh
     rwadm relicense
     ```
     {: pre}
@@ -92,14 +92,14 @@ Complete the following steps to get a license:
     
     a. After you receive a valid license, download the license file and place it in `/etc/rackware`. Restart the services to apply the license by running the following command:
 
-    ```
+    ```sh
     rwadm restart
     ```
     {: pre}
 
     b. Verify the license by running the following command:
     
-    ```
+    ```sh
     rw rmm show
     ```
     {: pre}
@@ -194,7 +194,7 @@ There are a few things that need to be done on the source and target server for 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. If your compute resource has both public and private IP addresses, the host level route needs to be added for it to work properly. Run the following command on your classic compute resources for the operating system:
 
-```
+```sh
 ip route add <destination_network> via <Gateway_address> dev <private_ethernet_interface>
 ```
 {: pre}
@@ -211,7 +211,7 @@ ip route add <destination_network> via <Gateway_address> dev <private_ethernet_i
 3. The user is `SYSTEM`, and you need to key in the RMM SSH key to authenticate for both the source and target servers.
 4. If your compute resource has both public and private IP addresses, the host level route needs to be added for it to work properly. Run the following command on your classic compute resources for the operating system:
 
-```
+```sh
 route ADD <destination_network> MASK <subnet_mask> <gateway_ip> <metric_cost>
 ```
 {: pre}
@@ -253,4 +253,3 @@ After your server migration, validate your compute resources, such as applicatio
 6. Check or update your `yum` repos, application settings, and configuration file.
 7. Check or update application or operating system licenses.
 8. Remove the RMM SSH key.
-

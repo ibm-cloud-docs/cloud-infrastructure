@@ -50,7 +50,7 @@ If your compute resource has both public and private IP addresses, the host leve
 ### Linux systems
 {: #linux-systems-add-route}
 
-```
+```sh
 ip route add <destination_network> via <Gateway_address> dev <private_ethernet_interface>
 ```
 {: pre}
@@ -58,7 +58,7 @@ ip route add <destination_network> via <Gateway_address> dev <private_ethernet_i
 ### Windows systems
 {: #windows-systems-add-route}
 
-```
+```sh
 route ADD <destination_network> MASK <subnet_mask> <gateway_ip>
 ```
 {: pre}
@@ -69,6 +69,7 @@ route ADD <destination_network> MASK <subnet_mask> <gateway_ip>
  
 ### Linux systems
 {: #linux-systems-install-rsync}
+
 On most Linux systems, `rsync` is already installed. To verify whether `rsync` in installed, run the `rsync` command on your terminal. If it isn't installed, complete the following steps for your relevant operating system.
 
 #### Ubuntu

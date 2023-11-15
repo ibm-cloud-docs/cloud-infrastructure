@@ -486,8 +486,9 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 ### Change log for service network IP ranges (26 October 2022)
 {: #cloud-infrastructure-oct2622}
 
-
 #### Removed
+{: #cloud-infrastructure-removed-ip}
+
 * All address 166.8.0.0/14
 * ams01 address 10.2.64.0/20
 * ams01 address 10.2.66.0/24
@@ -540,6 +541,8 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 * wdc03 address 100.100.32.0/20
 
 #### Added
+{: #cloud-infrastructure-added-ip}
+
 * ams03 address 161.26.28.0/22
 * ams03 address 161.26.30.0/24
 * che01 address 161.26.32.0/22
