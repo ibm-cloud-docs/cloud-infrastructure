@@ -22,7 +22,7 @@ subcollection: cloud-infrastructure
 
 The NTP server that you use to synchronize time for an application depends on where the application is running:
 
-- If the application is running in {{site.data.keyword.cloud_notm}} Classic infrastructure, set your NTP server to `time.service.networklayer.com`.
+- If the application is running in {{site.data.keyword.cloud_notm}} classic infrastructure, set your NTP server to `time.service.networklayer.com`.
 - If the application is running in {{site.data.keyword.cloud_notm}} VPC, set your NTP server to `time.adn.networklayer.com`.
 - If the application is not using {{site.data.keyword.cloud_notm}} NTP services, check [Network Time Protocol Servers](https://support.ntp.org/bin/view/Servers){: external} to find suitable NTP servers for your application.
 
@@ -38,7 +38,6 @@ The National Institute of Standards and Technology (NIST) and US Naval Observato
 The NTP time servers are connected to these GNSS and time synchronization appliance services, as depicted in Figure 1.
 
 ![NTP service overview](images/ntppublic.png){: caption="Figure 1. NTP Service overview" caption-side="bottom"}
-
 
 ## Software components
 {: #ntp-software-components}

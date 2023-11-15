@@ -14,16 +14,13 @@ subcollection: cloud-infrastructure
 # Comparing {{site.data.keyword.cloud_notm}} Classic and VPC infrastructure environments
 {: #compare-infrastructure}
 
-Compare the key differences between {{site.data.keyword.cloud}} infrastructure environments to decide which one is best for your workloads and applications.  Check out this [video](https://mediacenter.ibm.com/media/IBM%20Bare%20Metal%20Servers%20-%20Classic%20vs.%20VPC%20Infrastructure%20Explainer%20Video/1_hn1d69nn){: external} to learn more about the differences between the Classic and VPC infrastructures.
+Compare the key differences between {{site.data.keyword.cloud}} infrastructure environments to decide which one is best for your workloads and applications. Check out this [video](https://mediacenter.ibm.com/media/IBM%20Bare%20Metal%20Servers%20-%20Classic%20vs.%20VPC%20Infrastructure%20Explainer%20Video/1_hn1d69nn){: external} to learn more about the differences between the Classic and VPC infrastructures.
 {: shortdesc}
 
 If you aren't familiar with the environment types, review the following descriptions.
 
 * Classic infrastructure is our existing IaaS platform. This environment is best for lift and shift workloads so you can move applications quickly and keep the same architecture.
 * VPC infrastructure is our new IaaS platform, based on software-defined networking and ideal for cloud-native applications.
-
-Classic infrastructure and VPC infrastructure are cost neutral, so you can focus on what environment best meets your needs.
-{: note}
 
 ## Compute differentiators
 {: #compare-compute}

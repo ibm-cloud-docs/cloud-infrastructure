@@ -13,7 +13,7 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.mon_full_notm}}
 {: #monitoring-iaas}
 
-You can use {{site.data.keyword.mon_full_notm}} to monitor Classic infrastructure metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt dashboards.
+You can use {{site.data.keyword.mon_full_notm}} to monitor classic infrastructure metrics such as CPU usage, disk usage, network traffic, and memory. These metrics are stored in {{site.data.keyword.mon_full_notm}}. You can access metrics through the prebuilt dashboards.
 {: shortdesc}
 
 {{site.data.keyword.mon_full_notm}} metrics are available if you deploy the monitoring agent for non-orchestrated environments. For more information, see [{{site.data.keyword.mon_full_notm}} agent for non-orchestrated environments metrics](/docs/cloud-infrastructure?topic=cloud-infrastructure-enabling-monitoring-light-no-driver#monitoring-light-metrics).
@@ -25,11 +25,11 @@ You can use {{site.data.keyword.mon_full_notm}} to monitor Classic infrastructur
 You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive. 
 
 | Basic monitoring service type | Description |
-| ----- | ----- |
-| SERVICE PING | Test ping to address |
-| SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load |
-{: caption="Table 1. Basic monitoring service types" caption-side="bottom"} 	
-
+|-------------------------------|-------------|
+| SERVICE PING         | Test ping to address |
+| SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load. |
+{: caption="Table 1. Basic monitoring service types" caption-side="bottom"}
+	
 The source of service ping and slow ping monitoring depends on the data center where the server is located. To use public IP monitoring, you need to allow ICMP from the server's data center [public service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#front-end-network). For private IP monitoring, you need to allow ICMP from the server's data center [private service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
 
 If an echo isn't received in the allotted timeframe (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
@@ -70,7 +70,7 @@ To view configured monitors, use the following steps:
 The **Monitoring** tab is only visible if at least one monitor is configured.
 {: note}
 
-## Health dashboard for Classic infrastructure
+## Health dashboard for classic infrastructure
 {: #health-dashboard}
 
 With the health monitoring dashboard, you can see important stats about your environment that might need attention. From the health dashboard, you can quickly see the following information:
@@ -79,13 +79,14 @@ With the health monitoring dashboard, you can see important stats about your env
 * Quickly see any servers that might require firmware updates
 * See whether any operating systems are no longer supported and if an OS reload is required 
 
-### Viewing the health dashboard for Classic infrastructure
+### Viewing the health dashboard for classic infrastructure
 {: #viewing-health-dashboard}
 
 To view your health dashboard, use the following steps.
 
-1. Go to your [Classic infrastructure](https://cloud.ibm.com/classic){: external}.
-2. Click **Devices** > **Device list** > **Health dashboard**.
+1. Log in to the [{{site.data.keyword.cloud}} console](/login){: external} and click the menu icon ![Menu icon](../icons/icon_hamburger.svg "Menu").
+1. Click **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
+2. Click **Devices > Health dashboard**.
 
 Alternatively, you can go directly to your health dashboard by clicking [here](https://cloud.ibm.com/gen1/infrastructure/health-dashboard).{: externa}
 

@@ -29,7 +29,7 @@ By default {{site.data.keyword.cloud}} classic infrastructure includes provider-
 ## Customer-managed encryption
 {: #customer-managed-encryption}
 
-Some workloads or use cases require full customer control over the encryption, including key management. You can use the following information to learn about possible methods to achieve customer-managed encryption within the standard {{site.data.keyword.cloud}} Classic infrastructure feature set. You can implement any of the following options: {{site.data.keyword.keymanagementserviceshort}}, LUKS encryption for {{site.data.keyword.blockstorageshort}}, file-level encryption options for {{site.data.keyword.filestorage_short}}, and server-side encryption for {{site.data.keyword.cos_full_notm}}. Most of these customer-managed encryption options require manual setup. 
+Some workloads or use cases require full customer control over the encryption, including key management. You can use the following information to learn about possible methods to achieve customer-managed encryption within the standard {{site.data.keyword.cloud}} classic infrastructure feature set. You can implement any of the following options: {{site.data.keyword.keymanagementserviceshort}}, LUKS encryption for {{site.data.keyword.blockstorageshort}}, file-level encryption options for {{site.data.keyword.filestorage_short}}, and server-side encryption for {{site.data.keyword.cos_full_notm}}. Most of these customer-managed encryption options require manual setup. 
 
 ### Key Protect
 {: #key-protect}
