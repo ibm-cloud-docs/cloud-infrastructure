@@ -17,7 +17,7 @@ MySQL database is a relational database management system (RDMS). Migrating such
 {: shortdesc}
 
 ## Why migrate?
-{: #why-migrate}
+{: #mysql-why-migrate}
 
 1. Moving to an entirely new server
 2. Restoring databases from a backup
@@ -30,7 +30,7 @@ MySQL database is a relational database management system (RDMS). Migrating such
 ![Migration Overview Diagram](images/mysql_db_migration.svg){: caption="Figure 1. Migration overview diagram" caption-side="bottom"}
 
 ## Use cases
-{: #use-cases}
+{: #mysql-use-cases}
 
 1. On-premises to {{site.data.keyword.vpc_short}}
 2. {{site.data.keyword.cloud_notm}} classic bare metal or virtual server instance to {{site.data.keyword.vpc_short}}
@@ -64,12 +64,12 @@ Before you begin your MySQL database migration, review and complete the followin
 {: caption="Table 1. MySQL migration methods" caption-side="bottom"}
 
 ### RackWare Management Module (RMM)
-{: #rackware-management-module}
+{: #mysql-rackware-management-module}
 
 RackWare Management Module (RMM) is a simple workload migration solution that is provided by IBM’s partner RackWare that provides an automated, easy, and convenient process to migrate existing compute workloads to {{site.data.keyword.cloud_notm}}. It keeps track of data changes on the source server until cutover and performs delta syncs to the target server in {{site.data.keyword.cloud_notm}}. This tool migrates a server with everything on it including the operating system, along with its installed database application and data (lift and shift migration). RMM can do database migration if it is a platform-based database (for example, it can access database workloads with a public IP address). For more information, see [On-premises VMware VM to {{site.data.keyword.vpc_short}} migration with RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc).
 
 ### Database Migration Script (Python)
-{: #database-migration-script-python}
+{: #mysql-database-migration-script-python}
 
 Using Python as a source, you can migrate the database from any server to {{site.data.keyword.vpc_short}}. The migration script uses Python libraries than can back up the database from the source server and restore it on the new server.
 

@@ -13,9 +13,9 @@ subcollection: cloud-infrastructure
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
+{{site.data.keyword.attribute-definition-list}} 
 
-# On-premises to IBM Cloud VPC migration with RMM
+# On-premises to {{site.data.keyword.vpc_short}} migration with RMM
 {: #migrating-on-prem-cloud-vpc}
 {: toc-content-type="tutorial"} 
 {: toc-services="vpc, virtual-servers"} 
@@ -27,7 +27,7 @@ The RackWare Management Module (RMM) migration solution provides a seamless mean
 This guide shows you how to complete a migration from on-premises to {{site.data.keyword.vpc_short}}. 
 
 ## Supported operating systems
-{: #supported-operating-systems}
+{: #onprem2cloud-supported-operating-systems}
 
 - CentOS 7.8, 7.9
 
@@ -43,7 +43,7 @@ The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 {: note}
 
 ## Architecture diagram
-{: #any-cloud-architecture}
+{: #onprem2cloud-architecture}
 
 This diagram shows the architecture that you create with this guide.
 
@@ -53,7 +53,7 @@ This architecture diagram is applicable for bare metal to bare metal, bare metal
 {: note}
 
 ## Order RMM
-{: #order-rackware}
+{: #onprem2cloud-order-rackware}
 {: step}
 
 The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
@@ -104,8 +104,8 @@ Complete the following steps to get a license:
     ```
     {: pre}
 
-## Establish connectivity between source server and IBM Cloud VPC 
-{: #connectivity-between-source-and-cloud}
+## Establish connectivity between source server and {{site.data.keyword.vpc_short}} 
+{: #onprem2cloud-connectivity-between-source-and-cloud}
 {: step}
 
 Your source and target server should communicate with each other and the RMM. You can do this over the public internet with public IPs, or if you have a private-only environment, then you must set up either a VPN or Direct Link 2.0:
@@ -117,13 +117,13 @@ Your source and target server should communicate with each other and the RMM. Yo
 - Public interface (least recommended due to security concerns).
 
 ## Set up and provision VPC and virtual server instance
-{: #prepare-source-and-target}
+{: #onprem2cloud-prepare-source-and-target}
 {: step}
 
 There are two different methods for setting up the target server: manual or with the RMM auto-provision feature.
 
 ### Option 1: Manual
-{: #option-manual}
+{: #onprem2cloud-option-manual}
 
 The RMM solution handles only the OS, application, and data movement. It does not set up a VPC on the target side. Therefore, you must set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and virtual server instances. This tutorial does not go through all of the details for setting up the VPC infrastructure. For more information, see [Getting started with Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started).
 
@@ -145,10 +145,10 @@ The RMM solution handles only the OS, application, and data movement. It does no
     {: note}
 
 ### Option 2: Auto-provision
-{: #option-auto}
+{: #onprem2cloud-option-auto}
 
 #### Setting up a cloud user
-{: #setting-up-cloud-user}
+{: #onprem2cloud-setting-up-cloud-user}
 
 1. Log in to the RackWare web console.
 2. In the RackWare web console, navigate to **Configuration > Clouduser**.
@@ -156,7 +156,7 @@ The RMM solution handles only the OS, application, and data movement. It does no
 4. Click **Add**.
 
 #### Creating a wave and replication
-{: #creating-wave}
+{: #onprem2cloud-creating-wave}
 
 A wave contains a single host or multiple hosts that will be migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
 
@@ -175,7 +175,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 {: note}
 
 #### Assigning environment to wave
-{: #assigning-wave}
+{: #onprem2cloud-assigning-wave}
 
 1. In the RackWare web console, nagivate to **Replication > Waves**.
 2. Select the wave that needs to be migrated.
@@ -183,13 +183,13 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
 ## Prepare source and target servers
-{: #prepare-source-target-servers}
+{: #onprem2cloud-prepare-source-target-servers}
 {: step}
 
 There are a few things that need to be done on the source and target server for the migration to work. The RackWare RMM server needs to SSH into the servers; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
 
 ### Linux systems
-{: #linux-systems}
+{: #onprem2cloud-linux-systems}
 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. If your compute resource has both public and private IP addresses, the host level route needs to be added for it to work properly. Run the following command on your classic compute resources for the operating system:
@@ -200,7 +200,7 @@ ip route add <destination_network> via <Gateway_address> dev <private_ethernet_i
 {: pre}
 
 ### Windows systems
-{: #windows-systems}
+{: #onprem2cloud-windows-systems}
 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. You need to download the SSH key utility. You can download it from the RMM server: `<https://<RMM_IP>/windows/RWSSHDService_x64.msi>`
@@ -220,7 +220,7 @@ If you use the auto-provision feature, there is no need to set up a target. Only
 {: note}
 
 ## Set up RMM waves
-{: #setup-rackware-rmm-on-prem}
+{: #onprem2cloud-setup-rackware-rmm-on-prem}
 {: step}
 
 You can migrate the servers over one by one or run simultaneous migrations. If you are doing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
