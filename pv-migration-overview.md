@@ -33,7 +33,7 @@ Before you begin migrating your physical bare metal server to a virtual server, 
    - [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
 
 To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
-{:note: .note}
+{: note}
 
 ## Migration considerations
 {: #pv-migration-considerations}
