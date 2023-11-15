@@ -16,7 +16,7 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud classic bare metal to classic bare metal migration
+# {{site.data.keyword.cloud_notm}} classic bare metal to classic bare metal migration
 {: #p-p-migration-bare-metal-overview}
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers"} 
@@ -81,7 +81,7 @@ This architecture diagram is applicable for bare metal to virtual server and vir
 {: note}
 
 ## Before you begin
-{: #p-p-migration-bare-metal-supported-topology}
+{: #p-p-migration-bare-metal-prereq}
 
 1. For each volume on the source server, 20 percent of the unused space must be available to store the snapshot that is created by RMM. 
 
