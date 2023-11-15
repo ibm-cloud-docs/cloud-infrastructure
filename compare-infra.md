@@ -49,15 +49,15 @@ See the following table for the networking differences between classic and VPC.
 
 | Category   |  Classic infrastructure   | VPC infrastructure |
 | ---------- | ------------------------- | ------------------ |
-| **Location construct**    | Data centers and PODs /n (Might require VLAN spanning to connect two different pods or data centers, and purchasing gateways to control and route traffic) | Regional model that abstracts infrastructure so you don't need to worry about pod locations.|
-| **Network functions and services** |Physical and virtual appliances from multiple vendors | Cloud-native network functions (VPNs, LBaaS)/n (VPC isolation, dedicated resources carved out of public cloud, with more options for VPNs, LBaaS, multiple vNIC instances, and larger subnet sizes) |
+| **Location construct**    | Data centers and PODs \n (Might require VLAN spanning to connect two different pods or data centers, and purchasing gateways to control and route traffic) | Regional model that abstracts infrastructure so you don't need to worry about pod locations.|
+| **Network functions and services** |Physical and virtual appliances from multiple vendors | Cloud-native network functions (VPNs, LBaaS)\n (VPC isolation, dedicated resources carved out of public cloud, with more options for VPNs, LBaaS, multiple vNIC instances, and larger subnet sizes) |
 | **IP addresses** | IPv6 addresses supported | IPv4 addresses only |
 | **Gateway routin**g | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Traffic routing is handled by public gateway and floating IP services |
 | **Network address translation (NAT)** | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Supported by the Bring-your-own-IP (BYOIP) functionality  |
 | **IPsec Virtual private network (VPN)** | Use a virtual or physical network appliance (Virtual Router Appliance, Vyatta, Juniper vSRX, Fortinet FSA) | Supported by the VPN-as-a-service offering |
 |  **Elastic load balancing** | Cloud Load Balancer  | Load Balancer for VPC |
 | **Global load balancing**| Cloud Internet Services, Citrix Netscaler MPX | Cloud Internet Services |
-|**Hybrid connectivity** | NAT solution to bridge between IBM Cloud and your IT environment | Bring your own private IP address without NAT or IPSec tunnels /n Note: You can enable your VPC to access classic infrastructure resources. |
+|**Hybrid connectivity** | NAT solution to bridge between IBM Cloud and your IT environment | Bring your own private IP address without NAT or IPSec tunnels \n Note: You can enable your VPC to access classic infrastructure resources. |
 {: caption="Table 2. Network comparison" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, navigate to the row and find the details for the feature that you're interested in."}
 
@@ -68,7 +68,7 @@ See the following table for the storage differences between classic and VPC.
 
 |  Classic infrastructure   | VPC infrastructure |
 | ------------------------- | ------------------ |
-|Robust set of storage services, block storage (iSCSI), and file storage (NFS-based) offerings| Block storage as primary boot disk (with basic lifecycle management), and secondary data volumes  /n  Note: Volume encryption is available during provisioning.|
+|Robust set of storage services, block storage (iSCSI), and file storage (NFS-based) offerings| Block storage as primary boot disk (with basic lifecycle management), and secondary data volumes  \n  Note: Volume encryption is available during provisioning.|
 {: caption="Table 3. Storage comparison" caption-side="top"}
 
 ## Security differentiators

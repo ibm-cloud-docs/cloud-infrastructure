@@ -834,7 +834,7 @@ If you have a firewall, you must allow your Windows VSI to access to WSUS server
 
 |Data Center|City|BCR IP Range|
 |---|---|---|
-|tok04|Tokyo|10.3.17.0/24 /n 10.192.0.0/16 /n 10.201.187.0/24|
+|tok04|Tokyo|10.3.17.0/24 \n 10.192.0.0/16 \n 10.201.187.0/24|
 {: caption="Table 13: Windows VSI server requirements" caption-side="bottom"}
 
 For more information about locating your WSUS server in the Windows registry by using a regisration key, see [Configuring Automatic Updates by editing the registry](https://learn.microsoft.com/en-us/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry){: external} or [Configure Clients in a Non–Active Directory Environment](https://learn.microsoft.com/de-de/security-updates/windowsupdateservices/21669493){: external}.
