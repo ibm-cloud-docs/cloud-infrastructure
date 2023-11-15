@@ -30,7 +30,7 @@ Classic infrastructure and VPC infrastructure are cost neutral, so you can focus
 
 See the following table for the compute differences between classic and VPC.
 
-| Category   |  Classic Infrastructure   | VPC Infrastructure |
+| Category   |  Classic infrastructure   | VPC Infrastructure |
 | ---------- | ------------------------- | ------------------ |
 |  **Services**  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} and Bare Metal Servers |
 | **Performance and availability** | | Better availability achievable through zone architecture |

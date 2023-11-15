@@ -22,7 +22,7 @@ subcollection: cloud-infrastructure
 
 The NTP server that you use to synchronize time for an application depends on where the application is running:
 
-- If the application is running in {{site.data.keyword.cloud_notm}} Classic Infrastructure, set your NTP server to `time.service.networklayer.com`.
+- If the application is running in {{site.data.keyword.cloud_notm}} Classic infrastructure, set your NTP server to `time.service.networklayer.com`.
 - If the application is running in {{site.data.keyword.cloud_notm}} VPC, set your NTP server to `time.adn.networklayer.com`.
 - If the application is not using {{site.data.keyword.cloud_notm}} NTP services, check [Network Time Protocol Servers](https://support.ntp.org/bin/view/Servers){: external} to find suitable NTP servers for your application.
 
