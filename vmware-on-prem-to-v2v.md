@@ -221,7 +221,7 @@ Alternatively, you can use the discovery helper script, which helps with the dis
 Example:
 
 ```sh
-$ ./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local
+./discoveryTool -s 10.10.10.9 -u administrator@vsphere.local
 ```
 {: screen}
  
