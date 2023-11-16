@@ -12,13 +12,13 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud IP ranges
+# {{site.data.keyword.cloud_notm}} IP ranges
 {: #ibm-cloud-ip-ranges}
 
 A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IPs to use with these IBM firewalls and appliances.
 {: shortdesc}
 
-* IBM Cloud Juniper vSRX Standard
+* {{site.data.keyword.cloud_notm}} Juniper vSRX Standard
 * IBM Virtual Router Appliance
 * Fortigate Security Appliance 10 Gbps
 * IBM Security Groups
@@ -337,7 +337,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 
 | Data center | IP range |
 |-----|-----|
-| **Required Flows**:  \n NFS File Storage:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049  \n Block Storage:  \n * TCP & UDP 65200 (iscsi) | |
+| **Required Flows**:  \n  {{site.data.keyword.filestorage_short}}:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049 | **Required Flows**:  \n {{site.data.keyword.blockstorageshort}}:  \n * TCP & UDP 65200 (iscsi) \n \n \n \n |
 | ams03 | 10.3.142.0/24  \n 161.26.30.0/24 |
 | che01 | 10.200.30.0/24  \n 161.26.34.0/24 |
 | dal05 | 10.1.154.0/24  \n 10.2.110.0/24 |
@@ -490,7 +490,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 {: #cloud-infrastructure-oct2622}
 
 #### Removed
-{: #cloud-infrastructure-removed-ip}
+{: #cloud-infrastructure-removed-IP}
 
 * All address 166.8.0.0/14
 * ams01 address 10.2.64.0/20
