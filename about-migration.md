@@ -187,7 +187,7 @@ You can migrate your workloads from the following cloud providers:
 * GCP
 * OCI (bare metal)
 
-For a detailed step-by-step guide, see [AWS, Azure, GCP, and OCI workloads to {{site.data.keyword.vpc_short}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-aws-azure-gcp-and-oci-workloads-to-ibm-cloud-vpc-vsi-migration-with-rackware-rmm).
+For a detailed step-by-step guide, see [AWS, Azure, GCP, and OCI workloads to {{site.data.keyword.vpc_short}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-cloud-rackware).
 
 ## DIY automation
 {: #DIY-automation}
