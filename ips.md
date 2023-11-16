@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-11-16"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -353,6 +353,9 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | lon04 | 10.201.46.0/24  \n 161.26.130.0/24 |
 | lon05 | 10.201.62.0/24  \n 161.26.162.0/24 |
 | lon06 | 10.201.78.0/24  \n 161.26.142.0/24 |
+| mad02 | 10.203.109.0/24 \n 161.26.214.0/24 |
+| mad04 | 10.203.125.0/24 \n 161.26.218.0/24 |
+| mad05 | 10.203.141.0/24 \n 161.26.222.0/24 |
 | mil01 | 10.3.158.0/24  \n 161.26.54.0/24 |
 | mon01 | 10.3.126.0/24  \n 161.26.58.0/24 |
 | osa21 | 10.202.126.0/24  \n 161.26.186.0/24 |
