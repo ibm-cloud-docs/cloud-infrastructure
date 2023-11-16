@@ -121,4 +121,3 @@ toc:
       - link:
           label: Stack Overflow
           href: https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure
-      - ntp-service-overview.md
