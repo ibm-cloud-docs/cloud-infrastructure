@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-03-30"
+  years: 2018, 2023
+lastupdated: "2023-11-16"
 
 keywords: cloud environment, virtual server, virtual machine, vm, understanding infrastructure, IaaS model, IT ops admin, on-premises, data center
 
@@ -28,7 +28,7 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 {{site.data.keyword.cloud}} is here to support you 100% on your journey. The resources available to you include comprehensive documentation, planning tools, qualified support specialists, and an active user community. Let's get you started on your journey.
 
-![Plan, build, and manage your cloud infrastructure with IBM](https://www.youtube.com/embed/Kmt_odiCWvU){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Plan, build, and manage your cloud infrastructure with IBM](https://www.youtube.com/embed/Kmt_odiCWvU){: video output="iframe" data-script="#video-transcript-it-ops-2" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Video transcript
 {: #video-transcript-it-ops-2}
@@ -36,7 +36,7 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 Welcome to {{site.data.keyword.cloud_notm}}! As an IT operations administrator, you had your choice of any number of cloud providers. You chose {{site.data.keyword.cloud_notm}} because it's a leader in cloud as a service. We offer superior levels of security, functionality, integration, interoperability, and usability. 
 
-Use the {{site.data.keyword.cloud_notm}} console to get access to our catalog of over 190 unique services across several categories including Security, Compute, Network, Storage, Integration, and Data Management [Click Catalog menu item, then select from the categories listed in the transcript]. In addition to the catalog, there are a variety of tools to help you plan your hosting environment before you begin provisioning it. One tool is the [{{site.data.keyword.cloud_notm}} Design Decision Tool](https://github.com/ibm-cloud-architecture/infrastructure-design-decision-tool), which helps you compare infrastructure designs so you can build the best {{site.data.keyword.cloud_notm}} solution to suit your needs.
+Use the {{site.data.keyword.cloud_notm}} console to get access to our catalog of over 190 unique services across several categories including Security, Compute, Network, Storage, Integration, and Data Management [Click Catalog menu item, then select from the categories listed in the transcript]. 
 
 After you've planned and designed your infrastructure, use the cost estimator [Click Cost estimator icon then click Review summary] to see how much your infrastructure will cost before placing your order. You can access it by clicking the Cost Estimator icon in the console menu bar.
 
@@ -49,7 +49,7 @@ Know that you have the support of {{site.data.keyword.cloud_notm}}, too. Once ag
 ## Cloud service models
 {: #cloud-svc-models-2}
 
-Three types of cloud service models exist: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Figure 1 explains who does what within each service model. For more information, see [IaaS, PaaS, and SaaS - IBM Cloud service models](https://www.ibm.com/cloud/learn/iaas-paas-saas){: external} .
+Three types of cloud service models exist: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Figure 1 explains who does what within each service model. For more information, see [IaaS, PaaS, and SaaS - {{site.data.keyword.cloud}} service models](https://www.ibm.com/cloud/learn/iaas-paas-saas){: external} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ![Cloud service models.](images/cloud-svc-models.svg "Diagram showing the cloud service models"){: caption="Figure 1. Cloud service models" caption-side="bottom"}
 
@@ -57,7 +57,7 @@ With the IaaS model, your provider is responsible for maintaining the underlying
 
 With the PaaS model, your provider is responsible for the systems through the operating system and for all infrastructure management, which includes OS patches, hardware repairs, and network settings. You build and maintain the application, and you or your provider can install middleware, including databases or other types. This model is used to develop and test software. For more information, see [A practical guide to platform as a service: What is PaaS](https://www.ibm.com/blogs/cloud-computing/2016/08/10/practical-guide-paas/){: external}.
 
-With the SaaS model, your provider maintains the systems through the actual application. The application is cloud-aware, and users can use different end points, depending on the software provider, to use the software. The cloud provider is responsible for all infrastructure and application management, which includes software updates, hardware repairs, and network settings. This model is often used in pay-as-you-go software licensing models. For more information, see [SaaS applications for business and IT](https://www.ibm.com/cloud/saas){: external} .
+With the SaaS model, your provider maintains the systems through the actual application. The application is cloud-aware, and users can use different end points, depending on the software provider, to use the software. The cloud provider is responsible for all infrastructure and application management, which includes software updates, hardware repairs, and network settings. This model is often used in pay-as-you-go software licensing models. For more information, see [SaaS applications for business and IT](https://www.ibm.com/cloud/saas){: external} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Cloud types
 {: #cloud-types-2}
