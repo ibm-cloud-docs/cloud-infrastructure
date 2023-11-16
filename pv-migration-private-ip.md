@@ -115,7 +115,7 @@ Encrypted volumes are not supported.
 {: #option2-auto-provision}
 
 #### Setting up a cloud user
-{: #setting-up-cloud-user}
+{: #pv-migration-setting-up-cloud-user}
 
 1. Log in to the RackWare web console.
 2. In the RackWare web console, navigate to **Configuration > Clouduser**.
@@ -123,7 +123,7 @@ Encrypted volumes are not supported.
 4. Click **Add**.
 
 #### Creating a wave and replication
-{: #creating-wave}
+{: #pv-migration-creating-wave}
 
 A wave contains a single host or multiple hosts that are migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
 
@@ -142,7 +142,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 {: note}
 
 #### Assigning environment to wave
-{: #assigning-wave}
+{: #pv-migration-assigning-wave}
 
 1. In the RackWare web console, navigate to **Replication > Waves**.
 2. Select the wave that needs to be migrated.
@@ -159,7 +159,7 @@ Auto-provision feature is not available if target is VPC bare metal. User needs 
 There are a few things that need to be done on the source and target server for the migration to work. The RMM server needs to SSH into the machines; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
 
 ### Linux systems
-{: #linux-systems}
+{: #pv-migration-linux-systems}
 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. If your compute resource has both public and private IP addresses, the host level route needs to be added for it to work properly. Run the following command on your classic compute resources for your operating system:
@@ -170,7 +170,7 @@ ip route add <destination_network> via <Gateway_address> dev <private_ethernet_i
 {: pre}
 
 ### Windows systems
-{: #windows-systems}
+{: #pv-migration-windows-systems}
 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. You need to download the SSH key utility. You can download it from the RMM server.
@@ -215,7 +215,7 @@ Within the discovery script, a helper script is provided to help with the discov
 
 For more information on the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm){: external}.
 
-## Order IBM Cloud Transit Gateway
+## Order {{site.data.keyword.cloud}} Transit Gateway
 {: #order-transit-gateway}
 {: step}
 
@@ -226,8 +226,8 @@ For more information on the discovery tool, click [here](https://github.com/IBM-
 2. Add connections 
     * Classic infrastructure 
     * VPC 
-       * Select region 
-       * Select VPC 
+      * Select region 
+      * Select VPC 
 
 ## Validate your migration
 {: #validate-pv-migration}

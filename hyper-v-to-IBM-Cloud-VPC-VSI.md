@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Microsoft Hyper-V VM to IBM Cloud VPC migration with RMM
+# Microsoft Hyper-V VM to {{site.data.keyword.vpc_short}} migration with RMM
 {: #migrating-images-vmware-vsi} 
 {: toc-content-type="tutorial"} 
 {: toc-services="vpc, virtual-servers"} 
@@ -124,7 +124,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 {: note}
 
 ## Prepare source and target servers
-{: #source-target-compute-prep-vmware}
+{: #source-target-compute-prep-vmware-vsi}
 {: step}
 
 There are a few things that you need to do on the source and target server for the migration:
@@ -134,12 +134,12 @@ There are a few things that you need to do on the source and target server for t
 2. If the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. This is done over the transit gateway path or Direct Link 2.0 connection to {{site.data.keyword.cloud_notm}}. Complete the following steps to prepare your relevant servers: 
 
 ### Linux systems
-{: #linux-systems}
+{: #linux-systems-vmware-virtual}
 
 1. Copy RMM SSH public key to both the source and target servers. 
 
 ### Windows systems
-{: #windows-systems}
+{: #windows-systems-vmware-virtual}
 
 1. Copy the RackWare RMM SSH public key to both the source and target servers.
 2. You need to download the SSH key utility. This is done from the RMM server: `<https://<RMM_IP>/windows/RWSSHDService_x64.msi>`
@@ -210,7 +210,7 @@ Before you decommission the source server, it is imperative to validate the targ
 - Remove RMM SSH keys  
  
 ## More resources
-{: #rackware-rmm-v2v-resources}
+{: #rackware-rmm-vmware-v2v-resources}
 
 1. [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/HyperV/README.md){: external}
 2. [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}

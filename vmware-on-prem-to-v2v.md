@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# On-premises VMware VM to IBM Cloud VPC migration with RMM
+# On-premises VMware VM to {{site.data.keyword.vpc_short}} migration with RMM
 {: #migrating-images-vmware-vpc}
 {: toc-content-type="tutorial"} 
 {: toc-services="vpc, virtual-servers"} 
@@ -43,7 +43,7 @@ The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 
 ![Topology](images/On-Prem-1.svg){: caption="Figure 1. Architecture diagram" caption-side="bottom"}
 
-This diagram is also applicable for On-premises VMware VM to IBM Cloud VPC bare metal migration with RMM.
+This diagram is also applicable for On-premises VMware VM to {{site.data.keyword.vpc_short}} bare metal migration with RMM.
 {: note}
 
 ## Before you begin
@@ -102,7 +102,7 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
    ```
    {: pre}
 
-## Connectivity options between the customer data center and IBM Cloud VPC 
+## Connectivity options between the customer data center and {{site.data.keyword.vpc_short}} 
 {: #connectivity-customer-vpc}
 {: step}
 
@@ -113,11 +113,11 @@ Your source and target server should communicate with each other and the RMM. Th
 - [Site-to-site VPN](/docs/vpc?topic=vpc-vpn-overview)
 
 ## Set up and provision VPC and virtual server instances
-{: #cloud-vpc-vsi-setup}
+{: #cloud-vpc-vsi-setup-vmware}
 {: step}
 
 ### Option 1: Manual
-{: #option-manual}
+{: #option-manual-vmware}
 
 The RMM solution handles the OS, application, and data movement. It does not need to set up a VPC target side; you need to handle the setup. You first set up the VPC infrastructure. At a bare minimum, you must set up a VPC, subnets, and the corresponding virtual server instances that you are planning to migrate. The new target virtual server instance profile (vCPU and vMemory) does not need to match the source. However, as for the storage, it needs to be the same or greater in size.
 
@@ -133,12 +133,12 @@ This document does not provide the details for setting up the VPC infrastructure
     * Secondary volume 
 
 ### Option 2: Auto-provision
-{: #option-auto}
+{: #option-auto-vmware}
 
 RMM can automatically provision a virtual server instance of VPC. Enable the wave level setting **Autoprovision** and then configure RMM with necessary details. Use these steps to use the auto-provision feature:
 
 #### Setting up a cloud user
-{: #setting-up-cloud-user}
+{: #setting-up-cloud-user-vmware}
 
 1. Log in to the RackWare web console.
 2. In the RackWare web console, navigate to **Configuration > Clouduser**.
@@ -146,7 +146,7 @@ RMM can automatically provision a virtual server instance of VPC. Enable the wav
 4. Click **Add**.
 
 #### Creating a wave and replication
-{: #creating-wave}
+{: #creating-wave-vmware}
 
 A wave contains a single host or multiple hosts that will be migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
 
@@ -165,7 +165,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 {: note}
 
 #### Assigning environment to wave
-{: #assigning-wave}
+{: #assigning-wave-vmware}
 
 1. In the RackWare web console, nagivate to **Replication > Waves**.
 2. Select the wave that needs to be migrated.
@@ -176,7 +176,7 @@ Auto-provision feature is not available if the target is VPC bare metal. User ne
 {: note}
 
 ## Prepare source and target servers
-{: #source-target-compute-prep-vmware}
+{: #vmware-source-target-compute-prep}
 {: step}
 
 Before starting the migration, RMM server needs to SSH into the virtual machines. Thus, the RMM public SSH keys need to be copied on both the source and target servers.
@@ -191,7 +191,7 @@ If you use the auto-provision feature, there is no need to set up a target. Only
 {: note}
 
 ## Set up RMM waves
-{: #rackware-rmm-v2v-migration}
+{: #vmware-rackware-rmm-v2v-migration}
 {: step}
 
 You can migrate servers one-by-one or run multiple, simultaneous migrations. If you are running multiple, simultaneous migrations, then download the CSV template from the RMM server and populate the appropriate fields.
