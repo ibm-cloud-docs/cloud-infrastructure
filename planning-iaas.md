@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-03-25"
+  years: 2020, 2023
+lastupdated: "2023-11-16"
 
 keywords: infrastructure
 
@@ -21,11 +21,6 @@ You want to plan your infrastructure before you provision it to make sure that y
 {: #planning-3}
 
 Start with [IaaS (Infrastructure-as-a-Service)](https://www.ibm.com/cloud/learn/iaas){: external} to get a more in-depth overview of the infrastructure-as-a-service platform and architecture.
-
-## {{site.data.keyword.cloud_notm}} Design Decision Tool
-{: #planning-4}
-
-The [{{site.data.keyword.cloud_notm}} Design Decision Tool](https://github.com/ibm-cloud-architecture/infrastructure-design-decision-tool/){: external} helps you compare alternatives when you design and build your custom solution. Each infrastructure component features description, considerations and caveats, and side-by-side comparisons. You can also find an example of how to use the tool.
 
 ## {{site.data.keyword.cloud_notm}} Stencils
 {: #planning-5}
