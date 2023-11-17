@@ -63,7 +63,7 @@ Because RMM is deployed in {{site.data.keyword.vpc_short}}, it requires a transi
 If the source and target server do not have direct communication, then consider using pass-through with the RMM server. The RMM server acts as a proxy, and migration flows through the RMM server. For more information, search for pass-through in the [RMM user guide](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}. The pass-through migration time increases.
 {: note}
 
-To create an {{site.data.keyword.tg_full_notm}} and establish connection between classic and VPC, review the following information:
+To create an {{site.data.keyword.tg_full_notm}} and establish a connection between classic and VPC, review the following information:
 
 - [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips)
 
@@ -91,7 +91,7 @@ This architecture diagram is applicable for bare metal to virtual server and vir
 
     b. Update the name server or DNS.
 
-3. The order of target server, the CPU, and memory does not need to match, but the volumes must be equal or greater than the source.
+3. The order of the target server, the CPU, and memory does not need to match, but the volumes must be equal or greater than the source.
 
 4. Make sure to have `/etc/fstab` entry for automatic mounting of any file system on the target server.
 
@@ -168,12 +168,12 @@ There are a few things that you need to do on the source and target device for t
 2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. This is done over the transit gateway path. Complete the following steps to prepare your relevant servers:
 
 ### Linux systems
-{: #linux-systems}
+{: #p-p-migration-linux-systems}
 
 Copy RMM SSH public key to both the source and target servers.
 
 ### Windows systems
-{: #windows-systems}
+{: #p-p-migration-windows-systems}
 
 1. Copy the RMM SSH public key to both the source and target servers.
 2. You need to download the SSH key utility. You can download it from the RMM server: `https://<RMM IP>/windows/RWSSHDService_x64.msi`
