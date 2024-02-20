@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-04-27"
+  years: 2021, 2024
+lastupdated: "2024-02-20"
 
 keywords: 
 
@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 # FAQs for RackWare
 {: #rackware-faqs}
 
-## What is RMM server?
+## What is an RMM server?
 {: #rw-what-is-rmm-server}
 {: faq}
 
@@ -25,7 +25,7 @@ RackWare Management Module (RMM) server is a software appliance that is offered 
 {: #rw-where-to-find-more-information}
 {: faq}
 
-For RMM server overview information, see [RackWare's Cloud Migration documentation](https://www.rackwareinc.com/cloud-migration){: external}. For RMM server usage guide information, see [RackWare RMM User's Guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}.
+For more information, see [RackWare's Cloud Migration documentation](https://www.rackwareinc.com/cloud-migration){: external} and [RackWare RMM Getting Started for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-getting-started-for-ibm-cloud){: external}.
 
 ## How do I install the RMM server?
 {: #rw-how-to-install}
@@ -49,7 +49,7 @@ The promotional license is valid only for per-account and first-time users of th
 {: #rw-reusable-concurrent-license}
 {: faq}
 
-{{site.data.keyword.IBM_notm}} and RackWare have put together a special license model. Typically, a license is a one-time use for each server migration. Whereas for {{site.data.keyword.IBM_notm}} purposes, after a completed migration, the license can be reused for a different server migration. The original host that the license was assigned to just needs to be deleted from the RMM server database.
+{{site.data.keyword.IBM_notm}} and RackWare put together a special license model. Typically, a license is a one-time use for each server migration. Whereas for {{site.data.keyword.IBM_notm}} purposes, after a completed migration, the license can be reused for a different server migration. The original host that the license was assigned to just needs to be deleted from the RMM server database.
 
 The number of concurrent migrations that can occur is limited up to the number of licenses procured.
 
@@ -57,13 +57,13 @@ The number of concurrent migrations that can occur is limited up to the number o
 {: #rw-obtain-activate-promotional-license}
 {: faq}
 
-You can retrieve the promotional license through the discovery script that is part of the RMM software appliance. For more information on how to use the script, see [Bare metal to virtual server migration on a private network with RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network).
+You can retrieve the promotional license through the discovery script that is part of the RMM software appliance. For more information about how to use the script, see [Bare metal to virtual server migration on a private network with RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network).
 
 ## What are the considerations or limitations for the physical to virtual migration?
 {: #rw-considerations-limitations-migration}
 {: faq}
 
-For more information on considerations and limitations of the physical to virtual migration, see [Bare metal to virtual server migration overview](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-overview).
+For more information about considerations and limitations of the physical to virtual migration, see [Bare metal to virtual server migration overview](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-overview).
 
 ## Is the migration intrusive?
 {: #rw-migration-intrusive}
@@ -75,4 +75,4 @@ In most cases, the migration is not intrusive. The migration can be done when th
 {: #rw-create-target-vsi}
 {: faq}
 
-Yes. With RMM **Auto-Provision** feature, you can create the target virtual server instance. For more information, see ["Bare metal to virtual server migration on a private network with RMM": option 2 of Step 1: Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network#set-up-provision-vpc-vsi).
+Yes. With the RMM **Auto-Provision** feature, you can create the target virtual server instance. For more information, see ["Bare metal to virtual server migration on a private network with RMM": option 2 of Step 1: Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network#set-up-provision-vpc-vsi).

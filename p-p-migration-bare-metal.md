@@ -60,7 +60,7 @@ Migration can be done either over the public or the private interface. While RMM
 
 Because RMM is deployed in {{site.data.keyword.vpc_short}}, it requires a transit gateway for the RMM to communicate with the source and the target server over the private interface. The source and target server also need to be able to communicate with one another.
 
-If the source and target server do not have direct communication, then consider using pass-through with the RMM server. The RMM server acts as a proxy, and migration flows through the RMM server. For more information, search for pass-through in the [RMM user guide](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}. The pass-through migration time increases.
+If the source and target server do not have direct communication, then use the pass-through method of data transfer. The RMM server acts as a proxy, and the migration flows through the RMM server. RMM does not store a copy of the used data from source hosts.
 {: note}
 
 To create an {{site.data.keyword.tg_full_notm}} and establish a connection between classic and VPC, review the following information:
@@ -129,7 +129,7 @@ Follow these steps to get a license:
     ```
     {: pre}
 
-3. After generating a preinstall file, send a license generation request to the [RackWare licensing team](mailto:sales@rackwareinc) with the following information:
+3. After the preinstall file is generated, send a license generation request to the [RackWare licensing team](mailto:sales@rackwareinc) with the following information:
 
     a. RMM license (subject line)
 
@@ -204,7 +204,7 @@ The username field for Linux environments is `root`. The username field for Wind
 {: #p-p-migration-bare-metal-perform-migration}
 {: step}
 
-1. After the source and target host are added in the wave and replication record, click the **Sync Options** tab. Select the **No Transfer** option, and click **Modify**. Then, click the play icon ![Play icon](../icons/play.svg) to start replication. This action performs a dry run by checking the connection between the RMM, the source and the target servers. This action doesn't migrate data. If the operation is successful, then remove the **No Transfer** option that uses the same process.
+1. After the source and target host are added in the wave and replication record, click the **Sync Options** tab. Select the **No Transfer** option, and click **Modify**. Then, click the play icon ![Play icon](../icons/play.svg) to start replication. This action performs a dry run by checking the connection between the RMM, the source, and the target servers. This action doesn't migrate data. If the operation is successful, then remove the **No Transfer** option that uses the same process.
 
 2. Whenever you are ready, go ahead and click **start replication** (the play icon ![Play icon](../icons/play.svg)). This action starts the actual migration. If you expand the replication record, it displays the actual steps as they are run in summary with necessary information.
 
@@ -219,7 +219,7 @@ To improve data transfer rate, adjust bandwidth allocation of RMM server. To kno
 {: #p-p-migration-bare-metal-post-migration}
 {: step}
 
-After your migration, validate or update the following:
+After your migration, validate or update the following items:
 
 1. Access the target server.
 2. Check partitions and volumes.
@@ -233,5 +233,5 @@ After your migration, validate or update the following:
 {: #p-p-migration-bare-metal-help}
 
 * [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
-* [RackWare RMM user guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
+* [RackWare RMM user guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-getting-started-for-ibm-cloud){: external}
 * [FAQS for classic bare metal to classic bare metal](/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs)

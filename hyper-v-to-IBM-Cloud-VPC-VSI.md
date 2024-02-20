@@ -45,7 +45,7 @@ This guide demonstrates how to complete a migration from your Microsoft Hyper-V 
 - The order of the target server, the CPU, and memory does not need to match, but the volumes must be equal to or greater than the source. 
 - Make sure to have a `/etc/fstab` entry for automatic mounting of any file system on the target server. 
 
-To improve the data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+To improve the data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation by using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {: note}
 
 ## Order RMM
@@ -54,7 +54,7 @@ To improve the data transfer rate, adjust the bandwidth allocation of the RMM se
 
 You can order RMM-BYOL from the {{site.data.keyword.cloud_notm}} catalog. A virtual server with the RMM software is installed into the VPC that you provide when you order. The RMM server has a public IP address for reachability.
 
-If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
+If public IP address is not attached to RMM server then its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
 1. Order RMM-BYOL from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
@@ -120,18 +120,18 @@ The RMM solution handles the OS, application, and data movement. It does not set
 
     d. Secondary volume 
 
-Ensure that your VPC, subnet, and other necessary cloud components are set up before adding the cloud user in RMM.
+Ensure that your VPC, subnet, and other necessary cloud components are set up before you add the cloud user in RMM.
 {: note}
 
 ## Prepare source and target servers
 {: #source-target-compute-prep-vmware-vsi}
 {: step}
 
-There are a few things that you need to do on the source and target server for the migration:
+Before you can begin, you need to do a few things on the source and target server for the migration:
 
 1. The RMM server needs to connect with servers through SSH; thus the RMM public SSH keys need to be copied on both the source and target servers. 
  
-2. If the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. This is done over the transit gateway path or Direct Link 2.0 connection to {{site.data.keyword.cloud_notm}}. Complete the following steps to prepare your relevant servers: 
+2. If the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. The routing is done over the transit gateway path or Direct Link 2.0 connection to {{site.data.keyword.cloud_notm}}. Complete the following steps to prepare your relevant servers: 
 
 ### Linux systems
 {: #linux-systems-vmware-virtual}
@@ -142,7 +142,7 @@ There are a few things that you need to do on the source and target server for t
 {: #windows-systems-vmware-virtual}
 
 1. Copy the RackWare RMM SSH public key to both the source and target servers.
-2. You need to download the SSH key utility. This is done from the RMM server: `<https://<RMM_IP>/windows/RWSSHDService_x64.msi>`
+2. You need to download the SSH key utility from the RMM server: `<https://<RMM_IP>/windows/RWSSHDService_x64.msi>`.
 3. You are `SYSTEM`, and you need to enter the RMM SSH key to authenticate for both the source and target servers. 
 
 ## Set up RMM waves
@@ -152,14 +152,14 @@ There are a few things that you need to do on the source and target server for t
 You can migrate the servers one-by-one or run multiple, simultaneous migrations. If you are running multiple, simultaneous migrations, then download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
-2. Create a _Wave_ and define _Wave_ name.
-3. If there are multiple hosts, download the template, complete the appropriate fields, and then upload the template.
+2. Create a _Wave_ and define the _Wave_ name.
+3. If you have multiple hosts, download the template, complete the appropriate fields, and then upload the template.
 4. Select the _Wave_ name to enter source and target information.
 5. Select the "+" sign.
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing system
 8. Sync Type = Direct sync
-9. Add target IP address or FQDN.
+9. Add a target IP address or FQDN.
 10. Add a target-friendly name, and add a target username.
 11. Start the migration.
  
@@ -190,16 +190,16 @@ For more information about the discovery tool, see this [public GitHub repositor
 {: #rackware-rmm-perform-migration}
 {: step}
 
-1. When the source and target host are added in the wave and replication record, click the **Sync Options** tab in the right top region of the pop-up screen. Then, select the **No Transfer** option and click **Modify**. Then, click the play or arrow head icon to start the replication. This does a dry run by checking the connection between the RMM and source or target servers. This dry run does not migrate data. If the operation is successful, then remove the No Transfer option that uses the same process.
-2. Whenever you are ready, go ahead and click start replication (the play or arrow head icon on the left top). This starts the actual migration. If you expand the replication record, it displays the actual steps tha are run, summarized with the necessary information. 
-3. Whether the operation is successful or whether it failed, you can see the job history in the replication record. 
-4. If there is a failure, you can retrieve the log and review detailed information. 
+1. When the source and target host are added in the wave and replication record, click the **Sync Options** tab. Then, select the **No Transfer** option, and click **Modify**. Then, click the play icon ![Play icon](../icons/play.svg) to start the replication. This action starts a dry run by checking the connection between the RMM and source or target servers. The dry run does not migrate data. If the operation is successful, then remove the No Transfer option that uses the same process.
+2. Whenever you are ready, go ahead and click start replication (play icon ![Play icon](../icons/play.svg)). This action starts the actual migration. If you expand the replication record, it displays the actual steps that are run, summarized with the necessary information. 
+3. Whether the operation is successful or not, you can see the job history in the replication record. 
+4. If the operation fails, you can retrieve the log and review detailed information. 
  
 ## Validate your migration
 {: #rackware-rmm-v2v-rackware-validation}
 {: step}
 
-Before you decommission the source server, it is imperative to validate the target server. This is not an exhaustive list but see the following list of items to validate after your migration:
+Before you decommission the source server, it is imperative to validate the target server. The following list is not an exhaustive, but can help you with the validation.
 
 - Access the target server 
 - Check partitions and volumes 
@@ -214,4 +214,4 @@ Before you decommission the source server, it is imperative to validate the targ
 
 1. [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/HyperV/README.md){: external}
 2. [RackWare Cloud Migration](https://www.rackwareinc.com/cloud-migration){: external}
-3. [RackWare RMM Users Guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-users-guide-for-ibm-cloud){: external}
+3. [RackWare RMM Users Guide for {{site.data.keyword.cloud_notm}}](https://www.rackwareinc.com/rackware-rmm-getting-started-for-ibm-cloud){: external}
