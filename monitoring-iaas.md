@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-28"
+  years: 2020, 2024
+lastupdated: "2024-02-20"
 
 subcollection: cloud-infrastructure
 
@@ -24,15 +24,15 @@ You can use {{site.data.keyword.mon_full_notm}} to monitor classic infrastructur
 
 You use basic monitoring to initiate service and slow pings to make sure that the device is online and responsive. 
 
-| Basic monitoring service type | Description |
-|-------------------------------|-------------|
-| SERVICE PING         | Test ping to address |
+| Basic monitoring service types | Description |
+|--------------------------------|-------------|
+| SERVICE PING                   | Test ping to address |
 | SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load. |
 {: caption="Table 1. Basic monitoring service types" caption-side="bottom"}
-	
+
 The source of service ping and slow ping monitoring depends on the data center where the server is located. To use public IP monitoring, you need to allow ICMP from the server's data center [public service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#front-end-network). For private IP monitoring, you need to allow ICMP from the server's data center [private service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
 
-If an echo isn't received in the allotted timeframe (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
+If an echo isn't received in the allotted time frame (1 second for service pings, 5 seconds for slow pings), an alert is sent to the email address on the account. A status of **Up** in the **Status** field indicates that an echo was received, while **Down** indicates that the echo wasn't received.
 {: tip}
 
 ### Host ping and TCP service monitoring
@@ -40,7 +40,7 @@ If an echo isn't received in the allotted timeframe (1 second for service pings,
 
 **Host ping** is the default basic monitoring option. If you want more basic monitoring options, you need to select **Host ping and TCP service monitoring**. This selection gives you access to the following add-on monitoring services.
 
-| Add-on monitoring service type | Description |
+| Add-on monitoring service types | Description |
 | ----- | ----- |
 | DNS | Test generic `nslookup` on address |
 | DNS CUSTOM | Test `nslookup` for specified domain on address |
@@ -86,9 +86,7 @@ To view your health dashboard, use the following steps.
 
 1. Log in to the [{{site.data.keyword.cloud}} console](/login){: external} and click the menu icon ![Menu icon](../icons/icon_hamburger.svg "Menu").
 1. Click **Classic Infrastructure** ![Classic icon](../icons/classic.svg "Classic").
-2. Click **Devices > Health dashboard**.
-
-Alternatively, you can go directly to your health dashboard by clicking [here](https://cloud.ibm.com/gen1/infrastructure/health-dashboard).{: externa}
+1. Click **Devices** > **Device list** > [**Health dashboard**](/gen1/infrastructure/health-dashboard){: external}.
 
 For more information about operating system support cycles, see [Lifecycle for operating systems and add-ons](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic).
 {: tip}
