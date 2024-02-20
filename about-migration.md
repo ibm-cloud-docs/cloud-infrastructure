@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2020, 2022
-lastupdated: "2022-11-23"
+  years:  2020, 2024
+lastupdated: "2024-02-20"
 
 keywords: migration, migrate, migrating, migrate infrastructure, cloud migration
 
@@ -78,10 +78,10 @@ Review the following table to identify the migration solution that best fits you
 {: class="comparison-tab-table"}
 {: row-headers}
 
-RMM supports only block storage migration and not file storage.
+RMM supports only {{site.data.keyword.blockstorageshort}} migration and not {{site.data.keyword.filestorage_short}}.
 {: note}
 
-File storage is available in limited MZRs.
+{{site.data.keyword.filestorage_short}} is available in limited MZRs.
 {: note}
 
 ## VPC+ Cloud Migration
@@ -102,7 +102,7 @@ You can migrate the following key elements of {{site.data.keyword.cloud_notm}} c
 * SSH keys
 * Public gateway
 
-For more information, see [Getting started with {{site.data.keyword.vpc-plus-migration}}](/docs/cloud-infrastructure?topic=wanclouds-vpc-plus-getting-started-tutorial).
+For more information, see [Getting started with {{site.data.keyword.vpc-plus-migration}}](/docs/wanclouds-vpc-plus?topic=wanclouds-vpc-plus-getting-started-tutorial).
 
 ## RMM
 {: #rackware-migration}

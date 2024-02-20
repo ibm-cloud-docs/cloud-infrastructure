@@ -7,10 +7,10 @@ toc:
     audience: platform
     href: /docs/cloud-infrastructure
     console-page: "/classic"
-    product-page: "https://www.ibm.com/cloud/cloud-infrastructure"
+    product-page: "https://www.ibm.com/cloud/infrastructure"
     path: cloud-infrastructure
     label: Building infrastructure
-#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
+#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. 
   entries: 
   - navgroup: 
       id: learn
@@ -30,7 +30,7 @@ toc:
            label: Related links
            links: 
            - link:
-               label: Service and infrastructure availability?
+               label: Service and infrastructure availability
                href: /overview/overview-services_region
            - link:
                label: Getting started with IAM tutorial
@@ -57,7 +57,6 @@ toc:
           label: Migrating your infrastructure
           topics: 
           - about-migration.md
-          - one-stop-migration.md
           - topicgroup: 
               label: Classic to classic infrastructure
               topics: 
@@ -66,7 +65,7 @@ toc:
               - p-p-migration-bare-metal.md
           - topicgroup: 
               label: Classic to VPC infrastructure
-              topics: 
+              topics:
               - link:
                   label: Getting started with VPC+ Cloud Migration
                   href: /wanclouds-vpc-plus/wanclouds-vpc-plus-getting-started-tutorial
@@ -79,7 +78,7 @@ toc:
               - any-cloud-to-ibm-cloud-via-rackware.md
               - vmware-on-prem-to-v2v.md
               - the-classic-to-v2v.md 
-              - hyper-v-to-IBM-Cloud-VPC-VSI.md
+              - hyper-v-to-IBM-Cloud-VPC-VSI.md 
           - topicgroup: 
               label: Script-based migration
               topics: 
@@ -88,10 +87,10 @@ toc:
               - mysql-db-migration-script-python.md
           - topicgroup:
               label: Database migration
-              topics:
+              topics: 
               - mssql-db-migration.md
               - mysql-db-server-migration.md
- 
+            
   - navgroup:
       id: reference
       topics:
@@ -102,9 +101,8 @@ toc:
          label: Terraform reference
          href: /ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started
       - link:
-         label: Terraform for VPC
-         href: https://github.com/ibm-cloud-architecture/terraformer
-
+         label: IBM Cloud Terraform modules
+         href: https://github.com/terraform-ibm-modules
   - navgroup:
       id: help
       topics:
@@ -116,8 +114,8 @@ toc:
           - faqs-for-VMWare-to-VPC-migrations.md
       - getting-help-diy-image-data-migration.md
       - link:
-          label: IBM Cloud Support
-          href: https://www.ibm.com/cloud/support
+         label: IBM Cloud Support
+         href: https://www.ibm.com/cloud/support
       - link:
-          label: Stack Overflow
-          href: https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure
+         label: Stack Overflow
+         href: https://stackoverflow.com/questions/tagged/ibm-cloud-infrastructure

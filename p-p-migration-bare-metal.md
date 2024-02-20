@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2021, 2022
-lastupdated: "2022-11-23"
+  years:  2021, 2024
+lastupdated: "2024-02-20"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -37,8 +37,8 @@ RackWare Management Module (RMM) solution simplifies the overall migration proce
 
 1. Encrypted volumes are not supported.
 2. Do not modify the target. If anything is modified out of control of RMM after the first migration, it can be wiped out and the result can be unexpected.
-3. The RMM solution handles only the OS, application, and data movement, so anything else needs to be set up by you (for example, security groups, subnets, etc.).
-4. For data migration, file performance and endurance storage are not supported. You can use third-party tools such as `rsync` for data migration on block and file.
+3. The RMM solution handles only the OS, application, and data movement, so anything else needs to be set up by you (for example, security groups, subnets, and so on).
+4. For data migration, {{site.data.keyword.filestorage_short}} is not supported. You can use third-party tools such as `rsync` for data migration on block and file.
 
 ## Supported operating systems
 {: #p-p-migration-bare-metal-supported-os}
@@ -101,10 +101,10 @@ This architecture diagram is applicable for bare metal to virtual server and vir
 
 The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
 
-If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
+If public IP address is not attached to RMM server, then its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
-1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
+1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
 
 2. After you order, log in to the RMM server.
 
@@ -161,11 +161,11 @@ Follow these steps to get a license:
 {: #p-p-migration-bare-metal-source-target}
 {: step}
 
-There are a few things that you need to do on the source and target device for the migration:
+Before you can begin, you need to do a few things on the source and target device for the migration:
 
 1. The RMM server needs to connect with servers that use SSH; thus the RMM public SSH keys need to be copied on both the source and target servers. 
 
-2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. This is done over the transit gateway path. Complete the following steps to prepare your relevant servers:
+2. If the source device has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers. The routing is done over the transit gateway path. Complete the following steps to prepare your relevant servers:
 
 ### Linux systems
 {: #p-p-migration-linux-systems}
@@ -186,14 +186,14 @@ Copy RMM SSH public key to both the source and target servers.
 You can migrate servers over one-by-one or perform simultaneous migrations. If you are performing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
-2. Create a _Wave_ and define _Wave_ name.
-3. If there are multiple hosts, download the template, complete the appropriate fields, and then upload the template.
+2. Create a _Wave_ and define the _Wave_ name.
+3. If you have multiple hosts, download the template, complete the appropriate fields, and then upload the template.
 4. Select the _Wave_ name to enter source and target information.
 5. Select the "+" sign.
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing system
 8. Sync Type = Direct sync
-9. Add target IP address or FQDN.
+9. Add a target IP address or FQDN.
 10. Add a target-friendly name, and add a target username.
 11. Start the migration.
 
@@ -204,15 +204,15 @@ The username field for Linux environments is `root`. The username field for Wind
 {: #p-p-migration-bare-metal-perform-migration}
 {: step}
 
-1. After the source and target host are added in wave and replication record, click the **Sync Options** tab on right top of pop up screen,  select the **No Transfer** option and click **Modify**. Then click the play/arrow head icon to start replication. This will perform a dry run by checking the connection between the RMM and source/target servers. This will not migrate data. If the operation is successful then remove the **No Transfer** option that uses the same process.
+1. After the source and target host are added in the wave and replication record, click the **Sync Options** tab. Select the **No Transfer** option, and click **Modify**. Then, click the play icon ![Play icon](../icons/play.svg) to start replication. This action performs a dry run by checking the connection between the RMM, the source and the target servers. This action doesn't migrate data. If the operation is successful, then remove the **No Transfer** option that uses the same process.
 
-2. Whenever you are ready, go ahead and click **start replication** (the play/arrow head icon on the left top). This will start the actual migration. If you expand the replication record, it displays actual steps being executed in summary with necessary information.
+2. Whenever you are ready, go ahead and click **start replication** (the play icon ![Play icon](../icons/play.svg)). This action starts the actual migration. If you expand the replication record, it displays the actual steps as they are run in summary with necessary information.
 
-3. Whether the operation is successful or whether it failed, you can see the job history in the replication record.
+3. Whether the operation is successful or not, you can see the job history in the replication record.
 
-4. In case of failure, you can retrieve the log and review detailed information.
+4. If the operation failed, you can retrieve the log and review detailed information.
 
-To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+To improve data transfer rate, adjust bandwidth allocation of RMM server. To know how to change bandwidth allocation, see [Adjusting bandwidth allocation by using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {: note}
 
 ## Validate your migration

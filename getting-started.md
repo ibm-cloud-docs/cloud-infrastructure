@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-11-16"
+  years: 2018, 2024
+lastupdated: "2024-02-20"
 
 keywords: cloud environment, virtual server, virtual machine, vm, understanding infrastructure, IaaS model, IT ops admin, on-premises, data center
 
@@ -49,7 +49,7 @@ Know that you have the support of {{site.data.keyword.cloud_notm}}, too. Once ag
 ## Cloud service models
 {: #cloud-svc-models-2}
 
-Three types of cloud service models exist: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Figure 1 explains who does what within each service model. For more information, see [IaaS, PaaS, and SaaS - {{site.data.keyword.cloud}} service models](https://www.ibm.com/cloud/learn/iaas-paas-saas){: external} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Three types of cloud service models exist: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Figure 1 explains who does what within each service model. For more information, see [IaaS, PaaS, and SaaS - {{site.data.keyword.cloud}} service models](https://www.ibm.com/topics/iaas-paas-saas){: external} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ![Cloud service models.](images/cloud-svc-models.svg "Diagram showing the cloud service models"){: caption="Figure 1. Cloud service models" caption-side="bottom"}
 
@@ -57,7 +57,7 @@ With the IaaS model, your provider is responsible for maintaining the underlying
 
 With the PaaS model, your provider is responsible for the systems through the operating system and for all infrastructure management, which includes OS patches, hardware repairs, and network settings. You build and maintain the application, and you or your provider can install middleware, including databases or other types. This model is used to develop and test software. For more information, see [A practical guide to platform as a service: What is PaaS](https://www.ibm.com/blogs/cloud-computing/2016/08/10/practical-guide-paas/){: external}.
 
-With the SaaS model, your provider maintains the systems through the actual application. The application is cloud-aware, and users can use different end points, depending on the software provider, to use the software. The cloud provider is responsible for all infrastructure and application management, which includes software updates, hardware repairs, and network settings. This model is often used in pay-as-you-go software licensing models. For more information, see [SaaS applications for business and IT](https://www.ibm.com/cloud/saas){: external} ![External link icon](../icons/launch-glyph.svg "External link icon").
+With the SaaS model, your provider maintains the systems through the actual application. The application is cloud-aware, and users can use different end points, depending on the software provider, to use the software. The cloud provider is responsible for all infrastructure and application management, which includes software updates, hardware repairs, and network settings. This model is often used in pay-as-you-go software licensing models. For more information, see [SaaS applications for business and IT](https://www.ibm.com/topics/iaas-paas-saas){: external} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Cloud types
 {: #cloud-types-2}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022
-lastupdated: "2022-12-16"
+  years:  2022, 2024
+lastupdated: "2024-02-20"
 
 subcollection: cloud-infrastructure
 
@@ -97,7 +97,7 @@ RMM can migrate single MSSQL database or clustered databases. The following thin
 The RMM tool does not support migration of AWS RDS or similar databases.
 {: note}
 
-This tool can be found in the {{site.data.keyword.cloud_notm}} catalog as [RackWare RMM](https://cloud.ibm.com/catalog/content/Rackware-Golden-Template-1.11-06545490-596b-4133-8516-8425a11b3265-global){: external} and [RackWare RMM - BYOL](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}. 
+This tool can be found in the {{site.data.keyword.cloud_notm}} catalog as [RackWare - CloudMotion](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVJhY2tXYXJlI3NlYXJjaF9yZXN1bHRz){: external}.
 
 ### Backup and restore with Windows® IBM Cloud® Backup Agent
 {: #backup-and-restore-backup-agent}
@@ -112,7 +112,7 @@ The data and transaction log files of a database can be detached and then reatta
 ### Import and export data from SQL Server
 {: #import-and-export}
 
-There are various methods available to import data to, and export data from, the SQL Server. You can also import and export data in various data formats. These formats include flat files, excel, major relational databases, and various cloud services. For more information, see [Import and export data from SQL Server](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/overview-import-export?view=sql-server-ver15){: external}.
+There are various methods available to import data to, and export data from, the SQL Server. You can also import and export data in various data formats. These formats include flat files, excel, major relational databases, and various cloud services. For more information, see [Import and export data from SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/import-export/overview-import-export?view=sql-server-ver15){: external}.
 
 ### Copy Database Wizard
 {: #copy-database-wizard}
@@ -122,12 +122,12 @@ The Copy Database Wizard moves or copies databases and certain server objects ea
 ### Generate script
 {: #generate-script}
 
-The generate script wizard generates a script of all the objects in a database or a subset of the objects that are selected, and you can decide whether you want to include permissions, collation, constraints, and so on. The generated scripts can be run on another instance of the database engine or the SQL Server database. This method is used to copy schema as well as data. This is not ideal if you are copying data for large databases. For more information, see [Generate Scripts (SQL Server Management Studio)](https://docs.microsoft.com/en-us/sql/ssms/scripting/generate-scripts-sql-server-management-studio?view=sql-server-ver15){: external}.
+The generate script wizard generates a script of all the objects in a database or a subset of the objects that are selected, and you can decide whether you want to include permissions, collation, constraints, and so on. The generated scripts can be run on another instance of the database engine or the SQL Server database. This method is used to copy schema as well as data. This is not ideal if you are copying data for large databases. For more information, see [Generate Scripts (SQL Server Management Studio)](https://learn.microsoft.com/en-us/sql/ssms/scripting/generate-scripts-sql-server-management-studio?view=sql-server-ver15){: external}.
 
 ### Backup and restore with SQL Server Management Studio
 {: #backup-and-restore-management-studio}
 
-A backup of SQL Server data is created at the level of a database or one or more of its files or filegroups. You can create a full database backup in the SQL Server by using SQL Server Management Studio. Table-level backups cannot be created. For more information, see [Backup and restore with SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver15){: external}. 
+A backup of SQL Server data is created at the level of a database or one or more of its files or filegroups. You can create a full database backup in the SQL Server by using SQL Server Management Studio. Table-level backups cannot be created. For more information, see [Backup and restore with SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver15){: external}. 
 
 ### Transactional replication
 {: #transaction-replication}
@@ -142,7 +142,7 @@ Database mirroring in SQL Server allows you to keep a copy, or mirror, of an SQL
 ### Always On availability groups
 {: #always-on-availability-groups}
 
-SQL Server Always On availability groups provide high availability and disaster recovery solutions and are available in versions of SQL Server 2012 and newer. This feature can be used to migrate your existing SQL Server databases to {{site.data.keyword.cloud_notm}} with minimal downtime. If you have an existing Windows® Server Failover Cluster with Always On availability groups, you are able to extend the cluster temporarily during migration by creating an additional secondary replica with asynchronous replication. During a maintenance window, a manual failover can be performed to enable the cut-over. Always On availability groups provide high availability, disaster recovery, and read-scale balancing. These availability groups require a cluster manager. In Windows®, the failover clustering feature provides the cluster manager. For more information, see [What is an Always On availability group?](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15){: external}.
+SQL Server Always On availability groups provide high availability and disaster recovery solutions and are available in versions of SQL Server 2012 and newer. This feature can be used to migrate your existing SQL Server databases to {{site.data.keyword.cloud_notm}} with minimal downtime. If you have an existing Windows® Server Failover Cluster with Always On availability groups, you are able to extend the cluster temporarily during migration by creating an additional secondary replica with asynchronous replication. During a maintenance window, a manual failover can be performed to enable the cut-over. Always On availability groups provide high availability, disaster recovery, and read-scale balancing. These availability groups require a cluster manager. In Windows®, the failover clustering feature provides the cluster manager. For more information, see [What is an Always On availability group?](https://learn.microsoft.com/en-us/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15){: external}.
 
 ![Always on availability group](images/Always-availability-group.svg){: caption="Figure 2. Always On availability group" caption-side="bottom"}
 
@@ -154,14 +154,14 @@ An SQL Server Always On distributed availability group spans two distinct availa
 ### Data Migration Assistant (DMA)
 {: #data-migration-assistant}
 
-Data Migration Assistant is a freely available database assessment and migration tool that is provided by Microsoft®. It finds database compatibility issues and feature parity in terms of database assessment. It is used mainly to check the compatibility issues that might affect the database functions when you migrate databases to a new SQL Server. The Data Migration Assistant provides you with the ability to configure the number of databases to migrate in parallel. For more information, see [Overview of Data Migration Assistant](https://docs.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-ver15){: external}.
+Data Migration Assistant is a freely available database assessment and migration tool that is provided by Microsoft®. It finds database compatibility issues and feature parity in terms of database assessment. It is used mainly to check the compatibility issues that might affect the database functions when you migrate databases to a new SQL Server. The Data Migration Assistant provides you with the ability to configure the number of databases to migrate in parallel. For more information, see [Overview of Data Migration Assistant](https://learn.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-ver15){: external}.
 
 ### Smart Bulk Copy
 {: #smart-bulk-copy}
 
-The Smart Bulk Copy tool is used to move data from one SQL Server database to another. It uses physical partitions and parallel copy tasks for faster transfer of data. It can be also used to move data from two instances of SQL Server running in two different cloud providers or to move from on-premises to the cloud. This method is suitable for large-size data migration. For more information, see [Smart Bulk Copy](https://docs.microsoft.com/en-us/samples/azure-samples/smartbulkcopy/smart-bulk-copy/){: external}.
+The Smart Bulk Copy tool is used to move data from one SQL Server database to another. It uses physical partitions and parallel copy tasks for faster transfer of data. It can be also used to move data from two instances of SQL Server running in two different cloud providers or to move from on-premises to the cloud. This method is suitable for large-size data migration. For more information, see [Smart Bulk Copy](https://learn.microsoft.com/en-us/samples/azure-samples/smartbulkcopy/smart-bulk-copy/){: external}.
 
-## Set up target on IBM Cloud VPC
+## Set up target on {{site.data.keyword.vpc_short}}
 {: #mssql-db-setup-target}
 
 You need to set up a target Microsoft&reg; SQL Server instance per your requirement. For more information, see [About Microsoft&reg; SQL on VPC](/docs/microsoft?topic=microsoft-mssql-about).

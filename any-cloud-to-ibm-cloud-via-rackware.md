@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022
-lastupdated: "2022-11-23"
+  years:  2022, 2024
+lastupdated: "2024-02-20"
 
 keywords: rackware, migration 
 content-type: tutorial
@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# AWS, Azure, GCP, and OCI workloads to IBM Cloud VPC migration with RMM
+# AWS, Azure, GCP, and OCI workloads to {{site.data.keyword.vpc_short}} migration with RMM
 {: #migrating-images-cloud-rackware}
 {: toc-content-type="tutorial"}
 {: toc-services="vpc, virtual-servers"}
@@ -61,7 +61,7 @@ The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After
 If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
-1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
+1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
 2. After you order, log in to the RMM server.
 3. In the RMM server, change the default password, create users, and create an SSH key.
 4. Upload the SSH key to {{site.data.keyword.vpc_short}}.
@@ -104,7 +104,7 @@ Complete the following steps to get a license:
     ```
     {: pre}
 
-## Establish connectivity between source server and IBM Cloud VPC
+## Establish connectivity between source server and {{site.data.keyword.vpc_short}}
 {: #connectivity-between-source-and-cloud}
 {: step}
 

@@ -1,8 +1,8 @@
 ---
 copyright:
-  years: 2019, 2023
+  years: 2019, 2024
 
-lastupdated: "2023-11-15"
+lastupdated: "2024-02-20"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment, infrastructure comparison, comparing infrastructures
 
@@ -95,4 +95,4 @@ See the following table for the API differences between classic and VPC.
 ## Next steps
 {: #compare-nextsteps}
 
-To review all the VPC infrastructure capabilities, see [About virtual private cloud](/docs/vpc?topic=vpc-about-vpc). To start exploring infrastructure overall, see [Building your infrastructure](/docs/overview?topic=overview-first-steps-it-ops).
+To review all the VPC infrastructure capabilities, see [About virtual private cloud](/docs/vpc?topic=vpc-about-vpc). To start exploring infrastructure overall, see [Building your infrastructure](/docs/overview?topic=overview-get-started-checklists).

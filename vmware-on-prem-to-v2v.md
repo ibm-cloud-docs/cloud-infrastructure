@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2021, 2022
-lastupdated: "2022-11-23"
+  years:  2021, 2024
+lastupdated: "2024-02-20"
 
 keywords:
 content-type: tutorial
@@ -67,7 +67,7 @@ The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After
 If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
-1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
+1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
 
 2. After you order, log in to the RMM server.
 
