@@ -37,7 +37,7 @@ This software is available in the {{site.data.keyword.cloud_notm}} catalog in th
 {: #vmware-how-procure-rmm-server-license}
 {: faq}
 
-For more information, see [Order license for VMware to VPC migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#byol-bring-your-own-license-from-rackware). 
+For more information, see [Order license for VMware to VPC migration](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic#license-rackware-bring-classic). 
  
 ## Is it necessary to add an RMM SSH key to the source and target server? 
 {: #vmware-necessary-add-rmm-ssh-key}
@@ -95,6 +95,6 @@ The discovery tool discovers guest VMs from VMware and it uploads into RMM as th
 {: #vmware-does-migration-support-auto-provisioning}
 {: faq}
 
-Yes. With RMM **Auto-Provision** feature, you can auto-provision the target server. For more informaation, see "Bare metal to virtual server migration on a private network that uses RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc#cloud-vpc-vsi-setup).
+Yes. With RMM **Auto-Provision** feature, you can auto-provision the target server. For more informaation, see "Bare metal to virtual server migration on a private network that uses RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic#cloud-vpc-vsi-setup).
  
  
