@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2022
-lastupdated: "2023-09-28"
+lastupdated: "2024-02-20"
 
 keywords: monitoring light, monitoring no driver, no driver monitor,
 
@@ -62,7 +62,7 @@ Use these steps to enable 'no driver mode'.
 ### What's next
 {: #monitoring-light-whats-next}
 
-After you provision your monitoring agent and enable 'no driver mode', you need to configure a monitoring agent in each environment that you want to monitor. For more information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-config_agent).
+After you provision your monitoring agent and enable 'no driver mode', you need to configure a monitoring agent in each environment that you want to monitor. For more information about configuring a monitoring agent, see [Configuring a monitoring agent](/docs/monitoring?topic=monitoring-agent_linux).
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' metrics
 {: #monitoring-light-metrics}
