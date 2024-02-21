@@ -25,7 +25,7 @@ Start with [IaaS (Infrastructure-as-a-Service)](https://www.ibm.com/topics/iaas)
 ## {{site.data.keyword.cloud_notm}} Stencils
 {: #planning-5}
 
-[{{site.data.keyword.cloud_notm}} Stencils](https://github.com/ibm-cloud-architecture/ibm-cloud-stencils){: external} help you create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools.
+Create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools, [{{site.data.keyword.cloud_notm}} Stencils](https://github.com/ibm-cloud-architecture/ibm-cloud-stencils){: external}, and the [library of IBM Cloud catalog icons](https://l2fprod.github.io/myarchitecture/){: external}. 
 
 ## Bare metal server options
 {: #planning-6}
