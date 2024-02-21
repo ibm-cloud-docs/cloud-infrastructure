@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-11-16"
+  years: 2017, 2024
+lastupdated: "2024-02-20"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.cloud_notm}} IP ranges
 {: #ibm-cloud-ip-ranges}
 
-A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IPs to use with these IBM firewalls and appliances.
+A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IP addresses to use with these IBM firewalls and appliances.
 {: shortdesc}
 
 * {{site.data.keyword.cloud_notm}} Juniper vSRX Standard
@@ -79,7 +79,7 @@ Ports to allow:
 |wdc04|Washington D.C. |169.55.118.0/23|
 |wdc06|Washington D.C. |169.60.118.0/23|
 |wdc07|Washington D.C. |169.61.118.0/23|
-{: caption="Table 1: Front-end (public) network" caption-side="bottom"}
+{: caption="Table 1: Front-end (public) network" caption-side="bottom"}   
 
 ## Load balancer IPs
 {: #load-balancer-ips}
@@ -118,7 +118,7 @@ Ports to allow:
 |wdc04|Washington D.C. |169.55.117.0/24|
 |wdc06|Washington D.C. |169.60.117.0/24|
 |wdc07|Washington D.C. |169.61.117.0/24|
-{: caption="Table 2: Load balancer IPs" caption-side="bottom"}
+{: caption="Table 2: Load balancer IPs" caption-side="bottom"}   
 
 ## Back-end (private) network
 {: #back-end-network}
@@ -164,7 +164,7 @@ Ports to allow:
 | London | lon02 | BCR01 | 10.1.219.0/24  \n 10.3.40.8/29  \n 10.3.40.16/28  \n 10.3.40.32/27  \n 10.3.40.64/26  \n 10.3.40.128/25  \n 10.112.0.0/15  \n 10.201.107.0/24 |
 | | lon02 | BCR02 | 10.164.0.0/15 |
 | | lon04 | BCR01 | 10.3.7.0/24  \n 10.45.0.0/16  \n 10.201.43.0/24  \n 10.222.0.0/16 |
-| | lon05 | BCR01 | 10.3.21.0/24  \n 10.196.0.0/15  \n 10.201.59.0/24 |
+| | lon05 | BCR01 | 10.3.21.0/24  \n 10.196.0.0/15  \n 10.201.59.0/24 | 
 | | lon06 | BCR01 | 10.3.11.0/24  \n 10.72.0.0/16  \n 10.201.75.0/24  \n 10.242.0.0/16 |
 | Madrid | mad02 | 10.3.45.0/24  \n 10.118.0.0/18 |
 | | mad04 | 10.3.43.0/24  \n 10.118.64.0/18  \n 10.201.253.0/24 |
@@ -193,7 +193,7 @@ Ports to allow:
 | | syd04 | BCR01 | 10.3.6.0/24  \n 10.63.0.0/16  \n 10.201.27.0/24 |
 | | syd05 | BCR01 | 10.3.23.0/24  \n 10.195.0.0/16  \n 10.207.27.0/24 |
 | Tokyo | tok02 | BCR01 | 10.2.241.0/24  \n 10.3.30.0/24  \n 10.3.75.0/24  \n 10.3.242.0/24  \n 10.129.0.0/16  \n 10.132.0.0/15  \n 10.201.171.0/24 |
-| | tok02 | BCR02 | 10.212.0.0/16 \n 10.44.0.0/16 |
+| | tok02 | BCR02 | 10.212.0.0/16 \n 10.44.0.0/16 | 
 | | tok04 | BCR01 | 10.3.17.0/24  \n 10.192.0.0/16  \n 10.201.187.0/24 |
 | | tok05 | BCR01 | 10.3.19.0/24  \n 10.193.0.0/16  \n 10.201.203.0/24 |
 | | tor01 | BCR01 | 10.2.59.0/24  \n 10.3.42.0/24  \n 10.114.0.0/15  \n 10.202.107.0/24 |
@@ -216,16 +216,16 @@ Ports to allow:
 
 [CHANGE LOG](#cloud-infrastructure-oct2622)
 
-To provision and reload classic Virtual Servers and classic Bare Metal Servers, the following private service networks must be allowed through your gateway appliances and firewalls.
+To provision and reload classic Virtual Servers and classic Bare Metal Servers, the following private service networks must be allowed through your gateway appliances and firewalls. 
 
-Be sure to configure rules and verify routes for the service networks listed in the table below for dal10, wdc04, and the location of your server.
+Be sure to configure rules and verify routes for the service networks listed in the table below for dal10, wdc04, and the location of your server. 
 {: important}
 
 Additionally, complete the following steps:
-* Allow and route the following service networks to the BCR on your gateway appliance or firewall for all Bare Metal and Virtual Server provisions and reloads: 10.0.64.0/19, 10.200.80.0/20, 161.26.13.0/24, 161.26.96.0/22, 166.9.12.0/23, 166.9.48.0/24, 166.9.50.0/24, 166.9.228.0/24, 166.9.250.192/27, 10.3.160.0/20, 10.201.0.0/20, 161.26.92.0/22, 161.26.132.0/22, 166.9.20.0/23, 166.9.231.0/24.
+* Allow and route the following service networks to the BCR on your gateway appliance or firewall for all Bare Metal and Virtual Server provisions and reloads: 10.0.64.0/19, 10.200.80.0/20, 161.26.13.0/24, 161.26.96.0/22, 166.9.12.0/23, 166.9.48.0/24, 166.9.50.0/24, 166.9.228.0/24, 166.9.250.192/27, 10.3.160.0/20, 10.201.0.0/20, 161.26.92.0/22, 161.26.132.0/22, 166.9.20.0/23, 166.9.231.0/24. 
 * For RHEL servers, ensure the entire 161.26.0.0/16 is allowed and routed properly to the BCR. Add any additional datacenter service networks that are mentioned in the RHEL section near the bottom of the page.
 * Allow traffic between the service networks and your server in both directions.
-* By default, all classic servers and classic gateway and firewall devices are configured with a static route for the `10.0.0.0/8`, `161.26.0.0/16` and `166.8.0.0/14` networks to the Back-end Customer Router (BCR). If you configure overlapping routes with those subnets, validate that you have also configured PBR or a similar service. Otherwise, consider using different IP space that doesn't overlap with our service networks for your VPNs or tunnels. Failing to do so can result in the failure to provision your Virtual Servers and Bare Metal Servers.
+* By default, all classic servers and classic gateway and firewall devices are configured with a static route for the `10.0.0.0/8`, `161.26.0.0/16` and `166.8.0.0/14` networks to the Back-end Customer Router (BCR). If you configure overlapping routes with those subnets, validate that you have also configured PBR or a similar service. Otherwise, consider using different IP space that doesn't overlap with our service networks for your VPNs or tunnels. Failing to do so can result in the failure to provision your Virtual Servers and Bare Metal Servers. 
 
 Ports to allow:
 - All TCP/UDP ports (for access from your local workstation)
@@ -278,7 +278,7 @@ Ports to allow:
 |wdc04|Washington D.C.|10.3.160.0/20  \n 10.201.0.0/20  \n 161.26.92.0/22  \n 161.26.132.0/22  \n 166.9.20.0/23  \n 166.9.231.0/24|
 |wdc06|Washington D.C.|10.200.160.0/20  \n 161.26.120.0/22  \n 166.9.22.0/23  \n 166.9.232.0/24  \n 166.9.251.64/27|
 |wdc07|Washington D.C.|10.200.176.0/20  \n 161.26.132.0/22  \n 166.9.24.0/23  \n 166.9.233.0/24  \n 166.9.251.96/27|
-{: caption="Table 4: Service network" caption-side="bottom"}
+{: caption="Table 4: Service network" caption-side="bottom"}   
 
 [^fn1]: The 10.1.129.0/24 subnet, within the 10.1.128.0/19 master subnet, is used for Global service virtual IPs, which are not located in dal05.
 
@@ -761,7 +761,7 @@ All TCP/UDP ports (for access from your local workstation)
 |wdc03|Washington D.C.|100.101.132.0/24|
 |wdc06|Washington D.C.|10.200.208.0/24|
 |wdc07|Washington D.C.|10.200.204.0/24|
-{: caption="Table 9: SSL VPN data centers" caption-side="bottom"}
+{: caption="Table 9: SSL VPN data centers" caption-side="bottom"}  
 
 ## SSL VPN PoPs
 {: #ssl-vpn-pops}
@@ -801,7 +801,7 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 
 * Complete the SSL VPN requirements listed in [Service network (on back-end/private network)](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
 * Open the RHEL endpoint rhha01.updates.us-south.iaas.service.networklayer.com. This requires adding the IP 161.26.112.28 to the firewall rules. Since DNS round robin is involved, this endpoint is not a single endpoint and could be moved as needed.
-* Allow access to the service network as follows. Otherwise, updates and licensing do not function properly.
+* Allow access to the service network as follows. Otherwise, updates and licensing do not function properly. 
 
 |Server location|Allow private service network for this data center|
 |---|---|
@@ -823,7 +823,7 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 |Any data center not listed|dal09|
 {: caption="Table 12: Red Hat Enterprise Linux server requirements" caption-side="bottom"}
 
-To resolve common provisioning issues, permit access to the entire service network by allowing the IP 161.26.0.0/16.
+To resolve common provisioning issues, permit access to the entire service network by allowing the IP 161.26.0.0/16. 
 {: important}
 
 ## Windows VSI server requirements

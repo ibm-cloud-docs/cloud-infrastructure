@@ -33,7 +33,7 @@ Before you begin migrating your image conversion, review the following requireme
     * Virtio drivers must be enabled
     * The operating system is supported as a stock image. For a list of supported stock images, see stock images section in [Virtual server images](/docs/vpc?topic=vpc-about-images#stock-images).
 5. Provision an instance of {{site.data.keyword.cos_full_notm}}. For more information, see [Granting access to {{site.data.keyword.cos_full_notm}} to import images](/docs/vpc?topic=vpc-object-storage-prereq).
-6. You need a server with a browser that has access to both internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
+6. You need a server with a browser that has access to both the internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
 
 ### Image conversion considerations
 {: #image-conversion-considerations}
@@ -137,15 +137,15 @@ For more information about uploading to {{site.data.keyword.cos_short}} by using
 The converted boot image can be uploaded through the migration script by opting 'y' when prompted to upload.
 {: tip}
 
-## Step 5: Create virtual server instance
+## Step 5: Create a virtual server instance
 {: #step-5-create-virtual-server-instance}
 
 1. Import your image to {{site.data.keyword.vpc_short}}. For more information, see [Importing and validating custom images into VPC](/docs/vpc?topic=vpc-importing-custom-images-vpc&interface=ui).
 2. To create the virtual server instance, log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.  
-3. Go to **Menu icon ![Menu icon](../icons/icon_hamburger.svg) > VPC Infrastructure > Compute > Custom images > Your custom image**. 
+3. Go to the **menu icon ![Menu icon](../icons/icon_hamburger.svg) > VPC Infrastructure > Compute > Custom images > Your custom image**. 
 4. From the Action menu, select **New virtual server**.
 
-## Step 6: (Optional) Create secondary volume and attach the virtual server instance
+## Step 6: (Optional) Create a secondary volume and attach the virtual server instance
 {: #step-6-create-secondary-volume-attach-vsi}
 
 This step is for {{site.data.keyword.cloud_notm}} virtual server instances that have secondary vHDD or secondary volumes.
@@ -192,7 +192,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
     ```
     {: pre}
 
-7. Copy data over from the temporary volume (vde) to the target volume (vdd):
+7. Copy data over from the temporary volume (`vde`) to the target volume (`vdd`):
 
     ```sh
     cp –avf /mnt /data 
@@ -202,18 +202,18 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 8. Unmount and delete the volume.
 9. Edit the `fstab` file to automount and be persistent across restart.  
 
-#### Centos or Red Hat 8, Ubuntu 18.04 and 20.04, Debian 9 and 10
+#### CentOS or Red Hat 8, Ubuntu 18.04 and 20.04, Debian 9 and 10
 {: #centos-redhat-ubuntu-debian}
 
 1. Create secondary volumes, if your VM has secondary vHDD.
 2. Copy the VMDK or VHD image file to the migrated virtual server. Make sure that you have enough space to copy the image file. If necessary, attach a temporary volume with space for copying.
 
-    Skip step 3 if you opted ‘y’ to guestfs installation prompt when running pre-check script.
+    Skip step 3 if you opted `y` to `guestfs installation` prompt when running pre-check script.
     {: note}
 
-3. Install guestfs library.
+3. Install the `guestfs` library.
 
-   Centos or Red Hat
+   CentOS or Red Hat
 
    ```sh
    yum update -y
@@ -282,14 +282,14 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
    ```
    {: pre}
 
-7. Copy data over from the `/mnt` to the target volume (vdd):
+7. Copy data over from the `/mnt` to the target volume (`vdd`):
 
    ```sh
    cp –avf /mnt /data 
    ```
    {: pre}
 
-8. After copy is completed, unmount and delete the image file, if no longer needed.
+8. After the copy is completed, unmount and delete the image file, if no longer needed.
   
    ```sh
    guestunmount /mnt
@@ -301,7 +301,7 @@ The secondary volume needs to be equal to or greater than the secondary VMDK ima
 ### Windows systems
 {: #step-6-windows-systems}
 
-1. Create secondary volume.
+1. Create a secondary volume.
 2. Copy the VMDK or VHD disk to Windows.
 3. Mount the image as a disk.  
 

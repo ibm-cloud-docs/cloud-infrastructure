@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2021, 2022
-lastupdated: "2022-12-16"
+   years: 2021, 2024
+lastupdated: "2024-02-20"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -15,21 +15,21 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Classic bare metal to bare metal or virtual server on VPC using a private network
+# Classic bare metal to bare metal or virtual server on VPC by using a private network
 {: #pv-migration-private-network} 
 {: toc-content-type="tutorial"} 
 {: toc-services="virtual-servers, vpc, transit-gateway"} 
 {: toc-completion-time="25m"}
 
-This is the process of migrating from a classic physical bare metal server to a bare metal or virtual server instance on VPC environment. The RackWare Management Module (RMM) solution simplifies the overall migration process of moving the operating system, applications, and data from the classic bare metal to bare metal or virtual server instance on an IBM Cloud® VPC.
+The RackWare Management Module (RMM) migration solution provides a seamless migration from a classic physical bare metal server to a bare metal or virtual server instance on VPC environment. Use the intuitive GUI to move the OS, application, and data from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}} virtual server instances. The RackWare Management Module (RMM) solution simplifies the overall migration process of moving the operating system, applications, and data.
 {: shortdesc}
 
-The migration can occur either over the public or private interface of the compute resource. The only requirement is all three components are reachable from one and another. This guide focuses on the private path, as this is a bit more involved, which requires setting up a transit gateway for a communication channel between classic and VPC over the private interface.
+The migration can occur either over the public or private interface of the compute resource. The only requirement is that all three components are reachable from one and another. This guide focuses on the private path, which requires setting up a transit gateway for a communication channel between classic and VPC over the private interface.
 
 ## Objectives
 {: #pv-migration-private-network-objectives}
 
-* Prepare your source and target machines for migration.
+* Prepare your source and target servers for migration.
 * Learn how to use the RMM solution.
 * Successfully complete a classic bare metal to VPC bare metal migration for private networks.
 
@@ -85,31 +85,31 @@ The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After
 If public IP address is not attached to RMM server, then its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
-1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog tile](https://cloud.ibm.com/catalog/content/Rackware-Golden-Template-1.11-06545490-596b-4133-8516-8425a11b3265-global){: external}.
+1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog tile](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
 2. After you order, log in to the RMM server.
 3. In the RMM server, change the default password, create users, and create an SSH key with the correct name.
 
-## Set up and provision VPC, bare metal server, or virtual server instance
+## Set up and provision a VPC, bare metal server, or virtual server instance
 {: #set-up-provision-vpc-vsi}
 {: step}
 
-Target bare metal server can only be provided manually. There are two different methods for setting up the target virtual server: manual or the RMM auto-provision feature.
+Target bare metal server can be provisioned only manually. You can set up the target virtual server manually or with the RMM auto-provision feature.
 
 ### Option 1: Manual
 {: #option1-manual}
 
-The RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side; therefore, you need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and bare metal or virtual server instances. For more information, see the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started).
+The RMM solution handles only the OS, application, and data movement. It does not to set up a VPC on the target side. Therefore, you need to set up the {{site.data.keyword.vpc_short}} infrastructure. At a bare minimum, you need to set up a VPC, subnets, and bare metal or virtual server instances. For more information, see the [Virtual Private Cloud (VPC) documentation](/docs/vpc?topic=vpc-getting-started).
 
 1. Create a VPC. 
 2. Create subnets. 
-3. Order bare metal or virtual server instance. 
-    * SSH key 
-    * Operating system name (Linux or Windows and their respective version) 
-    * Security groups 
-    * Secondary volume (optional) 
+3. Order a bare metal or virtual server instance. 
+    - SSH key 
+    - Operating system name (Linux or Windows and their respective version) 
+    - Security groups 
+    - Secondary volume (optional) 
 
-Encrypted volumes are not supported.
-{: note}
+    Encrypted volumes are not supported.
+    {: note}
 
 ### Option 2: Auto-provision
 {: #option2-auto-provision}
@@ -118,7 +118,7 @@ Encrypted volumes are not supported.
 {: #pv-migration-setting-up-cloud-user}
 
 1. Log in to the RackWare web console.
-2. In the RackWare web console, navigate to **Configuration > Clouduser**.
+2. In the RackWare web console, go to **Configuration > Clouduser**.
 3. When you add a cloud user, enter a name and select _{{site.data.keyword.vpc_short}}_ for the **Cloud Provider**. Select the region where you want to auto-provision the virtual server instance, and enter your {{site.data.keyword.cloud_notm}} API key.
 4. Click **Add**.
 
@@ -127,11 +127,11 @@ Encrypted volumes are not supported.
 
 A wave contains a single host or multiple hosts that are migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
 
-1. In the RackWare web console, navigate to **Replication > Waves**.
+1. In the RackWare web console, go to **Replication > Waves**.
 2. When you create a wave, select **Target Type** as **Autoprovision**.
 3. Enter source and target details.
 
-If the source machine has a Linux&reg; operating system and it has a boot volume greater than 100 GB, then leave ‘Provision disk’ textbox empty and select **Convert to LVM** option. This creates additional disk of required size and will convert all eligible volumes to LVM on the target. In case of Windows, no action is required. It is taken care automatically by RMM.
+If the source server has a Linux&reg; operating system and it has a boot volume greater than 100 GB, then leave the ‘Provision disk’ textbox empty and select the **Convert to LVM** option. This creates additional disk of required size and converts all eligible volumes to LVM on the target. In case of Windows, no action is required. It is taken care automatically by RMM.
 {: note}
 
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
@@ -141,10 +141,10 @@ If the source machine has a Linux&reg; operating system and it has a boot volume
 Ensure that your VPC, subnet, and other necessary cloud components are set up before you add a cloud user in RMM.
 {: note}
 
-#### Assigning environment to wave
+#### Assigning the environment to wave
 {: #pv-migration-assigning-wave}
 
-1. In the RackWare web console, navigate to **Replication > Waves**.
+1. In the RackWare web console, go to **Replication > Waves**.
 2. Select the wave that needs to be migrated.
 3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
@@ -156,7 +156,7 @@ Auto-provision feature is not available if target is VPC bare metal. User needs 
 {: #prepare-source-target-machines}
 {: step}
 
-There are a few things that need to be done on the source and target server for the migration to work. The RMM server needs to SSH into the machines; thus, the RMM public SSH keys need to be copied onto both the source and target servers. In addition, if the source server has both public and private interfaces, host routes need to be added to ensure the communication between the source and target servers occurs over the transit gateway path. Complete the following steps to prepare your relevant servers.
+There are a few things that need to be done on the source and target server for the migration to work. The RMM server needs to SSH into the servers; thus, the RMM public SSH keys need to be copied onto both the source and target servers. If the source server has both public and private interfaces, host routes need to be added to direct the communication between the servers over the transit gateway path. Complete the following steps to prepare your relevant servers.
 
 ### Linux systems
 {: #pv-migration-linux-systems}
@@ -189,7 +189,7 @@ If you use the auto-provision feature, there is no need to set up a target. Only
 {: #set-up-rackware-rmm-p2v-migration}
 {: step}
 
-You can migrate the machines over one by one or do simultaneous migrations. If you are doing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
+You can migrate the servers over one by one or do simultaneous migrations. If you are doing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
 2. Create a _Wave_ and define _Wave_ name.
@@ -213,9 +213,9 @@ Within the discovery script, a helper script is provided to help with the discov
 ```
 {: pre}
 
-For more information on the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm){: external}.
+For more information on the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm).
 
-## Order {{site.data.keyword.cloud}} Transit Gateway
+## Order a {{site.data.keyword.cloud}} Transit Gateway
 {: #order-transit-gateway}
 {: step}
 
@@ -233,7 +233,7 @@ For more information on the discovery tool, click [here](https://github.com/IBM-
 {: #validate-pv-migration}
 {: step}
 
-Before you decommission the source server, you need to validate the target server. Make sure to validate the following:
+Before you decommission the source server, you need to validate the target server. Make sure to validate the following items:
 * Application
 * Licensing
 * Reachability (host-level configuration changes)

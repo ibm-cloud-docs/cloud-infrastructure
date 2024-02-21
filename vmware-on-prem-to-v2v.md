@@ -64,7 +64,7 @@ To improve data transfer rate, adjust the bandwidth allocation of the RMM server
 
 The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
 
-If public IP address is not attached to RMM server then, its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
+If public IP address is not attached to RMM server, then its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
 1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
@@ -106,7 +106,7 @@ If public IP address is not attached to RMM server then, its 'Reserved IP' addre
 {: #connectivity-customer-vpc}
 {: step}
 
-Your source and target server should communicate with each other and the RMM. This can be done over the public internet with public IPs or with a private-only environment. If you have a private-only environment, you must set up either a VPN or Direct Link 2.0:
+Your source and target server need to communicate with each other and the RMM. This can be done over the public internet with public IP addressesor with a private-only environment. If you have a private-only environment, you must set up either a VPN or Direct Link 2.0:
 
 - Use the [Direct Link 2.0](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection to {{site.data.keyword.cloud_notm}}. It is a costly solution and can be considered only if Direct Link 2.0 is already present. 
 
@@ -141,20 +141,20 @@ RMM can automatically provision a virtual server instance of VPC. Enable the wav
 {: #setting-up-cloud-user-vmware}
 
 1. Log in to the RackWare web console.
-2. In the RackWare web console, navigate to **Configuration > Clouduser**.
+2. In the RackWare web console, go to **Configuration > Clouduser**.
 3. When you add a cloud user, enter a name and select _{{site.data.keyword.vpc_short}}_ for the **Cloud Provider**. Select the region where you want to auto-provision the virtual server instance, and enter your {{site.data.keyword.cloud_notm}} API key.
 4. Click **Add**.
 
 #### Creating a wave and replication
 {: #creating-wave-vmware}
 
-A wave contains a single host or multiple hosts that will be migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
+A wave contains a single host or multiple hosts that are to be migrated. For this migration, you need to create one or more waves, provide information about the hosts in the wave, and then start the wave.
 
-1. In the RackWare web console, nagivate to **Replication > Waves**.
+1. In the RackWare web console, go to **Replication > Waves**.
 2. When you create a wave, select **Target Type** as **Autoprovision**.
 3. Enter source and target details.
 
-If source machine has Linux operating system and it has a boot volume greater than 100 GB then leave ‘Provision disk’ textbox empty and select **Convert to LVM** option. This will create additional disk of required size and will convert all eligible volumes to LVM on the target. In case of Windows, no action is required. It will be taken care automatically by RMM.
+If source machine has Linux operating system and it has a boot volume greater than 100 GB then leave ‘Provision disk’ textbox empty and select **Convert to LVM** option. This creates additional disk of required size and converts all eligible volumes to LVM on the target. In case of Windows, no action is required. It is handled automatically by RMM.
 {: note}
 
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
@@ -167,7 +167,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 #### Assigning environment to wave
 {: #assigning-wave-vmware}
 
-1. In the RackWare web console, nagivate to **Replication > Waves**.
+1. In the RackWare web console, go to **Replication > Waves**.
 2. Select the wave that needs to be migrated.
 3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.

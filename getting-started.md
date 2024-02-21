@@ -36,13 +36,13 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 Welcome to {{site.data.keyword.cloud_notm}}! As an IT operations administrator, you had your choice of any number of cloud providers. You chose {{site.data.keyword.cloud_notm}} because it's a leader in cloud as a service. We offer superior levels of security, functionality, integration, interoperability, and usability. 
 
-Use the {{site.data.keyword.cloud_notm}} console to get access to our catalog of over 190 unique services across several categories including Security, Compute, Network, Storage, Integration, and Data Management [Click Catalog menu item, then select from the categories listed in the transcript]. 
+Use the {{site.data.keyword.cloud_notm}} console to get access to our catalog of over 190 unique services across several categories including Security, Compute, Network, Storage, Integration, and Data Management [click Catalog menu item, then select from the categories that are listed in the transcript]. 
 
-After you've planned and designed your infrastructure, use the cost estimator [Click Cost estimator icon then click Review summary] to see how much your infrastructure will cost before placing your order. You can access it by clicking the Cost Estimator icon in the console menu bar.
+After you planned and designed your infrastructure, use the cost estimator [click Cost estimator icon then click Review summary] to see how much your infrastructure might cost before placing your order. You can access it by clicking the Cost Estimator icon in the console menu bar.
 
 The IT ops admin journey steps you through the various stages of planning, building, and managing your environment. The journey contains links to the compute, storage, and networking options offered by {{site.data.keyword.cloud_notm}}, and information on the {{site.data.keyword.cloud_notm}} Platform as a Service and Software as a Service.
 
-{{site.data.keyword.cloud_notm}} offers you a strong support network that includes forums and wikis [Click the Support menu option, then find the Ask the community link or Create a case link in the Need more help? section], as well as support specialists to answer your questions. As a member of the {{site.data.keyword.cloud_notm}} IT operations administrator family, you have the support of designers, developers, and other IT ops admins who share the same ideas and risks as you do.
+{{site.data.keyword.cloud_notm}} offers you a strong support network that includes forums and wikis, as well as support specialists to answer your questions. Click the Support menu option, then find the Ask the community link or Create a case link in the Need more help? section. As a member of the {{site.data.keyword.cloud_notm}} IT operations administrator family, you have the support of designers, developers, and other IT ops admins who share the same ideas and risks as you do.
 
 Know that you have the support of {{site.data.keyword.cloud_notm}}, too. Once again, welcome. 
 
@@ -62,7 +62,7 @@ With the SaaS model, your provider maintains the systems through the actual appl
 ## Cloud types
 {: #cloud-types-2}
 
-There are three different types of clouds available: public, private, and hybrid. A public cloud includes a shared set of resources that are provisioned to allow access to a company's resources. It is hosted in a multi-tenant environment on a virtual server, and it can be accessed from anywhere.
+Three different types of clouds are available: public, private, and hybrid. A public cloud includes a shared set of resources that are provisioned to allow access to a company's resources. It is hosted in a multi-tenant environment on a virtual server, and it can be accessed from anywhere.
 
 A private cloud includes resources that are provisioned to allow access to a company's resources. It is hosted on dedicated hardware, such as a bare metal server, and either onsite at the company's office (or across offices) or by a cloud provider. A private cloud can be accessed from anywhere.
 
