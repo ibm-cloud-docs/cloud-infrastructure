@@ -59,8 +59,8 @@ Before you begin your MySQL database migration, review and complete the followin
 
 | Migration tools and solutions | Use cases |
 | ----------------- | -------- |
-| [RackWare Management Module (RMM)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-db-overview#rackware-management-module) | Database on single server or multiple servers |
-| [Database Migration script](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-db-overview#database-migration-script-python)| Small data migration or schema-only migration. |
+| RackWare Management Module (RMM) | Database on single server or multiple servers |
+| Database Migration script | Small data migration or schema-only migration. |
 {: caption="Table 1. MySQL migration methods" caption-side="bottom"}
 
 ### RackWare Management Module (RMM)
@@ -76,4 +76,3 @@ By using Python as a source, you can migrate the database from any server to {{s
 The new server runs in the latest versions of MySQL, since this migration focuses on the database alone. The migration process is consistent and secure and can be performed from any system.
 
 For more information, see [MySQL database migration by using Python](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-python).
-
