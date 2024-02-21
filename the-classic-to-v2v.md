@@ -21,7 +21,7 @@ subcollection: cloud-infrastructure
 {: toc-services="vpc, virtual-servers"} 
 {: toc-completion-time="60m"}
 
-The RackWare Management Module (RMM) migration solution provides a seamless virtual-to-virtual replatforming for VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instance migration. It allows the adoption of existing capabilities of {{site.data.keyword.cloud_notm}}. Use its intuitive GUI to move the OS, application, and data from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}} virtual server instances.
+The RackWare Management Module (RMM) migration solution provides a seamless virtual-to-virtual replatforming for VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instances. Use its intuitive GUI to move the OS, application, and data from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}} virtual server instances.
 {: shortdesc}
  
 Follow the guide to complete a migration from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}}.
@@ -59,11 +59,8 @@ To improve data transfer rate, adjust the bandwidth allocation of the RMM server
 The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After you order, a virtual server with RMM software is installed into your VPC of choice. The RMM server has a public IP address for reachability and a default login.
 
 1. Order the RMM server from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
-
 2. After you order, log in to the RMM server.
-
 3. In the RMM server, change the default password, create users, and create an SSH key.
-
 4. Upload the SSH key to {{site.data.keyword.vpc_short}}.
  
 ## Bring Your Own License (BYOL) from RackWare
@@ -117,17 +114,12 @@ When you connect the two entities, be aware that the VMware classic infrastructu
 The RMM solution handles only the OS, application, and data movement. It does not set up a VPC on the target side. Therefore, you must set up the {{site.data.keyword.vpc_short}} infrastructure. At a bare minimum, you need to set up a VPC, subnets, and the corresponding instances that you are planning to migrate. The new target virtual server instance profile (vCPU and vMemory) does not need to match the source. However, the storage needs to be the same or greater in size. For more information about provisioning VPC resources, see [Getting started with Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started).
 
 1. Create a VPC.
-
 2. Create subnets.
-
 3. Order the virtual server instance:
     - SSH key (RMM SSH keys need to be added in addition to bastion SSH key)
     - OS name (same major version as the source)
     - Security groups
     - Secondary volume (optional)
-
-Ensure that your VPC, subnet, and other necessary cloud components are set up before you add the cloud user in RMM.
-{: note}
 
 ## Source and target compute preparation
 {: #source-target-compute-prep-vmware}
@@ -135,11 +127,9 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 
 Before you start the migration, the RMM server needs to SSH into the servers. Thus, the RMM public SSH key needs to be copied on both the source and target servers. 
  
-For Windows OS, you need to download the SSH key utility. You can download it from RMM server. 
-{: note}
- 
-For Windows OS, the user is `SYSTEM` and you must key in the RMM SSH key here to authenticate for both source and target servers.
-{: note}
+[Windows]{: tag-windows}
+- For Windows OS, you need to download the SSH key utility. You can download it from the RMM server. 
+- For Windows OS, the user is `SYSTEM` and you must key in the RMM SSH key to authenticate for both source and target servers.
 
 ## Set up RMM waves
 {: #rackware-rmm-migration-classic}
@@ -194,4 +184,3 @@ Before you decommission the source server, it is imperative to validate the targ
 1. [Discovery Tool](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/VMware/README.md){: external}
 2. [FAQs](/docs/cloud-infrastructure?topic=cloud-infrastructure-faqs-vmware)  
 3. [RackWare usage guide](https://www.rackwareinc.com/cloud-migration){: external}
-

@@ -154,7 +154,7 @@ A wave contains a single host or multiple hosts that are to be migrated. For thi
 2. When you create a wave, select **Target Type** as **Autoprovision**.
 3. Enter source and target details.
 
-If th source server has a Linux OS and it has a boot volume greater than 100 GB, then leave the ‘Provision disk’ textbox empty and select **Convert to LVM** option. This selection creates an extra disk of the required size and converts all eligible volumes to LVM on the target. For Windows, no action is required. It is handled automatically by RMM.
+If th source server has a Linux OS and it has a boot volume greater than 100 GB, then leave the ‘Provision disk’ textbox empty and select the **Convert to LVM** option. This selection creates an extra disk of the required size and converts all eligible volumes to LVM on the target. For Windows, no action is required. It is handled automatically by RMM.
 {: note}
 
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
@@ -204,7 +204,7 @@ You can migrate servers one-by-one or run multiple, simultaneous migrations. If 
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing system
 8. Sync Type = Direct sync
-9. Add a a target IP address or FQDN.
+9. Add a target IP address or FQDN.
 10. Add a target-friendly name, and add a target username.
 11. Start the migration.
  
