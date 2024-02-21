@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2021, 2022
-lastupdated: "2021-03-08"
+  years:  2021, 2024
+lastupdated: "2024-02-21"
 
 keywords: migration, migrate, migrating, migrate data, data migration
 
@@ -12,10 +12,10 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Migrating data from IBM Cloud classic infrastructure to VPC
+# Migrating data from {{site.data.keyword.cloud}} classic infrastructure to VPC
 {: #data-migration-classic-to-vpc}
 
-The following guide shows you how to connect your {{site.data.keyword.cloud}} classic infrastructure to VPC to migrate your data, especially for block or file volumes, as part of your migration journey. While many different data migration tools are available, the following guide uses `rsync`. `Rsync` Is an open source utility that provides file transfer between two devices. It is available for both Linux and Windows platforms. 
+The following guide shows you how to connect your {{site.data.keyword.cloud}} classic infrastructure to VPC to migrate your data, especially for block or file volumes, as part of your migration journey. While many different data migration tools are available, the following guide uses `rsync`. `Rsync` is an open source utility that provides file transfer between two devices. It is available for both Linux and Windows platforms.
 {: shortdesc}
 
 You can use other data migration tools instead of `rsync` to move your data to VPC.
@@ -26,11 +26,11 @@ You can use other data migration tools instead of `rsync` to move your data to V
 
 Before you begin migrating your data, review the following requirements and considerations:
 
-1. You need an existing VPC environment. 
-2. You are aware of the storage capabilities and differences between classic and VPC. 
-3. Back up your data before you begin the migration process. 
+1. You need an existing VPC environment.
+2. You are aware of the storage capabilities and differences between classic and VPC.
+3. Back up your data before you begin the migration process.
 
-## Step 1: Create IBM Cloud Transit Gateway and establish connection between classic and VPC
+## Step 1: Create {{site.data.keyword.cloud}} Transit Gateway and establish connection between classic and VPC
 {: #step-1-create-ibm-cloud-transit-gateway-data-migration}
 
 Your classic infrastructure and VPC infrastructure need to be able to reach each other, which can be achieved in many ways: public interfaces, VPN, transit gateway. If you need to move data from a few machines, you might want to use a public interface. However, if you have a large amount of data from different sources or large data sets, then you need to use {{site.data.keyword.tg_full_notm}}, which uses {{site.data.keyword.cloud_notm}} to interconnect between classic and VPC.  
@@ -126,8 +126,8 @@ If you have a Linux system, you don't need to install OpenSSH because it is inst
 
 To install OpenSSH on your Windows 2016 system, review the following information: 
 
-1. Microsoft's documentation on [Installation of OpenSSH for Windows Server 2019 and Windows 10](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse){: external}
-2. GitHub instructions on [Installation of OpenSSH for Windows](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/administration/OpenSSH/OpenSSH_Install_FirstUse.md){: external}
+1. Microsoft's documentation on [Installation of OpenSSH for Windows Server 2019 and Windows 10](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse){: external}
+2. GitHub instructions on [Installation of OpenSSH for Windows](https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/OpenSSH/OpenSSH_Install_FirstUse.md){: external}
 
 #### Windows 2012 and 2012R2
 {: #windows-2012-2012R2-openssh}

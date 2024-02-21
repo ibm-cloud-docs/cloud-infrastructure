@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-02-17"
+  years: 2021, 2024
+lastupdated: "2024-02-21"
 
 keywords: NTP, NTP server, network time protocol
 
@@ -11,7 +11,7 @@ subcollection: cloud-infrastructure
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Synchronizing app time to the IBM Cloud NTP service
+# Synchronizing app time to the {{site.data.keyword.cloud}} NTP service
 {: #ntp-service-overview}
 
 {{site.data.keyword.cloud}} hosts are synchronized to internal IBM Network Time Protocol (NTP) servers that take their time from Stratum 1 devices, with GNSS appliances that are owned by IBM connected to them.
@@ -24,7 +24,7 @@ The NTP server that you use to synchronize time for an application depends on wh
 
 - If the application is running in {{site.data.keyword.cloud_notm}} classic infrastructure, set your NTP server to `time.service.networklayer.com`.
 - If the application is running in {{site.data.keyword.cloud_notm}} VPC, set your NTP server to `time.adn.networklayer.com`.
-- If the application is not using {{site.data.keyword.cloud_notm}} NTP services, check [Network Time Protocol Servers](https://support.ntp.org/bin/view/Servers){: external} to find suitable NTP servers for your application.
+- If the application is not using {{site.data.keyword.cloud_notm}} NTP services, check [Network Time Protocol Servers](https://support.ntp.org/Servers){: external} to find suitable NTP servers for your application.
 
 ## NTP Stratum ranking
 {: #ntp-stratum-ranking}
@@ -37,7 +37,7 @@ The National Institute of Standards and Technology (NIST) and US Naval Observato
 
 The NTP time servers are connected to these GNSS and time synchronization appliance services, as depicted in Figure 1.
 
-![NTP service overview](images/ntppublic.png){: caption="Figure 1. NTP Service overview" caption-side="bottom"}
+![NTP service overview](images/ntppublic.svg){: caption="Figure 1. NTP Service overview" caption-side="bottom"}
 
 ## Software components
 {: #ntp-software-components}
@@ -47,9 +47,9 @@ NTP services provide a complete implementation of the Network Time Protocol (NTP
 ## Security
 {: #ntp-security}
 
-Only NTP time packets are allowed to transfer between the customer-accessible NTP servers (customer mirrors) and end users ({{site.data.keyword.cloud_notm}} VPC and {{site.data.keyword.cloud_notm}} Classic Infrastructure servers). It is important to note that the majority of attacks against an NTP server can be mitigated with proper configuration of the NTP server itself to limit functionality to only the required responses.  NTP servers are restricted from public access, and only allowed networks are able to connect to the master time source in each environment. At each level, the information that NTP clients are allowed to receive from the NTP server is restricted.
+Only NTP time packets are allowed to transfer between the customer-accessible NTP servers (customer mirrors) and end users ({{site.data.keyword.cloud_notm}} VPC and {{site.data.keyword.cloud_notm}} classic infrastructure servers). It is important to note that the majority of attacks against an NTP server can be mitigated with proper configuration of the NTP server itself to limit functionality to only the required responses.  NTP servers are restricted from public access, and only allowed networks are able to connect to the master time source in each environment. At each level, the information that NTP clients are allowed to receive from the NTP server is restricted.
 
-## High availability 
-{: #ntp-high-availability} 
+## High availability
+{: #ntp-high-availability}
 
 The NTP service for customer workloads is backed by a highly available architecture. There are multiple GNSS devices deployed across {{site.data.keyword.cloud_notm}} that rely on multiple satellites available on the GPS network. Each appliance, aside from the GPS source, has a local atomic clock device connected to it. Every NTP server providing services to customer workloads is configured to use any of the available Stratum 1 sources in case the closest one fails.

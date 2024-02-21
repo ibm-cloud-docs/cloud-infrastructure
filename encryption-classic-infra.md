@@ -1,8 +1,7 @@
 ---
 copyright:
-  years: 2022, 2023
-
-lastupdated: "2023-11-14"
+  years: 2022, 2024
+lastupdated: "2024-02-21"
 
 keywords: encryption, storage encryption, customer managed encryption, classic infrastructure encryption
 
@@ -29,12 +28,12 @@ By default {{site.data.keyword.cloud}} classic infrastructure includes provider-
 ## Customer-managed encryption
 {: #customer-managed-encryption}
 
-Some workloads or use cases require full customer control over the encryption, including key management. You can use the following information to learn about possible methods to achieve customer-managed encryption within the standard {{site.data.keyword.cloud}} classic infrastructure feature set. You can implement any of the following options: {{site.data.keyword.keymanagementserviceshort}}, LUKS encryption for {{site.data.keyword.blockstorageshort}}, file-level encryption options for {{site.data.keyword.filestorage_short}}, and server-side encryption for {{site.data.keyword.cos_full_notm}}. Most of these customer-managed encryption options require manual setup. 
+Some workloads or use cases require full customer control over the encryption, including key management. You can use the following information to learn about possible methods to achieve customer-managed encryption within the standard {{site.data.keyword.cloud}} Classic Infrastructure feature set. You can implement any of the following options: {{site.data.keyword.keymanagementserviceshort}}, LUKS encryption for {{site.data.keyword.blockstorageshort}}, file-level encryption options for {{site.data.keyword.filestorage_short}}, and server-side encryption for {{site.data.keyword.cos_full_notm}}. Most of these customer-managed encryption options require manual setup. 
 
 ### Key Protect
 {: #key-protect}
 
-[{{site.data.keyword.keymanagementservicefull}}](https://www.ibm.com/cloud/key-protect){: external} is one method that you can use to set up customer-managed encryption. For more information about {{site.data.keyword.keymanagementserviceshort}}, see [About Key Protect](/docs/key-protect?topic=key-protect-about). Whenever the following snippets call for a *passphrase* or *password*, you can use a key from Key Protect by using copy and paste or some shell scripting.
+[{{site.data.keyword.keymanagementservicefull}}](https://www.ibm.com/products/key-protect){: external} is one method that you can use to set up customer-managed encryption. For more information about {{site.data.keyword.keymanagementserviceshort}}, see [About Key Protect](/docs/key-protect?topic=key-protect-about). Whenever the following snippets call for a *passphrase* or *password*, you can use a key from Key Protect by using copy and paste or some shell scripting.
 
 When you use {{site.data.keyword.cos_full_notm}} with {{site.data.keyword.keymanagementserviceshort}}, a root key is used to encrypt buckets, so only the provisioning and the creation of the root key steps are necessary.
 

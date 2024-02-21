@@ -49,7 +49,7 @@ Before you begin migrating your image conversion, review the following requireme
 1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 2. [Install the {{site.data.keyword.cos_full_notm}} CLI plug-in](//docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli).
 3. [Install the {{site.data.keyword.vpc_short}} CLI plug-in](//docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference).
-4. [Install the Aspera plug-in](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This plug-in helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-restricted-network).
+4. [Install the Aspera plug-in](https://www.ibm.com/aspera/connect/?_ga=2.251043974.1048532583.1621835203-1020984874.1621835203){: external} for your system. This plug-in helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage?topic=cloud-object-storage-aspera).
 5. [Download and install QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU installation path in the system’s environment variable.
 
 ## Step 2: Validate and prepare the VMs
@@ -65,7 +65,7 @@ You can run a [migration bash script](https://github.com/IBM-Cloud/vpc-migration
 ### Linux systems
 {: #step-2-linux-systems}
 
-1. Complete steps 2-6 in [Creating a Linux custom image](/docs/vpc?topic=vpc-create-linux-custom-image#kernel-args) to prepare your image.
+1. Complete steps 2-6 in [Creating a Linux custom image](/docs/vpc?topic=vpc-create-linux-custom-image) to prepare your image.
 2. Edit the `fstab` file to remove entries other than "/" and "/boot".
 
 ### Windows systems
@@ -132,7 +132,7 @@ You can run a [migration bash script](https://github.com/IBM-Cloud/vpc-migration
 ## Step 4: Upload to {{site.data.keyword.cos_full_notm}} 
 {: #step-4-upload-to-cos}
 
-For more information about uploading to {{site.data.keyword.cos_short}} by using the console, see [Using Aspera high-speed transfer](/docs/cloud-object-storage/basics?topic=cloud-object-storage-aspera#aspera-console).
+For more information about uploading to {{site.data.keyword.cos_short}} by using the console, see [Using Aspera high-speed transfer](/docs/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-console).
 
 The converted boot image can be uploaded through the migration script by opting 'y' when prompted to upload.
 {: tip}
