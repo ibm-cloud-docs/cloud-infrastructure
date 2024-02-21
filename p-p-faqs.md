@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: 
 
@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 # FAQs for classic bare metal to classic bare metal migration
 {: #bare-metal-faqs}
 
-## What is RMM server?
+## What is an RMM server?
 {: #bm-what-is-rmm-server}
 {: faq}
 
@@ -39,13 +39,13 @@ This software is available in the {{site.data.keyword.cloud_notm}} catalog in th
 {: #bm-bare-metal-to-bare-metal-limitations}
 {: faq}
 
-For more information on limitations of the classic bare metal to classic bare metal migration, see [{{site.data.keyword.cloud}} classic bare metal to classic bare metal migration limitations](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-limitations).
+For more information about limitations of the classic bare metal to classic bare metal migration, see [{{site.data.keyword.cloud}} classic bare metal to classic bare metal migration limitations](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-limitations).
 
 ## What are supported operating systems for classic bare metal to classic bare metal migration?
 {: #bm-bare-metal-supported-operating-systems}
 {: faq}
 
-For more information on supported operating systems, see the [{{site.data.keyword.cloud}} classic bare metal to classic bare metal migration supported operating systems](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
+For more information about supported operating systems, see the [{{site.data.keyword.cloud}} classic bare metal to classic bare metal migration supported operating systems](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-supported-os).
 
 ## How does RackWare handle bare metal servers with NIC bonding?
 {: #bm-nic-bonding-supported}
@@ -59,13 +59,13 @@ The RMM migration tool does support migration over the bonded interface for clas
 
 RMM is a Bring-Your-Own-License (BYOL) subscription-based service. Contact the RackWare sales team or see [Order a license](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview#p-p-migration-bare-metal-ordering-license) for classic bare metal to classic bare metal migration.
 
-## Mounted file system or storage did not show up on target server automatically?
+## Mounted file system or storage did not show up on the target server automatically?
 {: #bm-mounted-filesystem-storage-no-show}
 {: faq}
 
 Make sure to have `/etc/fstab/entry` for automatic mounting of any file system at the target server.
 
-## Is it necessary to add RMM SSH key to source and target server?
+## Is it necessary to add an RMM SSH key to the source and target server?
 {: #bm-necessary-to-add-rmm-ssh-key}
 {: faq}
 
@@ -78,7 +78,7 @@ Yes, RMM uses SSH to communicate to both the source and target servers.
 For more information, see [{{site.data.keyword.cloud_notm}} classic bare metal to classic bare metal migration overview](/docs/cloud-infrastructure?topic=cloud-infrastructure-p-p-migration-bare-metal-overview).
 
 
-## Who do I reach out for support?
+## Who do I reach out to for support?
 {: #bm-where-for-support}
 {: faq}
 

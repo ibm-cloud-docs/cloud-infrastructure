@@ -29,11 +29,11 @@ The NTP server that you use to synchronize time for an application depends on wh
 ## NTP Stratum ranking
 {: #ntp-stratum-ranking}
 
-IBM has implemented Global Navigation Satellite System (GNSS) devices within the {{site.data.keyword.cloud_notm}} data centers, providing an effective Stratum 0 source for internal servers that are directly connected to it (Stratum 1).
+IBM implemented Global Navigation Satellite System (GNSS) devices within the {{site.data.keyword.cloud_notm}} data centers, providing an effective Stratum 0 source for internal servers that are directly connected to it (Stratum 1).
 
-Aside from GNSS antennas, the appliances are connected to a high performance oscillator, such as a rubidium atomic clock, that keeps the appliance clock accurate for long periods in the event of a GNSS service disruption.
+Aside from GNSS antennas, the appliances are connected to a high-performance oscillator, such as a rubidium atomic clock. The high-performance oscillator keeps the appliance clock accurate for long periods even if the GNSS service is disrupted.
 
-The National Institute of Standards and Technology (NIST) and US Naval Observatory (USNO) Stratum 1 sources are also configured on the time servers that are available for Regulated Services Cloud NTP servers (for NTP servers located in the United States only).
+The National Institute of Standards and Technology (NIST) and US Naval Observatory (USNO) Stratum 1 sources are also configured on the time servers that are available for Regulated Services Cloud NTP servers. This applies for NTP servers that are located only in the United States.
 
 The NTP time servers are connected to these GNSS and time synchronization appliance services, as depicted in Figure 1.
 
@@ -42,14 +42,14 @@ The NTP time servers are connected to these GNSS and time synchronization applia
 ## Software components
 {: #ntp-software-components}
 
-NTP services provide a complete implementation of the Network Time Protocol (NTP) version 4, but retains compatibility with versions 1, 2, and 3 as defined by RFC 1059, RFC 1119, and RFC 1305, respectively.
+NTP services provide a complete implementation of the Network Time Protocol (NTP) version 4. NTP services retain compatibility with versions 1, 2, and 3 as defined by RFC 1059, RFC 1119, and RFC 1305, respectively.
 
 ## Security
 {: #ntp-security}
 
-Only NTP time packets are allowed to transfer between the customer-accessible NTP servers (customer mirrors) and end users ({{site.data.keyword.cloud_notm}} VPC and {{site.data.keyword.cloud_notm}} classic infrastructure servers). It is important to note that the majority of attacks against an NTP server can be mitigated with proper configuration of the NTP server itself to limit functionality to only the required responses.  NTP servers are restricted from public access, and only allowed networks are able to connect to the master time source in each environment. At each level, the information that NTP clients are allowed to receive from the NTP server is restricted.
+Only NTP time packets are allowed to transfer between the customer-accessible NTP servers (customer mirrors) and users ({{site.data.keyword.cloud_notm}} VPC and {{site.data.keyword.cloud_notm}} classic infrastructure servers). It's important to note that most of the attacks against an NTP server can be mitigated with proper configuration of the NTP server to limit functionality to only the required responses. NTP servers are restricted from public access, and only allowed networks are able to connect to the master time source in each environment. At each level, the information that NTP clients are allowed to receive from the NTP server is restricted.
 
 ## High availability
 {: #ntp-high-availability}
 
-The NTP service for customer workloads is backed by a highly available architecture. There are multiple GNSS devices deployed across {{site.data.keyword.cloud_notm}} that rely on multiple satellites available on the GPS network. Each appliance, aside from the GPS source, has a local atomic clock device connected to it. Every NTP server providing services to customer workloads is configured to use any of the available Stratum 1 sources in case the closest one fails.
+The NTP service for customer workloads is backed by a highly available architecture. Multiple GNSS devices are deployed across {{site.data.keyword.cloud_notm}} that rely on multiple satellites available on the GPS network. Each appliance, aside from the GPS source, has a local atomic clock device that is connected to it. Every NTP server that provides services to customer workloads is configured to use any of the available Stratum 1 sources in case the closest one fails.

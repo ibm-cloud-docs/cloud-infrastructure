@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -131,11 +131,11 @@ A wave contains a single host or multiple hosts that are migrated. For this migr
 2. When you create a wave, select **Target Type** as **Autoprovision**.
 3. Enter source and target details.
 
-If the source server has a Linux&reg; operating system and it has a boot volume greater than 100 GB, then leave the ‘Provision disk’ textbox empty and select the **Convert to LVM** option. This creates additional disk of required size and converts all eligible volumes to LVM on the target. In case of Windows, no action is required. It is taken care automatically by RMM.
+If the source server has a Linux&reg; OS and it has a boot volume greater than 100 GB, then leave the ‘Provision disk’ textbox empty and select the **Convert to LVM** option. This selection creates an extra disk of the required size and converts all eligible volumes to LVM on the target. For Windows, no action is required. It is taken care automatically by RMM.
 {: note}
 
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
-5. From the edit option in **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevant information, and click **Modify**.
+5. From the edit option in the **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevant information, and click **Modify**.
 6. Run the replication.
     
 Ensure that your VPC, subnet, and other necessary cloud components are set up before you add a cloud user in RMM.
@@ -149,7 +149,7 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
-Auto-provision feature is not available if target is VPC bare metal. User needs to select **Existing System** as target type in this case.
+Auto-provision feature is not available if target is VPC bare metal. The user needs to select **Existing System** as the target type in this case.
 {: note}
 
 ## Prepare source and target servers
@@ -182,7 +182,7 @@ route ADD <destination_network> MASK <subnet_mask> <gateway_ip> <metric_cost>
 ```
 {: pre}
 
-If you use the auto-provision feature, there is no need to set up a target. Only the friendly name for the target server is required.
+If you use the auto-provision feature, you don't need to set up a target. Only the friendly name for the target server is required.
 {: note}
 
 ## Set up RMM waves
@@ -192,14 +192,14 @@ If you use the auto-provision feature, there is no need to set up a target. Only
 You can migrate the servers over one by one or do simultaneous migrations. If you are doing multiple, simultaneous migrations, download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
-2. Create a _Wave_ and define _Wave_ name.
-3. If there are multiple hosts, download the template, complete the appropriate fields, and then upload the template.
+2. Create a _Wave_ and define the _Wave_ name.
+3. If multiple hosts are to be migrated, download the template, complete the appropriate fields, and then upload the template.
 4. Select the _Wave_ name to enter source and target information.
 5. Select the "+" sign.
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing system
 8. Sync Type = Direct sync
-9. Add target IP address or FQDN.
+9. Add a target IP address or FQDN.
 10. Add a target-friendly name, and add a target username.
 11. Start the migration.
 
@@ -213,16 +213,16 @@ Within the discovery script, a helper script is provided to help with the discov
 ```
 {: pre}
 
-For more information on the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm).
+For more information about the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm).
 
 ## Order a {{site.data.keyword.cloud}} Transit Gateway
 {: #order-transit-gateway}
 {: step}
 
-{{site.data.keyword.tg_full_notm}} provides connectivity between classic and your VPC infrastructure. When you connect the two entities, be aware that the classic infrastructure is on the `10.0.0.0` network, which means that the VPC network needs to be a on different network; otherwise, the networks overlap and cause communication issues. 
+{{site.data.keyword.tg_full_notm}} provides connectivity between classic and your VPC infrastructure. When you connect the two entities, be aware that the classic infrastructure is on the `10.0.0.0` network, which means that the VPC network needs to be on different network; otherwise, the networks overlap and cause communication issues. 
 
 1. Order {{site.data.keyword.tg_full_notm}}
-    * Use local routing option 
+    * Use a local routing option 
 2. Add connections 
     * Classic infrastructure 
     * VPC 
@@ -233,7 +233,8 @@ For more information on the discovery tool, click [here](https://github.com/IBM-
 {: #validate-pv-migration}
 {: step}
 
-Before you decommission the source server, you need to validate the target server. Make sure to validate the following items:
+Before you decommission the source server, you need to validate the target server. The following list is not exhaustive, but suggests some of the items to validate:
+
 * Application
 * Licensing
 * Reachability (host-level configuration changes)

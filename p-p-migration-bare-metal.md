@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -219,7 +219,7 @@ To improve data transfer rate, adjust bandwidth allocation of RMM server. To kno
 {: #p-p-migration-bare-metal-post-migration}
 {: step}
 
-After your migration, validate or update the following items:
+After your migration, validate the target server. The following list is not exhaustive, but suggests some of the items to validate:
 
 1. Access the target server.
 2. Check partitions and volumes.

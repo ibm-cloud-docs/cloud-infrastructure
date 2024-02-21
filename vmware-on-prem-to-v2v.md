@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords:
 content-type: tutorial
@@ -21,10 +21,10 @@ subcollection: cloud-infrastructure
 {: toc-services="vpc, virtual-servers"} 
 {: toc-completion-time="45m"}
 
-To implement a data center transformation, the RackWare Management Module (RMM) migration solution provides a seamless virtual-to-virtual replatforming for VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instance migration. It allows the adoption of existing capabilities of {{site.data.keyword.cloud_notm}}. Its intuitive GUI allows you to move the OS, application, and data from VMware ESXi to {{site.data.keyword.vpc_short}} virtual server instance.
+To implement a data center transformation, the RackWare Management Module (RMM) migration solution provides a seamless virtual-to-virtual replatforming for VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instance migration. It allows the adoption of existing capabilities of {{site.data.keyword.cloud_notm}}. Use its intuitive GUI to move the OS, application, and data from VMware ESXi to {{site.data.keyword.vpc_short}} virtual server instance.
 {: shortdesc}
  
-This guide shows you how to complete a migration from your on-premises VMware VM to {{site.data.keyword.vpc_short}}.
+Follow the steps to complete a migration from your on-premises VMware VM to {{site.data.keyword.vpc_short}}.
 
 ## Supported operating systems
 {: #supported-operating-systems-vmware}
@@ -55,7 +55,7 @@ This diagram is also applicable for On-premises VMware VM to {{site.data.keyword
     * GPU is not supported in VPC
     * Encrypted volumes are not supported
 
-To improve data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
+To improve data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation by using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).
 {: note}
 
 ## Order RMM
@@ -106,7 +106,7 @@ If public IP address is not attached to RMM server, then its 'Reserved IP' addre
 {: #connectivity-customer-vpc}
 {: step}
 
-Your source and target server need to communicate with each other and the RMM. This can be done over the public internet with public IP addressesor with a private-only environment. If you have a private-only environment, you must set up either a VPN or Direct Link 2.0:
+Your source and target server need to communicate with each other and the RMM. You can establish connectivity over the public internet with public IP addresses or with a private-only environment. If you have a private-only environment, you must set up either a VPN or Direct Link 2.0:
 
 - Use the [Direct Link 2.0](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection to {{site.data.keyword.cloud_notm}}. It is a costly solution and can be considered only if Direct Link 2.0 is already present. 
 
@@ -154,17 +154,17 @@ A wave contains a single host or multiple hosts that are to be migrated. For thi
 2. When you create a wave, select **Target Type** as **Autoprovision**.
 3. Enter source and target details.
 
-If source machine has Linux operating system and it has a boot volume greater than 100 GB then leave ‘Provision disk’ textbox empty and select **Convert to LVM** option. This creates additional disk of required size and converts all eligible volumes to LVM on the target. In case of Windows, no action is required. It is handled automatically by RMM.
+If th source server has a Linux OS and it has a boot volume greater than 100 GB, then leave the ‘Provision disk’ textbox empty and select **Convert to LVM** option. This selection creates an extra disk of the required size and converts all eligible volumes to LVM on the target. For Windows, no action is required. It is handled automatically by RMM.
 {: note}
 
 4. After you enter your source and target information, you need to provide your {{site.data.keyword.vpc_short}} information.
-5. From the edit option in **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevent information, and click **Modify**.
+5. From the edit option in the **Actions** menu of your source, select the **{{site.data.keyword.vpc_short}} Options** tab, enter the relevant information, and click **Modify**.
 6. Run the replication.
     
 Ensure that your VPC, subnet, and other necessary cloud components are set up before you add a cloud user in RMM.
 {: note}
 
-#### Assigning environment to wave
+#### Assigning the environment to wave
 {: #assigning-wave-vmware}
 
 1. In the RackWare web console, go to **Replication > Waves**.
@@ -172,14 +172,14 @@ Ensure that your VPC, subnet, and other necessary cloud components are set up be
 3. On the **Wave Detail** page, select the Autoprovision option as **Not configured**.
 4. Select your cloud user for the **Environment**, enter the region where the virtual server instance needs to be provisioned, and apply the changes.
 
-Auto-provision feature is not available if the target is VPC bare metal. User needs to select **Existing System** as target type in this case.
+Auto-provision feature is not available if the target is VPC bare metal. The user needs to select **Existing System** as the target type in this case.
 {: note}
 
 ## Prepare source and target servers
 {: #vmware-source-target-compute-prep}
 {: step}
 
-Before starting the migration, RMM server needs to SSH into the virtual machines. Thus, the RMM public SSH keys need to be copied on both the source and target servers.
+Before you can start the migration, the RMM server needs to SSH into the virtual machines. Thus, the RMM public SSH keys need to be copied on both the source and target servers.
  
 For Windows OS, you need to download the SSH key utility. You can download it from RMM server.
 {: note}
@@ -187,7 +187,7 @@ For Windows OS, you need to download the SSH key utility. You can download it fr
 For Windows OS, the user is `SYSTEM` and you must key in the RMM SSH key here to authenticate for both source and target servers.
 {: note}
 
-If you use the auto-provision feature, there is no need to set up a target. Only the friendly name for the target server is required.
+If you use the auto-provision feature, you don't need to set up a target. Only the friendly name for the target server is required.
 {: note}
 
 ## Set up RMM waves
@@ -197,14 +197,14 @@ If you use the auto-provision feature, there is no need to set up a target. Only
 You can migrate servers one-by-one or run multiple, simultaneous migrations. If you are running multiple, simultaneous migrations, then download the CSV template from the RMM server and populate the appropriate fields.
 
 1. Log in to the RMM server.
-2. Create a _Wave_ and define _Wave_ name.
-3. If there are multiple hosts, download the template, complete the appropriate fields, and then upload the template.
+2. Create a _Wave_ and define the _Wave_ name.
+3. If multiple hosts are to be migrated, download the template, complete the appropriate fields, and then upload the template.
 4. Select the _Wave_ name to enter source and target information.
 5. Select the "+" sign.
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing system
 8. Sync Type = Direct sync
-9. Add target IP address or FQDN.
+9. Add a a target IP address or FQDN.
 10. Add a target-friendly name, and add a target username.
 11. Start the migration.
  

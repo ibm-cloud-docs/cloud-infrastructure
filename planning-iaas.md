@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: infrastructure
 
@@ -35,7 +35,7 @@ Use the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.baremetal_short}} 
 ## {{site.data.keyword.cloud_notm}} services and compliance
 {: #planning-7}
 
-As with any architecture, consider the {{site.data.keyword.cloud_notm}} resources that you might add to your solution as you size your infrastructure. For more information, see [SaaS applications for business and IT](https://www.ibm.com/topics/iaas-paas-saas){: external} and search for a specific service. You also need to think about any regulations that you have to consider when you build your architecture. For example, is your workload considered sensitive or is it regulated? For more information, see [Compliance](https://www.ibm.com/cloud/compliance){: external}.
+As with any architecture, consider the {{site.data.keyword.cloud_notm}} resources that you might add to your solution as you size your infrastructure. For more information, see [SaaS applications for business and IT](https://www.ibm.com/topics/iaas-paas-saas){: external} and search for a specific service. You also need to think about any regulations that you must consider when you build your architecture. For example, is your workload considered sensitive or is it regulated? For more information, see [Compliance](https://www.ibm.com/cloud/compliance){: external}.
 
 ## {{site.data.keyword.cloud_notm}} IP ranges
 {: #planning-ip-ranges}

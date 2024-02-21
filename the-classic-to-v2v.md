@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: 
 content-type: tutorial
@@ -21,10 +21,10 @@ subcollection: cloud-infrastructure
 {: toc-services="vpc, virtual-servers"} 
 {: toc-completion-time="60m"}
 
-The RackWare Management Module (RMM) migration solution provides a seamless virtual-to-virtual replatforming for VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instance migration. It allows the adoption of existing capabilities of {{site.data.keyword.cloud_notm}}. Its intuitive GUI permits moving the OS, application, and data from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}} virtual server instances.
+The RackWare Management Module (RMM) migration solution provides a seamless virtual-to-virtual replatforming for VMware virtual machine (VM) to {{site.data.keyword.cloud}} virtual server instance migration. It allows the adoption of existing capabilities of {{site.data.keyword.cloud_notm}}. Use its intuitive GUI to move the OS, application, and data from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}} virtual server instances.
 {: shortdesc}
  
-This guide shows you how to complete a migration from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}}.
+Follow the guide to complete a migration from VMware ESXi in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}}.
 
 ## Supported operating systems
 {: #supported-operating-systems-classic}
@@ -49,7 +49,7 @@ This guide shows you how to complete a migration from VMware ESXi in {{site.data
     * GPU is not supported in VPC
     * Encrypted volumes are not supported
 
-To improve data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).   
+To improve data transfer rate, adjust the bandwidth allocation of the RMM server. For more information, see [Adjusting bandwidth allocation by using the UI](/docs/vpc?topic=vpc-managing-virtual-server-instances&interface=ui#adjusting-bandwidth-allocation-ui).   
 {: note}
 
 ## Order RMM
@@ -99,49 +99,41 @@ The RMM tool is available in the {{site.data.keyword.cloud_notm}} catalog. After
 
 The {{site.data.keyword.tg_full_notm}} provides connectivity between VMware {{site.data.keyword.cloud_notm}} classic and your VPC infrastructure. 
 
-When you connect the two entities, be aware that the VMware classic infrastructure is on the 10.0.0.0 network and thus the VPC network needs to reside on a different network. Otherwise, the network overlaps and there is a communication connectivity issue.
+When you connect the two entities, be aware that the VMware classic infrastructure is on the 10.0.0.0 network and thus the VPC network needs to reside on a different network. Otherwise, the network overlaps and causes a communication connectivity issue.
 {: important}
  
 1. Order {{site.data.keyword.tg_full_notm}}
-
-    a. Use local routing option 
+    -  Use a local routing option 
 
 2. Add connections
-
-    a. Classic infrastructure 
-
-    b. VPC 
-
-    - Select region 
+    - Classic infrastructure 
+    - VPC 
+       - Select region 
 
 ## Set up and provision VPC and virtual server instance
 {: #cloud-vpc-vsi-setup}
 {: step}
 
-The RMM solution handles only the OS, application, and data movement. It does not to set up a VPC target side; you need to handle this. You will first need to set up the VPC infrastructure. At a bare minimum, you need to set up a VPC, subnets, and the corresponding instances that you are planning to migrate. The new target virtual server instance profile (vCPU and vMemory) does not need to match the source. However, as for the storage, it needs to be the same or greater in size. This guide does not go through all of the details for setting up the VPC infrastructure. For more information, see [Getting started with Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started).
+The RMM solution handles only the OS, application, and data movement. It does not set up a VPC on the target side. Therefore, you must set up the {{site.data.keyword.vpc_short}} infrastructure. At a bare minimum, you need to set up a VPC, subnets, and the corresponding instances that you are planning to migrate. The new target virtual server instance profile (vCPU and vMemory) does not need to match the source. However, the storage needs to be the same or greater in size. For more information about provisioning VPC resources, see [Getting started with Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started).
 
 1. Create a VPC.
 
 2. Create subnets.
 
 3. Order the virtual server instance:
+    - SSH key (RMM SSH keys need to be added in addition to bastion SSH key)
+    - OS name (same major version as the source)
+    - Security groups
+    - Secondary volume (optional)
 
-    a. SSH key (RMM SSH keys need to be added in addition to bastion SSH key)
-
-    b. OS name (same major version as the source)
-
-    c. Security groups
-
-    d. Secondary volume (optional)
-
-Ensure that your VPC, subnet, and other necessary cloud components are set up before adding the cloud user in RMM.
+Ensure that your VPC, subnet, and other necessary cloud components are set up before you add the cloud user in RMM.
 {: note}
 
 ## Source and target compute preparation
 {: #source-target-compute-prep-vmware}
 {: step}
 
-Before you start the migration, RMM server needs to SSH into the servers. Thus, the RMM public SSH key needs to be copied on both the source and target servers. 
+Before you start the migration, the RMM server needs to SSH into the servers. Thus, the RMM public SSH key needs to be copied on both the source and target servers. 
  
 For Windows OS, you need to download the SSH key utility. You can download it from RMM server. 
 {: note}
@@ -156,14 +148,14 @@ For Windows OS, the user is `SYSTEM` and you must key in the RMM SSH key here to
 You can migrate the servers one-by-one or opt to perform multiple simultaneous migrations. If you are performing multiple simultaneous migrations, then download the CSV template from the RMM server and complete the appropriate fields.
 
 1. Log in to the RMM server.
-2. Create a _Wave_ and define _Wave_ name.
-3. If there are multiple hosts, download the template, complete the appropriate fields, and then upload the template.
+2. Create a _Wave_ and define the _Wave_ name.
+3. If multiple hosts are to be migrated, download the template, complete the appropriate fields, and then upload the template.
 4. Select the _Wave_ name to enter source and target information.
 5. Select the "+" sign.
 6. Add source IP address or FQDN and add source username. 
 7. Target Type = Existing system
 8. Sync Type = Direct sync
-9. Add target IP address or FQDN.
+9. Add a target IP address or FQDN.
 10. Add a target-friendly name, and add a target username.
 11. Start the migration.
  
@@ -184,12 +176,12 @@ Example:
 ```
 {: screen}  
  
-For more information about discovering the VMware guest VMs using the discovery tool, see this [public GitHub repository](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/VMware/README.md){: external}
+For more information about discovering the VMware guest VMs by using the discovery tool, see this [public GitHub repository](https://github.com/IBM-Cloud/vpc-migration-tools/blob/main/v2v-discovery-tool-rmm/VMware/README.md){: external}
 
 ## Validate your migration
 {: #rackware-rmm-validation-classic}
 
-Before you decommission the source server, it is imperative to validate the target server. This is not an exhaustive list but some of the items to validate are:
+Before you decommission the source server, it is imperative to validate the target server. The following list is not exhaustive, but suggests some of the items to validate:
 
 - Application 
 - Licensing 

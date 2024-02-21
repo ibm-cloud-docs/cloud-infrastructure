@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -24,7 +24,7 @@ A frequently asked question is, "What IP ranges do I allow through the firewall?
 * IBM Security Groups
 * Hardware Firewall
 
-To identify potential conflicts between IP ranges in your on-premises environment(s) and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). The tool allows you to also download the IP ranges below in JSON format. Disclaimer: This is a community tool that is updated based on support availability.
+To identify potential conflicts between IP ranges in your on-premises environment and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). By using the tool, you can download the listed IP ranges in JSON format. Disclaimer: This community tool is updated based on support availability.
 {: important}
 
 ## Front-end (public) network

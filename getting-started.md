@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: cloud environment, virtual server, virtual machine, vm, understanding infrastructure, IaaS model, IT ops admin, on-premises, data center
 
@@ -36,9 +36,9 @@ Before you moved to the cloud, you worked with an inherently secure environment 
 
 Welcome to {{site.data.keyword.cloud_notm}}! As an IT operations administrator, you had your choice of any number of cloud providers. You chose {{site.data.keyword.cloud_notm}} because it's a leader in cloud as a service. We offer superior levels of security, functionality, integration, interoperability, and usability. 
 
-Use the {{site.data.keyword.cloud_notm}} console to get access to our catalog of over 190 unique services across several categories including Security, Compute, Network, Storage, Integration, and Data Management [click Catalog menu item, then select from the categories that are listed in the transcript]. 
+Use the {{site.data.keyword.cloud_notm}} console to get access to our catalog of over 190 unique services across several categories including Security, Compute, Network, Storage, Integration, and Data Management. Click Catalog menu item, then select from the categories that are listed in the transcript. 
 
-After you planned and designed your infrastructure, use the cost estimator [click Cost estimator icon then click Review summary] to see how much your infrastructure might cost before placing your order. You can access it by clicking the Cost Estimator icon in the console menu bar.
+After you planned and designed your infrastructure, use the cost estimator to see how much your infrastructure might cost before placing your order. You can access it by clicking the Cost Estimator icon in the console menu bar. Click Cost estimator icon then click Review summary.
 
 The IT ops admin journey steps you through the various stages of planning, building, and managing your environment. The journey contains links to the compute, storage, and networking options offered by {{site.data.keyword.cloud_notm}}, and information on the {{site.data.keyword.cloud_notm}} Platform as a Service and Software as a Service.
 

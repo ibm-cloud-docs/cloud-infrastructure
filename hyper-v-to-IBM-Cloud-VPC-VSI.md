@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: 
 content-type: tutorial
@@ -24,7 +24,7 @@ subcollection: cloud-infrastructure
 The RackWare Management Module (RMM) solution simplifies the overall migration process of moving the operating system, applications, and data from Microsoft Hyper-V VM to {{site.data.keyword.vsi_is_full}}. The migration can occur either over the public or private interface of the compute resource. The only requirement is that RMM is able to access both the source and target server over SSH.
 {: shortdesc}
  
-This guide demonstrates how to complete a migration from your Microsoft Hyper-V VM on-premises or in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}}. 
+Follow the steps to complete a migration from your Microsoft Hyper-V VM on-premises or in {{site.data.keyword.cloud_notm}} classic to {{site.data.keyword.vpc_short}}. 
 
 ## Supported operating systems
 {: #supported-operating-systems-vmware-virtual}
@@ -54,7 +54,7 @@ To improve the data transfer rate, adjust the bandwidth allocation of the RMM se
 
 You can order RMM-BYOL from the {{site.data.keyword.cloud_notm}} catalog. A virtual server with the RMM software is installed into the VPC that you provide when you order. The RMM server has a public IP address for reachability.
 
-If public IP address is not attached to RMM server then its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
+If public IP address is not attached to RMM server, then its 'Reserved IP' address can be used to access RMM server with [bastion host](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 {: note}
 
 1. Order RMM-BYOL from the [{{site.data.keyword.cloud_notm}} catalog](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global){: external}.
@@ -76,7 +76,7 @@ Complete the following steps to get a license:
     ```
     {: pre}
  
-2. You need to purchase the license from RackWare by mailing the generated license file to [licensing@rackwareinc.com](mailto:licensing@rackwareinc.com) or [sales@rackwareinc.com](mailto:sales@rackwareinc.com).
+2. You need to purchase the license from RackWare by mailing the generated license file to [licensing@rackwareinc.com](mailto:licensing@rackwareinc.com) or [sales@rackwareinc.com](mailto:sales@rackwareinc.com). 
 
 3. After generation, a preinstall file that uses this command, send a license generation request to the RackWare licensing team with the following information: 
     - RMM License (subject line) 
@@ -191,7 +191,7 @@ For more information about the discovery tool, see this [public GitHub repositor
 {: step}
 
 1. When the source and target host are added in the wave and replication record, click the **Sync Options** tab. Then, select the **No Transfer** option, and click **Modify**. Then, click the play icon ![Play icon](../icons/play.svg) to start the replication. This action starts a dry run by checking the connection between the RMM and source or target servers. The dry run does not migrate data. If the operation is successful, then remove the No Transfer option that uses the same process.
-2. Whenever you are ready, go ahead and click start replication (play icon ![Play icon](../icons/play.svg)). This action starts the actual migration. If you expand the replication record, it displays the actual steps that are run, summarized with the necessary information. 
+2. Whenever you are ready, go ahead and click start replication (play icon![Play icon](../icons/play.svg)). This action starts the actual migration. If you expand the replication record, it displays the actual steps that are run, summarized with the necessary information. 
 3. Whether the operation is successful or not, you can see the job history in the replication record. 
 4. If the operation fails, you can retrieve the log and review detailed information. 
  
@@ -199,7 +199,7 @@ For more information about the discovery tool, see this [public GitHub repositor
 {: #rackware-rmm-v2v-rackware-validation}
 {: step}
 
-Before you decommission the source server, it is imperative to validate the target server. The following list is not an exhaustive, but can help you with the validation.
+Before you decommission the source server, it is imperative to validate the target server. The following list is not exhaustive, but suggests some of the items to validate:
 
 - Access the target server 
 - Check partitions and volumes 

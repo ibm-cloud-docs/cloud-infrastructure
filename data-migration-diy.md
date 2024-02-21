@@ -30,10 +30,10 @@ Before you begin migrating your data, review the following requirements and cons
 2. You are aware of the storage capabilities and differences between classic and VPC.
 3. Back up your data before you begin the migration process.
 
-## Step 1: Create {{site.data.keyword.cloud}} Transit Gateway and establish connection between classic and VPC
+## Step 1: Create {{site.data.keyword.cloud}} Transit Gateway and establish a connection between classic and VPC
 {: #step-1-create-ibm-cloud-transit-gateway-data-migration}
 
-Your classic infrastructure and VPC infrastructure need to be able to reach each other, which can be achieved in many ways: public interfaces, VPN, transit gateway. If you need to move data from a few machines, you might want to use a public interface. However, if you have a large amount of data from different sources or large data sets, then you need to use {{site.data.keyword.tg_full_notm}}, which uses {{site.data.keyword.cloud_notm}} to interconnect between classic and VPC.  
+Your classic infrastructure and VPC infrastructure need to be able to reach each other, which can be achieved in many ways: public interfaces, VPN, transit gateway. If you need to move data from a few servers, you might want to use a public interface. However, if you have a large amount of data from different sources or large data sets, then you need to use {{site.data.keyword.tg_full_notm}}, which uses {{site.data.keyword.cloud_notm}} to interconnect between classic and VPC.  
 
 Before you create your {{site.data.keyword.tg_full_notm}}, review the following requirements and considerations:
 
@@ -41,7 +41,7 @@ Before you create your {{site.data.keyword.tg_full_notm}}, review the following 
 2. Make sure that the IP network spaces don't overlap. Your VPC IP address must not be present in the classic infrastructure IP range. 
 3. Make sure that your classic infrastructure data centers are able to connect to VPC. 
 
-To create {{site.data.keyword.tg_full_notm}} and establish connection between classic and VPC, review the following information:
+To create {{site.data.keyword.tg_full_notm}} and establish the connection between classic and VPC, review the following information:
 * [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips)
 * [Ordering {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway)
 
@@ -106,7 +106,7 @@ Complete the following steps to install `rsync` on your Windows 2012, 2012R2, or
 3. Follow through all of the steps until you see a list of all Linux packages. 
 4. Select `rsync` (in net category section). 
 5. Select OpenSSH (in net category section). 
-6. Click Continue and finish installation. 
+6. Click Continue and finish the installation. 
 7. Open ‘Cygwin Terminal’, type `rsync` command, and press enter. 
 8. If the output shows `rsync` command details with options, then it is installed. 
 
@@ -145,14 +145,14 @@ To install OpenSSH on your Windows 2012 or 2012R2 system, review the following i
 
 1. Generate the private-public key by using the command `ssh-keygen -t rsa` 
 2. Save the generated keys to `{User’s home directory}/.ssh` 
-3. Copy the public key to the destination machine by using the following path: `{user’s home directory}/.ssh/authorized_keys`
+3. Copy the public key to the destination server by using the following path: `{user’s home directory}/.ssh/authorized_keys`
 
 ### Windows systems
 {: #windows-systems-generate-ssh-keys}
 
 1. Generate the private-public key by using the command `ssh-keygen -t rsa` 
 2. Save the generated keys to `C:\Users\{username}\.ssh` 
-3. Copy the public key to the destination machine by using the following path: `C:\Users\{username}\.ssh\authorized_keys` 
+3. Copy the public key to the destination server by using the following path: `C:\Users\{username}\.ssh\authorized_keys` 
 
 ## Step 5: Run auto `rsync` script 
 {: #step-5-run-rsync-script}
@@ -173,7 +173,7 @@ Download the auto `rsync` scripts [here](https://github.com/IBM-Cloud/vpc-migrat
 ### Windows systems
 {: #windows-systems-rsync-script}
 
-1. Download or copy and paste file to directory `/cygdrive/c/cygwin64/home/Administrator` of source machine.
+1. Download or copy and paste file to directory `/cygdrive/c/cygwin64/home/Administrator` of source server.
 2. Open Cygwin terminal.
 3. Type `cd /cygdrive/c/cygwin64/home/Administrator` 
 4. Type `Bash ./<auto_rsync_file_name>` and press enter. 

@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: rackware, migration 
 content-type: tutorial
@@ -233,7 +233,7 @@ The username field for Linux environments is `root`. The username field for Wind
 {: #validating-your-migration}
 {: step}
 
-After your server migration, validate your compute resources, such as applications and data, and update or validate the following items:
+After your server migration, validate your compute resources. The following list is not exhaustive, but suggests some of the items to validate:
 
 1. Access the target server.
 2. Check partitions and volumes.

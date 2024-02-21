@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-21"
 
 keywords: infrastructure
 
@@ -89,12 +89,12 @@ Usually the migration is nonintrusive. It can be done while the server is up and
 {: #vmware-what-data-does-discovery-identify}
 {: faq}
 
-The discovery tool discovers guest VMs from VMware and it uploads into RMM as the source for migrating in a typical wave. Each wave is named by ESXi host IP address from which guest VMs are discovered.
+The discovery tool discovers guest VMs from VMware and it uploads into RMM as the source for migrating in a typical wave. Each wave is named by the ESXi host IP address from which guest VMs are discovered.
  
 ## Does the migration solution support auto-provisioning of the target server?
 {: #vmware-does-migration-support-auto-provisioning}
 {: faq}
 
-Yes. With RMM **Auto-Provision** feature, you can auto-provision the target server. For more informaation, see "Bare metal to virtual server migration on a private network that uses RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic#cloud-vpc-vsi-setup).
+Yes. With the RMM **Auto-Provision** feature, you can auto-provision the target server. For more information, see "Bare metal to virtual server migration on a private network that uses RMM": option 2 of Step 1: [Set up and provision VPC and virtual server instance](/docs/cloud-infrastructure?topic=cloud-infrastructure-migrating-images-vmware-vpc-classic#cloud-vpc-vsi-setup).
  
  
