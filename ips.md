@@ -218,7 +218,7 @@ Ports to allow:
 
 To provision and reload classic Virtual Servers and classic Bare Metal Servers, the following private service networks must be allowed through your gateway appliances and firewalls. 
 
-Be sure to configure rules and verify routes for the service networks listed in the table below for dal10, wdc04, and the location of your server. 
+Be sure to configure rules and verify routes for the service networks listed in the table below for "All", dal10, wdc04, and the location of your server. 
 {: important}
 
 Additionally, complete the following steps:
