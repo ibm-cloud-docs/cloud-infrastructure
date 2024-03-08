@@ -13,7 +13,7 @@ subcollection: cloud-infrastructure
 {{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.cloud_notm}} IP ranges
-{: #ibm-cloud-ip-ranges}
+{: #ibm-cloud-ip-ranges} 
 
 A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IP addresses to use with these IBM firewalls and appliances.
 {: shortdesc}
