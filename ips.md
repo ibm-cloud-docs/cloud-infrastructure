@@ -722,59 +722,42 @@ All TCP/UDP ports (for access from your local workstation)
 ## SSL VPN data centers
 {: #ssl-vpn-data-centers}
 
-|Data center|City|IP range|
-|---|---|---|
-|ams03|Amsterdam|10.3.220.0/24|
-|che01|Chennai|10.200.232.0/24|
-|dal05|Dallas|10.1.24.0/23|
-|dal09|Dallas|10.2.232.0/24|
-|dal10|Dallas|10.200.228.0/24|
-|dal12|Dallas|10.200.216.0/22|
-|dal13|Dallas|10.200.212.0/22|
-|fra02|Frankfurt|10.2.236.0/24|
-|lon02|London|10.2.220.0/24|
-|lon04|London|10.200.196.0/24|
-|lon05|London|10.201.208.0/24|
-|lon06|London|10.3.200.0/24|
-|mil01|Milan|10.3.216.0/24|
-|mon01|Montreal|10.3.224.0/24|
-|osa21|Osaka|10.202.128.0/24|
-|osa22|Osaka|10.202.132.0/24|
-|osa23|Osaka|10.202.136.0/24|
-|par01|Paris|10.3.236.0/24|
-|sao|São Paulo|10.202.8.0/24  \n 10.202.12.0/24|
-|sjc01|San Jose|10.1.224.0/23|
-|sjc03|San Jose|10.3.204.0/24|
-|sjc04|San Jose|10.200.192.0/24|
-|sng01|Jurong East|10.2.192.0/23|
-|syd01|Sydney|10.3.228.0/24|
-|syd04|Sydney|10.200.200.0/24|
-|syd05|Sydney|10.201.212.0/24|
-|tok02|Tokyo|10.2.224.0/24|
-|tok04|Tokyo|10.201.228.0/24|
-|tok05|Tokyo|10.201.224.0/24|
-|tor01|Toronto|10.1.232.0/24  \n 10.1.233.0/24|
-|tor04|Toronto|10.1.0.0/24|
-|tor05|Toronto|10.1.4.0/24|
-|wdc01|Washington D.C.|10.1.16.0/23|
-|wdc04|Washington D.C.|10.3.212.0/24|
-|wdc03|Washington D.C.|100.101.132.0/24|
-|wdc06|Washington D.C.|10.200.208.0/24|
-|wdc07|Washington D.C.|10.200.204.0/24|
+|Data center|City|IP range|Endpoint|
+|---|---|---|---|
+|ams03|Amsterdam|10.3.220.0/24|vpn.ams03.softlayer.com|
+|che01|Chennai|10.200.232.0/24|vpn.che01.softlayer.com|
+|dal08|Dallas|100.101.128.0/24|vpn.dal08.usgov.softlayer.com|
+|dal10|Dallas|10.200.228.0/24|vpn.dal.softlayer.com|
+|dal12|Dallas|10.200.216.0/22|vpn.dal.softlayer.com|
+|dal13|Dallas|10.200.212.0/22|vpn.dal.softlayer.com|
+|fra02|Frankfurt|10.2.236.0/24|vpn.fra.softlayer.com|
+|fra04|Frankfurt|10.3.196.0/24|vpn.fra.softlayer.com|
+|lon04|London|10.200.196.0/24|vpn.lon.softlayer.com|
+|lon06|London|10.3.200.0/24|vpn.lon.softlayer.com|
+|mad02|Madrid|10.1.56.0/24|vpn.mad.softlayer.com|
+|mad04|Madrid|10.1.60.0/24|vpn.mad.softlayer.com|
+|mil01|Milan|10.3.216.0/24|vpn.mil01.softlayer.com|
+|mon01|Montreal|10.3.224.0/24|vpn.mon01.softlayer.com|
+|osa22|Osaka|10.202.132.0/24|vpn.osa.softlayer.com|
+|osa23|Osaka|10.202.136.0/24|vpn.osa.softalyer.com|
+|par01|Paris|10.3.236.0/24|vpn.par01.softlayer.com|
+|par04|Paris|10.201.236.0/24|vpn.par.softlayer.com|
+|par06|Paris|10.201.220.0/24|vpn.par.softlayer.com|
+|sao04|São Paulo|10.202.8.0/24|vpn.sao.softlayer.com|
+|sao05|São Paulo|10.202.12.0/24|vpn.sao.softlayer.com|
+|sjc03|San Jose|10.3.204.0/24|vpn.sjc.softlayer.com|
+|sjc04|San Jose|10.200.192.0/24|vpn.sjc.softlayer.com|
+|sng01|Jurong East|10.2.192.0/23|vpn.sng01.softlayer.com|
+|syd01|Sydney|10.3.228.0/24|vpn.syd.softlayer.com|
+|syd04|Sydney|10.200.200.0/24|vpn.syd.softlayer.com|
+|tok04|Tokyo|10.201.228.0/24|vpn.tok.softlayer.com|
+|tok05|Tokyo|10.201.224.0/24|vpn.tok.softlayer.com|
+|tor04|Toronto|10.1.0.0/24|vpn.tor.softlayer.com|
+|tor05|Toronto|10.1.4.0/24|vpn.tor.softlayer.com|
+|wdc03|Washington D.C.|100.101.132.0/24|vpn.wdc03.usgov.softlayer.com|
+|wdc04|Washington D.C.|10.3.212.0/24|vpn.wdc.softlayer.com|
+|wdc07|Washington D.C.|10.200.204.0/24|vpn.wdc.softlayer.com|
 {: caption="Table 9: SSL VPN data centers" caption-side="bottom"}  
-
-## SSL VPN PoPs
-{: #ssl-vpn-pops}
-
-|PoP|City|IP range|
-|---|---|---|
-|atl01|Atlanta|10.1.41.0/24|
-|chi01|Chicago|10.1.49.0/24|
-|den01|Denver|10.1.53.0/24|
-|lax01|Los Angeles|10.1.33.0/24|
-|mia01|Miami|10.1.37.0/24|
-|nyc01|New York|10.1.45.0/24|
-{: caption="Table 10: SSL VPN PoPs" caption-side="bottom"}
 
 ## Legacy networks
 {: #legacy-networks}
