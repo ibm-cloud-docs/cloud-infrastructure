@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-03"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -337,7 +337,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 
 | Data center | IP range |
 |-----|-----|
-| **Required Flows**:  \n  {{site.data.keyword.filestorage_short}}:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049 | **Required Flows**:  \n {{site.data.keyword.blockstorageshort}}:  \n * TCP & UDP 65200 (iscsi) \n \n \n \n |
+| **Required Flows**:  \n  {{site.data.keyword.filestorage_short}}:  \n * TCP & UDP 111 (sunrpc)  \n * TCP & UDP 2049 (nfs)  \n * TCP & UDP 111(portmapper)  \n * TCP & UDP 635 (nfsd)  \n * TCP & UDP 4045-4048  \n * UDP 4049 | **Required Flows**:  \n {{site.data.keyword.blockstorageshort}}:  \n * TCP & UDP 3260 (iscsi) \n \n \n \n |
 | ams03 | 10.3.142.0/24  \n 161.26.30.0/24 |
 | che01 | 10.200.30.0/24  \n 161.26.34.0/24 |
 | dal05 | 10.1.154.0/24  \n 10.2.110.0/24 |
