@@ -13,14 +13,15 @@ subcollection: cloud-infrastructure
 {{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.cloud_notm}} IP ranges
-{: #ibm-cloud-ip-ranges} 
+{: #ibm-cloud-ip-ranges}
 
 A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IP addresses to use with these IBM firewalls and appliances.
 {: shortdesc}
 
 * {{site.data.keyword.cloud_notm}} Juniper vSRX Standard
 * IBM Virtual Router Appliance
-* Fortigate Security Appliance 10 Gbps
+* Fortinet vFSA
+* Fortinet Fortigate Security Appliance 10 Gbps
 * IBM Security Groups
 * Hardware Firewall
 
@@ -38,7 +39,6 @@ Ports to allow:
 |---|---|---|
 |ams03|Amsterdam |159.8.198.0/23|
 |che01|Chennai |169.38.118.0/23|
-|dal05|Dallas |173.192.118.0/23|
 |dal08|Dallas |192.255.18.0/24|
 |dal09|Dallas |198.23.118.0/23|
 |dal10|Dallas |169.46.118.0/23|
@@ -293,7 +293,6 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | **Required Flows**:  \n * Outbound TCP 8086 and TCP 8087 from your private  \n VLANs to IP ranges documented in dal09 and dal10 only.  \n * Outbound TCP 2546 from your private VLANs to IP ranges  \n documented for each DC where you need to access your vault. | |
 | ams03 | 10.3.134.0/24 |
 | che01 | 10.200.22.0/24 |
-| dal05 | 10.1.146.0/24 |
 | dal08 | 100.100.6.0/24 |
 | dal09 | 10.2.118.0/24 |
 | dal09 | 10.2.126.0/24 |
