@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-06-13"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -215,7 +215,7 @@ Within the discovery script, a helper script is provided to help with the discov
 
 For more information about the discovery tool, click [here](https://github.com/IBM-Cloud/vpc-migration-tools/tree/main/v2v-discovery-tool-rmm).
 
-## Order a {{site.data.keyword.cloud}} Transit Gateway
+## Order an {{site.data.keyword.cloud}} Transit Gateway
 {: #order-transit-gateway}
 {: step}
 
