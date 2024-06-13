@@ -22,7 +22,7 @@ Building infrastructure
 
     {: .topicgroup}
     High availability and resiliency
-        ha-landing-page-all.md 
+        ha-landing-page-all.md
         ha-cloud-intro.md
         /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application   
         ha-autoscale-tutorial.md
@@ -46,11 +46,13 @@ Building infrastructure
             ha-deploy-n-tier-app-szr.md 
             ha-snapshot-backups-szr.md
 
-         {: .topicgroup}
+        {: .topicgroup}
         Automating and Deploying Highly Available Resilient Architectures with Terraform
             ha-3-tier-resilient-terraform.md
             ha-3-tier-resilient-autoscale-terraform.md
             ha-3-tier-mzr-terraform.md
+            ha-3-tier-szr-terraform.md
+
 
     {: .topicgroup}
     Building your infrastructure
@@ -67,7 +69,7 @@ Building infrastructure
         monitoring-no-driver-mode.md
         monitoring-faq.md
         vulnerability-eos-faq.md
-     
+    
     {: .topicgroup}
     Migrating your infrastructure
         about-migration.md
@@ -99,6 +101,7 @@ Building infrastructure
             data-migration-diy.md
             image-migration-diy.md
             getting-help-diy-image-data-migration.md   
+
     {: .topicgroup}
     Related links
         [Terraform](/ibm-cloud-provider-for-terraform/ibm-cloud-provider-for-terraform-getting-started)

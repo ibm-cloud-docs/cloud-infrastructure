@@ -15,3 +15,14 @@ When you open a pull request, make sure that you tag the request with a severity
 {: caption="Table 1. Severities for documentation pull requests" caption-side="bottom"}
 
 If you have any questions about self-service documentation requests, you can ask those questions in the [#docs-iaas-self-service](https://ibm-cloudplatform.slack.com/archives/C06208Q8B8F).
+
+## Cloud Infrastructure documentation areas and contacts
+
+* Compute: Gudrun Wolfgram and Anna Matetic
+* Storage: Viktoria Muirhead
+* Networking: Dana Liburdi
+* VPC Bare Metal: Keith Merchant
+* Classic infrastructure: Sterling Milstead
+* API: Kelly Parr
+* Release Notes: Anna Matetic
+
