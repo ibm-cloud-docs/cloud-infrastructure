@@ -89,10 +89,6 @@ toc:
               topics: 
               - mssql-db-migration.md
               - mysql-db-server-migration.md
-          - topicgroup:
-              label: Server Migration for IBM Cloud
-              topics: 
-              - vm-migration-diy.md
   - navgroup:
       id: reference
       topics:
