@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021, 2024
-lastupdated: "2024-06-13"
+lastupdated: "2024-06-14"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -64,14 +64,10 @@ This architecture diagram is also applicable for classic bare metal to VPC bare 
 * For bare metal to VPC virtual server instance
 
     - CentOS 7.8, 7.9
-
     - RHEL 7.2, 7.3, 7.4, 8.1
-
-    - Ubuntu 18.04, 20.04
-
-    - Debian 9.x, 10.x
-
-    - Windows 2012, 2012R2, 2016, 2019
+    - Ubuntu 20.04
+    - Debian 10.x
+    - Windows 2016, 2019
 
 The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 {: note}

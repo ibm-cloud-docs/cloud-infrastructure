@@ -36,7 +36,7 @@ Server Migration for {{site.data.keyword.cloud}} is a one-click solution where y
 | Windows 2016, 2019, 2022 | x86-64 |
 {: caption="Table 1. Supported x86_64 stock image operating systems" caption-side="top"}
 
-For more informatio regarding supported operating systems, see the following topics:
+For more information about supported operating systems, see the following topics:
 - [x86 virtual server images](/docs/vpc?topic=vpc-about-images)
 
 ## Architecture diagram

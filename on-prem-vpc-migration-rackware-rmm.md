@@ -47,7 +47,7 @@ Follow the steps to complete a migration from on-premises to {{site.data.keyword
 The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 {: note}
 
-For more informatio regarding supported operating systems, see the following topics:
+For more information about supported operating systems, see the following topics:
 - [x86 virtual server images](/docs/vpc?topic=vpc-about-images)
 
 ## Architecture diagram
