@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-06-14"
 
 keywords: migration, migrate, migrating, migrate VM
 
@@ -21,15 +21,23 @@ Server Migration for {{site.data.keyword.cloud}} is a one-click solution where y
 ## Supported operating systems
 {: #vm-migration-to-vpc-supported-os}
 
-- CentOS 7.8, 7.9
+| Image | Architectures |
+|---------|---------|
+| CentOS 7.x | x86-64 |
+| CentOS Stream 8.x, 9.x | x86-64 |
+| Debian 10.x, 11.x, 12.x | x86-64 |
+| Fedora Core OS | x86-64 |
+| Red Hat Enterprise Linux 7.x, 8.x, 9.x | x86-64 |
+| Red Hat Enterprise Linux for SAP 7.x, 8.x, 9.x | x86-64 |
+| Rocky Linux 8.x, 9.x | x86-64 |
+| SUSE Linux Enterprise Server 12.x, 15.x | x86-64 |
+| SUSE Linux Enterprise Server for SAP 12.x, 15.x | x86-64 |
+| Ubuntu 20.04.x, 22.04.x, 24.04.x | x86-64 |
+| Windows 2016, 2019, 2022 | x86-64 |
+{: caption="Table 1. Supported x86_64 stock image operating systems" caption-side="top"}
 
-- RHEL 7.2, 7.3, 7.4, 8.1
-
-- Ubuntu 18.04, 20.04
-
-- Debian 9.x, 10.x
-
-- Windows&reg; 2012, 2012R2, 2016, 2019
+For more informatio regarding supported operating systems, see the following topics:
+- [x86 virtual server images](/docs/vpc?topic=vpc-about-images)
 
 ## Architecture diagram
 {: #vm-migration-to-vpc-architecture}
