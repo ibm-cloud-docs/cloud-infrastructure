@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-06-14"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -26,12 +26,12 @@ Before you begin migrating your image conversion, review the following requireme
 1. Back up your source virtual machine that you intend to migrate.
 2. You need an existing {{site.data.keyword.vpc_short}} environment.
 3. VMware virtual machine must be created with BIOS firmware type.
-4. Understand {{site.data.keyword.vpc_short}} custom image requirements:
-    * If it is in qcow2 format
-    * The boot volume (primary vHDD) doesn't exceed 99 GB
-    * If cloud-init is enabled, then remove all custom config files
-    * Virtio drivers must be enabled
-    * The operating system is supported as a stock image. For a list of supported stock images, see stock images section in [Virtual server images](/docs/vpc?topic=vpc-about-images#stock-images).
+4. Understand {{site.data.keyword.vpc_short}} custom image requirements.
+    - The custom image must contain a single file or volume
+    - Is in qcow2 or vhd format
+    - Is cloud-init enabled or can be booted using ESXi kickstart
+    - Size doesn't exceed 250 GB
+    - The minimum size is 10 GB. For any image that is less than 10 GB, the size is rounded up to 10 GB.
 5. Provision an instance of {{site.data.keyword.cos_full_notm}}. For more information, see [Granting access to {{site.data.keyword.cos_full_notm}} to import images](/docs/vpc?topic=vpc-object-storage-prereq).
 6. You need a server with a browser that has access to both the internet and your {{site.data.keyword.cos_short}} bucket to perform the image conversion.
 
