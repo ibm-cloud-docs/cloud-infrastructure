@@ -35,7 +35,6 @@ toc:
            - link:
                label: Getting started with IAM tutorial
                href: /account/account-iamoverview
-          
   - navgroup: 
       id: howto
       topics:
@@ -90,7 +89,6 @@ toc:
               topics: 
               - mssql-db-migration.md
               - mysql-db-server-migration.md
-            
   - navgroup:
       id: reference
       topics:

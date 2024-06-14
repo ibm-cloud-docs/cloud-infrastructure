@@ -2,7 +2,7 @@
 copyright:
   years: 2019, 2024
 
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-14"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment, infrastructure comparison, comparing infrastructures
 
@@ -34,10 +34,11 @@ See the following table for the Compute differences between classic and VPC.
 | **Performance and availability** | | Better availability is achievable through zone architecture |
 | **Pricing** | Hourly and monthly billing, plus suspend billing features | Hourly, suspend billing, and sustained usage discount |
 | **Virtual server families** | Public, dedicated, transient, reserved | Public, dedicated |
+| **Bare Metal servers** |  Advanced Intel® Xeon® CPUs, NVIDIA GPUs, \n  Secure application hosting, high-availability (HA) game hosting, Clustered web hosting | Advanced Intel® Xeon® CPUs, SmartNIC technology, rapid scaling.  |
 | **Profiles** | All profiles, including the GPU profiles | Balanced, compute, memory profiles with higher RAM and vCPU options |
 | **Supported images** | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
 | **Platform integration** | | IAM and resource group integration for a unified experience |
-{: caption="Table 1. Compute comparison" caption-side="top"}
+{: caption="Table 1. Compute comparison" caption-side="bottom"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
 Suspend billing supports only hourly, SAN instances that are provisioned with a public profile from one of the Balanced, Compute, Memory, or Variable compute families.
