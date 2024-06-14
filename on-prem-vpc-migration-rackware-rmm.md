@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-06-14"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
@@ -29,18 +29,26 @@ Follow the steps to complete a migration from on-premises to {{site.data.keyword
 ## Supported operating systems
 {: #onprem2cloud-supported-operating-systems}
 
-- CentOS 7.8, 7.9
-
-- RHEL 7.2, 7.3, 7.4, 8.1
-
-- Ubuntu 18.04, 20.04
-
-- Debian 9.x, 10.x
-
-- Windows 2012, 2012R2, 2016, 2019
+| Image | Architectures |
+|---------|---------|
+| CentOS 7.x | x86-64 |
+| CentOS Stream 8.x, 9.x | x86-64 |
+| Debian 10.x, 11.x, 12.x | x86-64 |
+| Fedora Core OS | x86-64 |
+| Red Hat Enterprise Linux 7.x, 8.x, 9.x | x86-64 |
+| Red Hat Enterprise Linux for SAP 7.x, 8.x, 9.x | x86-64 |
+| Rocky Linux 8.x, 9.x | x86-64 |
+| SUSE Linux Enterprise Server 12.x, 15.x | x86-64 |
+| SUSE Linux Enterprise Server for SAP 12.x, 15.x | x86-64 |
+| Ubuntu 20.04.x, 22.04.x, 24.04.x | x86-64 |
+| Windows 2016, 2019, 2022 | x86-64 |
+{: caption="Table 1. Supported x86_64 stock image operating systems" caption-side="top"}
 
 The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 {: note}
+
+For more informatio regarding supported operating systems, see the following topics:
+- [x86 virtual server images](/docs/vpc?topic=vpc-about-images)
 
 ## Architecture diagram
 {: #onprem2cloud-architecture}
@@ -142,7 +150,7 @@ The RMM solution handles only the OS, application, and data movement. It does no
 #### Setting up a cloud user
 {: #onprem2cloud-setting-up-cloud-user}
 
-1. Log in to the RackWare web console.
+1. Log in to the RackWare web console by entering `https://<ip address of your RMM server>` and your RMM admin user credentials in your browser.
 2. In the RackWare web console, go to **Configuration > Clouduser**.
 3. When you add a cloud user, enter a name and select _{{site.data.keyword.vpc_short}}_ for the **Cloud Provider**. Select the region where you want to auto-provision the virtual server instance, and enter your {{site.data.keyword.cloud_notm}} API key.
 4. Click **Add**.
