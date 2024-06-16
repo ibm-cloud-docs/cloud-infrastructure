@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-06-16"
 
 keywords: 
 content-type: tutorial
@@ -152,7 +152,7 @@ You can migrate the servers one-by-one or opt to perform multiple simultaneous m
 The username field for the Linux environment is `root`. The username field for the Windows environment is `SYSTEM`.
 {: note}
  
-Alternatively, you can use the discovery helper script, which helps with the discovery of virtual machines on the VMware ESXI Host and also creates corresponding waves on the RMM server. The script asks for your vSphere host username and for the IP address of the vSphere to connect to and the API where you discover your on-premises classic VMware ESXi Host VMs. 
+Alternatively, you can use the discovery helper script, which helps with the discovery of virtual machines on the VMware ESXi Host and also creates corresponding waves on the RMM server. The script asks for your vSphere host username and for the IP address of the vSphere to connect to and the API where you discover your on-premises classic VMware ESXi Host VMs. 
  
 ```sh
 ./discoveryTool -s <vSphere> -u <username of the Vspherehost>
