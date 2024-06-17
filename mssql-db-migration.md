@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-06-17"
 
 subcollection: cloud-infrastructure
 
@@ -154,7 +154,7 @@ An SQL Server Always On distributed availability group spans two distinct availa
 ### Data Migration Assistant (DMA)
 {: #data-migration-assistant}
 
-Data Migration Assistant is a freely available database assessment and migration tool that is provided by Microsoft®. It finds database compatibility issues and feature parity in terms of database assessment. It is used mainly to check the compatibility issues that might affect the database functions when you migrate databases to a new SQL Server. The Data Migration Assistant provides you with the ability to configure the number of databases to migrate in parallel. For more information, see [Overview of Data Migration Assistant](https://learn.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-ver15){: external}.
+Data Migration Assistant is a database assessment and migration tool that is provided by Microsoft®. It finds database compatibility issues and feature parity in terms of database assessment. It is used mainly to check the compatibility issues that might affect the database functions when you migrate databases to a new SQL Server. The Data Migration Assistant provides you with the ability to configure the number of databases to migrate in parallel. For more information, see [Overview of Data Migration Assistant](https://learn.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-ver15){: external}.
 
 ### Smart Bulk Copy
 {: #smart-bulk-copy}
