@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-06-16"
 
 keywords: 
 
@@ -33,7 +33,7 @@ For more information, see [RackWare's Cloud Migration documentation](https://www
 
 This software is available in the {{site.data.keyword.cloud}} catalog in the **Migration Tools** category. After you complete the appropriate information, a virtual server instance is installed in a new VPC with the RMM already installed.
 
-## Is this service free?
+## Is this service without charge?
 {: #rw-how-much-is-service}
 {: faq}
 
@@ -69,7 +69,7 @@ For more information about considerations and limitations of the physical to vir
 {: #rw-migration-intrusive}
 {: faq}
 
-In most cases, the migration is not intrusive. The migration can be done when the server is up and running. The source server does need some free space to do an image capture of the server. In addition, RMM does require SSH (port 22) reachability to both server and target to perform the migration. The CPU consumption for image capture and copying to the target is minimal.
+In most cases, the migration is not intrusive. The migration can be done when the server is up and running. The source server does need some empty space to do an image capture of the server. In addition, RMM does require SSH (port 22) reachability to both server and target to perform the migration. The CPU consumption for image capture and copying to the target is minimal.
 
 ## Can RackWare RMM create the target virtual server instance?
 {: #rw-create-target-vsi}
