@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-07-24"
 
 keywords: 
 content-type: tutorial
@@ -29,10 +29,14 @@ Follow the steps to complete a migration from your Microsoft Hyper-V VM on-premi
 ## Supported operating systems
 {: #supported-operating-systems-vmware-virtual}
 
-- RHEL 7.x, 8.x 
-- Ubuntu 18.04.x, 20.04.x 
-- Debian 9.x, 10.x 
-- Windows 2012, 2012 R2, 2016, 2019 
+- RHEL 8.x, 9.x
+- CentOS Stream 9
+- Debian 11, 12
+- Ubuntu 20.04, 22.04, 24.04
+- Rocky Linux 8, 9
+- Fedora CoreOS 40
+- SUSE Linux Enterprise server 12, 15, 
+- Windows 2016, 2019, 2022
 
 ## Before you begin
 {: #before-begin-vmware-virtual}
