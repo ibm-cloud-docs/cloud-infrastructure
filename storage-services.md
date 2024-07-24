@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-20"
+  years: 2020, 2024
+lastupdated: "2024-07-24"
 
 keywords: infrastructure
 
@@ -23,7 +23,7 @@ Our cloud storage services offer a scalable, security-rich, and cost-effective h
 | Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about) | Persistent, high-performance data storage for virtual server instances in the {{site.data.keyword.cloud}} Virtual Private Cloud (VPC). The VPC infrastructure provides rapid scaling across multiple regions and zones, and extra performance and security.  |
-| [{{site.data.keyword.filestorage_vpc_full}}](/docs/vpc?topic=vpc-file-storage-vpc-about) | A zonal file storage offering that provides NFS-based file storage services. You can create file shares in an availability zone within a region. You can share them with multiple virtual server instances within the same zone or other zones in your region, across multiple VPCs. You can also limit access to a file share to a specific virtual server instance within a VPC by using Security groups, and encrypt the data in transit. Compatible with {{site.data.keyword.vsi_is_short}} and {{site.data.keyword.bm_is_short}}. |
+| [{{site.data.keyword.filestorage_vpc_full}}](/docs/vpc?topic=vpc-file-storage-vpc-about) | A zonal file storage offering that provides NFS-based file storage services. You can create file shares in an availability zone within a region. You can share them with multiple virtual server instances within the same zone or other zones in your region, across multiple VPCs. You can share your NFS-based file storage across accounts and external services, such as [IBM watsonX](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html?context=wx){: external}. You can also limit access to a file share to a specific virtual server instance within a VPC by using Security groups, and encrypt the data in transit. Compatible with {{site.data.keyword.vsi_is_short}} and {{site.data.keyword.bm_is_short}}. |
 | [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) | Distributed, multi-tenant Cloud Object Storage for data encrypted and dispersed across multiple geographic locations, which are accessed over HTTP by using a REST API. This service uses the distributed storage technologies that are provided by the {{site.data.keyword.cos_full_notm}} System. |
 {: caption="Table 1. Storage options - VPC" caption-side="top"}
 

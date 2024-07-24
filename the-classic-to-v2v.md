@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-06-16"
+lastupdated: "2024-07-24"
 
 keywords: 
 content-type: tutorial
@@ -29,11 +29,14 @@ Follow the guide to complete a migration from VMware ESXi in {{site.data.keyword
 ## Supported operating systems
 {: #supported-operating-systems-classic}
 
-- CentOS 7.8, 7.9
-- RHEL 7.2, 7.3, 7.4, 8.1 
-- Ubuntu 18.04, 20.04
-- Debian 9.x, 10.x 
-- Windows 2012, 2012R2, 2016, 2019 
+- RHEL 8.x, 9.x
+- CentOS Stream 9
+- Debian 11, 12
+- Ubuntu 20.04, 22.04, 24.04
+- Rocky Linux 8, 9
+- Fedora CoreOS 40
+- SUSE Linux Enterprise server 12, 15, 
+- Windows 2016, 2019, 2022
 
 ## Architecture diagram
 {: #architecture-diagram-classic}

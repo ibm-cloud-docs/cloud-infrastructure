@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-07-24"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
@@ -31,12 +31,11 @@ Follow the steps to complete a migration from on-premises to {{site.data.keyword
 
 | Image | Architectures |
 |---------|---------|
-| CentOS 7.x | x86-64 |
-| CentOS Stream 8.x, 9.x | x86-64 |
-| Debian 10.x, 11.x, 12.x | x86-64 |
+| CentOS Stream 9.x | x86-64 |
+| Debian 11.x, 12.x | x86-64 |
 | Fedora Core OS | x86-64 |
-| Red Hat Enterprise Linux 7.x, 8.x, 9.x | x86-64 |
-| Red Hat Enterprise Linux for SAP 7.x, 8.x, 9.x | x86-64 |
+| Red Hat Enterprise Linux 8.x, 9.x | x86-64 |
+| Red Hat Enterprise Linux for SAP 8.x, 9.x | x86-64 |
 | Rocky Linux 8.x, 9.x | x86-64 |
 | SUSE Linux Enterprise Server 12.x, 15.x | x86-64 |
 | SUSE Linux Enterprise Server for SAP 12.x, 15.x | x86-64 |
