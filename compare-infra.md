@@ -2,7 +2,7 @@
 copyright:
   years: 2019, 2024
 
-lastupdated: "2024-06-14"
+lastupdated: "2024-07-24"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment, infrastructure comparison, comparing infrastructures
 
@@ -70,7 +70,7 @@ See the following table for the storage differences between classic and VPC.
 
 |  Classic infrastructure   | VPC infrastructure |
 | ------------------------- | ------------------ |
-|Robust set of storage services, {{site.data.keyword.blockstorageshort}} (iSCSI), and {{site.data.keyword.filestorage_short}} (NFS-based) offerings. Server-side agent based Backup service with dedicated vault. \n - Snapshot support for both offerings.  \n - Cross-regional replication. \n - Adjustable IOPS and increasable capacity. \n - Encryption at rest with provider- or customer-managed encryption. \n - Volume duplication and data refresh from parent volume.| {{site.data.keyword.block_storage_is_short}} provides primary boot disks (with basic lifecycle management), and secondary data volumes. {{site.data.keyword.filestorage_vpc_short}} provides NFS-based file shares. \n - Snapshot and backup support for block volumes. \n - Zonal replication for file shares. \n - Adjustable IOPS and increasable capacity.  \n - Encryption at rest with provider- or customer-managed encryption. \n - Optional encryption in transit for block volumes and file shares.|
+|Robust set of storage services, {{site.data.keyword.blockstorageshort}} (iSCSI), and {{site.data.keyword.filestorage_short}} (NFS-based) offerings. Server-side agent based Backup service with dedicated vault. \n - Snapshot support for both offerings.  \n - Cross-regional replication. \n - Adjustable IOPS and increasable capacity. \n - Encryption at rest with provider- or customer-managed encryption. \n - Volume duplication and data refresh from parent volume.| {{site.data.keyword.block_storage_is_short}} provides primary boot disks (with basic lifecycle management), and secondary data volumes. {{site.data.keyword.filestorage_vpc_short}} provides NFS-based file shares. \n - Snapshot and backup support for block volumes. \n - Zonal replication for file shares. \n - Adjustable IOPS and increasable capacity.  \n - Encryption at rest with provider- or customer-managed encryption. \n - Optional encryption in transit for block volumes and file shares. \n - Optional cross-account authorizations for encryption keys. |
 {: caption="Table 3. Storage comparison" caption-side="top"}
 
 ## Security differentiators
