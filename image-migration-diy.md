@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-26"
 
 keywords: image migration, migrate image, vmdk, vhd
 
@@ -47,8 +47,8 @@ Before you begin migrating your image conversion, review the following requireme
 {: #step-1-prepare-image-conversion-server}
 
 1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
-2. [Install the {{site.data.keyword.cos_full_notm}} CLI plug-in](//docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli).
-3. [Install the {{site.data.keyword.vpc_short}} CLI plug-in](//docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference).
+2. [Install the {{site.data.keyword.cos_full_notm}} CLI plug-in](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli).
+3. [Install the {{site.data.keyword.vpc_short}} CLI plug-in](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference).
 4. [Install the Aspera plug-in](https://www.ibm.com/products/aspera/downloads){: external} for your system. This plug-in helps with the image upload to {{site.data.keyword.cos_short}}. For more information about Aspera, see [Using Aspera high-speed transfer](/docs/cloud-object-storage?topic=cloud-object-storage-aspera).
 5. [Download and install QEMU](https://www.qemu.org/download/){: external}. For Windows systems, add the QEMU installation path in the system’s environment variable.
 
