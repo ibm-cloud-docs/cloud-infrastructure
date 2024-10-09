@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-05-19"
+  years: 2020, 2024
+lastupdated: "2024-10-09"
 
 keywords: infrastructure
 
@@ -23,4 +23,4 @@ After you build your infrastructure and environment, you're ready to start manag
 | [Set email preferences](/docs/account?topic=account-email-prefs) | Set up {{site.data.keyword.cloud_notm}} infrastructure email notifications about unplanned events, maintenance, and announcements.  |
 | [Understand how your data is safe](/docs/overview?topic=overview-security) | The {{site.data.keyword.cloud_notm}} platform provides layered security controls across network and infrastructure. |
 | [Understand how you can ensure zero downtime](/docs/overview?topic=overview-zero-downtime) | All {{site.data.keyword.cloud_notm}} resources are hosted in data center locations around the world. |
-{: caption="Table 4. Management tasks" caption-side="top"}
+{: caption="Management tasks" caption-side="top"}

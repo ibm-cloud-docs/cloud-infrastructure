@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-10-09"
 
 keywords: NTP, NTP server, network time protocol
 
@@ -37,7 +37,7 @@ The National Institute of Standards and Technology (NIST) and US Naval Observato
 
 The NTP time servers are connected to these GNSS and time synchronization appliance services, as depicted in Figure 1.
 
-![NTP service overview](images/ntppublic.svg){: caption="Figure 1. NTP Service overview" caption-side="bottom"}
+![NTP service overview](images/ntppublic.svg){: caption="NTP Service overview" caption-side="bottom"}
 
 ## Software components
 {: #ntp-software-components}

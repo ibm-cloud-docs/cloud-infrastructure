@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-10-09"
 
 subcollection: cloud-infrastructure
 
@@ -27,7 +27,7 @@ Database migration is defined as moving a database to and from the database serv
 ## Migration overview diagram
 {: #mssql-db-overview-diagram}
 
-![Migration Overview Diagram](images/migration-overview-diagram.svg){: caption="Figure 1. Migration overview diagram" caption-side="bottom"}
+![Migration Overview Diagram](images/migration-overview-diagram.svg){: caption="Migration overview diagram" caption-side="bottom"}
 
 ## Use cases
 {: #use-cases}
@@ -76,7 +76,7 @@ For more information, see [Migration considerations](/docs/microsoft?topic=micro
 | [Always On distributed availability groups](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#always-on-distributed-availability-groups) | Large data migration |
 | [Data Migration Assistant (DMA)](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#data-migration-assistant) | Large data migration, migration assessment, server upgrade |
 | [Smart Bulk Copy](/docs/cloud-infrastructure?topic=cloud-infrastructure-mssql-db-overview#smart-bulk-copy) | Large data migration, other cloud service providers to {{site.data.keyword.vpc_short}}, on-premises to {{site.data.keyword.vpc_short}}. |
-{: caption="Table 1. Migration methods and use cases" caption-side="bottom"}
+{: caption="Migration methods and use cases" caption-side="bottom"}
 
 ### RackWare Management Module (RMM)
 {: #rackware-management-module}
@@ -144,7 +144,7 @@ Database mirroring in SQL Server allows you to keep a copy, or mirror, of an SQL
 
 SQL Server Always On availability groups provide high availability and disaster recovery solutions and are available in versions of SQL Server 2012 and newer. This feature can be used to migrate your existing SQL Server databases to {{site.data.keyword.cloud_notm}} with minimal downtime. If you have an existing Windows® Server Failover Cluster with Always On availability groups, you are able to extend the cluster temporarily during migration by creating an extra secondary replica with asynchronous replication. During a maintenance window, a manual failover can be performed to enable the cut-over. Always On availability groups provide high availability, disaster recovery, and read-scale balancing. These availability groups require a cluster manager. In Windows®, the failover clustering feature provides the cluster manager. For more information, see [What is an Always On availability group?](https://learn.microsoft.com/en-us/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15){: external}.
 
-![Always on availability group](images/Always-availability-group.svg){: caption="Figure 2. Always On availability group" caption-side="bottom"}
+![Always on availability group](images/Always-availability-group.svg){: caption="Always On availability group" caption-side="bottom"}
 
 ### Always On distributed availability groups
 {: #always-on-distributed-availability-groups}

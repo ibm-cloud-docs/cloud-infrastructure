@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-10-09"
 
 keywords: migration, migrate, migrating, migrate infrastructure
 
@@ -74,7 +74,7 @@ For transit gateway and classic, you need to follow two steps:
 
 2. To allow communication between VPC and classic, both transit gateway and enabling VRF in classic are necessary. For more information, see [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips#general-considerations).
 
-![Topology](images/p-p_classic_private_ip_routing2.png "Diagram showing the cloud service models"){: caption="Figure 1. Network topology of RMM and bare metal migration" caption-side="bottom"}
+![Topology](images/p-p_classic_private_ip_routing2.png "Diagram showing the cloud service models"){: caption="Network topology of RMM and bare metal migration" caption-side="bottom"}
 
 This architecture diagram is applicable for bare metal to virtual server and virtual server to virtual server scenarios.
 {: note}

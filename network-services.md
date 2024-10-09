@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-10-09"
 
 keywords: infrastructure
 
@@ -32,7 +32,7 @@ Within the infrastructure layer, you can build a virtual private cloud, which is
 | [DNS Services](/docs/dns-svcs/getting-started) | Provides private DNS to Virtual Private Cloud (VPC) users.  |
 | [Transit Gateway](/docs/transit-gateway?topic=transit-gateway-getting-started) | Interconnect IBM Cloud Classic and Virtual Private Cloud (VPC) infrastructures worldwide, keeping traffic within the IBM Cloud network. |
 |[Direct Link 2.0](/docs/dl/getting-started)|Seamlessly connect your on-premises resources to your cloud resources. |
-{: caption="Table 1. Networking options - VPC" caption-side="top"}
+{: caption="Networking options - VPC" caption-side="top"}
 
 ## Classic infrastructure
 {: #network-classic}
@@ -51,7 +51,7 @@ Within the infrastructure layer, you can build a virtual private cloud, which is
 | [Fortigate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-getting-started) | Protect traffic on multiple VLANs for both public and private networks.|
 | [VLANs](/docs/vlans?topic=vlans-getting-started) | Isolate broadcast traffic on the public and private networks. |
 | [Subnets](/docs/subnets?topic=subnets-getting-started) |Each subnet provides IP addresses to resources in different ways.  |
-{: caption="Table 2. Networking options - Classic" caption-side="top"}
+{: caption="Networking options - Classic" caption-side="top"}
 
 ## Next steps
 {: #nextsteps5}

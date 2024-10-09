@@ -2,7 +2,7 @@
 copyright:
   years: 2019, 2024
 
-lastupdated: "2024-07-24"
+lastupdated: "2024-10-09"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment, infrastructure comparison, comparing infrastructures
 
@@ -38,7 +38,7 @@ See the following table for the Compute differences between classic and VPC.
 | **Profiles** | All profiles, including the GPU profiles | Balanced, compute, memory profiles with higher RAM and vCPU options |
 | **Supported images** | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
 | **Platform integration** | | IAM and resource group integration for a unified experience |
-{: caption="Table 1. Compute comparison" caption-side="bottom"}
+{: caption="Compute comparison" caption-side="bottom"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
 Suspend billing supports only hourly, SAN instances that are provisioned with a public profile from one of the Balanced, Compute, Memory, or Variable compute families.
@@ -60,7 +60,7 @@ See the following table for the Networking differences between classic and VPC.
 |  **Elastic load balancing** | Cloud Load Balancer  | Load Balancer for VPC |
 | **Global load balancing**| Cloud Internet Services, Citrix Netscaler MPX | Cloud Internet Services |
 |**Hybrid connectivity** | NAT solution to bridge between {{site.data.keyword.cloud}} and your IT environment | Bring your own private IP address without NAT or IPsec tunnels \n Note: You can enable your VPC to access classic infrastructure resources. |
-{: caption="Table 2. Network comparison" caption-side="top"}
+{: caption="Network comparison" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
 ## Storage differentiators
@@ -71,7 +71,7 @@ See the following table for the storage differences between classic and VPC.
 |  Classic infrastructure   | VPC infrastructure |
 | ------------------------- | ------------------ |
 |Robust set of storage services, {{site.data.keyword.blockstorageshort}} (iSCSI), and {{site.data.keyword.filestorage_short}} (NFS-based) offerings. Server-side agent based Backup service with dedicated vault. \n - Snapshot support for both offerings.  \n - Cross-regional replication. \n - Adjustable IOPS and increasable capacity. \n - Encryption at rest with provider- or customer-managed encryption. \n - Volume duplication and data refresh from parent volume.| {{site.data.keyword.block_storage_is_short}} provides primary boot disks (with basic lifecycle management), and secondary data volumes. {{site.data.keyword.filestorage_vpc_short}} provides NFS-based file shares. \n - Snapshot and backup support for block volumes. \n - Zonal replication for file shares. \n - Adjustable IOPS and increasable capacity.  \n - Encryption at rest with provider- or customer-managed encryption. \n - Optional encryption in transit for block volumes and file shares. \n - Optional cross-account authorizations for encryption keys. |
-{: caption="Table 3. Storage comparison" caption-side="top"}
+{: caption="Storage comparison" caption-side="top"}
 
 ## Security differentiators
 {: #compare-security}
@@ -81,7 +81,7 @@ See the following table for the security differences between classic and VPC.
 |  Classic infrastructure   | VPC infrastructure |
 | ---------- | ------------------------- |
 |Vyatta, Fortigate, Juniper vSRX, Security Groups for virtual servers| Security groups, Network access control lists (ACLs)|
-{: caption="Table 4. Security comparison" caption-side="top"}
+{: caption="Security comparison" caption-side="top"}
 
 ## API differentiators
 {: #compare-apis}
@@ -91,7 +91,7 @@ See the following table for the API differences between classic and VPC.
 |  Classic infrastructure   | VPC infrastructure |
 | ------------------------- | ------------------ |
 |Existing {{site.data.keyword.slapi_short}} (SLAPI)| New developer-friendly, REST-based API |
-{: caption="Table 5. API comparison" caption-side="top"}
+{: caption="API comparison" caption-side="top"}
 
 ## Next steps
 {: #compare-nextsteps}

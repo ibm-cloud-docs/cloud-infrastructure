@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-10-09"
 
 keywords:
 content-type: tutorial
@@ -44,7 +44,7 @@ The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 ## Architecture diagram
 {: #architecture-diagram-vmware}
 
-![Topology](images/On-Prem-1.svg){: caption="Figure 1. Architecture diagram" caption-side="bottom"}
+![Topology](images/On-Prem-1.svg){: caption="Architecture diagram" caption-side="bottom"}
 
 This diagram is also applicable for On-premises VMware VM to {{site.data.keyword.vpc_short}} bare metal migration with RMM.
 {: note}
