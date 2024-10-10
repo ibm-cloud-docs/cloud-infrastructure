@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-10-09"
 
 keywords: migration, migrate, cloud migration, on-premises
 content-type: tutorial
@@ -41,7 +41,7 @@ Follow the steps to complete a migration from on-premises to {{site.data.keyword
 | SUSE Linux Enterprise Server for SAP 12.x, 15.x | x86-64 |
 | Ubuntu 20.04.x, 22.04.x, 24.04.x | x86-64 |
 | Windows 2016, 2019, 2022 | x86-64 |
-{: caption="Table 1. Supported x86_64 stock image operating systems" caption-side="top"}
+{: caption="Supported x86_64 stock image operating systems" caption-side="top"}
 
 The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 {: note}
@@ -54,7 +54,7 @@ For more information about supported operating systems, see the following topics
 
 This diagram shows the architecture that you are about to create.
 
-![Architecture](images/On-prem_to_VPC.svg){: caption="Figure 1. Architecture diagram" caption-side="bottom"}
+![Architecture](images/On-prem_to_VPC.svg){: caption="Architecture diagram" caption-side="bottom"}
 
 This architecture diagram is applicable for bare metal to bare metal, bare metal to virtual server, and virtual server to virtual server scenario in On-premises to {{site.data.keyword.vpc_short}} migration.
 {: note}

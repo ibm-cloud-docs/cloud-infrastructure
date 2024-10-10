@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2020, 2022
-lastupdated: "2024-02-21"
+  years:  2020, 2024
+lastupdated: "2024-10-09"
 
 keywords: monitoring light, monitoring no driver, no driver monitor,
 
@@ -125,7 +125,7 @@ Use the following table to see which metrics are available in 'no driver mode'.
 | container.count | Numbers of containers |
 | system.uptime	| Total system uptime |
 | uptime	| The percentage of time the selected entity or entities was down over the defined time window |
-{: caption="Table 1. Monitoring 'no driver mode' metrics" caption-side="top"}
+{: caption="Monitoring 'no driver mode' metrics" caption-side="top"}
 
 ## {{site.data.keyword.mon_full_notm}} 'no driver mode' troubleshooting metrics
 {: #monitoring-light-troubleshooting-metrics}
@@ -156,4 +156,4 @@ Use the following table to see which troubleshooting metrics are available in 'n
 | host.error.count | The number of system call errors |
 | proc.count | Number of processes on host or container |
 | proc.start.count | Number of process starts on host or container |
-{: caption="Table 2. 'no driver mode' troubleshooting metrics" caption-side="top"}
+{: caption="'no driver mode' troubleshooting metrics" caption-side="top"}

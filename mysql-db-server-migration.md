@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-10-09"
 
 subcollection: cloud-infrastructure
 
@@ -27,7 +27,7 @@ MySQL database is a relational database management system (RDMS). Migrating such
 ## Migration overview diagram
 {: #mysql-db-overview-diagram}
 
-![Migration Overview Diagram](images/mysql_db_migration.svg){: caption="Figure 1. Migration overview diagram" caption-side="bottom"}
+![Migration Overview Diagram](images/mysql_db_migration.svg){: caption="Migration overview diagram" caption-side="bottom"}
 
 ## Use cases
 {: #mysql-use-cases}
@@ -61,7 +61,7 @@ Before you begin your MySQL database migration, review and complete the followin
 | ----------------- | -------- |
 | RackWare Management Module (RMM)| Database on single server or multiple servers |
 | Database Migration script| Small data migration or schema-only migration. |
-{: caption="Table 1. MySQL migration methods" caption-side="bottom"}
+{: caption="MySQL migration methods" caption-side="bottom"}
 
 ### RackWare Management Module (RMM)
 {: #mysql-rackware-management-module}
@@ -76,4 +76,3 @@ By using Python as a source, you can migrate the database from any server to {{s
 The new server runs in the latest versions of MySQL, since this migration focuses on the database alone. The migration process is consistent and secure and can be performed from any system.
 
 For more information, see [MySQL database migration by using Python](/docs/cloud-infrastructure?topic=cloud-infrastructure-mysql-python).
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-10-09"
 
 subcollection: cloud-infrastructure
 
@@ -28,7 +28,7 @@ You use basic monitoring to initiate service and slow pings to make sure that th
 |--------------------------------|-------------|
 | SERVICE PING                   | Test ping to address |
 | SLOW PING | Test ping to address - doesn't fail on slow server response due to high latency or high server load. |
-{: caption="Table 1. Basic monitoring service types" caption-side="bottom"}
+{: caption="Basic monitoring service types" caption-side="bottom"}
 
 The source of service ping and slow ping monitoring depends on the data center where the server is located. To use public IP monitoring, you need to allow ICMP from the server's data center [public service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#front-end-network). For private IP monitoring, you need to allow ICMP from the server's data center [private service network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network).
 
@@ -57,7 +57,7 @@ If an echo isn't received in the allotted time frame (1 second for service pings
 | TCP CUSTOM | Test for TCP connection to specified port on address |
 | TELNET | Test for telnet connection to port 23 on address |
 | UDP SIP | Test for UDP connection to specified port on address |
-{: caption="Table 2. Add-on monitoring service types" caption-side="bottom"}
+{: caption="Add-on monitoring service types" caption-side="bottom"}
 
 ## Viewing configured monitors
 {: #view-configured-monitors}

@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-10-09"
 
 keywords: 
 content-type: tutorial
@@ -41,7 +41,7 @@ Follow the guide to complete a migration from VMware ESXi in {{site.data.keyword
 ## Architecture diagram
 {: #architecture-diagram-classic}
 
-![Topology](images/Classic.svg){: caption="Figure 1. Architecture diagram" caption-side="bottom"}
+![Topology](images/Classic.svg){: caption="Architecture diagram" caption-side="bottom"}
  
 ## Before you begin
 {: #before-begin-classic}

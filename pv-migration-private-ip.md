@@ -2,7 +2,7 @@
 
 copyright:
    years: 2021, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-10-09"
 
 keywords: migration, physical to virtual, migrate
 content-type: tutorial
@@ -36,9 +36,9 @@ The migration can occur either over the public or private interface of the compu
 ## Architecture diagram
 {: #pv-migration-private-network-architecture}
 
-![Physical to virtual migration private IP diagram.](images/Classic-bare-metal-to-VPC-bare-metal-using-private-network.svg){: caption="Figure 1. Migrating classic bare metal to bare metal on VPC over private interface" caption-side="bottom"}
+![Physical to virtual migration private IP diagram.](images/Classic-bare-metal-to-VPC-bare-metal-using-private-network.svg){: caption="Migrating classic bare metal to bare metal on VPC over private interface" caption-side="bottom"}
 
-![Physical to virtual migration private IP diagram.](images/P2V-Private-1.svg){: caption="Figure 2. Migrating classic bare metal to virtual server instance on VPC over private interface" caption-side="bottom"}
+![Physical to virtual migration private IP diagram.](images/P2V-Private-1.svg){: caption="Migrating classic bare metal to virtual server instance on VPC over private interface" caption-side="bottom"}
 
 This architecture diagram is also applicable for classic bare metal to VPC bare metal.
 {: note}

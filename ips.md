@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-16"
+lastupdated: "2024-10-09"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -329,7 +329,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | wdc06 | 10.200.166.0/24 |
 | wdc07 | 10.200.182.0/24 |
 {: class="simple-tab-table"}
-{: caption="Table 5. eVault by Data Center" caption-side="left"}
+{: caption="eVault by Data Center" caption-side="left"}
 {: #simpletabtable1}
 {: tab-title="eVault"}
 {: tab-group="IAM-simple"}
@@ -386,7 +386,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | wdc04 | 10.201.10.0/24  \n 10.201.14.0/24  \n 10.3.174.0/24  \n 10.3.175.0/25  \n 161.26.134.0/24  \n 161.26.94.0/24 |
 | wdc06 | 10.200.174.0/24  \n 161.26.118.0/24 |
 | wdc07 | 10.200.90.0/24  \n 161.26.122.0/24 |
-{: caption="Table 6. File and Block by Data Center" caption-side="left"}
+{: caption="File and Block by Data Center" caption-side="left"}
 {: #simpletabtable2}
 {: tab-title="File & Block"}
 {: tab-group="IAM-simple"}
@@ -430,7 +430,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | wdc04 | 10.201.3.0/24 |
 | wdc06 | 10.200.163.0/24 |
 | wdc07 | 10.200.179.0/24 |
-{: caption="Table 7. AdvMon (Nimsoft) by Data Center" caption-side="left"}
+{: caption="AdvMon (Nimsoft) by Data Center" caption-side="left"}
 {: #simpletabtable3}
 {: tab-title="AdvMon (Nimsoft)"}
 {: tab-group="IAM-simple"}
@@ -477,7 +477,7 @@ As of 8 June 2020, all instances of the AdvMon (Nimsoft) by Data Center service 
 | wdc04 | 10.201.2.0/24 |
 | wdc06 | 10.200.162.0/24 |
 | wdc07 | 10.200.178.0/24 |
-{: caption="Table 8. ICOS by Data Center" caption-side="left"}
+{: caption="ICOS by Data Center" caption-side="left"}
 {: #simpletabtable4}
 {: tab-title="ICOS"}
 {: tab-group="IAM-simple"}

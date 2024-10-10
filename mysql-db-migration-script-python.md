@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -34,7 +34,7 @@ Review the following prerequisites before you begin your migration:
 ## Migration overview diagram
 {: #mysql-db-overview-diagram-python}
 
-![Migration Overview Diagram](images/mysql_migration_script_python.svg){: caption="Figure 1. Migration overview diagram" caption-side="bottom"}
+![Migration Overview Diagram](images/mysql_migration_script_python.svg){: caption="Migration overview diagram" caption-side="bottom"}
 
 ## Clone and run the database migration script
 {: #clone-run-database-migration-script}

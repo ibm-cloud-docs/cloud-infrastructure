@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-10-09"
 
 keywords: rackware, migration 
 content-type: tutorial
@@ -46,7 +46,7 @@ The **Convert LVM** feature is only supported for RHEL 7.x and RHEL 8.x
 
 This diagram shows the architecture that you create with the guide.
 
-![Architecture](images/AnyCloud_final.svg){: caption=" Figure 1. Architecture diagram" caption-side="bottom"}
+![Architecture](images/AnyCloud_final.svg){: caption="Architecture diagram" caption-side="bottom"}
 
 This diagram is applicable for bare metal to bare metal, bare metal to virtual server, and virtual server to virtual server in AWS, Azure, GCP, and OCI workloads to {{site.data.keyword.vpc_short}} migration.
 {: note}
