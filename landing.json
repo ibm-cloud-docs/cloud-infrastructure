@@ -1,0 +1,58 @@
+{
+  "version": 2,
+  "title": "Cloud infrastructure",
+  "introduction": "As many organizations move to a cloud environment, either on-premises or hosted in data centers, the IT operations administrator's (IT ops admin) role is being redefined. The scope and complexity of this change increases significantly based on the type of environment that your organization wants to deploy.",
+  "product_page": "https://www.ibm.com/products/cloud-infrastructure-center",
+  "console_page": "/classic",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Understanding IaaS basics",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-getting-started-tutorial"
+      },
+      {
+        "title": "Comparing IBM Cloud classic and VPC infrastructure environments",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-compare-infrastructure"
+      },
+      {
+        "title": "High Availability and Resiliency on IBM Cloud",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-landing-about-ha-dr-backup"
+      },
+      {
+        "title": "Encryption options for IBM Cloud® classic infrastructure storage",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-encryption-classic-infrastructure"
+      },
+      {
+        "title": "Monitoring your infrastructure",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-monitoring-iaas"
+      },
+      {
+        "title": "Migrating your infrastructure",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-about-migration-infra"
+      },
+      {
+        "title": "FAQs for migration",
+        "href": "/docs/cloud-infrastructure?topic=cloud-infrastructure-bare-metal-faqs"
+      }
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "Cloud Infrastructure Solutions Overview ",
+      "description": "IBM Cloud Infrastructure as a Service; the infrastructure for smarter business. Find the right solutions for your business requirements.",
+      "href": "https://www.ibm.com/cloud/infrastructure",
+      "type": "blog"
+    },
+    {
+      "title": "IBM Cloud VPC Solutions",
+      "description": "Learn how you can build the high-performance cloud you need with IBM Cloud VPC Solutions.",
+      "href": "https://www.ibm.com/cloud/vpc",
+      "type": "blog"
+    }
+  ],
+  "section_devtools": {
+    "api": "/apidocs/vpc",
+    "cli": "/docs/vpc?topic=vpc-set-up-environment&interface=cli",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/is_instance"
+  }
+}
