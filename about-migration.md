@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-18"
 
 keywords: migration, migrate, migrating, migrate infrastructure, cloud migration
 
@@ -154,7 +154,7 @@ For more information, see [Bare metal to bare metal or virtual server migration 
 
 For a detailed step-by-step guide on moving your {{site.data.keyword.cloud_notm}} classic bare metal servers to VPC, see [Bare metal to virtual server migration on a private network by using RMM](/docs/cloud-infrastructure?topic=cloud-infrastructure-pv-migration-private-network).
 
-For frequently asked questions and answers, see [FAQs for RackWare](/cloud-infrastructure?topic=cloud-infrastructure-rackware-faqs)
+For frequently asked questions and answers, see [FAQs for RackWare](/docs/cloud-infrastructure?topic=cloud-infrastructure-rackware-faqs)
 
 ### On-premises to VPC infrastructure migration
 {: #on-prem-vpc-migration-rmm}
