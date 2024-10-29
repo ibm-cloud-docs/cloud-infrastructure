@@ -2,7 +2,7 @@
 
 copyright:
   years:  2021, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-10-29"
 
 keywords: 
 
@@ -19,6 +19,6 @@ If you have problems or questions when you run the scripts to migrate data or im
 
 If you have problems with or questions about using {{site.data.keyword.cloud_notm}} infrastructure, you can get help by searching for information or by asking questions through one of the forums. You can also create a case in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}. 
 
-See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums. 
+See [Getting help](/docs/account?topic=account-using-avatar#using-avatar) for more details about using the forums. 
 
-For more information about opening an IBM support ticket, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
+For more information about opening an IBM support ticket, see [Contacting support](/docs/account?topic=account-using-avatar).
