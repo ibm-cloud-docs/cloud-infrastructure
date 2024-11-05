@@ -15,7 +15,7 @@ subcollection: cloud-infrastructure
 # Compute services
 {: #compute}
 
- Your server is the base of your infrastructure. Depending on your needs, you have various options, or you can mix it up if that's what your environment requires. Check out the following table for a summary of your compute options.
+ Your server is the base of your infrastructure. Depending on your needs, you have various options, or you can mix it up if that's what your environment requires. Check out the following tables for a summary of your compute options.
 
 ## Virtual servers
 {: #compute-vsi}
