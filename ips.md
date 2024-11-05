@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-24"
+lastupdated: "2024-11-04"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -726,7 +726,7 @@ All TCP/UDP ports (for access from your local workstation)
 |---|---|---|---|
 |ams03|Amsterdam|10.3.220.0/24|vpn.ams03.softlayer.com|
 |che01|Chennai|10.200.232.0/24|vpn.che01.softlayer.com|
-|dal08|Dallas|100.101.128.0/24|vpn.dal08.usgov.softlayer.com|
+|dal08|Dallas|100.101.128.0/24|vpn.dal08.ibmcloudforgov.com|
 |dal10|Dallas|10.200.228.0/24|vpn.dal.softlayer.com|
 |dal12|Dallas|10.200.216.0/22|vpn.dal.softlayer.com|
 |dal13|Dallas|10.200.212.0/22|vpn.dal.softlayer.com|
@@ -754,7 +754,7 @@ All TCP/UDP ports (for access from your local workstation)
 |tok05|Tokyo|10.201.224.0/24|vpn.tok.softlayer.com|
 |tor04|Toronto|10.1.0.0/24|vpn.tor.softlayer.com|
 |tor05|Toronto|10.1.4.0/24|vpn.tor.softlayer.com|
-|wdc03|Washington D.C.|100.101.132.0/24|vpn.wdc03.usgov.softlayer.com|
+|wdc03|Washington D.C.|100.101.132.0/24|vpn.wdc03.ibmcloudforgov.com|
 |wdc04|Washington D.C.|10.3.212.0/24|vpn.wdc.softlayer.com|
 |wdc07|Washington D.C.|10.200.204.0/24|vpn.wdc.softlayer.com|
 {: caption="Table 9: SSL VPN data centers" caption-side="bottom"}  
