@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-05"
+lastupdated: "2024-11-06"
 
 keywords: infrastructure
 
@@ -32,7 +32,7 @@ subcollection: cloud-infrastructure
 
 | Option | Description |
 |--------|---------------|
-| [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) | Scalable virtual servers for VPC that are purchased with cores and memory allocations. |
+| [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) | Scalable virtual servers for VPC that are purchased with core and memory allocations. |
 {: caption="Compute options - VPC" caption-side="top"}
 
 ## Classic infrastructure
@@ -41,7 +41,7 @@ subcollection: cloud-infrastructure
 | Option | Description |
 |--------|---------------|
 | [{{site.data.keyword.baremetal_short}}](/docs/bare-metal?topic=bare-metal-about-bm#about-bm)  | Hourly or monthly, single-tenant servers that are dedicated to you and not shared in any part, including server resources, with other customers. |
-| [{{site.data.keyword.BluVirtServers_short}}](/docs/virtual-servers?topic=virtual-servers-getting-started-tutorial) | Scalable virtual servers that are purchased with cores and memory allocations. |
+| [{{site.data.keyword.BluVirtServers_short}}](/docs/virtual-servers?topic=virtual-servers-getting-started-tutorial) | Scalable virtual servers that are purchased with core and memory allocations. |
 | [{{site.data.keyword.vmwaresolutions_short}}](/docs/vmwaresolutions?topic=vmwaresolutions-getting-started) | Quickly and seamlessly integrate or migrate on-premises VMware workloads by using scalable, secure, and high-performance infrastructure and the industry-leading VMware hybrid virtualization technology. |
 {: caption="Compute options - Classic" caption-side="top"}
 
@@ -50,7 +50,7 @@ subcollection: cloud-infrastructure
 
 | Option | Description |
 |--------|---------------|
-| [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started) | Combines Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. |
+| [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started) | Combines Docker containers, Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. |
 | [{{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started) | Provides a platform to unify the deployment of all of your container-based applications. |
 {: caption="Compute options - Containers" caption-side="top"}
 
