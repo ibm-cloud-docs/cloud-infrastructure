@@ -2,7 +2,7 @@
 copyright:
   years: 2019, 2024
 
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-07"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment, infrastructure comparison, comparing infrastructures
 
@@ -30,19 +30,16 @@ See the following table for the Compute differences between classic and VPC.
 
 | Category   |  Classic infrastructure   | VPC infrastructure |
 | ---------- | ------------------------- | ------------------ |
-|  **Services**  |Full catalog of services, such as {{site.data.keyword.baremetal_short}}, {{site.data.keyword.BluVirtServers_short}} instances, VMware, SAP | {{site.data.keyword.BluVirtServers_short}} and Bare Metal Servers |
-| **Performance and availability** | | Better availability is achievable through zone architecture |
-| **Pricing** | Hourly and monthly billing, plus suspend billing features | Hourly, suspend billing, and sustained usage discount |
-| **Virtual server families** | Public, dedicated, transient, reserved | Public, dedicated |
-| **Bare Metal servers** |  Advanced Intel® Xeon® CPUs, NVIDIA GPUs, \n  Secure application hosting, high-availability (HA) game hosting, Clustered web hosting | Advanced Intel® Xeon® CPUs, SmartNIC technology, rapid scaling.  |
-| **Profiles** | All profiles, including the GPU profiles | Balanced, compute, memory profiles with higher RAM and vCPU options |
-| **Supported images** | Full set of pre-stock images, plus custom images | Limited set of pre-stock images, plus the ability to import a custom image |
+|  **Services**  | * {{site.data.keyword.BluVirtServers_short}} \n * {{site.data.keyword.baremetal_short}} \n * Dedicated hosts \n * Reserved virtual servers  | * {{site.data.keyword.BluVirtServers_short}} \n * {{site.data.keyword.baremetal_short}} \n * Dedicated hosts \n * Reservations for virtual servers and bare metal servers \n * Instance Metadata service \n * Instance templates \n * Instance groups \n * Auto Scale for VPC |
+| **Performance and availability** | * Networking speeds up to 25 Gbps | * High speed networking up to 200 Gbps \n * Better availability achievable through zone architecture  |
+| **Pricing** | * Hourly and monthly billing \n * Suspend billing feature for supported configurations | * Per second billing \n * Suspend billing feature \n * Cost savings for reservations |
+| **Bare Metal servers** |  Customizable servers featuring advanced Intel® Xeon® CPUs, or AMD CPUs, and NVIDIA GPUs | Profile-based servers featuring advanced Intel® Xeon® CPUs, DPU technology, rapid provisioning, and hourly billing  |
+| **Virtual server profile families** | * Balanced \n * Balanced local storage \n * Variable compute \n * Compute \n * Memory \n * Transient option for supported profiles \n * GPU | * Balanced \n * Compute \n * Memory \n * Very High Memory \n * Ultra High Memory \n * Accelerated (GPU) \n * Storage Optimized \n * Confidential Compute \n * Generations of CPU profiles \n * Profiles for Intel, AMD, and s390x processor architectures  |
+| **Supported images** | * Stock images \n * Instance add-ons: OS add-ons, control panel software, database software \n * Custom images | * Stock images \n * Custom images (includes image from volume) \n * Private catalog images |
 | **Platform integration** | | IAM and resource group integration for a unified experience |
 {: caption="Compute comparison" caption-side="bottom"}
 {: summary="This table has row and column headers. The row headers identify possible features. The column headers identify the differentiators between classic infrastructure and VPC infrastructure. To understand the differences between environments, go to the row and find the details for the feature that you're interested in."}
 
-Suspend billing supports only hourly, SAN instances that are provisioned with a public profile from one of the Balanced, Compute, Memory, or Variable compute families.
-{: note}
 
 ## Network differentiators
 {: #compare-network}
