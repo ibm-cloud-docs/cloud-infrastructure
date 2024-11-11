@@ -2,7 +2,7 @@
 copyright:
   years: 2019, 2024
 
-lastupdated: "2024-11-08"
+lastupdated: "2024-11-11"
 
 keywords: understanding infrastructure, vpc, classic infrastructure, cloud environment, infrastructure comparison, comparing infrastructures
 
@@ -34,7 +34,7 @@ See the following table for the Compute differences between classic and VPC.
 | **Performance and availability** | * Networking speeds up to 25 Gbps | * High speed networking up to 200 Gbps \n * Better availability achievable through zone architecture  |
 | **Pricing** | * Hourly and monthly billing \n * Suspend billing feature for supported configurations | * Hourly and monthly billing \n * Suspend billing feature \n * Cost savings for reservations |
 | **Bare Metal servers** |  Customizable servers featuring advanced Intel® Xeon® CPUs, or AMD CPUs, and NVIDIA GPUs | Profile-based servers featuring advanced Intel® Xeon® CPUs, DPU technology, rapid provisioning, and hourly billing  |
-| **Virtual server profile families** | * Balanced \n * Balanced local storage \n * Variable compute \n * Compute \n * Memory \n * Transient option for supported profiles \n * GPU | * Balanced \n * Compute \n * Memory \n * Very High Memory \n * Ultra High Memory \n * Accelerated (GPU) \n * Storage Optimized \n * Confidential Compute \n * Generations of CPU profiles \n * Profiles for Intel, AMD, and s390x processor architectures  |
+| **Virtual server profile families** | * Balanced \n * Balanced local storage \n * Variable compute \n * Compute \n * Memory \n * Transient option for supported profiles \n * GPU | * Balanced \n * Compute \n * Memory \n * Very High Memory \n * Ultra High Memory \n * GPU \n * AI Optimized \n * Storage Optimized \n * Confidential Compute \n * Generations of CPU profiles \n * Profiles for Intel, AMD, and s390x processor architectures  |
 | **Supported images** | * Stock images \n * Instance add-ons: OS add-ons, control panel software, database software \n * Custom images | * Stock images \n * Custom images (includes image from volume) \n * Private catalog images |
 | **Platform integration** | | IAM and resource group integration for a unified experience |
 {: caption="Compute comparison" caption-side="bottom"}
