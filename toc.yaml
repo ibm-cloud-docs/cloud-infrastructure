@@ -10,9 +10,9 @@ toc:
     product-page: "https://www.ibm.com/cloud/infrastructure"
     path: cloud-infrastructure
     label: Building infrastructure
-#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. 
-  entries: 
-  - navgroup: 
+#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group.
+  entries:
+  - navgroup:
       id: learn
       topics:
        - getting-started.md
@@ -26,43 +26,43 @@ toc:
        - link:
            label: IBM Cloud pricing
            href: https://www.ibm.com/cloud/pricing
-       - topicgroup: 
+       - topicgroup:
            label: Related links
-           links: 
+           links:
            - link:
                label: Service and infrastructure availability
                href: /overview/overview-services_region
            - link:
                label: Getting started with IAM tutorial
                href: /account/account-iamoverview
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - planning-iaas.md
       - include: ../ha-infrastructure/ha-landing-page-all.md
-      - topicgroup: 
+      - topicgroup:
           label: Building your infrastructure
-          topics: 
+          topics:
           - compute-services.md
           - network-services.md
-          - storage-services.md 
-      -  managing-iaas.md      
-      - topicgroup: 
+          - storage-services.md
+      -  managing-iaas.md
+      - topicgroup:
           label: Monitoring your infrastructure
-          topics: 
+          topics:
           - monitoring-iaas.md
           - monitoring-no-driver-mode.md
-      - topicgroup: 
+      - topicgroup:
           label: Migrating your infrastructure
-          topics: 
+          topics:
           - about-migration.md
-          - topicgroup: 
+          - topicgroup:
               label: Classic to classic infrastructure
-              topics: 
+              topics:
               - include: ../virtual-servers/vsi_migrate_classic_dctodc.md
               - include: ../bare-metal/bm-about-custom-image-templates.md
               - p-p-migration-bare-metal.md
-          - topicgroup: 
+          - topicgroup:
               label: Classic to VPC infrastructure
               topics:
               - link:
@@ -71,22 +71,22 @@ toc:
               - on-prem-vpc-migration-rackware-rmm.md
               - pv-migration-overview.md
               - pv-migration-private-ip.md
-          - topicgroup: 
+          - topicgroup:
               label: Virtualized workloads to VPC infrastructure
-              topics: 
+              topics:
               - any-cloud-to-ibm-cloud-via-rackware.md
               - vmware-on-prem-to-v2v.md
-              - the-classic-to-v2v.md 
-              - hyper-v-to-IBM-Cloud-VPC-VSI.md 
-          - topicgroup: 
+              - the-classic-to-v2v.md
+              - hyper-v-to-IBM-Cloud-VPC-VSI.md
+          - topicgroup:
               label: Script-based migration
-              topics: 
+              topics:
               - data-migration-diy.md
               - image-migration-diy.md
               - mysql-db-migration-script-python.md
           - topicgroup:
               label: Database migration
-              topics: 
+              topics:
               - mssql-db-migration.md
               - mysql-db-server-migration.md
   - navgroup:
