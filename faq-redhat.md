@@ -12,19 +12,19 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs about Red Hat and {{site.data.keyword.cloud_notm}} infrastructure
+# FAQs about Red Hat and {{site.data.keyword.cloud}} infrastructure
 {: #faqs-for-red-hat-ibm-cloud}
 
-Review frequently asked questions (FAQs) for using Red Hat and {{site.data.keyword.cloud}} infrastructure.
+Review frequently asked questions (FAQs) for using Red Hat and {{site.data.keyword.cloud_notm}} infrastructure.
 
-## What versions of Red Hat Enterprise Linux are available in {{site.data.keyword.cloud}}?
+## What versions of Red Hat Enterprise Linux are available in {{site.data.keyword.cloud_notm}}?
 {: #faq-versions-available-red-hat-ibm-cloud}
 {: faq}
 
 * See [Lifecycle for operating systems and add-ons - Red Hat Enterprise Linux (RHEL)](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic#rhel-classic) for the Red Hat versions that {{site.data.keyword.cloud_notm}} Classic infrastructure supports.
 * See [Lifecycle for guest operating systems - Red Hat Enterprise Linux (RHEL)](/docs/vpc?topic=vpc-guest-os-lifecycle#rhel) for the Red Hat versions that {{site.data.keyword.vpc_short}} supports.
 
-## How are updates applied to Red Hat Enterprise Linux on {{site.data.keyword.cloud}}?
+## How are updates applied to Red Hat Enterprise Linux on {{site.data.keyword.cloud_notm}}?
 {: #faq-updates-applied-red-hat-ibm-cloud}
 {: faq}
 
@@ -34,7 +34,7 @@ When Red Hat releases an update, IBM stock images pull updates from Red Hat offi
 {: #faq-red-hat-ibm-support}
 {: faq}
 
-For Red Hat software that is purchased natively on {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}} [support](/docs/account?topic=account-gettinghelp) is the first point of contact for any issue with a Red Hat software-related issue.
+For Red Hat software that is purchased natively on {{site.data.keyword.cloud_notm}}, [support](/docs/account?topic=account-gettinghelp) is the first point of contact for any issue with a Red Hat software-related issue.
 
 IBM provides three support plans.
 
@@ -68,7 +68,7 @@ Yes. {{site.data.keyword.cloud_notm}} supports BYOL. You need to contact [Red Ha
 
 If you use the BYOL option, you are charged by IBM for only the {{site.data.keyword.cloud_notm}} infrastructure.
 
-## What is the end of service (EOS) policy for Red Hat OS in {{site.data.keyword.cloud}}?
+## What is the end of service (EOS) policy for Red Hat OS in {{site.data.keyword.cloud_notm}}?
 {: #faq-eos-red-hat-ibm-cloud}
 {: faq}
 
@@ -82,7 +82,7 @@ No. You can't provision a virtual server with software that reached its EOS date
 
 For more information about EOS, see [VPC - End of support operating system considerations](/docs/vpc?topic=vpc-eos-os-considerations-intro) and [Classic - End of support for operating systems considerations](/docs/bare-metal?topic=bare-metal-eos-os-considerations-bm-classic-intro).
 
-## Where can I find the EOS date for Red Hat servers that run in {{site.data.keyword.cloud}}?
+## Where can I find the EOS date for Red Hat servers that run in {{site.data.keyword.cloud_notm}}?
 {: #faq-eos-dates-red-hat-ibm-cloud}
 {: faq}
 

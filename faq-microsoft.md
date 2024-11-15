@@ -12,18 +12,18 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs about Microsoft and {{site.data.keyword.cloud_notm}} infrastructure
+# FAQs about Microsoft and {{site.data.keyword.cloud}} infrastructure
 {: #faqs-for-microsoft-software-ibm-cloud}
 
-IBM is a Gold Certified member of the Microsoft Partner Network&reg; and licensed to sell Microsoft&reg; software under the Services Provider License Agreement (SPLA). IBM is also an authorized license mobility Microsoft partner. Use of Microsoft software is solely subject to terms and conditions from Microsoft. When you use Microsoft software in {{site.data.keyword.cloud}}, you are fully responsible for complying with Microsoft licensing terms.
+IBM is a Gold Certified member of the Microsoft Partner Network&reg; and licensed to sell Microsoft&reg; software under the Services Provider License Agreement (SPLA). IBM is also an authorized license mobility Microsoft partner. Use of Microsoft software is solely subject to terms and conditions from Microsoft. When you use Microsoft software in {{site.data.keyword.cloud_notm}}, you are fully responsible for complying with Microsoft licensing terms.
 
-## What is the relationship between Microsoft and {{site.data.keyword.cloud}}?
+## What is the relationship between Microsoft and {{site.data.keyword.cloud_notm}}?
 {: #faq-microsoft-ibm-cloud}
 {: faq}
 
 {{site.data.keyword.cloud_notm}} has a strategic relationship with Microsoft to offer their suite of software. {{site.data.keyword.cloud_notm}} offers native Microsoft software in its offerings. {{site.data.keyword.cloud_notm}} also supports Bring Your Own Licenses (BYOL) for most Microsoft software.
 
-## What types of Microsoft software are supported in {{site.data.keyword.cloud}}?
+## What types of Microsoft software are supported in {{site.data.keyword.cloud_notm}}?
 {: #faq-microsoft-supported-software-ibm-cloud}
 {: faq}
 
@@ -45,7 +45,7 @@ You can also use Remote Desktop Services that include some user-specific options
 {: #faq-microsoft-support-ibm-cloud}
 {: faq}
 
-For Microsoft software that is purchased natively on {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}} [support](/docs/account?topic=account-gettinghelp) is the first point of contact for any issue with a Microsoft software-related issue.
+For Microsoft software that is purchased natively on {{site.data.keyword.cloud_notm}}, {{site.data.keyword.cloud_notm}} [support](/docs/account?topic=account-gettinghelp) is the first point of contact for any issue with a Microsoft software-related issue.
 
 IBM provides three support plans.
 
@@ -116,7 +116,7 @@ The following applications are eligible with Software Assurance.
 * Microsoft System Center servers
 * Microsoft Dynamics 365 Server for Customer Service and Sales applications.
 
-## What is the EOS policy for Microsoft products in {{site.data.keyword.cloud}}?
+## What is the EOS policy for Microsoft products in {{site.data.keyword.cloud_notm}}?
 {: #faq-microsoft-ibm-cloud-eos}
 {: faq}
 
@@ -128,7 +128,7 @@ In the lifecycle of an operating system, EOS is the last date that {{site.data.k
 
 No. You can't provision a virtual server with software that reached its EOS date. Customers can use the existing EOS software that was provisioned before the EOS date at their own risk.
 
-## Where can I find the EOS date for Microsoft Servers that run in {{site.data.keyword.cloud}}?
+## Where can I find the EOS date for Microsoft Servers that run in {{site.data.keyword.cloud_notm}}?
 {: #faq-microsoft-eos-dates-ibm-cloud}
 {: faq}
 
