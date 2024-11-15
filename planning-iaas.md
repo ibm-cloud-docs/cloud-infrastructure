@@ -25,7 +25,7 @@ Start with [IaaS (Infrastructure-as-a-Service)](https://www.ibm.com/topics/iaas)
 ## {{site.data.keyword.cloud_notm}} Stencils
 {: #planning-5}
 
-Create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools, [{{site.data.keyword.cloud_notm}} Stencils](https://github.com/IBM-Cloud/architecture-icons){: external} and [libmdiagrams](https://github.com/ibm/ibmdiagrams){: external}. 
+Create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools, [{{site.data.keyword.cloud_notm}} Stencils](https://github.com/IBM-Cloud/architecture-icons){: external} and [ibmdiagrams](https://github.com/ibm/ibmdiagrams){: external}. 
 
 ## {{site.data.keyword.cloud_notm}} cost estimator
 {: #planning-6}
