@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-11-15"
 
 keywords: infrastructure
 
@@ -25,17 +25,17 @@ Start with [IaaS (Infrastructure-as-a-Service)](https://www.ibm.com/topics/iaas)
 ## {{site.data.keyword.cloud_notm}} Stencils
 {: #planning-5}
 
-Create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools, [{{site.data.keyword.cloud_notm}} Stencils](https://github.com/ibm-cloud-architecture/ibm-cloud-stencils){: external}, and the [library of IBM Cloud catalog icons](https://l2fprod.github.io/myarchitecture/){: external}. 
+Create a diagram of your {{site.data.keyword.cloud_notm}} architecture by using popular diagramming tools, [{{site.data.keyword.cloud_notm}} Stencils](https://github.com/IBM-Cloud/architecture-icons){: external} and [libmdiagrams](https://github.com/ibm/ibmdiagrams){: external}. 
 
-## Bare metal server options
+## {{site.data.keyword.cloud_notm}} cost estimator
 {: #planning-6}
 
-Use the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.baremetal_short}} Search Tool](https://cloud.ibm.com/gen1/infrastructure/provision/bm){: external} to size and estimate your bare metal server options, including servers that are certified to support SAP HANA and SAP NetWeaver workloads.
+Use the [{{site.data.keyword.cloud_notm}} cost estimator](https://www.ibm.com/cloud/cloud-calculator){: external} to find the lowest cost estimate for the configuration that suits you best. Use this cloud price calculator to configure {{site.data.keyword.cloud_notm}} products and to generate reliable cost estimates.
 
 ## {{site.data.keyword.cloud_notm}} services and compliance
 {: #planning-7}
 
-As with any architecture, consider the {{site.data.keyword.cloud_notm}} resources that you might add to your solution as you size your infrastructure. For more information, see [SaaS applications for business and IT](https://www.ibm.com/topics/iaas-paas-saas){: external} and search for a specific service. You also need to think about any regulations that you must consider when you build your architecture. For example, is your workload considered sensitive or is it regulated? For more information, see [Compliance](https://www.ibm.com/cloud/compliance){: external}.
+As with any architecture, consider the {{site.data.keyword.cloud_notm}} resources that you might add to your solution as you size your infrastructure. For more information, see [What are Iaas, Paas and Saas?](https://www.ibm.com/topics/iaas-paas-saas){: external} and search for a specific service. You also need to think about any regulations that you must consider when you build your architecture. For example, is your workload considered sensitive or is it regulated? For more information, see [Compliance](https://www.ibm.com/cloud/compliance){: external}.
 
 ## {{site.data.keyword.cloud_notm}} IP ranges
 {: #planning-ip-ranges}
