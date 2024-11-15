@@ -111,6 +111,11 @@ toc:
           - pv-faqs.md
           - faqs-for-VMWare-to-VPC-migrations.md
       - getting-help-diy-image-data-migration.md
+      - topicgroup:
+          label: FAQs for operating systems and add-ons
+          topics:
+          - faq-microsoft.md
+          - faq-redhat.md
       - link:
          label: IBM Cloud Support
          href: https://www.ibm.com/cloud/support
