@@ -12,7 +12,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs about Red Hat and {{site.data.keyword.cloud}} infrastructure
+# FAQs about Red Hat and {{site.data.keyword.cloud_notm}} infrastructure
 {: #faqs-for-red-hat-ibm-cloud}
 
 Review frequently asked questions (FAQs) for using Red Hat and {{site.data.keyword.cloud}} infrastructure.
@@ -21,7 +21,7 @@ Review frequently asked questions (FAQs) for using Red Hat and {{site.data.keywo
 {: #faq-versions-available-red-hat-ibm-cloud}
 {: faq}
 
-* See [Lifecycle for operating systems and add-ons - Red Hat Enterprise Linux (RHEL)](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic#rhel-classic) for the Red Hat versions that {{site.data.keyword.cloud}} Classic infrastructure supports.
+* See [Lifecycle for operating systems and add-ons - Red Hat Enterprise Linux (RHEL)](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic#rhel-classic) for the Red Hat versions that {{site.data.keyword.cloud_notm}} Classic infrastructure supports.
 * See [Lifecycle for guest operating systems - Red Hat Enterprise Linux (RHEL)](/docs/vpc?topic=vpc-guest-os-lifecycle#rhel) for the Red Hat versions that {{site.data.keyword.vpc_short}} supports.
 
 ## How are updates applied to Red Hat Enterprise Linux on {{site.data.keyword.cloud}}?
@@ -30,11 +30,11 @@ Review frequently asked questions (FAQs) for using Red Hat and {{site.data.keywo
 
 When Red Hat releases an update, IBM stock images pull updates from Red Hat official repositories - repositories that are maintained by Red Hat.
 
-## What support can I expect from {{site.data.keyword.cloud}} for Red Hat products?
+## What support can I expect from {{site.data.keyword.cloud_notm}} for Red Hat products?
 {: #faq-red-hat-ibm-support}
 {: faq}
 
-For Red Hat software that is purchased natively on {{site.data.keyword.cloud}}, {{site.data.keyword.cloud}} [support](/docs/account?topic=account-gettinghelp) is the first point of contact for any issue with a Red Hat software-related issue.
+For Red Hat software that is purchased natively on {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}} [support](/docs/account?topic=account-gettinghelp) is the first point of contact for any issue with a Red Hat software-related issue.
 
 IBM provides three support plans.
 
@@ -44,37 +44,37 @@ IBM provides three support plans.
 
 For more information, see [IBM support plans](/docs/account?topic=account-support-plans).
 
-## How does {{site.data.keyword.cloud}} and Red Hat work together to solve issues?
+## How does {{site.data.keyword.cloud_notm}} and Red Hat work together to solve issues?
 {: #faq-support-red-hat-and-ibm-cloud}
 {: faq}
 
-If Red Hat involvement is required to solve a potential issue, {{site.data.keyword.cloud}} [support](/docs/account?topic=account-gettinghelp) engages Red Hat support. For client BYOL issues, you need to contact [Red Hat support](https://www.redhat.com/en/services/support){: external}.
+If Red Hat involvement is required to solve a potential issue, {{site.data.keyword.cloud_notm}} [support](/docs/account?topic=account-gettinghelp) engages Red Hat support. For client BYOL issues, you need to contact [Red Hat support](https://www.redhat.com/en/services/support){: external}.
 
-## What is the level of ownership between {{site.data.keyword.cloud}} and customers who use Red Hat software?
+## What is the level of ownership between {{site.data.keyword.cloud_notm}} and customers who use Red Hat software?
 {: #faq-owner-responsibilites-ibm-cloud-red-hat}
 {: faq}
 
-{{site.data.keyword.cloud}} provides the cloud infrastructure and Red Hat stock images. {{site.data.keyword.cloud}} [support](/docs/account?topic=account-gettinghelp) covers any issue with the cloud infrastructure and the stock images - such as driver mismatch or licensing. Issues that are related to image licensing are the responsibility of the customer. Custom images (customer-owned images) are also the responsibility of the customer.
+{{site.data.keyword.cloud_notm}} provides the cloud infrastructure and Red Hat stock images. {{site.data.keyword.cloud_notm}} [support](/docs/account?topic=account-gettinghelp) covers any issue with the cloud infrastructure and the stock images - such as driver mismatch or licensing. Issues that are related to image licensing are the responsibility of the customer. Custom images (customer-owned images) are also the responsibility of the customer.
 
 ## Does IBM Cloud support Bring Your Own License (BYOL) for Red Hat operating systems?
 {: #faq-byol-red-hat-ibm-cloud}
 {: faq}
 
-Yes. {{site.data.keyword.cloud}} supports BYOL. You need to contact [Red Hat support](https://www.redhat.com/en/services/support){: external} for any issues with the image.
+Yes. {{site.data.keyword.cloud_notm}} supports BYOL. You need to contact [Red Hat support](https://www.redhat.com/en/services/support){: external} for any issues with the image.
 
 ## Am I charged for BYOL?
 {: #faq-byol-charges-red-hat-ibm-cloud}
 {: faq}
 
-If you use the BYOL option, you are charged by IBM for only the {{site.data.keyword.cloud}} infrastructure.
+If you use the BYOL option, you are charged by IBM for only the {{site.data.keyword.cloud_notm}} infrastructure.
 
 ## What is the end of service (EOS) policy for Red Hat OS in {{site.data.keyword.cloud}}?
 {: #faq-eos-red-hat-ibm-cloud}
 {: faq}
 
-In the lifecycle of an operating system, EOS is the last date that {{site.data.keyword.cloud}} delivers standard support for a version or release of a product. {{site.data.keyword.cloud}} [VPC EOS dates](/docs/vpc?topic=vpc-guest-os-lifecycle) and [Classic EOS dates](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic) align with the Red Hat EOS dates.
+In the lifecycle of an operating system, EOS is the last date that {{site.data.keyword.cloud_notm}} delivers standard support for a version or release of a product. {{site.data.keyword.cloud_notm}} [VPC EOS dates](/docs/vpc?topic=vpc-guest-os-lifecycle) and [Classic EOS dates](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic) align with the Red Hat EOS dates.
 
-## Can I provision virtual servers in {{site.data.keyword.cloud}} by using EOS software?
+## Can I provision virtual servers in {{site.data.keyword.cloud_notm}} by using EOS software?
 {: #faq-provision-eos-red-hat-ibm-cloud}
 {: faq}
 
