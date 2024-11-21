@@ -48,11 +48,6 @@ toc:
           - storage-services.md
       -  managing-iaas.md
       - topicgroup:
-          label: Monitoring your infrastructure
-          topics:
-          - monitoring-iaas.md
-          - monitoring-no-driver-mode.md
-      - topicgroup:
           label: Migrating your infrastructure
           topics:
           - about-migration.md
