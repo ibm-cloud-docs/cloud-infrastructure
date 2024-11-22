@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-04"
+lastupdated: "2024-11-22"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -15,15 +15,15 @@ subcollection: cloud-infrastructure
 # {{site.data.keyword.cloud_notm}} IP ranges
 {: #ibm-cloud-ip-ranges}
 
-A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IP addresses to use with these IBM firewalls and appliances.
+A frequently asked question is, "What IP ranges do I allow through the firewall?" The following tables contain the full range of IP addresses to use with these IBM firewalls and appliances. The most important subnets to focus on are the [IBM Cloud service networks](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges#service-network). These are private (rfc1918) subnets that require connections to and from your servers for provisioning, reloads, remote reboots, and other infrastructure services like DNS resoution, NTP (time) and network attached storage.
 {: shortdesc}
 
 * {{site.data.keyword.cloud_notm}} Juniper vSRX Standard
-* IBM Virtual Router Appliance
-* Fortinet vFSA
-* Fortinet Fortigate Security Appliance 10 Gbps
-* IBM Security Groups
-* Hardware Firewall
+* {{site.data.keyword.cloud_notm}} Ciena Virtual Router Appliance (Vyatta)
+* {{site.data.keyword.cloud_notm}} Fortinet vFSA
+* {{site.data.keyword.cloud_notm}} Fortinet Fortigate Security Appliance 10 Gbps
+* {{site.data.keyword.cloud_notm}} Security Groups
+* {{site.data.keyword.cloud_notm}} Hardware Firewall
 
 To identify potential conflicts between IP ranges in your on-premises environment and IP ranges used in {{site.data.keyword.cloud_notm}}, you can search in the [IP Ranges Calculator tool](https://ibm.biz/cidr-calculator). By using the tool, you can download the listed IP ranges in JSON format. Disclaimer: This community tool is updated based on support availability.
 {: important}
