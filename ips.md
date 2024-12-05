@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-22"
+lastupdated: "2024-12-05"
 
 keywords: ip, range, firewall, network, traffic, security
 
@@ -786,24 +786,59 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 * Open the RHEL endpoint rhha01.updates.us-south.iaas.service.networklayer.com. This requires adding the IP 161.26.112.28 to the firewall rules. Since DNS round robin is involved, this endpoint is not a single endpoint and could be moved as needed.
 * Allow access to the service network as follows. Otherwise, updates and licensing do not function properly. 
 
-|Server location|Allow private service network for this data center|
-|---|---|
-|Amsterdam (ams03)|fra02|
-|Chennai (che01)|tok02|
-|Dallas (dal05, dal09, dal10, dal12, dal13)|dal09|
-|Frankfurt (fra02, fra04, fra05)|fra02|
-|London (lon02, lon04, lon05, lon06)|lon02|
-|Milan (mil01)|fra02|
-|Montreal (mon01)|mon01|
-|Paris (par01)|fra02|
-|San Jose (sjc01, sjc03, sjc04)|dal09|
-|Sao Paulo (sao01)|dal09|
-|Singapore (sng01)|syd01|
-|Sydney (syd01, syd04, syd05)|syd01|
-|Tokyo (tok02, tok04, tok05)|tok02|
-|Toronto (tor01)|mon01|
-|Washington DC (wdc01, wdc04, wdc06, wdc07)|mon01|
-|Any data center not listed|dal09|
+| Server location | Allow private service network for this data center | Service IP ranges |
+|---|---|---|
+| Amsterdam (ams03) | fra02 | 161.26.36.0/22 |
+| | fra04 | 161.26.144.0/22 |
+| | fra05 | 161.26.148.0/22 |
+| Chennai (che01) | tok02 | 161.26.84.0/22 |
+| | tok04 | 161.26.152.0/22 |
+| | tok05 | 161.26.156.0/22 |
+| Dallas (dal05, dal09, dal10, dal12, dal13) | dal10 | 161.26.96.0/22 |
+| | dal12 | 161.26.108.0/22 |
+| | dal13 | 161.26.112.0/22 |
+| Frankfurt (fra02, fra04, fra05) | fra02 | 161.26.36.0/22 |
+| | fra04 | 161.26.144.0/22 |
+| | fra05 | 161.26.148.0/22 |
+| London (lon02, lon04, lon05, lon06) | lon04 | 161.26.128.0/22 |
+| | lon05 | 161.26.160.0/22 |
+| | lon06 | 161.26.140.0/22 |
+| Milan (mil01) | fra02 | 161.26.36.0/22 |
+| | fra04 | 161.26.144.0/22 |
+| | fra05 | 161.26.148.0/22 |
+| Montreal (mon01) | tor01 | 161.26.88.0/22 |
+| | tor04 | 161.26.196.0/22 | 
+| | tor05 | 161.26.200.0/22 | 
+| Paris (par01) | fra02 | 161.26.36.0/22 |
+| | fra04 | 161.26.144.0/22 |
+| | fra05 | 161.26.148.0/22 |
+| San Jose (sjc01, sjc03, sjc04) | dal10 | 161.26.96.0/22 |
+| | dal12 | 161.26.108.0/22 |
+| | dal13 | 161.26.112.0/22 |
+| Sao Paulo (sao01) | sao01 | 161.26.64.0/22 |
+| | sao04 | 161.26.204.0/22 | 
+| | sao05 | 161.26.208.0/22 | 
+| Singapore (sng01) | syd01 | 161.26.80.0/22 |
+| | syd04 | 161.26.124.0/22 |
+| | syd05 | 161.26.164.0/22 |
+| Sydney (syd01, syd04, syd05)| syd01 | 161.26.80.0/22 |
+| | syd04 | 161.26.124.0/22 |
+| | syd05 | 161.26.164.0/22 |
+| Tokyo (tok02, tok04, tok05)| tok02 | 161.26.84.0/22 |
+| | tok04 | 161.26.152.0/22 |
+| | tok05 | 161.26.156.0/22 |
+| Toronto (tor01)| tor01 | 161.26.88.0/22 |
+| | tor04 | 161.26.196.0/22 |
+| | tor05 | 161.26.200.0/22 |
+| Washington DC (wdc01, wdc04, wdc06, wdc07)| wdc04 |  161.26.92.0/22 |
+| | wdc06 |  161.26.116.0/22 |
+| | wdc07 |  161.26.120.0/22 |
+| Osaka | osa21 | 161.26.184.0/22 |
+| | osa22 | 161.26.188.0/22 |
+| | osa23 | 161.26.192.0/22 |
+| Any data center not listed | dal10 | 161.26.96.0/22 |
+| | dal12 | 161.26.108.0/22 |
+| | dal13 | 161.26.112.0/22 |
 {: caption="Table 12: Red Hat Enterprise Linux server requirements" caption-side="bottom"}
 
 To resolve common provisioning issues, permit access to the entire service network by allowing the IP 161.26.0.0/16. 
