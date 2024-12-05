@@ -786,7 +786,7 @@ If your server uses a Red Hat Enterprise Linux (RHEL) license provided by {{site
 * Open the RHEL endpoint rhha01.updates.us-south.iaas.service.networklayer.com. This requires adding the IP 161.26.112.28 to the firewall rules. Since DNS round robin is involved, this endpoint is not a single endpoint and could be moved as needed.
 * Allow access to the service network as follows. Otherwise, updates and licensing do not function properly. 
 
-| Server location | Data centers | IP ranges |
+| Server location | Permitted data centers | Service IP ranges |
 |---|---|---|
 | Amsterdam (ams03) | fra02 | 161.26.36.0/22 |
 | | fra04 | 161.26.144.0/22 |
